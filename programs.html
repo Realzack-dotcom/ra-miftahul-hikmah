@@ -10,12 +10,2785 @@
         content="width=device-width, initial-scale=1"
     >
 
-    <title>Programs | Ra Miftahul Hikmah</title>
+    <title>
+        Programs | RA Miftahul Hikmah
+    </title>
+
+
+    <!-- CSS UTAMA -->
 
     <link
         rel="stylesheet"
         href="css/style.css"
     >
+
+
+    <!-- GOOGLE FONT -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+
+<style>
+
+/* =====================================================
+   PROGRAMS PREMIUM
+   RA MIFTAHUL HIKMAH
+   KHUSUS HALAMAN PROGRAMS
+===================================================== */
+
+
+/* =====================================================
+   RESET PROGRAMS
+===================================================== */
+
+body[data-page="programs"] {
+
+    margin: 0;
+
+    overflow-x: hidden;
+
+    font-family:
+        "Nunito",
+        sans-serif;
+
+    color:
+        #342d4f;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #fff8fb 0%,
+            #f5f1ff 35%,
+            #eefaff 68%,
+            #fff8e9 100%
+        );
+
+}
+
+
+/* =====================================================
+   BACKGROUND ANIMATION
+===================================================== */
+
+body[data-page="programs"]::before {
+
+    content: "";
+
+    position: fixed;
+
+    width: 450px;
+
+    height: 450px;
+
+    border-radius: 50%;
+
+    top: -180px;
+
+    left: -160px;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(255, 132, 185, .22),
+            rgba(255, 132, 185, 0)
+        );
+
+    filter:
+        blur(25px);
+
+    z-index: -2;
+
+    animation:
+        programBlobOne
+        14s
+        ease-in-out
+        infinite;
+
+}
+
+
+body[data-page="programs"]::after {
+
+    content: "";
+
+    position: fixed;
+
+    width: 520px;
+
+    height: 520px;
+
+    border-radius: 50%;
+
+    bottom: -220px;
+
+    right: -200px;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(116, 204, 255, .22),
+            rgba(116, 204, 255, 0)
+        );
+
+    filter:
+        blur(30px);
+
+    z-index: -2;
+
+    animation:
+        programBlobTwo
+        17s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes programBlobOne {
+
+    0%,
+    100% {
+
+        transform:
+            translate(0, 0)
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            translate(130px, 90px)
+            scale(1.2);
+
+    }
+
+}
+
+
+@keyframes programBlobTwo {
+
+    0%,
+    100% {
+
+        transform:
+            translate(0, 0)
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            translate(-120px, -80px)
+            scale(1.22);
+
+    }
+
+}
+
+
+/* =====================================================
+   WRAPPER
+===================================================== */
+
+body[data-page="programs"] .program-wrap {
+
+    width:
+        min(
+            1180px,
+            calc(100% - 40px)
+        );
+
+    margin:
+        0
+        auto;
+
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+body[data-page="programs"] .program-header {
+
+    position: relative;
+
+    z-index: 30;
+
+    background:
+
+        rgba(
+            255,
+            255,
+            255,
+            .72
+        );
+
+    backdrop-filter:
+        blur(20px);
+
+    -webkit-backdrop-filter:
+        blur(20px);
+
+    border-bottom:
+
+        1px
+        solid
+        rgba(
+            255,
+            255,
+            255,
+            .85
+        );
+
+}
+
+
+body[data-page="programs"] .program-head-inner {
+
+    min-height: 90px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap: 20px;
+
+}
+
+
+/* BRAND */
+
+body[data-page="programs"] .program-brand {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap: 12px;
+
+    text-decoration:
+        none;
+
+    color:
+        #342d4f;
+
+}
+
+
+body[data-page="programs"] .program-logo {
+
+    width: 55px;
+
+    height: 55px;
+
+    border-radius: 18px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    font-size: 30px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #fff2a8,
+            #ffd4e5,
+            #ccefff
+        );
+
+    box-shadow:
+
+        0 12px 30px
+        rgba(
+            239,
+            79,
+            130,
+            .16
+        );
+
+    animation:
+        programLogoFloat
+        4s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes programLogoFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-5px)
+            rotate(4deg);
+
+    }
+
+}
+
+
+body[data-page="programs"] .program-brand h1 {
+
+    margin: 0;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size: 25px;
+
+    font-weight: 800;
+
+    line-height: 1;
+
+}
+
+
+body[data-page="programs"] .program-brand h1 span {
+
+    color:
+        #ef4f82;
+
+}
+
+
+body[data-page="programs"] .program-brand p {
+
+    margin:
+        6px
+        0
+        0;
+
+    font-size: 13px;
+
+    color:
+        #837c96;
+
+}
+
+
+/* HEADER RIGHT */
+
+body[data-page="programs"] .program-header-right {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap: 15px;
+
+}
+
+
+body[data-page="programs"] .program-call {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap: 10px;
+
+}
+
+
+body[data-page="programs"] .program-call-icon {
+
+    width: 42px;
+
+    height: 42px;
+
+    border-radius: 50%;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    background:
+        #ffffff;
+
+    box-shadow:
+
+        0 8px 22px
+        rgba(
+            70,
+            50,
+            110,
+            .08
+        );
+
+}
+
+
+body[data-page="programs"] .program-call small {
+
+    display:
+        block;
+
+    color:
+        #958da8;
+
+}
+
+
+body[data-page="programs"] .program-call b {
+
+    font-size: 14px;
+
+}
+
+
+/* BUTTON */
+
+body[data-page="programs"] .program-btn {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap: 8px;
+
+    text-decoration:
+        none;
+
+    border:
+        none;
+
+    color:
+        white;
+
+    font-weight: 800;
+
+    padding:
+        13px
+        22px;
+
+    border-radius: 16px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #ef4f82,
+            #ff7ea7
+        );
+
+    box-shadow:
+
+        0 12px 28px
+        rgba(
+            239,
+            79,
+            130,
+            .25
+        );
+
+    transition:
+        .3s
+        ease;
+
+}
+
+
+body[data-page="programs"] .program-btn:hover {
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+
+        0 18px 35px
+        rgba(
+            239,
+            79,
+            130,
+            .35
+        );
+
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+body[data-page="programs"] .program-nav {
+
+    position: relative;
+
+    z-index: 25;
+
+    background:
+
+        rgba(
+            255,
+            255,
+            255,
+            .82
+        );
+
+    backdrop-filter:
+        blur(18px);
+
+    border-bottom:
+
+        1px
+        solid
+        rgba(
+            100,
+            80,
+            150,
+            .06
+        );
+
+}
+
+
+body[data-page="programs"] .program-nav-inner {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap: 8px;
+
+    padding:
+        10px
+        0;
+
+}
+
+
+body[data-page="programs"] .program-nav a {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap: 7px;
+
+    padding:
+        10px
+        15px;
+
+    border-radius: 14px;
+
+    text-decoration:
+        none;
+
+    color:
+        #5d576f;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    transition:
+        .25s
+        ease;
+
+}
+
+
+body[data-page="programs"] .program-nav a:hover {
+
+    background:
+        #f0f8ff;
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+body[data-page="programs"] .program-nav a.active {
+
+    color:
+        white;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #45b981,
+            #69d69b
+        );
+
+    box-shadow:
+
+        0 8px 22px
+        rgba(
+            69,
+            185,
+            129,
+            .28
+        );
+
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+body[data-page="programs"] .program-hero {
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding:
+        100px
+        0
+        110px;
+
+}
+
+
+/* FLOATING DECORATIONS */
+
+body[data-page="programs"] .program-orb {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events:
+        none;
+
+}
+
+
+body[data-page="programs"] .program-orb-one {
+
+    width: 170px;
+
+    height: 170px;
+
+    top: 30px;
+
+    left: 7%;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #bdf3d3,
+            #dff9b6
+        );
+
+    opacity: .75;
+
+    animation:
+        programOrbFloat
+        7s
+        ease-in-out
+        infinite;
+
+}
+
+
+body[data-page="programs"] .program-orb-two {
+
+    width: 110px;
+
+    height: 110px;
+
+    right: 9%;
+
+    bottom: 35px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #c5eaff,
+            #e4d2ff
+        );
+
+    opacity: .75;
+
+    animation:
+        programOrbFloat
+        9s
+        ease-in-out
+        infinite
+        reverse;
+
+}
+
+
+body[data-page="programs"] .program-orb-three {
+
+    width: 65px;
+
+    height: 65px;
+
+    left: 22%;
+
+    bottom: 30px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #ffe7a5,
+            #ffd0df
+        );
+
+    opacity: .7;
+
+    animation:
+        programOrbFloat
+        6s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes programOrbFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-25px)
+            rotate(10deg);
+
+    }
+
+}
+
+
+body[data-page="programs"] .program-hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    text-align:
+        center;
+
+}
+
+
+body[data-page="programs"] .program-badge {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap: 8px;
+
+    padding:
+        10px
+        17px;
+
+    border-radius: 50px;
+
+    background:
+
+        rgba(
+            255,
+            255,
+            255,
+            .76
+        );
+
+    box-shadow:
+
+        0 12px 30px
+        rgba(
+            70,
+            50,
+            110,
+            .08
+        );
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    margin-bottom: 20px;
+
+    animation:
+        programHeroIn
+        .8s
+        ease
+        both;
+
+}
+
+
+body[data-page="programs"] .program-hero h2 {
+
+    margin: 0;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size:
+
+        clamp(
+            48px,
+            7vw,
+            82px
+        );
+
+    line-height: 1;
+
+    font-weight: 800;
+
+    animation:
+        programHeroIn
+        1s
+        ease
+        .1s
+        both;
+
+}
+
+
+body[data-page="programs"] .program-hero h2 span {
+
+    color:
+        #44b978;
+
+}
+
+
+body[data-page="programs"] .program-hero p {
+
+    max-width: 610px;
+
+    margin:
+        20px
+        auto
+        0;
+
+    color:
+        #756e85;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    animation:
+        programHeroIn
+        1s
+        ease
+        .25s
+        both;
+
+}
+
+
+@keyframes programHeroIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =====================================================
+   SECTION
+===================================================== */
+
+body[data-page="programs"] .program-section {
+
+    position: relative;
+
+    padding:
+        55px
+        0;
+
+}
+
+
+body[data-page="programs"] .program-section-heading {
+
+    text-align:
+        center;
+
+    margin-bottom:
+        35px;
+
+}
+
+
+body[data-page="programs"] .program-section-heading h2 {
+
+    margin:
+        0
+        0
+        12px;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size:
+
+        clamp(
+            30px,
+            5vw,
+            45px
+        );
+
+    line-height: 1.1;
+
+}
+
+
+body[data-page="programs"] .program-section-heading h2 span {
+
+    color:
+        #44b978;
+
+}
+
+
+body[data-page="programs"] .program-section-heading p {
+
+    max-width: 600px;
+
+    margin:
+        auto;
+
+    color:
+        #7c758b;
+
+    line-height: 1.7;
+
+}
+
+
+/* =====================================================
+   PROGRAM CARDS
+===================================================== */
+
+body[data-page="programs"] .program-cards {
+
+    display:
+        grid;
+
+    grid-template-columns:
+
+        repeat(
+            4,
+            1fr
+        );
+
+    gap: 20px;
+
+}
+
+
+body[data-page="programs"] .program-card {
+
+    position: relative;
+
+    overflow: hidden;
+
+    min-height: 330px;
+
+    padding:
+        28px
+        22px;
+
+    border-radius: 28px;
+
+    background:
+
+        rgba(
+            255,
+            255,
+            255,
+            .72
+        );
+
+    border:
+
+        1px
+        solid
+        rgba(
+            255,
+            255,
+            255,
+            .9
+        );
+
+    box-shadow:
+
+        0 18px 45px
+        rgba(
+            75,
+            55,
+            120,
+            .09
+        );
+
+    transition:
+        .35s
+        ease;
+
+}
+
+
+body[data-page="programs"] .program-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 140px;
+
+    height: 140px;
+
+    border-radius: 50%;
+
+    top: -70px;
+
+    right: -65px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(145, 239, 185, .35),
+            rgba(190, 244, 220, .08)
+        );
+
+}
+
+
+body[data-page="programs"] .program-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 90px;
+
+    height: 90px;
+
+    border-radius: 50%;
+
+    bottom: -45px;
+
+    left: -35px;
+
+    background:
+
+        rgba(
+            255,
+            218,
+            154,
+            .22
+        );
+
+}
+
+
+body[data-page="programs"] .program-card:hover {
+
+    transform:
+        translateY(-10px);
+
+    box-shadow:
+
+        0 28px 55px
+        rgba(
+            75,
+            55,
+            120,
+            .15
+        );
+
+}
+
+
+/* NUMBER */
+
+body[data-page="programs"] .program-number {
+
+    position: relative;
+
+    z-index: 2;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    width: 34px;
+
+    height: 34px;
+
+    border-radius: 50%;
+
+    background:
+        #f1f8f3;
+
+    color:
+        #44b978;
+
+    font-size: 12px;
+
+    font-weight: 900;
+
+    margin-bottom: 18px;
+
+}
+
+
+/* ICON */
+
+body[data-page="programs"] .program-icon {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 82px;
+
+    height: 82px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    border-radius: 25px;
+
+    font-size: 40px;
+
+    margin-bottom: 20px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #f5fff8,
+            #e7f8ff
+        );
+
+    box-shadow:
+
+        inset
+        0
+        1px
+        1px
+        rgba(
+            255,
+            255,
+            255,
+            .8
+        );
+
+    animation:
+        programIconFloat
+        5s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes programIconFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-7px);
+
+    }
+
+}
+
+
+body[data-page="programs"] .program-card h3 {
+
+    position: relative;
+
+    z-index: 2;
+
+    margin:
+        0
+        0
+        12px;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size: 23px;
+
+    line-height: 1.2;
+
+}
+
+
+body[data-page="programs"] .program-card p {
+
+    position: relative;
+
+    z-index: 2;
+
+    margin: 0;
+
+    font-size: 14px;
+
+    line-height: 1.75;
+
+    color:
+        #766f84;
+
+}
+
+
+/* =====================================================
+   PROGRAM HIGHLIGHT
+===================================================== */
+
+body[data-page="programs"] .program-highlight {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    gap: 30px;
+
+    align-items:
+        center;
+
+    padding:
+        35px;
+
+    border-radius: 35px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(238, 255, 245, .9),
+            rgba(240, 249, 255, .9),
+            rgba(255, 248, 229, .85)
+        );
+
+    box-shadow:
+
+        0 22px 60px
+        rgba(
+            75,
+            55,
+            120,
+            .10
+        );
+
+    overflow:
+        hidden;
+
+    position:
+        relative;
+
+}
+
+
+body[data-page="programs"] .program-highlight::before {
+
+    content:
+        "🌈";
+
+    position:
+        absolute;
+
+    font-size:
+        90px;
+
+    right:
+        5%;
+
+    top:
+        15px;
+
+    opacity:
+        .25;
+
+    animation:
+        programRainbowFloat
+        6s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes programRainbowFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(-5deg);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-12px)
+            rotate(5deg);
+
+    }
+
+}
+
+
+body[data-page="programs"] .program-highlight-icon {
+
+    width: 150px;
+
+    height: 150px;
+
+    margin:
+        auto;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    border-radius: 40px;
+
+    font-size: 72px;
+
+    background:
+
+        rgba(
+            255,
+            255,
+            255,
+            .7
+        );
+
+    box-shadow:
+
+        0 20px 45px
+        rgba(
+            70,
+            50,
+            100,
+            .10
+        );
+
+    animation:
+        programHighlightFloat
+        5s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes programHighlightFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-10px)
+            rotate(4deg);
+
+    }
+
+}
+
+
+body[data-page="programs"] .program-highlight-content {
+
+    position:
+        relative;
+
+    z-index: 2;
+
+}
+
+
+body[data-page="programs"] .program-mini-label {
+
+    display:
+        inline-block;
+
+    padding:
+        8px
+        14px;
+
+    border-radius:
+        30px;
+
+    background:
+        #ffffff;
+
+    color:
+        #44b978;
+
+    font-size:
+        12px;
+
+    font-weight:
+        900;
+
+    margin-bottom:
+        14px;
+
+}
+
+
+body[data-page="programs"] .program-highlight h2 {
+
+    margin:
+        0
+        0
+        15px;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size:
+        38px;
+
+    line-height:
+        1.15;
+
+}
+
+
+body[data-page="programs"] .program-highlight h2 span {
+
+    color:
+        #ef4f82;
+
+}
+
+
+body[data-page="programs"] .program-highlight p {
+
+    color:
+        #746d85;
+
+    line-height:
+        1.8;
+
+}
+
+
+/* =====================================================
+   POSTS
+===================================================== */
+
+body[data-page="programs"] .post-counter {
+
+    display:
+        table;
+
+    margin:
+        0
+        auto
+        25px;
+
+    padding:
+        12px
+        20px;
+
+    border-radius:
+        50px;
+
+    background:
+
+        rgba(
+            255,
+            255,
+            255,
+            .72
+        );
+
+    box-shadow:
+
+        0 10px 30px
+        rgba(
+            70,
+            50,
+            100,
+            .08
+        );
+
+    font-weight:
+        800;
+
+}
+
+
+body[data-page="programs"] .post-counter span {
+
+    color:
+        #44b978;
+
+}
+
+
+body[data-page="programs"] .posts-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+
+        repeat(
+            3,
+            1fr
+        );
+
+    gap:
+        22px;
+
+}
+
+
+/* =====================================================
+   CTA
+===================================================== */
+
+body[data-page="programs"] .program-cta {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    text-align:
+        center;
+
+    padding:
+        65px
+        30px;
+
+    border-radius:
+        40px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #e9fff1,
+            #eef8ff,
+            #fff4e5
+        );
+
+    box-shadow:
+
+        0 25px 70px
+        rgba(
+            75,
+            55,
+            120,
+            .12
+        );
+
+}
+
+
+body[data-page="programs"] .program-cta::before {
+
+    content:
+        "✨";
+
+    position:
+        absolute;
+
+    top:
+        20px;
+
+    left:
+        7%;
+
+    font-size:
+        65px;
+
+    opacity:
+        .45;
+
+    animation:
+        programCtaFloat
+        5s
+        ease-in-out
+        infinite;
+
+}
+
+
+body[data-page="programs"] .program-cta::after {
+
+    content:
+        "🚀";
+
+    position:
+        absolute;
+
+    right:
+        7%;
+
+    bottom:
+        25px;
+
+    font-size:
+        70px;
+
+    opacity:
+        .45;
+
+    animation:
+        programCtaFloat
+        6s
+        ease-in-out
+        infinite
+        reverse;
+
+}
+
+
+@keyframes programCtaFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-12px)
+            rotate(8deg);
+
+    }
+
+}
+
+
+body[data-page="programs"] .program-cta-icon {
+
+    position:
+        relative;
+
+    z-index: 2;
+
+    font-size:
+        60px;
+
+    animation:
+        programLogoFloat
+        4s
+        ease-in-out
+        infinite;
+
+}
+
+
+body[data-page="programs"] .program-cta h2 {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    margin:
+        10px
+        0;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size:
+        45px;
+
+    line-height:
+        1.15;
+
+}
+
+
+body[data-page="programs"] .program-cta h2 span {
+
+    color:
+        #ef4f82;
+
+}
+
+
+body[data-page="programs"] .program-cta p {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    max-width:
+        550px;
+
+    margin:
+        0
+        auto
+        25px;
+
+    color:
+        #746d85;
+
+    line-height:
+        1.8;
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+body[data-page="programs"] .program-footer {
+
+    margin-top:
+        70px;
+
+    padding:
+        60px
+        0
+        0;
+
+    background:
+        #332c4d;
+
+    color:
+        white;
+
+}
+
+
+body[data-page="programs"] .program-footer-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+
+        1.5fr
+        1fr
+        1fr
+        1fr;
+
+    gap:
+        35px;
+
+}
+
+
+body[data-page="programs"] .program-footer-grid h3 {
+
+    margin-top: 0;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size:
+        22px;
+
+}
+
+
+body[data-page="programs"] .program-footer-grid p {
+
+    color:
+        #c5bed7;
+
+    line-height:
+        1.8;
+
+}
+
+
+body[data-page="programs"] .program-footer-grid a {
+
+    display:
+        block;
+
+    margin-bottom:
+        10px;
+
+    text-decoration:
+        none;
+
+    color:
+        #d7d1e6;
+
+    transition:
+        .2s;
+
+}
+
+
+body[data-page="programs"] .program-footer-grid a:hover {
+
+    color:
+        #83e0ad;
+
+    transform:
+        translateX(4px);
+
+}
+
+
+body[data-page="programs"] .program-footer-copy {
+
+    margin-top:
+        40px;
+
+    padding:
+        22px
+        15px;
+
+    text-align:
+        center;
+
+    color:
+        #aaa1be;
+
+    border-top:
+
+        1px
+        solid
+        rgba(
+            255,
+            255,
+            255,
+            .08
+        );
+
+}
+
+
+/* =====================================================
+   REVEAL ANIMATION
+===================================================== */
+
+body[data-page="programs"] .program-reveal {
+
+    opacity: 0;
+
+    transform:
+        translateY(35px);
+
+    transition:
+
+        1s
+        cubic-bezier(
+            .2,
+            .8,
+            .2,
+            1
+        );
+
+}
+
+
+body[data-page="programs"] .program-reveal.show {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+
+    body[data-page="programs"] .program-cards {
+
+        grid-template-columns:
+
+            repeat(
+                2,
+                1fr
+            );
+
+    }
+
+
+    body[data-page="programs"] .program-highlight {
+
+        grid-template-columns:
+            1fr;
+
+        text-align:
+            center;
+
+    }
+
+
+    body[data-page="programs"] .program-footer-grid {
+
+        grid-template-columns:
+
+            repeat(
+                2,
+                1fr
+            );
+
+    }
+
+
+    body[data-page="programs"] .program-nav-inner {
+
+        justify-content:
+            flex-start;
+
+        overflow-x:
+            auto;
+
+        scrollbar-width:
+            none;
+
+    }
+
+
+    body[data-page="programs"] .program-nav-inner::-webkit-scrollbar {
+
+        display:
+            none;
+
+    }
+
+
+    body[data-page="programs"] .program-nav a {
+
+        flex:
+            0
+            0
+            auto;
+
+    }
+
+}
+
+
+/* =====================================================
+   PREMIUM MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+
+    /* WRAPPER */
+
+    body[data-page="programs"] .program-wrap {
+
+        width:
+            calc(
+                100% - 30px
+            );
+
+    }
+
+
+    /* HEADER */
+
+    body[data-page="programs"] .program-head-inner {
+
+        min-height:
+            72px;
+
+    }
+
+
+    body[data-page="programs"] .program-logo {
+
+        width:
+            45px;
+
+        height:
+            45px;
+
+        border-radius:
+            15px;
+
+        font-size:
+            24px;
+
+    }
+
+
+    body[data-page="programs"] .program-brand h1 {
+
+        font-size:
+            19px;
+
+    }
+
+
+    body[data-page="programs"] .program-brand p {
+
+        font-size:
+            11px;
+
+    }
+
+
+    body[data-page="programs"] .program-call {
+
+        display:
+            none;
+
+    }
+
+
+    body[data-page="programs"] .program-btn {
+
+        padding:
+            10px
+            14px;
+
+        border-radius:
+            13px;
+
+        font-size:
+            12px;
+
+    }
+
+
+    /* NAVBAR */
+
+    body[data-page="programs"] .program-nav {
+
+        position:
+            sticky;
+
+        top: 0;
+
+        z-index:
+            100;
+
+        box-shadow:
+
+            0 8px 25px
+            rgba(
+                70,
+                50,
+                100,
+                .05
+            );
+
+    }
+
+
+    body[data-page="programs"] .program-nav-inner {
+
+        padding:
+            9px
+            10px;
+
+        gap:
+            7px;
+
+    }
+
+
+    body[data-page="programs"] .program-nav a {
+
+        flex-direction:
+            column;
+
+        gap:
+            3px;
+
+        min-width:
+            62px;
+
+        padding:
+            8px
+            9px;
+
+        font-size:
+            9px;
+
+        border-radius:
+            13px;
+
+    }
+
+
+    body[data-page="programs"] .program-nav .nav-icon {
+
+        font-size:
+            19px;
+
+    }
+
+
+    /* HERO */
+
+    body[data-page="programs"] .program-hero {
+
+        padding:
+            70px
+            0
+            75px;
+
+    }
+
+
+    body[data-page="programs"] .program-badge {
+
+        font-size:
+            12px;
+
+        padding:
+            9px
+            14px;
+
+    }
+
+
+    body[data-page="programs"] .program-hero h2 {
+
+        font-size:
+            50px;
+
+    }
+
+
+    body[data-page="programs"] .program-hero p {
+
+        font-size:
+            15px;
+
+        padding:
+            0
+            8px;
+
+    }
+
+
+    body[data-page="programs"] .program-orb-one {
+
+        width:
+            100px;
+
+        height:
+            100px;
+
+        left:
+            -35px;
+
+    }
+
+
+    body[data-page="programs"] .program-orb-two {
+
+        width:
+            80px;
+
+        height:
+            80px;
+
+        right:
+            -25px;
+
+    }
+
+
+    body[data-page="programs"] .program-orb-three {
+
+        width:
+            45px;
+
+        height:
+            45px;
+
+        left:
+            18%;
+
+    }
+
+
+    /* SECTION */
+
+    body[data-page="programs"] .program-section {
+
+        padding:
+            38px
+            0;
+
+    }
+
+
+    body[data-page="programs"] .program-section-heading {
+
+        margin-bottom:
+            25px;
+
+    }
+
+
+    body[data-page="programs"] .program-section-heading h2 {
+
+        font-size:
+            32px;
+
+    }
+
+
+    body[data-page="programs"] .program-section-heading p {
+
+        font-size:
+            14px;
+
+    }
+
+
+    /* CARDS */
+
+    body[data-page="programs"] .program-cards {
+
+        grid-template-columns:
+
+            1fr
+            1fr;
+
+        gap:
+            12px;
+
+    }
+
+
+    body[data-page="programs"] .program-card {
+
+        min-height:
+            auto;
+
+        padding:
+            20px
+            15px;
+
+        border-radius:
+            22px;
+
+    }
+
+
+    body[data-page="programs"] .program-card:hover {
+
+        transform:
+            translateY(-5px);
+
+    }
+
+
+    body[data-page="programs"] .program-number {
+
+        width:
+            28px;
+
+        height:
+            28px;
+
+        font-size:
+            10px;
+
+        margin-bottom:
+            12px;
+
+    }
+
+
+    body[data-page="programs"] .program-icon {
+
+        width:
+            58px;
+
+        height:
+            58px;
+
+        border-radius:
+            18px;
+
+        font-size:
+            29px;
+
+        margin-bottom:
+            14px;
+
+    }
+
+
+    body[data-page="programs"] .program-card h3 {
+
+        font-size:
+            18px;
+
+        line-height:
+            1.15;
+
+    }
+
+
+    body[data-page="programs"] .program-card p {
+
+        font-size:
+            12px;
+
+        line-height:
+            1.65;
+
+    }
+
+
+    /* HIGHLIGHT */
+
+    body[data-page="programs"] .program-highlight {
+
+        padding:
+            28px
+            20px;
+
+        border-radius:
+            27px;
+
+        gap:
+            22px;
+
+    }
+
+
+    body[data-page="programs"] .program-highlight-icon {
+
+        width:
+            110px;
+
+        height:
+            110px;
+
+        border-radius:
+            30px;
+
+        font-size:
+            52px;
+
+    }
+
+
+    body[data-page="programs"] .program-highlight h2 {
+
+        font-size:
+            31px;
+
+    }
+
+
+    body[data-page="programs"] .program-highlight p {
+
+        font-size:
+            14px;
+
+    }
+
+
+    body[data-page="programs"] .program-highlight::before {
+
+        font-size:
+            55px;
+
+    }
+
+
+    /* POSTS */
+
+    body[data-page="programs"] .posts-grid {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            15px;
+
+    }
+
+
+    body[data-page="programs"] .post-counter {
+
+        font-size:
+            13px;
+
+        padding:
+            10px
+            16px;
+
+    }
+
+
+    /* CTA */
+
+    body[data-page="programs"] .program-cta {
+
+        padding:
+            48px
+            20px;
+
+        border-radius:
+            28px;
+
+    }
+
+
+    body[data-page="programs"] .program-cta h2 {
+
+        font-size:
+            35px;
+
+    }
+
+
+    body[data-page="programs"] .program-cta p {
+
+        font-size:
+            14px;
+
+    }
+
+
+    body[data-page="programs"] .program-cta::before {
+
+        font-size:
+            40px;
+
+        left:
+            3%;
+
+    }
+
+
+    body[data-page="programs"] .program-cta::after {
+
+        font-size:
+            45px;
+
+        right:
+            3%;
+
+    }
+
+
+    /* FOOTER */
+
+    body[data-page="programs"] .program-footer {
+
+        margin-top:
+            45px;
+
+        padding-top:
+            45px;
+
+    }
+
+
+    body[data-page="programs"] .program-footer-grid {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            28px;
+
+        text-align:
+            center;
+
+    }
+
+
+    body[data-page="programs"] .program-footer-grid a:hover {
+
+        transform:
+            none;
+
+    }
+
+}
+
+
+/* =====================================================
+   HP KECIL
+===================================================== */
+
+@media (max-width: 480px) {
+
+
+    body[data-page="programs"] .program-wrap {
+
+        width:
+            calc(
+                100% - 24px
+            );
+
+    }
+
+
+    body[data-page="programs"] .program-brand h1 {
+
+        font-size:
+            17px;
+
+    }
+
+
+    body[data-page="programs"] .program-btn {
+
+        padding:
+            9px
+            11px;
+
+        font-size:
+            10px;
+
+    }
+
+
+    body[data-page="programs"] .program-hero {
+
+        padding:
+            60px
+            0;
+
+    }
+
+
+    body[data-page="programs"] .program-hero h2 {
+
+        font-size:
+            44px;
+
+    }
+
+
+    body[data-page="programs"] .program-cards {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            14px;
+
+    }
+
+
+    body[data-page="programs"] .program-card {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            65px
+            1fr;
+
+        column-gap:
+            15px;
+
+        align-items:
+            center;
+
+    }
+
+
+    body[data-page="programs"] .program-number {
+
+        display:
+            none;
+
+    }
+
+
+    body[data-page="programs"] .program-icon {
+
+        grid-row:
+            span 2;
+
+        margin:
+            0;
+
+    }
+
+
+    body[data-page="programs"] .program-card h3 {
+
+        margin:
+            0
+            0
+            5px;
+
+    }
+
+}
+
+
+/* =====================================================
+   REDUCE MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    body[data-page="programs"] *,
+    body[data-page="programs"]::before,
+    body[data-page="programs"]::after {
+
+        animation-duration:
+            .01ms
+            !important;
+
+        animation-iteration-count:
+            1
+            !important;
+
+        transition-duration:
+            .01ms
+            !important;
+
+    }
+
+}
+
+</style>
 
 </head>
 
@@ -23,53 +2796,64 @@
 <body data-page="programs">
 
 
-    <!-- =====================================================
-         HEADER
-    ===================================================== -->
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
-    <div class="top">
+<header class="program-header">
 
-        <header class="head wrap">
+    <div class="program-wrap program-head-inner">
 
 
-            <!-- BRAND -->
+        <a
+            href="index.html"
+            class="program-brand"
+        >
 
-            <a
-                class="brand"
-                href="index.html"
-            >
+            <div class="program-logo">
+                ☀️
+            </div>
 
-                <div class="sun">
-                    ☀️
+
+            <div>
+
+                <h1>
+
+                    RA Miftahul
+
+                    <span>
+                        Hikmah
+                    </span>
+
+                </h1>
+
+
+                <p>
+                    Tangerang 💗
+                </p>
+
+            </div>
+
+        </a>
+
+
+
+        <div class="program-header-right">
+
+
+            <div class="program-call">
+
+                <div class="program-call-icon">
+                    📞
                 </div>
 
-                <div>
-
-                    <h1>
-                        Ra Miftahul
-                        <span>Hikmah</span>
-                    </h1>
-
-                    <p>
-                        Tangerang 💗
-                    </p>
-
-                </div>
-
-            </a>
-
-
-            <!-- CONTACT -->
-
-            <div class="call">
-
-                ⌕
 
                 <div>
 
                     <small>
-                        Call Us
+                        Hubungi Kami
                     </small>
+
 
                     <b>
                         +62 813-9875-4451
@@ -80,367 +2864,500 @@
             </div>
 
 
-            <!-- BOOK A VISIT -->
-
-            <a
-                class="btn"
-                href="contact.html"
-            >
-                Book a Visit
-            </a>
-
-        </header>
-
-
-        <!-- =================================================
-             RAINBOW NAVBAR
-        ================================================= -->
-
-        <nav class="rainbow-nav">
-
-
-            <!-- HOME -->
-
-            <a
-                href="index.html"
-                class="rainbow-item pink"
-            >
-
-                <span class="rainbow-icon">
-                    🏠
-                </span>
-
-                <span class="rainbow-text">
-                    HOME
-                </span>
-
-                <span class="sparkle">
-                    ✦
-                </span>
-
-            </a>
-
-
-            <!-- ABOUT -->
-
-            <a
-                href="about.html"
-                class="rainbow-item blue"
-            >
-
-                <span class="rainbow-icon">
-                    👥
-                </span>
-
-                <span class="rainbow-text">
-                    ABOUT
-                </span>
-
-                <span class="sparkle">
-                    ✦
-                </span>
-
-            </a>
-
-
-            <!-- PROGRAMS -->
-
-            <a
-                href="programs.html"
-                class="rainbow-item green active"
-            >
-
-                <span class="rainbow-icon">
-                    📚
-                </span>
-
-                <span class="rainbow-text">
-                    PROGRAMS
-                </span>
-
-                <span class="sparkle">
-                    ✦
-                </span>
-
-            </a>
-
-
-            <!-- CLASSES -->
-
-            <a
-                href="classes.html"
-                class="rainbow-item yellow"
-            >
-
-                <span class="rainbow-icon">
-                    🎓
-                </span>
-
-                <span class="rainbow-text">
-                    CLASSES
-                </span>
-
-                <span class="sparkle">
-                    ✦
-                </span>
-
-            </a>
-
-
-            <!-- BLOG -->
-
-            <a
-                href="blog.html"
-                class="rainbow-item orange"
-            >
-
-                <span class="rainbow-icon">
-                    🖍️
-                </span>
-
-                <span class="rainbow-text">
-                    BLOG
-                </span>
-
-                <span class="sparkle">
-                    ✦
-                </span>
-
-            </a>
-
-
-            <!-- GALLERY -->
-
-            <a
-                href="gallery.html"
-                class="rainbow-item purple"
-            >
-
-                <span class="rainbow-icon">
-                    🖼️
-                </span>
-
-                <span class="rainbow-text">
-                    GALLERY
-                </span>
-
-                <span class="sparkle">
-                    ✦
-                </span>
-
-            </a>
-
-
-            <!-- PARENTS -->
-
-            <a
-                href="parents.html"
-                class="rainbow-item pink2"
-            >
-
-                <span class="rainbow-icon">
-                    💛
-                </span>
-
-                <span class="rainbow-text">
-                    PARENTS
-                </span>
-
-                <span class="sparkle">
-                    ✦
-                </span>
-
-            </a>
-
-
-            <!-- CONTACT -->
-
             <a
                 href="contact.html"
-                class="rainbow-item blue2"
+                class="program-btn"
             >
 
-                <span class="rainbow-icon">
-                    ✉️
-                </span>
+                📅
 
-                <span class="rainbow-text">
-                    CONTACT
-                </span>
-
-                <span class="sparkle">
-                    ✦
-                </span>
+                Book Visit
 
             </a>
 
 
-        </nav>
+        </div>
+
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<nav class="program-nav">
+
+    <div class="program-wrap program-nav-inner">
+
+
+        <a href="index.html">
+
+            <span class="nav-icon">
+                🏠
+            </span>
+
+            HOME
+
+        </a>
+
+
+        <a href="about.html">
+
+            <span class="nav-icon">
+                👥
+            </span>
+
+            ABOUT
+
+        </a>
+
+
+        <a
+            href="programs.html"
+            class="active"
+        >
+
+            <span class="nav-icon">
+                📚
+            </span>
+
+            PROGRAMS
+
+        </a>
+
+
+        <a href="classes.html">
+
+            <span class="nav-icon">
+                🎓
+            </span>
+
+            CLASSES
+
+        </a>
+
+
+        <a href="blog.html">
+
+            <span class="nav-icon">
+                🖍️
+            </span>
+
+            BLOG
+
+        </a>
+
+
+        <a href="gallery.html">
+
+            <span class="nav-icon">
+                🖼️
+            </span>
+
+            GALLERY
+
+        </a>
+
+
+        <a href="parents.html">
+
+            <span class="nav-icon">
+                💛
+            </span>
+
+            PARENTS
+
+        </a>
+
+
+        <a href="contact.html">
+
+            <span class="nav-icon">
+                ✉️
+            </span>
+
+            CONTACT
+
+        </a>
+
+
+    </div>
+
+</nav>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="program-hero">
+
+
+    <div class="program-orb program-orb-one"></div>
+
+    <div class="program-orb program-orb-two"></div>
+
+    <div class="program-orb program-orb-three"></div>
+
+
+    <div class="program-wrap program-hero-content">
+
+
+        <div class="program-badge">
+
+            ✨
+
+            Belajar Sambil Bermain
+
+        </div>
+
+
+        <h2>
+
+            Our
+
+            <span>
+                Programs
+            </span>
+
+            📚
+
+        </h2>
+
+
+        <p>
+
+            Program belajar yang menyenangkan,
+            kreatif dan penuh pengalaman baru
+            untuk membantu anak tumbuh dan
+            berkembang dengan bahagia.
+
+        </p>
+
 
     </div>
 
 
-    <!-- =====================================================
-         PAGE HERO
-    ===================================================== -->
+</section>
 
-    <section class="pagehero">
 
-        <div class="wrap">
+
+<!-- =====================================================
+     PROGRAM CARDS
+===================================================== -->
+
+<section class="program-section">
+
+
+    <div class="program-wrap">
+
+
+        <div class="program-section-heading program-reveal">
 
             <h2>
 
-                Our
-                <span>Programs</span>
-                📚
+                Explore Our
+
+                <span>
+                    Programs
+                </span>
+
+                🌈
 
             </h2>
 
+
             <p>
 
-                Program belajar menyenangkan
-                untuk anak-anak.
+                Setiap program dirancang untuk
+                membantu anak belajar, bermain,
+                bereksplorasi dan menemukan
+                potensi terbaiknya.
 
             </p>
 
         </div>
 
-    </section>
 
 
-    <!-- =====================================================
-         PROGRAM CARDS
-    ===================================================== -->
-
-    <section class="section wrap">
-
-        <div class="cards">
+        <div class="program-cards">
 
 
             <!-- ART -->
 
-            <div class="card reveal">
+            <div class="program-card program-reveal">
 
-                <h3>
-                    🎨 Art & Creativity
-                </h3>
+                <div class="program-number">
+                    01
+                </div>
 
-                <div class="round">
+
+                <div class="program-icon">
                     🎨
                 </div>
 
-                <p>
 
-                    Mengembangkan kreativitas anak
-                    melalui menggambar, mewarnai
-                    dan membuat karya.
+                <div>
 
-                </p>
+                    <h3>
+                        Art & Creativity
+                    </h3>
+
+
+                    <p>
+
+                        Mengembangkan kreativitas anak
+                        melalui menggambar, mewarnai,
+                        bermain warna dan membuat
+                        berbagai karya menarik.
+
+                    </p>
+
+                </div>
+
 
             </div>
+
 
 
             <!-- SMART LEARNING -->
 
-            <div class="card reveal">
+            <div class="program-card program-reveal">
 
-                <h3>
-                    🔢 Smart Learning
-                </h3>
+                <div class="program-number">
+                    02
+                </div>
 
-                <div class="round">
+
+                <div class="program-icon">
                     🔢
                 </div>
 
-                <p>
 
-                    Belajar angka, huruf, bentuk
-                    dan kemampuan dasar melalui
-                    permainan.
+                <div>
 
-                </p>
+                    <h3>
+                        Smart Learning
+                    </h3>
+
+
+                    <p>
+
+                        Belajar angka, huruf, bentuk
+                        dan kemampuan dasar melalui
+                        permainan yang seru dan
+                        mudah dipahami anak.
+
+                    </p>
+
+                </div>
+
 
             </div>
+
 
 
             <!-- NATURE -->
 
-            <div class="card reveal">
+            <div class="program-card program-reveal">
 
-                <h3>
-                    🌱 Nature Explorer
-                </h3>
+                <div class="program-number">
+                    03
+                </div>
 
-                <div class="round">
+
+                <div class="program-icon">
                     🌱
                 </div>
 
-                <p>
 
-                    Mengenalkan anak pada alam
-                    dan lingkungan melalui
-                    kegiatan eksplorasi.
+                <div>
 
-                </p>
+                    <h3>
+                        Nature Explorer
+                    </h3>
+
+
+                    <p>
+
+                        Mengenalkan anak pada alam,
+                        lingkungan dan berbagai
+                        pengalaman eksplorasi yang
+                        menyenangkan.
+
+                    </p>
+
+                </div>
+
 
             </div>
+
 
 
             <!-- MUSIC -->
 
-            <div class="card reveal">
+            <div class="program-card program-reveal">
 
-                <h3>
-                    🎵 Music & Movement
-                </h3>
+                <div class="program-number">
+                    04
+                </div>
 
-                <div class="round">
+
+                <div class="program-icon">
                     🎵
                 </div>
 
-                <p>
 
-                    Bernyanyi, menari dan bergerak
-                    untuk meningkatkan kepercayaan diri.
+                <div>
 
-                </p>
+                    <h3>
+                        Music & Movement
+                    </h3>
+
+
+                    <p>
+
+                        Bernyanyi, menari dan bergerak
+                        untuk meningkatkan ekspresi,
+                        koordinasi dan kepercayaan diri.
+
+                    </p>
+
+                </div>
+
 
             </div>
 
 
         </div>
 
-    </section>
+
+    </div>
 
 
-    <!-- =====================================================
-         POSTINGAN PROGRAM DARI SUPABASE
-    ===================================================== -->
-
-    <section class="section wrap">
+</section>
 
 
-        <div class="section-title">
 
-            <h2>
+<!-- =====================================================
+     HIGHLIGHT
+===================================================== -->
 
-                Program
-                <span>Terbaru</span>
-                🚀
+<section class="program-section">
 
-            </h2>
 
-            <p>
+    <div class="program-wrap">
 
-                Lihat informasi, kegiatan dan
-                program terbaru dari sekolah.
 
-            </p>
+        <div class="program-highlight program-reveal">
+
+
+            <div class="program-highlight-icon">
+                🌈
+            </div>
+
+
+            <div class="program-highlight-content">
+
+
+                <div class="program-mini-label">
+
+                    ✨ BELAJAR DENGAN BAHAGIA
+
+                </div>
+
+
+                <h2>
+
+                    Setiap Hari Adalah
+
+                    <span>
+                        Petualangan Baru!
+                    </span>
+
+                </h2>
+
+
+                <p>
+
+                    Kami percaya anak-anak belajar
+                    dengan lebih baik ketika mereka
+                    merasa aman, bahagia dan bebas
+                    untuk bereksplorasi.
+
+                </p>
+
+
+                <br>
+
+
+                <a
+                    href="pendaftaran.html"
+                    class="program-btn"
+                >
+
+                    Mulai Bergabung
+
+                    →
+
+                </a>
+
+
+            </div>
+
 
         </div>
 
 
-        <!-- COUNTER -->
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     POSTS
+===================================================== -->
+
+<section class="program-section">
+
+
+    <div class="program-wrap">
+
+
+        <div class="program-section-heading program-reveal">
+
+            <h2>
+
+                Program
+
+                <span>
+                    Terbaru
+                </span>
+
+                🚀
+
+            </h2>
+
+
+            <p>
+
+                Lihat informasi, kegiatan dan
+                program terbaru dari
+                RA Miftahul Hikmah.
+
+            </p>
+
+
+        </div>
+
+
 
         <div class="post-counter">
 
@@ -453,7 +3370,6 @@
         </div>
 
 
-        <!-- POSTINGAN -->
 
         <div
             id="postsContainer"
@@ -461,27 +3377,39 @@
         ></div>
 
 
-    </section>
+    </div>
 
 
-    <!-- =====================================================
-         CTA
-    ===================================================== -->
-
-    <section class="section wrap">
-
-        <div class="box reveal">
+</section>
 
 
-            <div class="big">
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section class="program-section">
+
+
+    <div class="program-wrap">
+
+
+        <div class="program-cta program-reveal">
+
+
+            <div class="program-cta-icon">
                 🌈
             </div>
 
 
-            <h2 class="title">
+            <h2>
 
                 Yuk,
-                <span>Kenali Program Kami!</span>
+
+                <span>
+                    Kenali Program Kami!
+                </span>
+
                 💗
 
             </h2>
@@ -490,162 +3418,299 @@
             <p>
 
                 Temukan program belajar yang
-                menyenangkan dan sesuai dengan
-                kebutuhan perkembangan anak.
+                menyenangkan dan sesuai untuk
+                membantu perkembangan anak
+                setiap hari.
 
             </p>
 
 
-            <br>
-
-
             <a
                 href="pendaftaran.html"
-                class="btn"
+                class="program-btn"
             >
-                Daftar Sekarang 🚀
+
+                🚀
+
+                Daftar Sekarang
+
             </a>
 
 
         </div>
 
-    </section>
+
+    </div>
 
 
-    <!-- =====================================================
-         FOOTER
-    ===================================================== -->
-
-    <footer class="footer">
+</section>
 
 
-        <div class="footgrid wrap">
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="program-footer">
 
 
-            <!-- BRAND -->
-
-            <div>
-
-                <h3>
-
-                    ☀️ KINDER
-
-                    <span style="color:#ef4f82">
-                        GARTEN
-                    </span>
-
-                </h3>
+    <div class="program-wrap program-footer-grid">
 
 
-                <p>
-                    Where Little Minds Bloom 💗
-                </p>
+        <!-- BRAND -->
 
-            </div>
+        <div>
 
+            <h3>
 
-            <!-- QUICK LINKS -->
+                ☀️ RA MIFTAHUL
 
-            <div>
+                <span style="color:#ff86ad">
 
-                <h3>
-                    Quick Links
-                </h3>
+                    HIKMAH
 
+                </span>
 
-                <a href="about.html">
-                    About Us
-                </a>
+            </h3>
 
 
-                <a href="programs.html">
-                    Programs
-                </a>
+            <p>
+
+                Tempat belajar yang menyenangkan
+                untuk membantu anak-anak tumbuh,
+                berkembang dan bersinar.
+
+            </p>
 
 
-                <a href="classes.html">
-                    Classes
-                </a>
+            <p>
+
+                🌈 Where Little Minds Bloom
+
+            </p>
+
+        </div>
 
 
-                <a href="gallery.html">
-                    Gallery
-                </a>
+
+        <!-- MENU -->
+
+        <div>
+
+            <h3>
+                Menu
+            </h3>
 
 
-                <a href="contact.html">
-                    Contact Us
-                </a>
-
-            </div>
+            <a href="about.html">
+                About Us
+            </a>
 
 
-            <!-- CONTACT -->
-
-            <div>
-
-                <h3>
-                    Contact Us
-                </h3>
+            <a href="programs.html">
+                Programs
+            </a>
 
 
-                <p>
-                    ☎ +62 813-9875-4451
-                </p>
+            <a href="classes.html">
+                Classes
+            </a>
 
 
-                <p>
-                    ✉ info@kindergarten.com
-                </p>
-
-
-                <p>
-                    📍 Tangerang, Indonesia
-                </p>
-
-            </div>
+            <a href="gallery.html">
+                Gallery
+            </a>
 
 
         </div>
 
 
-        <!-- COPYRIGHT -->
 
-        <div class="copy wrap">
+        <!-- CONTACT -->
 
-            © 2026 Ra Miftahul Hikmah.
-            All rights reserved.
+        <div>
+
+            <h3>
+                Contact
+            </h3>
+
+
+            <p>
+                📞 +62 813-9875-4451
+            </p>
+
+
+            <p>
+                ✉️ info@ramiftahulhikmah.com
+            </p>
+
+
+            <p>
+                📍 Tangerang, Indonesia
+            </p>
+
 
         </div>
 
 
-    </footer>
+
+        <!-- SOCIAL -->
+
+        <div>
+
+            <h3>
+                Follow Us
+            </h3>
 
 
-    <!-- =====================================================
-         JAVASCRIPT
-    ===================================================== -->
+            <p style="font-size:28px">
+
+                📘
+
+                📸
+
+                ▶️
+
+            </p>
 
 
-    <!-- SUPABASE -->
+            <p>
 
-    <script
-        src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
-    ></script>
+                Ikuti kegiatan terbaru
+                kami melalui media sosial.
 
-
-    <!-- WEBSITE SCRIPT -->
-
-    <script
-        src="js/script.js"
-    ></script>
+            </p>
 
 
-    <!-- SISTEM POSTING SUPABASE -->
+        </div>
 
-    <script
-        src="js/posts.js"
-    ></script>
+
+    </div>
+
+
+
+    <div class="program-footer-copy">
+
+        © 2026 RA Miftahul Hikmah.
+        All Rights Reserved. 💗
+
+    </div>
+
+
+</footer>
+
+
+
+<!-- =====================================================
+     SUPABASE
+===================================================== -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+></script>
+
+
+
+<!-- =====================================================
+     SCRIPT WEBSITE
+===================================================== -->
+
+<script
+    src="js/script.js"
+></script>
+
+
+
+<!-- =====================================================
+     SCRIPT POSTS
+===================================================== -->
+
+<script
+    src="js/posts.js"
+></script>
+
+
+
+<!-- =====================================================
+     REVEAL ANIMATION
+===================================================== -->
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+
+        const elements =
+
+            document.querySelectorAll(
+                ".program-reveal"
+            );
+
+
+        const observer =
+
+            new IntersectionObserver(
+
+                function (entries) {
+
+
+                    entries.forEach(
+
+                        function (entry) {
+
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+
+                                entry.target.classList.add(
+                                    "show"
+                                );
+
+
+                            }
+
+
+                        }
+
+                    );
+
+
+                },
+
+                {
+
+                    threshold:
+                        0.12,
+
+                    rootMargin:
+                        "0px 0px -40px 0px"
+
+                }
+
+            );
+
+
+        elements.forEach(
+
+            function (element) {
+
+                observer.observe(
+                    element
+                );
+
+            }
+
+        );
+
+
+    }
+);
+
+</script>
 
 
 </body>
