@@ -22,10 +22,23 @@
             scroll-behavior: smooth;
         }
 
+        html,
         body {
+            width: 100%;
+            max-width: 100%;
             margin: 0;
-            overflow-x: hidden;
+            padding: 0;
+            overflow-x: hidden !important;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
             background: #fffaf4;
+            color: #355b6d;
+        }
+
+        img {
+            max-width: 100%;
         }
 
 
@@ -59,7 +72,6 @@
             display: flex;
             align-items: center;
             gap: 8px;
-
             min-width: 0;
         }
 
@@ -183,7 +195,6 @@
         .kiddoz-logo-text {
             display: flex;
             flex-direction: column;
-
             line-height: 1.05;
         }
 
@@ -207,7 +218,7 @@
 
 
         /* =========================================================
-           MENU — HORIZONTAL
+           MENU
            ========================================================= */
 
         .kiddoz-menu {
@@ -263,15 +274,12 @@
 
         .kiddoz-menu a:hover {
             color: #ef5b88;
-
             background: #fff0f5;
-
             transform: translateY(-2px);
         }
 
         .kiddoz-menu a.active {
             color: #ef5b88;
-
             background: #fff0f5;
         }
 
@@ -293,7 +301,6 @@
 
         .kiddoz-menu-icon {
             margin-right: 4px;
-
             font-size: 12px;
         }
 
@@ -354,7 +361,7 @@
 
 
         /* =========================================================
-           NAVBAR DECORATION
+           NAV DECORATION
            ========================================================= */
 
         .kiddoz-header::before {
@@ -388,7 +395,9 @@
         }
 
         @keyframes navFloat {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translateY(0) rotate(0);
             }
 
@@ -487,7 +496,9 @@
         }
 
         @keyframes heroGlow {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: scale(1);
                 opacity: .7;
             }
@@ -552,7 +563,9 @@
         }
 
         @keyframes cloudOne {
-            0%,100% {
+
+            0%,
+            100% {
                 transform: translate(0,0);
             }
 
@@ -562,7 +575,9 @@
         }
 
         @keyframes cloudTwo {
-            0%,100% {
+
+            0%,
+            100% {
                 transform: translate(0,0);
             }
 
@@ -572,7 +587,9 @@
         }
 
         @keyframes cloudThree {
-            0%,100% {
+
+            0%,
+            100% {
                 transform: translateY(0);
             }
 
@@ -638,7 +655,9 @@
         }
 
         @keyframes starMove {
-            0%,100% {
+
+            0%,
+            100% {
                 opacity: .3;
                 transform: scale(.75) rotate(0);
             }
@@ -703,7 +722,9 @@
         }
 
         @keyframes bubbleMove {
-            0%,100% {
+
+            0%,
+            100% {
                 transform:
                     translateY(0)
                     scale(1);
@@ -739,6 +760,10 @@
             align-items: center;
 
             gap: 55px;
+        }
+
+        .hero-content {
+            min-width: 0;
         }
 
         .hero-welcome {
@@ -935,11 +960,15 @@
             align-items: center;
 
             gap: 7px;
+
+            min-width: 0;
         }
 
         .stat-icon {
             width: 37px;
             height: 37px;
+
+            flex: 0 0 37px;
 
             display: grid;
             place-items: center;
@@ -973,6 +1002,8 @@
         .stat-line {
             width: 1px;
             height: 34px;
+
+            flex: 0 0 1px;
 
             background:
                 rgba(80,130,150,.20);
@@ -1045,6 +1076,7 @@
             display: block;
 
             width: 100%;
+            height: auto;
 
             aspect-ratio: .95;
 
@@ -1296,7 +1328,32 @@
 
 
         /* =========================================================
-           RESPONSIVE TABLET
+           OTHER SECTIONS
+           ========================================================= */
+
+        .why {
+            width: 100%;
+        }
+
+        .welcome-img {
+            width: 100%;
+            overflow: hidden;
+            border-radius: 20px;
+        }
+
+        .welcome-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .gallery-banner {
+            overflow: hidden;
+        }
+
+
+        /* =========================================================
+           TABLET
            ========================================================= */
 
         @media (max-width: 1150px) {
@@ -1343,15 +1400,18 @@
         @media (max-width: 800px) {
 
             .top {
-                padding: 10px;
+                padding: 9px;
             }
 
             .kiddoz-navbar {
-                min-height: 62px;
+                width: 100% !important;
+                max-width: 100% !important;
 
-                padding: 8px;
+                min-height: 60px;
 
-                gap: 7px;
+                padding: 7px;
+
+                gap: 6px;
 
                 border-radius: 18px;
 
@@ -1359,34 +1419,42 @@
             }
 
             .kiddoz-logo {
-                flex: 0 0 auto !important;
+                width: 42px !important;
+                max-width: 42px !important;
+
+                flex: 0 0 42px !important;
+
+                overflow: hidden;
             }
 
             .kiddoz-logo-icon {
-                width: 42px;
-                height: 42px;
+                width: 40px;
+                height: 40px;
 
-                flex-basis: 42px;
+                flex-basis: 40px;
 
-                font-size: 20px;
+                font-size: 19px;
             }
 
             .kiddoz-logo-text {
-                display: none;
+                display: none !important;
             }
 
             .kiddoz-menu {
-                flex: 1 1 auto !important;
+                flex: 1 1 0 !important;
+
+                width: 0 !important;
 
                 min-width: 0 !important;
 
-                justify-content:
-                    flex-start !important;
+                justify-content: flex-start !important;
 
                 overflow-x: auto !important;
                 overflow-y: hidden !important;
 
-                scrollbar-width: none;
+                scrollbar-width: none !important;
+
+                -webkit-overflow-scrolling: touch;
             }
 
             .kiddoz-menu::-webkit-scrollbar {
@@ -1394,11 +1462,23 @@
             }
 
             .kiddoz-menu a {
+                display: inline-flex !important;
+
                 flex: 0 0 auto !important;
 
-                height: 38px;
+                height: 37px;
 
                 padding: 0 9px;
+
+                font-size: 10px;
+
+                min-width: max-content !important;
+            }
+
+            .kiddoz-menu-icon {
+                display: inline !important;
+
+                margin-right: 3px;
 
                 font-size: 10px;
             }
@@ -1406,62 +1486,354 @@
             .kiddoz-register {
                 flex: 0 0 auto !important;
 
-                min-width: 102px;
+                min-width: 96px;
 
                 height: 40px;
 
-                padding: 0 10px;
+                padding: 0 9px;
+
+                border-radius: 20px;
 
                 font-size: 9px;
             }
 
-            .announcement {
-                justify-content:
-                    flex-start;
 
-                overflow: hidden;
+            /* announcement */
+
+            .announcement {
+                min-height: 40px;
+
+                padding: 7px 10px;
+
+                gap: 6px;
+
+                justify-content: center;
+            }
+
+            .announcement-icon,
+            .announcement-content strong,
+            #announcementButton {
+                display: none !important;
+            }
+
+            .announcement-content {
+                width: 100%;
+
+                justify-content: center;
+
+                text-align: center;
             }
 
             .announcement-content span {
-                white-space: nowrap;
+                width: 100%;
 
                 overflow: hidden;
 
                 text-overflow: ellipsis;
+
+                white-space: nowrap;
+
+                font-size: 10px;
             }
 
+
+            /* hero */
+
             .hero-wow {
+                min-height: auto;
+
                 padding:
-                    60px 20px 100px;
+                    45px 15px 75px;
             }
 
             .hero-container {
+                width: 100%;
+
                 grid-template-columns: 1fr;
 
-                gap: 30px;
+                gap: 20px;
             }
 
             .hero-content {
+                width: 100%;
+
                 text-align: center;
 
                 display: flex;
+
                 flex-direction: column;
 
                 align-items: center;
             }
 
-            .hero-description {
-                margin: auto;
+            .hero-welcome {
+                max-width: 100%;
+
+                padding: 8px 11px;
+
+                font-size: 8px;
+
+                text-align: center;
             }
 
-            .hero-motto,
-            .hero-buttons,
-            .hero-stats {
-                justify-content: center;
+            .hero-tags {
+                margin-top: 14px;
+
+                gap: 7px;
+
+                font-size: 8px;
             }
+
+            .hero-title {
+                width: 100%;
+
+                margin:
+                    12px 0 14px;
+
+                font-size:
+                    clamp(32px,9.5vw,43px);
+
+                line-height: 1.08;
+
+                letter-spacing: -1px;
+
+                text-align: center;
+            }
+
+            .hero-description {
+                width: 100%;
+
+                max-width: 500px;
+
+                margin: 0 auto;
+
+                font-size: 12px;
+
+                line-height: 1.7;
+
+                text-align: center;
+            }
+
+            .hero-motto {
+                justify-content: center;
+
+                gap: 6px;
+
+                margin-top: 15px;
+            }
+
+            .hero-motto span {
+                padding: 7px 9px;
+
+                font-size: 8px;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+
+                gap: 8px;
+
+                margin-top: 21px;
+            }
+
+            .hero-btn {
+                padding: 11px 13px;
+
+                border-radius: 14px;
+
+                font-size: 10px;
+            }
+
+
+            /* stats */
+
+            .hero-stats {
+                width: 100%;
+
+                justify-content: center;
+
+                gap: 7px;
+
+                margin-top: 20px;
+            }
+
+            .hero-stat {
+                gap: 4px;
+            }
+
+            .stat-icon {
+                width: 29px;
+                height: 29px;
+
+                flex-basis: 29px;
+
+                border-radius: 9px;
+
+                font-size: 12px;
+            }
+
+            .hero-stat strong {
+                font-size: 12px;
+            }
+
+            .hero-stat span {
+                font-size: 6px;
+            }
+
+            .stat-line {
+                height: 25px;
+            }
+
+
+            /* visual */
 
             .hero-visual {
-                min-height: 430px;
+                width: 100%;
+
+                min-height: 315px;
+
+                margin-top: 2px;
+            }
+
+            .visual-circle {
+                width: min(290px,82vw);
+
+                height: min(290px,82vw);
+            }
+
+            .hero-kids {
+                width: min(82vw,330px);
+
+                max-width: 330px;
+
+                padding: 8px;
+
+                border-radius:
+                    40% 40% 24% 24%;
+            }
+
+            .hero-kids img {
+                width: 100%;
+
+                height: auto;
+
+                aspect-ratio: .95;
+
+                object-fit: cover;
+            }
+
+            .hero-badge {
+                padding: 7px 10px;
+
+                border-radius: 15px;
+
+                font-size: 8px;
+            }
+
+            .badge-top {
+                top: 10px;
+
+                right: 2%;
+            }
+
+            .badge-bottom {
+                bottom: 15px;
+
+                left: 2%;
+            }
+
+
+            /* features */
+
+            .features-wow {
+                width: calc(100% - 22px);
+
+                max-width: 500px;
+
+                margin:
+                    -27px auto 45px;
+
+                grid-template-columns: 1fr;
+
+                gap: 13px;
+            }
+
+            .feature-card {
+                width: 100%;
+
+                min-height: 245px;
+
+                padding: 19px 16px;
+
+                border-radius: 22px;
+            }
+
+            .feature-icon-circle {
+                width: 62px;
+                height: 62px;
+
+                margin: 7px auto 12px;
+            }
+
+            .feature-icon-big {
+                font-size: 26px;
+            }
+
+            .feature-card h3 {
+                font-size: 16px;
+            }
+
+            .feature-card p {
+                font-size: 10px;
+            }
+
+            .feature-btn {
+                font-size: 10px;
+            }
+
+
+            /* general */
+
+            .section {
+                width: calc(100% - 22px);
+
+                max-width: 500px;
+
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .why {
+                grid-template-columns: 1fr !important;
+            }
+
+            .welcome {
+                grid-template-columns: 1fr !important;
+            }
+
+            .news,
+            .news-box {
+                width: 100% !important;
+
+                max-width: 100% !important;
+
+                min-width: 0 !important;
+            }
+
+            .gallery-banner-grid {
+                width: calc(100% - 22px);
+
+                max-width: 500px;
+
+                grid-template-columns: 1fr !important;
+            }
+
+            .footgrid {
+                width: calc(100% - 25px);
+
+                max-width: 500px;
+
+                grid-template-columns: 1fr !important;
             }
         }
 
@@ -1470,74 +1842,69 @@
            HP KECIL
            ========================================================= */
 
-        @media (max-width: 600px) {
+        @media (max-width: 380px) {
 
-            .announcement {
-                padding: 7px 10px;
-
-                gap: 7px;
+            .top {
+                padding: 7px;
             }
 
-            .announcement-icon {
-                display: none;
+            .kiddoz-navbar {
+                padding: 6px;
             }
 
-            .announcement-content strong {
-                display: none;
+            .kiddoz-menu a {
+                padding: 0 7px;
+
+                font-size: 9px;
             }
 
-            #announcementButton {
-                display: none !important;
+            .kiddoz-register {
+                min-width: 82px;
+
+                padding: 0 6px;
+
+                font-size: 8px;
+            }
+
+            .hero-wow {
+                padding-left: 11px;
+                padding-right: 11px;
             }
 
             .hero-title {
-                font-size: 39px;
-
-                letter-spacing: -1.3px;
+                font-size: 31px;
             }
 
             .hero-description {
-                font-size: 13px;
+                font-size: 11px;
+            }
+
+            .hero-btn {
+                padding: 10px 11px;
+
+                font-size: 9px;
             }
 
             .hero-visual {
-                min-height: 365px;
-            }
-
-            .visual-circle {
-                width: 300px;
-                height: 300px;
+                min-height: 290px;
             }
 
             .hero-kids {
-                width: 90%;
+                width: min(80vw,300px);
             }
 
-            .features-wow {
-                width:
-                    calc(100% - 26px);
-
-                grid-template-columns: 1fr;
-
-                margin-top: -38px;
+            .hero-stat strong {
+                font-size: 11px;
             }
 
-            .feature-card {
-                min-height: 285px;
-            }
-
-            .hero-stats {
-                gap: 10px;
-            }
-
-            .stat-line {
-                height: 28px;
+            .hero-stat span {
+                font-size: 5.5px;
             }
         }
 
 
         /* =========================================================
-           MUSIC BUTTON
+           MUSIC
            ========================================================= */
 
         .music-button {
@@ -1571,6 +1938,36 @@
 
         .music-button:hover {
             transform: scale(1.08);
+        }
+
+        @media (max-width:600px) {
+
+            .music-button {
+                width: 43px;
+                height: 43px;
+
+                right: 12px;
+                bottom: 12px;
+
+                font-size: 18px;
+            }
+        }
+
+
+        /* =========================================================
+           REDUCED MOTION
+           ========================================================= */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                scroll-behavior: auto !important;
+                transition-duration: .01ms !important;
+            }
         }
     </style>
 </head>
@@ -1745,7 +2142,17 @@
 
                     </a>
 
-<a href="login.html" class="rainbow-item">🔐 Login</a>
+                    <a
+                        href="login.html"
+                        class="kiddoz-menu-login">
+
+                        <span class="kiddoz-menu-icon">
+                            🔐
+                        </span>
+
+                        Login
+
+                    </a>
 
                 </div>
 
@@ -1783,6 +2190,7 @@
             ☁️
         </div>
 
+
         <div class="hero-star star-1">
             ✦
         </div>
@@ -1803,6 +2211,7 @@
             ✦
         </div>
 
+
         <div class="hero-circle circle-1"></div>
         <div class="hero-circle circle-2"></div>
         <div class="hero-circle circle-3"></div>
@@ -1815,6 +2224,7 @@
                 <div class="hero-welcome">
                     ✨ WELCOME TO RA MIFTAHUL HIKMAH ✨
                 </div>
+
 
                 <div class="hero-tags">
 
@@ -1829,6 +2239,7 @@
                     <span>GROW</span>
 
                 </div>
+
 
                 <h1 class="hero-title">
 
@@ -1847,6 +2258,7 @@
                     Anak Hebat! 🌈
 
                 </h1>
+
 
                 <p class="hero-description">
 
@@ -1871,6 +2283,7 @@
 
                 </p>
 
+
                 <div class="hero-motto">
 
                     <span>
@@ -1887,6 +2300,7 @@
 
                 </div>
 
+
                 <div class="hero-buttons">
 
                     <a
@@ -1895,7 +2309,9 @@
 
                         🎒 Daftar Sekarang
 
-                        <span>→</span>
+                        <span>
+                            →
+                        </span>
 
                     </a>
 
@@ -1905,11 +2321,14 @@
 
                         ✨ Kenal Lebih Dekat
 
-                        <span>→</span>
+                        <span>
+                            →
+                        </span>
 
                     </a>
 
                 </div>
+
 
                 <div class="hero-stats">
 
@@ -1933,7 +2352,9 @@
 
                     </div>
 
+
                     <div class="stat-line"></div>
+
 
                     <div class="hero-stat">
 
@@ -1955,7 +2376,9 @@
 
                     </div>
 
+
                     <div class="stat-line"></div>
+
 
                     <div class="hero-stat">
 
@@ -1986,6 +2409,7 @@
 
                 <div class="visual-circle"></div>
 
+
                 <div class="hero-badge badge-top">
 
                     🌈
@@ -1995,6 +2419,7 @@
                     </span>
 
                 </div>
+
 
                 <div class="hero-badge badge-bottom">
 
@@ -2006,11 +2431,14 @@
 
                 </div>
 
+
                 <div class="hero-kids">
 
                     <img
                         src="images/anak2.jpg"
-                        alt="Anak-anak Ra Miftahul Hikmah">
+                        alt="Anak-anak Ra Miftahul Hikmah"
+                        loading="eager"
+                        onerror="this.onerror=null;this.src='images/anak-anak.jpg';">
 
                 </div>
 
@@ -2026,6 +2454,7 @@
          ========================================================= -->
 
     <section class="features-wow">
+
 
         <div class="feature-card feature-blue">
 
@@ -2066,7 +2495,9 @@
 
                 Read More
 
-                <span>→</span>
+                <span>
+                    →
+                </span>
 
             </a>
 
@@ -2116,7 +2547,9 @@
 
                 Read More
 
-                <span>→</span>
+                <span>
+                    →
+                </span>
 
             </a>
 
@@ -2166,7 +2599,9 @@
 
                 Read More
 
-                <span>→</span>
+                <span>
+                    →
+                </span>
 
             </a>
 
@@ -2216,7 +2651,9 @@
 
                 Read More
 
-                <span>→</span>
+                <span>
+                    →
+                </span>
 
             </a>
 
@@ -2249,6 +2686,7 @@
 
             </div>
 
+
             <div class="item">
 
                 <span class="emoji">
@@ -2264,6 +2702,7 @@
                 Experienced Teachers
 
             </div>
+
 
             <div class="item">
 
@@ -2281,6 +2720,7 @@
 
             </div>
 
+
             <div class="item">
 
                 <span class="emoji">
@@ -2296,6 +2736,7 @@
                 Creative Learning Programs
 
             </div>
+
 
             <div class="item">
 
@@ -2324,28 +2765,37 @@
 
     <section class="section wrap welcome">
 
+
         <div class="reveal">
 
             <h2 class="title">
                 Welcome to Our Kindergarten!
-                <span>♡</span>
+                <span>
+                    ♡
+                </span>
             </h2>
+
 
             <div class="welcome-img">
 
                 <img
                     src="images/anak-anak.jpg"
-                    alt="Anak-anak Ra Miftahul Hikmah">
+                    alt="Anak-anak Ra Miftahul Hikmah"
+                    loading="lazy">
 
             </div>
 
+
             <p>
+
                 We provide a loving and engaging environment
                 where children develop a lifelong love for learning.
 
                 Our programs focus on creativity, curiosity and
                 confidence through play-based education.
+
             </p>
+
 
             <a
                 class="btn"
@@ -2370,7 +2820,9 @@
 
             </h2>
 
+
             <div class="news">
+
 
                 <div class="news-box">
 
@@ -2431,6 +2883,7 @@
 
                 </div>
 
+
             </div>
 
         </div>
@@ -2445,6 +2898,7 @@
     <section class="gallery-banner">
 
         <div class="gallery-banner-grid wrap">
+
 
             <div class="reveal">
 
@@ -2470,11 +2924,13 @@
 
             </div>
 
+
             <div class="reveal">
 
                 <div class="gallery-arc"></div>
 
             </div>
+
 
         </div>
 
@@ -2488,6 +2944,7 @@
     <footer class="footer">
 
         <div class="footgrid wrap">
+
 
             <div>
 
@@ -2574,6 +3031,7 @@
 
             </div>
 
+
         </div>
 
     </footer>
@@ -2589,7 +3047,7 @@
 
 
     <!-- =========================================================
-         SUPABASE
+         SUPABASE ANNOUNCEMENT
          ========================================================= -->
 
     <script>
@@ -2601,24 +3059,17 @@
                 const SUPABASE_URL =
                     "https://ervhwjrlqcsobawwhkpf.supabase.co";
 
-                /*
-                   MASUKKAN KEMBALI PUBLISHABLE KEY
-                   YANG SUDAH ADA DI FILE LAMA KAMU.
-                */
-
                 const SUPABASE_KEY =
                     "sb_publishable_u48E-Q-RjdFRFLC_Cv3rmg_gD0Z3y2K";
 
 
                 if (
                     !window.supabase ||
-                    !SUPABASE_KEY ||
-                    SUPABASE_KEY ===
-                    "sb_publishable_u48E-Q-RjdFRFLC_Cv3rmg_gD0Z3y2K"
+                    !SUPABASE_KEY
                 ) {
 
                     console.warn(
-                        "Publishable key Supabase belum diisi."
+                        "Supabase belum tersedia."
                     );
 
                     return;
@@ -2645,82 +3096,99 @@
 
                 async function loadAnnouncement() {
 
-                    const {
-                        data,
-                        error
-                    } =
-                        await supabaseClient
-                            .from("announcements")
-                            .select(
-                                "id,title,content,button_text,button_link,active,created_at"
-                            )
-                            .eq(
-                                "active",
-                                true
-                            )
-                            .order(
-                                "created_at",
-                                {
-                                    ascending: false
-                                }
-                            )
-                            .limit(1)
-                            .maybeSingle();
+                    try {
+
+                        const {
+                            data,
+                            error
+                        } =
+                            await supabaseClient
+                                .from("announcements")
+                                .select(
+                                    "id,title,content,button_text,button_link,active,created_at"
+                                )
+                                .eq(
+                                    "active",
+                                    true
+                                )
+                                .order(
+                                    "created_at",
+                                    {
+                                        ascending: false
+                                    }
+                                )
+                                .limit(1)
+                                .maybeSingle();
 
 
-                    if (error) {
+                        if (error) {
+
+                            console.error(
+                                "Gagal mengambil pengumuman:",
+                                error
+                            );
+
+                            announcementText.textContent =
+                                "Pendaftaran siswa baru Tahun Ajaran 2026/2027 telah dibuka!";
+
+                            announcementButton.textContent =
+                                "Daftar Sekarang 🚀";
+
+                            announcementButton.href =
+                                "pendaftaran.html";
+
+                            announcementButton.style.display =
+                                "inline-flex";
+
+                            return;
+                        }
+
+
+                        if (!data) {
+
+                            announcementText.textContent =
+                                "Belum ada pengumuman terbaru.";
+
+                            announcementButton.style.display =
+                                "none";
+
+                            return;
+                        }
+
+
+                        announcementText.textContent =
+                            data.content ||
+                            data.title ||
+                            "Ada pengumuman terbaru.";
+
+
+                        announcementButton.textContent =
+                            data.button_text ||
+                            "Daftar Sekarang 🚀";
+
+
+                        announcementButton.href =
+                            data.button_link ||
+                            "pendaftaran.html";
+
+
+                        announcementButton.style.display =
+                            "inline-flex";
+
+                    } catch (error) {
 
                         console.error(
-                            "Gagal mengambil pengumuman:",
+                            "Announcement error:",
                             error
                         );
 
                         announcementText.textContent =
                             "Pendaftaran siswa baru Tahun Ajaran 2026/2027 telah dibuka!";
 
-                        announcementButton.textContent =
-                            "Daftar Sekarang 🚀";
-
                         announcementButton.href =
                             "pendaftaran.html";
 
-                        announcementButton.style.display =
-                            "inline-flex";
-
-                        return;
                     }
-
-
-                    if (!data) {
-
-                        announcementText.textContent =
-                            "Belum ada pengumuman terbaru.";
-
-                        announcementButton.style.display =
-                            "none";
-
-                        return;
-                    }
-
-
-                    announcementText.textContent =
-                        data.content ||
-                        data.title ||
-                        "Ada pengumuman terbaru.";
-
-
-                    announcementButton.textContent =
-                        data.button_text ||
-                        "Daftar Sekarang 🚀";
-
-
-                    announcementButton.href =
-                        data.button_link ||
-                        "pendaftaran.html";
-
-
-                    announcementButton.style.display =
-                        "inline-flex";
 
                 }
 
@@ -2738,7 +3206,9 @@
                             table: "announcements"
                         },
                         function () {
+
                             loadAnnouncement();
+
                         }
                     )
                     .subscribe();
@@ -2835,8 +3305,10 @@
 
 
                         const length =
-                            audioContext.sampleRate *
-                            duration;
+                            Math.floor(
+                                audioContext.sampleRate *
+                                duration
+                            );
 
 
                         const impulse =
