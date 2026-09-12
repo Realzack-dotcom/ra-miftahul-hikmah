@@ -15,15 +15,7 @@
     </title>
 
 
-    <!-- CSS UTAMA WEBSITE -->
-
-    <link
-        rel="stylesheet"
-        href="css/style.css"
-    >
-
-
-    <!-- GOOGLE FONT -->
+    <!-- FONT -->
 
     <link
         rel="preconnect"
@@ -37,7 +29,7 @@
     >
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800;900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet"
     >
 
@@ -45,134 +37,209 @@
 <style>
 
 /* =====================================================
-   ABOUT US PREMIUM
    RA MIFTAHUL HIKMAH
+   ABOUT US - TOTAL PREMIUM REBUILD
+   MOBILE FIRST
 ===================================================== */
 
 
-/* ================= RESET KHUSUS ABOUT ================= */
+/* =====================================================
+   RESET KHUSUS ABOUT
+===================================================== */
+
+* {
+
+    box-sizing:
+        border-box;
+
+}
+
+
+html {
+
+    scroll-behavior:
+        smooth;
+
+}
+
 
 body[data-page="about"] {
 
-    margin: 0;
+    margin:
+        0;
 
-    overflow-x: hidden;
+    min-width:
+        0;
+
+    overflow-x:
+        hidden;
 
     font-family:
         "Nunito",
         sans-serif;
 
+    color:
+        #342d4c;
+
     background:
 
         linear-gradient(
-            135deg,
-            #fff7fb 0%,
-            #f5f0ff 35%,
-            #eff8ff 70%,
-            #fff9e8 100%
+            180deg,
+            #fff9fc 0%,
+            #f9f5ff 25%,
+            #f4fbff 55%,
+            #fffaf2 100%
         );
-
-    color: #30294b;
 
 }
 
 
-/* ================= ANIMATED BACKGROUND ================= */
+body[data-page="about"] a {
 
-body[data-page="about"]::before {
+    -webkit-tap-highlight-color:
+        transparent;
 
-    content: "";
+}
 
-    position: fixed;
 
-    width: 420px;
+body[data-page="about"] button {
 
-    height: 420px;
+    font-family:
+        inherit;
 
-    border-radius: 50%;
+}
+
+
+
+/* =====================================================
+   ANIMATED BACKGROUND
+===================================================== */
+
+.au-bg {
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    pointer-events:
+        none;
+
+    overflow:
+        hidden;
+
+    z-index:
+        -5;
+
+}
+
+
+.au-bg::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        300px;
+
+    height:
+        300px;
+
+    border-radius:
+        50%;
+
+    top:
+        8%;
+
+    left:
+        -130px;
 
     background:
+        rgba(255, 139, 184, .20);
 
-        radial-gradient(
-            circle,
-            rgba(255, 130, 180, .22),
-            rgba(255, 130, 180, 0)
-        );
-
-    top: -120px;
-
-    left: -120px;
-
-    filter: blur(20px);
+    filter:
+        blur(55px);
 
     animation:
-
-        aboutBlobOne
-        12s
-        ease-in-out
-        infinite;
-
-    z-index: -2;
+        auBlobOne 12s ease-in-out infinite;
 
 }
 
 
-body[data-page="about"]::after {
+.au-bg::after {
 
-    content: "";
+    content:
+        "";
 
-    position: fixed;
+    position:
+        absolute;
 
-    width: 500px;
+    width:
+        320px;
 
-    height: 500px;
+    height:
+        320px;
 
-    border-radius: 50%;
+    border-radius:
+        50%;
+
+    bottom:
+        5%;
+
+    right:
+        -160px;
 
     background:
+        rgba(126, 189, 255, .22);
 
-        radial-gradient(
-            circle,
-            rgba(120, 200, 255, .20),
-            rgba(120, 200, 255, 0)
-        );
-
-    bottom: -180px;
-
-    right: -150px;
-
-    filter: blur(25px);
+    filter:
+        blur(60px);
 
     animation:
-
-        aboutBlobTwo
-        15s
-        ease-in-out
-        infinite;
-
-    z-index: -2;
+        auBlobTwo 14s ease-in-out infinite;
 
 }
 
 
-@keyframes aboutBlobOne {
+.au-bg-dot {
 
-    0% {
+    position:
+        absolute;
 
-        transform:
-            translate(0, 0)
-            scale(1);
+    width:
+        180px;
 
-    }
+    height:
+        180px;
 
-    50% {
+    border-radius:
+        50%;
 
-        transform:
-            translate(120px, 80px)
-            scale(1.2);
+    top:
+        42%;
 
-    }
+    right:
+        -80px;
 
+    background:
+        rgba(185, 145, 255, .14);
+
+    filter:
+        blur(35px);
+
+    animation:
+        auBlobThree 10s ease-in-out infinite;
+
+}
+
+
+@keyframes auBlobOne {
+
+    0%,
     100% {
 
         transform:
@@ -181,32 +248,53 @@ body[data-page="about"]::after {
 
     }
 
-}
-
-
-@keyframes aboutBlobTwo {
-
-    0% {
-
-        transform:
-            translate(0, 0)
-            scale(1);
-
-    }
-
     50% {
 
         transform:
-            translate(-100px, -80px)
+            translate(100px, 80px)
             scale(1.25);
 
     }
 
+}
+
+
+@keyframes auBlobTwo {
+
+    0%,
     100% {
 
         transform:
             translate(0, 0)
             scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            translate(-90px, -100px)
+            scale(1.2);
+
+    }
+
+}
+
+
+@keyframes auBlobThree {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-80px);
 
     }
 
@@ -218,16 +306,15 @@ body[data-page="about"]::after {
    CONTAINER
 ===================================================== */
 
-body[data-page="about"] .about-wrap {
+.au-container {
 
-    width: min(
-        1180px,
-        calc(100% - 40px)
-    );
+    width:
+        min(
+            1180px,
+            calc(100% - 32px)
+        );
 
     margin:
-
-        0
         auto;
 
 }
@@ -238,149 +325,131 @@ body[data-page="about"] .about-wrap {
    HEADER
 ===================================================== */
 
-body[data-page="about"] .about-header {
+.au-header {
 
-    position: relative;
+    position:
+        relative;
 
-    z-index: 20;
+    z-index:
+        100;
+
+    width:
+        100%;
 
     background:
-
-        rgba(
-            255,
-            255,
-            255,
-            .72
-        );
+        rgba(255, 255, 255, .78);
 
     backdrop-filter:
-
         blur(20px);
 
     -webkit-backdrop-filter:
-
         blur(20px);
 
     border-bottom:
-
-        1px
-        solid
-        rgba(
-            255,
-            255,
-            255,
-            .8
-        );
+        1px solid rgba(255,255,255,.9);
 
 }
 
 
-body[data-page="about"] .about-head-inner {
+.au-header-inner {
 
-    min-height: 90px;
+    min-height:
+        72px;
 
     display:
-
         flex;
 
     align-items:
-
         center;
 
     justify-content:
-
         space-between;
 
-    gap: 20px;
+    gap:
+        12px;
 
 }
 
 
-/* BRAND */
+.au-brand {
 
-body[data-page="about"] .about-brand {
-
-    text-decoration:
-
-        none;
+    min-width:
+        0;
 
     display:
-
         flex;
 
     align-items:
-
         center;
 
-    gap: 12px;
+    gap:
+        10px;
 
-    color: #30294b;
+    text-decoration:
+        none;
+
+    color:
+        #342d4c;
 
 }
 
 
-body[data-page="about"] .about-logo {
+.au-logo {
 
-    width: 55px;
+    flex:
+        0 0 auto;
 
-    height: 55px;
+    width:
+        46px;
 
-    border-radius: 18px;
+    height:
+        46px;
 
     display:
-
         grid;
 
     place-items:
-
         center;
 
-    font-size: 30px;
+    border-radius:
+        15px;
+
+    font-size:
+        24px;
 
     background:
 
         linear-gradient(
             135deg,
-            #fff3a7,
-            #ffd0e3,
-            #cdefff
+            #fff1a8,
+            #ffd5e5,
+            #d6efff
         );
 
     box-shadow:
-
-        0 10px 30px
-        rgba(
-            239,
-            79,
-            130,
-            .18
-        );
+        0 8px 25px rgba(239,79,130,.18);
 
     animation:
-
-        logoFloat
-        4s
-        ease-in-out
-        infinite;
+        auLogoFloat 4s ease-in-out infinite;
 
 }
 
 
-@keyframes logoFloat {
+@keyframes auLogoFloat {
 
     0%,
     100% {
 
         transform:
             translateY(0)
-            rotate(0deg);
+            rotate(0);
 
     }
 
     50% {
 
         transform:
-            translateY(-5px)
+            translateY(-4px)
             rotate(5deg);
 
     }
@@ -388,342 +457,501 @@ body[data-page="about"] .about-logo {
 }
 
 
-body[data-page="about"] .about-brand h1 {
+.au-brand-text {
 
-    margin: 0;
+    min-width:
+        0;
+
+}
+
+
+.au-brand h1 {
+
+    margin:
+        0;
 
     font-family:
-
         "Baloo 2",
         cursive;
 
-    font-size: 25px;
+    font-size:
+        18px;
 
-    font-weight: 800;
+    line-height:
+        1;
 
-    line-height: 1;
+    font-weight:
+        800;
+
+    white-space:
+        nowrap;
 
 }
 
 
-body[data-page="about"] .about-brand h1 span {
+.au-brand h1 span {
 
-    color: #ef4f82;
+    color:
+        #ef4f82;
 
 }
 
 
-body[data-page="about"] .about-brand p {
+.au-brand p {
 
     margin:
+        4px 0 0;
 
-        6px
-        0
-        0;
+    color:
+        #817991;
 
-    font-size: 13px;
-
-    color: #817a99;
+    font-size:
+        10px;
 
 }
 
 
-/* HEADER ACTION */
-
-body[data-page="about"] .about-header-right {
+.au-header-actions {
 
     display:
-
         flex;
 
     align-items:
-
         center;
 
-    gap: 15px;
+    gap:
+        8px;
 
 }
 
 
-body[data-page="about"] .about-call {
+.au-phone {
 
     display:
-
-        flex;
-
-    align-items:
-
-        center;
-
-    gap: 10px;
+        none;
 
 }
 
 
-body[data-page="about"] .call-icon {
-
-    width: 42px;
-
-    height: 42px;
-
-    border-radius: 50%;
+.au-visit {
 
     display:
-
-        grid;
-
-    place-items:
-
-        center;
-
-    background:
-
-        #fff;
-
-    box-shadow:
-
-        0 8px 20px
-        rgba(
-            74,
-            55,
-            120,
-            .08
-        );
-
-}
-
-
-body[data-page="about"] .about-call small {
-
-    display: block;
-
-    color: #958da8;
-
-}
-
-
-body[data-page="about"] .about-call b {
-
-    font-size: 14px;
-
-}
-
-
-/* BUTTON */
-
-body[data-page="about"] .about-btn {
-
-    display:
-
         inline-flex;
 
     align-items:
-
         center;
 
     justify-content:
-
         center;
 
-    gap: 8px;
-
-    border:
-
-        none;
+    gap:
+        5px;
 
     text-decoration:
-
         none;
 
-    color: white;
+    color:
+        white;
 
-    font-weight: 800;
+    font-size:
+        11px;
+
+    font-weight:
+        800;
+
+    white-space:
+        nowrap;
 
     padding:
+        10px 13px;
 
-        13px
-        22px;
-
-    border-radius: 16px;
+    border-radius:
+        13px;
 
     background:
 
         linear-gradient(
             135deg,
             #ef4f82,
-            #ff7ca5
+            #ff7da7
         );
 
     box-shadow:
-
-        0 12px 25px
-        rgba(
-            239,
-            79,
-            130,
-            .25
-        );
+        0 9px 20px rgba(239,79,130,.25);
 
     transition:
-
-        .3s
-        ease;
+        .25s ease;
 
 }
 
 
-body[data-page="about"] .about-btn:hover {
+.au-visit:active {
 
     transform:
-
-        translateY(-4px);
-
-    box-shadow:
-
-        0 18px 35px
-        rgba(
-            239,
-            79,
-            130,
-            .35
-        );
+        scale(.96);
 
 }
 
 
 
 /* =====================================================
-   PREMIUM NAVBAR
+   MOBILE NAVBAR
 ===================================================== */
 
-body[data-page="about"] .about-nav {
+.au-nav {
 
-    position: relative;
+    position:
+        sticky;
 
-    z-index: 15;
+    top:
+        0;
+
+    z-index:
+        99;
 
     background:
-
-        rgba(
-            255,
-            255,
-            255,
-            .85
-        );
+        rgba(255,255,255,.92);
 
     backdrop-filter:
+        blur(20px);
 
-        blur(18px);
+    -webkit-backdrop-filter:
+        blur(20px);
 
     border-bottom:
+        1px solid rgba(120,90,180,.08);
 
-        1px
-        solid
-        rgba(
-            100,
-            80,
-            150,
-            .06
-        );
+    box-shadow:
+        0 7px 25px rgba(70,50,100,.05);
 
 }
 
 
-body[data-page="about"] .about-nav-inner {
+.au-nav-inner {
+
+    width:
+        min(
+            1180px,
+            calc(100% - 20px)
+        );
+
+    margin:
+        auto;
 
     display:
-
         flex;
 
     align-items:
+        stretch;
 
+    gap:
+        6px;
+
+    padding:
+        8px 0;
+
+    overflow-x:
+        auto;
+
+    scrollbar-width:
+        none;
+
+}
+
+
+.au-nav-inner::-webkit-scrollbar {
+
+    display:
+        none;
+
+}
+
+
+.au-nav-link {
+
+    flex:
+        0 0 auto;
+
+    min-width:
+        62px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
         center;
 
     justify-content:
-
         center;
 
-    gap: 8px;
+    gap:
+        3px;
 
     padding:
-
-        10px
-        0;
-
-}
-
-
-body[data-page="about"] .about-nav a {
+        8px 9px;
 
     text-decoration:
-
         none;
 
-    color: #5c5670;
+    color:
+        #6f687d;
 
-    display:
+    border-radius:
+        14px;
 
-        flex;
+    font-size:
+        9px;
 
-    align-items:
-
-        center;
-
-    gap: 7px;
-
-    padding:
-
-        10px
-        15px;
-
-    border-radius: 14px;
-
-    font-size: 13px;
-
-    font-weight: 800;
+    font-weight:
+        900;
 
     transition:
-
-        .25s
-        ease;
+        .25s ease;
 
 }
 
 
-body[data-page="about"] .about-nav a:hover {
-
-    background:
-
-        #f5f1ff;
+.au-nav-link:active {
 
     transform:
-
-        translateY(-2px);
+        scale(.94);
 
 }
 
 
-body[data-page="about"] .about-nav a.active {
+.au-nav-link .au-nav-icon {
 
-    color: white;
+    font-size:
+        19px;
+
+    line-height:
+        1;
+
+}
+
+
+.au-nav-link.active {
+
+    color:
+        white;
 
     background:
 
         linear-gradient(
             135deg,
-            #7d6cff,
-            #a27dff
+            #7b6cff,
+            #a47fff
         );
 
     box-shadow:
+        0 7px 18px rgba(125,108,255,.25);
 
-        0 8px 20px
-        rgba(
-            125,
-            108,
-            255,
-            .25
-        );
+}
+
+
+.au-more-wrap {
+
+    flex:
+        0 0 auto;
+
+    position:
+        relative;
+
+}
+
+
+.au-more-button {
+
+    height:
+        100%;
+
+    min-width:
+        72px;
+
+    border:
+        none;
+
+    cursor:
+        pointer;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        3px;
+
+    padding:
+        8px 10px;
+
+    border-radius:
+        14px;
+
+    background:
+        #f5f2fb;
+
+    color:
+        #6b617b;
+
+    font-family:
+        inherit;
+
+    font-size:
+        9px;
+
+    font-weight:
+        900;
+
+}
+
+
+.au-more-button span:first-child {
+
+    font-size:
+        18px;
+
+}
+
+
+.au-more-menu {
+
+    position:
+        fixed;
+
+    top:
+        138px;
+
+    left:
+        16px;
+
+    right:
+        16px;
+
+    z-index:
+        300;
+
+    display:
+        none;
+
+    overflow:
+        hidden;
+
+    border-radius:
+        22px;
+
+    background:
+        rgba(255,255,255,.97);
+
+    backdrop-filter:
+        blur(20px);
+
+    box-shadow:
+        0 20px 55px rgba(57,40,90,.18);
+
+    border:
+        1px solid rgba(255,255,255,.9);
+
+    transform:
+        translateY(-10px);
+
+    opacity:
+        0;
+
+    transition:
+        .25s ease;
+
+}
+
+
+.au-more-menu.open {
+
+    display:
+        block;
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+.au-more-title {
+
+    padding:
+        16px 18px;
+
+    font-size:
+        14px;
+
+    font-weight:
+        900;
+
+    color:
+        #4a405e;
+
+    border-bottom:
+        1px solid #f0edf5;
+
+}
+
+
+.au-more-menu a {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        13px;
+
+    padding:
+        15px 18px;
+
+    text-decoration:
+        none;
+
+    color:
+        #665e72;
+
+    font-size:
+        14px;
+
+    font-weight:
+        800;
+
+    border-bottom:
+        1px solid #f5f2f7;
+
+}
+
+
+.au-more-menu a:last-child {
+
+    border-bottom:
+        none;
+
+}
+
+
+.au-more-menu a:active {
+
+    background:
+        #faf7ff;
 
 }
 
@@ -733,262 +961,253 @@ body[data-page="about"] .about-nav a.active {
    HERO
 ===================================================== */
 
-body[data-page="about"] .about-hero {
+.au-hero {
 
-    position: relative;
+    position:
+        relative;
 
-    overflow: hidden;
+    overflow:
+        hidden;
 
     padding:
-
-        100px
-        0
-        110px;
+        68px 0 72px;
 
 }
 
 
-body[data-page="about"] .hero-orb {
+.au-hero::before {
 
-    position: absolute;
+    content:
+        "";
 
-    border-radius: 50%;
+    position:
+        absolute;
 
-    filter:
+    width:
+        180px;
 
-        blur(1px);
+    height:
+        180px;
 
-    opacity: .7;
+    border-radius:
+        50%;
 
-}
+    top:
+        15px;
 
-
-body[data-page="about"] .orb-one {
-
-    width: 160px;
-
-    height: 160px;
-
-    top: 30px;
-
-    left: 8%;
+    left:
+        -80px;
 
     background:
 
         linear-gradient(
             135deg,
-            #ffd3e2,
-            #ffe9a8
+            rgba(255,174,203,.5),
+            rgba(255,231,158,.45)
         );
 
     animation:
-
-        orbFloat
-        7s
-        ease-in-out
-        infinite;
+        auHeroOrb 8s ease-in-out infinite;
 
 }
 
 
-body[data-page="about"] .orb-two {
+.au-hero::after {
 
-    width: 100px;
+    content:
+        "";
 
-    height: 100px;
+    position:
+        absolute;
 
-    right: 10%;
+    width:
+        140px;
 
-    bottom: 30px;
+    height:
+        140px;
+
+    border-radius:
+        50%;
+
+    right:
+        -55px;
+
+    bottom:
+        20px;
 
     background:
 
         linear-gradient(
             135deg,
-            #b8e8ff,
-            #ded0ff
+            rgba(151,220,255,.45),
+            rgba(204,171,255,.4)
         );
 
     animation:
-
-        orbFloat
-        9s
-        ease-in-out
-        infinite
-        reverse;
+        auHeroOrb 10s ease-in-out infinite reverse;
 
 }
 
 
-@keyframes orbFloat {
+@keyframes auHeroOrb {
 
     0%,
     100% {
 
         transform:
-            translateY(0);
+            translate(0,0)
+            rotate(0);
 
     }
 
     50% {
 
         transform:
-            translateY(-25px);
+            translate(15px,-25px)
+            rotate(20deg);
 
     }
 
 }
 
 
-body[data-page="about"] .hero-content {
+.au-hero-content {
 
-    position: relative;
+    position:
+        relative;
 
-    z-index: 2;
+    z-index:
+        2;
 
-    text-align: center;
+    text-align:
+        center;
 
 }
 
 
-body[data-page="about"] .hero-badge {
+.au-hero-badge {
 
     display:
-
         inline-flex;
 
     align-items:
-
         center;
 
-    gap: 8px;
+    gap:
+        7px;
 
     padding:
+        9px 14px;
 
-        10px
-        16px;
+    margin-bottom:
+        17px;
 
-    border-radius: 50px;
+    border-radius:
+        50px;
 
     background:
+        rgba(255,255,255,.75);
 
-        rgba(
-            255,
-            255,
-            255,
-            .75
-        );
+    border:
+        1px solid rgba(255,255,255,.95);
 
     box-shadow:
+        0 10px 30px rgba(80,60,120,.08);
 
-        0 10px 30px
-        rgba(
-            70,
-            50,
-            110,
-            .08
-        );
+    font-size:
+        12px;
 
-    font-size: 14px;
+    font-weight:
+        900;
 
-    font-weight: 800;
-
-    margin-bottom: 20px;
+    color:
+        #7b668c;
 
     animation:
-
-        heroFade
-        .8s
-        ease
-        both;
+        auHeroUp .8s ease both;
 
 }
 
 
-body[data-page="about"] .about-hero h2 {
+.au-hero h2 {
 
-    margin: 0;
+    margin:
+        0;
 
     font-family:
-
         "Baloo 2",
         cursive;
 
     font-size:
+        clamp(48px, 15vw, 70px);
 
-        clamp(
-            48px,
-            7vw,
-            82px
-        );
+    line-height:
+        .95;
 
-    line-height: 1;
-
-    font-weight: 800;
+    font-weight:
+        800;
 
     animation:
-
-        heroFade
-        1s
-        ease
-        .1s
-        both;
+        auHeroUp .9s ease .1s both;
 
 }
 
 
-body[data-page="about"] .about-hero h2 span {
+.au-hero h2 span {
 
-    color: #ef4f82;
+    color:
+        #ef4f82;
+
+    text-shadow:
+        0 8px 25px rgba(239,79,130,.18);
 
 }
 
 
-body[data-page="about"] .about-hero p {
+.au-hero p {
 
-    max-width: 600px;
+    max-width:
+        500px;
 
     margin:
+        18px auto 0;
 
-        20px
-        auto
-        0;
+    padding:
+        0 8px;
 
-    font-size: 18px;
+    color:
+        #766d84;
 
-    line-height: 1.7;
+    font-size:
+        14px;
 
-    color: #746d85;
+    line-height:
+        1.75;
 
     animation:
-
-        heroFade
-        1s
-        ease
-        .25s
-        both;
+        auHeroUp 1s ease .2s both;
 
 }
 
 
-@keyframes heroFade {
+@keyframes auHeroUp {
 
     from {
 
-        opacity: 0;
+        opacity:
+            0;
 
         transform:
-
             translateY(25px);
 
     }
 
     to {
 
-        opacity: 1;
+        opacity:
+            1;
 
         transform:
-
             translateY(0);
 
     }
@@ -998,166 +1217,244 @@ body[data-page="about"] .about-hero p {
 
 
 /* =====================================================
-   SECTION
+   SECTIONS
 ===================================================== */
 
-body[data-page="about"] .about-section {
+.au-section {
 
-    position: relative;
+    position:
+        relative;
 
     padding:
-
-        55px
-        0;
+        38px 0;
 
 }
 
 
-body[data-page="about"] .section-heading {
+.au-heading {
 
-    text-align: center;
+    text-align:
+        center;
 
-    margin-bottom: 35px;
+    margin-bottom:
+        25px;
 
 }
 
 
-body[data-page="about"] .section-heading span {
+.au-heading-badge {
 
     display:
-
         inline-block;
 
-    color: #ef4f82;
+    margin-bottom:
+        9px;
+
+    padding:
+        7px 13px;
+
+    border-radius:
+        30px;
+
+    background:
+        rgba(255,255,255,.65);
+
+    color:
+        #9b78d8;
+
+    font-size:
+        10px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .5px;
 
 }
 
 
-body[data-page="about"] .section-heading h2 {
+.au-heading h2 {
 
     margin:
-
-        0
-        0
-        12px;
+        0 0 10px;
 
     font-family:
-
         "Baloo 2",
         cursive;
 
     font-size:
+        32px;
 
-        clamp(
-            30px,
-            5vw,
-            45px
-        );
+    line-height:
+        1.08;
 
-    line-height: 1.1;
+    font-weight:
+        800;
+
+    color:
+        #3a304e;
 
 }
 
 
-body[data-page="about"] .section-heading p {
+.au-heading h2 span {
 
-    max-width: 600px;
+    color:
+        #ef4f82;
+
+}
+
+
+.au-heading p {
+
+    max-width:
+        550px;
 
     margin:
-
         auto;
 
-    color: #7d758b;
+    color:
+        #7c7489;
 
-    line-height: 1.7;
+    font-size:
+        13px;
+
+    line-height:
+        1.7;
 
 }
 
 
 
 /* =====================================================
-   WELCOME SECTION
+   STORY
 ===================================================== */
 
-body[data-page="about"] .about-story {
+.au-story {
 
     display:
-
         grid;
 
     grid-template-columns:
-
-        1fr
         1fr;
 
-    gap: 55px;
-
-    align-items:
-
-        center;
+    gap:
+        28px;
 
 }
 
 
-body[data-page="about"] .story-image-card {
+.au-story-image {
 
-    position: relative;
+    position:
+        relative;
 
-    padding: 10px;
+    padding:
+        7px;
 
-    border-radius: 32px;
+    border-radius:
+        26px;
 
     background:
-
-        rgba(
-            255,
-            255,
-            255,
-            .65
-        );
+        rgba(255,255,255,.72);
 
     box-shadow:
-
-        0 25px 60px
-        rgba(
-            77,
-            55,
-            130,
-            .12
-        );
+        0 20px 50px rgba(68,49,110,.12);
 
 }
 
 
-body[data-page="about"] .story-image-card::before {
+.au-story-image::before {
 
-    content: "🌈";
+    content:
+        "🌈";
 
-    position: absolute;
+    position:
+        absolute;
 
-    font-size: 45px;
+    z-index:
+        3;
 
-    top: -22px;
+    top:
+        -20px;
 
-    right: -10px;
+    right:
+        5px;
+
+    font-size:
+        37px;
 
     animation:
-
-        emojiFloat
-        4s
-        ease-in-out
-        infinite;
+        auFloatEmoji 4s ease-in-out infinite;
 
 }
 
 
-@keyframes emojiFloat {
+.au-story-image::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    z-index:
+        2;
+
+    width:
+        75px;
+
+    height:
+        75px;
+
+    border-radius:
+        50%;
+
+    bottom:
+        -20px;
+
+    left:
+        -15px;
+
+    background:
+        rgba(255,214,105,.35);
+
+    filter:
+        blur(5px);
+
+}
+
+
+.au-story-image img {
+
+    display:
+        block;
+
+    width:
+        100%;
+
+    height:
+        auto;
+
+    aspect-ratio:
+        4 / 3;
+
+    object-fit:
+        cover;
+
+    border-radius:
+        21px;
+
+}
+
+
+@keyframes auFloatEmoji {
 
     0%,
     100% {
 
         transform:
-
             translateY(0)
             rotate(0);
 
@@ -1166,101 +1463,159 @@ body[data-page="about"] .story-image-card::before {
     50% {
 
         transform:
-
-            translateY(-10px)
-            rotate(8deg);
+            translateY(-9px)
+            rotate(7deg);
 
     }
 
 }
 
 
-body[data-page="about"] .story-image-card img {
+.au-story-text {
 
-    display: block;
-
-    width: 100%;
-
-    aspect-ratio:
-
-        4
-        /
-        3;
-
-    object-fit: cover;
-
-    border-radius: 25px;
+    text-align:
+        center;
 
 }
 
 
-body[data-page="about"] .story-text {
-
-    padding: 10px;
-
-}
-
-
-body[data-page="about"] .story-text .mini-label {
+.au-story-label {
 
     display:
-
         inline-block;
 
     padding:
+        8px 14px;
 
-        8px
-        14px;
+    margin-bottom:
+        12px;
 
-    border-radius: 30px;
-
-    color: #8b63db;
-
-    font-weight: 800;
+    border-radius:
+        30px;
 
     background:
+        #f0eaff;
 
-        #f1eaff;
+    color:
+        #8864c9;
 
-    margin-bottom: 14px;
+    font-size:
+        11px;
+
+    font-weight:
+        900;
 
 }
 
 
-body[data-page="about"] .story-text h2 {
+.au-story-text h2 {
 
     margin:
-
-        0
-        0
-        20px;
+        0 0 17px;
 
     font-family:
-
         "Baloo 2",
         cursive;
 
-    font-size: 42px;
+    font-size:
+        34px;
 
-    line-height: 1.15;
+    line-height:
+        1.1;
 
-}
-
-
-body[data-page="about"] .story-text h2 span {
-
-    color: #ef4f82;
+    color:
+        #3b304f;
 
 }
 
 
-body[data-page="about"] .story-text p {
+.au-story-text h2 span {
 
-    color: #746d85;
+    display:
+        block;
 
-    font-size: 16px;
+    color:
+        #ef4f82;
 
-    line-height: 1.8;
+}
+
+
+.au-story-text p {
+
+    margin:
+        0 0 14px;
+
+    color:
+        #766e83;
+
+    font-size:
+        14px;
+
+    line-height:
+        1.8;
+
+    text-align:
+        left;
+
+}
+
+
+.au-button {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        8px;
+
+    margin-top:
+        6px;
+
+    padding:
+        13px 20px;
+
+    border-radius:
+        15px;
+
+    text-decoration:
+        none;
+
+    color:
+        white;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #ef4f82,
+            #ff7ea7
+        );
+
+    box-shadow:
+        0 12px 25px rgba(239,79,130,.25);
+
+    font-size:
+        13px;
+
+    font-weight:
+        900;
+
+    transition:
+        .25s ease;
+
+}
+
+
+.au-button:active {
+
+    transform:
+        scale(.96);
 
 }
 
@@ -1270,192 +1625,180 @@ body[data-page="about"] .story-text p {
    VALUES
 ===================================================== */
 
-body[data-page="about"] .values-grid {
+.au-values-grid {
 
     display:
-
         grid;
 
     grid-template-columns:
+        1fr;
 
-        repeat(
-            4,
-            1fr
-        );
-
-    gap: 20px;
+    gap:
+        13px;
 
 }
 
 
-body[data-page="about"] .value-card {
+.au-value-card {
 
-    position: relative;
+    position:
+        relative;
 
-    overflow: hidden;
-
-    padding:
-
-        30px
-        22px;
-
-    border-radius: 26px;
-
-    background:
-
-        rgba(
-            255,
-            255,
-            255,
-            .68
-        );
-
-    border:
-
-        1px
-        solid
-        rgba(
-            255,
-            255,
-            255,
-            .8
-        );
-
-    box-shadow:
-
-        0 15px 40px
-        rgba(
-            75,
-            55,
-            120,
-            .08
-        );
-
-    transition:
-
-        .35s
-        ease;
-
-}
-
-
-body[data-page="about"] .value-card::after {
-
-    content: "";
-
-    position: absolute;
-
-    width: 130px;
-
-    height: 130px;
-
-    border-radius: 50%;
-
-    right: -60px;
-
-    bottom: -60px;
-
-    background:
-
-        rgba(
-            255,
-            220,
-            240,
-            .45
-        );
-
-}
-
-
-body[data-page="about"] .value-card:hover {
-
-    transform:
-
-        translateY(-10px);
-
-    box-shadow:
-
-        0 25px 50px
-        rgba(
-            75,
-            55,
-            120,
-            .14
-        );
-
-}
-
-
-body[data-page="about"] .value-icon {
-
-    position: relative;
-
-    z-index: 2;
-
-    width: 65px;
-
-    height: 65px;
-
-    border-radius: 20px;
+    overflow:
+        hidden;
 
     display:
+        grid;
 
+    grid-template-columns:
+        58px 1fr;
+
+    align-items:
+        center;
+
+    gap:
+        14px;
+
+    padding:
+        17px;
+
+    border-radius:
+        22px;
+
+    background:
+        rgba(255,255,255,.72);
+
+    border:
+        1px solid rgba(255,255,255,.95);
+
+    box-shadow:
+        0 12px 32px rgba(74,53,120,.08);
+
+    transition:
+        .3s ease;
+
+}
+
+
+.au-value-card::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        100px;
+
+    height:
+        100px;
+
+    right:
+        -45px;
+
+    bottom:
+        -45px;
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(255,190,220,.22);
+
+}
+
+
+.au-value-card:active {
+
+    transform:
+        scale(.98);
+
+}
+
+
+.au-value-icon {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    width:
+        58px;
+
+    height:
+        58px;
+
+    display:
         grid;
 
     place-items:
-
         center;
 
-    font-size: 32px;
+    border-radius:
+        18px;
+
+    font-size:
+        27px;
 
     background:
 
         linear-gradient(
             135deg,
             #fff5fa,
-            #f2efff
+            #f0edff
         );
-
-    margin-bottom: 18px;
 
 }
 
 
-body[data-page="about"] .value-card h3 {
+.au-value-content {
 
-    position: relative;
+    position:
+        relative;
 
-    z-index: 2;
+    z-index:
+        2;
+
+}
+
+
+.au-value-content h3 {
 
     margin:
-
-        0
-        0
-        10px;
+        0 0 4px;
 
     font-family:
-
         "Baloo 2",
         cursive;
 
-    font-size: 23px;
+    font-size:
+        19px;
+
+    line-height:
+        1.1;
+
+    color:
+        #403550;
 
 }
 
 
-body[data-page="about"] .value-card p {
+.au-value-content p {
 
-    position: relative;
+    margin:
+        0;
 
-    z-index: 2;
+    color:
+        #7a7287;
 
-    margin: 0;
+    font-size:
+        12px;
 
-    font-size: 14px;
-
-    line-height: 1.7;
-
-    color: #766e84;
+    line-height:
+        1.6;
 
 }
 
@@ -1465,68 +1808,70 @@ body[data-page="about"] .value-card p {
    POSTS
 ===================================================== */
 
-body[data-page="about"] .post-counter {
-
-    display:
-
-        table;
-
-    margin:
-
-        0
-        auto
-        25px;
+.au-post-box {
 
     padding:
+        20px 12px;
 
-        12px
-        20px;
-
-    border-radius: 50px;
+    border-radius:
+        25px;
 
     background:
+        rgba(255,255,255,.35);
 
-        rgba(
-            255,
-            255,
-            255,
-            .7
-        );
+}
+
+
+.au-post-counter {
+
+    width:
+        fit-content;
+
+    margin:
+        0 auto 20px;
+
+    padding:
+        10px 16px;
+
+    border-radius:
+        50px;
+
+    background:
+        rgba(255,255,255,.8);
 
     box-shadow:
+        0 10px 25px rgba(70,50,100,.07);
 
-        0 10px 30px
-        rgba(
-            70,
-            50,
-            100,
-            .08
-        );
+    font-size:
+        12px;
 
-    font-weight: 800;
+    font-weight:
+        900;
 
-}
-
-
-body[data-page="about"] .post-counter span {
-
-    color: #ef4f82;
+    color:
+        #645b70;
 
 }
 
 
-body[data-page="about"] .posts-grid {
+.au-post-counter span {
 
-    display: grid;
+    color:
+        #ef4f82;
+
+}
+
+
+#postsContainer.au-posts-grid {
+
+    display:
+        grid;
 
     grid-template-columns:
+        1fr;
 
-        repeat(
-            3,
-            1fr
-        );
-
-    gap: 22px;
+    gap:
+        16px;
 
 }
 
@@ -1536,148 +1881,161 @@ body[data-page="about"] .posts-grid {
    CTA
 ===================================================== */
 
-body[data-page="about"] .about-cta {
+.au-cta {
 
-    position: relative;
+    position:
+        relative;
 
-    overflow: hidden;
-
-    text-align: center;
+    overflow:
+        hidden;
 
     padding:
+        45px 20px;
 
-        60px
+    text-align:
+        center;
+
+    border-radius:
         30px;
-
-    border-radius: 40px;
 
     background:
 
         linear-gradient(
             135deg,
-            #fff0f6,
-            #f0ebff,
-            #e8f8ff
+            rgba(255,236,245,.95),
+            rgba(240,235,255,.95),
+            rgba(229,247,255,.95)
         );
 
     box-shadow:
-
-        0 25px 70px
-        rgba(
-            85,
-            60,
-            140,
-            .12
-        );
+        0 22px 55px rgba(75,55,120,.12);
 
 }
 
 
-body[data-page="about"] .about-cta::before {
+.au-cta::before {
 
-    content: "✨";
+    content:
+        "✨";
 
-    position: absolute;
+    position:
+        absolute;
 
-    font-size: 70px;
+    top:
+        12px;
 
-    top: 20px;
+    left:
+        6%;
 
-    left: 7%;
+    font-size:
+        40px;
 
-    opacity: .5;
+    opacity:
+        .5;
 
     animation:
-
-        emojiFloat
-        5s
-        infinite;
+        auFloatEmoji 5s ease-in-out infinite;
 
 }
 
 
-body[data-page="about"] .about-cta::after {
+.au-cta::after {
 
-    content: "🌈";
+    content:
+        "🌈";
 
-    position: absolute;
+    position:
+        absolute;
 
-    font-size: 80px;
+    right:
+        5%;
 
-    right: 6%;
+    bottom:
+        12px;
 
-    bottom: 20px;
+    font-size:
+        48px;
 
-    opacity: .5;
+    opacity:
+        .5;
 
     animation:
-
-        emojiFloat
-        6s
-        infinite
-        reverse;
+        auFloatEmoji 6s ease-in-out infinite reverse;
 
 }
 
 
-body[data-page="about"] .about-cta .cta-icon {
+.au-cta-icon {
 
-    font-size: 58px;
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    font-size:
+        52px;
 
     animation:
-
-        logoFloat
-        4s
-        infinite;
+        auLogoFloat 4s ease-in-out infinite;
 
 }
 
 
-body[data-page="about"] .about-cta h2 {
+.au-cta h2 {
 
-    position: relative;
+    position:
+        relative;
 
-    z-index: 2;
+    z-index:
+        2;
 
     margin:
-
-        10px
-        0;
+        8px 0 12px;
 
     font-family:
-
         "Baloo 2",
         cursive;
 
-    font-size: 45px;
+    font-size:
+        36px;
+
+    line-height:
+        1.1;
 
 }
 
 
-body[data-page="about"] .about-cta h2 span {
+.au-cta h2 span {
 
-    color: #ef4f82;
+    color:
+        #ef4f82;
 
 }
 
 
-body[data-page="about"] .about-cta p {
+.au-cta p {
 
-    position: relative;
+    position:
+        relative;
 
-    z-index: 2;
-
-    max-width: 550px;
+    z-index:
+        2;
 
     margin:
+        0 auto 22px;
 
-        0
-        auto
-        25px;
+    max-width:
+        500px;
 
-    line-height: 1.8;
+    color:
+        #756c82;
 
-    color: #746d85;
+    font-size:
+        13px;
+
+    line-height:
+        1.75;
 
 }
 
@@ -1687,149 +2045,201 @@ body[data-page="about"] .about-cta p {
    FOOTER
 ===================================================== */
 
-body[data-page="about"] .about-footer {
+.au-footer {
 
-    margin-top: 70px;
+    margin-top:
+        35px;
 
     padding:
-
-        60px
-        0
-        0;
+        45px 0 0;
 
     background:
 
-        #332c4d;
+        linear-gradient(
+            135deg,
+            #302843,
+            #403556
+        );
 
-    color: white;
+    color:
+        white;
 
 }
 
 
-body[data-page="about"] .footer-grid {
+.au-footer-grid {
 
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
-
-        1.5fr
-        1fr
-        1fr
         1fr;
 
-    gap: 35px;
+    gap:
+        28px;
+
+    text-align:
+        center;
 
 }
 
 
-body[data-page="about"] .footer-grid h3 {
+.au-footer h3 {
+
+    margin:
+        0 0 12px;
 
     font-family:
-
         "Baloo 2",
         cursive;
 
-    margin-top: 0;
-
-    font-size: 22px;
-
-}
-
-
-body[data-page="about"] .footer-grid p {
-
-    color: #c5bed7;
-
-    line-height: 1.8;
+    font-size:
+        21px;
 
 }
 
 
-body[data-page="about"] .footer-grid a {
+.au-footer h3 span {
 
-    display: block;
-
-    color: #d7d1e6;
-
-    text-decoration: none;
-
-    margin-bottom: 10px;
-
-    transition: .2s;
+    color:
+        #ff8db3;
 
 }
 
 
-body[data-page="about"] .footer-grid a:hover {
+.au-footer p {
 
-    color: #ff91b2;
+    margin:
+        0 0 10px;
 
-    transform:
+    color:
+        #c9c1d7;
 
-        translateX(4px);
+    font-size:
+        13px;
+
+    line-height:
+        1.7;
 
 }
 
 
-body[data-page="about"] .footer-copy {
+.au-footer a {
 
-    margin-top: 40px;
+    display:
+        block;
+
+    width:
+        fit-content;
+
+    margin:
+        0 auto 10px;
+
+    text-decoration:
+        none;
+
+    color:
+        #d9d2e7;
+
+    font-size:
+        13px;
+
+    font-weight:
+        700;
+
+}
+
+
+.au-social {
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    gap:
+        10px;
+
+}
+
+
+.au-social span {
+
+    width:
+        43px;
+
+    height:
+        43px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    border-radius:
+        14px;
+
+    font-size:
+        21px;
+
+    background:
+        rgba(255,255,255,.08);
+
+}
+
+
+.au-copyright {
+
+    margin-top:
+        35px;
 
     padding:
+        18px 15px;
 
-        22px
-        0;
-
-    text-align: center;
-
-    color: #aaa1be;
+    text-align:
+        center;
 
     border-top:
+        1px solid rgba(255,255,255,.08);
 
-        1px
-        solid
-        rgba(
-            255,
-            255,
-            255,
-            .08
-        );
+    color:
+        #aaa0bc;
+
+    font-size:
+        11px;
 
 }
 
 
 
 /* =====================================================
-   REVEAL ANIMATION
+   SCROLL ANIMATION
 ===================================================== */
 
-body[data-page="about"] .about-reveal {
+.au-reveal {
 
-    opacity: 0;
+    opacity:
+        0;
 
     transform:
-
-        translateY(35px);
+        translateY(28px);
 
     transition:
 
-        1s
-        cubic-bezier(
-            .2,
-            .8,
-            .2,
-            1
-        );
+        opacity .8s ease,
+        transform .8s cubic-bezier(.2,.8,.2,1);
 
 }
 
 
-body[data-page="about"] .about-reveal.show {
+.au-reveal.au-show {
 
-    opacity: 1;
+    opacity:
+        1;
 
     transform:
-
         translateY(0);
 
 }
@@ -1837,3174 +2247,323 @@ body[data-page="about"] .about-reveal.show {
 
 
 /* =====================================================
-   RESPONSIVE TABLET
+   TABLET / DESKTOP
 ===================================================== */
 
-@media (max-width: 900px) {
+@media (min-width: 769px) {
 
 
-    body[data-page="about"] .about-story {
-
-        grid-template-columns:
-
-            1fr;
-
-    }
-
-
-    body[data-page="about"] .values-grid {
-
-        grid-template-columns:
-
-            repeat(
-                2,
-                1fr
-            );
-
-    }
-
-
-    body[data-page="about"] .footer-grid {
-
-        grid-template-columns:
-
-            repeat(
-                2,
-                1fr
-            );
-
-    }
-
-
-    body[data-page="about"] .about-nav-inner {
-
-        justify-content:
-
-            flex-start;
-
-        overflow-x: auto;
-
-        scrollbar-width: none;
-
-    }
-
-
-    body[data-page="about"] .about-nav-inner::-webkit-scrollbar {
-
-        display: none;
-
-    }
-
-
-    body[data-page="about"] .about-nav a {
-
-        flex: 0 0 auto;
-
-    }
-
-}
-
-
-/* =====================================================
-   PREMIUM MOBILE - CLEAN & STABLE
-===================================================== */
-
-@media (max-width: 768px) {
-
-    /* ===============================
-       GLOBAL
-    =============================== */
-
-    body[data-page="about"] {
-
-        overflow-x: hidden;
-
-    }
-
-
-    body[data-page="about"] .about-wrap {
-
-        width: calc(100% - 32px);
-
-        margin-left: auto;
-
-        margin-right: auto;
-
-    }
-
-
-    /* ===============================
-       HEADER
-    =============================== */
-
-    body[data-page="about"] .about-header {
-
-        position: relative;
-
-        z-index: 200;
-
-    }
-
-
-    body[data-page="about"] .about-head-inner {
-
-        min-height: 76px;
-
-        gap: 10px;
-
-    }
-
-
-    body[data-page="about"] .about-brand {
-
-        gap: 9px;
-
-        min-width: 0;
-
-    }
-
-
-    body[data-page="about"] .about-logo {
-
-        width: 46px;
-
-        height: 46px;
-
-        min-width: 46px;
-
-        border-radius: 15px;
-
-        font-size: 23px;
-
-    }
-
-
-    body[data-page="about"] .about-brand h1 {
-
-        font-size: 18px;
-
-        line-height: 1.1;
-
-        white-space: nowrap;
-
-    }
-
-
-    body[data-page="about"] .about-brand p {
-
-        font-size: 11px;
-
-        margin-top: 4px;
-
-    }
-
-
-    body[data-page="about"] .about-call {
-
-        display: none;
-
-    }
-
-
-    body[data-page="about"] .about-header-right {
-
-        flex-shrink: 0;
-
-    }
-
-
-    body[data-page="about"] .about-btn {
-
-        padding: 10px 14px;
-
-        font-size: 11px;
-
-        border-radius: 14px;
-
-        white-space: nowrap;
-
-    }
-
-
-    /* ===============================
-       NAVBAR MOBILE
-    =============================== */
-
-    body[data-page="about"] .about-nav {
-
-        position: sticky;
-
-        top: 0;
-
-        z-index: 150;
-
-        background:
-
-            rgba(
-                255,
-                255,
-                255,
-                .92
-            );
-
-        backdrop-filter:
-
-            blur(20px);
-
-        -webkit-backdrop-filter:
-
-            blur(20px);
-
-        box-shadow:
-
-            0 8px 30px
-            rgba(
-                60,
-                40,
-                100,
-                .08
-            );
-
-    }
-
-
-    body[data-page="about"] .about-nav-inner {
-
-        width: 100%;
-
-        padding: 9px 12px;
-
-        gap: 8px;
-
-        justify-content: flex-start;
-
-        overflow-x: auto;
-
-        overflow-y: hidden;
-
-        scrollbar-width: none;
-
-        -webkit-overflow-scrolling: touch;
-
-    }
-
-
-    body[data-page="about"] .about-nav-inner::-webkit-scrollbar {
-
-        display: none;
-
-    }
-
-
-    body[data-page="about"] .about-nav a {
-
-        flex: 0 0 auto;
-
-        flex-direction: column;
-
-        justify-content: center;
-
-        gap: 4px;
-
-        min-width: 68px;
-
-        min-height: 58px;
-
-        padding: 7px 10px;
-
-        border-radius: 15px;
-
-        font-size: 9px;
-
-        text-align: center;
-
-    }
-
-
-    body[data-page="about"] .about-nav .nav-icon {
-
-        font-size: 18px;
-
-        line-height: 1;
-
-    }
-
-
-    body[data-page="about"] .about-nav a.active {
-
-        box-shadow:
-
-            0 8px 22px
-            rgba(
-                125,
-                108,
-                255,
-                .28
-            );
-
-    }
-
-
-    /* ===============================
-       HERO
-    =============================== */
-
-    body[data-page="about"] .about-hero {
-
-        min-height: auto;
-
-        padding:
-
-            70px
-            0
-            75px;
-
-    }
-
-
-    body[data-page="about"] .hero-content {
-
-        width: 100%;
-
-    }
-
-
-    body[data-page="about"] .hero-badge {
-
-        max-width: calc(100% - 20px);
-
-        justify-content: center;
-
-        margin-bottom: 18px;
-
-        padding: 9px 15px;
-
-        font-size: 11px;
-
-        border-radius: 50px;
-
-    }
-
-
-    body[data-page="about"] .about-hero h2 {
-
-        font-size: clamp(
-            48px,
-            15vw,
-            65px
-        );
-
-        line-height: .95;
-
-        letter-spacing: -1px;
-
-    }
-
-
-    body[data-page="about"] .about-hero p {
-
-        width: 100%;
-
-        max-width: 430px;
-
-        margin:
-
-            20px
-            auto
-            0;
-
-        padding: 0 8px;
-
-        font-size: 15px;
-
-        line-height: 1.8;
-
-    }
-
-
-    body[data-page="about"] .orb-one {
-
-        width: 115px;
-
-        height: 115px;
-
-        top: 20px;
-
-        left: -45px;
-
-    }
-
-
-    body[data-page="about"] .orb-two {
-
-        width: 85px;
-
-        height: 85px;
-
-        right: -30px;
-
-        bottom: 25px;
-
-    }
-
-
-    /* ===============================
-       SECTION
-    =============================== */
-
-    body[data-page="about"] .about-section {
-
-        padding:
-
-            42px
-            0;
-
-    }
-
-
-    body[data-page="about"] .section-heading {
-
-        margin-bottom: 28px;
-
-        padding: 0 5px;
-
-    }
-
-
-    body[data-page="about"] .section-heading h2 {
-
-        font-size: 31px;
-
-        line-height: 1.15;
-
-    }
-
-
-    body[data-page="about"] .section-heading p {
-
-        margin-top: 10px;
-
-        font-size: 14px;
-
-        line-height: 1.7;
-
-    }
-
-
-    /* ===============================
-       STORY
-    =============================== */
-
-    body[data-page="about"] .about-story {
-
-        grid-template-columns: 1fr;
-
-        gap: 32px;
-
-    }
-
-
-    body[data-page="about"] .story-image-card {
-
-        width: 100%;
-
-        padding: 7px;
-
-        border-radius: 26px;
-
-    }
-
-
-    body[data-page="about"] .story-image-card img {
-
-        width: 100%;
-
-        height: auto;
-
-        aspect-ratio: 4 / 3;
-
-        object-fit: cover;
-
-        border-radius: 20px;
-
-    }
-
-
-    body[data-page="about"] .story-image-card::before {
-
-        font-size: 32px;
-
-        top: -15px;
-
-        right: -3px;
-
-        z-index: 5;
-
-    }
-
-
-    body[data-page="about"] .story-text {
-
-        width: 100%;
-
-        padding: 0;
-
-        text-align: center;
-
-    }
-
-
-    body[data-page="about"] .story-text .mini-label {
-
-        margin-bottom: 14px;
-
-        padding: 8px 14px;
-
-        font-size: 11px;
-
-    }
-
-
-    body[data-page="about"] .story-text h2 {
-
-        margin-bottom: 18px;
-
-        font-size: 33px;
-
-        line-height: 1.15;
-
-    }
-
-
-    body[data-page="about"] .story-text p {
-
-        margin:
-
-            0
-            0
-            15px;
-
-        font-size: 14px;
-
-        line-height: 1.85;
-
-        text-align: left;
-
-    }
-
-
-    /* ===============================
-       VALUES
-    =============================== */
-
-    body[data-page="about"] .values-grid {
-
-        grid-template-columns:
-
-            repeat(
-                2,
-                minmax(
-                    0,
-                    1fr
-                )
-            );
-
-        gap: 14px;
-
-    }
-
-
-    body[data-page="about"] .value-card {
-
-        min-width: 0;
-
-        padding:
-
-            20px
-            14px;
-
-        border-radius: 22px;
-
-    }
-
-
-    body[data-page="about"] .value-icon {
-
-        width: 52px;
-
-        height: 52px;
-
-        margin-bottom: 13px;
-
-        border-radius: 17px;
-
-        font-size: 25px;
-
-    }
-
-
-    body[data-page="about"] .value-card h3 {
-
-        margin:
-
-            0
-            0
-            7px;
-
-        font-size: 18px;
-
-        line-height: 1.15;
-
-    }
-
-
-    body[data-page="about"] .value-card p {
-
-        font-size: 12px;
-
-        line-height: 1.65;
-
-    }
-
-
-    /* ===============================
-       POSTS
-    =============================== */
-
-    body[data-page="about"] .post-counter {
-
-        margin-bottom: 20px;
-
-        padding:
-
-            10px
-            16px;
-
-        font-size: 12px;
-
-    }
-
-
-    body[data-page="about"] .posts-grid {
-
-        display: grid;
-
-        grid-template-columns: 1fr;
-
-        gap: 16px;
-
-        width: 100%;
-
-    }
-
-
-    body[data-page="about"] #postsContainer > * {
-
-        width: 100%;
-
-        min-width: 0;
-
-    }
-
-
-    /* ===============================
-       CTA
-    =============================== */
-
-    body[data-page="about"] .about-cta {
-
-        padding:
-
-            48px
-            18px;
-
-        border-radius: 28px;
-
-    }
-
-
-    body[data-page="about"] .about-cta .cta-icon {
-
-        font-size: 50px;
-
-    }
-
-
-    body[data-page="about"] .about-cta h2 {
-
-        margin:
-
-            12px
-            0;
-
-        font-size: 34px;
-
-        line-height: 1.15;
-
-    }
-
-
-    body[data-page="about"] .about-cta p {
-
-        font-size: 14px;
-
-        line-height: 1.8;
-
-    }
-
-
-    body[data-page="about"] .about-cta::before {
-
-        font-size: 38px;
-
-        top: 15px;
-
-        left: 3%;
-
-    }
-
-
-    body[data-page="about"] .about-cta::after {
-
-        font-size: 45px;
-
-        bottom: 12px;
-
-        right: 2%;
-
-    }
-
-
-    /* ===============================
-       FOOTER
-    =============================== */
-
-    body[data-page="about"] .about-footer {
-
-        margin-top: 40px;
-
-        padding-top: 45px;
-
-    }
-
-
-    body[data-page="about"] .footer-grid {
-
-        grid-template-columns: 1fr;
-
-        gap: 30px;
-
-        text-align: center;
-
-    }
-
-
-    body[data-page="about"] .footer-grid h3 {
-
-        margin-bottom: 10px;
-
-        font-size: 22px;
-
-    }
-
-
-    body[data-page="about"] .footer-grid p {
-
-        margin-top: 8px;
-
-        margin-bottom: 8px;
-
-        font-size: 14px;
-
-    }
-
-
-    body[data-page="about"] .footer-grid a {
-
-        margin-bottom: 11px;
-
-    }
-
-
-    body[data-page="about"] .footer-copy {
-
-        margin-top: 30px;
-
-        padding:
-
-            18px
-            15px;
-
-        font-size: 11px;
-
-        line-height: 1.6;
-
-    }
-
-}
-
-
-
-/* =====================================================
-   HP KECIL - 480px
-===================================================== */
-
-@media (max-width: 480px) {
-
-
-    body[data-page="about"] .about-wrap {
-
-        width: calc(100% - 24px);
-
-    }
-
-
-    /* HEADER */
-
-    body[data-page="about"] .about-head-inner {
-
-        min-height: 70px;
-
-    }
-
-
-    body[data-page="about"] .about-logo {
-
-        width: 42px;
-
-        height: 42px;
-
-        min-width: 42px;
-
-        font-size: 21px;
-
-        border-radius: 14px;
-
-    }
-
-
-    body[data-page="about"] .about-brand h1 {
-
-        font-size: 16px;
-
-    }
-
-
-    body[data-page="about"] .about-brand p {
-
-        font-size: 10px;
-
-    }
-
-
-    body[data-page="about"] .about-btn {
-
-        padding:
-
-            9px
-            11px;
-
-        font-size: 10px;
-
-    }
-
-
-    /* NAV */
-
-    body[data-page="about"] .about-nav a {
-
-        min-width: 62px;
-
-        min-height: 56px;
-
-        padding:
-
-            7px
-            8px;
-
-        font-size: 8px;
-
-    }
-
-
-    body[data-page="about"] .about-nav .nav-icon {
-
-        font-size: 17px;
-
-    }
-
-
-    /* HERO */
-
-    body[data-page="about"] .about-hero {
-
-        padding:
-
-            60px
-            0
-            65px;
-
-    }
-
-
-    body[data-page="about"] .about-hero h2 {
-
-        font-size: 48px;
-
-    }
-
-
-    body[data-page="about"] .about-hero p {
-
-        font-size: 14px;
-
-    }
-
-
-    /* VALUES */
-
-    body[data-page="about"] .values-grid {
-
-        grid-template-columns: 1fr;
-
-        gap: 13px;
-
-    }
-
-
-    body[data-page="about"] .value-card {
-
-        display: grid;
-
-        grid-template-columns:
-
-            58px
-            1fr;
-
-        column-gap: 15px;
-
-        align-items: center;
-
-        padding:
-
-            18px
-            16px;
-
-    }
-
-
-    body[data-page="about"] .value-icon {
-
-        grid-row: span 2;
-
-        width: 54px;
-
-        height: 54px;
-
-        margin: 0;
-
-    }
-
-
-    body[data-page="about"] .value-card h3 {
-
-        margin-bottom: 4px;
-
-    }
-
-
-    /* STORY */
-
-    body[data-page="about"] .story-text h2 {
-
-        font-size: 30px;
-
-    }
-
-
-    /* CTA */
-
-    body[data-page="about"] .about-cta h2 {
-
-        font-size: 30px;
-
-    }
-
-}
-
-
-
-/* =====================================================
-   MOBILE BACKGROUND ANIMATION
-===================================================== */
-
-@media (max-width: 768px) {
-
-
-    body[data-page="about"]::before {
-
-        width: 280px;
-
-        height: 280px;
-
-        top: -100px;
-
-        left: -130px;
-
-        opacity: .9;
-
-        animation:
-
-            mobileBlobOne
-            10s
-            ease-in-out
-            infinite;
-
-    }
-
-
-    body[data-page="about"]::after {
-
-        width: 300px;
-
-        height: 300px;
-
-        bottom: -130px;
-
-        right: -150px;
-
-        opacity: .9;
-
-        animation:
-
-            mobileBlobTwo
-            12s
-            ease-in-out
-            infinite;
-
-    }
-
-
-    @keyframes mobileBlobOne {
-
-        0%,
-        100% {
-
-            transform:
-
-                translate(
-                    0,
-                    0
-                )
-                scale(1);
-
-        }
-
-
-        50% {
-
-            transform:
-
-                translate(
-                    70px,
-                    90px
-                )
-                scale(1.2);
-
-        }
-
-    }
-
-
-    @keyframes mobileBlobTwo {
-
-        0%,
-        100% {
-
-            transform:
-
-                translate(
-                    0,
-                    0
-                )
-                scale(1);
-
-        }
-
-
-        50% {
-
-            transform:
-
-                translate(
-                    -70px,
-                    -70px
-                )
-                scale(1.15);
-
-        }
-
-    }
-
-}
-
-/* ================= REDUCE MOTION ================= */
-
-@media (
-    prefers-reduced-motion:
-    reduce
-) {
-
-    body[data-page="about"] *,
-    body[data-page="about"]::before,
-    body[data-page="about"]::after {
-
-        animation-duration:
-
-            .01ms
-            !important;
-
-        animation-iteration-count:
-
-            1
-            !important;
-
-        transition-duration:
-
-            .01ms
-            !important;
-
-    }
-
-}
-/* =====================================================
-   ABOUT US - FINAL PREMIUM FIX
-   KHUSUS MENGATASI BENTROK CSS & MOBILE
-===================================================== */
-
-
-/* =====================================================
-   ISOLASI HALAMAN ABOUT
-===================================================== */
-
-html {
-
-    scroll-behavior: smooth;
-
-}
-
-
-body[data-page="about"] {
-
-    position: relative;
-
-    min-height: 100vh;
-
-    overflow-x: hidden !important;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #fff7fb 0%,
-            #f5f0ff 35%,
-            #eef8ff 70%,
-            #fff9e8 100%
-        ) !important;
-
-}
-
-
-/* =====================================================
-   BACKGROUND ANIMASI PREMIUM
-===================================================== */
-
-body[data-page="about"]::before {
-
-    content: "";
-
-    position: fixed;
-
-    width: 450px;
-
-    height: 450px;
-
-    top: -180px;
-
-    left: -180px;
-
-    border-radius: 50%;
-
-    background:
-
-        radial-gradient(
-            circle,
-            rgba(255, 108, 163, .28) 0%,
-            rgba(255, 174, 208, .15) 40%,
-            transparent 70%
-        );
-
-    filter: blur(35px);
-
-    pointer-events: none;
-
-    z-index: 0 !important;
-
-    animation:
-
-        aboutBackgroundOne
-        14s
-        ease-in-out
-        infinite;
-
-}
-
-
-body[data-page="about"]::after {
-
-    content: "";
-
-    position: fixed;
-
-    width: 500px;
-
-    height: 500px;
-
-    right: -220px;
-
-    bottom: -220px;
-
-    border-radius: 50%;
-
-    background:
-
-        radial-gradient(
-            circle,
-            rgba(92, 190, 255, .28) 0%,
-            rgba(168, 220, 255, .12) 45%,
-            transparent 72%
-        );
-
-    filter: blur(40px);
-
-    pointer-events: none;
-
-    z-index: 0 !important;
-
-    animation:
-
-        aboutBackgroundTwo
-        17s
-        ease-in-out
-        infinite;
-
-}
-
-
-/* SEMUA ISI HALAMAN DI ATAS BACKGROUND */
-
-body[data-page="about"] > * {
-
-    position: relative;
-
-    z-index: 1;
-
-}
-
-
-@keyframes aboutBackgroundOne {
-
-    0%,
-    100% {
-
-        transform:
-
-            translate(
-                0,
-                0
-            )
-
-            scale(1);
-
-    }
-
-
-    50% {
-
-        transform:
-
-            translate(
-                140px,
-                100px
-            )
-
-            scale(1.25);
-
-    }
-
-}
-
-
-@keyframes aboutBackgroundTwo {
-
-    0%,
-    100% {
-
-        transform:
-
-            translate(
-                0,
-                0
-            )
-
-            scale(1);
-
-    }
-
-
-    50% {
-
-        transform:
-
-            translate(
-                -120px,
-                -90px
-            )
-
-            scale(1.3);
-
-    }
-
-}
-
-
-/* =====================================================
-   HEADER FIX
-===================================================== */
-
-body[data-page="about"] .about-header {
-
-    width: 100%;
-
-    background:
-
-        rgba(
-            255,
-            255,
-            255,
-            .72
-        );
-
-    backdrop-filter:
-
-        blur(20px);
-
-    -webkit-backdrop-filter:
-
-        blur(20px);
-
-}
-
-
-body[data-page="about"] .about-head-inner {
-
-    width: 100%;
-
-    box-sizing: border-box;
-
-}
-
-
-body[data-page="about"] .about-brand {
-
-    min-width: 0;
-
-}
-
-
-body[data-page="about"] .about-brand > div:last-child {
-
-    min-width: 0;
-
-}
-
-
-body[data-page="about"] .about-brand h1 {
-
-    white-space: nowrap;
-
-}
-
-
-/* =====================================================
-   NAVBAR FIX
-===================================================== */
-
-body[data-page="about"] .about-nav {
-
-    width: 100%;
-
-    overflow: hidden;
-
-}
-
-
-body[data-page="about"] .about-nav-inner {
-
-    width: 100%;
-
-    box-sizing: border-box;
-
-}
-
-
-body[data-page="about"] .about-nav a {
-
-    white-space: nowrap;
-
-}
-
-
-/* =====================================================
-   HERO PREMIUM
-===================================================== */
-
-body[data-page="about"] .about-hero {
-
-    min-height: 460px;
-
-    display:
-
-        flex;
-
-    align-items:
-
-        center;
-
-    justify-content:
-
-        center;
-
-    isolation: isolate;
-
-}
-
-
-body[data-page="about"] .about-hero::before {
-
-    content: "";
-
-    position: absolute;
-
-    width: 250px;
-
-    height: 250px;
-
-    border-radius: 50%;
-
-    top: 50%;
-
-    left: 50%;
-
-    transform:
-
-        translate(
-            -50%,
-            -50%
-        );
-
-    background:
-
-        radial-gradient(
-            circle,
-            rgba(255,255,255,.65),
-            transparent 70%
-        );
-
-    filter: blur(15px);
-
-    z-index: -1;
-
-}
-
-
-body[data-page="about"] .hero-content {
-
-    width: 100%;
-
-}
-
-
-body[data-page="about"] .hero-badge {
-
-    position: relative;
-
-    overflow: hidden;
-
-}
-
-
-body[data-page="about"] .hero-badge::after {
-
-    content: "";
-
-    position: absolute;
-
-    width: 40px;
-
-    height: 100%;
-
-    top: 0;
-
-    left: -60px;
-
-    background:
-
-        rgba(
-            255,
-            255,
-            255,
-            .5
-        );
-
-    transform:
-
-        skewX(-25deg);
-
-    animation:
-
-        badgeShine
-        4s
-        infinite;
-
-}
-
-
-@keyframes badgeShine {
-
-    0% {
-
-        left: -60px;
-
-    }
-
-
-    50% {
-
-        left: 120%;
-
-    }
-
-
-    100% {
-
-        left: 120%;
-
-    }
-
-}
-
-
-body[data-page="about"] .about-hero h2 {
-
-    letter-spacing:
-
-        -2px;
-
-    text-shadow:
-
-        0 15px 40px
-        rgba(
-            69,
-            56,
-            110,
-            .12
-        );
-
-}
-
-
-body[data-page="about"] .about-hero p {
-
-    text-shadow:
-
-        0 3px 15px
-        rgba(
-            255,
-            255,
-            255,
-            .7
-        );
-
-}
-
-
-/* =====================================================
-   STORY IMAGE FIX
-===================================================== */
-
-body[data-page="about"] .story-image-card {
-
-    width: 100%;
-
-    box-sizing: border-box;
-
-    overflow: visible;
-
-}
-
-
-body[data-page="about"] .story-image-card img {
-
-    width: 100% !important;
-
-    height: auto !important;
-
-    min-height: 0 !important;
-
-    max-height: none !important;
-
-    display: block !important;
-
-    object-fit: cover !important;
-
-}
-
-
-/* =====================================================
-   STORY SECTION PREMIUM
-===================================================== */
-
-body[data-page="about"] .story-text {
-
-    position: relative;
-
-}
-
-
-body[data-page="about"] .story-text::before {
-
-    content: "";
-
-    position: absolute;
-
-    width: 100px;
-
-    height: 100px;
-
-    border-radius: 50%;
-
-    right: -30px;
-
-    top: -30px;
-
-    background:
-
-        radial-gradient(
-            circle,
-            rgba(255,211,226,.55),
-            transparent 70%
-        );
-
-    pointer-events: none;
-
-    z-index: -1;
-
-}
-
-
-body[data-page="about"] .story-text h2 {
-
-    letter-spacing:
-
-        -.8px;
-
-}
-
-
-body[data-page="about"] .story-text p {
-
-    max-width: 100%;
-
-}
-
-
-/* =====================================================
-   VALUE CARD PREMIUM
-===================================================== */
-
-body[data-page="about"] .value-card {
-
-    isolation: isolate;
-
-}
-
-
-body[data-page="about"] .value-card::before {
-
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            rgba(255,255,255,.4),
-            transparent
-        );
-
-    pointer-events: none;
-
-    z-index: -1;
-
-}
-
-
-body[data-page="about"] .value-card {
-
-    animation:
-
-        valueFloat
-        6s
-        ease-in-out
-        infinite;
-
-}
-
-
-body[data-page="about"] .value-card:nth-child(2) {
-
-    animation-delay:
-
-        .6s;
-
-}
-
-
-body[data-page="about"] .value-card:nth-child(3) {
-
-    animation-delay:
-
-        1.2s;
-
-}
-
-
-body[data-page="about"] .value-card:nth-child(4) {
-
-    animation-delay:
-
-        1.8s;
-
-}
-
-
-@keyframes valueFloat {
-
-    0%,
-    100% {
-
-        transform:
-
-            translateY(0);
-
-    }
-
-
-    50% {
-
-        transform:
-
-            translateY(-5px);
-
-    }
-
-}
-
-
-body[data-page="about"] .value-card:hover {
-
-    animation-play-state:
-
-        paused;
-
-}
-
-
-/* =====================================================
-   POSTS FIX
-===================================================== */
-
-body[data-page="about"] #postsContainer {
-
-    width: 100%;
-
-    box-sizing: border-box;
-
-}
-
-
-body[data-page="about"] #postsContainer > * {
-
-    min-width: 0;
-
-    max-width: 100%;
-
-}
-
-
-/* =====================================================
-   CTA PREMIUM
-===================================================== */
-
-body[data-page="about"] .about-cta {
-
-    isolation: isolate;
-
-}
-
-
-body[data-page="about"] .about-cta::before {
-
-    z-index: -1;
-
-}
-
-
-body[data-page="about"] .about-cta::after {
-
-    z-index: -1;
-
-}
-
-
-body[data-page="about"] .about-cta h2 {
-
-    letter-spacing:
-
-        -1px;
-
-}
-
-
-/* =====================================================
-   REVEAL FIX
-===================================================== */
-
-body[data-page="about"] .about-reveal {
-
-    will-change:
-
-        transform,
-        opacity;
-
-}
-
-
-/* =====================================================
-   MOBILE FINAL PREMIUM
-===================================================== */
-
-@media (max-width: 768px) {
-
-
-    /* BODY */
-
-    body[data-page="about"] {
-
-        background:
-
-            linear-gradient(
-                160deg,
-                #fff8fb 0%,
-                #f5f1ff 45%,
-                #eff9ff 75%,
-                #fff9ec 100%
-            ) !important;
-
-    }
-
-
-    /* BACKGROUND BLOB */
-
-    body[data-page="about"]::before {
-
-        width: 300px;
-
-        height: 300px;
-
-        top: -130px;
-
-        left: -140px;
-
-        filter:
-
-            blur(25px);
-
-    }
-
-
-    body[data-page="about"]::after {
-
-        width: 330px;
-
-        height: 330px;
-
-        right: -180px;
-
-        bottom: -150px;
-
-        filter:
-
-            blur(30px);
-
-    }
-
-
-    /* WRAPPER */
-
-    body[data-page="about"] .about-wrap {
-
-        width:
-
-            calc(
-                100% - 32px
-            ) !important;
-
-        max-width: none;
-
-    }
-
-
-    /* ================= HEADER ================= */
-
-    body[data-page="about"] .about-header {
-
-        position: relative;
-
-        z-index: 200;
-
-    }
-
-
-    body[data-page="about"] .about-head-inner {
-
-        min-height: 76px;
-
-        gap: 10px;
-
-    }
-
-
-    body[data-page="about"] .about-logo {
-
-        width: 46px;
-
-        height: 46px;
-
-        min-width: 46px;
-
-        font-size: 24px;
-
-        border-radius: 16px;
-
-    }
-
-
-    body[data-page="about"] .about-brand {
-
-        gap: 9px;
-
-    }
-
-
-    body[data-page="about"] .about-brand h1 {
-
-        font-size: 18px;
-
-        line-height: 1.1;
-
-        letter-spacing:
-
-            -.3px;
-
-    }
-
-
-    body[data-page="about"] .about-brand p {
-
-        font-size: 10px;
-
-        margin-top: 4px;
-
-    }
-
-
-    body[data-page="about"] .about-header-right {
-
-        flex-shrink: 0;
-
-    }
-
-
-    body[data-page="about"] .about-call {
-
-        display: none !important;
-
-    }
-
-
-    body[data-page="about"] .about-btn {
-
-        padding:
-
-            10px
-            13px;
-
-        border-radius: 13px;
-
-        font-size: 11px;
-
-        gap: 5px;
-
-        white-space: nowrap;
-
-    }
-
-
-    /* ================= NAVBAR ================= */
-
-    body[data-page="about"] .about-nav {
-
-        position: sticky;
-
-        top: 0;
-
-        z-index: 500;
-
-        background:
-
-            rgba(
-                255,
-                255,
-                255,
-                .88
-            );
-
-        backdrop-filter:
-
-            blur(18px);
-
-        -webkit-backdrop-filter:
-
-            blur(18px);
-
-        border-bottom:
-
-            1px
-            solid
-            rgba(
-                255,
-                255,
-                255,
-                .9
-            );
-
-    }
-
-
-    body[data-page="about"] .about-nav-inner {
-
-        justify-content:
-
-            flex-start !important;
-
-        overflow-x:
-
-            auto;
-
-        overflow-y:
-
-            hidden;
-
-        gap: 7px;
-
-        padding:
-
-            9px
-            12px !important;
-
-        width: 100% !important;
-
-        -webkit-overflow-scrolling:
-
-            touch;
-
-        scrollbar-width:
-
-            none;
-
-    }
-
-
-    body[data-page="about"] .about-nav-inner::-webkit-scrollbar {
-
-        display: none;
-
-    }
-
-
-    body[data-page="about"] .about-nav a {
-
-        flex:
-
-            0
-            0
-            auto;
-
-        min-width:
-
-            66px;
+    .au-header-inner {
 
         min-height:
-
-            58px;
-
-        padding:
-
-            7px
-            9px !important;
-
-        display:
-
-            flex;
-
-        flex-direction:
-
-            column;
-
-        align-items:
-
-            center;
-
-        justify-content:
-
-            center;
-
-        gap: 4px;
-
-        font-size:
-
-            8px;
-
-        border-radius:
-
-            14px;
-
-        letter-spacing:
-
-            .2px;
+            90px;
 
     }
 
 
-    body[data-page="about"] .about-nav .nav-icon {
-
-        font-size:
-
-            18px;
-
-        line-height: 1;
-
-    }
-
-
-    /* ================= HERO ================= */
-
-    body[data-page="about"] .about-hero {
-
-        min-height:
-
-            auto;
-
-        padding:
-
-            65px
-            0
-            70px !important;
-
-    }
-
-
-    body[data-page="about"] .hero-content {
-
-        padding:
-
-            0
-            5px;
-
-        box-sizing:
-
-            border-box;
-
-    }
-
-
-    body[data-page="about"] .hero-badge {
-
-        font-size:
-
-            11px;
-
-        padding:
-
-            9px
-            14px;
-
-        margin-bottom:
-
-            17px;
-
-    }
-
-
-    body[data-page="about"] .about-hero h2 {
-
-        font-size:
-
-            clamp(
-                46px,
-                14vw,
-                62px
-            ) !important;
-
-        line-height:
-
-            .95;
-
-        letter-spacing:
-
-            -1px;
-
-    }
-
-
-    body[data-page="about"] .about-hero p {
-
-        max-width:
-
-            330px;
-
-        margin:
-
-            18px
-            auto
-            0;
-
-        padding:
-
-            0 !important;
-
-        font-size:
-
-            14px;
-
-        line-height:
-
-            1.8;
-
-    }
-
-
-    body[data-page="about"] .orb-one {
+    .au-logo {
 
         width:
-
-            105px;
+            55px;
 
         height:
-
-            105px;
-
-        left:
-
-            -45px;
-
-        top:
-
-            20px;
-
-        opacity:
-
-            .65;
-
-    }
-
-
-    body[data-page="about"] .orb-two {
-
-        width:
-
-            85px;
-
-        height:
-
-            85px;
-
-        right:
-
-            -35px;
-
-        bottom:
-
-            25px;
-
-        opacity:
-
-            .65;
-
-    }
-
-
-    /* ================= SECTION ================= */
-
-    body[data-page="about"] .about-section {
-
-        padding:
-
-            45px
-            0 !important;
-
-    }
-
-
-    body[data-page="about"] .section-heading {
-
-        margin-bottom:
-
-            28px;
-
-        padding:
-
-            0
-            8px;
-
-    }
-
-
-    body[data-page="about"] .section-heading h2 {
-
-        font-size:
-
-            31px;
-
-        line-height:
-
-            1.15;
-
-    }
-
-
-    body[data-page="about"] .section-heading p {
-
-        font-size:
-
-            13px;
-
-        line-height:
-
-            1.75;
-
-    }
-
-
-    /* ================= STORY ================= */
-
-    body[data-page="about"] .about-story {
-
-        display:
-
-            flex !important;
-
-        flex-direction:
-
-            column;
-
-        gap:
-
-            32px;
-
-    }
-
-
-    body[data-page="about"] .story-image-card {
-
-        order:
-
-            1;
-
-        width:
-
-            100%;
-
-        padding:
-
-            7px;
-
-        border-radius:
-
-            25px;
-
-        box-sizing:
-
-            border-box;
-
-    }
-
-
-    body[data-page="about"] .story-image-card img {
-
-        width:
-
-            100% !important;
-
-        height:
-
-            auto !important;
-
-        min-height:
-
-            0 !important;
-
-        aspect-ratio:
-
-            4 / 3;
-
-        object-fit:
-
-            cover;
-
-        border-radius:
-
-            19px;
-
-    }
-
-
-    body[data-page="about"] .story-text {
-
-        order:
-
-            2;
-
-        padding:
-
-            0 !important;
-
-        text-align:
-
-            center;
-
-        width:
-
-            100%;
-
-        box-sizing:
-
-            border-box;
-
-    }
-
-
-    body[data-page="about"] .story-text .mini-label {
-
-        font-size:
-
-            11px;
-
-        padding:
-
-            8px
-            13px;
-
-        margin-bottom:
-
-            13px;
-
-    }
-
-
-    body[data-page="about"] .story-text h2 {
-
-        font-size:
-
-            32px;
-
-        line-height:
-
-            1.15;
-
-        margin-bottom:
-
-            17px;
-
-    }
-
-
-    body[data-page="about"] .story-text p {
-
-        font-size:
-
-            14px;
-
-        line-height:
-
-            1.85;
-
-        text-align:
-
-            left;
-
-        margin:
-
-            0
-            0
-            15px;
-
-    }
-
-
-    /* ================= VALUES ================= */
-
-    body[data-page="about"] .values-grid {
-
-        grid-template-columns:
-
-            repeat(
-                2,
-                minmax(
-                    0,
-                    1fr
-                )
-            ) !important;
-
-        gap:
-
-            12px;
-
-    }
-
-
-    body[data-page="about"] .value-card {
-
-        padding:
-
-            18px
-            14px;
-
-        min-width:
-
-            0;
-
-        border-radius:
-
-            20px;
-
-        animation:
-
-            none;
-
-    }
-
-
-    body[data-page="about"] .value-icon {
-
-        width:
-
-            50px;
-
-        height:
-
-            50px;
-
-        font-size:
-
-            25px;
-
-        border-radius:
-
-            15px;
-
-        margin-bottom:
-
-            12px;
-
-    }
-
-
-    body[data-page="about"] .value-card h3 {
-
-        font-size:
-
-            17px;
-
-        line-height:
-
-            1.15;
-
-        word-break:
-
-            normal;
-
-    }
-
-
-    body[data-page="about"] .value-card p {
-
-        font-size:
-
-            11px;
-
-        line-height:
-
-            1.65;
-
-    }
-
-
-    /* ================= POSTS ================= */
-
-    body[data-page="about"] .posts-grid {
-
-        grid-template-columns:
-
-            1fr !important;
-
-        gap:
-
-            16px;
-
-    }
-
-
-    body[data-page="about"] .post-counter {
-
-        font-size:
-
-            12px;
-
-        padding:
-
-            10px
-            15px;
-
-        margin-bottom:
-
-            20px;
-
-    }
-
-
-    /* ================= CTA ================= */
-
-    body[data-page="about"] .about-cta {
-
-        padding:
-
-            48px
-            20px !important;
-
-        border-radius:
-
-            28px;
-
-    }
-
-
-    body[data-page="about"] .about-cta .cta-icon {
-
-        font-size:
-
-            50px;
-
-    }
-
-
-    body[data-page="about"] .about-cta h2 {
-
-        font-size:
-
-            34px;
-
-        line-height:
-
-            1.15;
-
-        margin:
-
-            12px
-            0;
-
-    }
-
-
-    body[data-page="about"] .about-cta p {
-
-        font-size:
-
-            13px;
-
-        line-height:
-
-            1.8;
-
-        margin-bottom:
-
-            22px;
-
-    }
-
-
-    body[data-page="about"] .about-cta::before {
-
-        font-size:
-
-            38px;
-
-        left:
-
-            1%;
-
-        top:
-
-            15px;
-
-        opacity:
-
-            .3;
-
-    }
-
-
-    body[data-page="about"] .about-cta::after {
-
-        font-size:
-
-            45px;
-
-        right:
-
-            1%;
-
-        bottom:
-
-            10px;
-
-        opacity:
-
-            .3;
-
-    }
-
-
-    /* ================= FOOTER ================= */
-
-    body[data-page="about"] .about-footer {
-
-        margin-top:
-
-            35px;
-
-        padding:
-
-            45px
-            0
-            0;
-
-    }
-
-
-    body[data-page="about"] .footer-grid {
-
-        grid-template-columns:
-
-            1fr !important;
-
-        gap:
-
-            25px;
-
-        text-align:
-
-            center;
-
-    }
-
-
-    body[data-page="about"] .footer-grid h3 {
-
-        font-size:
-
-            21px;
-
-        margin-bottom:
-
-            10px;
-
-    }
-
-
-    body[data-page="about"] .footer-grid p {
-
-        font-size:
-
-            13px;
-
-        margin:
-
-            8px
-            0;
-
-    }
-
-
-    body[data-page="about"] .footer-grid a {
-
-        font-size:
-
-            13px;
-
-    }
-
-
-    body[data-page="about"] .footer-copy {
-
-        margin-top:
-
-            30px;
-
-        padding:
-
-            18px
-            15px;
-
-        font-size:
-
-            11px;
-
-    }
-
-}
-
-
-/* =====================================================
-   HP KECIL
-===================================================== */
-
-@media (max-width: 480px) {
-
-
-    body[data-page="about"] .about-wrap {
-
-        width:
-
-            calc(
-                100% - 24px
-            ) !important;
-
-    }
-
-
-    /* HEADER */
-
-    body[data-page="about"] .about-head-inner {
-
-        min-height:
-
-            68px;
-
-    }
-
-
-    body[data-page="about"] .about-logo {
-
-        width:
-
-            42px;
-
-        height:
-
-            42px;
-
-        min-width:
-
-            42px;
-
-        font-size:
-
-            21px;
-
-        border-radius:
-
-            14px;
-
-    }
-
-
-    body[data-page="about"] .about-brand {
-
-        gap:
-
-            8px;
-
-    }
-
-
-    body[data-page="about"] .about-brand h1 {
-
-        font-size:
-
-            15px;
-
-    }
-
-
-    body[data-page="about"] .about-brand p {
-
-        font-size:
-
-            9px;
-
-    }
-
-
-    body[data-page="about"] .about-btn {
-
-        padding:
-
-            9px
-            10px;
-
-        font-size:
-
-            10px;
-
-        border-radius:
-
-            12px;
-
-    }
-
-
-    /* HERO */
-
-    body[data-page="about"] .about-hero {
-
-        padding:
-
-            55px
-            0
-            60px !important;
-
-    }
-
-
-    body[data-page="about"] .about-hero h2 {
-
-        font-size:
-
-            48px !important;
-
-    }
-
-
-    body[data-page="about"] .about-hero p {
-
-        font-size:
-
-            13px;
-
-        max-width:
-
-            310px;
-
-    }
-
-
-    /* NAV */
-
-    body[data-page="about"] .about-nav a {
-
-        min-width:
-
-            60px;
-
-        min-height:
-
             55px;
 
         font-size:
-
-            7px;
-
-    }
-
-
-    body[data-page="about"] .about-nav .nav-icon {
-
-        font-size:
-
-            17px;
-
-    }
-
-
-    /* STORY */
-
-    body[data-page="about"] .story-text h2 {
-
-        font-size:
-
             29px;
 
     }
 
 
-    body[data-page="about"] .story-text p {
+    .au-brand h1 {
 
         font-size:
+            25px;
 
+    }
+
+
+    .au-brand p {
+
+        font-size:
             13px;
 
     }
 
 
-    /* VALUES */
+    .au-phone {
 
-    body[data-page="about"] .values-grid {
+        display:
+            flex;
 
-        grid-template-columns:
+        align-items:
+            center;
 
-            1fr !important;
+        gap:
+            10px;
+
+        margin-right:
+            10px;
 
     }
 
 
-    body[data-page="about"] .value-card {
+    .au-phone-icon {
+
+        width:
+            43px;
+
+        height:
+            43px;
 
         display:
-
             grid;
 
-        grid-template-columns:
-
-            55px
-            minmax(
-                0,
-                1fr
-            );
-
-        column-gap:
-
-            14px;
-
-        align-items:
-
+        place-items:
             center;
 
-        padding:
+        border-radius:
+            50%;
 
+        background:
+            white;
+
+        box-shadow:
+            0 8px 20px rgba(50,40,80,.08);
+
+    }
+
+
+    .au-phone small {
+
+        display:
+            block;
+
+        color:
+            #8b8298;
+
+    }
+
+
+    .au-phone b {
+
+        font-size:
+            14px;
+
+    }
+
+
+    .au-visit {
+
+        padding:
+            13px 20px;
+
+        font-size:
+            13px;
+
+    }
+
+
+    .au-nav-inner {
+
+        justify-content:
+            center;
+
+        overflow:
+            visible;
+
+    }
+
+
+    .au-nav-link {
+
+        flex-direction:
+            row;
+
+        min-width:
+            auto;
+
+        font-size:
+            12px;
+
+        padding:
+            10px 13px;
+
+    }
+
+
+    .au-nav-link .au-nav-icon {
+
+        font-size:
             17px;
 
     }
 
 
-    body[data-page="about"] .value-icon {
+    .au-more-wrap {
 
-        grid-row:
-
-            span 2;
-
-        width:
-
-            52px;
-
-        height:
-
-            52px;
-
-        margin:
-
-            0;
+        display:
+            none;
 
     }
 
 
-    body[data-page="about"] .value-card h3 {
+    .au-hero {
 
-        margin:
-
-            0
-            0
-            5px;
+        padding:
+            100px 0 110px;
 
     }
 
 
-    body[data-page="about"] .value-card p {
-
-        margin:
-
-            0;
-
-    }
-
-
-    /* CTA */
-
-    body[data-page="about"] .about-cta h2 {
+    .au-hero p {
 
         font-size:
+            17px;
 
-            30px;
+    }
+
+
+    .au-section {
+
+        padding:
+            60px 0;
+
+    }
+
+
+    .au-story {
+
+        grid-template-columns:
+            1fr 1fr;
+
+        align-items:
+            center;
+
+        gap:
+            55px;
+
+    }
+
+
+    .au-story-text {
+
+        text-align:
+            left;
+
+    }
+
+
+    .au-story-text h2 {
+
+        font-size:
+            43px;
+
+    }
+
+
+    .au-values-grid {
+
+        grid-template-columns:
+            repeat(4, 1fr);
+
+        gap:
+            20px;
+
+    }
+
+
+    .au-value-card {
+
+        display:
+            block;
+
+        padding:
+            27px 20px;
+
+        border-radius:
+            25px;
+
+    }
+
+
+    .au-value-icon {
+
+        margin-bottom:
+            15px;
+
+    }
+
+
+    .au-value-content h3 {
+
+        font-size:
+            21px;
+
+    }
+
+
+    #postsContainer.au-posts-grid {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+        gap:
+            22px;
+
+    }
+
+
+    .au-cta {
+
+        padding:
+            65px 35px;
+
+        border-radius:
+            40px;
+
+    }
+
+
+    .au-cta h2 {
+
+        font-size:
+            46px;
+
+    }
+
+
+    .au-footer-grid {
+
+        grid-template-columns:
+            1.4fr 1fr 1fr 1fr;
+
+        gap:
+            35px;
+
+        text-align:
+            left;
+
+    }
+
+
+    .au-footer a {
+
+        margin-left:
+            0;
+
+    }
+
+
+    .au-social {
+
+        justify-content:
+            flex-start;
 
     }
 
 }
 
-
-/* =====================================================
-   DISABLE ANIMASI BERAT DI HP
-===================================================== */
-
-@media (max-width: 768px) {
-
-
-    body[data-page="about"] .value-card {
-
-        transition:
-
-            transform
-            .25s
-            ease;
-
-    }
-
-
-    body[data-page="about"] .value-card:hover {
-
-        transform:
-
-            translateY(
-                -4px
-            );
-
-    }
-
-}
 
 
 /* =====================================================
@@ -5013,867 +2572,19 @@ body[data-page="about"] .about-reveal {
 
 @media (prefers-reduced-motion: reduce) {
 
+    * {
 
-    body[data-page="about"] *,
-    body[data-page="about"]::before,
-    body[data-page="about"]::after {
+        animation-duration:
+            .01ms !important;
 
-        animation:
+        animation-iteration-count:
+            1 !important;
 
-            none !important;
+        transition-duration:
+            .01ms !important;
 
-        transition:
-
-            none !important;
-
-    }
-
-}
-
-
-/* =====================================================
-   PREMIUM MOBILE BOTTOM NAVIGATION
-===================================================== */
-
-
-/* SEMBUNYIKAN DI DESKTOP */
-
-.mobile-bottom-nav,
-.mobile-more-menu,
-.mobile-menu-overlay {
-
-    display: none;
-
-}
-
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media (max-width: 768px) {
-
-
-    /* ===============================
-       AGAR ISI TIDAK TERTUTUP NAVBAR
-    =============================== */
-
-    body[data-page="about"] {
-
-        padding-bottom: 100px;
-
-    }
-
-
-    /* ===============================
-       SEMBUNYIKAN NAVBAR ATAS LAMA DI HP
-    =============================== */
-
-    body[data-page="about"] .about-nav {
-
-        display: none;
-
-    }
-
-
-    /* ===============================
-       BOTTOM NAVIGATION
-    =============================== */
-
-    .mobile-bottom-nav {
-
-        position: fixed;
-
-        left: 50%;
-
-        bottom: 12px;
-
-        transform: translateX(-50%);
-
-        width: calc(100% - 24px);
-
-        max-width: 500px;
-
-        min-height: 70px;
-
-        display: flex;
-
-        align-items: center;
-
-        justify-content: space-around;
-
-        padding:
-
-            7px
-            6px;
-
-        box-sizing: border-box;
-
-        border-radius: 24px;
-
-        background:
-
-            rgba(
-                255,
-                255,
-                255,
-                .88
-            );
-
-        backdrop-filter:
-
-            blur(25px);
-
-        -webkit-backdrop-filter:
-
-            blur(25px);
-
-        border:
-
-            1px
-            solid
-            rgba(
-                255,
-                255,
-                255,
-                .9
-            );
-
-        box-shadow:
-
-            0 15px 45px
-            rgba(
-                54,
-                35,
-                90,
-                .18
-            );
-
-        z-index: 999;
-
-    }
-
-
-    /* ===============================
-       NAV ITEM
-    =============================== */
-
-    .mobile-nav-item {
-
-        position: relative;
-
-        width: 20%;
-
-        min-height: 56px;
-
-        display: flex;
-
-        flex-direction: column;
-
-        align-items: center;
-
-        justify-content: center;
-
-        gap: 3px;
-
-        border: none;
-
-        outline: none;
-
-        background: transparent;
-
-        text-decoration: none;
-
-        color: #817a92;
-
-        font-family:
-
-            "Nunito",
-            sans-serif;
-
-        font-size: 10px;
-
-        font-weight: 800;
-
-        cursor: pointer;
-
-        border-radius: 17px;
-
-        transition:
-
-            .25s
-            ease;
-
-        -webkit-tap-highlight-color:
-
-            transparent;
-
-    }
-
-
-    /* ICON */
-
-    .mobile-nav-icon {
-
-        font-size: 20px;
-
-        line-height: 1;
-
-        transition:
-
-            .25s
-            ease;
-
-    }
-
-
-    /* ACTIVE */
-
-    .mobile-nav-item.active {
-
-        color: #7d6cff;
-
-        background:
-
-            linear-gradient(
-                135deg,
-                #eeeaff,
-                #f8edff
-            );
-
-        box-shadow:
-
-            0 6px 20px
-            rgba(
-                125,
-                108,
-                255,
-                .12
-            );
-
-    }
-
-
-    .mobile-nav-item.active .mobile-nav-icon {
-
-        transform:
-
-            translateY(-2px)
-            scale(1.08);
-
-    }
-
-
-    /* TAP EFFECT */
-
-    .mobile-nav-item:active {
-
-        transform:
-
-            scale(.92);
-
-    }
-
-
-    /* ===============================
-       OVERLAY
-    =============================== */
-
-    .mobile-menu-overlay {
-
-        position: fixed;
-
-        inset: 0;
-
-        display: block;
-
-        background:
-
-            rgba(
-                35,
-                25,
-                55,
-                0
-            );
-
-        backdrop-filter:
-
-            blur(0);
-
-        -webkit-backdrop-filter:
-
-            blur(0);
-
-        opacity: 0;
-
-        visibility: hidden;
-
-        pointer-events: none;
-
-        transition:
-
-            .35s
-            ease;
-
-        z-index: 1100;
-
-    }
-
-
-    .mobile-menu-overlay.show {
-
-        background:
-
-            rgba(
-                35,
-                25,
-                55,
-                .35
-            );
-
-        backdrop-filter:
-
-            blur(5px);
-
-        -webkit-backdrop-filter:
-
-            blur(5px);
-
-        opacity: 1;
-
-        visibility: visible;
-
-        pointer-events: auto;
-
-    }
-
-
-    /* ===============================
-       MORE MENU
-    =============================== */
-
-    .mobile-more-menu {
-
-        position: fixed;
-
-        left: 0;
-
-        bottom: 0;
-
-        width: 100%;
-
-        display: block;
-
-        box-sizing: border-box;
-
-        padding:
-
-            12px
-            18px
-            115px;
-
-        border-radius:
-
-            32px
-            32px
-            0
-            0;
-
-        background:
-
-            linear-gradient(
-                145deg,
-                #ffffff,
-                #fcf9ff
-            );
-
-        box-shadow:
-
-            0 -20px 60px
-            rgba(
-                30,
-                20,
-                60,
-                .2
-            );
-
-        transform:
-
-            translateY(110%);
-
-        transition:
-
-            transform
-            .5s
-            cubic-bezier(
-                .22,
-                1,
-                .36,
-                1
-            );
-
-        z-index: 1200;
-
-    }
-
-
-    .mobile-more-menu.show {
-
-        transform:
-
-            translateY(0);
-
-    }
-
-
-    /* ===============================
-       HANDLE
-    =============================== */
-
-    .mobile-menu-handle {
-
-        width: 48px;
-
-        height: 5px;
-
-        border-radius: 20px;
-
-        margin:
-
-            0
-            auto
-            18px;
-
-        background:
-
-            linear-gradient(
-                90deg,
-                #ffd3e1,
-                #a998ff
-            );
-
-    }
-
-
-    /* ===============================
-       HEADER
-    =============================== */
-
-    .mobile-menu-header {
-
-        display: flex;
-
-        align-items: center;
-
-        justify-content: space-between;
-
-        gap: 15px;
-
-        margin-bottom: 20px;
-
-    }
-
-
-    .mobile-menu-header h2 {
-
-        margin: 0;
-
-        font-family:
-
-            "Baloo 2",
-            cursive;
-
-        font-size: 28px;
-
-        line-height: 1.1;
-
-        color: #352d4f;
-
-    }
-
-
-    .mobile-menu-header p {
-
-        margin:
-
-            5px
-            0
-            0;
-
-        font-size: 12px;
-
-        color: #8c849b;
-
-    }
-
-
-    /* CLOSE */
-
-    .mobile-menu-close {
-
-        width: 42px;
-
-        height: 42px;
-
-        border: none;
-
-        border-radius: 14px;
-
-        background:
-
-            #f5f0fa;
-
-        color: #6d647b;
-
-        font-size: 20px;
-
-        cursor: pointer;
-
-        transition:
-
-            .25s;
-
-    }
-
-
-    .mobile-menu-close:active {
-
-        transform:
-
-            scale(.9)
-            rotate(90deg);
-
-    }
-
-
-    /* ===============================
-       MENU LIST
-    =============================== */
-
-    .mobile-menu-list {
-
-        display: flex;
-
-        flex-direction: column;
-
-        gap: 10px;
-
-    }
-
-
-    /* ===============================
-       MENU ITEM
-    =============================== */
-
-    .premium-menu-item {
-
-        display: flex;
-
-        align-items: center;
-
-        justify-content: space-between;
-
-        gap: 10px;
-
-        min-height: 72px;
-
-        padding:
-
-            10px
-            14px;
-
-        box-sizing: border-box;
-
-        border-radius: 20px;
-
-        text-decoration: none;
-
-        background:
-
-            rgba(
-                248,
-                245,
-                252,
-                .9
-            );
-
-        border:
-
-            1px
-            solid
-            rgba(
-                130,
-                100,
-                180,
-                .06
-            );
-
-        transition:
-
-            .25s
-            ease;
-
-        -webkit-tap-highlight-color:
-
-            transparent;
-
-    }
-
-
-    .premium-menu-item:active {
-
-        transform:
-
-            scale(.97);
-
-        background:
-
-            #f0ebff;
-
-    }
-
-
-    /* LEFT */
-
-    .premium-menu-left {
-
-        display: flex;
-
-        align-items: center;
-
-        gap: 13px;
-
-        min-width: 0;
-
-    }
-
-
-    /* ICON BOX */
-
-    .premium-menu-icon {
-
-        width: 50px;
-
-        height: 50px;
-
-        min-width: 50px;
-
-        border-radius: 17px;
-
-        display: grid;
-
-        place-items: center;
-
-        font-size: 24px;
-
-    }
-
-
-    /* ICON COLORS */
-
-    .classes-icon {
-
-        background:
-
-            linear-gradient(
-                135deg,
-                #e5ddff,
-                #f3edff
-            );
-
-    }
-
-
-    .blog-icon {
-
-        background:
-
-            linear-gradient(
-                135deg,
-                #ffe3ed,
-                #fff0f5
-            );
-
-    }
-
-
-    .parents-icon {
-
-        background:
-
-            linear-gradient(
-                135deg,
-                #fff0ba,
-                #fff8dc
-            );
-
-    }
-
-
-    .contact-icon {
-
-        background:
-
-            linear-gradient(
-                135deg,
-                #d8f1ff,
-                #eefaff
-            );
-
-    }
-
-
-    /* TEXT */
-
-    .premium-menu-item h3 {
-
-        margin: 0;
-
-        font-family:
-
-            "Baloo 2",
-            cursive;
-
-        font-size: 18px;
-
-        line-height: 1.1;
-
-        color: #3c3453;
-
-    }
-
-
-    .premium-menu-item p {
-
-        margin:
-
-            4px
-            0
-            0;
-
-        font-size: 11px;
-
-        color: #938b9f;
-
-    }
-
-
-    /* ARROW */
-
-    .premium-menu-arrow {
-
-        font-size: 30px;
-
-        line-height: 1;
-
-        color: #b1a7c0;
-
-        transition:
-
-            .25s;
-
-    }
-
-
-    .premium-menu-item:active
-    .premium-menu-arrow {
-
-        transform:
-
-            translateX(4px);
-
-        color: #7d6cff;
-
-    }
-
-
-    /* ===============================
-       BOOK VISIT
-    =============================== */
-
-    .mobile-book-visit {
-
-        width: 100%;
-
-        min-height: 55px;
-
-        margin-top: 16px;
-
-        display: flex;
-
-        align-items: center;
-
-        justify-content: center;
-
-        gap: 12px;
-
-        box-sizing: border-box;
-
-        border-radius: 18px;
-
-        text-decoration: none;
-
-        color: white;
-
-        font-family:
-
-            "Nunito",
-            sans-serif;
-
-        font-size: 14px;
-
-        font-weight: 900;
-
-        background:
-
-            linear-gradient(
-                135deg,
-                #ef4f82,
-                #ff7ba5,
-                #a67dff
-            );
-
-        box-shadow:
-
-            0 12px 25px
-            rgba(
-                239,
-                79,
-                130,
-                .25
-            );
-
-        transition:
-
-            .25s;
-
-    }
-
-
-    .mobile-book-visit:active {
-
-        transform:
-
-            scale(.97);
-
-    }
-
-}
-
-
-
-/* =====================================================
-   DESKTOP
-===================================================== */
-
-@media (min-width: 769px) {
-
-
-    .mobile-bottom-nav,
-    .mobile-more-menu,
-    .mobile-menu-overlay {
-
-        display: none !important;
+        scroll-behavior:
+            auto !important;
 
     }
 
@@ -5888,33 +2599,38 @@ body[data-page="about"] .about-reveal {
 <body data-page="about">
 
 
+<!-- BACKGROUND -->
+
+<div class="au-bg">
+
+    <div class="au-bg-dot"></div>
+
+</div>
+
+
+
 <!-- =====================================================
      HEADER
 ===================================================== -->
 
-<header class="about-header">
+<header class="au-header">
 
-    <div
-        class="
-            about-wrap
-            about-head-inner
-        "
-    >
+    <div class="au-container au-header-inner">
 
 
         <!-- BRAND -->
 
         <a
             href="index.html"
-            class="about-brand"
+            class="au-brand"
         >
 
-            <div class="about-logo">
+            <div class="au-logo">
                 ☀️
             </div>
 
 
-            <div>
+            <div class="au-brand-text">
 
                 <h1>
 
@@ -5937,14 +2653,14 @@ body[data-page="about"] .about-reveal {
 
 
 
-        <!-- RIGHT -->
+        <!-- ACTION -->
 
-        <div class="about-header-right">
+        <div class="au-header-actions">
 
 
-            <div class="about-call">
+            <div class="au-phone">
 
-                <div class="call-icon">
+                <div class="au-phone-icon">
                     📞
                 </div>
 
@@ -5954,7 +2670,6 @@ body[data-page="about"] .about-reveal {
                     <small>
                         Hubungi Kami
                     </small>
-
 
                     <b>
                         +62 813-9875-4451
@@ -5967,7 +2682,7 @@ body[data-page="about"] .about-reveal {
 
             <a
                 href="contact.html"
-                class="about-btn"
+                class="au-visit"
             >
 
                 📅
@@ -5990,19 +2705,17 @@ body[data-page="about"] .about-reveal {
      NAVBAR
 ===================================================== -->
 
-<nav class="about-nav">
+<nav class="au-nav">
 
-    <div
-        class="
-            about-wrap
-            about-nav-inner
-        "
-    >
+    <div class="au-nav-inner">
 
 
-        <a href="index.html">
+        <a
+            href="index.html"
+            class="au-nav-link"
+        >
 
-            <span class="nav-icon">
+            <span class="au-nav-icon">
                 🏠
             </span>
 
@@ -6013,10 +2726,10 @@ body[data-page="about"] .about-reveal {
 
         <a
             href="about.html"
-            class="active"
+            class="au-nav-link active"
         >
 
-            <span class="nav-icon">
+            <span class="au-nav-icon">
                 👥
             </span>
 
@@ -6025,9 +2738,12 @@ body[data-page="about"] .about-reveal {
         </a>
 
 
-        <a href="programs.html">
+        <a
+            href="programs.html"
+            class="au-nav-link"
+        >
 
-            <span class="nav-icon">
+            <span class="au-nav-icon">
                 📚
             </span>
 
@@ -6036,31 +2752,12 @@ body[data-page="about"] .about-reveal {
         </a>
 
 
-        <a href="classes.html">
+        <a
+            href="gallery.html"
+            class="au-nav-link"
+        >
 
-            <span class="nav-icon">
-                🎓
-            </span>
-
-            CLASSES
-
-        </a>
-
-
-        <a href="blog.html">
-
-            <span class="nav-icon">
-                🖍️
-            </span>
-
-            BLOG
-
-        </a>
-
-
-        <a href="gallery.html">
-
-            <span class="nav-icon">
+            <span class="au-nav-icon">
                 🖼️
             </span>
 
@@ -6069,26 +2766,26 @@ body[data-page="about"] .about-reveal {
         </a>
 
 
-        <a href="parents.html">
 
-            <span class="nav-icon">
-                💛
-            </span>
+        <!-- MENU LAINNYA HP -->
 
-            PARENTS
+        <div class="au-more-wrap">
 
-        </a>
+            <button
+                type="button"
+                class="au-more-button"
+                id="auMoreButton"
+            >
 
+                <span>
+                    ✨
+                </span>
 
-        <a href="contact.html">
+                MORE
 
-            <span class="nav-icon">
-                ✉️
-            </span>
+            </button>
 
-            CONTACT
-
-        </a>
+        </div>
 
 
     </div>
@@ -6098,26 +2795,82 @@ body[data-page="about"] .about-reveal {
 
 
 <!-- =====================================================
+     DROPDOWN MENU
+===================================================== -->
+
+<div
+    class="au-more-menu"
+    id="auMoreMenu"
+>
+
+
+    <div class="au-more-title">
+
+        ✨ Menu Lainnya
+
+    </div>
+
+
+    <a href="classes.html">
+
+        🎓
+
+        Classes
+
+    </a>
+
+
+    <a href="blog.html">
+
+        🖍️
+
+        Blog
+
+    </a>
+
+
+    <a href="parents.html">
+
+        💛
+
+        Parents
+
+    </a>
+
+
+    <a href="contact.html">
+
+        ✉️
+
+        Contact
+
+    </a>
+
+
+    <a href="contact.html">
+
+        📅
+
+        Book Visit
+
+    </a>
+
+
+</div>
+
+
+
+<!-- =====================================================
      HERO
 ===================================================== -->
 
-<section class="about-hero">
+<section class="au-hero">
 
 
-    <div class="hero-orb orb-one"></div>
-
-    <div class="hero-orb orb-two"></div>
+    <div class="au-container au-hero-content">
 
 
-    <div
-        class="
-            about-wrap
-            hero-content
-        "
-    >
-
-
-        <div class="hero-badge">
+        <div class="au-hero-badge">
 
             ✨
 
@@ -6157,28 +2910,18 @@ body[data-page="about"] .about-reveal {
 
 
 <!-- =====================================================
-     WELCOME
+     STORY
 ===================================================== -->
 
-<section class="about-section">
+<section class="au-section">
 
 
-    <div
-        class="
-            about-wrap
-            about-story
-        "
-    >
+    <div class="au-container au-story">
 
 
         <!-- IMAGE -->
 
-        <div
-            class="
-                story-image-card
-                about-reveal
-            "
-        >
+        <div class="au-story-image au-reveal">
 
             <img
                 src="images/anak-anak.jpg"
@@ -6191,15 +2934,10 @@ body[data-page="about"] .about-reveal {
 
         <!-- TEXT -->
 
-        <div
-            class="
-                story-text
-                about-reveal
-            "
-        >
+        <div class="au-story-text au-reveal">
 
 
-            <div class="mini-label">
+            <div class="au-story-label">
 
                 🌈 OUR STORY
 
@@ -6221,31 +2959,26 @@ body[data-page="about"] .about-reveal {
 
                 RA Miftahul Hikmah adalah tempat
                 belajar yang menyenangkan, aman,
-                nyaman dan penuh kasih untuk
-                membantu anak berkembang secara
-                optimal.
+                nyaman dan penuh kasih untuk membantu
+                anak berkembang secara optimal.
 
             </p>
 
 
             <p>
 
-                Kami percaya bahwa setiap anak
-                memiliki potensi yang unik.
-                Melalui bermain, kreativitas,
-                eksplorasi dan pembelajaran yang
-                menyenangkan, anak-anak dapat
-                tumbuh dengan percaya diri setiap hari.
+                Kami percaya bahwa setiap anak memiliki
+                potensi yang unik. Melalui bermain,
+                kreativitas, eksplorasi dan pembelajaran
+                yang menyenangkan, anak-anak dapat tumbuh
+                dengan percaya diri setiap hari.
 
             </p>
 
 
-            <br>
-
-
             <a
                 href="programs.html"
-                class="about-btn"
+                class="au-button"
             >
 
                 Lihat Program
@@ -6269,18 +3002,21 @@ body[data-page="about"] .about-reveal {
      VALUES
 ===================================================== -->
 
-<section class="about-section">
+<section class="au-section">
 
 
-    <div class="about-wrap">
+    <div class="au-container">
 
 
-        <div
-            class="
-                section-heading
-                about-reveal
-            "
-        >
+        <div class="au-heading au-reveal">
+
+
+            <div class="au-heading-badge">
+
+                ⭐ NILAI KAMI
+
+            </div>
+
 
             <h2>
 
@@ -6308,144 +3044,108 @@ body[data-page="about"] .about-reveal {
 
 
 
-        <div class="values-grid">
+        <div class="au-values-grid">
 
 
-            <!-- VALUE 1 -->
+            <!-- CARD 1 -->
 
-            <div
-                class="
-                    value-card
-                    about-reveal
-                "
-            >
+            <div class="au-value-card au-reveal">
 
-                <div class="value-icon">
+                <div class="au-value-icon">
                     ❤️
                 </div>
 
 
-                <div>
+                <div class="au-value-content">
 
                     <h3>
                         Penuh Kasih
                     </h3>
 
-
                     <p>
-
-                        Lingkungan belajar yang
-                        hangat, aman dan penuh kasih.
-
+                        Lingkungan belajar yang hangat,
+                        aman dan penuh kasih.
                     </p>
 
                 </div>
-
 
             </div>
 
 
 
-            <!-- VALUE 2 -->
+            <!-- CARD 2 -->
 
-            <div
-                class="
-                    value-card
-                    about-reveal
-                "
-            >
+            <div class="au-value-card au-reveal">
 
-                <div class="value-icon">
+                <div class="au-value-icon">
                     🌱
                 </div>
 
 
-                <div>
+                <div class="au-value-content">
 
                     <h3>
                         Tumbuh Bersama
                     </h3>
 
-
                     <p>
-
-                        Mendukung setiap anak
-                        sesuai potensinya.
-
+                        Mendukung setiap anak sesuai
+                        dengan potensinya.
                     </p>
 
                 </div>
-
 
             </div>
 
 
 
-            <!-- VALUE 3 -->
+            <!-- CARD 3 -->
 
-            <div
-                class="
-                    value-card
-                    about-reveal
-                "
-            >
+            <div class="au-value-card au-reveal">
 
-                <div class="value-icon">
+                <div class="au-value-icon">
                     🎨
                 </div>
 
 
-                <div>
+                <div class="au-value-content">
 
                     <h3>
                         Kreatif
                     </h3>
 
-
                     <p>
-
                         Memberikan ruang untuk
                         bereksplorasi dan berkarya.
-
                     </p>
 
                 </div>
-
 
             </div>
 
 
 
-            <!-- VALUE 4 -->
+            <!-- CARD 4 -->
 
-            <div
-                class="
-                    value-card
-                    about-reveal
-                "
-            >
+            <div class="au-value-card au-reveal">
 
-                <div class="value-icon">
+                <div class="au-value-icon">
                     🌈
                 </div>
 
 
-                <div>
+                <div class="au-value-content">
 
                     <h3>
                         Menyenangkan
                     </h3>
 
-
                     <p>
-
                         Belajar sambil bermain
                         dengan penuh kebahagiaan.
-
                     </p>
 
                 </div>
-
 
             </div>
 
@@ -6464,18 +3164,21 @@ body[data-page="about"] .about-reveal {
      POSTS
 ===================================================== -->
 
-<section class="about-section">
+<section class="au-section">
 
 
-    <div class="about-wrap">
+    <div class="au-container">
 
 
-        <div
-            class="
-                section-heading
-                about-reveal
-            "
-        >
+        <div class="au-heading au-reveal">
+
+
+            <div class="au-heading-badge">
+
+                ✨ KEGIATAN KAMI
+
+            </div>
+
 
             <h2>
 
@@ -6484,8 +3187,6 @@ body[data-page="about"] .about-reveal {
                 <span>
                     Sekolah
                 </span>
-
-                ✨
 
             </h2>
 
@@ -6503,26 +3204,32 @@ body[data-page="about"] .about-reveal {
 
 
 
-        <!-- COUNTER -->
+        <div class="au-post-box">
 
-        <div class="post-counter">
 
-            📝 Total posting:
+            <!-- COUNTER -->
 
-            <span id="postCount">
-                0
-            </span>
+            <div class="au-post-counter">
+
+                📝 Total posting:
+
+                <span id="postCount">
+                    0
+                </span>
+
+            </div>
+
+
+
+            <!-- POSTS SUPABASE -->
+
+            <div
+                id="postsContainer"
+                class="au-posts-grid"
+            ></div>
+
 
         </div>
-
-
-
-        <!-- POSTS -->
-
-        <div
-            id="postsContainer"
-            class="posts-grid"
-        ></div>
 
 
     </div>
@@ -6536,21 +3243,16 @@ body[data-page="about"] .about-reveal {
      CTA
 ===================================================== -->
 
-<section class="about-section">
+<section class="au-section">
 
 
-    <div class="about-wrap">
+    <div class="au-container">
 
 
-        <div
-            class="
-                about-cta
-                about-reveal
-            "
-        >
+        <div class="au-cta au-reveal">
 
 
-            <div class="cta-icon">
+            <div class="au-cta-icon">
                 🌈
             </div>
 
@@ -6579,7 +3281,7 @@ body[data-page="about"] .about-reveal {
 
             <a
                 href="pendaftaran.html"
-                class="about-btn"
+                class="au-button"
             >
 
                 🚀
@@ -6603,15 +3305,10 @@ body[data-page="about"] .about-reveal {
      FOOTER
 ===================================================== -->
 
-<footer class="about-footer">
+<footer class="au-footer">
 
 
-    <div
-        class="
-            about-wrap
-            footer-grid
-        "
-    >
+    <div class="au-container au-footer-grid">
 
 
         <!-- BRAND -->
@@ -6622,10 +3319,8 @@ body[data-page="about"] .about-reveal {
 
                 ☀️ RA MIFTAHUL
 
-                <span style="color:#ff86ad">
-
+                <span>
                     HIKMAH
-
                 </span>
 
             </h3>
@@ -6646,12 +3341,11 @@ body[data-page="about"] .about-reveal {
 
             </p>
 
-
         </div>
 
 
 
-        <!-- LINKS -->
+        <!-- MENU -->
 
         <div>
 
@@ -6678,7 +3372,6 @@ body[data-page="about"] .about-reveal {
             <a href="gallery.html">
                 Gallery
             </a>
-
 
         </div>
 
@@ -6707,7 +3400,6 @@ body[data-page="about"] .about-reveal {
                 📍 Tangerang, Indonesia
             </p>
 
-
         </div>
 
 
@@ -6721,23 +3413,23 @@ body[data-page="about"] .about-reveal {
             </h3>
 
 
-            <p style="font-size:28px">
+            <div class="au-social">
 
-                📘
-
-                📸
-
-                ▶️
-
-            </p>
+                <span>
+                    📘
+                </span>
 
 
-            <p>
+                <span>
+                    📸
+                </span>
 
-                Ikuti kegiatan terbaru
-                kami melalui media sosial.
 
-            </p>
+                <span>
+                    ▶️
+                </span>
+
+            </div>
 
 
         </div>
@@ -6747,9 +3439,7 @@ body[data-page="about"] .about-reveal {
 
 
 
-    <!-- COPYRIGHT -->
-
-    <div class="footer-copy">
+    <div class="au-copyright">
 
         © 2026 RA Miftahul Hikmah.
         All Rights Reserved. 💗
@@ -6772,7 +3462,7 @@ body[data-page="about"] .about-reveal {
 
 
 <!-- =====================================================
-     SCRIPT WEBSITE
+     WEBSITE SCRIPT
 ===================================================== -->
 
 <script
@@ -6782,7 +3472,7 @@ body[data-page="about"] .about-reveal {
 
 
 <!-- =====================================================
-     SCRIPT POSTS
+     POSTS SCRIPT
 ===================================================== -->
 
 <script
@@ -6792,451 +3482,211 @@ body[data-page="about"] .about-reveal {
 
 
 <!-- =====================================================
-     REVEAL ANIMATION
+     ABOUT JAVASCRIPT
 ===================================================== -->
 
 <script>
+
+
+/* ================= MENU LAINNYA ================= */
 
 document.addEventListener(
     "DOMContentLoaded",
     function () {
 
 
-        const elements =
-
-            document.querySelectorAll(
-                ".about-reveal"
+        const moreButton =
+            document.getElementById(
+                "auMoreButton"
             );
 
 
-        const observer =
-
-            new IntersectionObserver(
-
-                function (entries) {
-
-
-                    entries.forEach(
-
-                        function (entry) {
+        const moreMenu =
+            document.getElementById(
+                "auMoreMenu"
+            );
 
 
-                            if (
-                                entry.isIntersecting
+        if (
+            moreButton &&
+            moreMenu
+        ) {
+
+
+            moreButton.addEventListener(
+                "click",
+                function (event) {
+
+
+                    event.stopPropagation();
+
+
+                    moreMenu.classList.toggle(
+                        "open"
+                    );
+
+
+                }
+            );
+
+
+            document.addEventListener(
+                "click",
+                function (event) {
+
+
+                    if (
+                        !moreMenu.contains(
+                            event.target
+                        ) &&
+
+                        !moreButton.contains(
+                            event.target
+                        )
+                    ) {
+
+
+                        moreMenu.classList.remove(
+                            "open"
+                        );
+
+
+                    }
+
+
+                }
+            );
+
+
+        }
+
+
+
+        /* ================= REVEAL ================= */
+
+        const revealItems =
+            document.querySelectorAll(
+                ".au-reveal"
+            );
+
+
+        if (
+            "IntersectionObserver"
+            in
+            window
+        ) {
+
+
+            const observer =
+                new IntersectionObserver(
+
+                    function (
+                        entries
+                    ) {
+
+
+                        entries.forEach(
+
+                            function (
+                                entry
                             ) {
 
 
-                                entry.target.classList.add(
-                                    "show"
-                                );
+                                if (
+                                    entry.isIntersecting
+                                ) {
+
+
+                                    entry.target.classList.add(
+                                        "au-show"
+                                    );
+
+
+                                    observer.unobserve(
+                                        entry.target
+                                    );
+
+
+                                }
 
 
                             }
 
+                        );
 
-                        }
 
+                    },
+
+
+                    {
+
+                        threshold:
+                            0.12,
+
+                        rootMargin:
+                            "0px 0px -35px 0px"
+
+                    }
+
+                );
+
+
+            revealItems.forEach(
+
+                function (
+                    item,
+                    index
+                ) {
+
+
+                    item.style.transitionDelay =
+                        (
+                            index % 4
+                        ) * 70
+                        + "ms";
+
+
+                    observer.observe(
+                        item
                     );
 
-
-                },
-
-                {
-
-                    threshold: 0.12,
-
-                    rootMargin:
-
-                        "0px 0px -40px 0px"
 
                 }
 
             );
 
 
-        elements.forEach(
+        }
 
-            function (element) {
+        else {
 
-                observer.observe(
-                    element
-                );
 
-            }
+            revealItems.forEach(
 
-        );
+                function (
+                    item
+                ) {
+
+
+                    item.classList.add(
+                        "au-show"
+                    );
+
+
+                }
+
+            );
+
+
+        }
 
 
     }
 );
 
+
 </script>
 
-
-<!-- =====================================================
-     PREMIUM MOBILE BOTTOM NAVIGATION
-===================================================== -->
-
-<div class="mobile-bottom-nav">
-
-
-    <!-- HOME -->
-
-    <a href="index.html" class="mobile-nav-item">
-
-        <span class="mobile-nav-icon">
-            🏠
-        </span>
-
-        <span>
-            Home
-        </span>
-
-    </a>
-
-
-    <!-- ABOUT -->
-
-    <a
-        href="about.html"
-        class="mobile-nav-item active"
-    >
-
-        <span class="mobile-nav-icon">
-            👥
-        </span>
-
-        <span>
-            About
-        </span>
-
-    </a>
-
-
-    <!-- PROGRAMS -->
-
-    <a
-        href="programs.html"
-        class="mobile-nav-item"
-    >
-
-        <span class="mobile-nav-icon">
-            📚
-        </span>
-
-        <span>
-            Program
-        </span>
-
-    </a>
-
-
-    <!-- GALLERY -->
-
-    <a
-        href="gallery.html"
-        class="mobile-nav-item"
-    >
-
-        <span class="mobile-nav-icon">
-            🖼️
-        </span>
-
-        <span>
-            Gallery
-        </span>
-
-    </a>
-
-
-    <!-- MORE -->
-
-    <button
-        type="button"
-        class="mobile-nav-item mobile-more-btn"
-        id="mobileMoreBtn"
-    >
-
-        <span class="mobile-nav-icon">
-            ☰
-        </span>
-
-        <span>
-            More
-        </span>
-
-    </button>
-
-
-</div>
-
-
-
-<!-- =====================================================
-     MORE MENU OVERLAY
-===================================================== -->
-
-<div
-    class="mobile-menu-overlay"
-    id="mobileMenuOverlay"
-></div>
-
-
-
-<!-- =====================================================
-     PREMIUM MORE MENU
-===================================================== -->
-
-<div
-    class="mobile-more-menu"
-    id="mobileMoreMenu"
->
-
-
-    <!-- HANDLE -->
-
-    <div class="mobile-menu-handle"></div>
-
-
-    <!-- HEADER -->
-
-    <div class="mobile-menu-header">
-
-
-        <div>
-
-            <h2>
-
-                ✨ Menu Lainnya
-
-            </h2>
-
-
-            <p>
-
-                Jelajahi fitur RA Miftahul Hikmah
-
-            </p>
-
-        </div>
-
-
-        <button
-            type="button"
-            class="mobile-menu-close"
-            id="mobileMenuClose"
-        >
-
-            ✕
-
-        </button>
-
-
-    </div>
-
-
-
-    <!-- MENU ITEMS -->
-
-    <div class="mobile-menu-list">
-
-
-        <!-- CLASSES -->
-
-        <a
-            href="classes.html"
-            class="premium-menu-item"
-        >
-
-            <div class="premium-menu-left">
-
-                <div class="premium-menu-icon classes-icon">
-
-                    🎓
-
-                </div>
-
-
-                <div>
-
-                    <h3>
-                        Classes
-                    </h3>
-
-
-                    <p>
-                        Kelas & pembelajaran
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <span class="premium-menu-arrow">
-
-                ›
-
-            </span>
-
-        </a>
-
-
-
-        <!-- BLOG -->
-
-        <a
-            href="blog.html"
-            class="premium-menu-item"
-        >
-
-            <div class="premium-menu-left">
-
-                <div class="premium-menu-icon blog-icon">
-
-                    🖍️
-
-                </div>
-
-
-                <div>
-
-                    <h3>
-                        Blog
-                    </h3>
-
-
-                    <p>
-                        Cerita & informasi
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <span class="premium-menu-arrow">
-
-                ›
-
-            </span>
-
-        </a>
-
-
-
-        <!-- PARENTS -->
-
-        <a
-            href="parents.html"
-            class="premium-menu-item"
-        >
-
-            <div class="premium-menu-left">
-
-                <div class="premium-menu-icon parents-icon">
-
-                    💛
-
-                </div>
-
-
-                <div>
-
-                    <h3>
-                        Parents
-                    </h3>
-
-
-                    <p>
-                        Area khusus wali
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <span class="premium-menu-arrow">
-
-                ›
-
-            </span>
-
-        </a>
-
-
-
-        <!-- CONTACT -->
-
-        <a
-            href="contact.html"
-            class="premium-menu-item"
-        >
-
-            <div class="premium-menu-left">
-
-                <div class="premium-menu-icon contact-icon">
-
-                    ✉️
-
-                </div>
-
-
-                <div>
-
-                    <h3>
-                        Contact
-                    </h3>
-
-
-                    <p>
-                        Hubungi kami
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <span class="premium-menu-arrow">
-
-                ›
-
-            </span>
-
-        </a>
-
-
-    </div>
-
-
-
-    <!-- BOOK VISIT -->
-
-    <a
-        href="contact.html"
-        class="mobile-book-visit"
-    >
-
-        <span>
-
-            📅
-
-        </span>
-
-        Book a Visit
-
-        <span>
-
-            →
-
-        </span>
-
-    </a>
-
-
-</div>
 
 </body>
 
