@@ -1,283 +1,361 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
 
-    /* =========================================================
-       SUPABASE
-    ========================================================== */
 
-    const SUPABASE_URL =
-        "https://ervhwjrlqcsobawwhkpf.supabase.co";
+        /* =========================================================
+           SUPABASE CONFIG
+        ========================================================== */
 
-    /*
-     * PENTING:
-     * Masukkan publishable key Supabase kamu yang sekarang
-     * pada bagian ini.
-     */
-    const SUPABASE_KEY =
-        "sb_publishable_u48E-Q-RjdFRFLC_Cv3rmg_gD0Z3y2K";
+        const SUPABASE_URL =
+            "https://ervhwjrlqcsobawwhkpf.supabase.co";
 
 
-    const supabaseClient =
-        window.supabase.createClient(
-            SUPABASE_URL,
-            SUPABASE_KEY
-        );
+        const SUPABASE_KEY =
+            "sb_publishable_u48E-Q-RjdFRFLC_Cv3rmg_gD0Z3y2K";
 
 
-    /* =========================================================
-       MENENTUKAN HALAMAN / MENU
-    ========================================================== */
-
-    /*
-     * Prioritas:
-     * 1. <body data-page="...">
-     * 2. Nama file HTML
-     *
-     * Jadi:
-     *
-     * about.html    -> about
-     * programs.html -> programs
-     * classes.html  -> classes
-     * blog.html     -> blog
-     * gallery.html  -> gallery
-     * parents.html  -> parents
-     */
-
-    const allowedPages = [
-        "about",
-        "programs",
-        "classes",
-        "blog",
-        "gallery",
-        "parents"
-    ];
-
-
-    const fileName =
-        window.location.pathname
-            .split("/")
-            .pop()
-            .toLowerCase()
-            .replace(".html", "");
-
-
-    let pageName =
-        document.body.dataset.page || fileName;
-
-
-    /*
-     * Kalau halaman tidak termasuk menu posting,
-     * tidak perlu mengambil postingan.
-     */
-
-    if (!allowedPages.includes(pageName)) {
-        pageName = "";
-    }
-
-
-    /* =========================================================
-       ELEMENT
-    ========================================================== */
-
-    const postsContainer =
-        document.getElementById("postsContainer");
-
-
-    const lightbox =
-        document.getElementById("galleryLightbox");
-
-
-    const lightboxImage =
-        document.getElementById("galleryLightboxImage");
-
-
-    const lightboxTitle =
-        document.getElementById("galleryLightboxTitle");
-
-
-    const lightboxDate =
-        document.getElementById("galleryLightboxDate");
-
-
-    const closeButton =
-        document.getElementById("galleryClose");
-
-
-    const prevButton =
-        document.getElementById("galleryPrev");
-
-
-    const nextButton =
-        document.getElementById("galleryNext");
-
-
-    let galleryPhotos = [];
-
-    let currentIndex = 0;
-
-
-    /* =========================================================
-       FORMAT DATE
-    ========================================================== */
-
-    function formatDate(dateString) {
-
-        if (!dateString) {
-            return "";
-        }
-
-
-        const date =
-            new Date(dateString);
-
-
-        if (Number.isNaN(date.getTime())) {
-            return "";
-        }
-
-
-        return date.toLocaleDateString(
-            "id-ID",
-            {
-                day: "numeric",
-                month: "long",
-                year: "numeric"
-            }
-        );
-
-    }
-
-
-    /* =========================================================
-       ESCAPE HTML
-    ========================================================== */
-
-    function escapeHTML(value) {
-
-        return String(value || "")
-            .replace(/&/g, "&amp;")
-            .replace(/</g, "&lt;")
-            .replace(/>/g, "&gt;")
-            .replace(/"/g, "&quot;")
-            .replace(/'/g, "&#039;");
-
-    }
-
-
-    /* =========================================================
-       LOAD POSTS SESUAI MENU
-    ========================================================== */
-
-    async function loadPosts() {
-
-        if (!postsContainer) {
-            return;
-        }
-
-
-        /*
-         * Kalau halaman bukan halaman posting,
-         * hentikan script.
-         */
-
-        if (!pageName) {
-            return;
-        }
-
-
-        postsContainer.innerHTML = `
-            <div class="cloud-loading">
-
-                <div class="cloud-loading-icon">
-                    ☁️
-                </div>
-
-                <strong>
-                    Sedang mengambil postingan...
-                </strong>
-
-            </div>
-        `;
-
-
-        /*
-         * INI BAGIAN PALING PENTING
-         *
-         * Sebelumnya:
-         *
-         * .eq("page_name", "gallery")
-         *
-         * Akibatnya semua halaman mengambil
-         * postingan Gallery.
-         *
-         * Sekarang:
-         *
-         * .eq("page_name", pageName)
-         *
-         * Jadi setiap halaman hanya mengambil
-         * postingan miliknya sendiri.
-         */
-
-        let query =
-            supabaseClient
-                .from("posts")
-                .select(`
-                    id,
-                    title,
-                    content,
-                    image_url,
-                    page_name,
-                    created_at
-                `)
-                .eq(
-                    "page_name",
-                    pageName
-                )
-                .order(
-                    "created_at",
-                    {
-                        ascending: false
-                    }
-                );
-
-
-        /*
-         * KHUSUS GALLERY
-         *
-         * Gallery hanya menampilkan postingan
-         * yang mempunyai gambar.
-         */
-
-        if (pageName === "gallery") {
-
-            query =
-                query.not(
-                    "image_url",
-                    "is",
-                    null
-                );
-
-        }
-
-
-        const {
-            data,
-            error
-        } = await query;
-
-
-        /* =====================================================
-           ERROR
-        ====================================================== */
-
-        if (error) {
-
-            console.error(
-                "Gagal mengambil postingan:",
-                error
+        const supabaseClient =
+            window.supabase.createClient(
+                SUPABASE_URL,
+                SUPABASE_KEY
             );
 
 
+        /* =========================================================
+           DETEKSI HALAMAN
+        ========================================================== */
+
+        const allowedPages = [
+
+            "about",
+            "programs",
+            "classes",
+            "blog",
+            "gallery",
+            "parents"
+
+        ];
+
+
+        const fileName =
+            window.location.pathname
+                .split("/")
+                .pop()
+                .toLowerCase()
+                .replace(
+                    ".html",
+                    ""
+                );
+
+
+        let pageName =
+            document.body.dataset.page ||
+            fileName;
+
+
+        if (
+            !allowedPages.includes(
+                pageName
+            )
+        ) {
+
+            pageName = "";
+
+        }
+
+
+        /* =========================================================
+           ELEMENT UTAMA
+        ========================================================== */
+
+        const postsContainer =
+            document.getElementById(
+                "postsContainer"
+            );
+
+
+        /* =========================================================
+           LIGHTBOX ELEMENT
+        ========================================================== */
+
+        const lightbox =
+            document.getElementById(
+                "galleryLightbox"
+            );
+
+
+        const lightboxImage =
+            document.getElementById(
+                "galleryLightboxImage"
+            );
+
+
+        const lightboxTitle =
+            document.getElementById(
+                "galleryLightboxTitle"
+            );
+
+
+        const lightboxDate =
+            document.getElementById(
+                "galleryLightboxDate"
+            );
+
+
+        const closeButton =
+            document.getElementById(
+                "galleryClose"
+            );
+
+
+        const prevButton =
+            document.getElementById(
+                "galleryPrev"
+            );
+
+
+        const nextButton =
+            document.getElementById(
+                "galleryNext"
+            );
+
+
+        /* =========================================================
+           DATA GALLERY
+        ========================================================== */
+
+        let galleryPhotos = [];
+
+
+        let currentIndex = 0;
+
+
+        /* =========================================================
+           FORMAT TANGGAL
+        ========================================================== */
+
+        function formatDate(
+            dateString
+        ) {
+
+            if (
+                !dateString
+            ) {
+
+                return "";
+
+            }
+
+
+            const date =
+                new Date(
+                    dateString
+                );
+
+
+            if (
+                Number.isNaN(
+                    date.getTime()
+                )
+            ) {
+
+                return "";
+
+            }
+
+
+            return date.toLocaleDateString(
+
+                "id-ID",
+
+                {
+
+                    day:
+                        "numeric",
+
+                    month:
+                        "long",
+
+                    year:
+                        "numeric"
+
+                }
+
+            );
+
+        }
+
+
+        /* =========================================================
+           ESCAPE HTML
+        ========================================================== */
+
+        function escapeHTML(
+            value
+        ) {
+
+            return String(
+                value || ""
+            )
+
+                .replace(
+                    /&/g,
+                    "&amp;"
+                )
+
+                .replace(
+                    /</g,
+                    "&lt;"
+                )
+
+                .replace(
+                    />/g,
+                    "&gt;"
+                )
+
+                .replace(
+                    /"/g,
+                    "&quot;"
+                )
+
+                .replace(
+                    /'/g,
+                    "&#039;"
+                );
+
+        }
+
+
+        /* =========================================================
+           LOADING
+        ========================================================== */
+
+        function showLoading() {
+
+            if (
+                !postsContainer
+            ) {
+
+                return;
+
+            }
+
+
+            if (
+                pageName ===
+                "gallery"
+            ) {
+
+                postsContainer.innerHTML = `
+
+                    <div class="cloud-loading">
+
+                        <div class="cloud-loading-icon">
+                            ☁️
+                        </div>
+
+                        <strong>
+                            Sedang mengambil kenangan...
+                        </strong>
+
+                    </div>
+
+                `;
+
+            }
+
+            else {
+
+                postsContainer.innerHTML = `
+
+                    <div class="cloud-loading">
+
+                        <div class="cloud-loading-icon">
+                            ✨
+                        </div>
+
+                        <strong>
+                            Sedang mengambil postingan...
+                        </strong>
+
+                    </div>
+
+                `;
+
+            }
+
+        }
+
+
+        /* =========================================================
+           EMPTY GALLERY
+        ========================================================== */
+
+        function showEmptyGallery() {
+
             postsContainer.innerHTML = `
+
+                <div class="cloud-empty">
+
+                    <div class="cloud-empty-icon">
+                        📸
+                    </div>
+
+                    <h3>
+                        Belum ada kenangan
+                    </h3>
+
+                    <p>
+                        Foto kegiatan sekolah
+                        akan segera muncul di sini 💕
+                    </p>
+
+                </div>
+
+            `;
+
+        }
+
+
+        /* =========================================================
+           EMPTY POSTS
+        ========================================================== */
+
+        function showEmptyPosts() {
+
+            postsContainer.innerHTML = `
+
+                <div class="cloud-empty">
+
+                    <div class="cloud-empty-icon">
+                        ✨
+                    </div>
+
+                    <h3>
+                        Belum ada postingan
+                    </h3>
+
+                    <p>
+                        Postingan untuk halaman ini
+                        akan segera muncul.
+                    </p>
+
+                </div>
+
+            `;
+
+        }
+
+
+        /* =========================================================
+           ERROR
+        ========================================================== */
+
+        function showError() {
+
+            postsContainer.innerHTML = `
+
                 <div class="cloud-empty">
 
                     <div class="cloud-empty-icon">
@@ -289,520 +367,591 @@ document.addEventListener("DOMContentLoaded", () => {
                     </h3>
 
                     <p>
-                        Silakan refresh halaman.
+                        Silakan refresh halaman
+                        dan coba lagi.
                     </p>
 
                 </div>
+
             `;
 
-            return;
         }
 
 
-        /* =====================================================
-           DATA
-        ====================================================== */
+        /* =========================================================
+           LOAD POSTS
+        ========================================================== */
 
-        const posts =
-            data || [];
+        async function loadPosts() {
 
+            if (
+                !postsContainer
+            ) {
 
-        /*
-         * Khusus Gallery:
-         * simpan data untuk lightbox.
-         */
-
-        if (pageName === "gallery") {
-
-            galleryPhotos =
-                posts;
-
-        }
-
-
-        /* =====================================================
-           TIDAK ADA POSTINGAN
-        ====================================================== */
-
-        if (!posts.length) {
-
-            if (pageName === "gallery") {
-
-                postsContainer.innerHTML = `
-                    <div class="cloud-empty">
-
-                        <div class="cloud-empty-icon">
-                            📸
-                        </div>
-
-                        <h3>
-                            Belum ada kenangan
-                        </h3>
-
-                        <p>
-                            Foto kegiatan sekolah akan muncul di sini.
-                        </p>
-
-                    </div>
-                `;
-
-            } else {
-
-                postsContainer.innerHTML = `
-                    <div class="cloud-empty">
-
-                        <div class="cloud-empty-icon">
-                            ☁️
-                        </div>
-
-                        <h3>
-                            Belum ada postingan
-                        </h3>
-
-                        <p>
-                            Postingan untuk menu ini akan muncul di sini.
-                        </p>
-
-                    </div>
-                `;
+                return;
 
             }
 
-            return;
-        }
 
+            if (
+                !pageName
+            ) {
 
-        /* =====================================================
-           RENDER
-        ====================================================== */
-
-        if (pageName === "gallery") {
-
-            renderGallery();
-
-        } else {
-
-            renderPosts(posts);
-
-        }
-
-    }
-
-
-    /* =========================================================
-       RENDER POSTINGAN
-    ========================================================== */
-
-    function renderPosts(posts) {
-
-        postsContainer.innerHTML = "";
-
-
-        const grid =
-            document.createElement("div");
-
-
-        /*
-         * Gunakan class yang fleksibel.
-         * Kalau CSS project kamu sudah memiliki
-         * style card postingan, class ini bisa
-         * dipakai tanpa mengganggu navbar.
-         */
-
-        grid.className =
-            "posts-grid";
-
-
-        posts.forEach(
-            (post) => {
-
-                const card =
-                    document.createElement("article");
-
-
-                card.className =
-                    "post-card";
-
-
-                const imageHTML =
-                    post.image_url
-                        ? `
-                            <div class="post-card-image">
-                                <img
-                                    src="${escapeHTML(post.image_url)}"
-                                    alt="${escapeHTML(post.title)}"
-                                    loading="lazy"
-                                >
-                            </div>
-                          `
-                        : "";
-
-
-                card.innerHTML = `
-
-                    ${imageHTML}
-
-                    <div class="post-card-content">
-
-                        <span class="post-card-date">
-                            ${formatDate(post.created_at)}
-                        </span>
-
-                        <h3>
-                            ${escapeHTML(
-                                post.title ||
-                                "Postingan"
-                            )}
-                        </h3>
-
-                        <p>
-                            ${escapeHTML(
-                                post.content ||
-                                ""
-                            )}
-                        </p>
-
-                    </div>
-
-                `;
-
-
-                grid.appendChild(card);
+                return;
 
             }
-        );
 
 
-        postsContainer.appendChild(grid);
-
-    }
+            showLoading();
 
 
-    /* =========================================================
-       RENDER GALLERY
-    ========================================================== */
+            let query =
+                supabaseClient
 
-    function renderGallery() {
+                    .from(
+                        "posts"
+                    )
 
-        postsContainer.innerHTML = "";
+                    .select(
 
+                        `
+                        id,
+                        title,
+                        content,
+                        image_url,
+                        page_name,
+                        created_at
+                        `
 
-        const grid =
-            document.createElement("div");
+                    )
 
+                    .eq(
 
-        grid.className =
-            "cloud-photo-grid";
+                        "page_name",
 
+                        pageName
 
-        galleryPhotos.forEach(
-            (photo, index) => {
+                    )
 
-                const card =
-                    document.createElement("article");
+                    .order(
 
+                        "created_at",
 
-                card.className =
-                    "cloud-photo-card";
+                        {
 
+                            ascending:
+                                false
 
-                card.innerHTML = `
+                        }
 
-                    <div class="cloud-photo-pin"></div>
-
-                    <div class="cloud-photo-image">
-
-                        <img
-                            src="${escapeHTML(
-                                photo.image_url
-                            )}"
-                            alt="${escapeHTML(
-                                photo.title
-                            )}"
-                            loading="lazy"
-                        >
-
-                        <div class="cloud-photo-shine"></div>
-
-                    </div>
+                    );
 
 
-                    <div class="cloud-photo-info">
+            /* =====================================================
+               KHUSUS GALLERY
 
-                        <h3>
-                            ${escapeHTML(
-                                photo.title ||
-                                "Momen Bahagia"
-                            )}
-                        </h3>
+               Hanya ambil postingan
+               yang mempunyai gambar
+            ===================================================== */
 
-                        <span>
-                            ${formatDate(
-                                photo.created_at
-                            )}
-                        </span>
+            if (
+                pageName ===
+                "gallery"
+            ) {
 
-                    </div>
+                query =
+                    query.not(
 
-                `;
+                        "image_url",
+
+                        "is",
+
+                        null
+
+                    );
+
+            }
 
 
-                card.addEventListener(
-                    "click",
-                    () => {
+            const {
 
-                        openLightbox(index);
+                data,
 
-                    }
+                error
+
+            } =
+                await query;
+
+
+            /* =====================================================
+               ERROR
+            ===================================================== */
+
+            if (
+                error
+            ) {
+
+                console.error(
+
+                    "Gagal mengambil postingan:",
+
+                    error
+
                 );
 
 
-                grid.appendChild(card);
+                showError();
+
+
+                return;
 
             }
-        );
 
 
-        postsContainer.appendChild(grid);
+            const posts =
+                data || [];
 
-    }
 
+            /* =====================================================
+               GALLERY DATA
+            ===================================================== */
 
-    /* =========================================================
-       OPEN LIGHTBOX
-    ========================================================== */
+            if (
+                pageName ===
+                "gallery"
+            ) {
 
-    function openLightbox(index) {
+                galleryPhotos =
+                    posts;
 
-        if (!galleryPhotos.length) {
-            return;
-        }
+            }
 
 
-        if (!lightbox) {
-            return;
-        }
+            /* =====================================================
+               EMPTY
+            ===================================================== */
 
-
-        currentIndex =
-            index;
-
-
-        updateLightbox();
-
-
-        lightbox.classList.add(
-            "active"
-        );
-
-
-        document.body.classList.add(
-            "cloud-lightbox-open"
-        );
-
-    }
-
-
-    /* =========================================================
-       UPDATE LIGHTBOX
-    ========================================================== */
-
-    function updateLightbox() {
-
-        const photo =
-            galleryPhotos[currentIndex];
-
-
-        if (!photo) {
-            return;
-        }
-
-
-        if (lightboxImage) {
-
-            lightboxImage.src =
-                photo.image_url || "";
-
-
-            lightboxImage.alt =
-                photo.title ||
-                "Foto gallery";
-
-        }
-
-
-        if (lightboxTitle) {
-
-            lightboxTitle.textContent =
-                photo.title ||
-                "Momen Bahagia";
-
-        }
-
-
-        if (lightboxDate) {
-
-            lightboxDate.textContent =
-                formatDate(
-                    photo.created_at
-                );
-
-        }
-
-    }
-
-
-    /* =========================================================
-       CLOSE LIGHTBOX
-    ========================================================== */
-
-    function closeLightbox() {
-
-        if (!lightbox) {
-            return;
-        }
-
-
-        lightbox.classList.remove(
-            "active"
-        );
-
-
-        document.body.classList.remove(
-            "cloud-lightbox-open"
-        );
-
-    }
-
-
-    /* =========================================================
-       PREVIOUS
-    ========================================================== */
-
-    function showPrevious() {
-
-        if (!galleryPhotos.length) {
-            return;
-        }
-
-
-        currentIndex--;
-
-
-        if (currentIndex < 0) {
-
-            currentIndex =
-                galleryPhotos.length - 1;
-
-        }
-
-
-        updateLightbox();
-
-    }
-
-
-    /* =========================================================
-       NEXT
-    ========================================================== */
-
-    function showNext() {
-
-        if (!galleryPhotos.length) {
-            return;
-        }
-
-
-        currentIndex++;
-
-
-        if (
-            currentIndex >=
-            galleryPhotos.length
-        ) {
-
-            currentIndex = 0;
-
-        }
-
-
-        updateLightbox();
-
-    }
-
-
-    /* =========================================================
-       EVENTS
-    ========================================================== */
-
-    if (closeButton) {
-
-        closeButton.addEventListener(
-            "click",
-            closeLightbox
-        );
-
-    }
-
-
-    if (prevButton) {
-
-        prevButton.addEventListener(
-            "click",
-            showPrevious
-        );
-
-    }
-
-
-    if (nextButton) {
-
-        nextButton.addEventListener(
-            "click",
-            showNext
-        );
-
-    }
-
-
-    if (lightbox) {
-
-        lightbox.addEventListener(
-            "click",
-            (event) => {
+            if (
+                !posts.length
+            ) {
 
                 if (
-                    event.target ===
-                    lightbox
+                    pageName ===
+                    "gallery"
                 ) {
 
-                    closeLightbox();
+                    showEmptyGallery();
 
                 }
 
-            }
-        );
+                else {
 
-    }
+                    showEmptyPosts();
+
+                }
 
 
-    /* =========================================================
-       KEYBOARD
-    ========================================================== */
-
-    document.addEventListener(
-        "keydown",
-        (event) => {
-
-            if (!lightbox) {
                 return;
+
             }
 
+
+            /* =====================================================
+               RENDER
+            ===================================================== */
 
             if (
-                !lightbox.classList.contains(
-                    "active"
-                )
+                pageName ===
+                "gallery"
+            ) {
+
+                renderGallery();
+
+            }
+
+            else {
+
+                renderPosts(
+                    posts
+                );
+
+            }
+
+        }
+
+
+        /* =========================================================
+           RENDER NORMAL POSTS
+        ========================================================== */
+
+        function renderPosts(
+            posts
+        ) {
+
+            postsContainer.innerHTML =
+                "";
+
+
+            const grid =
+                document.createElement(
+                    "div"
+                );
+
+
+            grid.className =
+                "posts-grid";
+
+
+            posts.forEach(
+
+                function (
+                    post,
+                    index
+                ) {
+
+
+                    const card =
+                        document.createElement(
+                            "article"
+                        );
+
+
+                    card.className =
+                        "post-card";
+
+
+                    /*
+                     * Animation tambahan.
+                     *
+                     * Tidak mengganggu CSS lama.
+                     */
+
+                    card.style.opacity =
+                        "0";
+
+
+                    card.style.transform =
+                        "translateY(35px)";
+
+
+                    card.style.transition =
+                        `
+                        opacity .7s ease,
+                        transform .7s ease
+                        `;
+
+
+                    card.style.transitionDelay =
+                        (
+                            index % 6
+                        ) * 100
+                        + "ms";
+
+
+                    /* =============================================
+                       IMAGE
+                    ============================================== */
+
+                    const imageHTML =
+
+                        post.image_url
+
+                            ?
+
+                            `
+
+                            <div
+                                class="post-card-image"
+                            >
+
+                                <img
+
+                                    src="${escapeHTML(
+                                        post.image_url
+                                    )}"
+
+                                    alt="${escapeHTML(
+                                        post.title ||
+                                        "Postingan"
+                                    )}"
+
+                                    loading="lazy"
+
+                                >
+
+                            </div>
+
+                            `
+
+                            :
+
+                            "";
+
+
+                    /* =============================================
+                       CONTENT
+                    ============================================== */
+
+                    card.innerHTML = `
+
+                        ${imageHTML}
+
+
+                        <div
+                            class="post-card-content"
+                        >
+
+
+                            <span
+                                class="post-card-date"
+                            >
+
+                                ${formatDate(
+                                    post.created_at
+                                )}
+
+                            </span>
+
+
+                            <h3>
+
+                                ${escapeHTML(
+
+                                    post.title ||
+
+                                    "Postingan"
+
+                                )}
+
+                            </h3>
+
+
+                            <p>
+
+                                ${escapeHTML(
+
+                                    post.content ||
+
+                                    ""
+
+                                )}
+
+                            </p>
+
+
+                        </div>
+
+                    `;
+
+
+                    grid.appendChild(
+                        card
+                    );
+
+
+                    /* =============================================
+                       REVEAL
+                    ============================================== */
+
+                    requestAnimationFrame(
+                        function () {
+
+                            requestAnimationFrame(
+                                function () {
+
+                                    card.style.opacity =
+                                        "1";
+
+
+                                    card.style.transform =
+                                        "translateY(0)";
+
+                                }
+                            );
+
+                        }
+                    );
+
+
+                }
+
+            );
+
+
+            postsContainer.appendChild(
+                grid
+            );
+
+        }
+
+
+        /* =========================================================
+           RENDER GALLERY
+        ========================================================== */
+
+        function renderGallery() {
+
+            postsContainer.innerHTML =
+                "";
+
+
+            const grid =
+                document.createElement(
+                    "div"
+                );
+
+
+            grid.className =
+                "cloud-photo-grid";
+
+
+            galleryPhotos.forEach(
+
+                function (
+                    photo,
+                    index
+                ) {
+
+
+                    const card =
+                        document.createElement(
+                            "article"
+                        );
+
+
+                    card.className =
+                        "cloud-photo-card";
+
+
+                    /* =============================================
+                       POLAROID
+                    ============================================== */
+
+                    card.innerHTML = `
+
+
+                        <!-- PIN -->
+
+                        <div
+                            class="cloud-photo-pin"
+                        ></div>
+
+
+                        <!-- IMAGE -->
+
+                        <div
+                            class="cloud-photo-image"
+                        >
+
+
+                            <img
+
+                                src="${escapeHTML(
+                                    photo.image_url
+                                )}"
+
+                                alt="${escapeHTML(
+
+                                    photo.title ||
+
+                                    "Momen Bahagia"
+
+                                )}"
+
+                                loading="lazy"
+
+                            >
+
+
+                            <div
+                                class="cloud-photo-shine"
+                            ></div>
+
+
+                        </div>
+
+
+                        <!-- INFO -->
+
+                        <div
+                            class="cloud-photo-info"
+                        >
+
+
+                            <h3>
+
+                                ${escapeHTML(
+
+                                    photo.title ||
+
+                                    "Momen Bahagia"
+
+                                )}
+
+                            </h3>
+
+
+                            <span>
+
+                                ${formatDate(
+                                    photo.created_at
+                                )}
+
+                            </span>
+
+
+                        </div>
+
+
+                    `;
+
+
+                    /* =============================================
+                       CLICK PHOTO
+                    ============================================== */
+
+                    card.addEventListener(
+
+                        "click",
+
+                        function () {
+
+                            openLightbox(
+                                index
+                            );
+
+                        }
+
+                    );
+
+
+                    grid.appendChild(
+                        card
+                    );
+
+
+                }
+
+            );
+
+
+            postsContainer.appendChild(
+                grid
+            );
+
+        }
+
+
+        /* =========================================================
+           OPEN LIGHTBOX
+        ========================================================== */
+
+        function openLightbox(
+            index
+        ) {
+
+            if (
+                !galleryPhotos.length
             ) {
 
                 return;
@@ -811,96 +960,563 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
             if (
-                event.key ===
-                "Escape"
+                !lightbox
             ) {
 
-                closeLightbox();
+                return;
+
+            }
+
+
+            currentIndex =
+                index;
+
+
+            updateLightbox();
+
+
+            lightbox.classList.add(
+                "active"
+            );
+
+
+            document.body.classList.add(
+                "cloud-lightbox-open"
+            );
+
+        }
+
+
+        /* =========================================================
+           UPDATE LIGHTBOX
+        ========================================================== */
+
+        function updateLightbox() {
+
+            const photo =
+                galleryPhotos[
+                    currentIndex
+                ];
+
+
+            if (
+                !photo
+            ) {
+
+                return;
 
             }
 
 
             if (
-                event.key ===
-                "ArrowLeft"
+                lightboxImage
+            ) {
+
+                /*
+                 * Reset animasi
+                 */
+
+                lightboxImage.style.opacity =
+                    "0";
+
+
+                lightboxImage.style.transform =
+                    "scale(.96)";
+
+
+                lightboxImage.src =
+                    photo.image_url ||
+                    "";
+
+
+                lightboxImage.alt =
+
+                    photo.title ||
+
+                    "Foto Gallery";
+
+
+                lightboxImage.onload =
+                    function () {
+
+                        lightboxImage.style.transition =
+                            `
+                            opacity .35s ease,
+                            transform .35s ease
+                            `;
+
+
+                        lightboxImage.style.opacity =
+                            "1";
+
+
+                        lightboxImage.style.transform =
+                            "scale(1)";
+
+                    };
+
+            }
+
+
+            if (
+                lightboxTitle
+            ) {
+
+                lightboxTitle.textContent =
+
+                    photo.title ||
+
+                    "Momen Bahagia";
+
+            }
+
+
+            if (
+                lightboxDate
+            ) {
+
+                lightboxDate.textContent =
+
+                    formatDate(
+                        photo.created_at
+                    );
+
+            }
+
+        }
+
+
+        /* =========================================================
+           CLOSE LIGHTBOX
+        ========================================================== */
+
+        function closeLightbox() {
+
+            if (
+                !lightbox
+            ) {
+
+                return;
+
+            }
+
+
+            lightbox.classList.remove(
+                "active"
+            );
+
+
+            document.body.classList.remove(
+                "cloud-lightbox-open"
+            );
+
+        }
+
+
+        /* =========================================================
+           PREVIOUS PHOTO
+        ========================================================== */
+
+        function showPrevious() {
+
+            if (
+                !galleryPhotos.length
+            ) {
+
+                return;
+
+            }
+
+
+            currentIndex--;
+
+
+            if (
+                currentIndex < 0
+            ) {
+
+                currentIndex =
+                    galleryPhotos.length - 1;
+
+            }
+
+
+            updateLightbox();
+
+        }
+
+
+        /* =========================================================
+           NEXT PHOTO
+        ========================================================== */
+
+        function showNext() {
+
+            if (
+                !galleryPhotos.length
+            ) {
+
+                return;
+
+            }
+
+
+            currentIndex++;
+
+
+            if (
+                currentIndex >=
+                galleryPhotos.length
+            ) {
+
+                currentIndex =
+                    0;
+
+            }
+
+
+            updateLightbox();
+
+        }
+
+
+        /* =========================================================
+           CLOSE BUTTON
+        ========================================================== */
+
+        if (
+            closeButton
+        ) {
+
+            closeButton.addEventListener(
+
+                "click",
+
+                closeLightbox
+
+            );
+
+        }
+
+
+        /* =========================================================
+           PREVIOUS BUTTON
+        ========================================================== */
+
+        if (
+            prevButton
+        ) {
+
+            prevButton.addEventListener(
+
+                "click",
+
+                showPrevious
+
+            );
+
+        }
+
+
+        /* =========================================================
+           NEXT BUTTON
+        ========================================================== */
+
+        if (
+            nextButton
+        ) {
+
+            nextButton.addEventListener(
+
+                "click",
+
+                showNext
+
+            );
+
+        }
+
+
+        /* =========================================================
+           CLICK BACKGROUND CLOSE
+        ========================================================== */
+
+        if (
+            lightbox
+        ) {
+
+            lightbox.addEventListener(
+
+                "click",
+
+                function (
+                    event
+                ) {
+
+                    if (
+                        event.target ===
+                        lightbox
+                    ) {
+
+                        closeLightbox();
+
+                    }
+
+                }
+
+            );
+
+        }
+
+
+        /* =========================================================
+           SWIPE SUPPORT MOBILE
+        ========================================================== */
+
+        let touchStartX = 0;
+
+        let touchEndX = 0;
+
+
+        if (
+            lightbox
+        ) {
+
+            lightbox.addEventListener(
+
+                "touchstart",
+
+                function (
+                    event
+                ) {
+
+                    touchStartX =
+                        event.changedTouches[0]
+                            .screenX;
+
+                },
+
+                {
+                    passive:
+                        true
+                }
+
+            );
+
+
+            lightbox.addEventListener(
+
+                "touchend",
+
+                function (
+                    event
+                ) {
+
+                    touchEndX =
+                        event.changedTouches[0]
+                            .screenX;
+
+
+                    handleSwipe();
+
+                },
+
+                {
+                    passive:
+                        true
+                }
+
+            );
+
+        }
+
+
+        function handleSwipe() {
+
+            const distance =
+                touchEndX -
+                touchStartX;
+
+
+            if (
+                Math.abs(
+                    distance
+                ) < 50
+            ) {
+
+                return;
+
+            }
+
+
+            if (
+                distance > 0
             ) {
 
                 showPrevious();
 
             }
 
-
-            if (
-                event.key ===
-                "ArrowRight"
-            ) {
+            else {
 
                 showNext();
 
             }
 
         }
-    );
 
 
-    /* =========================================================
-       REALTIME
-    ========================================================== */
+        /* =========================================================
+           KEYBOARD
+        ========================================================== */
 
-    if (pageName) {
+        document.addEventListener(
 
-        supabaseClient
+            "keydown",
 
-            .channel(
-                `posts-${pageName}`
-            )
-
-            .on(
-                "postgres_changes",
-                {
-                    event: "*",
-                    schema: "public",
-                    table: "posts"
-                },
-                (payload) => {
-
-                    /*
-                     * Ambil page_name dari data
-                     * yang berubah.
-                     */
-
-                    const changedPage =
-                        payload.new?.page_name ||
-                        payload.old?.page_name;
+            function (
+                event
+            ) {
 
 
-                    /*
-                     * Hanya refresh halaman ini
-                     * kalau postingan yang berubah
-                     * memang milik menu ini.
-                     */
+                if (
+                    !lightbox
+                ) {
 
-                    if (
-                        !changedPage ||
-                        changedPage === pageName
+                    return;
+
+                }
+
+
+                if (
+                    !lightbox.classList.contains(
+                        "active"
+                    )
+                ) {
+
+                    return;
+
+                }
+
+
+                /* ESC */
+
+                if (
+                    event.key ===
+                    "Escape"
+                ) {
+
+                    closeLightbox();
+
+                }
+
+
+                /* LEFT */
+
+                if (
+                    event.key ===
+                    "ArrowLeft"
+                ) {
+
+                    showPrevious();
+
+                }
+
+
+                /* RIGHT */
+
+                if (
+                    event.key ===
+                    "ArrowRight"
+                ) {
+
+                    showNext();
+
+                }
+
+
+            }
+
+        );
+
+
+        /* =========================================================
+           REALTIME SUPABASE
+        ========================================================== */
+
+        if (
+            pageName
+        ) {
+
+            supabaseClient
+
+                .channel(
+
+                    `posts-realtime-${pageName}`
+
+                )
+
+                .on(
+
+                    "postgres_changes",
+
+                    {
+
+                        event:
+                            "*",
+
+                        schema:
+                            "public",
+
+                        table:
+                            "posts"
+
+                    },
+
+                    function (
+                        payload
                     ) {
 
-                        loadPosts();
+
+                        const changedPage =
+
+                            payload.new?.page_name ||
+
+                            payload.old?.page_name;
+
+
+                        /*
+                         * Refresh hanya jika
+                         * postingan milik halaman ini.
+                         */
+
+                        if (
+
+                            changedPage ===
+                            pageName
+
+                        ) {
+
+                            loadPosts();
+
+                        }
+
 
                     }
 
-                }
-            )
+                )
 
-            .subscribe();
+                .subscribe();
+
+        }
+
+
+        /* =========================================================
+           START
+        ========================================================== */
+
+        loadPosts();
+
 
     }
-
-
-    /* =========================================================
-       START
-    ========================================================== */
-
-    loadPosts();
-
-});
+);
