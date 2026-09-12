@@ -1,26 +1,23 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 
 <head>
 
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
 
     <meta
         name="viewport"
-        content="width=device-width, initial-scale=1"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Program Pembelajaran RA Miftahul Hikmah"
     >
 
     <title>
         Programs | RA Miftahul Hikmah
     </title>
-
-
-    <!-- CSS UTAMA -->
-
-    <link
-        rel="stylesheet"
-        href="css/style.css"
-    >
 
 
     <!-- GOOGLE FONT -->
@@ -45,129 +42,205 @@
 <style>
 
 /* =====================================================
-   PROGRAMS PREMIUM
    RA MIFTAHUL HIKMAH
-   KHUSUS HALAMAN PROGRAMS
+   PROGRAMS PAGE
 ===================================================== */
 
+* {
 
-/* =====================================================
-   RESET PROGRAMS
-===================================================== */
+    box-sizing:
+        border-box;
 
-body[data-page="programs"] {
+}
 
-    margin: 0;
 
-    overflow-x: hidden;
+html {
+
+    scroll-behavior:
+        smooth;
+
+}
+
+
+body {
+
+    margin:
+        0;
+
+    overflow-x:
+        hidden;
 
     font-family:
         "Nunito",
         sans-serif;
 
     color:
-        #342d4f;
+        #342d4c;
 
     background:
 
         linear-gradient(
-            135deg,
-            #fff8fb 0%,
-            #f5f1ff 35%,
-            #eefaff 68%,
-            #fff8e9 100%
+            180deg,
+            #fff9fc 0%,
+            #f9f5ff 30%,
+            #f4fbff 60%,
+            #fffaf2 100%
         );
+
+    background-size:
+        300% 300%;
+
+    animation:
+        backgroundMove 18s ease infinite;
+
+}
+
+
+@keyframes backgroundMove {
+
+    0% {
+
+        background-position:
+            0% 50%;
+
+    }
+
+    50% {
+
+        background-position:
+            100% 50%;
+
+    }
+
+    100% {
+
+        background-position:
+            0% 50%;
+
+    }
 
 }
 
 
 /* =====================================================
-   BACKGROUND ANIMATION
+   CONTAINER
 ===================================================== */
 
-body[data-page="programs"]::before {
+.au-container {
 
-    content: "";
-
-    position: fixed;
-
-    width: 450px;
-
-    height: 450px;
-
-    border-radius: 50%;
-
-    top: -180px;
-
-    left: -160px;
-
-    background:
-
-        radial-gradient(
-            circle,
-            rgba(255, 132, 185, .22),
-            rgba(255, 132, 185, 0)
+    width:
+        min(
+            1180px,
+            calc(100% - 32px)
         );
 
-    filter:
-        blur(25px);
-
-    z-index: -2;
-
-    animation:
-        programBlobOne
-        14s
-        ease-in-out
-        infinite;
+    margin:
+        auto;
 
 }
 
 
-body[data-page="programs"]::after {
+/* =====================================================
+   BACKGROUND
+===================================================== */
 
-    content: "";
+.pg-bg {
 
-    position: fixed;
+    position:
+        fixed;
 
-    width: 520px;
+    inset:
+        0;
 
-    height: 520px;
+    z-index:
+        -1;
 
-    border-radius: 50%;
+    pointer-events:
+        none;
 
-    bottom: -220px;
-
-    right: -200px;
-
-    background:
-
-        radial-gradient(
-            circle,
-            rgba(116, 204, 255, .22),
-            rgba(116, 204, 255, 0)
-        );
-
-    filter:
-        blur(30px);
-
-    z-index: -2;
-
-    animation:
-        programBlobTwo
-        17s
-        ease-in-out
-        infinite;
+    overflow:
+        hidden;
 
 }
 
 
-@keyframes programBlobOne {
+.pg-bg::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        300px;
+
+    height:
+        300px;
+
+    border-radius:
+        50%;
+
+    top:
+        10%;
+
+    left:
+        -150px;
+
+    background:
+        rgba(255,139,184,.20);
+
+    filter:
+        blur(60px);
+
+    animation:
+        blobOne 12s ease-in-out infinite;
+
+}
+
+
+.pg-bg::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        330px;
+
+    height:
+        330px;
+
+    border-radius:
+        50%;
+
+    bottom:
+        5%;
+
+    right:
+        -170px;
+
+    background:
+        rgba(126,189,255,.20);
+
+    filter:
+        blur(60px);
+
+    animation:
+        blobTwo 14s ease-in-out infinite;
+
+}
+
+
+@keyframes blobOne {
 
     0%,
     100% {
 
         transform:
-            translate(0, 0)
+            translate(0,0)
             scale(1);
 
     }
@@ -175,7 +248,7 @@ body[data-page="programs"]::after {
     50% {
 
         transform:
-            translate(130px, 90px)
+            translate(100px,80px)
             scale(1.2);
 
     }
@@ -183,13 +256,13 @@ body[data-page="programs"]::after {
 }
 
 
-@keyframes programBlobTwo {
+@keyframes blobTwo {
 
     0%,
     100% {
 
         transform:
-            translate(0, 0)
+            translate(0,0)
             scale(1);
 
     }
@@ -197,29 +270,10 @@ body[data-page="programs"]::after {
     50% {
 
         transform:
-            translate(-120px, -80px)
-            scale(1.22);
+            translate(-80px,-90px)
+            scale(1.2);
 
     }
-
-}
-
-
-/* =====================================================
-   WRAPPER
-===================================================== */
-
-body[data-page="programs"] .program-wrap {
-
-    width:
-        min(
-            1180px,
-            calc(100% - 40px)
-        );
-
-    margin:
-        0
-        auto;
 
 }
 
@@ -228,44 +282,30 @@ body[data-page="programs"] .program-wrap {
    HEADER
 ===================================================== */
 
-body[data-page="programs"] .program-header {
+.au-header {
 
-    position: relative;
+    position:
+        relative;
 
-    z-index: 30;
+    z-index:
+        100;
 
     background:
-
-        rgba(
-            255,
-            255,
-            255,
-            .72
-        );
+        rgba(255,255,255,.78);
 
     backdrop-filter:
         blur(20px);
 
-    -webkit-backdrop-filter:
-        blur(20px);
-
     border-bottom:
-
-        1px
-        solid
-        rgba(
-            255,
-            255,
-            255,
-            .85
-        );
+        1px solid rgba(255,255,255,.9);
 
 }
 
 
-body[data-page="programs"] .program-head-inner {
+.au-header-inner {
 
-    min-height: 90px;
+    min-height:
+        72px;
 
     display:
         flex;
@@ -276,14 +316,13 @@ body[data-page="programs"] .program-head-inner {
     justify-content:
         space-between;
 
-    gap: 20px;
+    gap:
+        12px;
 
 }
 
 
-/* BRAND */
-
-body[data-page="programs"] .program-brand {
+.au-brand {
 
     display:
         flex;
@@ -291,24 +330,25 @@ body[data-page="programs"] .program-brand {
     align-items:
         center;
 
-    gap: 12px;
+    gap:
+        10px;
 
     text-decoration:
         none;
 
     color:
-        #342d4f;
+        #342d4c;
 
 }
 
 
-body[data-page="programs"] .program-logo {
+.au-logo {
 
-    width: 55px;
+    width:
+        46px;
 
-    height: 55px;
-
-    border-radius: 18px;
+    height:
+        46px;
 
     display:
         grid;
@@ -316,44 +356,37 @@ body[data-page="programs"] .program-logo {
     place-items:
         center;
 
-    font-size: 30px;
+    border-radius:
+        15px;
+
+    font-size:
+        24px;
 
     background:
 
         linear-gradient(
             135deg,
-            #fff2a8,
-            #ffd4e5,
-            #ccefff
+            #fff1a8,
+            #ffd5e5,
+            #d6efff
         );
 
     box-shadow:
-
-        0 12px 30px
-        rgba(
-            239,
-            79,
-            130,
-            .16
-        );
+        0 8px 25px rgba(239,79,130,.18);
 
     animation:
-        programLogoFloat
-        4s
-        ease-in-out
-        infinite;
+        logoFloat 4s ease-in-out infinite;
 
 }
 
 
-@keyframes programLogoFloat {
+@keyframes logoFloat {
 
     0%,
     100% {
 
         transform:
-            translateY(0)
-            rotate(0deg);
+            translateY(0);
 
     }
 
@@ -361,31 +394,32 @@ body[data-page="programs"] .program-logo {
 
         transform:
             translateY(-5px)
-            rotate(4deg);
+            rotate(5deg);
 
     }
 
 }
 
 
-body[data-page="programs"] .program-brand h1 {
+.au-brand h1 {
 
-    margin: 0;
+    margin:
+        0;
 
     font-family:
         "Baloo 2",
         cursive;
 
-    font-size: 25px;
+    font-size:
+        18px;
 
-    font-weight: 800;
-
-    line-height: 1;
+    line-height:
+        1;
 
 }
 
 
-body[data-page="programs"] .program-brand h1 span {
+.au-brand h1 span {
 
     color:
         #ef4f82;
@@ -393,100 +427,21 @@ body[data-page="programs"] .program-brand h1 span {
 }
 
 
-body[data-page="programs"] .program-brand p {
+.au-brand p {
 
     margin:
-        6px
-        0
-        0;
-
-    font-size: 13px;
+        4px 0 0;
 
     color:
-        #837c96;
+        #817991;
+
+    font-size:
+        10px;
 
 }
 
 
-/* HEADER RIGHT */
-
-body[data-page="programs"] .program-header-right {
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    gap: 15px;
-
-}
-
-
-body[data-page="programs"] .program-call {
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    gap: 10px;
-
-}
-
-
-body[data-page="programs"] .program-call-icon {
-
-    width: 42px;
-
-    height: 42px;
-
-    border-radius: 50%;
-
-    display:
-        grid;
-
-    place-items:
-        center;
-
-    background:
-        #ffffff;
-
-    box-shadow:
-
-        0 8px 22px
-        rgba(
-            70,
-            50,
-            110,
-            .08
-        );
-
-}
-
-
-body[data-page="programs"] .program-call small {
-
-    display:
-        block;
-
-    color:
-        #958da8;
-
-}
-
-
-body[data-page="programs"] .program-call b {
-
-    font-size: 14px;
-
-}
-
-
-/* BUTTON */
-
-body[data-page="programs"] .program-btn {
+.au-visit {
 
     display:
         inline-flex;
@@ -497,64 +452,34 @@ body[data-page="programs"] .program-btn {
     justify-content:
         center;
 
-    gap: 8px;
+    padding:
+        10px 13px;
+
+    border-radius:
+        13px;
 
     text-decoration:
-        none;
-
-    border:
         none;
 
     color:
         white;
 
-    font-weight: 800;
+    font-size:
+        11px;
 
-    padding:
-        13px
-        22px;
-
-    border-radius: 16px;
+    font-weight:
+        900;
 
     background:
 
         linear-gradient(
             135deg,
             #ef4f82,
-            #ff7ea7
+            #ff7da7
         );
 
     box-shadow:
-
-        0 12px 28px
-        rgba(
-            239,
-            79,
-            130,
-            .25
-        );
-
-    transition:
-        .3s
-        ease;
-
-}
-
-
-body[data-page="programs"] .program-btn:hover {
-
-    transform:
-        translateY(-4px);
-
-    box-shadow:
-
-        0 18px 35px
-        rgba(
-            239,
-            79,
-            130,
-            .35
-        );
+        0 9px 20px rgba(239,79,130,.25);
 
 }
 
@@ -563,42 +488,79 @@ body[data-page="programs"] .program-btn:hover {
    NAVBAR
 ===================================================== */
 
-body[data-page="programs"] .program-nav {
+.au-nav {
 
-    position: relative;
+    position:
+        sticky;
 
-    z-index: 25;
+    top:
+        0;
+
+    z-index:
+        99;
 
     background:
-
-        rgba(
-            255,
-            255,
-            255,
-            .82
-        );
+        rgba(255,255,255,.92);
 
     backdrop-filter:
-        blur(18px);
+        blur(20px);
 
     border-bottom:
-
-        1px
-        solid
-        rgba(
-            100,
-            80,
-            150,
-            .06
-        );
+        1px solid rgba(120,90,180,.08);
 
 }
 
 
-body[data-page="programs"] .program-nav-inner {
+.au-nav-inner {
+
+    width:
+        min(
+            1180px,
+            calc(100% - 20px)
+        );
+
+    margin:
+        auto;
 
     display:
         flex;
+
+    gap:
+        6px;
+
+    padding:
+        8px 0;
+
+    overflow-x:
+        auto;
+
+    scrollbar-width:
+        none;
+
+}
+
+
+.au-nav-inner::-webkit-scrollbar {
+
+    display:
+        none;
+
+}
+
+
+.au-nav-link {
+
+    flex:
+        0 0 auto;
+
+    min-width:
+        62px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
 
     align-items:
         center;
@@ -606,60 +568,39 @@ body[data-page="programs"] .program-nav-inner {
     justify-content:
         center;
 
-    gap: 8px;
+    gap:
+        3px;
 
     padding:
-        10px
-        0;
+        8px 9px;
 
-}
-
-
-body[data-page="programs"] .program-nav a {
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    gap: 7px;
-
-    padding:
-        10px
-        15px;
-
-    border-radius: 14px;
+    border-radius:
+        14px;
 
     text-decoration:
         none;
 
     color:
-        #5d576f;
+        #6f687d;
 
-    font-size: 13px;
+    font-size:
+        9px;
 
-    font-weight: 800;
-
-    transition:
-        .25s
-        ease;
+    font-weight:
+        900;
 
 }
 
 
-body[data-page="programs"] .program-nav a:hover {
+.au-nav-icon {
 
-    background:
-        #f0f8ff;
-
-    transform:
-        translateY(-2px);
+    font-size:
+        19px;
 
 }
 
 
-body[data-page="programs"] .program-nav a.active {
+.au-nav-link.active {
 
     color:
         white;
@@ -668,19 +609,189 @@ body[data-page="programs"] .program-nav a.active {
 
         linear-gradient(
             135deg,
-            #45b981,
-            #69d69b
+            #7b6cff,
+            #a47fff
         );
 
     box-shadow:
+        0 7px 18px rgba(125,108,255,.25);
 
-        0 8px 22px
-        rgba(
-            69,
-            185,
-            129,
-            .28
-        );
+}
+
+
+.au-more-wrap {
+
+    flex:
+        0 0 auto;
+
+}
+
+
+.au-more-button {
+
+    height:
+        100%;
+
+    min-width:
+        72px;
+
+    border:
+        none;
+
+    cursor:
+        pointer;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        3px;
+
+    padding:
+        8px 10px;
+
+    border-radius:
+        14px;
+
+    background:
+        #f5f2fb;
+
+    color:
+        #6b617b;
+
+    font-size:
+        9px;
+
+    font-weight:
+        900;
+
+}
+
+
+.au-more-button span {
+
+    font-size:
+        18px;
+
+}
+
+
+/* =====================================================
+   DROPDOWN
+===================================================== */
+
+.au-more-menu {
+
+    position:
+        fixed;
+
+    top:
+        138px;
+
+    left:
+        16px;
+
+    right:
+        16px;
+
+    z-index:
+        300;
+
+    display:
+        none;
+
+    overflow:
+        hidden;
+
+    border-radius:
+        22px;
+
+    background:
+        rgba(255,255,255,.97);
+
+    box-shadow:
+        0 20px 55px rgba(57,40,90,.18);
+
+    opacity:
+        0;
+
+    transform:
+        translateY(-10px);
+
+    transition:
+        .25s ease;
+
+}
+
+
+.au-more-menu.open {
+
+    display:
+        block;
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+.au-more-title {
+
+    padding:
+        16px 18px;
+
+    font-size:
+        14px;
+
+    font-weight:
+        900;
+
+    border-bottom:
+        1px solid #f0edf5;
+
+}
+
+
+.au-more-menu a {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        13px;
+
+    padding:
+        15px 18px;
+
+    text-decoration:
+        none;
+
+    color:
+        #665e72;
+
+    font-size:
+        14px;
+
+    font-weight:
+        800;
+
+    border-bottom:
+        1px solid #f5f2f7;
 
 }
 
@@ -689,1061 +800,53 @@ body[data-page="programs"] .program-nav a.active {
    HERO
 ===================================================== */
 
-body[data-page="programs"] .program-hero {
-
-    position: relative;
-
-    overflow: hidden;
-
-    padding:
-        100px
-        0
-        110px;
-
-}
-
-
-/* FLOATING DECORATIONS */
-
-body[data-page="programs"] .program-orb {
-
-    position: absolute;
-
-    border-radius: 50%;
-
-    pointer-events:
-        none;
-
-}
-
-
-body[data-page="programs"] .program-orb-one {
-
-    width: 170px;
-
-    height: 170px;
-
-    top: 30px;
-
-    left: 7%;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #bdf3d3,
-            #dff9b6
-        );
-
-    opacity: .75;
-
-    animation:
-        programOrbFloat
-        7s
-        ease-in-out
-        infinite;
-
-}
-
-
-body[data-page="programs"] .program-orb-two {
-
-    width: 110px;
-
-    height: 110px;
-
-    right: 9%;
-
-    bottom: 35px;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #c5eaff,
-            #e4d2ff
-        );
-
-    opacity: .75;
-
-    animation:
-        programOrbFloat
-        9s
-        ease-in-out
-        infinite
-        reverse;
-
-}
-
-
-body[data-page="programs"] .program-orb-three {
-
-    width: 65px;
-
-    height: 65px;
-
-    left: 22%;
-
-    bottom: 30px;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #ffe7a5,
-            #ffd0df
-        );
-
-    opacity: .7;
-
-    animation:
-        programOrbFloat
-        6s
-        ease-in-out
-        infinite;
-
-}
-
-
-@keyframes programOrbFloat {
-
-    0%,
-    100% {
-
-        transform:
-            translateY(0)
-            rotate(0);
-
-    }
-
-    50% {
-
-        transform:
-            translateY(-25px)
-            rotate(10deg);
-
-    }
-
-}
-
-
-body[data-page="programs"] .program-hero-content {
-
-    position: relative;
-
-    z-index: 2;
-
-    text-align:
-        center;
-
-}
-
-
-body[data-page="programs"] .program-badge {
-
-    display:
-        inline-flex;
-
-    align-items:
-        center;
-
-    gap: 8px;
-
-    padding:
-        10px
-        17px;
-
-    border-radius: 50px;
-
-    background:
-
-        rgba(
-            255,
-            255,
-            255,
-            .76
-        );
-
-    box-shadow:
-
-        0 12px 30px
-        rgba(
-            70,
-            50,
-            110,
-            .08
-        );
-
-    font-size: 14px;
-
-    font-weight: 800;
-
-    margin-bottom: 20px;
-
-    animation:
-        programHeroIn
-        .8s
-        ease
-        both;
-
-}
-
-
-body[data-page="programs"] .program-hero h2 {
-
-    margin: 0;
-
-    font-family:
-        "Baloo 2",
-        cursive;
-
-    font-size:
-
-        clamp(
-            48px,
-            7vw,
-            82px
-        );
-
-    line-height: 1;
-
-    font-weight: 800;
-
-    animation:
-        programHeroIn
-        1s
-        ease
-        .1s
-        both;
-
-}
-
-
-body[data-page="programs"] .program-hero h2 span {
-
-    color:
-        #44b978;
-
-}
-
-
-body[data-page="programs"] .program-hero p {
-
-    max-width: 610px;
-
-    margin:
-        20px
-        auto
-        0;
-
-    color:
-        #756e85;
-
-    font-size: 18px;
-
-    line-height: 1.7;
-
-    animation:
-        programHeroIn
-        1s
-        ease
-        .25s
-        both;
-
-}
-
-
-@keyframes programHeroIn {
-
-    from {
-
-        opacity: 0;
-
-        transform:
-            translateY(25px);
-
-    }
-
-    to {
-
-        opacity: 1;
-
-        transform:
-            translateY(0);
-
-    }
-
-}
-
-
-/* =====================================================
-   SECTION
-===================================================== */
-
-body[data-page="programs"] .program-section {
-
-    position: relative;
-
-    padding:
-        55px
-        0;
-
-}
-
-
-body[data-page="programs"] .program-section-heading {
-
-    text-align:
-        center;
-
-    margin-bottom:
-        35px;
-
-}
-
-
-body[data-page="programs"] .program-section-heading h2 {
-
-    margin:
-        0
-        0
-        12px;
-
-    font-family:
-        "Baloo 2",
-        cursive;
-
-    font-size:
-
-        clamp(
-            30px,
-            5vw,
-            45px
-        );
-
-    line-height: 1.1;
-
-}
-
-
-body[data-page="programs"] .program-section-heading h2 span {
-
-    color:
-        #44b978;
-
-}
-
-
-body[data-page="programs"] .program-section-heading p {
-
-    max-width: 600px;
-
-    margin:
-        auto;
-
-    color:
-        #7c758b;
-
-    line-height: 1.7;
-
-}
-
-
-/* =====================================================
-   PROGRAM CARDS
-===================================================== */
-
-body[data-page="programs"] .program-cards {
-
-    display:
-        grid;
-
-    grid-template-columns:
-
-        repeat(
-            4,
-            1fr
-        );
-
-    gap: 20px;
-
-}
-
-
-body[data-page="programs"] .program-card {
-
-    position: relative;
-
-    overflow: hidden;
-
-    min-height: 330px;
-
-    padding:
-        28px
-        22px;
-
-    border-radius: 28px;
-
-    background:
-
-        rgba(
-            255,
-            255,
-            255,
-            .72
-        );
-
-    border:
-
-        1px
-        solid
-        rgba(
-            255,
-            255,
-            255,
-            .9
-        );
-
-    box-shadow:
-
-        0 18px 45px
-        rgba(
-            75,
-            55,
-            120,
-            .09
-        );
-
-    transition:
-        .35s
-        ease;
-
-}
-
-
-body[data-page="programs"] .program-card::before {
-
-    content: "";
-
-    position: absolute;
-
-    width: 140px;
-
-    height: 140px;
-
-    border-radius: 50%;
-
-    top: -70px;
-
-    right: -65px;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            rgba(145, 239, 185, .35),
-            rgba(190, 244, 220, .08)
-        );
-
-}
-
-
-body[data-page="programs"] .program-card::after {
-
-    content: "";
-
-    position: absolute;
-
-    width: 90px;
-
-    height: 90px;
-
-    border-radius: 50%;
-
-    bottom: -45px;
-
-    left: -35px;
-
-    background:
-
-        rgba(
-            255,
-            218,
-            154,
-            .22
-        );
-
-}
-
-
-body[data-page="programs"] .program-card:hover {
-
-    transform:
-        translateY(-10px);
-
-    box-shadow:
-
-        0 28px 55px
-        rgba(
-            75,
-            55,
-            120,
-            .15
-        );
-
-}
-
-
-/* NUMBER */
-
-body[data-page="programs"] .program-number {
-
-    position: relative;
-
-    z-index: 2;
-
-    display:
-        inline-flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    width: 34px;
-
-    height: 34px;
-
-    border-radius: 50%;
-
-    background:
-        #f1f8f3;
-
-    color:
-        #44b978;
-
-    font-size: 12px;
-
-    font-weight: 900;
-
-    margin-bottom: 18px;
-
-}
-
-
-/* ICON */
-
-body[data-page="programs"] .program-icon {
-
-    position: relative;
-
-    z-index: 2;
-
-    width: 82px;
-
-    height: 82px;
-
-    display:
-        grid;
-
-    place-items:
-        center;
-
-    border-radius: 25px;
-
-    font-size: 40px;
-
-    margin-bottom: 20px;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #f5fff8,
-            #e7f8ff
-        );
-
-    box-shadow:
-
-        inset
-        0
-        1px
-        1px
-        rgba(
-            255,
-            255,
-            255,
-            .8
-        );
-
-    animation:
-        programIconFloat
-        5s
-        ease-in-out
-        infinite;
-
-}
-
-
-@keyframes programIconFloat {
-
-    0%,
-    100% {
-
-        transform:
-            translateY(0);
-
-    }
-
-    50% {
-
-        transform:
-            translateY(-7px);
-
-    }
-
-}
-
-
-body[data-page="programs"] .program-card h3 {
-
-    position: relative;
-
-    z-index: 2;
-
-    margin:
-        0
-        0
-        12px;
-
-    font-family:
-        "Baloo 2",
-        cursive;
-
-    font-size: 23px;
-
-    line-height: 1.2;
-
-}
-
-
-body[data-page="programs"] .program-card p {
-
-    position: relative;
-
-    z-index: 2;
-
-    margin: 0;
-
-    font-size: 14px;
-
-    line-height: 1.75;
-
-    color:
-        #766f84;
-
-}
-
-
-/* =====================================================
-   PROGRAM HIGHLIGHT
-===================================================== */
-
-body[data-page="programs"] .program-highlight {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        1fr
-        1fr;
-
-    gap: 30px;
-
-    align-items:
-        center;
-
-    padding:
-        35px;
-
-    border-radius: 35px;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            rgba(238, 255, 245, .9),
-            rgba(240, 249, 255, .9),
-            rgba(255, 248, 229, .85)
-        );
-
-    box-shadow:
-
-        0 22px 60px
-        rgba(
-            75,
-            55,
-            120,
-            .10
-        );
-
-    overflow:
-        hidden;
+.pg-hero {
 
     position:
         relative;
 
+    overflow:
+        hidden;
+
+    padding:
+        65px 0 70px;
+
+    text-align:
+        center;
+
 }
 
 
-body[data-page="programs"] .program-highlight::before {
+.pg-hero::before {
 
     content:
-        "🌈";
+        "📚";
 
     position:
         absolute;
 
-    font-size:
-        90px;
-
-    right:
-        5%;
-
     top:
-        15px;
+        25px;
+
+    left:
+        8%;
+
+    font-size:
+        45px;
 
     opacity:
         .25;
 
     animation:
-        programRainbowFloat
-        6s
-        ease-in-out
-        infinite;
+        emojiFloat 5s ease-in-out infinite;
 
 }
 
 
-@keyframes programRainbowFloat {
-
-    0%,
-    100% {
-
-        transform:
-            translateY(0)
-            rotate(-5deg);
-
-    }
-
-    50% {
-
-        transform:
-            translateY(-12px)
-            rotate(5deg);
-
-    }
-
-}
-
-
-body[data-page="programs"] .program-highlight-icon {
-
-    width: 150px;
-
-    height: 150px;
-
-    margin:
-        auto;
-
-    display:
-        grid;
-
-    place-items:
-        center;
-
-    border-radius: 40px;
-
-    font-size: 72px;
-
-    background:
-
-        rgba(
-            255,
-            255,
-            255,
-            .7
-        );
-
-    box-shadow:
-
-        0 20px 45px
-        rgba(
-            70,
-            50,
-            100,
-            .10
-        );
-
-    animation:
-        programHighlightFloat
-        5s
-        ease-in-out
-        infinite;
-
-}
-
-
-@keyframes programHighlightFloat {
-
-    0%,
-    100% {
-
-        transform:
-            translateY(0);
-
-    }
-
-    50% {
-
-        transform:
-            translateY(-10px)
-            rotate(4deg);
-
-    }
-
-}
-
-
-body[data-page="programs"] .program-highlight-content {
-
-    position:
-        relative;
-
-    z-index: 2;
-
-}
-
-
-body[data-page="programs"] .program-mini-label {
-
-    display:
-        inline-block;
-
-    padding:
-        8px
-        14px;
-
-    border-radius:
-        30px;
-
-    background:
-        #ffffff;
-
-    color:
-        #44b978;
-
-    font-size:
-        12px;
-
-    font-weight:
-        900;
-
-    margin-bottom:
-        14px;
-
-}
-
-
-body[data-page="programs"] .program-highlight h2 {
-
-    margin:
-        0
-        0
-        15px;
-
-    font-family:
-        "Baloo 2",
-        cursive;
-
-    font-size:
-        38px;
-
-    line-height:
-        1.15;
-
-}
-
-
-body[data-page="programs"] .program-highlight h2 span {
-
-    color:
-        #ef4f82;
-
-}
-
-
-body[data-page="programs"] .program-highlight p {
-
-    color:
-        #746d85;
-
-    line-height:
-        1.8;
-
-}
-
-
-/* =====================================================
-   POSTS
-===================================================== */
-
-body[data-page="programs"] .post-counter {
-
-    display:
-        table;
-
-    margin:
-        0
-        auto
-        25px;
-
-    padding:
-        12px
-        20px;
-
-    border-radius:
-        50px;
-
-    background:
-
-        rgba(
-            255,
-            255,
-            255,
-            .72
-        );
-
-    box-shadow:
-
-        0 10px 30px
-        rgba(
-            70,
-            50,
-            100,
-            .08
-        );
-
-    font-weight:
-        800;
-
-}
-
-
-body[data-page="programs"] .post-counter span {
-
-    color:
-        #44b978;
-
-}
-
-
-body[data-page="programs"] .posts-grid {
-
-    display:
-        grid;
-
-    grid-template-columns:
-
-        repeat(
-            3,
-            1fr
-        );
-
-    gap:
-        22px;
-
-}
-
-
-/* =====================================================
-   CTA
-===================================================== */
-
-body[data-page="programs"] .program-cta {
-
-    position:
-        relative;
-
-    overflow:
-        hidden;
-
-    text-align:
-        center;
-
-    padding:
-        65px
-        30px;
-
-    border-radius:
-        40px;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #e9fff1,
-            #eef8ff,
-            #fff4e5
-        );
-
-    box-shadow:
-
-        0 25px 70px
-        rgba(
-            75,
-            55,
-            120,
-            .12
-        );
-
-}
-
-
-body[data-page="programs"] .program-cta::before {
+.pg-hero::after {
 
     content:
-        "✨";
-
-    position:
-        absolute;
-
-    top:
-        20px;
-
-    left:
-        7%;
-
-    font-size:
-        65px;
-
-    opacity:
-        .45;
-
-    animation:
-        programCtaFloat
-        5s
-        ease-in-out
-        infinite;
-
-}
-
-
-body[data-page="programs"] .program-cta::after {
-
-    content:
-        "🚀";
+        "🌈";
 
     position:
         absolute;
@@ -1752,31 +855,28 @@ body[data-page="programs"] .program-cta::after {
         7%;
 
     bottom:
-        25px;
+        20px;
 
     font-size:
-        70px;
+        55px;
 
     opacity:
-        .45;
+        .3;
 
     animation:
-        programCtaFloat
-        6s
-        ease-in-out
-        infinite
-        reverse;
+        emojiFloat 6s ease-in-out infinite reverse;
 
 }
 
 
-@keyframes programCtaFloat {
+@keyframes emojiFloat {
 
     0%,
     100% {
 
         transform:
-            translateY(0);
+            translateY(0)
+            rotate(0);
 
     }
 
@@ -1791,26 +891,7 @@ body[data-page="programs"] .program-cta::after {
 }
 
 
-body[data-page="programs"] .program-cta-icon {
-
-    position:
-        relative;
-
-    z-index: 2;
-
-    font-size:
-        60px;
-
-    animation:
-        programLogoFloat
-        4s
-        ease-in-out
-        infinite;
-
-}
-
-
-body[data-page="programs"] .program-cta h2 {
+.pg-hero-content {
 
     position:
         relative;
@@ -1818,24 +899,80 @@ body[data-page="programs"] .program-cta h2 {
     z-index:
         2;
 
+}
+
+
+.pg-badge {
+
+    display:
+        inline-flex;
+
+    padding:
+        9px 15px;
+
+    border-radius:
+        50px;
+
+    background:
+        rgba(255,255,255,.8);
+
+    font-size:
+        12px;
+
+    font-weight:
+        900;
+
+    color:
+        #8466bd;
+
+    box-shadow:
+        0 10px 30px rgba(80,60,120,.08);
+
+    animation:
+        badgeFloat 4s ease-in-out infinite;
+
+}
+
+
+@keyframes badgeFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-6px);
+
+    }
+
+}
+
+
+.pg-hero h2 {
+
     margin:
-        10px
-        0;
+        17px 0 0;
 
     font-family:
         "Baloo 2",
         cursive;
 
     font-size:
-        45px;
+        clamp(48px,15vw,72px);
 
     line-height:
-        1.15;
+        .95;
 
 }
 
 
-body[data-page="programs"] .program-cta h2 span {
+.pg-hero h2 span {
 
     color:
         #ef4f82;
@@ -1843,24 +980,19 @@ body[data-page="programs"] .program-cta h2 span {
 }
 
 
-body[data-page="programs"] .program-cta p {
-
-    position:
-        relative;
-
-    z-index:
-        2;
+.pg-hero p {
 
     max-width:
-        550px;
+        580px;
 
     margin:
-        0
-        auto
-        25px;
+        18px auto 0;
 
     color:
-        #746d85;
+        #766d84;
+
+    font-size:
+        14px;
 
     line-height:
         1.8;
@@ -1869,21 +1001,654 @@ body[data-page="programs"] .program-cta p {
 
 
 /* =====================================================
+   SECTION
+===================================================== */
+
+.pg-section {
+
+    padding:
+        40px 0;
+
+}
+
+
+.pg-heading {
+
+    text-align:
+        center;
+
+    margin-bottom:
+        28px;
+
+}
+
+
+.pg-heading-badge {
+
+    display:
+        inline-block;
+
+    padding:
+        7px 13px;
+
+    border-radius:
+        30px;
+
+    background:
+        #f0eaff;
+
+    color:
+        #8864c9;
+
+    font-size:
+        10px;
+
+    font-weight:
+        900;
+
+}
+
+
+.pg-heading h2 {
+
+    margin:
+        10px 0;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size:
+        34px;
+
+    line-height:
+        1.1;
+
+}
+
+
+.pg-heading h2 span {
+
+    color:
+        #ef4f82;
+
+}
+
+
+.pg-heading p {
+
+    max-width:
+        600px;
+
+    margin:
+        auto;
+
+    color:
+        #7c7489;
+
+    font-size:
+        13px;
+
+    line-height:
+        1.7;
+
+}
+
+
+/* =====================================================
+   PROGRAM CARDS
+===================================================== */
+
+.programs-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr;
+
+    gap:
+        17px;
+
+}
+
+
+.program-card {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    padding:
+        23px 20px;
+
+    border-radius:
+        25px;
+
+    background:
+        rgba(255,255,255,.78);
+
+    border:
+        1px solid rgba(255,255,255,.95);
+
+    box-shadow:
+        0 15px 40px rgba(70,50,110,.09);
+
+    transition:
+        .35s ease;
+
+}
+
+
+.program-card:hover {
+
+    transform:
+        translateY(-8px);
+
+    box-shadow:
+        0 25px 55px rgba(70,50,110,.15);
+
+}
+
+
+.program-card::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        130px;
+
+    height:
+        130px;
+
+    border-radius:
+        50%;
+
+    right:
+        -65px;
+
+    bottom:
+        -65px;
+
+    background:
+        rgba(255,180,215,.20);
+
+}
+
+
+.program-icon {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    width:
+        68px;
+
+    height:
+        68px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    margin-bottom:
+        16px;
+
+    border-radius:
+        21px;
+
+    font-size:
+        32px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #fff5fa,
+            #f0edff
+        );
+
+    animation:
+        iconPulse 4s ease-in-out infinite;
+
+}
+
+
+@keyframes iconPulse {
+
+    0%,
+    100% {
+
+        transform:
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            scale(1.08);
+
+    }
+
+}
+
+
+.program-card h3 {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    margin:
+        0 0 9px;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size:
+        23px;
+
+}
+
+
+.program-card p {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    margin:
+        0;
+
+    color:
+        #766e83;
+
+    font-size:
+        13px;
+
+    line-height:
+        1.75;
+
+}
+
+
+.program-tag {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    display:
+        inline-block;
+
+    margin-top:
+        16px;
+
+    padding:
+        7px 12px;
+
+    border-radius:
+        30px;
+
+    background:
+        #f7f3ff;
+
+    color:
+        #8664c8;
+
+    font-size:
+        10px;
+
+    font-weight:
+        900;
+
+}
+
+
+/* =====================================================
+   LEARNING JOURNEY
+===================================================== */
+
+.journey-box {
+
+    display:
+        grid;
+
+    gap:
+        15px;
+
+}
+
+
+.journey-item {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        58px 1fr;
+
+    align-items:
+        center;
+
+    gap:
+        15px;
+
+    padding:
+        18px;
+
+    border-radius:
+        22px;
+
+    background:
+        rgba(255,255,255,.75);
+
+    box-shadow:
+        0 12px 32px rgba(74,53,120,.08);
+
+}
+
+
+.journey-number {
+
+    width:
+        58px;
+
+    height:
+        58px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    border-radius:
+        18px;
+
+    color:
+        white;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size:
+        22px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #7b6cff,
+            #a47fff
+        );
+
+}
+
+
+.journey-content h3 {
+
+    margin:
+        0 0 4px;
+
+    font-size:
+        17px;
+
+}
+
+
+.journey-content p {
+
+    margin:
+        0;
+
+    color:
+        #7a7287;
+
+    font-size:
+        12px;
+
+    line-height:
+        1.65;
+
+}
+
+
+/* =====================================================
+   ACTIVITIES
+===================================================== */
+
+.activity-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:
+        13px;
+
+}
+
+
+.activity-card {
+
+    padding:
+        22px 12px;
+
+    text-align:
+        center;
+
+    border-radius:
+        22px;
+
+    background:
+        rgba(255,255,255,.75);
+
+    box-shadow:
+        0 12px 30px rgba(70,50,100,.08);
+
+    transition:
+        .3s ease;
+
+}
+
+
+.activity-card:hover {
+
+    transform:
+        translateY(-6px);
+
+}
+
+
+.activity-card span {
+
+    display:
+        block;
+
+    margin-bottom:
+        8px;
+
+    font-size:
+        35px;
+
+}
+
+
+.activity-card b {
+
+    font-size:
+        12px;
+
+    color:
+        #51465f;
+
+}
+
+
+/* =====================================================
+   CTA
+===================================================== */
+
+.pg-cta {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    margin:
+        20px 0 45px;
+
+    padding:
+        48px 20px;
+
+    border-radius:
+        30px;
+
+    text-align:
+        center;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #fff0f6,
+            #f0ecff,
+            #e5f7ff
+        );
+
+    box-shadow:
+        0 22px 55px rgba(75,55,120,.12);
+
+}
+
+
+.pg-cta h2 {
+
+    margin:
+        0 0 12px;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size:
+        35px;
+
+}
+
+
+.pg-cta h2 span {
+
+    color:
+        #ef4f82;
+
+}
+
+
+.pg-cta p {
+
+    max-width:
+        500px;
+
+    margin:
+        0 auto 22px;
+
+    color:
+        #756c82;
+
+    font-size:
+        13px;
+
+    line-height:
+        1.75;
+
+}
+
+
+.pg-button {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        14px 22px;
+
+    border-radius:
+        15px;
+
+    text-decoration:
+        none;
+
+    color:
+        white;
+
+    font-size:
+        13px;
+
+    font-weight:
+        900;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #ef4f82,
+            #ff7ea7
+        );
+
+    box-shadow:
+        0 12px 25px rgba(239,79,130,.25);
+
+}
+
+
+/* =====================================================
    FOOTER
 ===================================================== */
 
-body[data-page="programs"] .program-footer {
-
-    margin-top:
-        70px;
+.au-footer {
 
     padding:
-        60px
-        0
-        0;
+        42px 0 0;
 
     background:
-        #332c4d;
+
+        linear-gradient(
+            135deg,
+            #302843,
+            #403556
+        );
 
     color:
         white;
@@ -1891,27 +1656,24 @@ body[data-page="programs"] .program-footer {
 }
 
 
-body[data-page="programs"] .program-footer-grid {
+.au-footer-grid {
 
     display:
         grid;
 
-    grid-template-columns:
-
-        1.5fr
-        1fr
-        1fr
-        1fr;
-
     gap:
-        35px;
+        25px;
+
+    text-align:
+        center;
 
 }
 
 
-body[data-page="programs"] .program-footer-grid h3 {
+.au-footer h3 {
 
-    margin-top: 0;
+    margin:
+        0 0 10px;
 
     font-family:
         "Baloo 2",
@@ -1923,104 +1685,78 @@ body[data-page="programs"] .program-footer-grid h3 {
 }
 
 
-body[data-page="programs"] .program-footer-grid p {
+.au-footer h3 span {
 
     color:
-        #c5bed7;
+        #ff8db3;
+
+}
+
+
+.au-footer p {
+
+    margin:
+        0;
+
+    color:
+        #c9c1d7;
+
+    font-size:
+        13px;
 
     line-height:
-        1.8;
+        1.7;
 
 }
 
 
-body[data-page="programs"] .program-footer-grid a {
-
-    display:
-        block;
-
-    margin-bottom:
-        10px;
-
-    text-decoration:
-        none;
-
-    color:
-        #d7d1e6;
-
-    transition:
-        .2s;
-
-}
-
-
-body[data-page="programs"] .program-footer-grid a:hover {
-
-    color:
-        #83e0ad;
-
-    transform:
-        translateX(4px);
-
-}
-
-
-body[data-page="programs"] .program-footer-copy {
+.au-copyright {
 
     margin-top:
-        40px;
+        35px;
 
     padding:
-        22px
-        15px;
+        18px;
 
     text-align:
         center;
 
-    color:
-        #aaa1be;
-
     border-top:
+        1px solid rgba(255,255,255,.08);
 
-        1px
-        solid
-        rgba(
-            255,
-            255,
-            255,
-            .08
-        );
+    color:
+        #aaa0bc;
+
+    font-size:
+        11px;
 
 }
 
 
 /* =====================================================
-   REVEAL ANIMATION
+   REVEAL
 ===================================================== */
 
-body[data-page="programs"] .program-reveal {
+.au-reveal {
 
-    opacity: 0;
+    opacity:
+        0;
 
     transform:
-        translateY(35px);
+        translateY(28px);
 
     transition:
 
-        1s
-        cubic-bezier(
-            .2,
-            .8,
-            .2,
-            1
-        );
+        opacity .8s ease,
+        transform .8s cubic-bezier(.2,.8,.2,1);
 
 }
 
 
-body[data-page="programs"] .program-reveal.show {
+.au-reveal.au-show {
 
-    opacity: 1;
+    opacity:
+        1;
 
     transform:
         translateY(0);
@@ -2029,733 +1765,155 @@ body[data-page="programs"] .program-reveal.show {
 
 
 /* =====================================================
-   TABLET
+   DESKTOP
 ===================================================== */
 
-@media (max-width: 900px) {
+@media (min-width: 769px) {
 
 
-    body[data-page="programs"] .program-cards {
-
-        grid-template-columns:
-
-            repeat(
-                2,
-                1fr
-            );
-
-    }
-
-
-    body[data-page="programs"] .program-highlight {
-
-        grid-template-columns:
-            1fr;
-
-        text-align:
-            center;
-
-    }
-
-
-    body[data-page="programs"] .program-footer-grid {
-
-        grid-template-columns:
-
-            repeat(
-                2,
-                1fr
-            );
-
-    }
-
-
-    body[data-page="programs"] .program-nav-inner {
-
-        justify-content:
-            flex-start;
-
-        overflow-x:
-            auto;
-
-        scrollbar-width:
-            none;
-
-    }
-
-
-    body[data-page="programs"] .program-nav-inner::-webkit-scrollbar {
-
-        display:
-            none;
-
-    }
-
-
-    body[data-page="programs"] .program-nav a {
-
-        flex:
-            0
-            0
-            auto;
-
-    }
-
-}
-
-
-/* =====================================================
-   PREMIUM MOBILE
-===================================================== */
-
-@media (max-width: 768px) {
-
-
-    /* WRAPPER */
-
-    body[data-page="programs"] .program-wrap {
-
-        width:
-            calc(
-                100% - 30px
-            );
-
-    }
-
-
-    /* HEADER */
-
-    body[data-page="programs"] .program-head-inner {
+    .au-header-inner {
 
         min-height:
-            72px;
+            90px;
 
     }
 
 
-    body[data-page="programs"] .program-logo {
+    .au-logo {
 
         width:
-            45px;
+            55px;
 
         height:
-            45px;
-
-        border-radius:
-            15px;
+            55px;
 
         font-size:
-            24px;
+            29px;
 
     }
 
 
-    body[data-page="programs"] .program-brand h1 {
+    .au-brand h1 {
 
         font-size:
-            19px;
-
-    }
-
-
-    body[data-page="programs"] .program-brand p {
-
-        font-size:
-            11px;
-
-    }
-
-
-    body[data-page="programs"] .program-call {
-
-        display:
-            none;
-
-    }
-
-
-    body[data-page="programs"] .program-btn {
-
-        padding:
-            10px
-            14px;
-
-        border-radius:
-            13px;
-
-        font-size:
-            12px;
-
-    }
-
-
-    /* NAVBAR */
-
-    body[data-page="programs"] .program-nav {
-
-        position:
-            sticky;
-
-        top: 0;
-
-        z-index:
-            100;
-
-        box-shadow:
-
-            0 8px 25px
-            rgba(
-                70,
-                50,
-                100,
-                .05
-            );
-
-    }
-
-
-    body[data-page="programs"] .program-nav-inner {
-
-        padding:
-            9px
-            10px;
-
-        gap:
-            7px;
-
-    }
-
-
-    body[data-page="programs"] .program-nav a {
-
-        flex-direction:
-            column;
-
-        gap:
-            3px;
-
-        min-width:
-            62px;
-
-        padding:
-            8px
-            9px;
-
-        font-size:
-            9px;
-
-        border-radius:
-            13px;
-
-    }
-
-
-    body[data-page="programs"] .program-nav .nav-icon {
-
-        font-size:
-            19px;
-
-    }
-
-
-    /* HERO */
-
-    body[data-page="programs"] .program-hero {
-
-        padding:
-            70px
-            0
-            75px;
-
-    }
-
-
-    body[data-page="programs"] .program-badge {
-
-        font-size:
-            12px;
-
-        padding:
-            9px
-            14px;
-
-    }
-
-
-    body[data-page="programs"] .program-hero h2 {
-
-        font-size:
-            50px;
-
-    }
-
-
-    body[data-page="programs"] .program-hero p {
-
-        font-size:
-            15px;
-
-        padding:
-            0
-            8px;
-
-    }
-
-
-    body[data-page="programs"] .program-orb-one {
-
-        width:
-            100px;
-
-        height:
-            100px;
-
-        left:
-            -35px;
-
-    }
-
-
-    body[data-page="programs"] .program-orb-two {
-
-        width:
-            80px;
-
-        height:
-            80px;
-
-        right:
-            -25px;
-
-    }
-
-
-    body[data-page="programs"] .program-orb-three {
-
-        width:
-            45px;
-
-        height:
-            45px;
-
-        left:
-            18%;
-
-    }
-
-
-    /* SECTION */
-
-    body[data-page="programs"] .program-section {
-
-        padding:
-            38px
-            0;
-
-    }
-
-
-    body[data-page="programs"] .program-section-heading {
-
-        margin-bottom:
             25px;
 
     }
 
 
-    body[data-page="programs"] .program-section-heading h2 {
-
-        font-size:
-            32px;
-
-    }
-
-
-    body[data-page="programs"] .program-section-heading p {
-
-        font-size:
-            14px;
-
-    }
-
-
-    /* CARDS */
-
-    body[data-page="programs"] .program-cards {
-
-        grid-template-columns:
-
-            1fr
-            1fr;
-
-        gap:
-            12px;
-
-    }
-
-
-    body[data-page="programs"] .program-card {
-
-        min-height:
-            auto;
-
-        padding:
-            20px
-            15px;
-
-        border-radius:
-            22px;
-
-    }
-
-
-    body[data-page="programs"] .program-card:hover {
-
-        transform:
-            translateY(-5px);
-
-    }
-
-
-    body[data-page="programs"] .program-number {
-
-        width:
-            28px;
-
-        height:
-            28px;
-
-        font-size:
-            10px;
-
-        margin-bottom:
-            12px;
-
-    }
-
-
-    body[data-page="programs"] .program-icon {
-
-        width:
-            58px;
-
-        height:
-            58px;
-
-        border-radius:
-            18px;
-
-        font-size:
-            29px;
-
-        margin-bottom:
-            14px;
-
-    }
-
-
-    body[data-page="programs"] .program-card h3 {
-
-        font-size:
-            18px;
-
-        line-height:
-            1.15;
-
-    }
-
-
-    body[data-page="programs"] .program-card p {
-
-        font-size:
-            12px;
-
-        line-height:
-            1.65;
-
-    }
-
-
-    /* HIGHLIGHT */
-
-    body[data-page="programs"] .program-highlight {
-
-        padding:
-            28px
-            20px;
-
-        border-radius:
-            27px;
-
-        gap:
-            22px;
-
-    }
-
-
-    body[data-page="programs"] .program-highlight-icon {
-
-        width:
-            110px;
-
-        height:
-            110px;
-
-        border-radius:
-            30px;
-
-        font-size:
-            52px;
-
-    }
-
-
-    body[data-page="programs"] .program-highlight h2 {
-
-        font-size:
-            31px;
-
-    }
-
-
-    body[data-page="programs"] .program-highlight p {
-
-        font-size:
-            14px;
-
-    }
-
-
-    body[data-page="programs"] .program-highlight::before {
-
-        font-size:
-            55px;
-
-    }
-
-
-    /* POSTS */
-
-    body[data-page="programs"] .posts-grid {
-
-        grid-template-columns:
-            1fr;
-
-        gap:
-            15px;
-
-    }
-
-
-    body[data-page="programs"] .post-counter {
+    .au-brand p {
 
         font-size:
             13px;
 
+    }
+
+
+    .au-visit {
+
         padding:
-            10px
+            13px 22px;
+
+        font-size:
+            13px;
+
+    }
+
+
+    .au-nav-inner {
+
+        justify-content:
+            center;
+
+        overflow:
+            visible;
+
+    }
+
+
+    .au-nav-link {
+
+        flex-direction:
+            row;
+
+        min-width:
+            auto;
+
+        font-size:
+            12px;
+
+        padding:
+            10px 15px;
+
+    }
+
+
+    .au-more-wrap {
+
+        display:
+            none;
+
+    }
+
+
+    .pg-hero {
+
+        padding:
+            100px 0;
+
+    }
+
+
+    .pg-hero p {
+
+        font-size:
             16px;
 
     }
 
 
-    /* CTA */
-
-    body[data-page="programs"] .program-cta {
+    .pg-section {
 
         padding:
-            48px
-            20px;
-
-        border-radius:
-            28px;
+            65px 0;
 
     }
 
 
-    body[data-page="programs"] .program-cta h2 {
-
-        font-size:
-            35px;
-
-    }
-
-
-    body[data-page="programs"] .program-cta p {
-
-        font-size:
-            14px;
-
-    }
-
-
-    body[data-page="programs"] .program-cta::before {
-
-        font-size:
-            40px;
-
-        left:
-            3%;
-
-    }
-
-
-    body[data-page="programs"] .program-cta::after {
-
-        font-size:
-            45px;
-
-        right:
-            3%;
-
-    }
-
-
-    /* FOOTER */
-
-    body[data-page="programs"] .program-footer {
-
-        margin-top:
-            45px;
-
-        padding-top:
-            45px;
-
-    }
-
-
-    body[data-page="programs"] .program-footer-grid {
+    .programs-grid {
 
         grid-template-columns:
-            1fr;
+            repeat(3,1fr);
 
         gap:
-            28px;
+            22px;
+
+    }
+
+
+    .activity-grid {
+
+        grid-template-columns:
+            repeat(4,1fr);
+
+    }
+
+
+    .journey-box {
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+
+    .au-footer-grid {
+
+        grid-template-columns:
+            repeat(3,1fr);
 
         text-align:
-            center;
-
-    }
-
-
-    body[data-page="programs"] .program-footer-grid a:hover {
-
-        transform:
-            none;
-
-    }
-
-}
-
-
-/* =====================================================
-   HP KECIL
-===================================================== */
-
-@media (max-width: 480px) {
-
-
-    body[data-page="programs"] .program-wrap {
-
-        width:
-            calc(
-                100% - 24px
-            );
-
-    }
-
-
-    body[data-page="programs"] .program-brand h1 {
-
-        font-size:
-            17px;
-
-    }
-
-
-    body[data-page="programs"] .program-btn {
-
-        padding:
-            9px
-            11px;
-
-        font-size:
-            10px;
-
-    }
-
-
-    body[data-page="programs"] .program-hero {
-
-        padding:
-            60px
-            0;
-
-    }
-
-
-    body[data-page="programs"] .program-hero h2 {
-
-        font-size:
-            44px;
-
-    }
-
-
-    body[data-page="programs"] .program-cards {
-
-        grid-template-columns:
-            1fr;
-
-        gap:
-            14px;
-
-    }
-
-
-    body[data-page="programs"] .program-card {
-
-        display:
-            grid;
-
-        grid-template-columns:
-            65px
-            1fr;
-
-        column-gap:
-            15px;
-
-        align-items:
-            center;
-
-    }
-
-
-    body[data-page="programs"] .program-number {
-
-        display:
-            none;
-
-    }
-
-
-    body[data-page="programs"] .program-icon {
-
-        grid-row:
-            span 2;
-
-        margin:
-            0;
-
-    }
-
-
-    body[data-page="programs"] .program-card h3 {
-
-        margin:
-            0
-            0
-            5px;
+            left;
 
     }
 
@@ -2768,21 +1926,16 @@ body[data-page="programs"] .program-reveal.show {
 
 @media (prefers-reduced-motion: reduce) {
 
-    body[data-page="programs"] *,
-    body[data-page="programs"]::before,
-    body[data-page="programs"]::after {
+    * {
 
-        animation-duration:
-            .01ms
-            !important;
+        animation:
+            none !important;
 
-        animation-iteration-count:
-            1
-            !important;
+        transition:
+            none !important;
 
-        transition-duration:
-            .01ms
-            !important;
+        scroll-behavior:
+            auto !important;
 
     }
 
@@ -2796,40 +1949,42 @@ body[data-page="programs"] .program-reveal.show {
 <body data-page="programs">
 
 
+<!-- BACKGROUND -->
+
+<div class="pg-bg"></div>
+
+
 <!-- =====================================================
      HEADER
 ===================================================== -->
 
-<header class="program-header">
+<header class="au-header">
 
-    <div class="program-wrap program-head-inner">
+    <div class="au-container au-header-inner">
 
 
         <a
             href="index.html"
-            class="program-brand"
+            class="au-brand"
         >
 
-            <div class="program-logo">
-                ☀️
+            <div class="au-logo">
+                🌈
             </div>
 
 
             <div>
 
                 <h1>
-
                     RA Miftahul
-
                     <span>
                         Hikmah
                     </span>
-
                 </h1>
 
 
                 <p>
-                    Tangerang 💗
+                    Belajar • Bermain • Berprestasi
                 </p>
 
             </div>
@@ -2837,46 +1992,14 @@ body[data-page="programs"] .program-reveal.show {
         </a>
 
 
+        <a
+            href="contact.html"
+            class="au-visit"
+        >
 
-        <div class="program-header-right">
+            📅 Book Visit
 
-
-            <div class="program-call">
-
-                <div class="program-call-icon">
-                    📞
-                </div>
-
-
-                <div>
-
-                    <small>
-                        Hubungi Kami
-                    </small>
-
-
-                    <b>
-                        +62 813-9875-4451
-                    </b>
-
-                </div>
-
-            </div>
-
-
-            <a
-                href="contact.html"
-                class="program-btn"
-            >
-
-                📅
-
-                Book Visit
-
-            </a>
-
-
-        </div>
+        </a>
 
 
     </div>
@@ -2884,19 +2007,21 @@ body[data-page="programs"] .program-reveal.show {
 </header>
 
 
-
 <!-- =====================================================
      NAVBAR
 ===================================================== -->
 
-<nav class="program-nav">
+<nav class="au-nav">
 
-    <div class="program-wrap program-nav-inner">
+    <div class="au-nav-inner">
 
 
-        <a href="index.html">
+        <a
+            href="index.html"
+            class="au-nav-link"
+        >
 
-            <span class="nav-icon">
+            <span class="au-nav-icon">
                 🏠
             </span>
 
@@ -2905,9 +2030,12 @@ body[data-page="programs"] .program-reveal.show {
         </a>
 
 
-        <a href="about.html">
+        <a
+            href="about.html"
+            class="au-nav-link"
+        >
 
-            <span class="nav-icon">
+            <span class="au-nav-icon">
                 👥
             </span>
 
@@ -2918,10 +2046,10 @@ body[data-page="programs"] .program-reveal.show {
 
         <a
             href="programs.html"
-            class="active"
+            class="au-nav-link active"
         >
 
-            <span class="nav-icon">
+            <span class="au-nav-icon">
                 📚
             </span>
 
@@ -2930,31 +2058,12 @@ body[data-page="programs"] .program-reveal.show {
         </a>
 
 
-        <a href="classes.html">
+        <a
+            href="gallery.html"
+            class="au-nav-link"
+        >
 
-            <span class="nav-icon">
-                🎓
-            </span>
-
-            CLASSES
-
-        </a>
-
-
-        <a href="blog.html">
-
-            <span class="nav-icon">
-                🖍️
-            </span>
-
-            BLOG
-
-        </a>
-
-
-        <a href="gallery.html">
-
-            <span class="nav-icon">
+            <span class="au-nav-icon">
                 🖼️
             </span>
 
@@ -2963,26 +2072,23 @@ body[data-page="programs"] .program-reveal.show {
         </a>
 
 
-        <a href="parents.html">
+        <div class="au-more-wrap">
 
-            <span class="nav-icon">
-                💛
-            </span>
+            <button
+                type="button"
+                class="au-more-button"
+                id="auMoreButton"
+            >
 
-            PARENTS
+                <span>
+                    ✨
+                </span>
 
-        </a>
+                MORE
 
+            </button>
 
-        <a href="contact.html">
-
-            <span class="nav-icon">
-                ✉️
-            </span>
-
-            CONTACT
-
-        </a>
+        </div>
 
 
     </div>
@@ -2990,725 +2096,1062 @@ body[data-page="programs"] .program-reveal.show {
 </nav>
 
 
+<!-- =====================================================
+     DROPDOWN MENU
+===================================================== -->
+
+<div
+    class="au-more-menu"
+    id="auMoreMenu"
+>
+
+
+    <div class="au-more-title">
+
+        ✨ Menu Lainnya
+
+    </div>
+
+
+    <a href="classes.html">
+
+        🎓 Classes
+
+    </a>
+
+
+    <a href="blog.html">
+
+        🖍️ Blog
+
+    </a>
+
+
+    <a href="parents.html">
+
+        💛 Parents
+
+    </a>
+
+
+    <a href="contact.html">
+
+        ✉️ Contact
+
+    </a>
+
+
+    <a href="contact.html">
+
+        📅 Book Visit
+
+    </a>
+
+
+</div>
+
 
 <!-- =====================================================
      HERO
 ===================================================== -->
 
-<section class="program-hero">
+<section class="pg-hero">
+
+    <div
+        class="au-container
+               pg-hero-content
+               au-reveal"
+    >
 
 
-    <div class="program-orb program-orb-one"></div>
+        <div class="pg-badge">
 
-    <div class="program-orb program-orb-two"></div>
-
-    <div class="program-orb program-orb-three"></div>
-
-
-    <div class="program-wrap program-hero-content">
-
-
-        <div class="program-badge">
-
-            ✨
-
-            Belajar Sambil Bermain
+            🌟 PROGRAM PEMBELAJARAN
 
         </div>
 
 
         <h2>
 
-            Our
+            Belajar dengan
 
             <span>
-                Programs
+                Bahagia!
             </span>
-
-            📚
 
         </h2>
 
 
         <p>
 
-            Program belajar yang menyenangkan,
-            kreatif dan penuh pengalaman baru
-            untuk membantu anak tumbuh dan
-            berkembang dengan bahagia.
+            Program pembelajaran RA Miftahul Hikmah
+            dirancang agar anak dapat belajar,
+            bermain, bereksplorasi dan tumbuh
+            sesuai dengan tahap perkembangannya.
 
         </p>
 
 
     </div>
 
-
 </section>
 
 
-
 <!-- =====================================================
-     PROGRAM CARDS
+     PROGRAMS
 ===================================================== -->
 
-<section class="program-section">
+<section class="pg-section">
+
+    <div class="au-container">
 
 
-    <div class="program-wrap">
+        <div class="pg-heading au-reveal">
 
+            <div class="pg-heading-badge">
 
-        <div class="program-section-heading program-reveal">
+                ✨ PROGRAM UNGGULAN
+
+            </div>
+
 
             <h2>
 
-                Explore Our
-
+                Tumbuh,
+                Belajar &
                 <span>
-                    Programs
+                    Bersinar
                 </span>
-
-                🌈
 
             </h2>
 
 
             <p>
 
-                Setiap program dirancang untuk
-                membantu anak belajar, bermain,
-                bereksplorasi dan menemukan
-                potensi terbaiknya.
+                Kami menghadirkan pengalaman belajar
+                yang menyenangkan untuk membantu anak
+                berkembang secara optimal.
 
             </p>
 
         </div>
 
 
+        <div class="programs-grid">
 
-        <div class="program-cards">
 
+            <!-- PROGRAM 1 -->
 
-            <!-- ART -->
+            <article
+                class="program-card au-reveal"
+            >
 
-            <div class="program-card program-reveal">
-
-                <div class="program-number">
-                    01
+                <div class="program-icon">
+                    📖
                 </div>
 
+
+                <h3>
+
+                    Belajar Al-Qur'an
+
+                </h3>
+
+
+                <p>
+
+                    Mengenalkan huruf hijaiyah,
+                    doa-doa harian dan nilai-nilai
+                    keislaman dengan metode yang
+                    menyenangkan.
+
+                </p>
+
+
+                <div class="program-tag">
+
+                    🌙 Pendidikan Islami
+
+                </div>
+
+            </article>
+
+
+            <!-- PROGRAM 2 -->
+
+            <article
+                class="program-card au-reveal"
+            >
 
                 <div class="program-icon">
                     🎨
                 </div>
 
 
-                <div>
+                <h3>
 
-                    <h3>
-                        Art & Creativity
-                    </h3>
+                    Seni & Kreativitas
 
-
-                    <p>
-
-                        Mengembangkan kreativitas anak
-                        melalui menggambar, mewarnai,
-                        bermain warna dan membuat
-                        berbagai karya menarik.
-
-                    </p>
-
-                </div>
-
-
-            </div>
-
-
-
-            <!-- SMART LEARNING -->
-
-            <div class="program-card program-reveal">
-
-                <div class="program-number">
-                    02
-                </div>
-
-
-                <div class="program-icon">
-                    🔢
-                </div>
-
-
-                <div>
-
-                    <h3>
-                        Smart Learning
-                    </h3>
-
-
-                    <p>
-
-                        Belajar angka, huruf, bentuk
-                        dan kemampuan dasar melalui
-                        permainan yang seru dan
-                        mudah dipahami anak.
-
-                    </p>
-
-                </div>
-
-
-            </div>
-
-
-
-            <!-- NATURE -->
-
-            <div class="program-card program-reveal">
-
-                <div class="program-number">
-                    03
-                </div>
-
-
-                <div class="program-icon">
-                    🌱
-                </div>
-
-
-                <div>
-
-                    <h3>
-                        Nature Explorer
-                    </h3>
-
-
-                    <p>
-
-                        Mengenalkan anak pada alam,
-                        lingkungan dan berbagai
-                        pengalaman eksplorasi yang
-                        menyenangkan.
-
-                    </p>
-
-                </div>
-
-
-            </div>
-
-
-
-            <!-- MUSIC -->
-
-            <div class="program-card program-reveal">
-
-                <div class="program-number">
-                    04
-                </div>
-
-
-                <div class="program-icon">
-                    🎵
-                </div>
-
-
-                <div>
-
-                    <h3>
-                        Music & Movement
-                    </h3>
-
-
-                    <p>
-
-                        Bernyanyi, menari dan bergerak
-                        untuk meningkatkan ekspresi,
-                        koordinasi dan kepercayaan diri.
-
-                    </p>
-
-                </div>
-
-
-            </div>
-
-
-        </div>
-
-
-    </div>
-
-
-</section>
-
-
-
-<!-- =====================================================
-     HIGHLIGHT
-===================================================== -->
-
-<section class="program-section">
-
-
-    <div class="program-wrap">
-
-
-        <div class="program-highlight program-reveal">
-
-
-            <div class="program-highlight-icon">
-                🌈
-            </div>
-
-
-            <div class="program-highlight-content">
-
-
-                <div class="program-mini-label">
-
-                    ✨ BELAJAR DENGAN BAHAGIA
-
-                </div>
-
-
-                <h2>
-
-                    Setiap Hari Adalah
-
-                    <span>
-                        Petualangan Baru!
-                    </span>
-
-                </h2>
+                </h3>
 
 
                 <p>
 
-                    Kami percaya anak-anak belajar
-                    dengan lebih baik ketika mereka
-                    merasa aman, bahagia dan bebas
-                    untuk bereksplorasi.
+                    Anak bebas berekspresi melalui
+                    menggambar, mewarnai, kerajinan
+                    tangan dan berbagai kegiatan
+                    kreatif.
 
                 </p>
 
 
-                <br>
+                <div class="program-tag">
+
+                    🌈 Creative Learning
+
+                </div>
+
+            </article>
 
 
-                <a
-                    href="pendaftaran.html"
-                    class="program-btn"
-                >
+            <!-- PROGRAM 3 -->
 
-                    Mulai Bergabung
+            <article
+                class="program-card au-reveal"
+            >
 
-                    →
+                <div class="program-icon">
+                    🔬
+                </div>
 
-                </a>
 
+                <h3>
+
+                    Eksplorasi Sains
+
+                </h3>
+
+
+                <p>
+
+                    Mengenalkan anak pada dunia
+                    sains melalui percobaan sederhana
+                    dan kegiatan eksplorasi yang
+                    menarik.
+
+                </p>
+
+
+                <div class="program-tag">
+
+                    🔍 Fun Experiment
+
+                </div>
+
+            </article>
+
+
+            <!-- PROGRAM 4 -->
+
+            <article
+                class="program-card au-reveal"
+            >
+
+                <div class="program-icon">
+                    🤸
+                </div>
+
+
+                <h3>
+
+                    Motorik & Olahraga
+
+                </h3>
+
+
+                <p>
+
+                    Mengembangkan kemampuan fisik,
+                    koordinasi tubuh dan kesehatan
+                    anak melalui permainan aktif.
+
+                </p>
+
+
+                <div class="program-tag">
+
+                    💪 Active Kids
+
+                </div>
+
+            </article>
+
+
+            <!-- PROGRAM 5 -->
+
+            <article
+                class="program-card au-reveal"
+            >
+
+                <div class="program-icon">
+                    🗣️
+                </div>
+
+
+                <h3>
+
+                    Bahasa & Komunikasi
+
+                </h3>
+
+
+                <p>
+
+                    Membantu anak meningkatkan
+                    kemampuan berbicara, mendengar,
+                    bercerita dan berkomunikasi.
+
+                </p>
+
+
+                <div class="program-tag">
+
+                    💬 Smart Communication
+
+                </div>
+
+            </article>
+
+
+            <!-- PROGRAM 6 -->
+
+            <article
+                class="program-card au-reveal"
+            >
+
+                <div class="program-icon">
+                    🤝
+                </div>
+
+
+                <h3>
+
+                    Karakter & Sosial
+
+                </h3>
+
+
+                <p>
+
+                    Membiasakan anak untuk mandiri,
+                    percaya diri, peduli dan mampu
+                    berinteraksi dengan baik.
+
+                </p>
+
+
+                <div class="program-tag">
+
+                    💛 Character Building
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     LEARNING JOURNEY
+===================================================== -->
+
+<section class="pg-section">
+
+    <div class="au-container">
+
+
+        <div class="pg-heading au-reveal">
+
+            <div class="pg-heading-badge">
+
+                🚀 CARA KAMI BELAJAR
+
+            </div>
+
+
+            <h2>
+
+                Petualangan
+                <span>
+                    Belajar Anak
+                </span>
+
+            </h2>
+
+        </div>
+
+
+        <div class="journey-box">
+
+
+            <div class="journey-item au-reveal">
+
+                <div class="journey-number">
+
+                    01
+
+                </div>
+
+
+                <div class="journey-content">
+
+                    <h3>
+
+                        Bermain
+
+                    </h3>
+
+
+                    <p>
+
+                        Anak belajar melalui permainan
+                        yang menyenangkan dan bermakna.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="journey-item au-reveal">
+
+                <div class="journey-number">
+
+                    02
+
+                </div>
+
+
+                <div class="journey-content">
+
+                    <h3>
+
+                        Mengeksplorasi
+
+                    </h3>
+
+
+                    <p>
+
+                        Anak diberikan kesempatan
+                        untuk mencoba dan menemukan.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="journey-item au-reveal">
+
+                <div class="journey-number">
+
+                    03
+
+                </div>
+
+
+                <div class="journey-content">
+
+                    <h3>
+
+                        Berkarya
+
+                    </h3>
+
+
+                    <p>
+
+                        Anak mengekspresikan ide dan
+                        kreativitas melalui karya.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="journey-item au-reveal">
+
+                <div class="journey-number">
+
+                    04
+
+                </div>
+
+
+                <div class="journey-content">
+
+                    <h3>
+
+                        Bersinar
+
+                    </h3>
+
+
+                    <p>
+
+                        Anak tumbuh menjadi pribadi
+                        yang percaya diri dan mandiri.
+
+                    </p>
+
+                </div>
 
             </div>
 
 
         </div>
 
-
     </div>
 
-
 </section>
-
 
 
 <!-- =====================================================
-     POSTS
+     ACTIVITIES
 ===================================================== -->
 
-<section class="program-section">
+<section class="pg-section">
+
+    <div class="au-container">
 
 
-    <div class="program-wrap">
+        <div class="pg-heading au-reveal">
 
+            <div class="pg-heading-badge">
 
-        <div class="program-section-heading program-reveal">
+                🎉 KEGIATAN SERU
+
+            </div>
+
 
             <h2>
 
-                Program
-
+                Setiap Hari
                 <span>
-                    Terbaru
+                    Penuh Cerita!
                 </span>
-
-                🚀
 
             </h2>
 
-
-            <p>
-
-                Lihat informasi, kegiatan dan
-                program terbaru dari
-                RA Miftahul Hikmah.
-
-            </p>
-
-
         </div>
 
 
+        <div class="activity-grid">
 
-        <div class="post-counter">
 
-            📝 Total posting:
+            <div
+                class="activity-card au-reveal"
+            >
 
-            <span id="postCount">
-                0
-            </span>
+                <span>
+                    🎵
+                </span>
+
+                <b>
+                    Bernyanyi
+                </b>
+
+            </div>
+
+
+            <div
+                class="activity-card au-reveal"
+            >
+
+                <span>
+                    🎨
+                </span>
+
+                <b>
+                    Mewarnai
+                </b>
+
+            </div>
+
+
+            <div
+                class="activity-card au-reveal"
+            >
+
+                <span>
+                    🌱
+                </span>
+
+                <b>
+                    Berkebun
+                </b>
+
+            </div>
+
+
+            <div
+                class="activity-card au-reveal"
+            >
+
+                <span>
+                    🧩
+                </span>
+
+                <b>
+                    Bermain
+                </b>
+
+            </div>
+
+
+            <div
+                class="activity-card au-reveal"
+            >
+
+                <span>
+                    📚
+                </span>
+
+                <b>
+                    Membaca
+                </b>
+
+            </div>
+
+
+            <div
+                class="activity-card au-reveal"
+            >
+
+                <span>
+                    ⚽
+                </span>
+
+                <b>
+                    Olahraga
+                </b>
+
+            </div>
+
+
+            <div
+                class="activity-card au-reveal"
+            >
+
+                <span>
+                    🕌
+                </span>
+
+                <b>
+                    Ibadah
+                </b>
+
+            </div>
+
+
+            <div
+                class="activity-card au-reveal"
+            >
+
+                <span>
+                    👫
+                </span>
+
+                <b>
+                    Bersosialisasi
+                </b>
+
+            </div>
+
 
         </div>
-
-
-
-        <div
-            id="postsContainer"
-            class="posts-grid"
-        ></div>
-
 
     </div>
 
-
 </section>
-
 
 
 <!-- =====================================================
      CTA
 ===================================================== -->
 
-<section class="program-section">
+<section class="pg-section">
+
+    <div class="au-container">
 
 
-    <div class="program-wrap">
+        <div class="pg-cta au-reveal">
 
 
-        <div class="program-cta program-reveal">
+            <div style="font-size:55px;">
 
+                🌟
 
-            <div class="program-cta-icon">
-                🌈
             </div>
 
 
             <h2>
 
-                Yuk,
-
+                Yuk Belajar Bersama
                 <span>
-                    Kenali Program Kami!
+                    Kami!
                 </span>
-
-                💗
 
             </h2>
 
 
             <p>
 
-                Temukan program belajar yang
-                menyenangkan dan sesuai untuk
-                membantu perkembangan anak
-                setiap hari.
+                Mari berikan pengalaman belajar
+                terbaik dan menyenangkan untuk
+                buah hati Anda bersama
+                RA Miftahul Hikmah.
 
             </p>
 
 
             <a
-                href="pendaftaran.html"
-                class="program-btn"
+                href="contact.html"
+                class="pg-button"
             >
 
-                🚀
-
-                Daftar Sekarang
+                📅 Daftarkan Sekarang
 
             </a>
 
 
         </div>
 
-
     </div>
 
-
 </section>
-
 
 
 <!-- =====================================================
      FOOTER
 ===================================================== -->
 
-<footer class="program-footer">
+<footer class="au-footer">
+
+    <div class="au-container">
 
 
-    <div class="program-wrap program-footer-grid">
+        <div class="au-footer-grid">
 
 
-        <!-- BRAND -->
+            <div>
 
-        <div>
+                <h3>
 
-            <h3>
+                    RA Miftahul
+                    <span>
+                        Hikmah
+                    </span>
 
-                ☀️ RA MIFTAHUL
-
-                <span style="color:#ff86ad">
-
-                    HIKMAH
-
-                </span>
-
-            </h3>
+                </h3>
 
 
-            <p>
+                <p>
 
-                Tempat belajar yang menyenangkan
-                untuk membantu anak-anak tumbuh,
-                berkembang dan bersinar.
+                    Tempat belajar, bermain dan
+                    bertumbuh dengan bahagia.
 
-            </p>
+                </p>
 
-
-            <p>
-
-                🌈 Where Little Minds Bloom
-
-            </p>
-
-        </div>
+            </div>
 
 
+            <div>
 
-        <!-- MENU -->
+                <h3>
 
-        <div>
+                    Menu
 
-            <h3>
-                Menu
-            </h3>
-
-
-            <a href="about.html">
-                About Us
-            </a>
+                </h3>
 
 
-            <a href="programs.html">
-                Programs
-            </a>
+                <p>
+
+                    Home
+
+                </p>
 
 
-            <a href="classes.html">
-                Classes
-            </a>
+                <p>
+
+                    About
+
+                </p>
 
 
-            <a href="gallery.html">
-                Gallery
-            </a>
+                <p>
+
+                    Programs
+
+                </p>
+
+            </div>
 
 
-        </div>
+            <div>
+
+                <h3>
+
+                    Hubungi Kami
+
+                </h3>
 
 
+                <p>
 
-        <!-- CONTACT -->
+                    📞 WhatsApp
 
-        <div>
-
-            <h3>
-                Contact
-            </h3>
+                </p>
 
 
-            <p>
-                📞 +62 813-9875-4451
-            </p>
+                <p>
 
+                    ✉️ Email Sekolah
 
-            <p>
-                ✉️ info@ramiftahulhikmah.com
-            </p>
+                </p>
 
-
-            <p>
-                📍 Tangerang, Indonesia
-            </p>
+            </div>
 
 
         </div>
 
 
+        <div class="au-copyright">
 
-        <!-- SOCIAL -->
-
-        <div>
-
-            <h3>
-                Follow Us
-            </h3>
-
-
-            <p style="font-size:28px">
-
-                📘
-
-                📸
-
-                ▶️
-
-            </p>
-
-
-            <p>
-
-                Ikuti kegiatan terbaru
-                kami melalui media sosial.
-
-            </p>
-
+            © 2026 RA Miftahul Hikmah
+            • All Rights Reserved
 
         </div>
 
 
     </div>
-
-
-
-    <div class="program-footer-copy">
-
-        © 2026 RA Miftahul Hikmah.
-        All Rights Reserved. 💗
-
-    </div>
-
 
 </footer>
 
 
-
 <!-- =====================================================
-     SUPABASE
-===================================================== -->
-
-<script
-    src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
-></script>
-
-
-
-<!-- =====================================================
-     SCRIPT WEBSITE
-===================================================== -->
-
-<script
-    src="js/script.js"
-></script>
-
-
-
-<!-- =====================================================
-     SCRIPT POSTS
-===================================================== -->
-
-<script
-    src="js/posts.js"
-></script>
-
-
-
-<!-- =====================================================
-     REVEAL ANIMATION
+     JAVASCRIPT
 ===================================================== -->
 
 <script>
+
+
+/* ================= MENU LAINNYA ================= */
 
 document.addEventListener(
     "DOMContentLoaded",
     function () {
 
 
-        const elements =
-
-            document.querySelectorAll(
-                ".program-reveal"
+        const moreButton =
+            document.getElementById(
+                "auMoreButton"
             );
 
 
-        const observer =
-
-            new IntersectionObserver(
-
-                function (entries) {
-
-
-                    entries.forEach(
-
-                        function (entry) {
+        const moreMenu =
+            document.getElementById(
+                "auMoreMenu"
+            );
 
 
-                            if (
-                                entry.isIntersecting
+        if (
+            moreButton &&
+            moreMenu
+        ) {
+
+
+            moreButton.addEventListener(
+                "click",
+                function (event) {
+
+
+                    event.stopPropagation();
+
+
+                    moreMenu.classList.toggle(
+                        "open"
+                    );
+
+
+                }
+            );
+
+
+            document.addEventListener(
+                "click",
+                function (event) {
+
+
+                    if (
+                        !moreMenu.contains(
+                            event.target
+                        ) &&
+
+                        !moreButton.contains(
+                            event.target
+                        )
+                    ) {
+
+
+                        moreMenu.classList.remove(
+                            "open"
+                        );
+
+
+                    }
+
+
+                }
+            );
+
+
+        }
+
+
+
+        /* ================= REVEAL ================= */
+
+        const revealItems =
+            document.querySelectorAll(
+                ".au-reveal"
+            );
+
+
+        if (
+            "IntersectionObserver"
+            in
+            window
+        ) {
+
+
+            const observer =
+                new IntersectionObserver(
+
+                    function (
+                        entries
+                    ) {
+
+
+                        entries.forEach(
+
+                            function (
+                                entry
                             ) {
 
 
-                                entry.target.classList.add(
-                                    "show"
-                                );
+                                if (
+                                    entry.isIntersecting
+                                ) {
+
+
+                                    entry.target.classList.add(
+                                        "au-show"
+                                    );
+
+
+                                    observer.unobserve(
+                                        entry.target
+                                    );
+
+
+                                }
 
 
                             }
 
+                        );
 
-                        }
 
+                    },
+
+
+                    {
+
+                        threshold:
+                            0.12,
+
+                        rootMargin:
+                            "0px 0px -35px 0px"
+
+                    }
+
+                );
+
+
+            revealItems.forEach(
+
+                function (
+                    item,
+                    index
+                ) {
+
+
+                    item.style.transitionDelay =
+                        (
+                            index % 4
+                        ) * 70
+                        + "ms";
+
+
+                    observer.observe(
+                        item
                     );
 
-
-                },
-
-                {
-
-                    threshold:
-                        0.12,
-
-                    rootMargin:
-                        "0px 0px -40px 0px"
 
                 }
 
             );
 
 
-        elements.forEach(
+        }
 
-            function (element) {
+        else {
 
-                observer.observe(
-                    element
-                );
 
-            }
+            revealItems.forEach(
 
-        );
+                function (
+                    item
+                ) {
+
+
+                    item.classList.add(
+                        "au-show"
+                    );
+
+
+                }
+
+            );
+
+
+        }
 
 
     }
 );
+
 
 </script>
 
