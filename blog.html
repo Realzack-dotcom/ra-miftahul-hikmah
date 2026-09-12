@@ -1,21 +1,2810 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 
 <head>
 
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
 
     <meta
         name="viewport"
-        content="width=device-width, initial-scale=1"
+        content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Blog | Ra Miftahul Hikmah</title>
+    <meta
+        name="description"
+        content="Blog dan Cerita RA Miftahul Hikmah"
+    >
+
+    <title>
+        Blog | RA Miftahul Hikmah
+    </title>
+
+
+    <!-- GOOGLE FONT -->
 
     <link
-        rel="stylesheet"
-        href="css/style.css"
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
     >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+
+<style>
+
+/* =====================================================
+   RA MIFTAHUL HIKMAH
+   BLOG PAGE
+===================================================== */
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+
+    box-sizing:
+        border-box;
+
+}
+
+
+html {
+
+    scroll-behavior:
+        smooth;
+
+}
+
+
+body {
+
+    margin:
+        0;
+
+    overflow-x:
+        hidden;
+
+    font-family:
+        "Nunito",
+        sans-serif;
+
+    color:
+        #342d4c;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            #fff9fc 0%,
+            #f9f5ff 30%,
+            #f4fbff 60%,
+            #fffaf2 100%
+        );
+
+    background-size:
+        300% 300%;
+
+    animation:
+        backgroundMove 18s ease infinite;
+
+}
+
+
+@keyframes backgroundMove {
+
+    0% {
+
+        background-position:
+            0% 50%;
+
+    }
+
+    50% {
+
+        background-position:
+            100% 50%;
+
+    }
+
+    100% {
+
+        background-position:
+            0% 50%;
+
+    }
+
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.au-container {
+
+    width:
+        min(
+            1180px,
+            calc(100% - 32px)
+        );
+
+    margin:
+        auto;
+
+}
+
+
+/* =====================================================
+   BACKGROUND
+===================================================== */
+
+.blog-bg {
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    z-index:
+        -2;
+
+    pointer-events:
+        none;
+
+    overflow:
+        hidden;
+
+}
+
+
+.blog-bg::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        330px;
+
+    height:
+        330px;
+
+    border-radius:
+        50%;
+
+    top:
+        8%;
+
+    left:
+        -170px;
+
+    background:
+        rgba(255,139,184,.22);
+
+    filter:
+        blur(65px);
+
+    animation:
+        blobOne 13s ease-in-out infinite;
+
+}
+
+
+.blog-bg::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        370px;
+
+    height:
+        370px;
+
+    border-radius:
+        50%;
+
+    bottom:
+        5%;
+
+    right:
+        -190px;
+
+    background:
+        rgba(126,189,255,.22);
+
+    filter:
+        blur(70px);
+
+    animation:
+        blobTwo 15s ease-in-out infinite;
+
+}
+
+
+@keyframes blobOne {
+
+    0%,
+    100% {
+
+        transform:
+            translate(0,0)
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            translate(120px,90px)
+            scale(1.18);
+
+    }
+
+}
+
+
+@keyframes blobTwo {
+
+    0%,
+    100% {
+
+        transform:
+            translate(0,0)
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            translate(-100px,-80px)
+            scale(1.2);
+
+    }
+
+}
+
+
+/* =====================================================
+   FLOATING PARTICLES
+===================================================== */
+
+.blog-particles {
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    z-index:
+        -1;
+
+    pointer-events:
+        none;
+
+    overflow:
+        hidden;
+
+}
+
+
+.blog-particle {
+
+    position:
+        absolute;
+
+    border-radius:
+        50%;
+
+    opacity:
+        .35;
+
+    animation:
+        particleFloat linear infinite;
+
+}
+
+
+.blog-particle:nth-child(1) {
+
+    width:
+        12px;
+
+    height:
+        12px;
+
+    left:
+        8%;
+
+    top:
+        25%;
+
+    background:
+        #ff9fc2;
+
+    animation-duration:
+        8s;
+
+}
+
+
+.blog-particle:nth-child(2) {
+
+    width:
+        8px;
+
+    height:
+        8px;
+
+    left:
+        20%;
+
+    top:
+        70%;
+
+    background:
+        #9ecfff;
+
+    animation-duration:
+        10s;
+
+}
+
+
+.blog-particle:nth-child(3) {
+
+    width:
+        14px;
+
+    height:
+        14px;
+
+    right:
+        10%;
+
+    top:
+        40%;
+
+    background:
+        #d0b5ff;
+
+    animation-duration:
+        11s;
+
+}
+
+
+.blog-particle:nth-child(4) {
+
+    width:
+        9px;
+
+    height:
+        9px;
+
+    right:
+        25%;
+
+    bottom:
+        20%;
+
+    background:
+        #ffd47f;
+
+    animation-duration:
+        9s;
+
+}
+
+
+.blog-particle:nth-child(5) {
+
+    width:
+        11px;
+
+    height:
+        11px;
+
+    left:
+        45%;
+
+    top:
+        15%;
+
+    background:
+        #b9efce;
+
+    animation-duration:
+        12s;
+
+}
+
+
+@keyframes particleFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-35px)
+            rotate(180deg);
+
+    }
+
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.au-header {
+
+    position:
+        relative;
+
+    z-index:
+        100;
+
+    background:
+        rgba(255,255,255,.78);
+
+    backdrop-filter:
+        blur(20px);
+
+    border-bottom:
+        1px solid rgba(255,255,255,.9);
+
+}
+
+
+.au-header-inner {
+
+    min-height:
+        72px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        12px;
+
+}
+
+
+.au-brand {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+
+    text-decoration:
+        none;
+
+    color:
+        #342d4c;
+
+}
+
+
+.au-logo {
+
+    width:
+        46px;
+
+    height:
+        46px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    border-radius:
+        15px;
+
+    font-size:
+        24px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #fff1a8,
+            #ffd5e5,
+            #d6efff
+        );
+
+    box-shadow:
+        0 8px 25px rgba(239,79,130,.18);
+
+    animation:
+        logoFloat 4s ease-in-out infinite;
+
+}
+
+
+@keyframes logoFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-5px)
+            rotate(5deg);
+
+    }
+
+}
+
+
+.au-brand h1 {
+
+    margin:
+        0;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size:
+        18px;
+
+    line-height:
+        1;
+
+}
+
+
+.au-brand h1 span {
+
+    color:
+        #ef4f82;
+
+}
+
+
+.au-brand p {
+
+    margin:
+        4px 0 0;
+
+    color:
+        #817991;
+
+    font-size:
+        10px;
+
+}
+
+
+.au-visit {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        10px 13px;
+
+    border-radius:
+        13px;
+
+    text-decoration:
+        none;
+
+    color:
+        white;
+
+    font-size:
+        11px;
+
+    font-weight:
+        900;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #ef4f82,
+            #ff7da7
+        );
+
+    box-shadow:
+        0 9px 20px rgba(239,79,130,.25);
+
+    transition:
+        .3s ease;
+
+}
+
+
+.au-visit:hover {
+
+    transform:
+        translateY(-3px);
+
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.au-nav {
+
+    position:
+        sticky;
+
+    top:
+        0;
+
+    z-index:
+        99;
+
+    background:
+        rgba(255,255,255,.92);
+
+    backdrop-filter:
+        blur(20px);
+
+    border-bottom:
+        1px solid rgba(120,90,180,.08);
+
+}
+
+
+.au-nav-inner {
+
+    width:
+        min(
+            1180px,
+            calc(100% - 20px)
+        );
+
+    margin:
+        auto;
+
+    display:
+        flex;
+
+    gap:
+        6px;
+
+    padding:
+        8px 0;
+
+    overflow-x:
+        auto;
+
+    scrollbar-width:
+        none;
+
+}
+
+
+.au-nav-inner::-webkit-scrollbar {
+
+    display:
+        none;
+
+}
+
+
+.au-nav-link {
+
+    flex:
+        0 0 auto;
+
+    min-width:
+        62px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        3px;
+
+    padding:
+        8px 9px;
+
+    border-radius:
+        14px;
+
+    text-decoration:
+        none;
+
+    color:
+        #6f687d;
+
+    font-size:
+        9px;
+
+    font-weight:
+        900;
+
+    transition:
+        .3s ease;
+
+}
+
+
+.au-nav-link:hover {
+
+    background:
+        #f5f2fb;
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+.au-nav-icon {
+
+    font-size:
+        19px;
+
+}
+
+
+.au-nav-link.active {
+
+    color:
+        white;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #7b6cff,
+            #a47fff
+        );
+
+    box-shadow:
+        0 7px 18px rgba(125,108,255,.25);
+
+}
+
+
+.au-more-wrap {
+
+    flex:
+        0 0 auto;
+
+}
+
+
+.au-more-button {
+
+    height:
+        100%;
+
+    min-width:
+        72px;
+
+    border:
+        none;
+
+    cursor:
+        pointer;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        3px;
+
+    padding:
+        8px 10px;
+
+    border-radius:
+        14px;
+
+    background:
+        #f5f2fb;
+
+    color:
+        #6b617b;
+
+    font-size:
+        9px;
+
+    font-weight:
+        900;
+
+    transition:
+        .3s ease;
+
+}
+
+
+.au-more-button:hover {
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+.au-more-button span {
+
+    font-size:
+        18px;
+
+}
+
+
+/* =====================================================
+   DROPDOWN
+===================================================== */
+
+.au-more-menu {
+
+    position:
+        fixed;
+
+    top:
+        138px;
+
+    left:
+        16px;
+
+    right:
+        16px;
+
+    z-index:
+        300;
+
+    display:
+        none;
+
+    overflow:
+        hidden;
+
+    border-radius:
+        22px;
+
+    background:
+        rgba(255,255,255,.97);
+
+    box-shadow:
+        0 20px 55px rgba(57,40,90,.18);
+
+    opacity:
+        0;
+
+    transform:
+        translateY(-10px);
+
+    transition:
+        .25s ease;
+
+}
+
+
+.au-more-menu.open {
+
+    display:
+        block;
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+.au-more-title {
+
+    padding:
+        16px 18px;
+
+    font-size:
+        14px;
+
+    font-weight:
+        900;
+
+    border-bottom:
+        1px solid #f0edf5;
+
+}
+
+
+.au-more-menu a {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        13px;
+
+    padding:
+        15px 18px;
+
+    text-decoration:
+        none;
+
+    color:
+        #665e72;
+
+    font-size:
+        14px;
+
+    font-weight:
+        800;
+
+    border-bottom:
+        1px solid #f5f2f7;
+
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.blog-hero {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    padding:
+        70px 0 75px;
+
+    text-align:
+        center;
+
+}
+
+
+.blog-hero::before {
+
+    content:
+        "🖍️";
+
+    position:
+        absolute;
+
+    top:
+        30px;
+
+    left:
+        8%;
+
+    font-size:
+        48px;
+
+    opacity:
+        .28;
+
+    animation:
+        emojiFloat 5s ease-in-out infinite;
+
+}
+
+
+.blog-hero::after {
+
+    content:
+        "📚";
+
+    position:
+        absolute;
+
+    right:
+        8%;
+
+    bottom:
+        30px;
+
+    font-size:
+        55px;
+
+    opacity:
+        .28;
+
+    animation:
+        emojiFloat 6s ease-in-out infinite reverse;
+
+}
+
+
+.blog-hero-cloud {
+
+    position:
+        absolute;
+
+    font-size:
+        45px;
+
+    opacity:
+        .25;
+
+    animation:
+        cloudFloat 8s ease-in-out infinite;
+
+}
+
+
+.blog-hero-cloud.one {
+
+    left:
+        20%;
+
+    bottom:
+        15px;
+
+}
+
+
+.blog-hero-cloud.two {
+
+    right:
+        22%;
+
+    top:
+        25px;
+
+    animation-delay:
+        2s;
+
+}
+
+
+@keyframes emojiFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-15px)
+            rotate(8deg);
+
+    }
+
+}
+
+
+@keyframes cloudFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateX(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateX(25px)
+            translateY(-8px);
+
+    }
+
+}
+
+
+.blog-hero-content {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+}
+
+
+.blog-badge {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+
+    padding:
+        9px 16px;
+
+    border-radius:
+        50px;
+
+    background:
+        rgba(255,255,255,.82);
+
+    color:
+        #8466bd;
+
+    font-size:
+        12px;
+
+    font-weight:
+        900;
+
+    box-shadow:
+        0 10px 30px rgba(80,60,120,.08);
+
+    animation:
+        badgeFloat 4s ease-in-out infinite;
+
+}
+
+
+@keyframes badgeFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-6px);
+
+    }
+
+}
+
+
+.blog-hero h2 {
+
+    margin:
+        18px 0 0;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size:
+        clamp(48px,15vw,76px);
+
+    line-height:
+        .95;
+
+}
+
+
+.blog-hero h2 span {
+
+    color:
+        #ef4f82;
+
+}
+
+
+.blog-hero p {
+
+    max-width:
+        600px;
+
+    margin:
+        20px auto 0;
+
+    color:
+        #766d84;
+
+    font-size:
+        14px;
+
+    line-height:
+        1.8;
+
+}
+
+
+/* =====================================================
+   SECTION
+===================================================== */
+
+.blog-section {
+
+    padding:
+        40px 0;
+
+}
+
+
+.blog-heading {
+
+    text-align:
+        center;
+
+    margin-bottom:
+        28px;
+
+}
+
+
+.blog-heading-badge {
+
+    display:
+        inline-block;
+
+    padding:
+        7px 13px;
+
+    border-radius:
+        30px;
+
+    background:
+        #f0eaff;
+
+    color:
+        #8864c9;
+
+    font-size:
+        10px;
+
+    font-weight:
+        900;
+
+}
+
+
+.blog-heading h2 {
+
+    margin:
+        10px 0;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size:
+        34px;
+
+    line-height:
+        1.1;
+
+}
+
+
+.blog-heading h2 span {
+
+    color:
+        #ef4f82;
+
+}
+
+
+.blog-heading p {
+
+    max-width:
+        600px;
+
+    margin:
+        auto;
+
+    color:
+        #7c7489;
+
+    font-size:
+        13px;
+
+    line-height:
+        1.7;
+
+}
+
+
+/* =====================================================
+   CATEGORY
+===================================================== */
+
+.blog-category-wrap {
+
+    display:
+        flex;
+
+    gap:
+        10px;
+
+    padding:
+        5px 2px 10px;
+
+    overflow-x:
+        auto;
+
+    scrollbar-width:
+        none;
+
+}
+
+
+.blog-category-wrap::-webkit-scrollbar {
+
+    display:
+        none;
+
+}
+
+
+.blog-category {
+
+    flex:
+        0 0 auto;
+
+    border:
+        none;
+
+    cursor:
+        pointer;
+
+    padding:
+        11px 16px;
+
+    border-radius:
+        16px;
+
+    font-family:
+        "Nunito",
+        sans-serif;
+
+    font-size:
+        11px;
+
+    font-weight:
+        900;
+
+    color:
+        #756c82;
+
+    background:
+        rgba(255,255,255,.75);
+
+    box-shadow:
+        0 8px 20px rgba(70,50,100,.06);
+
+    transition:
+        .3s ease;
+
+}
+
+
+.blog-category:hover {
+
+    transform:
+        translateY(-4px);
+
+}
+
+
+.blog-category.active {
+
+    color:
+        white;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #7b6cff,
+            #a47fff
+        );
+
+    box-shadow:
+        0 10px 25px rgba(123,108,255,.25);
+
+}
+
+
+/* =====================================================
+   BLOG STATS
+===================================================== */
+
+.blog-stats {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:
+        13px;
+
+}
+
+
+.blog-stat {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    padding:
+        18px 14px;
+
+    border-radius:
+        22px;
+
+    text-align:
+        center;
+
+    background:
+        rgba(255,255,255,.72);
+
+    box-shadow:
+        0 12px 30px rgba(70,50,100,.07);
+
+    transition:
+        .3s ease;
+
+}
+
+
+.blog-stat:hover {
+
+    transform:
+        translateY(-6px);
+
+}
+
+
+.blog-stat::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        80px;
+
+    height:
+        80px;
+
+    right:
+        -35px;
+
+    bottom:
+        -35px;
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(255,160,200,.18);
+
+}
+
+
+.blog-stat-icon {
+
+    font-size:
+        30px;
+
+}
+
+
+.blog-stat strong {
+
+    display:
+        block;
+
+    margin-top:
+        5px;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size:
+        25px;
+
+}
+
+
+.blog-stat span {
+
+    display:
+        block;
+
+    color:
+        #82798d;
+
+    font-size:
+        10px;
+
+    font-weight:
+        800;
+
+}
+
+
+/* =====================================================
+   FEATURED
+===================================================== */
+
+.blog-featured {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    border-radius:
+        30px;
+
+    background:
+        rgba(255,255,255,.8);
+
+    box-shadow:
+        0 20px 50px rgba(70,50,100,.10);
+
+    transition:
+        .35s ease;
+
+}
+
+
+.blog-featured:hover {
+
+    transform:
+        translateY(-7px);
+
+    box-shadow:
+        0 28px 60px rgba(70,50,100,.15);
+
+}
+
+
+.blog-featured-image {
+
+    position:
+        relative;
+
+    height:
+        230px;
+
+    overflow:
+        hidden;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #ffd9e8,
+            #e8dcff,
+            #d8f2ff
+        );
+
+}
+
+
+.blog-featured-image img {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    object-fit:
+        cover;
+
+    transition:
+        transform .7s ease;
+
+}
+
+
+.blog-featured:hover
+.blog-featured-image img {
+
+    transform:
+        scale(1.08);
+
+}
+
+
+.blog-featured-shine {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    background:
+
+        linear-gradient(
+            120deg,
+            transparent 30%,
+            rgba(255,255,255,.45) 50%,
+            transparent 70%
+        );
+
+    transform:
+        translateX(-120%);
+
+    transition:
+        .7s ease;
+
+}
+
+
+.blog-featured:hover
+.blog-featured-shine {
+
+    transform:
+        translateX(120%);
+
+}
+
+
+.blog-featured-content {
+
+    padding:
+        24px 20px;
+
+}
+
+
+.blog-featured-tag {
+
+    display:
+        inline-flex;
+
+    padding:
+        7px 12px;
+
+    border-radius:
+        30px;
+
+    background:
+        #fff1f7;
+
+    color:
+        #ef4f82;
+
+    font-size:
+        10px;
+
+    font-weight:
+        900;
+
+}
+
+
+.blog-featured h3 {
+
+    margin:
+        13px 0 10px;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size:
+        27px;
+
+    line-height:
+        1.15;
+
+}
+
+
+.blog-featured p {
+
+    margin:
+        0;
+
+    color:
+        #766e83;
+
+    font-size:
+        13px;
+
+    line-height:
+        1.75;
+
+}
+
+
+.blog-featured-date {
+
+    display:
+        block;
+
+    margin-top:
+        16px;
+
+    color:
+        #9b93a5;
+
+    font-size:
+        11px;
+
+    font-weight:
+        800;
+
+}
+
+
+/* =====================================================
+   POSTS
+===================================================== */
+
+#postsContainer {
+
+    min-height:
+        100px;
+
+}
+
+
+.posts-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr;
+
+    gap:
+        18px;
+
+}
+
+
+/* =====================================================
+   POST CARD
+===================================================== */
+
+.post-card {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    border-radius:
+        25px;
+
+    background:
+        rgba(255,255,255,.78);
+
+    border:
+        1px solid rgba(255,255,255,.9);
+
+    box-shadow:
+        0 15px 40px rgba(70,50,110,.09);
+
+    transition:
+        .35s ease;
+
+}
+
+
+.post-card:hover {
+
+    transform:
+        translateY(-8px);
+
+    box-shadow:
+        0 25px 55px rgba(70,50,110,.15);
+
+}
+
+
+.post-card::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        110px;
+
+    height:
+        110px;
+
+    right:
+        -55px;
+
+    bottom:
+        -55px;
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(170,140,255,.12);
+
+}
+
+
+.post-card-image {
+
+    position:
+        relative;
+
+    height:
+        210px;
+
+    overflow:
+        hidden;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #ffe3ee,
+            #eee5ff,
+            #ddf4ff
+        );
+
+}
+
+
+.post-card-image::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    background:
+
+        linear-gradient(
+            120deg,
+            transparent 35%,
+            rgba(255,255,255,.45) 50%,
+            transparent 65%
+        );
+
+    transform:
+        translateX(-120%);
+
+    transition:
+        .7s ease;
+
+}
+
+
+.post-card:hover
+.post-card-image::after {
+
+    transform:
+        translateX(120%);
+
+}
+
+
+.post-card-image img {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    display:
+        block;
+
+    object-fit:
+        cover;
+
+    transition:
+        transform .7s ease;
+
+}
+
+
+.post-card:hover
+.post-card-image img {
+
+    transform:
+        scale(1.08);
+
+}
+
+
+.post-card-content {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    padding:
+        20px;
+
+}
+
+
+.post-card-date {
+
+    display:
+        inline-flex;
+
+    margin-bottom:
+        9px;
+
+    padding:
+        6px 10px;
+
+    border-radius:
+        30px;
+
+    background:
+        #f5f1ff;
+
+    color:
+        #8768bd;
+
+    font-size:
+        10px;
+
+    font-weight:
+        900;
+
+}
+
+
+.post-card h3 {
+
+    margin:
+        0 0 9px;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size:
+        23px;
+
+    line-height:
+        1.15;
+
+}
+
+
+.post-card p {
+
+    margin:
+        0;
+
+    color:
+        #766e83;
+
+    font-size:
+        13px;
+
+    line-height:
+        1.75;
+
+}
+
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+.cloud-loading {
+
+    padding:
+        55px 20px;
+
+    border-radius:
+        25px;
+
+    text-align:
+        center;
+
+    background:
+        rgba(255,255,255,.65);
+
+    box-shadow:
+        0 15px 40px rgba(70,50,100,.07);
+
+}
+
+
+.cloud-loading-icon {
+
+    margin-bottom:
+        12px;
+
+    font-size:
+        45px;
+
+    animation:
+        loadingFloat 2s ease-in-out infinite;
+
+}
+
+
+@keyframes loadingFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-10px);
+
+    }
+
+}
+
+
+.cloud-loading strong {
+
+    font-size:
+        14px;
+
+    color:
+        #766d84;
+
+}
+
+
+/* =====================================================
+   EMPTY
+===================================================== */
+
+.cloud-empty {
+
+    padding:
+        60px 20px;
+
+    border-radius:
+        28px;
+
+    text-align:
+        center;
+
+    background:
+        rgba(255,255,255,.68);
+
+    box-shadow:
+        0 15px 40px rgba(70,50,100,.07);
+
+}
+
+
+.cloud-empty-icon {
+
+    font-size:
+        52px;
+
+    margin-bottom:
+        12px;
+
+    animation:
+        badgeFloat 4s ease-in-out infinite;
+
+}
+
+
+.cloud-empty h3 {
+
+    margin:
+        0 0 8px;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size:
+        25px;
+
+}
+
+
+.cloud-empty p {
+
+    margin:
+        0;
+
+    color:
+        #82798e;
+
+    font-size:
+        13px;
+
+}
+
+
+/* =====================================================
+   BLOG CTA
+===================================================== */
+
+.blog-cta {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    margin:
+        10px 0 45px;
+
+    padding:
+        50px 20px;
+
+    border-radius:
+        32px;
+
+    text-align:
+        center;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #fff0f6,
+            #f0ecff,
+            #e5f7ff
+        );
+
+    box-shadow:
+        0 22px 55px rgba(75,55,120,.12);
+
+}
+
+
+.blog-cta::before {
+
+    content:
+        "✨";
+
+    position:
+        absolute;
+
+    left:
+        8%;
+
+    top:
+        18%;
+
+    font-size:
+        35px;
+
+    opacity:
+        .35;
+
+    animation:
+        emojiFloat 5s ease-in-out infinite;
+
+}
+
+
+.blog-cta::after {
+
+    content:
+        "💌";
+
+    position:
+        absolute;
+
+    right:
+        8%;
+
+    bottom:
+        15%;
+
+    font-size:
+        40px;
+
+    opacity:
+        .35;
+
+    animation:
+        emojiFloat 6s ease-in-out infinite reverse;
+
+}
+
+
+.blog-cta-icon {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    font-size:
+        58px;
+
+    animation:
+        badgeFloat 4s ease-in-out infinite;
+
+}
+
+
+.blog-cta h2 {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    margin:
+        10px 0 12px;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size:
+        35px;
+
+}
+
+
+.blog-cta h2 span {
+
+    color:
+        #ef4f82;
+
+}
+
+
+.blog-cta p {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    max-width:
+        520px;
+
+    margin:
+        0 auto 22px;
+
+    color:
+        #756c82;
+
+    font-size:
+        13px;
+
+    line-height:
+        1.75;
+
+}
+
+
+.blog-button {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        14px 23px;
+
+    border-radius:
+        15px;
+
+    text-decoration:
+        none;
+
+    color:
+        white;
+
+    font-size:
+        13px;
+
+    font-weight:
+        900;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #ef4f82,
+            #ff7ea7
+        );
+
+    box-shadow:
+        0 12px 25px rgba(239,79,130,.25);
+
+    transition:
+        .3s ease;
+
+}
+
+
+.blog-button:hover {
+
+    transform:
+        translateY(-4px)
+        scale(1.03);
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.au-footer {
+
+    padding:
+        42px 0 0;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #302843,
+            #403556
+        );
+
+    color:
+        white;
+
+}
+
+
+.au-footer-grid {
+
+    display:
+        grid;
+
+    gap:
+        25px;
+
+    text-align:
+        center;
+
+}
+
+
+.au-footer h3 {
+
+    margin:
+        0 0 10px;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size:
+        22px;
+
+}
+
+
+.au-footer h3 span {
+
+    color:
+        #ff8db3;
+
+}
+
+
+.au-footer p {
+
+    margin:
+        0 0 8px;
+
+    color:
+        #c9c1d7;
+
+    font-size:
+        13px;
+
+    line-height:
+        1.7;
+
+}
+
+
+.au-copyright {
+
+    margin-top:
+        35px;
+
+    padding:
+        18px;
+
+    text-align:
+        center;
+
+    border-top:
+        1px solid rgba(255,255,255,.08);
+
+    color:
+        #aaa0bc;
+
+    font-size:
+        11px;
+
+}
+
+
+/* =====================================================
+   REVEAL
+===================================================== */
+
+.au-reveal {
+
+    opacity:
+        0;
+
+    transform:
+        translateY(30px);
+
+    transition:
+
+        opacity .8s ease,
+        transform .8s cubic-bezier(.2,.8,.2,1);
+
+}
+
+
+.au-reveal.au-show {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* =====================================================
+   DESKTOP
+===================================================== */
+
+@media (min-width: 769px) {
+
+
+    .au-header-inner {
+
+        min-height:
+            90px;
+
+    }
+
+
+    .au-logo {
+
+        width:
+            55px;
+
+        height:
+            55px;
+
+        font-size:
+            29px;
+
+    }
+
+
+    .au-brand h1 {
+
+        font-size:
+            25px;
+
+    }
+
+
+    .au-brand p {
+
+        font-size:
+            13px;
+
+    }
+
+
+    .au-visit {
+
+        padding:
+            13px 22px;
+
+        font-size:
+            13px;
+
+    }
+
+
+    .au-nav-inner {
+
+        justify-content:
+            center;
+
+        overflow:
+            visible;
+
+    }
+
+
+    .au-nav-link {
+
+        flex-direction:
+            row;
+
+        min-width:
+            auto;
+
+        font-size:
+            12px;
+
+        padding:
+            10px 15px;
+
+    }
+
+
+    .au-more-wrap {
+
+        display:
+            none;
+
+    }
+
+
+    .blog-hero {
+
+        padding:
+            105px 0;
+
+    }
+
+
+    .blog-hero p {
+
+        font-size:
+            16px;
+
+    }
+
+
+    .blog-section {
+
+        padding:
+            65px 0;
+
+    }
+
+
+    .blog-stats {
+
+        grid-template-columns:
+            repeat(4,1fr);
+
+        gap:
+            20px;
+
+    }
+
+
+    .blog-featured {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+
+    .blog-featured-image {
+
+        height:
+            auto;
+
+        min-height:
+            360px;
+
+    }
+
+
+    .blog-featured-content {
+
+        display:
+            flex;
+
+        flex-direction:
+            column;
+
+        justify-content:
+            center;
+
+        padding:
+            40px;
+
+    }
+
+
+    .blog-featured h3 {
+
+        font-size:
+            38px;
+
+    }
+
+
+    .posts-grid {
+
+        grid-template-columns:
+            repeat(3,1fr);
+
+        gap:
+            22px;
+
+    }
+
+
+    .post-card-image {
+
+        height:
+            220px;
+
+    }
+
+
+    .au-footer-grid {
+
+        grid-template-columns:
+            repeat(3,1fr);
+
+        text-align:
+            left;
+
+    }
+
+}
+
+
+/* =====================================================
+   REDUCE MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    * {
+
+        animation:
+            none !important;
+
+        transition:
+            none !important;
+
+        scroll-behavior:
+            auto !important;
+
+    }
+
+}
+
+</style>
 
 </head>
 
@@ -23,501 +2812,891 @@
 <body data-page="blog">
 
 
-    <!-- ================= HEADER ================= -->
+<!-- =====================================================
+     BACKGROUND
+===================================================== -->
 
-    <div class="top">
-
-        <header class="head wrap">
-
-            <!-- BRAND -->
-
-            <a
-                class="brand"
-                href="index.html"
-            >
-
-                <div class="sun">
-                    ☀️
-                </div>
-
-                <div>
-
-                    <h1>
-                        Ra Miftahul
-                        <span>Hikmah</span>
-                    </h1>
-
-                    <p>
-                        Tangerang 💗
-                    </p>
-
-                </div>
-
-            </a>
+<div class="blog-bg"></div>
 
 
-            <!-- CONTACT HEADER -->
+<div class="blog-particles">
 
-            <div class="call">
+    <span class="blog-particle"></span>
 
-                ⌕
+    <span class="blog-particle"></span>
 
-                <div>
+    <span class="blog-particle"></span>
 
-                    <small>
-                        Call Us
-                    </small>
+    <span class="blog-particle"></span>
 
-                    <b>
-                        +62 813-9875-4451
-                    </b>
+    <span class="blog-particle"></span>
 
-                </div>
+</div>
 
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="au-header">
+
+    <div class="au-container au-header-inner">
+
+
+        <a
+            href="index.html"
+            class="au-brand"
+        >
+
+            <div class="au-logo">
+                🌈
             </div>
 
 
-            <!-- BOOK A VISIT -->
+            <div>
 
-            <a
-                class="btn"
-                href="contact.html"
-            >
-                Book a Visit
-            </a>
+                <h1>
 
-        </header>
+                    RA Miftahul
+                    <span>
+                        Hikmah
+                    </span>
 
-
-        <!-- ================= RAINBOW NAVBAR ================= -->
-
-        <nav class="rainbow-nav">
+                </h1>
 
 
-            <!-- HOME -->
+                <p>
 
-            <a
-                href="index.html"
-                class="rainbow-item pink"
-            >
+                    Belajar • Bermain • Berprestasi
 
-                <span class="rainbow-icon">
-                    🏠
-                </span>
+                </p>
 
-                <span class="rainbow-text">
-                    HOME
-                </span>
+            </div>
 
-                <span class="sparkle">
-                    ✦
-                </span>
-
-            </a>
+        </a>
 
 
-            <!-- ABOUT -->
+        <a
+            href="contact.html"
+            class="au-visit"
+        >
 
-            <a
-                href="about.html"
-                class="rainbow-item blue"
-            >
+            📅 Book Visit
 
-                <span class="rainbow-icon">
-                    👥
-                </span>
-
-                <span class="rainbow-text">
-                    ABOUT
-                </span>
-
-                <span class="sparkle">
-                    ✦
-                </span>
-
-            </a>
+        </a>
 
 
-            <!-- PROGRAMS -->
+    </div>
 
-            <a
-                href="programs.html"
-                class="rainbow-item green"
-            >
-
-                <span class="rainbow-icon">
-                    📚
-                </span>
-
-                <span class="rainbow-text">
-                    PROGRAMS
-                </span>
-
-                <span class="sparkle">
-                    ✦
-                </span>
-
-            </a>
+</header>
 
 
-            <!-- CLASSES -->
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
 
-            <a
-                href="classes.html"
-                class="rainbow-item yellow"
-            >
+<nav class="au-nav">
 
-                <span class="rainbow-icon">
-                    🎓
-                </span>
-
-                <span class="rainbow-text">
-                    CLASSES
-                </span>
-
-                <span class="sparkle">
-                    ✦
-                </span>
-
-            </a>
+    <div class="au-nav-inner">
 
 
-            <!-- BLOG -->
+        <a
+            href="index.html"
+            class="au-nav-link"
+        >
 
-            <a
-                href="blog.html"
-                class="rainbow-item orange active"
-            >
+            <span class="au-nav-icon">
+                🏠
+            </span>
 
-                <span class="rainbow-icon">
-                    🖍️
-                </span>
+            HOME
 
-                <span class="rainbow-text">
-                    BLOG
-                </span>
-
-                <span class="sparkle">
-                    ✦
-                </span>
-
-            </a>
+        </a>
 
 
-            <!-- GALLERY -->
+        <a
+            href="about.html"
+            class="au-nav-link"
+        >
 
-            <a
-                href="gallery.html"
-                class="rainbow-item purple"
+            <span class="au-nav-icon">
+                👥
+            </span>
+
+            ABOUT
+
+        </a>
+
+
+        <a
+            href="programs.html"
+            class="au-nav-link"
+        >
+
+            <span class="au-nav-icon">
+                📚
+            </span>
+
+            PROGRAMS
+
+        </a>
+
+
+        <a
+            href="gallery.html"
+            class="au-nav-link"
+        >
+
+            <span class="au-nav-icon">
+                🖼️
+            </span>
+
+            GALLERY
+
+        </a>
+
+
+        <div class="au-more-wrap">
+
+            <button
+                type="button"
+                class="au-more-button"
+                id="auMoreButton"
             >
 
-                <span class="rainbow-icon">
-                    🖼️
+                <span>
+                    ✨
                 </span>
 
-                <span class="rainbow-text">
-                    GALLERY
-                </span>
+                MORE
 
-                <span class="sparkle">
-                    ✦
-                </span>
+            </button>
 
-            </a>
+        </div>
 
 
-            <!-- PARENTS -->
+    </div>
 
-            <a
-                href="parents.html"
-                class="rainbow-item pink2"
-            >
-
-                <span class="rainbow-icon">
-                    💛
-                </span>
-
-                <span class="rainbow-text">
-                    PARENTS
-                </span>
-
-                <span class="sparkle">
-                    ✦
-                </span>
-
-            </a>
+</nav>
 
 
-            <!-- CONTACT -->
+<!-- =====================================================
+     DROPDOWN MENU
+===================================================== -->
 
-            <a
-                href="contact.html"
-                class="rainbow-item blue2"
-            >
-
-                <span class="rainbow-icon">
-                    ✉️
-                </span>
-
-                <span class="rainbow-text">
-                    CONTACT
-                </span>
-
-                <span class="sparkle">
-                    ✦
-                </span>
-
-            </a>
+<div
+    class="au-more-menu"
+    id="auMoreMenu"
+>
 
 
-        </nav>
+    <div class="au-more-title">
+
+        ✨ Menu Lainnya
 
     </div>
 
 
-    <!-- ================= PAGE HERO ================= -->
+    <a href="classes.html">
 
-    <section class="pagehero">
+        🎓 Classes
 
-        <div class="wrap">
+    </a>
 
-            <h2>
 
-                Our
-                <span>Blog</span>
-                🖍️
+    <a
+        href="blog.html"
+        style="
+            color:#7b6cff;
+            background:#f7f4ff;
+        "
+    >
 
-            </h2>
+        🖍️ Blog
 
-            <p>
+    </a>
 
-                Cerita, berita dan informasi
-                terbaru sekolah.
 
-            </p>
+    <a href="parents.html">
+
+        💛 Parents
+
+    </a>
+
+
+    <a href="contact.html">
+
+        ✉️ Contact
+
+    </a>
+
+
+    <a href="contact.html">
+
+        📅 Book Visit
+
+    </a>
+
+
+</div>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="blog-hero">
+
+
+    <div class="blog-hero-cloud one">
+
+        ☁️
+
+    </div>
+
+
+    <div class="blog-hero-cloud two">
+
+        ✨
+
+    </div>
+
+
+    <div
+        class="
+            au-container
+            blog-hero-content
+            au-reveal
+        "
+    >
+
+
+        <div class="blog-badge">
+
+            🖍️ CERITA & INFORMASI
 
         </div>
 
-    </section>
+
+        <h2>
+
+            Cerita Kecil,
+            <span>
+                Makna Besar!
+            </span>
+
+        </h2>
 
 
-    <!-- ================= BLOG ================= -->
+        <p>
 
-    <section class="section wrap">
+            Temukan berbagai cerita,
+            kegiatan seru, inspirasi dan
+            informasi menarik dari
+            keluarga besar RA Miftahul Hikmah.
 
-
-        <div class="section-title">
-
-            <h2>
-
-                📝 Cerita &
-
-                <span>
-                    Berita Sekolah
-                </span>
-
-                🌈
-
-            </h2>
-
-            <p>
-
-                Ikuti berbagai kegiatan,
-                informasi dan cerita menarik
-                dari Ra Miftahul Hikmah.
-
-            </p>
+        </p>
 
 
-            <!-- COUNTER -->
+    </div>
 
-            <div class="post-counter">
+</section>
 
-                📰 Total artikel:
 
-                <span id="postCount">
-                    0
-                </span>
+<!-- =====================================================
+     CATEGORY
+===================================================== -->
+
+<section class="blog-section">
+
+    <div class="au-container">
+
+
+        <div class="blog-heading au-reveal">
+
+            <div class="blog-heading-badge">
+
+                🌈 JELAJAHI CERITA
 
             </div>
 
+
+            <h2>
+
+                Banyak Cerita
+                <span>
+                    Seru di Sini!
+                </span>
+
+            </h2>
+
+
+            <p>
+
+                Pilih kategori favorit untuk
+                menemukan cerita dan informasi
+                menarik dari sekolah kami.
+
+            </p>
+
         </div>
 
-
-        <!-- ================= POSTS ================= -->
 
         <div
-            id="postsContainer"
-            class="posts-grid"
-        ></div>
+            class="
+                blog-category-wrap
+                au-reveal
+            "
+        >
 
 
-    </section>
+            <button
+                class="
+                    blog-category
+                    active
+                "
+            >
+
+                🌈 Semua
+
+            </button>
 
 
-    <!-- ================= CTA ================= -->
+            <button
+                class="blog-category"
+            >
 
-    <section class="section wrap">
+                📚 Pendidikan
 
-        <div class="box reveal">
+            </button>
 
 
-            <div class="big">
-                🌈
+            <button
+                class="blog-category"
+            >
+
+                🎨 Kreativitas
+
+            </button>
+
+
+            <button
+                class="blog-category"
+            >
+
+                🕌 Islami
+
+            </button>
+
+
+            <button
+                class="blog-category"
+            >
+
+                🎉 Kegiatan
+
+            </button>
+
+
+            <button
+                class="blog-category"
+            >
+
+                💡 Tips
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     STATS
+===================================================== -->
+
+<section class="blog-section">
+
+    <div class="au-container">
+
+
+        <div class="blog-stats">
+
+
+            <div
+                class="
+                    blog-stat
+                    au-reveal
+                "
+            >
+
+                <div class="blog-stat-icon">
+
+                    📝
+
+                </div>
+
+
+                <strong>
+
+                    Blog
+
+                </strong>
+
+
+                <span>
+
+                    Cerita Terbaru
+
+                </span>
+
             </div>
 
 
-            <h2 class="title">
+            <div
+                class="
+                    blog-stat
+                    au-reveal
+                "
+            >
 
-                Yuk,
+                <div class="blog-stat-icon">
+
+                    🎉
+
+                </div>
+
+
+                <strong>
+
+                    Seru
+
+                </strong>
+
 
                 <span>
-                    Bergabung!
+
+                    Kegiatan Anak
+
                 </span>
 
-                💗
+            </div>
+
+
+            <div
+                class="
+                    blog-stat
+                    au-reveal
+                "
+            >
+
+                <div class="blog-stat-icon">
+
+                    💡
+
+                </div>
+
+
+                <strong>
+
+                    Inspiratif
+
+                </strong>
+
+
+                <span>
+
+                    Tips & Informasi
+
+                </span>
+
+            </div>
+
+
+            <div
+                class="
+                    blog-stat
+                    au-reveal
+                "
+            >
+
+                <div class="blog-stat-icon">
+
+                    ❤️
+
+                </div>
+
+
+                <strong>
+
+                    Bahagia
+
+                </strong>
+
+
+                <span>
+
+                    Cerita Anak
+
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FEATURED BLOG
+===================================================== -->
+
+<section class="blog-section">
+
+    <div class="au-container">
+
+
+        <div class="blog-heading au-reveal">
+
+            <div class="blog-heading-badge">
+
+                ⭐ CERITA PILIHAN
+
+            </div>
+
+
+            <h2>
+
+                Cerita yang
+                <span>
+                    Menginspirasi
+                </span>
+
+            </h2>
+
+        </div>
+
+
+        <article
+            class="
+                blog-featured
+                au-reveal
+            "
+        >
+
+
+            <div class="blog-featured-image">
+
+
+                <div
+                    style="
+                        height:100%;
+                        display:grid;
+                        place-items:center;
+                        font-size:100px;
+                    "
+                >
+
+                    🌈
+
+                </div>
+
+
+                <div class="blog-featured-shine"></div>
+
+
+            </div>
+
+
+            <div class="blog-featured-content">
+
+
+                <div class="blog-featured-tag">
+
+                    ⭐ CERITA PILIHAN
+
+                </div>
+
+
+                <h3>
+
+                    Setiap Hari
+                    Adalah Petualangan
+                    Baru!
+
+                </h3>
+
+
+                <p>
+
+                    Di RA Miftahul Hikmah,
+                    setiap kegiatan adalah kesempatan
+                    bagi anak untuk belajar,
+                    bermain, mencoba hal baru
+                    dan menemukan kebahagiaan.
+
+                </p>
+
+
+                <span class="blog-featured-date">
+
+                    🌈 Bersama kita tumbuh dan belajar
+
+                </span>
+
+
+            </div>
+
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     POSTS
+===================================================== -->
+
+<section
+    class="blog-section"
+    id="blogPosts"
+>
+
+    <div class="au-container">
+
+
+        <div class="blog-heading au-reveal">
+
+            <div class="blog-heading-badge">
+
+                📰 POSTINGAN TERBARU
+
+            </div>
+
+
+            <h2>
+
+                Cerita
+                <span>
+                    Terbaru Kami
+                </span>
 
             </h2>
 
 
             <p>
 
-                Dapatkan pengalaman belajar
-                yang menyenangkan bersama
-                Ra Miftahul Hikmah.
+                Ikuti berbagai cerita,
+                kegiatan dan informasi terbaru
+                dari RA Miftahul Hikmah.
 
             </p>
 
+        </div>
 
-            <br>
+
+        <!-- POSTINGAN DARI SUPABASE -->
+
+        <div id="postsContainer">
+
+            <div class="cloud-loading">
+
+                <div class="cloud-loading-icon">
+
+                    ☁️
+
+                </div>
+
+
+                <strong>
+
+                    Sedang mengambil postingan...
+
+                </strong>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section class="blog-section">
+
+    <div class="au-container">
+
+
+        <div
+            class="
+                blog-cta
+                au-reveal
+            "
+        >
+
+
+            <div class="blog-cta-icon">
+
+                💌
+
+            </div>
+
+
+            <h2>
+
+                Jangan Lewatkan
+                <span>
+                    Cerita Kami!
+                </span>
+
+            </h2>
+
+
+            <p>
+
+                Mari ikuti perjalanan belajar,
+                bermain dan bertumbuh bersama
+                anak-anak hebat RA Miftahul Hikmah.
+
+            </p>
 
 
             <a
-                href="pendaftaran.html"
-                class="btn"
+                href="contact.html"
+                class="blog-button"
             >
 
-                Daftar Sekarang 🚀
+                🌈 Hubungi Kami
 
             </a>
 
 
         </div>
 
-    </section>
+
+    </div>
+
+</section>
 
 
-    <!-- ================= FOOTER ================= -->
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
-    <footer class="footer">
+<footer class="au-footer">
+
+    <div class="au-container">
 
 
-        <div class="footgrid wrap">
+        <div class="au-footer-grid">
 
-
-            <!-- BRAND -->
 
             <div>
 
                 <h3>
 
-                    ☀️ KINDER
-
-                    <span style="color:#ef4f82">
-                        GARTEN
+                    RA Miftahul
+                    <span>
+                        Hikmah
                     </span>
 
                 </h3>
 
 
                 <p>
-                    Where Little Minds Bloom 💗
+
+                    Tempat belajar,
+                    bermain dan bertumbuh
+                    dengan bahagia.
+
                 </p>
 
             </div>
 
 
-            <!-- QUICK LINKS -->
-
             <div>
 
                 <h3>
-                    Quick Links
-                </h3>
 
+                    Menu
 
-                <a href="about.html">
-                    About Us
-                </a>
-
-
-                <a href="programs.html">
-                    Programs
-                </a>
-
-
-                <a href="classes.html">
-                    Classes
-                </a>
-
-
-                <a href="gallery.html">
-                    Gallery
-                </a>
-
-
-                <a href="contact.html">
-                    Contact Us
-                </a>
-
-            </div>
-
-
-            <!-- CONTACT -->
-
-            <div>
-
-                <h3>
-                    Contact Us
                 </h3>
 
 
                 <p>
-                    ☎ +62 813-9875-4451
+
+                    🏠 Home
+
                 </p>
 
 
                 <p>
 
-                    ✉
-
-                    <a
-                        href="mailto:info@kindergarten.com"
-                    >
-                        info@kindergarten.com
-                    </a>
+                    👥 About
 
                 </p>
 
 
                 <p>
-                    📍 Tangerang, Indonesia
+
+                    📚 Programs
+
+                </p>
+
+
+                <p>
+
+                    🖍️ Blog
+
                 </p>
 
             </div>
 
 
-            <!-- SOCIAL MEDIA -->
-
             <div>
 
                 <h3>
-                    Follow Us
+
+                    Hubungi Kami
+
                 </h3>
 
 
-                <p style="font-size:28px">
-                    ●　◎　▶
+                <p>
+
+                    📞 WhatsApp
+
+                </p>
+
+
+                <p>
+
+                    ✉️ Email Sekolah
+
+                </p>
+
+
+                <p>
+
+                    📅 Book Visit
+
                 </p>
 
             </div>
@@ -526,40 +3705,867 @@
         </div>
 
 
-        <!-- COPYRIGHT -->
+        <div class="au-copyright">
 
-        <div class="copy wrap">
-
-            © 2026 Ra Miftahul Hikmah.
-            All rights reserved.
+            © 2026 RA Miftahul Hikmah
+            • All Rights Reserved
 
         </div>
 
 
-    </footer>
+    </div>
+
+</footer>
 
 
-    <!-- ================= JAVASCRIPT ================= -->
+<!-- =====================================================
+     SUPABASE
+===================================================== -->
 
-    <!-- SUPABASE -->
-
-    <script
-        src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
-    ></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 
-    <!-- SCRIPT WEBSITE -->
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
 
-    <script
-        src="js/script.js"
-    ></script>
+<script>
 
 
-    <!-- SISTEM POSTING SUPABASE -->
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
 
-    <script
-        src="js/posts.js"
-    ></script>
+
+        /* =====================================================
+           MENU LAINNYA
+        ===================================================== */
+
+        const moreButton =
+            document.getElementById(
+                "auMoreButton"
+            );
+
+
+        const moreMenu =
+            document.getElementById(
+                "auMoreMenu"
+            );
+
+
+        if (
+            moreButton &&
+            moreMenu
+        ) {
+
+
+            moreButton.addEventListener(
+                "click",
+                function (
+                    event
+                ) {
+
+
+                    event.stopPropagation();
+
+
+                    moreMenu.classList.toggle(
+                        "open"
+                    );
+
+
+                }
+            );
+
+
+            document.addEventListener(
+                "click",
+                function (
+                    event
+                ) {
+
+
+                    if (
+
+                        !moreMenu.contains(
+                            event.target
+                        )
+
+                        &&
+
+                        !moreButton.contains(
+                            event.target
+                        )
+
+                    ) {
+
+
+                        moreMenu.classList.remove(
+                            "open"
+                        );
+
+
+                    }
+
+
+                }
+            );
+
+
+        }
+
+
+        /* =====================================================
+           REVEAL
+        ===================================================== */
+
+        const revealItems =
+            document.querySelectorAll(
+                ".au-reveal"
+            );
+
+
+        if (
+            "IntersectionObserver"
+            in
+            window
+        ) {
+
+
+            const observer =
+                new IntersectionObserver(
+
+                    function (
+                        entries
+                    ) {
+
+
+                        entries.forEach(
+
+                            function (
+                                entry
+                            ) {
+
+
+                                if (
+                                    entry.isIntersecting
+                                ) {
+
+
+                                    entry.target.classList.add(
+                                        "au-show"
+                                    );
+
+
+                                    observer.unobserve(
+                                        entry.target
+                                    );
+
+
+                                }
+
+
+                            }
+
+                        );
+
+
+                    },
+
+
+                    {
+
+                        threshold:
+                            0.12,
+
+                        rootMargin:
+                            "0px 0px -35px 0px"
+
+                    }
+
+                );
+
+
+            revealItems.forEach(
+
+                function (
+                    item,
+                    index
+                ) {
+
+
+                    item.style.transitionDelay =
+                        (
+                            index % 4
+                        )
+                        *
+                        70
+                        +
+                        "ms";
+
+
+                    observer.observe(
+                        item
+                    );
+
+
+                }
+
+            );
+
+
+        }
+
+        else {
+
+
+            revealItems.forEach(
+
+                function (
+                    item
+                ) {
+
+
+                    item.classList.add(
+                        "au-show"
+                    );
+
+
+                }
+
+            );
+
+
+        }
+
+
+        /* =====================================================
+           CATEGORY BUTTON
+        ===================================================== */
+
+        const categories =
+            document.querySelectorAll(
+                ".blog-category"
+            );
+
+
+        categories.forEach(
+
+            function (
+                category
+            ) {
+
+
+                category.addEventListener(
+                    "click",
+                    function () {
+
+
+                        categories.forEach(
+
+                            function (
+                                item
+                            ) {
+
+
+                                item.classList.remove(
+                                    "active"
+                                );
+
+
+                            }
+
+                        );
+
+
+                        category.classList.add(
+                            "active"
+                        );
+
+
+                    }
+                );
+
+
+            }
+
+        );
+
+
+    }
+);
+
+
+</script>
+
+
+<!-- =====================================================
+     POSTS SUPABASE
+===================================================== -->
+
+<script>
+
+
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+
+
+        /* =====================================================
+           SUPABASE
+        ===================================================== */
+
+        const SUPABASE_URL =
+            "https://ervhwjrlqcsobawwhkpf.supabase.co";
+
+
+        const SUPABASE_KEY =
+            "sb_publishable_u48E-Q-RjdFRFLC_Cv3rmg_gD0Z3y2K";
+
+
+        const supabaseClient =
+            window.supabase.createClient(
+                SUPABASE_URL,
+                SUPABASE_KEY
+            );
+
+
+        /* =====================================================
+           PAGE
+        ===================================================== */
+
+        const pageName =
+            "blog";
+
+
+        /* =====================================================
+           ELEMENT
+        ===================================================== */
+
+        const postsContainer =
+            document.getElementById(
+                "postsContainer"
+            );
+
+
+        /* =====================================================
+           FORMAT DATE
+        ===================================================== */
+
+        function formatDate(
+            dateString
+        ) {
+
+
+            if (
+                !dateString
+            ) {
+
+                return "";
+
+            }
+
+
+            const date =
+                new Date(
+                    dateString
+                );
+
+
+            if (
+                Number.isNaN(
+                    date.getTime()
+                )
+            ) {
+
+                return "";
+
+            }
+
+
+            return date.toLocaleDateString(
+
+                "id-ID",
+
+                {
+
+                    day:
+                        "numeric",
+
+                    month:
+                        "long",
+
+                    year:
+                        "numeric"
+
+                }
+
+            );
+
+
+        }
+
+
+        /* =====================================================
+           ESCAPE HTML
+        ===================================================== */
+
+        function escapeHTML(
+            value
+        ) {
+
+
+            return String(
+                value || ""
+            )
+
+                .replace(
+                    /&/g,
+                    "&amp;"
+                )
+
+                .replace(
+                    /</g,
+                    "&lt;"
+                )
+
+                .replace(
+                    />/g,
+                    "&gt;"
+                )
+
+                .replace(
+                    /"/g,
+                    "&quot;"
+                )
+
+                .replace(
+                    /'/g,
+                    "&#039;"
+                );
+
+
+        }
+
+
+        /* =====================================================
+           LOAD POSTS
+        ===================================================== */
+
+        async function loadPosts() {
+
+
+            if (
+                !postsContainer
+            ) {
+
+                return;
+
+            }
+
+
+            postsContainer.innerHTML = `
+
+                <div class="cloud-loading">
+
+                    <div class="cloud-loading-icon">
+
+                        ☁️
+
+                    </div>
+
+
+                    <strong>
+
+                        Sedang mengambil postingan...
+
+                    </strong>
+
+                </div>
+
+            `;
+
+
+            const {
+
+                data,
+                error
+
+            } = await supabaseClient
+
+                .from(
+                    "posts"
+                )
+
+                .select(
+                    `
+                        id,
+                        title,
+                        content,
+                        image_url,
+                        page_name,
+                        created_at
+                    `
+                )
+
+                .eq(
+                    "page_name",
+                    pageName
+                )
+
+                .order(
+                    "created_at",
+                    {
+
+                        ascending:
+                            false
+
+                    }
+                );
+
+
+            /* =================================================
+               ERROR
+            ================================================= */
+
+            if (
+                error
+            ) {
+
+
+                console.error(
+                    "Gagal mengambil postingan:",
+                    error
+                );
+
+
+                postsContainer.innerHTML = `
+
+                    <div class="cloud-empty">
+
+                        <div class="cloud-empty-icon">
+
+                            ☁️
+
+                        </div>
+
+
+                        <h3>
+
+                            Postingan belum dapat dimuat
+
+                        </h3>
+
+
+                        <p>
+
+                            Silakan refresh halaman.
+
+                        </p>
+
+                    </div>
+
+                `;
+
+
+                return;
+
+            }
+
+
+            const posts =
+                data || [];
+
+
+            /* =================================================
+               EMPTY
+            ================================================= */
+
+            if (
+                !posts.length
+            ) {
+
+
+                postsContainer.innerHTML = `
+
+                    <div class="cloud-empty">
+
+                        <div class="cloud-empty-icon">
+
+                            🖍️
+
+                        </div>
+
+
+                        <h3>
+
+                            Belum ada cerita
+
+                        </h3>
+
+
+                        <p>
+
+                            Cerita terbaru dari
+                            RA Miftahul Hikmah
+                            akan muncul di sini.
+
+                        </p>
+
+                    </div>
+
+                `;
+
+
+                return;
+
+            }
+
+
+            /* =================================================
+               RENDER
+            ================================================= */
+
+            renderPosts(
+                posts
+            );
+
+
+        }
+
+
+        /* =====================================================
+           RENDER POSTS
+        ===================================================== */
+
+        function renderPosts(
+            posts
+        ) {
+
+
+            postsContainer.innerHTML =
+                "";
+
+
+            const grid =
+                document.createElement(
+                    "div"
+                );
+
+
+            grid.className =
+                "posts-grid";
+
+
+            posts.forEach(
+
+                (
+                    post
+                ) => {
+
+
+                    const card =
+                        document.createElement(
+                            "article"
+                        );
+
+
+                    card.className =
+                        "post-card";
+
+
+                    const imageHTML =
+                        post.image_url
+
+                            ?
+
+                            `
+
+                            <div
+                                class="post-card-image"
+                            >
+
+                                <img
+
+                                    src="${escapeHTML(
+                                        post.image_url
+                                    )}"
+
+                                    alt="${escapeHTML(
+                                        post.title
+                                    )}"
+
+                                    loading="lazy"
+
+                                >
+
+                            </div>
+
+                            `
+
+                            :
+
+                            `
+
+                            <div
+                                class="post-card-image"
+                                style="
+                                    display:grid;
+                                    place-items:center;
+                                    font-size:65px;
+                                "
+                            >
+
+                                🖍️
+
+                            </div>
+
+                            `;
+
+
+                    card.innerHTML = `
+
+                        ${imageHTML}
+
+
+                        <div
+                            class="post-card-content"
+                        >
+
+
+                            <span
+                                class="post-card-date"
+                            >
+
+                                📅 ${formatDate(
+                                    post.created_at
+                                )}
+
+                            </span>
+
+
+                            <h3>
+
+                                ${escapeHTML(
+
+                                    post.title ||
+
+                                    "Cerita Baru"
+
+                                )}
+
+                            </h3>
+
+
+                            <p>
+
+                                ${escapeHTML(
+
+                                    post.content ||
+
+                                    "Belum ada isi cerita."
+
+                                )}
+
+                            </p>
+
+
+                        </div>
+
+                    `;
+
+
+                    grid.appendChild(
+                        card
+                    );
+
+
+                }
+
+            );
+
+
+            postsContainer.appendChild(
+                grid
+            );
+
+
+        }
+
+
+        /* =====================================================
+           REALTIME
+        ===================================================== */
+
+        supabaseClient
+
+            .channel(
+                "posts-blog"
+            )
+
+            .on(
+
+                "postgres_changes",
+
+                {
+
+                    event:
+                        "*",
+
+                    schema:
+                        "public",
+
+                    table:
+                        "posts"
+
+                },
+
+                (
+                    payload
+                ) => {
+
+
+                    const changedPage =
+
+                        payload.new?.page_name ||
+
+                        payload.old?.page_name;
+
+
+                    if (
+
+                        !changedPage ||
+
+                        changedPage === pageName
+
+                    ) {
+
+
+                        loadPosts();
+
+
+                    }
+
+
+                }
+
+            )
+
+            .subscribe();
+
+
+        /* =====================================================
+           START
+        ===================================================== */
+
+        loadPosts();
+
+
+    }
+);
+
+
+</script>
 
 
 </body>
