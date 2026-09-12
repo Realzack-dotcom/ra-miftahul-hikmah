@@ -1,21 +1,2726 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 
 <head>
 
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
 
     <meta
         name="viewport"
-        content="width=device-width, initial-scale=1"
+        content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Parents | Ra Miftahul Hikmah</title>
+    <meta
+        name="description"
+        content="Informasi Orang Tua dan Wali Murid RA Miftahul Hikmah"
+    >
+
+    <title>
+        Parents | RA Miftahul Hikmah
+    </title>
+
+
+    <!-- GOOGLE FONT -->
 
     <link
-        rel="stylesheet"
-        href="css/style.css"
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
     >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+
+<style>
+
+/* =====================================================
+   RA MIFTAHUL HIKMAH
+   PARENTS PAGE
+===================================================== */
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+
+    box-sizing:
+        border-box;
+
+}
+
+
+html {
+
+    scroll-behavior:
+        smooth;
+
+}
+
+
+body {
+
+    margin:
+        0;
+
+    overflow-x:
+        hidden;
+
+    font-family:
+        "Nunito",
+        sans-serif;
+
+    color:
+        #342d4c;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            #fff9fc 0%,
+            #f9f5ff 25%,
+            #f4fbff 55%,
+            #fffaf2 100%
+        );
+
+    background-size:
+        300% 300%;
+
+    animation:
+        backgroundMove 18s ease infinite;
+
+}
+
+
+@keyframes backgroundMove {
+
+    0% {
+
+        background-position:
+            0% 50%;
+
+    }
+
+    50% {
+
+        background-position:
+            100% 50%;
+
+    }
+
+    100% {
+
+        background-position:
+            0% 50%;
+
+    }
+
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.au-container {
+
+    width:
+        min(
+            1180px,
+            calc(100% - 32px)
+        );
+
+    margin:
+        auto;
+
+}
+
+
+/* =====================================================
+   BACKGROUND BLOBS
+===================================================== */
+
+.pg-bg {
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    z-index:
+        -1;
+
+    pointer-events:
+        none;
+
+    overflow:
+        hidden;
+
+}
+
+
+.pg-bg::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        330px;
+
+    height:
+        330px;
+
+    border-radius:
+        50%;
+
+    top:
+        12%;
+
+    left:
+        -160px;
+
+    background:
+        rgba(255,139,184,.22);
+
+    filter:
+        blur(65px);
+
+    animation:
+        blobOne 13s ease-in-out infinite;
+
+}
+
+
+.pg-bg::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        360px;
+
+    height:
+        360px;
+
+    border-radius:
+        50%;
+
+    bottom:
+        8%;
+
+    right:
+        -180px;
+
+    background:
+        rgba(126,189,255,.22);
+
+    filter:
+        blur(70px);
+
+    animation:
+        blobTwo 15s ease-in-out infinite;
+
+}
+
+
+@keyframes blobOne {
+
+    0%,
+    100% {
+
+        transform:
+            translate(0,0)
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            translate(110px,90px)
+            scale(1.18);
+
+    }
+
+}
+
+
+@keyframes blobTwo {
+
+    0%,
+    100% {
+
+        transform:
+            translate(0,0)
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            translate(-100px,-80px)
+            scale(1.2);
+
+    }
+
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.au-header {
+
+    position:
+        relative;
+
+    z-index:
+        100;
+
+    background:
+        rgba(255,255,255,.78);
+
+    backdrop-filter:
+        blur(20px);
+
+    border-bottom:
+        1px solid rgba(255,255,255,.9);
+
+}
+
+
+.au-header-inner {
+
+    min-height:
+        72px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        12px;
+
+}
+
+
+.au-brand {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+
+    text-decoration:
+        none;
+
+    color:
+        #342d4c;
+
+}
+
+
+.au-logo {
+
+    width:
+        46px;
+
+    height:
+        46px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    border-radius:
+        15px;
+
+    font-size:
+        24px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #fff1a8,
+            #ffd5e5,
+            #d6efff
+        );
+
+    box-shadow:
+        0 8px 25px rgba(239,79,130,.18);
+
+    animation:
+        logoFloat 4s ease-in-out infinite;
+
+}
+
+
+@keyframes logoFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-5px)
+            rotate(5deg);
+
+    }
+
+}
+
+
+.au-brand h1 {
+
+    margin:
+        0;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size:
+        18px;
+
+    line-height:
+        1;
+
+}
+
+
+.au-brand h1 span {
+
+    color:
+        #ef4f82;
+
+}
+
+
+.au-brand p {
+
+    margin:
+        4px 0 0;
+
+    color:
+        #817991;
+
+    font-size:
+        10px;
+
+}
+
+
+.au-visit {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        10px 13px;
+
+    border-radius:
+        13px;
+
+    text-decoration:
+        none;
+
+    color:
+        white;
+
+    font-size:
+        11px;
+
+    font-weight:
+        900;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #ef4f82,
+            #ff7da7
+        );
+
+    box-shadow:
+        0 9px 20px rgba(239,79,130,.25);
+
+    transition:
+        .3s ease;
+
+}
+
+
+.au-visit:hover {
+
+    transform:
+        translateY(-3px);
+
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.au-nav {
+
+    position:
+        sticky;
+
+    top:
+        0;
+
+    z-index:
+        99;
+
+    background:
+        rgba(255,255,255,.92);
+
+    backdrop-filter:
+        blur(20px);
+
+    border-bottom:
+        1px solid rgba(120,90,180,.08);
+
+}
+
+
+.au-nav-inner {
+
+    width:
+        min(
+            1180px,
+            calc(100% - 20px)
+        );
+
+    margin:
+        auto;
+
+    display:
+        flex;
+
+    gap:
+        6px;
+
+    padding:
+        8px 0;
+
+    overflow-x:
+        auto;
+
+    scrollbar-width:
+        none;
+
+}
+
+
+.au-nav-inner::-webkit-scrollbar {
+
+    display:
+        none;
+
+}
+
+
+.au-nav-link {
+
+    flex:
+        0 0 auto;
+
+    min-width:
+        62px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        3px;
+
+    padding:
+        8px 9px;
+
+    border-radius:
+        14px;
+
+    text-decoration:
+        none;
+
+    color:
+        #6f687d;
+
+    font-size:
+        9px;
+
+    font-weight:
+        900;
+
+    transition:
+        .3s ease;
+
+}
+
+
+.au-nav-link:hover {
+
+    background:
+        #f5f1ff;
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+.au-nav-icon {
+
+    font-size:
+        19px;
+
+}
+
+
+.au-nav-link.active {
+
+    color:
+        white;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #7b6cff,
+            #a47fff
+        );
+
+    box-shadow:
+        0 7px 18px rgba(125,108,255,.25);
+
+}
+
+
+.au-more-wrap {
+
+    flex:
+        0 0 auto;
+
+}
+
+
+.au-more-button {
+
+    height:
+        100%;
+
+    min-width:
+        72px;
+
+    border:
+        none;
+
+    cursor:
+        pointer;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        3px;
+
+    padding:
+        8px 10px;
+
+    border-radius:
+        14px;
+
+    background:
+        #f5f2fb;
+
+    color:
+        #6b617b;
+
+    font-size:
+        9px;
+
+    font-weight:
+        900;
+
+}
+
+
+.au-more-button span {
+
+    font-size:
+        18px;
+
+}
+
+
+/* =====================================================
+   DROPDOWN
+===================================================== */
+
+.au-more-menu {
+
+    position:
+        fixed;
+
+    top:
+        138px;
+
+    left:
+        16px;
+
+    right:
+        16px;
+
+    z-index:
+        300;
+
+    display:
+        none;
+
+    overflow:
+        hidden;
+
+    border-radius:
+        22px;
+
+    background:
+        rgba(255,255,255,.97);
+
+    box-shadow:
+        0 20px 55px rgba(57,40,90,.18);
+
+    opacity:
+        0;
+
+    transform:
+        translateY(-10px);
+
+    transition:
+        .25s ease;
+
+}
+
+
+.au-more-menu.open {
+
+    display:
+        block;
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+.au-more-title {
+
+    padding:
+        16px 18px;
+
+    font-size:
+        14px;
+
+    font-weight:
+        900;
+
+    border-bottom:
+        1px solid #f0edf5;
+
+}
+
+
+.au-more-menu a {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        13px;
+
+    padding:
+        15px 18px;
+
+    text-decoration:
+        none;
+
+    color:
+        #665e72;
+
+    font-size:
+        14px;
+
+    font-weight:
+        800;
+
+    border-bottom:
+        1px solid #f5f2f7;
+
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.parents-hero {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    padding:
+        70px 0 85px;
+
+    text-align:
+        center;
+
+}
+
+
+.parents-hero::before {
+
+    content:
+        "👨‍👩‍👧";
+
+    position:
+        absolute;
+
+    top:
+        25px;
+
+    left:
+        7%;
+
+    font-size:
+        50px;
+
+    opacity:
+        .22;
+
+    animation:
+        emojiFloat 5s ease-in-out infinite;
+
+}
+
+
+.parents-hero::after {
+
+    content:
+        "💛";
+
+    position:
+        absolute;
+
+    right:
+        8%;
+
+    bottom:
+        25px;
+
+    font-size:
+        58px;
+
+    opacity:
+        .25;
+
+    animation:
+        emojiFloat 6s ease-in-out infinite reverse;
+
+}
+
+
+@keyframes emojiFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-14px)
+            rotate(8deg);
+
+    }
+
+}
+
+
+.parents-badge {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+
+    padding:
+        9px 16px;
+
+    border-radius:
+        50px;
+
+    background:
+        rgba(255,255,255,.82);
+
+    color:
+        #8466bd;
+
+    font-size:
+        12px;
+
+    font-weight:
+        900;
+
+    box-shadow:
+        0 10px 30px rgba(80,60,120,.08);
+
+    animation:
+        badgeFloat 4s ease-in-out infinite;
+
+}
+
+
+@keyframes badgeFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-6px);
+
+    }
+
+}
+
+
+.parents-hero h2 {
+
+    margin:
+        18px 0 0;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size:
+        clamp(48px,15vw,74px);
+
+    line-height:
+        .96;
+
+}
+
+
+.parents-hero h2 span {
+
+    color:
+        #ef4f82;
+
+}
+
+
+.parents-hero p {
+
+    max-width:
+        620px;
+
+    margin:
+        18px auto 0;
+
+    color:
+        #766d84;
+
+    font-size:
+        14px;
+
+    line-height:
+        1.85;
+
+}
+
+
+/* =====================================================
+   HERO DECORATION
+===================================================== */
+
+.hero-stars {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    pointer-events:
+        none;
+
+}
+
+
+.hero-star {
+
+    position:
+        absolute;
+
+    font-size:
+        20px;
+
+    animation:
+        starFloat 4s ease-in-out infinite;
+
+}
+
+
+.hero-star:nth-child(1) {
+
+    top:
+        25%;
+
+    left:
+        15%;
+
+}
+
+
+.hero-star:nth-child(2) {
+
+    top:
+        65%;
+
+    left:
+        10%;
+
+    animation-delay:
+        1s;
+
+}
+
+
+.hero-star:nth-child(3) {
+
+    top:
+        30%;
+
+    right:
+        15%;
+
+    animation-delay:
+        2s;
+
+}
+
+
+.hero-star:nth-child(4) {
+
+    bottom:
+        15%;
+
+    right:
+        18%;
+
+    animation-delay:
+        3s;
+
+}
+
+
+@keyframes starFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-12px)
+            rotate(15deg);
+
+    }
+
+}
+
+
+/* =====================================================
+   SECTION
+===================================================== */
+
+.pg-section {
+
+    padding:
+        42px 0;
+
+}
+
+
+.pg-heading {
+
+    text-align:
+        center;
+
+    margin-bottom:
+        30px;
+
+}
+
+
+.pg-heading-badge {
+
+    display:
+        inline-block;
+
+    padding:
+        7px 14px;
+
+    border-radius:
+        30px;
+
+    background:
+        #f0eaff;
+
+    color:
+        #8864c9;
+
+    font-size:
+        10px;
+
+    font-weight:
+        900;
+
+}
+
+
+.pg-heading h2 {
+
+    margin:
+        11px 0;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size:
+        35px;
+
+    line-height:
+        1.1;
+
+}
+
+
+.pg-heading h2 span {
+
+    color:
+        #ef4f82;
+
+}
+
+
+.pg-heading p {
+
+    max-width:
+        610px;
+
+    margin:
+        auto;
+
+    color:
+        #7c7489;
+
+    font-size:
+        13px;
+
+    line-height:
+        1.75;
+
+}
+
+
+/* =====================================================
+   PARENT CARDS
+===================================================== */
+
+.parent-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr;
+
+    gap:
+        17px;
+
+}
+
+
+.parent-card {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    padding:
+        24px 20px;
+
+    border-radius:
+        25px;
+
+    background:
+        rgba(255,255,255,.78);
+
+    border:
+        1px solid rgba(255,255,255,.95);
+
+    box-shadow:
+        0 15px 40px rgba(70,50,110,.09);
+
+    transition:
+        .35s ease;
+
+}
+
+
+.parent-card:hover {
+
+    transform:
+        translateY(-8px);
+
+    box-shadow:
+        0 25px 55px rgba(70,50,110,.15);
+
+}
+
+
+.parent-card::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        130px;
+
+    height:
+        130px;
+
+    right:
+        -65px;
+
+    bottom:
+        -65px;
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(255,180,215,.22);
+
+}
+
+
+.parent-card:nth-child(2)::after {
+
+    background:
+        rgba(160,210,255,.22);
+
+}
+
+
+.parent-card:nth-child(3)::after {
+
+    background:
+        rgba(255,220,150,.24);
+
+}
+
+
+.parent-icon {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    width:
+        68px;
+
+    height:
+        68px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    margin-bottom:
+        16px;
+
+    border-radius:
+        21px;
+
+    font-size:
+        32px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #fff5fa,
+            #f0edff
+        );
+
+    animation:
+        iconPulse 4s ease-in-out infinite;
+
+}
+
+
+@keyframes iconPulse {
+
+    0%,
+    100% {
+
+        transform:
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            scale(1.08);
+
+    }
+
+}
+
+
+.parent-card h3 {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    margin:
+        0 0 9px;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size:
+        23px;
+
+}
+
+
+.parent-card p {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    margin:
+        0;
+
+    color:
+        #766e83;
+
+    font-size:
+        13px;
+
+    line-height:
+        1.75;
+
+}
+
+
+.parent-tag {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    display:
+        inline-block;
+
+    margin-top:
+        16px;
+
+    padding:
+        7px 12px;
+
+    border-radius:
+        30px;
+
+    background:
+        #f7f3ff;
+
+    color:
+        #8664c8;
+
+    font-size:
+        10px;
+
+    font-weight:
+        900;
+
+}
+
+
+/* =====================================================
+   INFORMATION BOX
+===================================================== */
+
+.info-box {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    padding:
+        28px 22px;
+
+    border-radius:
+        30px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #fff0f6,
+            #f1edff,
+            #e8f8ff
+        );
+
+    box-shadow:
+        0 20px 50px rgba(75,55,120,.10);
+
+}
+
+
+.info-box::before {
+
+    content:
+        "💌";
+
+    position:
+        absolute;
+
+    right:
+        -5px;
+
+    top:
+        -15px;
+
+    font-size:
+        90px;
+
+    opacity:
+        .10;
+
+    transform:
+        rotate(15deg);
+
+}
+
+
+.info-box-header {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        14px;
+
+    margin-bottom:
+        22px;
+
+}
+
+
+.info-box-icon {
+
+    width:
+        60px;
+
+    height:
+        60px;
+
+    flex:
+        0 0 auto;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    border-radius:
+        20px;
+
+    font-size:
+        30px;
+
+    background:
+        rgba(255,255,255,.75);
+
+}
+
+
+.info-box h3 {
+
+    margin:
+        0;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size:
+        24px;
+
+}
+
+
+.info-box-header p {
+
+    margin:
+        3px 0 0;
+
+    color:
+        #766d84;
+
+    font-size:
+        12px;
+
+}
+
+
+.info-list {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    display:
+        grid;
+
+    gap:
+        12px;
+
+}
+
+
+.info-item {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        12px;
+
+    padding:
+        14px;
+
+    border-radius:
+        18px;
+
+    background:
+        rgba(255,255,255,.65);
+
+    transition:
+        .3s ease;
+
+}
+
+
+.info-item:hover {
+
+    transform:
+        translateX(5px);
+
+}
+
+
+.info-item-icon {
+
+    width:
+        42px;
+
+    height:
+        42px;
+
+    flex:
+        0 0 auto;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    border-radius:
+        14px;
+
+    background:
+        white;
+
+    font-size:
+        20px;
+
+}
+
+
+.info-item-content b {
+
+    display:
+        block;
+
+    margin-bottom:
+        3px;
+
+    font-size:
+        13px;
+
+}
+
+
+.info-item-content span {
+
+    color:
+        #7b7388;
+
+    font-size:
+        11px;
+
+}
+
+
+/* =====================================================
+   TIPS
+===================================================== */
+
+.tips-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr;
+
+    gap:
+        15px;
+
+}
+
+
+.tip-card {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    padding:
+        23px 19px;
+
+    border-radius:
+        24px;
+
+    background:
+        rgba(255,255,255,.80);
+
+    box-shadow:
+        0 12px 35px rgba(70,50,110,.08);
+
+    transition:
+        .35s ease;
+
+}
+
+
+.tip-card:hover {
+
+    transform:
+        translateY(-7px)
+        rotate(-1deg);
+
+}
+
+
+.tip-number {
+
+    position:
+        absolute;
+
+    top:
+        13px;
+
+    right:
+        16px;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size:
+        34px;
+
+    color:
+        rgba(123,108,255,.10);
+
+}
+
+
+.tip-icon {
+
+    width:
+        58px;
+
+    height:
+        58px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    margin-bottom:
+        14px;
+
+    border-radius:
+        19px;
+
+    font-size:
+        28px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #fff3f8,
+            #eeeaff
+        );
+
+}
+
+
+.tip-card h3 {
+
+    margin:
+        0 0 8px;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size:
+        21px;
+
+}
+
+
+.tip-card p {
+
+    margin:
+        0;
+
+    color:
+        #786f84;
+
+    font-size:
+        12px;
+
+    line-height:
+        1.75;
+
+}
+
+
+/* =====================================================
+   PARTNERSHIP
+===================================================== */
+
+.partner-box {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    padding:
+        35px 20px;
+
+    border-radius:
+        30px;
+
+    text-align:
+        center;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #f3efff,
+            #fff3f8,
+            #effaff
+        );
+
+    box-shadow:
+        0 20px 50px rgba(75,55,120,.10);
+
+}
+
+
+.partner-emoji {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    width:
+        90px;
+
+    height:
+        90px;
+
+    margin-bottom:
+        15px;
+
+    border-radius:
+        30px;
+
+    font-size:
+        48px;
+
+    background:
+        rgba(255,255,255,.75);
+
+    animation:
+        partnerFloat 4s ease-in-out infinite;
+
+}
+
+
+@keyframes partnerFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-8px)
+            rotate(4deg);
+
+    }
+
+}
+
+
+.partner-box h2 {
+
+    margin:
+        0 0 10px;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size:
+        33px;
+
+}
+
+
+.partner-box h2 span {
+
+    color:
+        #ef4f82;
+
+}
+
+
+.partner-box p {
+
+    max-width:
+        580px;
+
+    margin:
+        auto;
+
+    color:
+        #756c82;
+
+    font-size:
+        13px;
+
+    line-height:
+        1.8;
+
+}
+
+
+.partner-points {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:
+        11px;
+
+    margin-top:
+        25px;
+
+}
+
+
+.partner-point {
+
+    padding:
+        15px 10px;
+
+    border-radius:
+        18px;
+
+    background:
+        rgba(255,255,255,.72);
+
+    font-size:
+        11px;
+
+    font-weight:
+        900;
+
+}
+
+
+.partner-point span {
+
+    display:
+        block;
+
+    margin-bottom:
+        5px;
+
+    font-size:
+        23px;
+
+}
+
+
+/* =====================================================
+   FAQ
+===================================================== */
+
+.faq-box {
+
+    display:
+        grid;
+
+    gap:
+        12px;
+
+}
+
+
+.faq-item {
+
+    overflow:
+        hidden;
+
+    border-radius:
+        20px;
+
+    background:
+        rgba(255,255,255,.80);
+
+    box-shadow:
+        0 10px 28px rgba(70,50,110,.07);
+
+}
+
+
+.faq-question {
+
+    width:
+        100%;
+
+    border:
+        none;
+
+    cursor:
+        pointer;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        15px;
+
+    padding:
+        18px;
+
+    background:
+        transparent;
+
+    color:
+        #423850;
+
+    text-align:
+        left;
+
+    font-family:
+        "Nunito",
+        sans-serif;
+
+    font-size:
+        13px;
+
+    font-weight:
+        900;
+
+}
+
+
+.faq-question span {
+
+    width:
+        32px;
+
+    height:
+        32px;
+
+    flex:
+        0 0 auto;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    border-radius:
+        11px;
+
+    background:
+        #f2edff;
+
+    color:
+        #8068c9;
+
+    font-size:
+        20px;
+
+    transition:
+        .3s ease;
+
+}
+
+
+.faq-item.open .faq-question span {
+
+    transform:
+        rotate(45deg);
+
+    background:
+        #8068c9;
+
+    color:
+        white;
+
+}
+
+
+.faq-answer {
+
+    max-height:
+        0;
+
+    overflow:
+        hidden;
+
+    transition:
+        max-height .35s ease;
+
+}
+
+
+.faq-answer p {
+
+    margin:
+        0;
+
+    padding:
+        0 18px 18px;
+
+    color:
+        #786f84;
+
+    font-size:
+        12px;
+
+    line-height:
+        1.8;
+
+}
+
+
+/* =====================================================
+   CTA
+===================================================== */
+
+.pg-cta {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    margin:
+        15px 0 45px;
+
+    padding:
+        50px 20px;
+
+    border-radius:
+        32px;
+
+    text-align:
+        center;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #fff0f6,
+            #f0ecff,
+            #e5f7ff
+        );
+
+    box-shadow:
+        0 22px 55px rgba(75,55,120,.12);
+
+}
+
+
+.pg-cta::before {
+
+    content:
+        "💬";
+
+    position:
+        absolute;
+
+    top:
+        -15px;
+
+    left:
+        5%;
+
+    font-size:
+        75px;
+
+    opacity:
+        .10;
+
+}
+
+
+.pg-cta::after {
+
+    content:
+        "💛";
+
+    position:
+        absolute;
+
+    bottom:
+        -15px;
+
+    right:
+        6%;
+
+    font-size:
+        80px;
+
+    opacity:
+        .10;
+
+}
+
+
+.pg-cta-content {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+}
+
+
+.pg-cta h2 {
+
+    margin:
+        10px 0 12px;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size:
+        36px;
+
+}
+
+
+.pg-cta h2 span {
+
+    color:
+        #ef4f82;
+
+}
+
+
+.pg-cta p {
+
+    max-width:
+        520px;
+
+    margin:
+        0 auto 23px;
+
+    color:
+        #756c82;
+
+    font-size:
+        13px;
+
+    line-height:
+        1.8;
+
+}
+
+
+.pg-button {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        7px;
+
+    padding:
+        14px 23px;
+
+    border-radius:
+        15px;
+
+    text-decoration:
+        none;
+
+    color:
+        white;
+
+    font-size:
+        13px;
+
+    font-weight:
+        900;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #ef4f82,
+            #ff7ea7
+        );
+
+    box-shadow:
+        0 12px 25px rgba(239,79,130,.25);
+
+    transition:
+        .3s ease;
+
+}
+
+
+.pg-button:hover {
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 17px 30px rgba(239,79,130,.32);
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.au-footer {
+
+    padding:
+        42px 0 0;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #302843,
+            #403556
+        );
+
+    color:
+        white;
+
+}
+
+
+.au-footer-grid {
+
+    display:
+        grid;
+
+    gap:
+        25px;
+
+    text-align:
+        center;
+
+}
+
+
+.au-footer h3 {
+
+    margin:
+        0 0 10px;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size:
+        22px;
+
+}
+
+
+.au-footer h3 span {
+
+    color:
+        #ff8db3;
+
+}
+
+
+.au-footer p {
+
+    margin:
+        0 0 7px;
+
+    color:
+        #c9c1d7;
+
+    font-size:
+        13px;
+
+    line-height:
+        1.7;
+
+}
+
+
+.au-copyright {
+
+    margin-top:
+        35px;
+
+    padding:
+        18px;
+
+    text-align:
+        center;
+
+    border-top:
+        1px solid rgba(255,255,255,.08);
+
+    color:
+        #aaa0bc;
+
+    font-size:
+        11px;
+
+}
+
+
+/* =====================================================
+   REVEAL
+===================================================== */
+
+.au-reveal {
+
+    opacity:
+        0;
+
+    transform:
+        translateY(28px);
+
+    transition:
+
+        opacity .8s ease,
+        transform .8s cubic-bezier(.2,.8,.2,1);
+
+}
+
+
+.au-reveal.au-show {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* =====================================================
+   DESKTOP
+===================================================== */
+
+@media (min-width: 769px) {
+
+
+    .au-header-inner {
+
+        min-height:
+            90px;
+
+    }
+
+
+    .au-logo {
+
+        width:
+            55px;
+
+        height:
+            55px;
+
+        font-size:
+            29px;
+
+    }
+
+
+    .au-brand h1 {
+
+        font-size:
+            25px;
+
+    }
+
+
+    .au-brand p {
+
+        font-size:
+            13px;
+
+    }
+
+
+    .au-visit {
+
+        padding:
+            13px 22px;
+
+        font-size:
+            13px;
+
+    }
+
+
+    .au-nav-inner {
+
+        justify-content:
+            center;
+
+        overflow:
+            visible;
+
+    }
+
+
+    .au-nav-link {
+
+        flex-direction:
+            row;
+
+        min-width:
+            auto;
+
+        font-size:
+            12px;
+
+        padding:
+            10px 15px;
+
+    }
+
+
+    .au-more-wrap {
+
+        display:
+            none;
+
+    }
+
+
+    .parents-hero {
+
+        padding:
+            105px 0;
+
+    }
+
+
+    .parents-hero p {
+
+        font-size:
+            16px;
+
+    }
+
+
+    .pg-section {
+
+        padding:
+            68px 0;
+
+    }
+
+
+    .parent-grid {
+
+        grid-template-columns:
+            repeat(3,1fr);
+
+        gap:
+            22px;
+
+    }
+
+
+    .tips-grid {
+
+        grid-template-columns:
+            repeat(3,1fr);
+
+        gap:
+            20px;
+
+    }
+
+
+    .partner-points {
+
+        grid-template-columns:
+            repeat(4,1fr);
+
+    }
+
+
+    .au-footer-grid {
+
+        grid-template-columns:
+            repeat(3,1fr);
+
+        text-align:
+            left;
+
+    }
+
+
+}
+
+
+/* =====================================================
+   REDUCE MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    * {
+
+        animation:
+            none !important;
+
+        transition:
+            none !important;
+
+        scroll-behavior:
+            auto !important;
+
+    }
+
+}
+
+</style>
 
 </head>
 
@@ -23,607 +2728,1324 @@
 <body data-page="parents">
 
 
-    <!-- ================= HEADER ================= -->
+<!-- =====================================================
+     BACKGROUND
+===================================================== -->
 
-    <div class="top">
-
-        <header class="head wrap">
-
-            <!-- LOGO -->
-
-            <a
-                class="brand"
-                href="index.html"
-            >
-
-                <div class="sun">
-                    ☀️
-                </div>
-
-                <div>
-
-                    <h1>
-                        Ra Miftahul
-                        <span>Hikmah</span>
-                    </h1>
-
-                    <p>
-                        Tangerang 💗
-                    </p>
-
-                </div>
-
-            </a>
+<div class="pg-bg"></div>
 
 
-            <!-- CALL US -->
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
-            <div class="call">
+<header class="au-header">
 
-                ⌕
+    <div class="au-container au-header-inner">
 
-                <div>
 
-                    <small>
-                        Call Us
-                    </small>
+        <a
+            href="index.html"
+            class="au-brand"
+        >
 
-                    <b>
-                        +62 813-9875-4451
-                    </b>
+            <div class="au-logo">
 
-                </div>
+                🌈
 
             </div>
 
 
-            <!-- BOOK A VISIT -->
+            <div>
 
-            <a
-                class="btn"
-                href="contact.html"
-            >
-                Book a Visit
-            </a>
+                <h1>
 
-        </header>
+                    RA Miftahul
 
+                    <span>
 
-        <!-- ================= RAINBOW NAVBAR ================= -->
+                        Hikmah
 
-        <nav class="rainbow-nav">
+                    </span>
+
+                </h1>
 
 
-            <!-- HOME -->
+                <p>
 
-            <a
-                href="index.html"
-                class="rainbow-item pink"
-            >
+                    Belajar • Bermain • Berprestasi
 
-                <span class="rainbow-icon">
-                    🏠
-                </span>
+                </p>
 
-                <span class="rainbow-text">
-                    HOME
-                </span>
+            </div>
 
-                <span class="sparkle">
-                    ✦
-                </span>
-
-            </a>
+        </a>
 
 
-            <!-- ABOUT -->
+        <a
+            href="contact.html"
+            class="au-visit"
+        >
 
-            <a
-                href="about.html"
-                class="rainbow-item blue"
-            >
+            📅 Book Visit
 
-                <span class="rainbow-icon">
-                    👥
-                </span>
-
-                <span class="rainbow-text">
-                    ABOUT
-                </span>
-
-                <span class="sparkle">
-                    ✦
-                </span>
-
-            </a>
+        </a>
 
 
-            <!-- PROGRAMS -->
+    </div>
 
-            <a
-                href="programs.html"
-                class="rainbow-item green"
-            >
-
-                <span class="rainbow-icon">
-                    📚
-                </span>
-
-                <span class="rainbow-text">
-                    PROGRAMS
-                </span>
-
-                <span class="sparkle">
-                    ✦
-                </span>
-
-            </a>
+</header>
 
 
-            <!-- CLASSES -->
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
 
-            <a
-                href="classes.html"
-                class="rainbow-item yellow"
-            >
+<nav class="au-nav">
 
-                <span class="rainbow-icon">
-                    🎓
-                </span>
-
-                <span class="rainbow-text">
-                    CLASSES
-                </span>
-
-                <span class="sparkle">
-                    ✦
-                </span>
-
-            </a>
+    <div class="au-nav-inner">
 
 
-            <!-- BLOG -->
+        <a
+            href="index.html"
+            class="au-nav-link"
+        >
 
-            <a
-                href="blog.html"
-                class="rainbow-item orange"
-            >
+            <span class="au-nav-icon">
 
-                <span class="rainbow-icon">
-                    🖍️
-                </span>
+                🏠
 
-                <span class="rainbow-text">
-                    BLOG
-                </span>
+            </span>
 
-                <span class="sparkle">
-                    ✦
-                </span>
+            HOME
 
-            </a>
+        </a>
 
 
-            <!-- GALLERY -->
+        <a
+            href="about.html"
+            class="au-nav-link"
+        >
 
-            <a
-                href="gallery.html"
-                class="rainbow-item purple"
+            <span class="au-nav-icon">
+
+                👥
+
+            </span>
+
+            ABOUT
+
+        </a>
+
+
+        <a
+            href="programs.html"
+            class="au-nav-link"
+        >
+
+            <span class="au-nav-icon">
+
+                📚
+
+            </span>
+
+            PROGRAMS
+
+        </a>
+
+
+        <a
+            href="gallery.html"
+            class="au-nav-link"
+        >
+
+            <span class="au-nav-icon">
+
+                🖼️
+
+            </span>
+
+            GALLERY
+
+        </a>
+
+
+        <div class="au-more-wrap">
+
+            <button
+                type="button"
+                class="au-more-button"
+                id="auMoreButton"
             >
 
-                <span class="rainbow-icon">
-                    🖼️
+                <span>
+
+                    ✨
+
                 </span>
 
-                <span class="rainbow-text">
-                    GALLERY
-                </span>
+                MORE
 
-                <span class="sparkle">
-                    ✦
-                </span>
+            </button>
 
-            </a>
+        </div>
 
 
-            <!-- PARENTS -->
+    </div>
 
-            <a
-                href="parents.html"
-                class="rainbow-item pink2 active"
-            >
-
-                <span class="rainbow-icon">
-                    💛
-                </span>
-
-                <span class="rainbow-text">
-                    PARENTS
-                </span>
-
-                <span class="sparkle">
-                    ✦
-                </span>
-
-            </a>
+</nav>
 
 
-            <!-- CONTACT -->
+<!-- =====================================================
+     DROPDOWN MENU
+===================================================== -->
 
-            <a
-                href="contact.html"
-                class="rainbow-item blue2"
-            >
-
-                <span class="rainbow-icon">
-                    ✉️
-                </span>
-
-                <span class="rainbow-text">
-                    CONTACT
-                </span>
-
-                <span class="sparkle">
-                    ✦
-                </span>
-
-            </a>
+<div
+    class="au-more-menu"
+    id="auMoreMenu"
+>
 
 
-        </nav>
+    <div class="au-more-title">
+
+        ✨ Menu Lainnya
 
     </div>
 
 
-    <!-- ================= PAGE HERO ================= -->
+    <a href="classes.html">
 
-    <section class="pagehero">
+        🎓 Classes
 
-        <div class="wrap">
+    </a>
+
+
+    <a href="blog.html">
+
+        🖍️ Blog
+
+    </a>
+
+
+    <a href="parents.html">
+
+        💛 Parents
+
+    </a>
+
+
+    <a href="contact.html">
+
+        ✉️ Contact
+
+    </a>
+
+
+    <a href="contact.html">
+
+        📅 Book Visit
+
+    </a>
+
+
+</div>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="parents-hero">
+
+
+    <div class="hero-stars">
+
+        <span class="hero-star">
+
+            ✨
+
+        </span>
+
+
+        <span class="hero-star">
+
+            🌟
+
+        </span>
+
+
+        <span class="hero-star">
+
+            💜
+
+        </span>
+
+
+        <span class="hero-star">
+
+            ✨
+
+        </span>
+
+    </div>
+
+
+    <div
+        class="au-container
+               au-reveal"
+    >
+
+
+        <div class="parents-badge">
+
+            💛 RUANG UNTUK ORANG TUA
+
+        </div>
+
+
+        <h2>
+
+            Bersama Kita
+
+            <span>
+
+                Tumbuh!
+
+            </span>
+
+        </h2>
+
+
+        <p>
+
+            Perjalanan tumbuh kembang anak menjadi
+            lebih bermakna ketika sekolah dan orang tua
+            berjalan bersama, saling mendukung,
+            berkomunikasi dan berbagi kebahagiaan.
+
+        </p>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PARENT INFORMATION
+===================================================== -->
+
+<section class="pg-section">
+
+    <div class="au-container">
+
+
+        <div class="pg-heading au-reveal">
+
+            <div class="pg-heading-badge">
+
+                👨‍👩‍👧 BERSAMA ORANG TUA
+
+            </div>
+
 
             <h2>
 
-                For
-                <span>Parents</span>
-                💛
+                Kita Adalah
+
+                <span>
+
+                    Satu Tim!
+
+                </span>
 
             </h2>
 
+
             <p>
 
-                Informasi penting untuk
-                Ayah dan Bunda.
+                Kami percaya bahwa pendidikan terbaik
+                tercipta dari kerja sama yang baik antara
+                keluarga dan sekolah.
 
             </p>
 
         </div>
 
-    </section>
+
+        <div class="parent-grid">
 
 
-    <!-- ================= PARENT FEATURES ================= -->
+            <!-- CARD 1 -->
 
-    <section class="section wrap">
+            <article class="parent-card au-reveal">
 
-        <div class="cards">
+                <div class="parent-icon">
 
-
-            <!-- PARENTING TIPS -->
-
-            <div class="card reveal">
-
-                <h3>
-                    💡 Parenting Tips
-                </h3>
-
-                <div class="round">
-                    👨‍👩‍👧
-                </div>
-
-                <p>
-
-                    Tips sederhana untuk membantu
-                    orang tua mendampingi tumbuh
-                    kembang anak.
-
-                </p>
-
-            </div>
-
-
-            <!-- SCHOOL EVENTS -->
-
-            <div class="card reveal">
-
-                <h3>
-                    📅 School Events
-                </h3>
-
-                <div class="round">
-                    🎉
-                </div>
-
-                <p>
-
-                    Informasi kegiatan dan acara
-                    sekolah yang dapat diikuti
-                    bersama anak.
-
-                </p>
-
-            </div>
-
-
-            <!-- COMMUNICATION -->
-
-            <div class="card reveal">
-
-                <h3>
-                    💬 Communication
-                </h3>
-
-                <div class="round">
                     💬
+
                 </div>
 
-                <p>
-
-                    Tempat berbagi informasi antara
-                    sekolah dan orang tua.
-
-                </p>
-
-            </div>
-
-
-            <!-- FAMILY TIME -->
-
-            <div class="card reveal">
 
                 <h3>
-                    ❤️ Family Time
+
+                    Komunikasi
+
                 </h3>
 
-                <div class="round">
-                    👨‍👩‍👧‍👦
-                </div>
 
                 <p>
 
-                    Ide kegiatan sederhana yang dapat
-                    dilakukan bersama keluarga di rumah.
+                    Kami selalu membuka ruang komunikasi
+                    agar orang tua dapat mengetahui
+                    perkembangan dan kegiatan anak
+                    di sekolah.
 
                 </p>
 
-            </div>
+
+                <div class="parent-tag">
+
+                    💌 Terhubung Bersama
+
+                </div>
+
+            </article>
+
+
+            <!-- CARD 2 -->
+
+            <article class="parent-card au-reveal">
+
+                <div class="parent-icon">
+
+                    🤝
+
+                </div>
+
+
+                <h3>
+
+                    Kolaborasi
+
+                </h3>
+
+
+                <p>
+
+                    Sekolah dan orang tua bekerja sama
+                    untuk menciptakan pengalaman belajar
+                    yang menyenangkan dan bermakna
+                    bagi anak.
+
+                </p>
+
+
+                <div class="parent-tag">
+
+                    🌈 Saling Mendukung
+
+                </div>
+
+            </article>
+
+
+            <!-- CARD 3 -->
+
+            <article class="parent-card au-reveal">
+
+                <div class="parent-icon">
+
+                    💛
+
+                </div>
+
+
+                <h3>
+
+                    Tumbuh Bersama
+
+                </h3>
+
+
+                <p>
+
+                    Setiap anak memiliki perjalanan
+                    yang unik. Bersama-sama kita
+                    mendampingi mereka tumbuh dengan
+                    cinta dan kebahagiaan.
+
+                </p>
+
+
+                <div class="parent-tag">
+
+                    🌟 Happy Growing
+
+                </div>
+
+            </article>
 
 
         </div>
 
-    </section>
+
+    </div>
+
+</section>
 
 
-    <!-- ================= INFORMASI ORANG TUA ================= -->
+<!-- =====================================================
+     SCHOOL INFORMATION
+===================================================== -->
 
-    <section class="section wrap">
+<section class="pg-section">
+
+    <div class="au-container">
 
 
-        <div class="section-title">
+        <div class="pg-heading au-reveal">
+
+            <div class="pg-heading-badge">
+
+                📢 INFORMASI ORANG TUA
+
+            </div>
+
 
             <h2>
 
-                💛 Informasi Untuk
+                Tetap
 
                 <span>
-                    Orang Tua
+
+                    Terhubung
+
                 </span>
-
-            </h2>
-
-            <p>
-
-                Pengumuman, foto dan informasi
-                penting dari sekolah untuk
-                Ayah dan Bunda.
-
-            </p>
-
-
-            <!-- COUNTER -->
-
-            <div class="post-counter">
-
-                📝 Total informasi:
-
-                <span id="postCount">
-                    0
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <!-- ================= POSTS ================= -->
-
-        <div
-            id="postsContainer"
-            class="posts-grid"
-        ></div>
-
-
-    </section>
-
-
-    <!-- ================= CTA ================= -->
-
-    <section class="section wrap">
-
-        <div class="box reveal">
-
-
-            <div class="big">
-                💛
-            </div>
-
-
-            <h2 class="title">
-
-                Selalu Terhubung
-                <span>
-                    Bersama Sekolah
-                </span>
-
-                🌈
 
             </h2>
 
 
             <p>
 
-                Jika Ayah dan Bunda memiliki
-                pertanyaan, silakan hubungi
-                kami melalui halaman Contact.
+                Beberapa hal penting yang dapat membantu
+                orang tua mengikuti kegiatan dan
+                perkembangan anak di sekolah.
 
             </p>
 
+        </div>
 
-            <br>
+
+        <div class="info-box au-reveal">
 
 
-            <a
-                href="contact.html"
-                class="btn"
-            >
+            <div class="info-box-header">
 
-                Hubungi Kami 💬
 
-            </a>
+                <div class="info-box-icon">
+
+                    📬
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+
+                        Info Sekolah
+
+                    </h3>
+
+
+                    <p>
+
+                        Semua informasi penting untuk
+                        orang tua dan wali murid.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="info-list">
+
+
+                <div class="info-item">
+
+                    <div class="info-item-icon">
+
+                        📅
+
+                    </div>
+
+
+                    <div class="info-item-content">
+
+                        <b>
+
+                            Jadwal Kegiatan
+
+                        </b>
+
+
+                        <span>
+
+                            Informasi kegiatan dan agenda
+                            sekolah untuk anak.
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <div class="info-item-icon">
+
+                        📸
+
+                    </div>
+
+
+                    <div class="info-item-content">
+
+                        <b>
+
+                            Dokumentasi Anak
+
+                        </b>
+
+
+                        <span>
+
+                            Nikmati berbagai momen dan
+                            kegiatan anak di sekolah.
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <div class="info-item-icon">
+
+                        💌
+
+                    </div>
+
+
+                    <div class="info-item-content">
+
+                        <b>
+
+                            Pengumuman Sekolah
+
+                        </b>
+
+
+                        <span>
+
+                            Dapatkan informasi terbaru
+                            mengenai kegiatan sekolah.
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <div class="info-item-icon">
+
+                        💬
+
+                    </div>
+
+
+                    <div class="info-item-content">
+
+                        <b>
+
+                            Komunikasi Bersama
+
+                        </b>
+
+
+                        <span>
+
+                            Sampaikan pertanyaan atau
+                            informasi kepada pihak sekolah.
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
 
 
         </div>
 
-    </section>
+
+    </div>
+
+</section>
 
 
-    <!-- ================= FOOTER ================= -->
+<!-- =====================================================
+     PARENTING TIPS
+===================================================== -->
 
-    <footer class="footer">
+<section class="pg-section">
+
+    <div class="au-container">
 
 
-        <div class="footgrid wrap">
+        <div class="pg-heading au-reveal">
+
+            <div class="pg-heading-badge">
+
+                💡 TIPS UNTUK ORANG TUA
+
+            </div>
 
 
-            <!-- BRAND -->
+            <h2>
+
+                Hal Kecil yang
+
+                <span>
+
+                    Bermakna
+
+                </span>
+
+            </h2>
+
+
+            <p>
+
+                Kebiasaan sederhana di rumah dapat
+                membantu anak tumbuh menjadi pribadi
+                yang percaya diri dan bahagia.
+
+            </p>
+
+        </div>
+
+
+        <div class="tips-grid">
+
+
+            <!-- TIP 1 -->
+
+            <article class="tip-card au-reveal">
+
+                <div class="tip-number">
+
+                    01
+
+                </div>
+
+
+                <div class="tip-icon">
+
+                    💬
+
+                </div>
+
+
+                <h3>
+
+                    Dengarkan Anak
+
+                </h3>
+
+
+                <p>
+
+                    Berikan kesempatan kepada anak
+                    untuk bercerita tentang apa yang
+                    mereka rasakan dan alami setiap hari.
+
+                </p>
+
+            </article>
+
+
+            <!-- TIP 2 -->
+
+            <article class="tip-card au-reveal">
+
+                <div class="tip-number">
+
+                    02
+
+                </div>
+
+
+                <div class="tip-icon">
+
+                    🌈
+
+                </div>
+
+
+                <h3>
+
+                    Beri Apresiasi
+
+                </h3>
+
+
+                <p>
+
+                    Hargai setiap usaha kecil anak.
+                    Apresiasi dapat membantu membangun
+                    rasa percaya diri mereka.
+
+                </p>
+
+            </article>
+
+
+            <!-- TIP 3 -->
+
+            <article class="tip-card au-reveal">
+
+                <div class="tip-number">
+
+                    03
+
+                </div>
+
+
+                <div class="tip-icon">
+
+                    🎲
+
+                </div>
+
+
+                <h3>
+
+                    Bermain Bersama
+
+                </h3>
+
+
+                <p>
+
+                    Bermain bersama menjadi kesempatan
+                    berharga untuk membangun kedekatan
+                    dan kebahagiaan bersama anak.
+
+                </p>
+
+            </article>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PARTNERSHIP
+===================================================== -->
+
+<section class="pg-section">
+
+    <div class="au-container">
+
+
+        <div class="partner-box au-reveal">
+
+
+            <div class="partner-emoji">
+
+                🤝
+
+            </div>
+
+
+            <h2>
+
+                Sekolah +
+
+                <span>
+
+                    Keluarga
+
+                </span>
+
+            </h2>
+
+
+            <p>
+
+                Ketika sekolah dan keluarga berjalan
+                bersama, anak mendapatkan lingkungan
+                terbaik untuk belajar, berkembang,
+                mencoba hal baru dan menemukan
+                potensi dirinya.
+
+            </p>
+
+
+            <div class="partner-points">
+
+
+                <div class="partner-point">
+
+                    <span>
+
+                        💬
+
+                    </span>
+
+                    Komunikasi
+
+                </div>
+
+
+                <div class="partner-point">
+
+                    <span>
+
+                        💛
+
+                    </span>
+
+                    Kepedulian
+
+                </div>
+
+
+                <div class="partner-point">
+
+                    <span>
+
+                        🤝
+
+                    </span>
+
+                    Kerja Sama
+
+                </div>
+
+
+                <div class="partner-point">
+
+                    <span>
+
+                        🌟
+
+                    </span>
+
+                    Tumbuh Bersama
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FAQ
+===================================================== -->
+
+<section class="pg-section">
+
+    <div class="au-container">
+
+
+        <div class="pg-heading au-reveal">
+
+            <div class="pg-heading-badge">
+
+                ❓ PERTANYAAN ORANG TUA
+
+            </div>
+
+
+            <h2>
+
+                Yang Sering
+
+                <span>
+
+                    Ditanyakan
+
+                </span>
+
+            </h2>
+
+
+            <p>
+
+                Beberapa pertanyaan umum dari orang tua
+                dan wali murid.
+
+            </p>
+
+        </div>
+
+
+        <div class="faq-box">
+
+
+            <!-- FAQ 1 -->
+
+            <div class="faq-item au-reveal">
+
+                <button
+                    class="faq-question"
+                    type="button"
+                >
+
+                    Bagaimana saya mengetahui
+                    perkembangan anak?
+
+                    <span>
+
+                        +
+
+                    </span>
+
+                </button>
+
+
+                <div class="faq-answer">
+
+                    <p>
+
+                        Orang tua dapat mengikuti
+                        informasi perkembangan dan
+                        kegiatan anak melalui komunikasi
+                        bersama guru dan informasi
+                        yang diberikan oleh sekolah.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FAQ 2 -->
+
+            <div class="faq-item au-reveal">
+
+                <button
+                    class="faq-question"
+                    type="button"
+                >
+
+                    Bagaimana jika anak membutuhkan
+                    perhatian khusus di sekolah?
+
+                    <span>
+
+                        +
+
+                    </span>
+
+                </button>
+
+
+                <div class="faq-answer">
+
+                    <p>
+
+                        Orang tua dapat berkomunikasi
+                        langsung dengan guru agar
+                        sekolah dapat memahami kebutuhan
+                        anak dan memberikan pendampingan
+                        yang sesuai.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FAQ 3 -->
+
+            <div class="faq-item au-reveal">
+
+                <button
+                    class="faq-question"
+                    type="button"
+                >
+
+                    Bagaimana cara menghubungi sekolah?
+
+                    <span>
+
+                        +
+
+                    </span>
+
+                </button>
+
+
+                <div class="faq-answer">
+
+                    <p>
+
+                        Orang tua dapat menghubungi
+                        pihak sekolah melalui kontak
+                        resmi yang tersedia pada
+                        halaman Contact.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FAQ 4 -->
+
+            <div class="faq-item au-reveal">
+
+                <button
+                    class="faq-question"
+                    type="button"
+                >
+
+                    Apakah orang tua dapat mengikuti
+                    kegiatan sekolah?
+
+                    <span>
+
+                        +
+
+                    </span>
+
+                </button>
+
+
+                <div class="faq-answer">
+
+                    <p>
+
+                        Beberapa kegiatan sekolah dapat
+                        melibatkan orang tua sebagai
+                        bagian dari pengalaman belajar
+                        dan kebersamaan anak.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section class="pg-section">
+
+    <div class="au-container">
+
+
+        <div class="pg-cta au-reveal">
+
+
+            <div class="pg-cta-content">
+
+
+                <div style="font-size:58px;">
+
+                    💌
+
+                </div>
+
+
+                <h2>
+
+                    Ada yang Ingin
+
+                    <span>
+
+                        Ditanyakan?
+
+                    </span>
+
+                </h2>
+
+
+                <p>
+
+                    Jangan ragu untuk menghubungi kami.
+                    Kami dengan senang hati membantu
+                    orang tua dan wali murid mendapatkan
+                    informasi yang dibutuhkan.
+
+                </p>
+
+
+                <a
+                    href="contact.html"
+                    class="pg-button"
+                >
+
+                    💬 Hubungi Kami
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="au-footer">
+
+    <div class="au-container">
+
+
+        <div class="au-footer-grid">
+
 
             <div>
 
                 <h3>
 
-                    ☀️ KINDER
+                    RA Miftahul
 
-                    <span style="color:#ef4f82">
-                        GARTEN
+                    <span>
+
+                        Hikmah
+
                     </span>
 
                 </h3>
 
+
                 <p>
-                    Where Little Minds Bloom 💗
+
+                    Tempat belajar, bermain dan
+                    bertumbuh dengan bahagia.
+
                 </p>
 
             </div>
 
 
-            <!-- QUICK LINKS -->
-
             <div>
 
                 <h3>
-                    Quick Links
+
+                    Menu
+
                 </h3>
 
 
-                <a href="index.html">
+                <p>
+
                     Home
-                </a>
+
+                </p>
 
 
-                <a href="about.html">
-                    About Us
-                </a>
+                <p>
 
-
-                <a href="programs.html">
                     Programs
-                </a>
+
+                </p>
 
 
-                <a href="classes.html">
-                    Classes
-                </a>
+                <p>
 
-
-                <a href="blog.html">
-                    Blog
-                </a>
-
-
-                <a href="gallery.html">
                     Gallery
-                </a>
-
-
-                <a href="contact.html">
-                    Contact Us
-                </a>
-
-            </div>
-
-
-            <!-- CONTACT -->
-
-            <div>
-
-                <h3>
-                    Contact Us
-                </h3>
-
-
-                <p>
-                    ☎ +62 813-9875-4451
-                </p>
-
-
-                <p>
-
-                    ✉
-
-                    <a href="mailto:info@kindergarten.com">
-                        info@kindergarten.com
-                    </a>
 
                 </p>
 
 
                 <p>
-                    📍 Tangerang, Indonesia
+
+                    Parents
+
                 </p>
 
             </div>
 
 
-            <!-- SOCIAL -->
-
             <div>
 
                 <h3>
-                    Follow Us
+
+                    Hubungi Kami
+
                 </h3>
 
 
-                <p style="font-size:28px">
-                    ●　◎　▶
+                <p>
+
+                    📞 WhatsApp
+
+                </p>
+
+
+                <p>
+
+                    ✉️ Email Sekolah
+
+                </p>
+
+
+                <p>
+
+                    📍 RA Miftahul Hikmah
+
                 </p>
 
             </div>
@@ -632,40 +4054,321 @@
         </div>
 
 
-        <!-- COPYRIGHT -->
+        <div class="au-copyright">
 
-        <div class="copy wrap">
-
-            © 2026 Ra Miftahul Hikmah.
-            All rights reserved.
+            © 2026 RA Miftahul Hikmah
+            • All Rights Reserved
 
         </div>
 
 
-    </footer>
+    </div>
+
+</footer>
 
 
-    <!-- ================= JAVASCRIPT ================= -->
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
 
-    <!-- SUPABASE -->
-
-    <script
-        src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
-    ></script>
+<script>
 
 
-    <!-- SCRIPT WEBSITE -->
+/* =====================================================
+   DOM READY
+===================================================== */
 
-    <script
-        src="js/script.js"
-    ></script>
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
 
 
-    <!-- SISTEM POSTING SUPABASE -->
+        /* =================================================
+           MENU LAINNYA
+        ================================================= */
 
-    <script
-        src="js/posts.js"
-    ></script>
+        const moreButton =
+            document.getElementById(
+                "auMoreButton"
+            );
+
+
+        const moreMenu =
+            document.getElementById(
+                "auMoreMenu"
+            );
+
+
+        if (
+            moreButton &&
+            moreMenu
+        ) {
+
+
+            moreButton.addEventListener(
+                "click",
+                function (event) {
+
+
+                    event.stopPropagation();
+
+
+                    moreMenu.classList.toggle(
+                        "open"
+                    );
+
+
+                }
+            );
+
+
+            document.addEventListener(
+                "click",
+                function (event) {
+
+
+                    if (
+
+                        !moreMenu.contains(
+                            event.target
+                        )
+
+                        &&
+
+                        !moreButton.contains(
+                            event.target
+                        )
+
+                    ) {
+
+
+                        moreMenu.classList.remove(
+                            "open"
+                        );
+
+
+                    }
+
+
+                }
+            );
+
+
+        }
+
+
+        /* =================================================
+           FAQ
+        ================================================= */
+
+        const faqQuestions =
+            document.querySelectorAll(
+                ".faq-question"
+            );
+
+
+        faqQuestions.forEach(
+            function (question) {
+
+
+                question.addEventListener(
+                    "click",
+                    function () {
+
+
+                        const faqItem =
+                            this.parentElement;
+
+
+                        const answer =
+                            faqItem.querySelector(
+                                ".faq-answer"
+                            );
+
+
+                        const isOpen =
+                            faqItem.classList.contains(
+                                "open"
+                            );
+
+
+                        document
+                            .querySelectorAll(
+                                ".faq-item"
+                            )
+                            .forEach(
+                                function (item) {
+
+
+                                    item.classList.remove(
+                                        "open"
+                                    );
+
+
+                                    const itemAnswer =
+                                        item.querySelector(
+                                            ".faq-answer"
+                                        );
+
+
+                                    itemAnswer.style.maxHeight =
+                                        null;
+
+
+                                }
+                            );
+
+
+                        if (!isOpen) {
+
+
+                            faqItem.classList.add(
+                                "open"
+                            );
+
+
+                            answer.style.maxHeight =
+                                answer.scrollHeight
+                                + "px";
+
+
+                        }
+
+
+                    }
+                );
+
+
+            }
+        );
+
+
+        /* =================================================
+           REVEAL ANIMATION
+        ================================================= */
+
+        const revealItems =
+            document.querySelectorAll(
+                ".au-reveal"
+            );
+
+
+        if (
+            "IntersectionObserver"
+            in
+            window
+        ) {
+
+
+            const observer =
+                new IntersectionObserver(
+
+                    function (
+                        entries
+                    ) {
+
+
+                        entries.forEach(
+
+                            function (
+                                entry
+                            ) {
+
+
+                                if (
+                                    entry.isIntersecting
+                                ) {
+
+
+                                    entry.target.classList.add(
+                                        "au-show"
+                                    );
+
+
+                                    observer.unobserve(
+                                        entry.target
+                                    );
+
+
+                                }
+
+
+                            }
+
+                        );
+
+
+                    },
+
+
+                    {
+
+                        threshold:
+                            0.12,
+
+                        rootMargin:
+                            "0px 0px -35px 0px"
+
+                    }
+
+                );
+
+
+            revealItems.forEach(
+
+                function (
+                    item,
+                    index
+                ) {
+
+
+                    item.style.transitionDelay =
+                        (
+                            index % 4
+                        ) * 70
+                        + "ms";
+
+
+                    observer.observe(
+                        item
+                    );
+
+
+                }
+
+            );
+
+
+        }
+
+        else {
+
+
+            revealItems.forEach(
+
+                function (
+                    item
+                ) {
+
+
+                    item.classList.add(
+                        "au-show"
+                    );
+
+
+                }
+
+            );
+
+
+        }
+
+
+    }
+);
+
+
+</script>
 
 
 </body>
