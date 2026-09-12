@@ -12,17 +12,15 @@
 
     <meta
         name="description"
-        content="Pendaftaran Peserta Didik Baru RA Miftahul Hikmah"
+        content="Pendaftaran Online RA Miftahul Hikmah"
     >
 
     <title>
-        Pendaftaran | RA Miftahul Hikmah
+        Pendaftaran Online | RA Miftahul Hikmah
     </title>
 
 
-    <!-- =====================================================
-         GOOGLE FONT
-    ===================================================== -->
+    <!-- GOOGLE FONT -->
 
     <link
         rel="preconnect"
@@ -80,25 +78,26 @@ body {
         #342d4c;
 
     background:
-
-        linear-gradient(
-            180deg,
-            #fff9fc 0%,
-            #f9f5ff 35%,
-            #f4fbff 70%,
-            #fffaf2 100%
-        );
+        #f7f7fb;
 
 }
 
 
 button,
 input,
-textarea,
-select {
+select,
+textarea {
 
     font-family:
         inherit;
+
+}
+
+
+a {
+
+    -webkit-tap-highlight-color:
+        transparent;
 
 }
 
@@ -107,7 +106,7 @@ select {
    CONTAINER
 ===================================================== */
 
-.au-container {
+.container {
 
     width:
         min(
@@ -125,7 +124,7 @@ select {
    BACKGROUND
 ===================================================== */
 
-.pg-bg {
+.page-bg {
 
     position:
         fixed;
@@ -134,18 +133,18 @@ select {
         0;
 
     z-index:
-        -1;
+        -2;
+
+    pointer-events:
+        none;
 
     overflow:
         hidden;
 
-    pointer-events:
-        none;
-
 }
 
 
-.pg-bg::before {
+.page-bg::before {
 
     content:
         "";
@@ -160,27 +159,24 @@ select {
         450px;
 
     top:
-        5%;
+        -150px;
 
     left:
-        -250px;
+        -150px;
 
     border-radius:
         50%;
 
     background:
-        rgba(255,139,184,.20);
+        rgba(255,174,210,.25);
 
     filter:
-        blur(90px);
-
-    animation:
-        blobOne 15s ease-in-out infinite;
+        blur(80px);
 
 }
 
 
-.pg-bg::after {
+.page-bg::after {
 
     content:
         "";
@@ -189,166 +185,25 @@ select {
         absolute;
 
     width:
-        450px;
+        500px;
 
     height:
-        450px;
+        500px;
 
     right:
-        -250px;
+        -220px;
 
     bottom:
-        5%;
+        -200px;
 
     border-radius:
         50%;
 
     background:
-        rgba(126,189,255,.20);
+        rgba(150,200,255,.22);
 
     filter:
         blur(90px);
-
-    animation:
-        blobTwo 17s ease-in-out infinite;
-
-}
-
-
-@keyframes blobOne {
-
-    0%,
-    100% {
-
-        transform:
-            translate(0,0)
-            scale(1);
-
-    }
-
-    50% {
-
-        transform:
-            translate(120px,70px)
-            scale(1.15);
-
-    }
-
-}
-
-
-@keyframes blobTwo {
-
-    0%,
-    100% {
-
-        transform:
-            translate(0,0)
-            scale(1);
-
-    }
-
-    50% {
-
-        transform:
-            translate(-120px,-70px)
-            scale(1.15);
-
-    }
-
-}
-
-
-/* =====================================================
-   FLOATING DECORATION
-===================================================== */
-
-.float-shape {
-
-    position:
-        fixed;
-
-    z-index:
-        -1;
-
-    pointer-events:
-        none;
-
-    opacity:
-        .30;
-
-    animation:
-        shapeFloat 7s ease-in-out infinite;
-
-}
-
-
-.float-shape.one {
-
-    top:
-        28%;
-
-    left:
-        4%;
-
-    font-size:
-        34px;
-
-}
-
-
-.float-shape.two {
-
-    top:
-        65%;
-
-    right:
-        5%;
-
-    font-size:
-        40px;
-
-    animation-delay:
-        2s;
-
-}
-
-
-.float-shape.three {
-
-    bottom:
-        8%;
-
-    left:
-        7%;
-
-    font-size:
-        38px;
-
-    animation-delay:
-        1s;
-
-}
-
-
-@keyframes shapeFloat {
-
-    0%,
-    100% {
-
-        transform:
-            translateY(0)
-            rotate(0);
-
-    }
-
-    50% {
-
-        transform:
-            translateY(-18px)
-            rotate(10deg);
-
-    }
 
 }
 
@@ -357,27 +212,30 @@ select {
    HEADER
 ===================================================== */
 
-.au-header {
+.header {
 
     position:
-        relative;
+        sticky;
+
+    top:
+        0;
 
     z-index:
         100;
 
     background:
-        rgba(255,255,255,.82);
+        rgba(255,255,255,.88);
 
     backdrop-filter:
         blur(20px);
 
     border-bottom:
-        1px solid rgba(255,255,255,.9);
+        1px solid rgba(100,80,140,.07);
 
 }
 
 
-.au-header-inner {
+.header-inner {
 
     min-height:
         74px;
@@ -392,12 +250,12 @@ select {
         space-between;
 
     gap:
-        12px;
+        15px;
 
 }
 
 
-.au-brand {
+.brand {
 
     display:
         flex;
@@ -417,16 +275,13 @@ select {
 }
 
 
-.au-logo {
+.brand-logo {
 
     width:
-        46px;
+        48px;
 
     height:
-        46px;
-
-    flex:
-        0 0 auto;
+        48px;
 
     display:
         grid;
@@ -434,52 +289,30 @@ select {
     place-items:
         center;
 
+    flex:
+        0 0 auto;
+
     border-radius:
-        15px;
+        16px;
 
     font-size:
         24px;
 
     background:
-
         linear-gradient(
             135deg,
-            #fff1a8,
-            #ffd5e5,
-            #d6efff
+            #ffe29a,
+            #ffc9dc,
+            #cfefff
         );
 
     box-shadow:
-        0 8px 25px rgba(239,79,130,.18);
-
-    animation:
-        logoFloat 4s ease-in-out infinite;
+        0 10px 25px rgba(239,79,130,.16);
 
 }
 
 
-@keyframes logoFloat {
-
-    0%,
-    100% {
-
-        transform:
-            translateY(0);
-
-    }
-
-    50% {
-
-        transform:
-            translateY(-5px)
-            rotate(5deg);
-
-    }
-
-}
-
-
-.au-brand h1 {
+.brand h1 {
 
     margin:
         0;
@@ -489,7 +322,7 @@ select {
         cursive;
 
     font-size:
-        18px;
+        19px;
 
     line-height:
         1;
@@ -497,7 +330,7 @@ select {
 }
 
 
-.au-brand h1 span {
+.brand h1 span {
 
     color:
         #ef4f82;
@@ -505,21 +338,21 @@ select {
 }
 
 
-.au-brand p {
+.brand p {
 
     margin:
-        4px 0 0;
+        5px 0 0;
 
     color:
-        #817991;
+        #8a8294;
 
     font-size:
-        10px;
+        9px;
 
 }
 
 
-.au-visit {
+.status-link {
 
     display:
         inline-flex;
@@ -530,20 +363,20 @@ select {
     justify-content:
         center;
 
+    gap:
+        7px;
+
     padding:
-        10px 13px;
+        11px 15px;
 
     border-radius:
-        13px;
+        14px;
 
     text-decoration:
         none;
 
     color:
         white;
-
-    white-space:
-        nowrap;
 
     font-size:
         11px;
@@ -552,58 +385,46 @@ select {
         900;
 
     background:
-
         linear-gradient(
             135deg,
-            #ef4f82,
-            #ff7da7
+            #7b6cff,
+            #a47fff
         );
 
     box-shadow:
-        0 9px 20px rgba(239,79,130,.25);
-
-    transition:
-        .3s ease;
-
-}
-
-
-.au-visit:hover {
-
-    transform:
-        translateY(-3px);
+        0 10px 22px rgba(123,108,255,.20);
 
 }
 
 
 /* =====================================================
-   NAVBAR
+   NAV
 ===================================================== */
 
-.au-nav {
+.nav {
 
     position:
         sticky;
 
     top:
-        0;
+        74px;
 
     z-index:
-        99;
+        90;
 
     background:
-        rgba(255,255,255,.92);
+        rgba(255,255,255,.94);
 
     backdrop-filter:
         blur(20px);
 
     border-bottom:
-        1px solid rgba(120,90,180,.08);
+        1px solid #f0edf5;
 
 }
 
 
-.au-nav-inner {
+.nav-inner {
 
     width:
         min(
@@ -617,8 +438,11 @@ select {
     display:
         flex;
 
+    align-items:
+        center;
+
     gap:
-        6px;
+        8px;
 
     padding:
         8px 0;
@@ -632,7 +456,7 @@ select {
 }
 
 
-.au-nav-inner::-webkit-scrollbar {
+.nav-inner::-webkit-scrollbar {
 
     display:
         none;
@@ -640,19 +464,13 @@ select {
 }
 
 
-.au-nav-link {
+.nav a {
 
     flex:
         0 0 auto;
 
-    min-width:
-        62px;
-
     display:
         flex;
-
-    flex-direction:
-        column;
 
     align-items:
         center;
@@ -661,252 +479,64 @@ select {
         center;
 
     gap:
-        3px;
+        6px;
 
     padding:
-        8px 9px;
+        10px 14px;
 
     border-radius:
-        14px;
+        13px;
 
     text-decoration:
         none;
 
     color:
-        #6f687d;
+        #766e80;
 
     font-size:
-        9px;
+        11px;
 
     font-weight:
         900;
 
-    transition:
-        .3s ease;
-
 }
 
 
-.au-nav-link:hover {
-
-    transform:
-        translateY(-2px);
-
-    background:
-        #f5f1ff;
-
-}
-
-
-.au-nav-link.active {
+.nav a.active {
 
     color:
         white;
 
     background:
-
         linear-gradient(
             135deg,
-            #7b6cff,
-            #a47fff
+            #ef4f82,
+            #ff7ca6
         );
 
     box-shadow:
-        0 7px 18px rgba(125,108,255,.25);
-
-}
-
-
-.au-nav-icon {
-
-    font-size:
-        19px;
-
-}
-
-
-.au-more-wrap {
-
-    flex:
-        0 0 auto;
-
-}
-
-
-.au-more-button {
-
-    min-width:
-        68px;
-
-    border:
-        none;
-
-    cursor:
-        pointer;
-
-    display:
-        flex;
-
-    flex-direction:
-        column;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    gap:
-        3px;
-
-    padding:
-        8px 10px;
-
-    border-radius:
-        14px;
-
-    background:
-        #f5f2fb;
-
-    color:
-        #6b617b;
-
-    font-family:
-        inherit;
-
-    font-size:
-        9px;
-
-    font-weight:
-        900;
-
-}
-
-
-.au-more-button span {
-
-    font-size:
-        18px;
+        0 8px 18px rgba(239,79,130,.20);
 
 }
 
 
 /* =====================================================
-   DROPDOWN
+   MAIN
 ===================================================== */
 
-.au-more-menu {
-
-    position:
-        fixed;
-
-    top:
-        138px;
-
-    left:
-        12px;
-
-    right:
-        12px;
-
-    z-index:
-        300;
-
-    display:
-        none;
-
-    overflow:
-        hidden;
-
-    border-radius:
-        22px;
-
-    background:
-        rgba(255,255,255,.98);
-
-    box-shadow:
-        0 20px 55px rgba(57,40,90,.18);
-
-    opacity:
-        0;
-
-    transform:
-        translateY(-10px);
-
-    transition:
-        .25s ease;
-
-}
-
-
-.au-more-menu.open {
-
-    display:
-        block;
-
-    opacity:
-        1;
-
-    transform:
-        translateY(0);
-
-}
-
-
-.au-more-title {
+.main {
 
     padding:
-        16px 18px;
-
-    font-size:
-        14px;
-
-    font-weight:
-        900;
-
-    border-bottom:
-        1px solid #f0edf5;
-
-}
-
-
-.au-more-menu a {
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    gap:
-        13px;
-
-    padding:
-        15px 18px;
-
-    text-decoration:
-        none;
-
-    color:
-        #665e72;
-
-    font-size:
-        14px;
-
-    font-weight:
-        800;
-
-    border-bottom:
-        1px solid #f5f2f7;
+        28px 0 60px;
 
 }
 
 
 /* =====================================================
-   HERO BLOG
+   BLOG HERO
 ===================================================== */
 
-.reg-hero {
+.blog-hero {
 
     position:
         relative;
@@ -914,22 +544,81 @@ select {
     overflow:
         hidden;
 
+    min-height:
+        420px;
+
+    display:
+        flex;
+
+    align-items:
+        flex-end;
+
     padding:
-        80px 0 60px;
+        40px;
+
+    border-radius:
+        32px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(123,108,255,.95),
+            rgba(239,79,130,.90),
+            rgba(255,145,100,.85)
+        );
+
+    box-shadow:
+        0 25px 60px rgba(100,60,120,.20);
 
 }
 
 
-.hero-grid {
+.blog-hero::before {
 
-    display:
-        grid;
+    content:
+        "🌈";
 
-    gap:
+    position:
+        absolute;
+
+    top:
+        -30px;
+
+    right:
+        5%;
+
+    font-size:
+        180px;
+
+    opacity:
+        .16;
+
+    transform:
+        rotate(-15deg);
+
+}
+
+
+.blog-hero::after {
+
+    content:
+        "🎒";
+
+    position:
+        absolute;
+
+    left:
+        5%;
+
+    top:
         30px;
 
-    align-items:
-        center;
+    font-size:
+        70px;
+
+    opacity:
+        .18;
 
 }
 
@@ -942,10 +631,16 @@ select {
     z-index:
         2;
 
+    max-width:
+        700px;
+
+    color:
+        white;
+
 }
 
 
-.reg-badge {
+.hero-category {
 
     display:
         inline-flex;
@@ -954,19 +649,19 @@ select {
         center;
 
     gap:
-        8px;
+        7px;
 
     padding:
-        9px 15px;
+        9px 14px;
 
     border-radius:
         50px;
 
     background:
-        rgba(255,255,255,.85);
+        rgba(255,255,255,.18);
 
-    color:
-        #8466bd;
+    backdrop-filter:
+        blur(10px);
 
     font-size:
         10px;
@@ -974,51 +669,37 @@ select {
     font-weight:
         900;
 
-    box-shadow:
-        0 10px 30px rgba(80,60,120,.08);
-
 }
 
 
-.reg-hero h2 {
+.hero-content h2 {
 
     margin:
-        17px 0 0;
+        17px 0 12px;
 
     font-family:
         "Baloo 2",
         cursive;
 
     font-size:
-        clamp(45px,10vw,76px);
+        clamp(40px,7vw,68px);
 
     line-height:
-        .95;
+        1;
 
 }
 
 
-.reg-hero h2 span {
-
-    display:
-        block;
-
-    color:
-        #ef4f82;
-
-}
-
-
-.reg-hero p {
+.hero-content p {
 
     max-width:
-        650px;
+        600px;
 
     margin:
-        18px 0 0;
+        0;
 
     color:
-        #766d84;
+        rgba(255,255,255,.90);
 
     font-size:
         14px;
@@ -1029,7 +710,7 @@ select {
 }
 
 
-.hero-actions {
+.hero-meta {
 
     display:
         flex;
@@ -1046,510 +727,19 @@ select {
 }
 
 
-.hero-primary {
-
-    display:
-        inline-flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    gap:
-        8px;
+.hero-meta span {
 
     padding:
-        14px 20px;
-
-    border-radius:
-        15px;
-
-    text-decoration:
-        none;
-
-    color:
-        white;
-
-    font-size:
-        12px;
-
-    font-weight:
-        900;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #ef4f82,
-            #ff7da7
-        );
-
-    box-shadow:
-        0 12px 28px rgba(239,79,130,.25);
-
-    transition:
-        .3s ease;
-
-}
-
-
-.hero-secondary {
-
-    display:
-        inline-flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    gap:
-        8px;
-
-    padding:
-        14px 20px;
-
-    border-radius:
-        15px;
-
-    text-decoration:
-        none;
-
-    color:
-        #6e6079;
-
-    font-size:
-        12px;
-
-    font-weight:
-        900;
-
-    background:
-        rgba(255,255,255,.85);
-
-    box-shadow:
-        0 12px 28px rgba(70,50,110,.08);
-
-    transition:
-        .3s ease;
-
-}
-
-
-.hero-primary:hover,
-.hero-secondary:hover {
-
-    transform:
-        translateY(-4px);
-
-}
-
-
-/* HERO BLOG CARD */
-
-.hero-card {
-
-    position:
-        relative;
-
-    overflow:
-        hidden;
-
-    padding:
-        24px;
-
-    border-radius:
-        30px;
-
-    background:
-        rgba(255,255,255,.82);
-
-    border:
-        1px solid rgba(255,255,255,.9);
-
-    box-shadow:
-        0 25px 60px rgba(70,50,110,.12);
-
-}
-
-
-.hero-card::before {
-
-    content:
-        "";
-
-    position:
-        absolute;
-
-    width:
-        170px;
-
-    height:
-        170px;
-
-    top:
-        -80px;
-
-    right:
-        -70px;
-
-    border-radius:
-        50%;
-
-    background:
-        rgba(255,190,220,.25);
-
-}
-
-
-.hero-card-top {
-
-    position:
-        relative;
-
-    z-index:
-        2;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        space-between;
-
-}
-
-
-.hero-card-label {
-
-    padding:
-        7px 12px;
+        8px 12px;
 
     border-radius:
         50px;
 
     background:
-        #fff0f5;
-
-    color:
-        #ef4f82;
-
-    font-size:
-        9px;
-
-    font-weight:
-        900;
-
-}
-
-
-.hero-card-icon {
-
-    font-size:
-        40px;
-
-}
-
-
-.hero-card h3 {
-
-    position:
-        relative;
-
-    z-index:
-        2;
-
-    margin:
-        20px 0 7px;
-
-    font-family:
-        "Baloo 2",
-        cursive;
-
-    font-size:
-        28px;
-
-    line-height:
-        1;
-
-}
-
-
-.hero-card p {
-
-    position:
-        relative;
-
-    z-index:
-        2;
-
-    margin:
-        0;
-
-    font-size:
-        11px;
-
-}
-
-
-.hero-card-steps {
-
-    position:
-        relative;
-
-    z-index:
-        2;
-
-    display:
-        grid;
-
-    gap:
-        10px;
-
-    margin-top:
-        20px;
-
-}
-
-
-.hero-mini-step {
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    gap:
-        10px;
-
-    padding:
-        11px;
-
-    border-radius:
-        15px;
-
-    background:
-        #faf8ff;
-
-}
-
-
-.hero-mini-number {
-
-    width:
-        32px;
-
-    height:
-        32px;
-
-    display:
-        grid;
-
-    place-items:
-        center;
-
-    border-radius:
-        10px;
-
-    color:
-        white;
-
-    font-size:
-        9px;
-
-    font-weight:
-        900;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #7b6cff,
-            #a47fff
-        );
-
-}
-
-
-.hero-mini-step b {
+        rgba(255,255,255,.16);
 
     font-size:
         10px;
-
-}
-
-
-/* =====================================================
-   BLOG SECTION
-===================================================== */
-
-.blog-section {
-
-    padding:
-        30px 0 70px;
-
-}
-
-
-.blog-layout {
-
-    display:
-        grid;
-
-    gap:
-        22px;
-
-    align-items:
-        start;
-
-}
-
-
-/* =====================================================
-   BLOG CONTENT
-===================================================== */
-
-.blog-content {
-
-    display:
-        grid;
-
-    gap:
-        20px;
-
-}
-
-
-.blog-card {
-
-    position:
-        relative;
-
-    overflow:
-        hidden;
-
-    padding:
-        22px;
-
-    border-radius:
-        25px;
-
-    background:
-        rgba(255,255,255,.82);
-
-    border:
-        1px solid rgba(255,255,255,.95);
-
-    box-shadow:
-        0 16px 45px rgba(70,50,110,.09);
-
-}
-
-
-.article-header {
-
-    display:
-        flex;
-
-    align-items:
-        flex-start;
-
-    gap:
-        14px;
-
-}
-
-
-.article-icon {
-
-    width:
-        55px;
-
-    height:
-        55px;
-
-    flex:
-        0 0 auto;
-
-    display:
-        grid;
-
-    place-items:
-        center;
-
-    border-radius:
-        18px;
-
-    font-size:
-        27px;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #fff1f6,
-            #eee9ff
-        );
-
-}
-
-
-.article-meta {
-
-    display:
-        flex;
-
-    flex-wrap:
-        wrap;
-
-    gap:
-        6px;
-
-    margin-bottom:
-        6px;
-
-}
-
-
-.article-tag {
-
-    padding:
-        5px 9px;
-
-    border-radius:
-        30px;
-
-    background:
-        #f2edff;
-
-    color:
-        #8366bd;
-
-    font-size:
-        8px;
-
-    font-weight:
-        900;
-
-}
-
-
-.article-date {
-
-    padding:
-        5px 0;
-
-    color:
-        #a198ad;
-
-    font-size:
-        8px;
 
     font-weight:
         800;
@@ -1557,55 +747,143 @@ select {
 }
 
 
-.article-header h3 {
+/* =====================================================
+   BLOG LAYOUT
+===================================================== */
+
+.blog-layout {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        minmax(0,1.5fr)
+        minmax(280px,.75fr);
+
+    gap:
+        25px;
+
+    margin-top:
+        25px;
+
+}
+
+
+/* =====================================================
+   ARTICLE CARD
+===================================================== */
+
+.article-card {
+
+    overflow:
+        hidden;
+
+    border-radius:
+        26px;
+
+    background:
+        rgba(255,255,255,.90);
+
+    border:
+        1px solid rgba(255,255,255,.90);
+
+    box-shadow:
+        0 18px 45px rgba(60,40,90,.08);
+
+}
+
+
+.article-head {
+
+    padding:
+        25px 25px 0;
+
+}
+
+
+.article-tag {
+
+    display:
+        inline-flex;
+
+    padding:
+        7px 12px;
+
+    border-radius:
+        30px;
+
+    background:
+        #f1edff;
+
+    color:
+        #7b63bd;
+
+    font-size:
+        10px;
+
+    font-weight:
+        900;
+
+}
+
+
+.article-head h2 {
 
     margin:
-        0;
+        13px 0 8px;
 
     font-family:
         "Baloo 2",
         cursive;
 
     font-size:
-        24px;
+        31px;
 
     line-height:
-        1.05;
+        1.1;
 
 }
 
 
-.article-text {
+.article-head p {
 
-    margin-top:
-        18px;
+    margin:
+        0;
 
     color:
-        #756d82;
+        #837a8d;
 
     font-size:
         12px;
 
     line-height:
-        1.85;
+        1.8;
+
+}
+
+
+.article-body {
+
+    padding:
+        25px;
 
 }
 
 
 /* =====================================================
-   FLOW
+   FLOW BLOG
 ===================================================== */
 
-.registration-flow {
+.flow-grid {
 
     display:
         grid;
 
-    gap:
-        12px;
+    grid-template-columns:
+        repeat(4,1fr);
 
-    margin-top:
-        22px;
+    gap:
+        10px;
 
 }
 
@@ -1615,182 +893,17 @@ select {
     position:
         relative;
 
-    display:
-        grid;
-
-    grid-template-columns:
-        46px 1fr;
-
-    gap:
-        13px;
-
-    align-items:
-        center;
+    min-height:
+        130px;
 
     padding:
-        13px;
-
-    border-radius:
-        18px;
-
-    background:
-        #faf9ff;
-
-    border:
-        1px solid #f0edf7;
-
-    transition:
-        .3s ease;
-
-}
-
-
-.flow-item:hover {
-
-    transform:
-        translateX(5px);
-
-}
-
-
-.flow-number {
-
-    width:
-        46px;
-
-    height:
-        46px;
-
-    display:
-        grid;
-
-    place-items:
-        center;
-
-    border-radius:
-        15px;
-
-    color:
-        white;
-
-    font-size:
-        12px;
-
-    font-weight:
-        900;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #7b6cff,
-            #a47fff
-        );
-
-}
-
-
-.flow-item:nth-child(2)
-.flow-number {
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #ef4f82,
-            #ff7da7
-        );
-
-}
-
-
-.flow-item:nth-child(3)
-.flow-number {
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #f7a938,
-            #ffc75f
-        );
-
-}
-
-
-.flow-item:nth-child(4)
-.flow-number {
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #25c86a,
-            #5de49a
-        );
-
-}
-
-
-.flow-item:nth-child(5)
-.flow-number {
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #4b9cff,
-            #7ac2ff
-        );
-
-}
-
-
-.flow-item b {
-
-    display:
-        block;
-
-    font-size:
-        12px;
-
-}
-
-
-.flow-item small {
-
-    display:
-        block;
-
-    margin-top:
-        4px;
-
-    color:
-        #92899b;
-
-    font-size:
-        9px;
-
-}
-
-
-/* =====================================================
-   BUTTON
-===================================================== */
-
-.start-registration {
-
-    width:
-        100%;
-
-    border:
-        none;
-
-    cursor:
-        pointer;
+        15px 10px;
 
     display:
         flex;
+
+    flex-direction:
+        column;
 
     align-items:
         center;
@@ -1798,165 +911,97 @@ select {
     justify-content:
         center;
 
-    gap:
-        8px;
-
-    margin-top:
-        22px;
-
-    padding:
-        16px;
+    text-align:
+        center;
 
     border-radius:
-        16px;
-
-    color:
-        white;
-
-    font-family:
-        inherit;
-
-    font-size:
-        12px;
-
-    font-weight:
-        900;
+        18px;
 
     background:
-
-        linear-gradient(
-            135deg,
-            #ef4f82,
-            #ff7da7
-        );
-
-    box-shadow:
-        0 13px 28px rgba(239,79,130,.25);
-
-    transition:
-        .3s ease;
+        #faf9ff;
 
 }
 
 
-.start-registration:hover {
+.flow-icon {
 
-    transform:
-        translateY(-4px);
+    width:
+        45px;
+
+    height:
+        45px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    margin-bottom:
+        8px;
+
+    border-radius:
+        15px;
+
+    font-size:
+        22px;
+
+    background:
+        white;
+
+    box-shadow:
+        0 7px 17px rgba(60,40,90,.07);
+
+}
+
+
+.flow-item b {
+
+    font-size:
+        10px;
+
+}
+
+
+.flow-item small {
+
+    margin-top:
+        5px;
+
+    color:
+        #938a9b;
+
+    font-size:
+        8px;
 
 }
 
 
 /* =====================================================
-   FORM AREA
+   FORM
 ===================================================== */
 
-.registration-area {
+.form-card {
 
-    display:
-        none;
-
-}
-
-
-.registration-area.show {
-
-    display:
-        block;
-
-    animation:
-        formAppear .6s ease;
-
-}
-
-
-@keyframes formAppear {
-
-    from {
-
-        opacity:
-            0;
-
-        transform:
-            translateY(30px);
-
-    }
-
-    to {
-
-        opacity:
-            1;
-
-        transform:
-            translateY(0);
-
-    }
-
-}
-
-
-.form-wrapper {
-
-    position:
-        relative;
-
-    overflow:
-        hidden;
+    margin-top:
+        25px;
 
     padding:
-        22px;
+        25px;
 
     border-radius:
-        28px;
+        26px;
 
     background:
-        rgba(255,255,255,.88);
-
-    border:
-        1px solid rgba(255,255,255,.95);
+        rgba(255,255,255,.92);
 
     box-shadow:
-        0 20px 50px rgba(70,50,110,.10);
+        0 18px 45px rgba(60,40,90,.08);
 
 }
 
 
-.form-wrapper::before {
-
-    content:
-        "";
-
-    position:
-        absolute;
-
-    width:
-        180px;
-
-    height:
-        180px;
-
-    top:
-        -100px;
-
-    right:
-        -90px;
-
-    border-radius:
-        50%;
-
-    background:
-        rgba(164,127,255,.12);
-
-}
-
-
-.form-title {
-
-    position:
-        relative;
-
-    z-index:
-        2;
+.form-card-header {
 
     display:
         flex;
@@ -1965,7 +1010,7 @@ select {
         center;
 
     gap:
-        12px;
+        13px;
 
     margin-bottom:
         20px;
@@ -1973,13 +1018,13 @@ select {
 }
 
 
-.form-title-icon {
+.form-card-icon {
 
     width:
-        50px;
+        55px;
 
     height:
-        50px;
+        55px;
 
     display:
         grid;
@@ -1987,24 +1032,26 @@ select {
     place-items:
         center;
 
+    flex:
+        0 0 auto;
+
     border-radius:
-        16px;
+        18px;
 
     font-size:
-        24px;
+        26px;
 
     background:
-
         linear-gradient(
             135deg,
-            #fff1f6,
-            #eee9ff
+            #fff0f6,
+            #eeeaff
         );
 
 }
 
 
-.form-title h3 {
+.form-card-header h2 {
 
     margin:
         0;
@@ -2014,21 +1061,18 @@ select {
         cursive;
 
     font-size:
-        23px;
-
-    line-height:
-        1;
+        25px;
 
 }
 
 
-.form-title p {
+.form-card-header p {
 
     margin:
-        5px 0 0;
+        3px 0 0;
 
     color:
-        #8b8296;
+        #918898;
 
     font-size:
         10px;
@@ -2037,22 +1081,16 @@ select {
 
 
 /* =====================================================
-   FORM STEP
+   FORM SECTION
 ===================================================== */
 
-.form-step {
-
-    position:
-        relative;
-
-    z-index:
-        2;
-
-    padding:
-        17px;
+.form-section {
 
     margin-bottom:
-        14px;
+        16px;
+
+    padding:
+        18px;
 
     border-radius:
         20px;
@@ -2061,12 +1099,12 @@ select {
         #fbfaff;
 
     border:
-        1px solid #f0edf7;
+        1px solid #f0edf6;
 
 }
 
 
-.step-heading {
+.form-section-title {
 
     display:
         flex;
@@ -2075,15 +1113,15 @@ select {
         center;
 
     gap:
-        9px;
+        10px;
 
     margin-bottom:
-        16px;
+        17px;
 
 }
 
 
-.step-number {
+.form-number {
 
     width:
         34px;
@@ -2110,7 +1148,6 @@ select {
         900;
 
     background:
-
         linear-gradient(
             135deg,
             #7b6cff,
@@ -2120,7 +1157,7 @@ select {
 }
 
 
-.step-heading h4 {
+.form-section-title h3 {
 
     margin:
         0;
@@ -2132,7 +1169,7 @@ select {
 
 
 /* =====================================================
-   FORM GRID
+   INPUT
 ===================================================== */
 
 .form-grid {
@@ -2140,8 +1177,11 @@ select {
     display:
         grid;
 
+    grid-template-columns:
+        repeat(2,1fr);
+
     gap:
-        13px;
+        14px;
 
 }
 
@@ -2157,21 +1197,29 @@ select {
 }
 
 
-.form-group label {
+.form-group.full {
 
-    color:
-        #5e5669;
-
-    font-size:
-        11px;
-
-    font-weight:
-        900;
+    grid-column:
+        1 / -1;
 
 }
 
 
-.form-group label span {
+.form-group label {
+
+    font-size:
+        10px;
+
+    font-weight:
+        900;
+
+    color:
+        #5f566c;
+
+}
+
+
+.required {
 
     color:
         #ef4f82;
@@ -2189,14 +1237,14 @@ select {
     min-height:
         48px;
 
+    padding:
+        12px 13px;
+
     border:
-        1px solid #e8e3ef;
+        1px solid #e8e3ee;
 
     outline:
         none;
-
-    padding:
-        13px;
 
     border-radius:
         14px;
@@ -2205,13 +1253,10 @@ select {
         white;
 
     color:
-        #40374d;
-
-    font-family:
-        inherit;
+        #433b4d;
 
     font-size:
-        12px;
+        11px;
 
     transition:
         .25s ease;
@@ -2243,20 +1288,11 @@ select {
 }
 
 
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-
-    color:
-        #b2aab9;
-
-}
-
-
 /* =====================================================
    GENDER
 ===================================================== */
 
-.gender-options {
+.gender-grid {
 
     display:
         grid;
@@ -2265,7 +1301,7 @@ select {
         repeat(2,1fr);
 
     gap:
-        9px;
+        10px;
 
 }
 
@@ -2301,10 +1337,10 @@ select {
         center;
 
     gap:
-        6px;
+        7px;
 
-    padding:
-        10px;
+    border:
+        1px solid #e8e3ee;
 
     border-radius:
         14px;
@@ -2312,17 +1348,17 @@ select {
     background:
         white;
 
-    border:
-        1px solid #e8e3ef;
-
     color:
-        #756d7d;
+        #756c7c;
 
     font-size:
-        11px;
+        10px;
 
     font-weight:
-        800;
+        900;
+
+    transition:
+        .25s ease;
 
 }
 
@@ -2331,17 +1367,14 @@ select {
 +
 .gender-box {
 
-    color:
-        #7259bc;
-
     border-color:
         #a47fff;
 
     background:
-        #f5f1ff;
+        #f5f2ff;
 
-    box-shadow:
-        0 6px 18px rgba(125,108,255,.12);
+    color:
+        #7259bd;
 
 }
 
@@ -2359,25 +1392,28 @@ select {
         flex-start;
 
     gap:
-        9px;
+        10px;
+
+    margin-top:
+        15px;
 
     padding:
-        13px;
+        14px;
 
     border-radius:
-        15px;
+        16px;
 
     background:
         #fff9ed;
 
     color:
-        #776e65;
+        #776e64;
 
     font-size:
         10px;
 
     line-height:
-        1.65;
+        1.7;
 
 }
 
@@ -2400,7 +1436,7 @@ select {
 
 
 /* =====================================================
-   SUBMIT
+   BUTTON
 ===================================================== */
 
 .submit-button {
@@ -2409,7 +1445,7 @@ select {
         100%;
 
     min-height:
-        54px;
+        55px;
 
     border:
         none;
@@ -2432,17 +1468,11 @@ select {
     margin-top:
         16px;
 
-    padding:
-        15px;
-
     border-radius:
         16px;
 
     color:
         white;
-
-    font-family:
-        inherit;
 
     font-size:
         13px;
@@ -2451,15 +1481,14 @@ select {
         900;
 
     background:
-
         linear-gradient(
             135deg,
             #ef4f82,
-            #ff7ea7
+            #ff7ca7
         );
 
     box-shadow:
-        0 13px 28px rgba(239,79,130,.25);
+        0 14px 28px rgba(239,79,130,.23);
 
     transition:
         .3s ease;
@@ -2477,39 +1506,61 @@ select {
 
 .submit-button:disabled {
 
+    opacity:
+        .7;
+
     cursor:
         not-allowed;
-
-    opacity:
-        .75;
 
 }
 
 
 /* =====================================================
-   SUCCESS AREA
+   SUCCESS
 ===================================================== */
 
-.success-area {
+.success-box {
 
     display:
         none;
 
+    margin-top:
+        20px;
+
+    padding:
+        25px;
+
+    text-align:
+        center;
+
+    border-radius:
+        22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #effff5,
+            #f3f0ff
+        );
+
+    border:
+        1px solid #d8f3e1;
+
 }
 
 
-.success-area.show {
+.success-box.show {
 
     display:
         block;
 
     animation:
-        successAppear .6s ease;
+        successPop .5s ease;
 
 }
 
 
-@keyframes successAppear {
+@keyframes successPop {
 
     from {
 
@@ -2517,7 +1568,7 @@ select {
             0;
 
         transform:
-            scale(.95);
+            scale(.92);
 
     }
 
@@ -2534,289 +1585,124 @@ select {
 }
 
 
-.success-card {
-
-    position:
-        relative;
-
-    overflow:
-        hidden;
-
-    padding:
-        28px;
-
-    text-align:
-        center;
-
-    border-radius:
-        30px;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #effff5,
-            #f7f3ff,
-            #fff8ed
-        );
-
-    border:
-        1px solid #d9f5e3;
-
-    box-shadow:
-        0 20px 50px rgba(50,120,80,.10);
-
-}
-
-
 .success-icon {
 
-    width:
-        80px;
-
-    height:
-        80px;
-
-    margin:
-        auto;
-
-    display:
-        grid;
-
-    place-items:
-        center;
-
-    border-radius:
-        50%;
-
     font-size:
-        40px;
-
-    background:
-        white;
-
-    box-shadow:
-        0 12px 30px rgba(50,120,80,.12);
+        50px;
 
 }
 
 
-.success-card h2 {
+.success-box h3 {
 
     margin:
-        18px 0 7px;
+        10px 0 5px;
 
     font-family:
         "Baloo 2",
         cursive;
 
     font-size:
-        32px;
-
-    line-height:
-        1;
-
-    color:
-        #287344;
+        25px;
 
 }
 
 
-.success-card p {
-
-    max-width:
-        500px;
+.success-box p {
 
     margin:
-        auto;
+        0;
 
     color:
-        #69796e;
+        #687466;
 
     font-size:
         11px;
 
     line-height:
-        1.8;
-
-}
-
-
-/* =====================================================
-   REGISTRATION CODE
-===================================================== */
-
-.registration-code-box {
-
-    margin:
-        22px auto;
-
-    padding:
-        18px;
-
-    border-radius:
-        20px;
-
-    background:
-        white;
-
-    box-shadow:
-        0 12px 30px rgba(70,50,110,.08);
-
-}
-
-
-.registration-code-label {
-
-    color:
-        #897f94;
-
-    font-size:
-        9px;
-
-    font-weight:
-        900;
+        1.7;
 
 }
 
 
 .registration-code {
 
-    margin-top:
-        8px;
-
-    color:
-        #7b5ac8;
-
-    font-size:
-        23px;
-
-    font-weight:
-        900;
-
-    letter-spacing:
-        1px;
-
-}
-
-
-.registration-name {
-
-    margin-top:
-        5px;
-
-    color:
-        #777080;
-
-    font-size:
-        10px;
-
-}
-
-
-/* =====================================================
-   SUCCESS STEPS
-===================================================== */
-
-.success-steps {
-
-    display:
-        grid;
-
-    gap:
-        10px;
-
     margin:
-        20px 0;
-
-    text-align:
-        left;
-
-}
-
-
-.success-step {
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    gap:
-        10px;
+        18px auto;
 
     padding:
-        12px;
+        18px;
+
+    max-width:
+        350px;
 
     border-radius:
-        15px;
-
-    background:
-        rgba(255,255,255,.75);
-
-}
-
-
-.success-step-icon {
-
-    width:
-        38px;
-
-    height:
-        38px;
-
-    display:
-        grid;
-
-    place-items:
-        center;
-
-    border-radius:
-        12px;
+        18px;
 
     background:
         white;
 
-    font-size:
-        17px;
+    box-shadow:
+        0 10px 25px rgba(60,40,90,.08);
 
 }
 
 
-.success-step div {
-
-    font-size:
-        10px;
-
-}
-
-
-.success-step b {
+.registration-code small {
 
     display:
         block;
 
     margin-bottom:
-        3px;
+        7px;
+
+    color:
+        #948a9c;
+
+    font-size:
+        9px;
 
 }
 
 
-/* =====================================================
-   WHATSAPP BUTTON
-===================================================== */
+.registration-code b {
+
+    display:
+        block;
+
+    color:
+        #7b63bd;
+
+    font-size:
+        23px;
+
+    letter-spacing:
+        2px;
+
+}
+
+
+.success-actions {
+
+    display:
+        grid;
+
+    gap:
+        10px;
+
+    max-width:
+        400px;
+
+    margin:
+        auto;
+
+}
+
 
 .whatsapp-button {
 
-    width:
-        100%;
-
-    border:
-        none;
-
-    cursor:
-        pointer;
+    min-height:
+        52px;
 
     display:
         flex;
@@ -2830,83 +1716,68 @@ select {
     gap:
         8px;
 
-    padding:
-        16px;
-
-    border-radius:
-        16px;
-
-    color:
-        white;
-
-    font-family:
-        inherit;
-
-    font-size:
-        12px;
-
-    font-weight:
-        900;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #25d366,
-            #56e48c
-        );
-
-    box-shadow:
-        0 13px 28px rgba(37,211,102,.20);
-
-    transition:
-        .3s ease;
-
-}
-
-
-.whatsapp-button:hover {
-
-    transform:
-        translateY(-4px);
-
-}
-
-
-.new-registration-button {
-
-    width:
-        100%;
-
-    border:
-        none;
-
-    cursor:
-        pointer;
-
-    margin-top:
-        10px;
-
-    padding:
-        14px;
-
     border-radius:
         15px;
 
+    text-decoration:
+        none;
+
     color:
-        #746984;
-
-    background:
-        rgba(255,255,255,.80);
-
-    font-family:
-        inherit;
+        white;
 
     font-size:
         11px;
 
     font-weight:
         900;
+
+    background:
+        linear-gradient(
+            135deg,
+            #25d366,
+            #55e58c
+        );
+
+}
+
+
+.check-button {
+
+    min-height:
+        52px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        8px;
+
+    border-radius:
+        15px;
+
+    text-decoration:
+        none;
+
+    color:
+        #695a7a;
+
+    font-size:
+        11px;
+
+    font-weight:
+        900;
+
+    background:
+        white;
+
+    border:
+        1px solid #e9e4f0;
 
 }
 
@@ -2915,62 +1786,50 @@ select {
    SIDEBAR
 ===================================================== */
 
-.blog-sidebar {
+.sidebar {
 
     display:
         grid;
 
     gap:
-        16px;
+        18px;
 
 }
 
 
-.sidebar-card {
-
-    position:
-        relative;
-
-    overflow:
-        hidden;
+.side-card {
 
     padding:
-        19px;
+        22px;
 
     border-radius:
-        23px;
+        24px;
 
     background:
-        rgba(255,255,255,.82);
-
-    border:
-        1px solid rgba(255,255,255,.95);
+        rgba(255,255,255,.90);
 
     box-shadow:
-        0 14px 38px rgba(70,50,110,.08);
+        0 16px 38px rgba(60,40,90,.08);
 
 }
 
 
-.sidebar-card h3 {
+.side-card h3 {
 
     margin:
-        0 0 8px;
+        0 0 10px;
 
     font-family:
         "Baloo 2",
         cursive;
 
     font-size:
-        21px;
-
-    line-height:
-        1;
+        22px;
 
 }
 
 
-.sidebar-card h3 span {
+.side-card h3 span {
 
     color:
         #ef4f82;
@@ -2978,60 +1837,80 @@ select {
 }
 
 
-.sidebar-card p {
+.side-card p {
 
     margin:
         0;
 
     color:
-        #786f84;
+        #817889;
 
     font-size:
-        10px;
+        11px;
 
     line-height:
-        1.7;
+        1.8;
 
 }
 
 
 /* =====================================================
-   STATUS
+   BLOG STEPS
 ===================================================== */
 
-.status-card {
+.blog-steps {
 
-    background:
+    display:
+        grid;
 
-        linear-gradient(
-            135deg,
-            #f1edff,
-            #fff4f8,
-            #edf8ff
-        );
-
-}
-
-
-.status-input {
-
-    width:
-        100%;
-
-    min-height:
-        48px;
+    gap:
+        10px;
 
     margin-top:
         15px;
 
-    border:
-        1px solid #e5dff0;
+}
 
-    outline:
-        none;
+
+.blog-step {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        11px;
 
     padding:
-        12px;
+        11px;
+
+    border-radius:
+        16px;
+
+    background:
+        #faf9ff;
+
+}
+
+
+.blog-step-icon {
+
+    width:
+        42px;
+
+    height:
+        42px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    flex:
+        0 0 auto;
 
     border-radius:
         14px;
@@ -3039,129 +1918,109 @@ select {
     background:
         white;
 
-    font-family:
-        inherit;
-
     font-size:
-        11px;
+        19px;
+
+    box-shadow:
+        0 7px 17px rgba(60,40,90,.06);
 
 }
 
 
-.status-input:focus {
+.blog-step b {
 
-    border-color:
-        #a47fff;
+    display:
+        block;
 
-    box-shadow:
-        0 0 0 4px rgba(164,127,255,.10);
+    font-size:
+        10px;
+
+}
+
+
+.blog-step small {
+
+    display:
+        block;
+
+    margin-top:
+        3px;
+
+    color:
+        #9a91a1;
+
+    font-size:
+        8px;
+
+}
+
+
+/* =====================================================
+   STATUS CARD
+===================================================== */
+
+.status-card {
+
+    background:
+        linear-gradient(
+            135deg,
+            #f1edff,
+            #fff0f6,
+            #ecf8ff
+        );
+
+}
+
+
+.status-card-icon {
+
+    font-size:
+        45px;
+
+    margin-bottom:
+        8px;
 
 }
 
 
 .status-button {
 
-    width:
-        100%;
+    display:
+        flex;
 
-    min-height:
-        46px;
+    align-items:
+        center;
 
-    border:
-        none;
-
-    cursor:
-        pointer;
+    justify-content:
+        center;
 
     margin-top:
-        9px;
+        15px;
+
+    min-height:
+        48px;
 
     border-radius:
         14px;
 
+    text-decoration:
+        none;
+
     color:
         white;
 
-    font-family:
-        inherit;
-
     font-size:
-        11px;
+        10px;
 
     font-weight:
         900;
 
     background:
-
         linear-gradient(
             135deg,
             #7b6cff,
             #a47fff
         );
-
-}
-
-
-.status-result {
-
-    display:
-        none;
-
-    margin-top:
-        13px;
-
-    padding:
-        13px;
-
-    border-radius:
-        14px;
-
-    font-size:
-        10px;
-
-    line-height:
-        1.7;
-
-}
-
-
-.status-result.show {
-
-    display:
-        block;
-
-}
-
-
-.status-result.waiting {
-
-    color:
-        #8b6800;
-
-    background:
-        #fff8dd;
-
-}
-
-
-.status-result.success {
-
-    color:
-        #287344;
-
-    background:
-        #effff5;
-
-}
-
-
-.status-result.error {
-
-    color:
-        #a33f4f;
-
-    background:
-        #fff0f2;
 
 }
 
@@ -3176,7 +2035,7 @@ select {
         grid;
 
     gap:
-        9px;
+        10px;
 
     margin-top:
         15px;
@@ -3184,56 +2043,38 @@ select {
 }
 
 
-.info-list-item {
+.info-item {
 
     display:
         flex;
 
     align-items:
-        center;
+        flex-start;
 
     gap:
-        10px;
+        9px;
 
     padding:
-        10px;
-
-    border-radius:
-        14px;
-
-    background:
-        #faf9ff;
-
-}
-
-
-.info-list-icon {
-
-    width:
-        35px;
-
-    height:
-        35px;
-
-    display:
-        grid;
-
-    place-items:
-        center;
-
-    border-radius:
         11px;
 
-    background:
-        white;
+    border-radius:
+        15px;
 
-    font-size:
-        16px;
+    background:
+        #f9fcff;
 
 }
 
 
-.info-list-item b {
+.info-item span {
+
+    font-size:
+        18px;
+
+}
+
+
+.info-item b {
 
     display:
         block;
@@ -3244,7 +2085,7 @@ select {
 }
 
 
-.info-list-item small {
+.info-item small {
 
     display:
         block;
@@ -3253,257 +2094,10 @@ select {
         3px;
 
     color:
-        #978e9f;
+        #908797;
 
     font-size:
         8px;
-
-}
-
-
-/* =====================================================
-   WHATSAPP HELP
-===================================================== */
-
-.help-card {
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #fff1f6,
-            #f1edff,
-            #e8f7ff
-        );
-
-}
-
-
-.help-button {
-
-    width:
-        100%;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    gap:
-        8px;
-
-    margin-top:
-        15px;
-
-    padding:
-        13px;
-
-    border-radius:
-        14px;
-
-    text-decoration:
-        none;
-
-    color:
-        white;
-
-    font-size:
-        10px;
-
-    font-weight:
-        900;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #25d366,
-            #56e48c
-        );
-
-}
-
-
-/* =====================================================
-   BENEFIT
-===================================================== */
-
-.benefit-section {
-
-    padding:
-        20px 0 65px;
-
-}
-
-
-.section-heading {
-
-    text-align:
-        center;
-
-    margin-bottom:
-        25px;
-
-}
-
-
-.section-badge {
-
-    display:
-        inline-block;
-
-    padding:
-        7px 13px;
-
-    border-radius:
-        30px;
-
-    background:
-        #f0eaff;
-
-    color:
-        #8864c9;
-
-    font-size:
-        10px;
-
-    font-weight:
-        900;
-
-}
-
-
-.section-heading h2 {
-
-    margin:
-        10px 0;
-
-    font-family:
-        "Baloo 2",
-        cursive;
-
-    font-size:
-        36px;
-
-    line-height:
-        1.1;
-
-}
-
-
-.section-heading h2 span {
-
-    display:
-        block;
-
-    color:
-        #ef4f82;
-
-}
-
-
-.benefit-grid {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        repeat(2,1fr);
-
-    gap:
-        12px;
-
-}
-
-
-.benefit-card {
-
-    min-height:
-        160px;
-
-    padding:
-        17px 10px;
-
-    display:
-        flex;
-
-    flex-direction:
-        column;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    text-align:
-        center;
-
-    border-radius:
-        21px;
-
-    background:
-        rgba(255,255,255,.80);
-
-    box-shadow:
-        0 13px 32px rgba(70,50,100,.08);
-
-    transition:
-        .3s ease;
-
-}
-
-
-.benefit-card:hover {
-
-    transform:
-        translateY(-6px);
-
-}
-
-
-.benefit-card span {
-
-    display:
-        block;
-
-    margin-bottom:
-        8px;
-
-    font-size:
-        31px;
-
-}
-
-
-.benefit-card b {
-
-    display:
-        block;
-
-    font-size:
-        11px;
-
-}
-
-
-.benefit-card small {
-
-    display:
-        block;
-
-    margin-top:
-        5px;
-
-    color:
-        #8b8296;
-
-    font-size:
-        9px;
 
     line-height:
         1.5;
@@ -3512,20 +2106,31 @@ select {
 
 
 /* =====================================================
+   MOBILE BLOG NAV
+===================================================== */
+
+.mobile-blog-menu {
+
+    display:
+        none;
+
+}
+
+
+/* =====================================================
    FOOTER
 ===================================================== */
 
-.au-footer {
+.footer {
 
     padding:
-        40px 0 0;
+        40px 0 20px;
 
     background:
-
         linear-gradient(
             135deg,
             #302843,
-            #403556
+            #433657
         );
 
     color:
@@ -3534,21 +2139,21 @@ select {
 }
 
 
-.au-footer-grid {
+.footer-grid {
 
     display:
         grid;
 
-    gap:
-        24px;
+    grid-template-columns:
+        repeat(3,1fr);
 
-    text-align:
-        center;
+    gap:
+        30px;
 
 }
 
 
-.au-footer h3 {
+.footer h3 {
 
     margin:
         0 0 10px;
@@ -3558,29 +2163,29 @@ select {
         cursive;
 
     font-size:
-        21px;
+        20px;
 
 }
 
 
-.au-footer h3 span {
+.footer h3 span {
 
     color:
-        #ff8db3;
+        #ff91b7;
 
 }
 
 
-.au-footer p {
+.footer p {
 
     margin:
         0 0 7px;
 
     color:
-        #c9c1d7;
+        #c8c0d4;
 
     font-size:
-        12px;
+        11px;
 
     line-height:
         1.7;
@@ -3588,10 +2193,10 @@ select {
 }
 
 
-.au-footer a {
+.footer a {
 
     color:
-        #c9c1d7;
+        #c8c0d4;
 
     text-decoration:
         none;
@@ -3599,13 +2204,13 @@ select {
 }
 
 
-.au-copyright {
+.copyright {
 
     margin-top:
         30px;
 
-    padding:
-        17px 10px;
+    padding-top:
+        18px;
 
     text-align:
         center;
@@ -3614,7 +2219,7 @@ select {
         1px solid rgba(255,255,255,.08);
 
     color:
-        #aaa0bc;
+        #aaa0bb;
 
     font-size:
         10px;
@@ -3623,191 +2228,33 @@ select {
 
 
 /* =====================================================
-   REVEAL
-===================================================== */
-
-.au-reveal {
-
-    opacity:
-        0;
-
-    transform:
-        translateY(25px);
-
-    transition:
-
-        opacity .8s ease,
-        transform .8s cubic-bezier(.2,.8,.2,1);
-
-}
-
-
-.au-reveal.au-show {
-
-    opacity:
-        1;
-
-    transform:
-        translateY(0);
-
-}
-
-
-/* =====================================================
-   TABLET
-===================================================== */
-
-@media (min-width: 600px) {
-
-    .benefit-grid {
-
-        grid-template-columns:
-            repeat(4,1fr);
-
-    }
-
-}
-
-
-/* =====================================================
-   DESKTOP
-===================================================== */
-
-@media (min-width: 769px) {
-
-    .au-header-inner {
-
-        min-height:
-            90px;
-
-    }
-
-    .au-logo {
-
-        width:
-            55px;
-
-        height:
-            55px;
-
-        font-size:
-            29px;
-
-    }
-
-    .au-brand h1 {
-
-        font-size:
-            25px;
-
-    }
-
-    .au-brand p {
-
-        font-size:
-            13px;
-
-    }
-
-    .au-visit {
-
-        padding:
-            13px 22px;
-
-        font-size:
-            13px;
-
-    }
-
-    .au-nav-inner {
-
-        justify-content:
-            center;
-
-        overflow:
-            visible;
-
-    }
-
-    .au-nav-link {
-
-        flex-direction:
-            row;
-
-        min-width:
-            auto;
-
-        font-size:
-            12px;
-
-        padding:
-            10px 15px;
-
-    }
-
-    .au-more-wrap {
-
-        display:
-            none;
-
-    }
-
-    .hero-grid {
-
-        grid-template-columns:
-            1.2fr .8fr;
-
-    }
-
-    .blog-layout {
-
-        grid-template-columns:
-            minmax(0,1fr)
-            320px;
-
-    }
-
-    .form-grid.two {
-
-        grid-template-columns:
-            repeat(2,1fr);
-
-    }
-
-    .au-footer-grid {
-
-        grid-template-columns:
-            repeat(3,1fr);
-
-        text-align:
-            left;
-
-    }
-
-}
-
-
-/* =====================================================
    MOBILE
 ===================================================== */
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
-    .au-container {
+
+    /* CONTAINER */
+
+    .container {
 
         width:
             calc(100% - 24px);
 
     }
 
-    .au-header-inner {
+
+    /* HEADER */
+
+    .header-inner {
 
         min-height:
-            68px;
+            66px;
 
     }
 
-    .au-logo {
+
+    .brand-logo {
 
         width:
             40px;
@@ -3815,26 +2262,24 @@ select {
         height:
             40px;
 
+        border-radius:
+            13px;
+
         font-size:
-            21px;
+            20px;
 
     }
 
-    .au-brand {
 
-        gap:
-            8px;
-
-    }
-
-    .au-brand h1 {
+    .brand h1 {
 
         font-size:
             15px;
 
     }
 
-    .au-brand p {
+
+    .brand p {
 
         font-size:
             8px;
@@ -3844,181 +2289,761 @@ select {
 
     }
 
-    .au-visit {
+
+    .status-link {
 
         padding:
             9px 10px;
+
+        border-radius:
+            12px;
 
         font-size:
             9px;
 
     }
 
-    .au-nav-inner {
 
-        width:
-            calc(100% - 12px);
+    /* NAV */
 
-        gap:
-            4px;
-
-    }
-
-    .au-nav-link {
-
-        min-width:
-            58px;
-
-        padding:
-            7px;
-
-        font-size:
-            8px;
-
-    }
-
-    .au-more-menu {
+    .nav {
 
         top:
-            126px;
-
-        left:
-            8px;
-
-        right:
-            8px;
+            66px;
 
     }
 
-    .reg-hero {
+
+    .nav-inner {
+
+        gap:
+            5px;
 
         padding:
-            50px 0 40px;
+            7px 0;
 
     }
 
-    .reg-hero h2 {
+
+    .nav a {
+
+        padding:
+            9px 12px;
 
         font-size:
-            43px;
+            9px;
 
     }
 
-    .reg-hero p {
+
+    /* MAIN */
+
+    .main {
+
+        padding:
+            15px 0 40px;
+
+    }
+
+
+    /* HERO BLOG */
+
+    .blog-hero {
+
+        min-height:
+            390px;
+
+        padding:
+            24px 20px;
+
+        border-radius:
+            25px;
+
+        align-items:
+            flex-end;
+
+    }
+
+
+    .blog-hero::before {
+
+        top:
+            -5px;
+
+        right:
+            -15px;
+
+        font-size:
+            125px;
+
+    }
+
+
+    .blog-hero::after {
+
+        top:
+            22px;
+
+        left:
+            20px;
+
+        font-size:
+            45px;
+
+    }
+
+
+    .hero-category {
+
+        padding:
+            7px 11px;
+
+        font-size:
+            8px;
+
+    }
+
+
+    .hero-content h2 {
+
+        margin:
+            13px 0 10px;
+
+        font-size:
+            42px;
+
+        line-height:
+            .95;
+
+    }
+
+
+    .hero-content p {
 
         font-size:
             11px;
 
+        line-height:
+            1.7;
+
     }
 
-    .hero-card {
+
+    .hero-meta {
+
+        gap:
+            6px;
+
+        margin-top:
+            16px;
+
+    }
+
+
+    .hero-meta span {
 
         padding:
+            7px 9px;
+
+        font-size:
+            8px;
+
+    }
+
+
+    /* MOBILE BLOG MENU */
+
+    .mobile-blog-menu {
+
+        display:
+            flex;
+
+        gap:
+            8px;
+
+        margin-top:
+            12px;
+
+        overflow-x:
+            auto;
+
+        scrollbar-width:
+            none;
+
+    }
+
+
+    .mobile-blog-menu::-webkit-scrollbar {
+
+        display:
+            none;
+
+    }
+
+
+    .mobile-blog-menu a {
+
+        flex:
+            0 0 auto;
+
+        padding:
+            10px 13px;
+
+        border-radius:
+            14px;
+
+        background:
+            white;
+
+        box-shadow:
+            0 8px 20px rgba(60,40,90,.07);
+
+        text-decoration:
+            none;
+
+        color:
+            #6d6478;
+
+        font-size:
+            9px;
+
+        font-weight:
+            900;
+
+    }
+
+
+    /* BLOG LAYOUT */
+
+    .blog-layout {
+
+        display:
+            flex;
+
+        flex-direction:
+            column;
+
+        gap:
+            15px;
+
+        margin-top:
+            15px;
+
+    }
+
+
+    /* ARTICLE */
+
+    .article-card {
+
+        border-radius:
+            21px;
+
+    }
+
+
+    .article-head {
+
+        padding:
+            20px 17px 0;
+
+    }
+
+
+    .article-tag {
+
+        font-size:
+            8px;
+
+    }
+
+
+    .article-head h2 {
+
+        margin:
+            10px 0 6px;
+
+        font-size:
+            25px;
+
+    }
+
+
+    .article-head p {
+
+        font-size:
+            10px;
+
+        line-height:
+            1.7;
+
+    }
+
+
+    .article-body {
+
+        padding:
+            17px;
+
+    }
+
+
+    /* FLOW MOBILE BLOG */
+
+    .flow-grid {
+
+        display:
+            flex;
+
+        overflow-x:
+            auto;
+
+        gap:
+            10px;
+
+        padding-bottom:
+            5px;
+
+        scrollbar-width:
+            none;
+
+    }
+
+
+    .flow-grid::-webkit-scrollbar {
+
+        display:
+            none;
+
+    }
+
+
+    .flow-item {
+
+        flex:
+            0 0 145px;
+
+        min-height:
+            145px;
+
+        border-radius:
             18px;
 
     }
 
-    .blog-section {
 
-        padding:
-            20px 0 50px;
-
-    }
-
-    .blog-card {
-
-        padding:
-            16px;
-
-        border-radius:
-            20px;
-
-    }
-
-    .article-header h3 {
-
-        font-size:
-            20px;
-
-    }
-
-    .article-icon {
+    .flow-icon {
 
         width:
-            48px;
+            43px;
 
         height:
-            48px;
+            43px;
 
         font-size:
-            23px;
+            20px;
 
     }
 
-    .article-text {
+
+    .flow-item b {
+
+        font-size:
+            9px;
+
+    }
+
+
+    .flow-item small {
+
+        font-size:
+            8px;
+
+    }
+
+
+    /* FORM */
+
+    .form-card {
+
+        margin-top:
+            15px;
+
+        padding:
+            13px;
+
+        border-radius:
+            21px;
+
+    }
+
+
+    .form-card-header {
+
+        gap:
+            10px;
+
+        margin-bottom:
+            15px;
+
+        padding:
+            4px;
+
+    }
+
+
+    .form-card-icon {
+
+        width:
+            45px;
+
+        height:
+            45px;
+
+        border-radius:
+            14px;
+
+        font-size:
+            21px;
+
+    }
+
+
+    .form-card-header h2 {
+
+        font-size:
+            19px;
+
+    }
+
+
+    .form-card-header p {
+
+        font-size:
+            8px;
+
+    }
+
+
+    /* FORM SECTION */
+
+    .form-section {
+
+        padding:
+            13px;
+
+        margin-bottom:
+            11px;
+
+        border-radius:
+            17px;
+
+    }
+
+
+    .form-section-title {
+
+        gap:
+            8px;
+
+        margin-bottom:
+            13px;
+
+    }
+
+
+    .form-number {
+
+        width:
+            29px;
+
+        height:
+            29px;
+
+        border-radius:
+            9px;
+
+        font-size:
+            8px;
+
+    }
+
+
+    .form-section-title h3 {
 
         font-size:
             10px;
 
     }
 
-    .form-wrapper {
 
-        padding:
+    /* INPUT MOBILE */
+
+    .form-grid {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
             11px;
-
-        border-radius:
-            20px;
 
     }
 
-    .form-step {
 
-        padding:
-            11px;
+    .form-group {
 
-        border-radius:
-            16px;
+        gap:
+            5px;
 
     }
+
+
+    .form-group label {
+
+        font-size:
+            9px;
+
+    }
+
 
     .form-group input,
     .form-group select,
     .form-group textarea {
 
+        min-height:
+            46px;
+
+        padding:
+            11px;
+
+        border-radius:
+            12px;
+
+        font-size:
+            10px;
+
+    }
+
+
+    .form-group textarea {
+
+        min-height:
+            90px;
+
+    }
+
+
+    /* GENDER */
+
+    .gender-grid {
+
+        gap:
+            7px;
+
+    }
+
+
+    .gender-box {
+
+        min-height:
+            45px;
+
+        font-size:
+            9px;
+
+        border-radius:
+            12px;
+
+    }
+
+
+    /* AGREEMENT */
+
+    .agreement {
+
+        gap:
+            7px;
+
+        padding:
+            11px;
+
+        margin-top:
+            11px;
+
+        border-radius:
+            14px;
+
+        font-size:
+            8px;
+
+    }
+
+
+    .agreement input {
+
+        width:
+            16px;
+
+        height:
+            16px;
+
+    }
+
+
+    /* BUTTON */
+
+    .submit-button {
+
+        min-height:
+            51px;
+
+        margin-top:
+            12px;
+
+        border-radius:
+            14px;
+
         font-size:
             11px;
 
     }
 
-    .section-heading h2 {
 
-        font-size:
-            29px;
+    /* SUCCESS */
+
+    .success-box {
+
+        padding:
+            20px 13px;
+
+        border-radius:
+            18px;
 
     }
+
+
+    .success-icon {
+
+        font-size:
+            40px;
+
+    }
+
+
+    .success-box h3 {
+
+        font-size:
+            21px;
+
+    }
+
+
+    .success-box p {
+
+        font-size:
+            9px;
+
+    }
+
+
+    .registration-code b {
+
+        font-size:
+            19px;
+
+    }
+
+
+    /* SIDEBAR */
+
+    .sidebar {
+
+        display:
+            contents;
+
+    }
+
+
+    .side-card {
+
+        padding:
+            17px;
+
+        border-radius:
+            21px;
+
+    }
+
+
+    .side-card h3 {
+
+        font-size:
+            20px;
+
+    }
+
+
+    .side-card p {
+
+        font-size:
+            10px;
+
+    }
+
+
+    /* FOOTER */
+
+    .footer {
+
+        padding:
+            30px 0 18px;
+
+    }
+
+
+    .footer-grid {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            20px;
+
+        text-align:
+            center;
+
+    }
+
 
 }
 
 
 /* =====================================================
-   REDUCE MOTION
+   ANIMATION
 ===================================================== */
 
-@media (prefers-reduced-motion: reduce) {
+.reveal {
 
-    * {
+    opacity:
+        0;
 
-        animation:
-            none !important;
+    transform:
+        translateY(25px);
 
-        transition:
-            none !important;
+    transition:
+        opacity .7s ease,
+        transform .7s ease;
 
-        scroll-behavior:
-            auto !important;
+}
 
-    }
+
+.reveal.show {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
 
 }
 
@@ -4031,41 +3056,27 @@ select {
 <body>
 
 
-<!-- =====================================================
-     BACKGROUND
-===================================================== -->
-
-<div class="pg-bg"></div>
-
-<div class="float-shape one">
-    ⭐
-</div>
-
-<div class="float-shape two">
-    🌸
-</div>
-
-<div class="float-shape three">
-    🫧
-</div>
+<div class="page-bg"></div>
 
 
 <!-- =====================================================
      HEADER
 ===================================================== -->
 
-<header class="au-header">
+<header class="header">
 
-    <div class="au-container au-header-inner">
+    <div class="container header-inner">
 
 
         <a
             href="index.html"
-            class="au-brand"
+            class="brand"
         >
 
-            <div class="au-logo">
+            <div class="brand-logo">
+
                 🌈
+
             </div>
 
 
@@ -4094,11 +3105,11 @@ select {
 
 
         <a
-            href="#pendaftaran"
-            class="au-visit"
+            href="status-pendaftaran.html"
+            class="status-link"
         >
 
-            📝 Daftar Sekarang
+            📊 Status
 
         </a>
 
@@ -4109,87 +3120,50 @@ select {
 
 
 <!-- =====================================================
-     NAVBAR
+     NAVIGATION
 ===================================================== -->
 
-<nav class="au-nav">
+<nav class="nav">
 
-    <div class="au-nav-inner">
+    <div class="nav-inner">
 
 
-        <a
-            href="index.html"
-            class="au-nav-link"
-        >
+        <a href="index.html">
 
-            <span class="au-nav-icon">
-                🏠
-            </span>
+            🏠 Home
 
-            HOME
+        </a>
+
+
+        <a href="about.html">
+
+            👥 About
+
+        </a>
+
+
+        <a href="programs.html">
+
+            📚 Programs
+
+        </a>
+
+
+        <a href="blog.html">
+
+            🖍️ Blog
 
         </a>
 
 
         <a
-            href="about.html"
-            class="au-nav-link"
+            href="pendaftaran.html"
+            class="active"
         >
 
-            <span class="au-nav-icon">
-                👥
-            </span>
-
-            ABOUT
+            📝 Pendaftaran
 
         </a>
-
-
-        <a
-            href="programs.html"
-            class="au-nav-link"
-        >
-
-            <span class="au-nav-icon">
-                📚
-            </span>
-
-            PROGRAMS
-
-        </a>
-
-
-        <a
-            href="gallery.html"
-            class="au-nav-link"
-        >
-
-            <span class="au-nav-icon">
-                🖼️
-            </span>
-
-            GALLERY
-
-        </a>
-
-
-        <div class="au-more-wrap">
-
-            <button
-                type="button"
-                class="au-more-button"
-                id="auMoreButton"
-            >
-
-                <span>
-                    ✨
-                </span>
-
-                MORE
-
-            </button>
-
-        </div>
 
 
     </div>
@@ -4198,286 +3172,310 @@ select {
 
 
 <!-- =====================================================
-     MORE MENU
+     MAIN
 ===================================================== -->
 
-<div
-    class="au-more-menu"
-    id="auMoreMenu"
->
+<main class="main">
+
+    <div class="container">
 
 
-    <div class="au-more-title">
+        <!-- HERO BLOG -->
 
-        ✨ Menu Lainnya
-
-    </div>
-
-
-    <a href="classes.html">
-        🎓 Classes
-    </a>
-
-
-    <a href="blog.html">
-        🖍️ Blog
-    </a>
-
-
-    <a href="parents.html">
-        💛 Parents
-    </a>
-
-
-    <a href="contact.html">
-        ✉️ Contact
-    </a>
-
-
-    <a href="pendaftaran.html">
-        📝 Pendaftaran
-    </a>
-
-
-</div>
-
-
-<!-- =====================================================
-     HERO
-===================================================== -->
-
-<section class="reg-hero">
-
-    <div class="au-container hero-grid">
-
-
-        <div
-            class="hero-content
-                   au-reveal"
+        <section
+            class="blog-hero reveal"
         >
 
 
-            <div class="reg-badge">
+            <div class="hero-content">
 
-                🎉 PENDAFTARAN PESERTA DIDIK BARU
+
+                <div class="hero-category">
+
+                    ✨ PENDAFTARAN ONLINE
+
+                </div>
+
+
+                <h2>
+
+                    Mulai Petualangan
+                    Baru Bersama Kami 🌈
+
+                </h2>
+
+
+                <p>
+
+                    Selamat datang di halaman
+                    pendaftaran online RA Miftahul Hikmah.
+                    Isi data calon peserta didik,
+                    kirim formulir dan dapatkan
+                    kode pendaftaran Anda.
+
+                </p>
+
+
+                <div class="hero-meta">
+
+                    <span>
+
+                        📝 Isi Data
+
+                    </span>
+
+
+                    <span>
+
+                        🔑 Dapat Kode
+
+                    </span>
+
+
+                    <span>
+
+                        💬 WhatsApp
+
+                    </span>
+
+
+                </div>
+
 
             </div>
 
 
-            <h2>
-
-                Yuk Jadi Bagian
-
-                <span>
-                    Keluarga Kami!
-                </span>
-
-            </h2>
+        </section>
 
 
-            <p>
+        <!-- MOBILE BLOG MENU -->
 
-                Daftarkan buah hati Anda di
-                RA Miftahul Hikmah melalui proses
-                pendaftaran online yang mudah,
-                cepat dan nyaman.
+        <div class="mobile-blog-menu">
 
-            </p>
+            <a href="#cara">
 
+                📖 Cara Daftar
 
-            <div class="hero-actions">
+            </a>
 
 
-                <a
-                    href="#cara-daftar"
-                    class="hero-secondary"
-                >
+            <a href="#formulir">
 
-                    📖 Cara Daftar
+                📝 Formulir
 
-                </a>
+            </a>
 
 
-                <a
-                    href="#pendaftaran"
-                    class="hero-primary"
-                >
+            <a href="#status">
 
-                    🚀 Mulai Daftar
+                📊 Status
 
-                </a>
-
-
-            </div>
+            </a>
 
 
         </div>
 
 
-        <!-- HERO CARD -->
-
-        <div
-            class="hero-card
-                   au-reveal"
-        >
-
-
-            <div class="hero-card-top">
-
-                <div class="hero-card-label">
-
-                    ✨ ALUR PENDAFTARAN
-
-                </div>
-
-
-                <div class="hero-card-icon">
-
-                    🎒
-
-                </div>
-
-
-            </div>
-
-
-            <h3>
-
-                Daftar Jadi Lebih Mudah
-
-            </h3>
-
-
-            <p>
-
-                Ikuti langkah sederhana berikut.
-
-            </p>
-
-
-            <div class="hero-card-steps">
-
-
-                <div class="hero-mini-step">
-
-                    <div class="hero-mini-number">
-                        01
-                    </div>
-
-                    <b>
-                        Isi Data
-                    </b>
-
-                </div>
-
-
-                <div class="hero-mini-step">
-
-                    <div class="hero-mini-number">
-                        02
-                    </div>
-
-                    <b>
-                        Dapatkan Kode
-                    </b>
-
-                </div>
-
-
-                <div class="hero-mini-step">
-
-                    <div class="hero-mini-number">
-                        03
-                    </div>
-
-                    <b>
-                        Konfirmasi WhatsApp
-                    </b>
-
-                </div>
-
-
-            </div>
-
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     BLOG SECTION
-===================================================== -->
-
-<section
-    class="blog-section"
-    id="cara-daftar"
->
-
-    <div class="au-container">
-
+        <!-- BLOG LAYOUT -->
 
         <div class="blog-layout">
 
 
-            <!-- =============================================
-                 BLOG CONTENT
-            ============================================== -->
+            <!-- CONTENT -->
 
-            <main class="blog-content">
+            <div>
 
 
-                <!-- =========================================
-                     CARA MENDAFTAR
-                ========================================== -->
+                <!-- ARTICLE CARA DAFTAR -->
 
                 <article
-                    class="blog-card
-                           au-reveal"
+                    class="article-card reveal"
+                    id="cara"
                 >
 
 
-                    <div class="article-header">
+                    <div class="article-head">
 
 
-                        <div class="article-icon">
+                        <div class="article-tag">
 
-                            📝
+                            📖 PANDUAN PENDAFTARAN
+
+                        </div>
+
+
+                        <h2>
+
+                            Cara Mendaftar
+                            Sangat Mudah ✨
+
+                        </h2>
+
+
+                        <p>
+
+                            Pendaftaran dibuat sederhana
+                            agar orang tua atau wali dapat
+                            mendaftarkan buah hati dengan
+                            cepat melalui website.
+
+                        </p>
+
+
+                    </div>
+
+
+                    <div class="article-body">
+
+
+                        <div class="flow-grid">
+
+
+                            <div class="flow-item">
+
+                                <div class="flow-icon">
+
+                                    👶
+
+                                </div>
+
+
+                                <b>
+
+                                    Isi Data
+
+                                </b>
+
+
+                                <small>
+
+                                    Data calon siswa
+
+                                </small>
+
+
+                            </div>
+
+
+                            <div class="flow-item">
+
+                                <div class="flow-icon">
+
+                                    📤
+
+                                </div>
+
+
+                                <b>
+
+                                    Kirim
+
+                                </b>
+
+
+                                <small>
+
+                                    Kirim formulir
+
+                                </small>
+
+
+                            </div>
+
+
+                            <div class="flow-item">
+
+                                <div class="flow-icon">
+
+                                    🔑
+
+                                </div>
+
+
+                                <b>
+
+                                    Kode Daftar
+
+                                </b>
+
+
+                                <small>
+
+                                    Simpan kode
+
+                                </small>
+
+
+                            </div>
+
+
+                            <div class="flow-item">
+
+                                <div class="flow-icon">
+
+                                    💬
+
+                                </div>
+
+
+                                <b>
+
+                                    WhatsApp
+
+                                </b>
+
+
+                                <small>
+
+                                    Konfirmasi admin
+
+                                </small>
+
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </article>
+
+
+                <!-- FORM -->
+
+                <section
+                    class="form-card reveal"
+                    id="formulir"
+                >
+
+
+                    <div class="form-card-header">
+
+
+                        <div class="form-card-icon">
+
+                            🎒
 
                         </div>
 
 
                         <div>
 
+                            <h2>
 
-                            <div class="article-meta">
+                                Formulir Pendaftaran
 
-                                <span class="article-tag">
-
-                                    PANDUAN
-
-                                </span>
+                            </h2>
 
 
-                                <span class="article-date">
+                            <p>
 
-                                    RA Miftahul Hikmah
+                                Lengkapi data dengan benar
 
-                                </span>
-
-
-                            </div>
-
-
-                            <h3>
-
-                                Cara Melakukan Pendaftaran
-
-                            </h3>
-
+                            </p>
 
                         </div>
 
@@ -4485,378 +3483,147 @@ select {
                     </div>
 
 
-                    <div class="article-text">
+                    <form id="registrationForm">
 
-                        Proses pendaftaran dibuat sederhana
-                        agar orang tua atau wali dapat melakukan
-                        pendaftaran secara online dengan mudah.
 
-                    </div>
+                        <!-- DATA ANAK -->
 
+                        <div class="form-section">
 
-                    <!-- FLOW -->
 
-                    <div class="registration-flow">
+                            <div class="form-section-title">
 
 
-                        <div class="flow-item">
+                                <div class="form-number">
 
-                            <div class="flow-number">
+                                    01
 
-                                01
+                                </div>
 
-                            </div>
-
-
-                            <div>
-
-                                <b>
-
-                                    📝 Isi Data Pendaftaran
-
-                                </b>
-
-
-                                <small>
-
-                                    Lengkapi data calon peserta didik
-                                    dan data orang tua atau wali.
-
-                                </small>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="flow-item">
-
-                            <div class="flow-number">
-
-                                02
-
-                            </div>
-
-
-                            <div>
-
-                                <b>
-
-                                    📤 Kirim Pendaftaran
-
-                                </b>
-
-
-                                <small>
-
-                                    Pastikan semua data telah
-                                    diisi dengan benar.
-
-                                </small>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="flow-item">
-
-                            <div class="flow-number">
-
-                                03
-
-                            </div>
-
-
-                            <div>
-
-                                <b>
-
-                                    🔑 Dapatkan Kode Pendaftaran
-
-                                </b>
-
-
-                                <small>
-
-                                    Sistem akan memberikan kode
-                                    pendaftaran secara otomatis.
-
-                                </small>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="flow-item">
-
-                            <div class="flow-number">
-
-                                04
-
-                            </div>
-
-
-                            <div>
-
-                                <b>
-
-                                    💬 Konfirmasi WhatsApp
-
-                                </b>
-
-
-                                <small>
-
-                                    Klik tombol WhatsApp dan
-                                    kirim kode kepada Admin.
-
-                                </small>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="flow-item">
-
-                            <div class="flow-number">
-
-                                05
-
-                            </div>
-
-
-                            <div>
-
-                                <b>
-
-                                    📋 Cek Status Pendaftaran
-
-                                </b>
-
-
-                                <small>
-
-                                    Gunakan kode pendaftaran
-                                    untuk melihat status.
-
-                                </small>
-
-                            </div>
-
-                        </div>
-
-
-                    </div>
-
-
-                    <button
-                        type="button"
-                        class="start-registration"
-                        id="startRegistration"
-                    >
-
-                        🚀 Mulai Isi Formulir Pendaftaran
-
-                    </button>
-
-
-                </article>
-
-
-                <!-- =========================================
-                     FORM
-                ========================================== -->
-
-                <section
-                    class="registration-area"
-                    id="pendaftaran"
-                >
-
-
-                    <div class="form-wrapper">
-
-
-                        <div class="form-title">
-
-
-                            <div class="form-title-icon">
-
-                                🎒
-
-                            </div>
-
-
-                            <div>
 
                                 <h3>
 
-                                    Formulir Pendaftaran
+                                    👶 Data Calon Peserta Didik
 
                                 </h3>
 
 
-                                <p>
-
-                                    Lengkapi data di bawah ini
-
-                                </p>
-
                             </div>
 
 
-                        </div>
+                            <div class="form-grid">
 
 
-                        <form id="registrationForm">
-
-
-                            <!-- DATA ANAK -->
-
-                            <div class="form-step">
-
-
-                                <div class="step-heading">
-
-
-                                    <div class="step-number">
-
-                                        01
-
-                                    </div>
-
-
-                                    <h4>
-
-                                        👶 Data Calon Peserta Didik
-
-                                    </h4>
-
-
-                                </div>
-
-
-                                <div class="form-grid two">
-
-
-                                    <div class="form-group">
-
-                                        <label>
-
-                                            Nama Lengkap
-
-                                            <span>
-                                                *
-                                            </span>
-
-                                        </label>
-
-
-                                        <input
-                                            type="text"
-                                            name="nama_anak"
-                                            placeholder="Masukkan nama lengkap anak"
-                                            required
-                                        >
-
-                                    </div>
-
-
-                                    <div class="form-group">
-
-                                        <label>
-
-                                            Nama Panggilan
-
-                                        </label>
-
-
-                                        <input
-                                            type="text"
-                                            name="nama_panggilan"
-                                            placeholder="Contoh: Aisyah"
-                                        >
-
-                                    </div>
-
-
-                                    <div class="form-group">
-
-                                        <label>
-
-                                            Tempat Lahir
-
-                                            <span>
-                                                *
-                                            </span>
-
-                                        </label>
-
-
-                                        <input
-                                            type="text"
-                                            name="tempat_lahir"
-                                            placeholder="Contoh: Jakarta"
-                                            required
-                                        >
-
-                                    </div>
-
-
-                                    <div class="form-group">
-
-                                        <label>
-
-                                            Tanggal Lahir
-
-                                            <span>
-                                                *
-                                            </span>
-
-                                        </label>
-
-
-                                        <input
-                                            type="date"
-                                            name="tanggal_lahir"
-                                            required
-                                        >
-
-                                    </div>
-
-
-                                </div>
-
-
-                                <div
-                                    class="form-group"
-                                    style="margin-top:14px;"
-                                >
+                                <div class="form-group">
 
                                     <label>
 
-                                        Jenis Kelamin
+                                        Nama Lengkap
 
-                                        <span>
+                                        <span class="required">
                                             *
                                         </span>
 
                                     </label>
 
 
-                                    <div class="gender-options">
+                                    <input
+                                        type="text"
+                                        id="namaAnak"
+                                        placeholder="Nama lengkap anak"
+                                        required
+                                    >
+
+                                </div>
 
 
-                                        <label class="gender-option">
+                                <div class="form-group">
+
+                                    <label>
+
+                                        Nama Panggilan
+
+                                    </label>
+
+
+                                    <input
+                                        type="text"
+                                        placeholder="Contoh: Aisyah"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+
+                                        Tempat Lahir
+
+                                        <span class="required">
+                                            *
+                                        </span>
+
+                                    </label>
+
+
+                                    <input
+                                        type="text"
+                                        placeholder="Contoh: Jakarta"
+                                        required
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+
+                                        Tanggal Lahir
+
+                                        <span class="required">
+                                            *
+                                        </span>
+
+                                    </label>
+
+
+                                    <input
+                                        type="date"
+                                        required
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group full">
+
+
+                                    <label>
+
+                                        Jenis Kelamin
+
+                                        <span class="required">
+                                            *
+                                        </span>
+
+                                    </label>
+
+
+                                    <div class="gender-grid">
+
+
+                                        <label
+                                            class="gender-option"
+                                        >
 
                                             <input
                                                 type="radio"
-                                                name="jenis_kelamin"
-                                                value="Laki-laki"
+                                                name="gender"
                                                 required
                                             >
+
 
                                             <div class="gender-box">
 
@@ -4867,14 +3634,15 @@ select {
                                         </label>
 
 
-                                        <label class="gender-option">
+                                        <label
+                                            class="gender-option"
+                                        >
 
                                             <input
                                                 type="radio"
-                                                name="jenis_kelamin"
-                                                value="Perempuan"
-                                                required
+                                                name="gender"
                                             >
+
 
                                             <div class="gender-box">
 
@@ -4894,147 +3662,139 @@ select {
                             </div>
 
 
-                            <!-- DATA WALI -->
-
-                            <div class="form-step">
+                        </div>
 
 
-                                <div class="step-heading">
+                        <!-- DATA WALI -->
+
+                        <div class="form-section">
 
 
-                                    <div class="step-number">
-
-                                        02
-
-                                    </div>
+                            <div class="form-section-title">
 
 
-                                    <h4>
+                                <div class="form-number">
 
-                                        👨‍👩‍👧 Data Orang Tua / Wali
-
-                                    </h4>
-
+                                    02
 
                                 </div>
 
 
-                                <div class="form-grid two">
+                                <h3>
+
+                                    👨‍👩‍👧 Data Orang Tua / Wali
+
+                                </h3>
 
 
-                                    <div class="form-group">
-
-                                        <label>
-
-                                            Nama Orang Tua / Wali
-
-                                            <span>
-                                                *
-                                            </span>
-
-                                        </label>
+                            </div>
 
 
-                                        <input
-                                            type="text"
-                                            name="nama_wali"
-                                            placeholder="Masukkan nama wali"
-                                            required
-                                        >
-
-                                    </div>
+                            <div class="form-grid">
 
 
-                                    <div class="form-group">
+                                <div class="form-group">
 
-                                        <label>
+                                    <label>
 
-                                            Hubungan dengan Anak
+                                        Nama Orang Tua / Wali
 
-                                            <span>
-                                                *
-                                            </span>
+                                        <span class="required">
+                                            *
+                                        </span>
 
-                                        </label>
-
-
-                                        <select
-                                            name="hubungan"
-                                            required
-                                        >
-
-                                            <option value="">
-
-                                                Pilih hubungan
-
-                                            </option>
+                                    </label>
 
 
-                                            <option value="Ayah">
+                                    <input
+                                        type="text"
+                                        id="namaWali"
+                                        placeholder="Nama wali"
+                                        required
+                                    >
 
-                                                Ayah
-
-                                            </option>
-
-
-                                            <option value="Ibu">
-
-                                                Ibu
-
-                                            </option>
+                                </div>
 
 
-                                            <option value="Wali">
+                                <div class="form-group">
 
-                                                Wali
+                                    <label>
 
-                                            </option>
+                                        Hubungan dengan Anak
 
-                                        </select>
-
-                                    </div>
+                                    </label>
 
 
-                                    <div class="form-group">
+                                    <select>
 
-                                        <label>
+                                        <option>
 
-                                            Nomor WhatsApp
+                                            Pilih hubungan
 
-                                            <span>
-                                                *
-                                            </span>
-
-                                        </label>
+                                        </option>
 
 
-                                        <input
-                                            type="tel"
-                                            name="whatsapp"
-                                            placeholder="081234567890"
-                                            required
-                                        >
+                                        <option>
 
-                                    </div>
+                                            Ayah
+
+                                        </option>
 
 
-                                    <div class="form-group">
+                                        <option>
 
-                                        <label>
+                                            Ibu
 
-                                            Email
-
-                                        </label>
+                                        </option>
 
 
-                                        <input
-                                            type="email"
-                                            name="email"
-                                            placeholder="email@gmail.com"
-                                        >
+                                        <option>
 
-                                    </div>
+                                            Wali
 
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+
+                                        Nomor WhatsApp
+
+                                        <span class="required">
+                                            *
+                                        </span>
+
+                                    </label>
+
+
+                                    <input
+                                        type="tel"
+                                        id="whatsapp"
+                                        placeholder="081234567890"
+                                        required
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+
+                                        Email
+
+                                    </label>
+
+
+                                    <input
+                                        type="email"
+                                        placeholder="email@gmail.com"
+                                    >
 
                                 </div>
 
@@ -5042,39 +3802,44 @@ select {
                             </div>
 
 
-                            <!-- ALAMAT -->
-
-                            <div class="form-step">
+                        </div>
 
 
-                                <div class="step-heading">
+                        <!-- ALAMAT -->
+
+                        <div class="form-section">
 
 
-                                    <div class="step-number">
-
-                                        03
-
-                                    </div>
+                            <div class="form-section-title">
 
 
-                                    <h4>
+                                <div class="form-number">
 
-                                        🏠 Alamat & Informasi Tambahan
-
-                                    </h4>
-
+                                    03
 
                                 </div>
 
 
-                                <div class="form-group">
+                                <h3>
 
+                                    🏠 Alamat & Informasi
+
+                                </h3>
+
+
+                            </div>
+
+
+                            <div class="form-grid">
+
+
+                                <div class="form-group full">
 
                                     <label>
 
                                         Alamat Lengkap
 
-                                        <span>
+                                        <span class="required">
                                             *
                                         </span>
 
@@ -5082,118 +3847,81 @@ select {
 
 
                                     <textarea
-                                        name="alamat"
                                         placeholder="Masukkan alamat lengkap"
                                         required
                                     ></textarea>
 
-
                                 </div>
 
 
-                                <div
-                                    class="form-grid two"
-                                    style="margin-top:14px;"
-                                >
-
-
-                                    <div class="form-group">
-
-                                        <label>
-
-                                            Program / Kelas
-
-                                        </label>
-
-
-                                        <select name="kelas">
-
-
-                                            <option value="">
-
-                                                Pilih program
-
-                                            </option>
-
-
-                                            <option value="Kelas A">
-
-                                                Kelas A
-
-                                            </option>
-
-
-                                            <option value="Kelas B">
-
-                                                Kelas B
-
-                                            </option>
-
-
-                                            <option value="Konsultasi Admin">
-
-                                                Konsultasi Admin
-
-                                            </option>
-
-
-                                        </select>
-
-                                    </div>
-
-
-                                    <div class="form-group">
-
-                                        <label>
-
-                                            Tahun Ajaran
-
-                                        </label>
-
-
-                                        <select
-                                            name="tahun_ajaran"
-                                        >
-
-                                            <option value="2026/2027">
-
-                                                2026 / 2027
-
-                                            </option>
-
-
-                                            <option value="2027/2028">
-
-                                                2027 / 2028
-
-                                            </option>
-
-
-                                        </select>
-
-                                    </div>
-
-
-                                </div>
-
-
-                                <div
-                                    class="form-group"
-                                    style="margin-top:14px;"
-                                >
+                                <div class="form-group">
 
                                     <label>
 
-                                        Pesan Tambahan
+                                        Program / Kelas
 
                                     </label>
 
 
-                                    <textarea
-                                        name="pesan"
-                                        placeholder="Pertanyaan atau informasi tambahan..."
-                                    ></textarea>
+                                    <select>
 
+                                        <option>
+
+                                            Pilih program
+
+                                        </option>
+
+
+                                        <option>
+
+                                            Kelas A
+
+                                        </option>
+
+
+                                        <option>
+
+                                            Kelas B
+
+                                        </option>
+
+
+                                        <option>
+
+                                            Konsultasi Admin
+
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+
+                                        Tahun Ajaran
+
+                                    </label>
+
+
+                                    <select>
+
+                                        <option>
+
+                                            2026 / 2027
+
+                                        </option>
+
+
+                                        <option>
+
+                                            2027 / 2028
+
+                                        </option>
+
+                                    </select>
 
                                 </div>
 
@@ -5201,63 +3929,56 @@ select {
                             </div>
 
 
-                            <!-- AGREEMENT -->
-
-                            <label class="agreement">
+                        </div>
 
 
-                                <input
-                                    type="checkbox"
-                                    required
-                                >
+                        <!-- AGREEMENT -->
+
+                        <label class="agreement">
 
 
-                                <span>
-
-                                    Saya menyatakan bahwa data
-                                    yang saya isi adalah benar
-                                    dan bersedia dihubungi oleh
-                                    pihak RA Miftahul Hikmah
-                                    untuk proses pendaftaran.
-
-                                </span>
-
-
-                            </label>
-
-
-                            <!-- SUBMIT -->
-
-                            <button
-                                type="submit"
-                                class="submit-button"
+                            <input
+                                type="checkbox"
+                                required
                             >
 
-                                🚀 Kirim Pendaftaran
 
-                            </button>
+                            <span>
 
+                                Saya menyatakan bahwa data
+                                yang saya isi adalah benar
+                                dan bersedia dihubungi oleh
+                                pihak RA Miftahul Hikmah
+                                untuk proses pendaftaran
+                                selanjutnya.
 
-                        </form>
-
-
-                    </div>
-
-
-                </section>
-
-
-                <!-- =========================================
-                     SUCCESS
-                ========================================== -->
-
-                <section
-                    class="success-area"
-                    id="successArea"
-                >
+                            </span>
 
 
-                    <div class="success-card">
+                        </label>
+
+
+                        <!-- SUBMIT -->
+
+                        <button
+                            type="submit"
+                            class="submit-button"
+                        >
+
+                            🚀 Kirim Pendaftaran
+
+                        </button>
+
+
+                    </form>
+
+
+                    <!-- SUCCESS -->
+
+                    <div
+                        class="success-box"
+                        id="successBox"
+                    >
 
 
                         <div class="success-icon">
@@ -5267,155 +3988,68 @@ select {
                         </div>
 
 
-                        <h2>
+                        <h3>
 
                             Pendaftaran Berhasil!
 
-                        </h2>
+                        </h3>
 
 
                         <p>
 
-                            Terima kasih telah melakukan
-                            pendaftaran di RA Miftahul Hikmah.
-                            Silakan simpan kode pendaftaran
-                            Anda dan lanjutkan konfirmasi
-                            melalui WhatsApp.
+                            Simpan kode pendaftaran
+                            berikut untuk melakukan
+                            pengecekan status.
 
                         </p>
 
 
-                        <div class="registration-code-box">
+                        <div class="registration-code">
 
 
-                            <div class="registration-code-label">
+                            <small>
 
-                                🔑 KODE PENDAFTARAN ANDA
+                                KODE PENDAFTARAN
 
-                            </div>
-
-
-                            <div
-                                class="registration-code"
-                                id="successCode"
-                            >
-
-                                RMH-2026-XXXX
-
-                            </div>
+                            </small>
 
 
-                            <div
-                                class="registration-name"
-                                id="successName"
-                            >
+                            <b id="registrationCode">
 
-                                Nama Anak
+                                RA-000000
 
-                            </div>
+                            </b>
 
 
                         </div>
 
 
-                        <div class="success-steps">
+                        <div class="success-actions">
 
 
-                            <div class="success-step">
+                            <a
+                                href="#"
+                                target="_blank"
+                                class="whatsapp-button"
+                                id="whatsappButton"
+                            >
 
-                                <div class="success-step-icon">
+                                💬 Lanjut ke WhatsApp
 
-                                    💾
-
-                                </div>
-
-
-                                <div>
-
-                                    <b>
-
-                                        Simpan Kode
-
-                                    </b>
-
-                                    Simpan kode pendaftaran Anda.
-
-                                </div>
-
-                            </div>
+                            </a>
 
 
-                            <div class="success-step">
+                            <a
+                                href="status-pendaftaran.html"
+                                class="check-button"
+                            >
 
-                                <div class="success-step-icon">
+                                📊 Cek Status Pendaftaran
 
-                                    💬
-
-                                </div>
-
-
-                                <div>
-
-                                    <b>
-
-                                        Hubungi Admin
-
-                                    </b>
-
-                                    Klik tombol WhatsApp di bawah.
-
-                                </div>
-
-                            </div>
-
-
-                            <div class="success-step">
-
-                                <div class="success-step-icon">
-
-                                    📋
-
-                                </div>
-
-
-                                <div>
-
-                                    <b>
-
-                                        Cek Status
-
-                                    </b>
-
-                                    Gunakan kode untuk cek status.
-
-                                </div>
-
-                            </div>
+                            </a>
 
 
                         </div>
-
-
-                        <button
-                            type="button"
-                            class="whatsapp-button"
-                            id="whatsappButton"
-                        >
-
-                            💬 Lanjut Konfirmasi WhatsApp
-
-                        </button>
-
-
-                        <button
-                            type="button"
-                            class="new-registration-button"
-                            id="newRegistrationButton"
-                        >
-
-                            📝 Buat Pendaftaran Baru
-
-                        </button>
 
 
                     </div>
@@ -5424,23 +4058,190 @@ select {
                 </section>
 
 
-            </main>
+            </div>
 
 
-            <!-- =============================================
-                 SIDEBAR
-            ============================================== -->
+            <!-- SIDEBAR -->
 
-            <aside class="blog-sidebar">
+            <aside
+                class="sidebar"
+            >
+
+
+                <!-- CARA -->
+
+                <div
+                    class="side-card reveal"
+                >
+
+
+                    <h3>
+
+                        Alur
+
+                        <span>
+                            Pendaftaran
+                        </span>
+
+                    </h3>
+
+
+                    <p>
+
+                        Ikuti proses pendaftaran
+                        berikut dengan mudah.
+
+                    </p>
+
+
+                    <div class="blog-steps">
+
+
+                        <div class="blog-step">
+
+
+                            <div class="blog-step-icon">
+
+                                📝
+
+                            </div>
+
+
+                            <div>
+
+                                <b>
+
+                                    Isi Formulir
+
+                                </b>
+
+
+                                <small>
+
+                                    Lengkapi data anak
+
+                                </small>
+
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="blog-step">
+
+
+                            <div class="blog-step-icon">
+
+                                📤
+
+                            </div>
+
+
+                            <div>
+
+                                <b>
+
+                                    Kirim Data
+
+                                </b>
+
+
+                                <small>
+
+                                    Kirim pendaftaran
+
+                                </small>
+
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="blog-step">
+
+
+                            <div class="blog-step-icon">
+
+                                🔑
+
+                            </div>
+
+
+                            <div>
+
+                                <b>
+
+                                    Dapat Kode
+
+                                </b>
+
+
+                                <small>
+
+                                    Simpan kode daftar
+
+                                </small>
+
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="blog-step">
+
+
+                            <div class="blog-step-icon">
+
+                                💬
+
+                            </div>
+
+
+                            <div>
+
+                                <b>
+
+                                    WhatsApp
+
+                                </b>
+
+
+                                <small>
+
+                                    Hubungi admin
+
+                                </small>
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
 
 
                 <!-- STATUS -->
 
                 <div
-                    class="sidebar-card
+                    class="side-card
                            status-card
-                           au-reveal"
+                           reveal"
+                    id="status"
                 >
+
+
+                    <div class="status-card-icon">
+
+                        📊
+
+                    </div>
 
 
                     <h3>
@@ -5456,37 +4257,22 @@ select {
 
                     <p>
 
-                        Masukkan kode pendaftaran
-                        untuk melihat status.
+                        Sudah mendaftar?
+                        Gunakan kode pendaftaran
+                        Anda untuk melihat status
+                        pendaftaran.
 
                     </p>
 
 
-                    <input
-                        type="text"
-                        id="statusCodeInput"
-                        class="status-input"
-                        placeholder="Contoh: RMH-2026-AB123"
-                    >
-
-
-                    <button
-                        type="button"
+                    <a
+                        href="status-pendaftaran.html"
                         class="status-button"
-                        id="checkStatusButton"
                     >
 
-                        🔎 Cek Status Pendaftaran
+                        Cek Status Sekarang
 
-                    </button>
-
-
-                    <div
-                        class="status-result"
-                        id="statusResult"
-                    >
-
-                    </div>
+                    </a>
 
 
                 </div>
@@ -5495,17 +4281,16 @@ select {
                 <!-- INFO -->
 
                 <div
-                    class="sidebar-card
-                           au-reveal"
+                    class="side-card reveal"
                 >
 
 
                     <h3>
 
-                        Info
+                        Informasi
 
                         <span>
-                            Pendaftaran
+                            Penting
                         </span>
 
                     </h3>
@@ -5514,165 +4299,103 @@ select {
                     <div class="info-list">
 
 
-                        <div class="info-list-item">
-
-                            <div class="info-list-icon">
-
-                                🎓
-
-                            </div>
+                        <div class="info-item">
 
 
-                            <div>
-
-                                <b>
-
-                                    Pendaftaran Online
-
-                                </b>
-
-
-                                <small>
-
-                                    Mudah dan praktis
-
-                                </small>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="info-list-item">
-
-                            <div class="info-list-icon">
+                            <span>
 
                                 🔑
 
-                            </div>
+                            </span>
 
 
                             <div>
 
                                 <b>
 
-                                    Kode Otomatis
+                                    Simpan Kode
 
                                 </b>
 
 
                                 <small>
 
-                                    Dapatkan kode pendaftaran
+                                    Kode digunakan
+                                    untuk cek status.
 
                                 </small>
 
                             </div>
 
+
                         </div>
 
 
-                        <div class="info-list-item">
+                        <div class="info-item">
 
-                            <div class="info-list-icon">
+
+                            <span>
 
                                 💬
 
-                            </div>
+                            </span>
 
 
                             <div>
 
                                 <b>
 
-                                    WhatsApp Admin
+                                    WhatsApp Aktif
 
                                 </b>
 
 
                                 <small>
 
-                                    Konfirmasi lebih mudah
+                                    Gunakan nomor aktif
+                                    untuk konfirmasi.
 
                                 </small>
 
                             </div>
+
 
                         </div>
 
 
-                        <div class="info-list-item">
+                        <div class="info-item">
 
-                            <div class="info-list-icon">
+
+                            <span>
 
                                 📋
 
-                            </div>
+                            </span>
 
 
                             <div>
 
                                 <b>
 
-                                    Cek Status
+                                    Data Benar
 
                                 </b>
 
 
                                 <small>
 
-                                    Pantau pendaftaran
+                                    Pastikan data
+                                    sudah sesuai.
 
                                 </small>
 
                             </div>
+
 
                         </div>
 
 
                     </div>
-
-
-                </div>
-
-
-                <!-- HELP -->
-
-                <div
-                    class="sidebar-card
-                           help-card
-                           au-reveal"
-                >
-
-
-                    <h3>
-
-                        Butuh
-
-                        <span>
-                            Bantuan?
-                        </span>
-
-                    </h3>
-
-
-                    <p>
-
-                        Hubungi Admin RA Miftahul
-                        Hikmah melalui WhatsApp.
-
-                    </p>
-
-
-                    <a
-                        href="https://wa.me/6281234567890"
-                        target="_blank"
-                        class="help-button"
-                    >
-
-                        💬 Hubungi Admin
-
-                    </a>
 
 
                 </div>
@@ -5686,175 +4409,24 @@ select {
 
     </div>
 
-</section>
-
-
-<!-- =====================================================
-     BENEFIT
-===================================================== -->
-
-<section class="benefit-section">
-
-    <div class="au-container">
-
-
-        <div
-            class="section-heading
-                   au-reveal"
-        >
-
-
-            <div class="section-badge">
-
-                🌟 KENAPA KAMI?
-
-            </div>
-
-
-            <h2>
-
-                Tempat Terbaik Untuk
-
-                <span>
-                    Tumbuh & Bersinar
-                </span>
-
-            </h2>
-
-
-        </div>
-
-
-        <div class="benefit-grid">
-
-
-            <div
-                class="benefit-card
-                       au-reveal"
-            >
-
-                <span>
-                    💛
-                </span>
-
-
-                <b>
-
-                    Penuh Kasih Sayang
-
-                </b>
-
-
-                <small>
-
-                    Lingkungan belajar yang
-                    hangat dan nyaman.
-
-                </small>
-
-            </div>
-
-
-            <div
-                class="benefit-card
-                       au-reveal"
-            >
-
-                <span>
-                    🎨
-                </span>
-
-
-                <b>
-
-                    Kreatif & Menyenangkan
-
-                </b>
-
-
-                <small>
-
-                    Belajar melalui bermain.
-
-                </small>
-
-            </div>
-
-
-            <div
-                class="benefit-card
-                       au-reveal"
-            >
-
-                <span>
-                    📚
-                </span>
-
-
-                <b>
-
-                    Belajar Berkualitas
-
-                </b>
-
-
-                <small>
-
-                    Program sesuai perkembangan anak.
-
-                </small>
-
-            </div>
-
-
-            <div
-                class="benefit-card
-                       au-reveal"
-            >
-
-                <span>
-                    🌈
-                </span>
-
-
-                <b>
-
-                    Tumbuh Bersama
-
-                </b>
-
-
-                <small>
-
-                    Membantu anak percaya diri
-                    dan mandiri.
-
-                </small>
-
-            </div>
-
-
-        </div>
-
-
-    </div>
-
-</section>
+</main>
 
 
 <!-- =====================================================
      FOOTER
 ===================================================== -->
 
-<footer class="au-footer">
-
-    <div class="au-container">
+<footer class="footer">
 
 
-        <div class="au-footer-grid">
+    <div class="container">
+
+
+        <div class="footer-grid">
 
 
             <div>
+
 
                 <h3>
 
@@ -5869,8 +4441,9 @@ select {
 
                 <p>
 
-                    Tempat belajar, bermain dan
-                    bertumbuh dengan bahagia.
+                    Tempat belajar,
+                    bermain dan bertumbuh
+                    dengan bahagia.
 
                 </p>
 
@@ -5879,6 +4452,7 @@ select {
 
 
             <div>
+
 
                 <h3>
 
@@ -5888,22 +4462,46 @@ select {
 
 
                 <p>
-                    <a href="index.html">Home</a>
+
+                    <a href="index.html">
+
+                        Home
+
+                    </a>
+
                 </p>
 
 
                 <p>
-                    <a href="about.html">About</a>
+
+                    <a href="blog.html">
+
+                        Blog
+
+                    </a>
+
                 </p>
 
 
                 <p>
-                    <a href="programs.html">Programs</a>
+
+                    <a href="pendaftaran.html">
+
+                        Pendaftaran
+
+                    </a>
+
                 </p>
 
 
                 <p>
-                    <a href="pendaftaran.html">Pendaftaran</a>
+
+                    <a href="status-pendaftaran.html">
+
+                        Status Pendaftaran
+
+                    </a>
+
                 </p>
 
 
@@ -5911,6 +4509,7 @@ select {
 
 
             <div>
+
 
                 <h3>
 
@@ -5946,7 +4545,7 @@ select {
         </div>
 
 
-        <div class="au-copyright">
+        <div class="copyright">
 
             © 2026 RA Miftahul Hikmah
             • All Rights Reserved
@@ -5955,6 +4554,7 @@ select {
 
 
     </div>
+
 
 </footer>
 
@@ -5967,124 +4567,34 @@ select {
 
 
 document.addEventListener(
+
     "DOMContentLoaded",
+
     function () {
 
 
-        /* =================================================
-           NOMOR WHATSAPP ADMIN
-
-           GANTI NOMOR DI BAWAH INI
-
-           CONTOH:
-
-           081234567890
-
-           MENJADI:
-
-           6281234567890
-        ================================================= */
-
-        const ADMIN_WHATSAPP =
-            "6281234567890";
-
-
-        /* =================================================
-           MORE MENU
-        ================================================= */
-
-        const moreButton =
-            document.getElementById(
-                "auMoreButton"
-            );
-
-
-        const moreMenu =
-            document.getElementById(
-                "auMoreMenu"
-            );
-
-
-        if (
-            moreButton &&
-            moreMenu
-        ) {
-
-
-            moreButton.addEventListener(
-                "click",
-                function (
-                    event
-                ) {
-
-
-                    event.stopPropagation();
-
-
-                    moreMenu.classList.toggle(
-                        "open"
-                    );
-
-
-                }
-            );
-
-
-            document.addEventListener(
-                "click",
-                function (
-                    event
-                ) {
-
-
-                    if (
-
-                        !moreMenu.contains(
-                            event.target
-                        )
-
-                        &&
-
-                        !moreButton.contains(
-                            event.target
-                        )
-
-                    ) {
-
-
-                        moreMenu.classList.remove(
-                            "open"
-                        );
-
-
-                    }
-
-
-                }
-            );
-
-
-        }
-
-
-        /* =================================================
-           REVEAL ANIMATION
-        ================================================= */
+        /* =============================================
+           REVEAL
+        ============================================= */
 
         const revealItems =
+
             document.querySelectorAll(
-                ".au-reveal"
+                ".reveal"
             );
 
 
         if (
+
             "IntersectionObserver"
             in
             window
+
         ) {
 
 
             const observer =
+
                 new IntersectionObserver(
 
                     function (
@@ -6105,7 +4615,7 @@ document.addEventListener(
 
 
                                     entry.target.classList.add(
-                                        "au-show"
+                                        "show"
                                     );
 
 
@@ -6124,13 +4634,11 @@ document.addEventListener(
 
                     },
 
+
                     {
 
                         threshold:
-                            0.10,
-
-                        rootMargin:
-                            "0px 0px -25px 0px"
+                            0.1
 
                     }
 
@@ -6140,19 +4648,8 @@ document.addEventListener(
             revealItems.forEach(
 
                 function (
-                    item,
-                    index
+                    item
                 ) {
-
-
-                    item.style.transitionDelay =
-                        (
-                            index % 4
-                        )
-                        *
-                        70
-                        +
-                        "ms";
 
 
                     observer.observe(
@@ -6167,6 +4664,7 @@ document.addEventListener(
 
         }
 
+
         else {
 
 
@@ -6178,207 +4676,59 @@ document.addEventListener(
 
 
                     item.classList.add(
-                        "au-show"
-                    );
-
-
-                }
-
-            );
-
-
-        }
-
-
-        /* =================================================
-           OPEN FORM
-        ================================================= */
-
-        const startRegistration =
-            document.getElementById(
-                "startRegistration"
-            );
-
-
-        const registrationArea =
-            document.getElementById(
-                "pendaftaran"
-            );
-
-
-        if (
-            startRegistration &&
-            registrationArea
-        ) {
-
-
-            startRegistration.addEventListener(
-                "click",
-                function () {
-
-
-                    registrationArea.classList.add(
                         "show"
                     );
 
 
-                    setTimeout(
-
-                        function () {
-
-
-                            registrationArea.scrollIntoView(
-
-                                {
-
-                                    behavior:
-                                        "smooth",
-
-                                    block:
-                                        "start"
-
-                                }
-
-                            );
-
-
-                        },
-
-                        100
-
-                    );
-
-
                 }
+
             );
 
 
         }
 
 
-        /* =================================================
-           HERO REGISTER BUTTON
-        ================================================= */
-
-        const heroRegisterLinks =
-            document.querySelectorAll(
-                'a[href="#pendaftaran"]'
-            );
-
-
-        heroRegisterLinks.forEach(
-
-            function (
-                link
-            ) {
-
-
-                link.addEventListener(
-                    "click",
-                    function () {
-
-
-                        if (
-                            registrationArea
-                        ) {
-
-
-                            registrationArea.classList.add(
-                                "show"
-                            );
-
-
-                        }
-
-
-                    }
-                );
-
-
-            }
-
-        );
-
-
-        /* =================================================
-           GENERATE CODE
-        ================================================= */
-
-        function generateRegistrationCode() {
-
-
-            const year =
-                new Date().getFullYear();
-
-
-            const random =
-                Math.random()
-                .toString(36)
-                .substring(2,7)
-                .toUpperCase();
-
-
-            const time =
-                Date.now()
-                .toString()
-                .slice(-3);
-
-
-            return (
-                "RMH-"
-                +
-                year
-                +
-                "-"
-                +
-                random
-                +
-                time
-            );
-
-
-        }
-
-
-        /* =================================================
+        /* =============================================
            FORM
-        ================================================= */
+        ============================================= */
 
-        const registrationForm =
+        const form =
+
             document.getElementById(
                 "registrationForm"
             );
 
 
-        const successArea =
+        const successBox =
+
             document.getElementById(
-                "successArea"
+                "successBox"
             );
 
 
-        const successCode =
+        const registrationCode =
+
             document.getElementById(
-                "successCode"
+                "registrationCode"
             );
 
 
-        const successName =
+        const whatsappButton =
+
             document.getElementById(
-                "successName"
+                "whatsappButton"
             );
-
-
-        let currentRegistration =
-            null;
 
 
         if (
-            registrationForm
+            form
         ) {
 
 
-            registrationForm.addEventListener(
+            form.addEventListener(
+
                 "submit",
+
                 function (
                     event
                 ) {
@@ -6388,11 +4738,11 @@ document.addEventListener(
 
 
                     if (
-                        !registrationForm.checkValidity()
+                        !form.checkValidity()
                     ) {
 
 
-                        registrationForm.reportValidity();
+                        form.reportValidity();
 
 
                         return;
@@ -6402,7 +4752,8 @@ document.addEventListener(
 
 
                     const submitButton =
-                        registrationForm.querySelector(
+
+                        form.querySelector(
                             ".submit-button"
                         );
 
@@ -6412,99 +4763,7 @@ document.addEventListener(
 
 
                     submitButton.innerHTML =
-                        "⏳ Mengirim Pendaftaran...";
-
-
-                    const formData =
-                        new FormData(
-                            registrationForm
-                        );
-
-
-                    const code =
-                        generateRegistrationCode();
-
-
-                    const registrationData = {
-
-                        code:
-                            code,
-
-                        nama_anak:
-                            formData.get(
-                                "nama_anak"
-                            ),
-
-                        nama_panggilan:
-                            formData.get(
-                                "nama_panggilan"
-                            ),
-
-                        tempat_lahir:
-                            formData.get(
-                                "tempat_lahir"
-                            ),
-
-                        tanggal_lahir:
-                            formData.get(
-                                "tanggal_lahir"
-                            ),
-
-                        jenis_kelamin:
-                            formData.get(
-                                "jenis_kelamin"
-                            ),
-
-                        nama_wali:
-                            formData.get(
-                                "nama_wali"
-                            ),
-
-                        hubungan:
-                            formData.get(
-                                "hubungan"
-                            ),
-
-                        whatsapp:
-                            formData.get(
-                                "whatsapp"
-                            ),
-
-                        email:
-                            formData.get(
-                                "email"
-                            ),
-
-                        alamat:
-                            formData.get(
-                                "alamat"
-                            ),
-
-                        kelas:
-                            formData.get(
-                                "kelas"
-                            ),
-
-                        tahun_ajaran:
-                            formData.get(
-                                "tahun_ajaran"
-                            ),
-
-                        pesan:
-                            formData.get(
-                                "pesan"
-                            ),
-
-                        status:
-                            "Menunggu Konfirmasi Admin",
-
-                        tanggal:
-                            new Date()
-                            .toLocaleString(
-                                "id-ID"
-                            )
-
-                    };
+                        "⏳ Memproses Pendaftaran...";
 
 
                     setTimeout(
@@ -6512,55 +4771,165 @@ document.addEventListener(
                         function () {
 
 
-                            let registrations =
-                                JSON.parse(
-                                    localStorage.getItem(
-                                        "rmh_registrations"
-                                    )
+                            /* =====================
+                               CREATE CODE
+                            ===================== */
+
+                            const randomNumber =
+
+                                Math.floor(
+
+                                    100000
+                                    +
+
+                                    Math.random()
+                                    *
+
+                                    900000
+
+                                );
+
+
+                            const code =
+
+                                "RA-"
+                                +
+                                randomNumber;
+
+
+                            registrationCode.textContent =
+                                code;
+
+
+                            /* =====================
+                               GET DATA
+                            ===================== */
+
+                            const namaAnak =
+
+                                document.getElementById(
+                                    "namaAnak"
+                                ).value;
+
+
+                            const namaWali =
+
+                                document.getElementById(
+                                    "namaWali"
+                                ).value;
+
+
+                            const whatsapp =
+
+                                document.getElementById(
+                                    "whatsapp"
+                                ).value;
+
+
+                            /* =====================
+                               FORMAT NUMBER
+                            ===================== */
+
+                            let phoneNumber =
+                                whatsapp.replace(
+                                    /\D/g,
+                                    ""
+                                );
+
+
+                            if (
+                                phoneNumber.startsWith(
+                                    "0"
                                 )
-                                ||
-                                [];
+                            ) {
 
 
-                            registrations.push(
-                                registrationData
-                            );
+                                phoneNumber =
+                                    "62"
+                                    +
+                                    phoneNumber.substring(
+                                        1
+                                    );
 
 
-                            localStorage.setItem(
-
-                                "rmh_registrations",
-
-                                JSON.stringify(
-                                    registrations
-                                )
-
-                            );
+                            }
 
 
-                            currentRegistration =
-                                registrationData;
+                            /* =====================
+                               WHATSAPP MESSAGE
+                            ===================== */
+
+                            const message =
+
+                                "Halo Admin RA Miftahul Hikmah 👋%0A%0A"
+
+                                +
+
+                                "Saya sudah melakukan pendaftaran.%0A%0A"
+
+                                +
+
+                                "👶 Nama Anak: "
+                                +
+                                namaAnak
+                                +
+                                "%0A"
+
+                                +
+
+                                "👨‍👩‍👧 Nama Wali: "
+                                +
+                                namaWali
+                                +
+                                "%0A"
+
+                                +
+
+                                "🔑 Kode Pendaftaran: "
+                                +
+                                code
+                                +
+                                "%0A%0A"
+
+                                +
+
+                                "Mohon informasi proses selanjutnya. Terima kasih 🙏";
 
 
-                            successCode.textContent =
-                                registrationData.code;
+                            /* =====================
+                               ADMIN NUMBER
+                            ===================== */
+
+                            const adminNumber =
+
+                                "6281234567890";
 
 
-                            successName.textContent =
-                                registrationData.nama_anak;
+                            whatsappButton.href =
+
+                                "https://wa.me/"
+                                +
+                                adminNumber
+                                +
+                                "?text="
+                                +
+                                message;
 
 
-                            registrationArea.classList.remove(
+                            /* =====================
+                               SHOW SUCCESS
+                            ===================== */
+
+                            form.style.display =
+                                "none";
+
+
+                            successBox.classList.add(
                                 "show"
                             );
 
 
-                            successArea.classList.add(
-                                "show"
-                            );
-
-
-                            successArea.scrollIntoView(
+                            successBox.scrollIntoView(
 
                                 {
 
@@ -6575,359 +4944,15 @@ document.addEventListener(
                             );
 
 
-                            submitButton.disabled =
-                                false;
-
-
-                            submitButton.innerHTML =
-                                "🚀 Kirim Pendaftaran";
-
-
                         },
 
-                        900
+                        1000
 
                     );
 
 
                 }
-            );
 
-
-        }
-
-
-        /* =================================================
-           WHATSAPP
-        ================================================= */
-
-        const whatsappButton =
-            document.getElementById(
-                "whatsappButton"
-            );
-
-
-        if (
-            whatsappButton
-        ) {
-
-
-            whatsappButton.addEventListener(
-                "click",
-                function () {
-
-
-                    if (
-                        !currentRegistration
-                    ) {
-
-
-                        return;
-
-
-                    }
-
-
-                    const message =
-
-`Assalamu'alaikum Admin RA Miftahul Hikmah 👋
-
-Saya telah melakukan pendaftaran peserta didik baru.
-
-🧒 Nama Anak:
-${currentRegistration.nama_anak}
-
-👨‍👩‍👧 Nama Wali:
-${currentRegistration.nama_wali}
-
-🔑 Kode Pendaftaran:
-${currentRegistration.code}
-
-📚 Program:
-${currentRegistration.kelas || "Belum dipilih"}
-
-Mohon informasi untuk proses selanjutnya.
-
-Terima kasih 🙏`;
-
-
-                    const whatsappURL =
-
-                        "https://wa.me/"
-                        +
-                        ADMIN_WHATSAPP
-                        +
-                        "?text="
-                        +
-                        encodeURIComponent(
-                            message
-                        );
-
-
-                    window.open(
-
-                        whatsappURL,
-
-                        "_blank"
-
-                    );
-
-
-                }
-            );
-
-
-        }
-
-
-        /* =================================================
-           NEW REGISTRATION
-        ================================================= */
-
-        const newRegistrationButton =
-            document.getElementById(
-                "newRegistrationButton"
-            );
-
-
-        if (
-            newRegistrationButton
-        ) {
-
-
-            newRegistrationButton.addEventListener(
-                "click",
-                function () {
-
-
-                    successArea.classList.remove(
-                        "show"
-                    );
-
-
-                    registrationArea.classList.add(
-                        "show"
-                    );
-
-
-                    registrationForm.reset();
-
-
-                    currentRegistration =
-                        null;
-
-
-                    registrationArea.scrollIntoView(
-
-                        {
-
-                            behavior:
-                                "smooth",
-
-                            block:
-                                "start"
-
-                        }
-
-                    );
-
-
-                }
-            );
-
-
-        }
-
-
-        /* =================================================
-           CHECK STATUS
-        ================================================= */
-
-        const checkStatusButton =
-            document.getElementById(
-                "checkStatusButton"
-            );
-
-
-        const statusCodeInput =
-            document.getElementById(
-                "statusCodeInput"
-            );
-
-
-        const statusResult =
-            document.getElementById(
-                "statusResult"
-            );
-
-
-        if (
-            checkStatusButton
-        ) {
-
-
-            checkStatusButton.addEventListener(
-                "click",
-                function () {
-
-
-                    const code =
-                        statusCodeInput.value
-                        .trim()
-                        .toUpperCase();
-
-
-                    statusResult.className =
-                        "status-result";
-
-
-                    if (
-                        !code
-                    ) {
-
-
-                        statusResult.textContent =
-                            "⚠️ Silakan masukkan kode pendaftaran terlebih dahulu.";
-
-
-                        statusResult.classList.add(
-                            "show",
-                            "error"
-                        );
-
-
-                        return;
-
-
-                    }
-
-
-                    const registrations =
-                        JSON.parse(
-                            localStorage.getItem(
-                                "rmh_registrations"
-                            )
-                        )
-                        ||
-                        [];
-
-
-                    const registration =
-                        registrations.find(
-
-                            function (
-                                item
-                            ) {
-
-
-                                return (
-
-                                    item.code
-                                    .toUpperCase()
-                                    ===
-                                    code
-
-                                );
-
-
-                            }
-
-                        );
-
-
-                    if (
-                        registration
-                    ) {
-
-
-                        statusResult.innerHTML =
-
-                            "🟡 <b>Status Pendaftaran</b><br>"
-                            +
-                            "Nama Anak: "
-                            +
-                            registration.nama_anak
-                            +
-                            "<br>"
-                            +
-                            "Kode: "
-                            +
-                            registration.code
-                            +
-                            "<br><br>"
-                            +
-                            "📋 "
-                            +
-                            registration.status;
-
-
-                        statusResult.classList.add(
-                            "show",
-                            "waiting"
-                        );
-
-
-                    }
-
-                    else {
-
-
-                        statusResult.innerHTML =
-
-                            "❌ <b>Data Tidak Ditemukan</b><br>"
-                            +
-                            "Pastikan kode pendaftaran yang Anda masukkan sudah benar.";
-
-
-                        statusResult.classList.add(
-                            "show",
-                            "error"
-                        );
-
-
-                    }
-
-
-                }
-            );
-
-
-        }
-
-
-        /* =================================================
-           ENTER CHECK STATUS
-        ================================================= */
-
-        if (
-            statusCodeInput
-        ) {
-
-
-            statusCodeInput.addEventListener(
-                "keydown",
-                function (
-                    event
-                ) {
-
-
-                    if (
-                        event.key
-                        ===
-                        "Enter"
-                    ) {
-
-
-                        event.preventDefault();
-
-
-                        checkStatusButton.click();
-
-
-                    }
-
-
-                }
             );
 
 
