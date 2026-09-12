@@ -1,0 +1,1813 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Portal Orang Tua | RA Miftahul Hikmah
+    </title>
+
+
+    <!-- CSS UTAMA -->
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+
+    <style>
+
+        /* =========================================
+           PAGE
+        ========================================= */
+
+        .orangtua-page {
+
+            padding-top: 35px;
+            padding-bottom: 60px;
+
+        }
+
+
+        /* =========================================
+           HEADER CARD
+        ========================================= */
+
+        .orangtua-header {
+
+            position: relative;
+
+            padding: 30px;
+
+            overflow: hidden;
+
+            border-radius: 25px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff0f6,
+                    #ffe2ec
+                );
+
+            box-shadow:
+                0 15px 35px
+                rgba(239,79,130,.10);
+
+        }
+
+
+        .orangtua-header::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 220px;
+            height: 220px;
+
+            top: -100px;
+            right: -70px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .45
+                );
+
+        }
+
+
+        .orangtua-header-content {
+
+            position: relative;
+
+            z-index: 2;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 20px;
+
+        }
+
+
+        .orangtua-header-icon {
+
+            width: 80px;
+            height: 80px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            flex-shrink: 0;
+
+            border-radius: 22px;
+
+            font-size: 38px;
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .75
+                );
+
+            box-shadow:
+                0 10px 25px
+                rgba(239,79,130,.10);
+
+        }
+
+
+        .orangtua-header h1 {
+
+            margin: 0;
+
+            color: #704456;
+
+            font-size: 27px;
+
+            font-weight: 900;
+
+        }
+
+
+        .orangtua-header p {
+
+            margin: 7px 0 0;
+
+            color: #956879;
+
+            font-size: 13px;
+
+        }
+
+
+        /* =========================================
+           CHILD CARD
+        ========================================= */
+
+        .anak-card {
+
+            margin-top: 30px;
+
+            padding: 25px;
+
+            border-radius: 25px;
+
+            background: #ffffff;
+
+            box-shadow:
+                0 12px 30px
+                rgba(50,100,120,.08);
+
+        }
+
+
+        .anak-card-title {
+
+            margin: 0 0 20px;
+
+            color: #31536c;
+
+            font-size: 20px;
+
+        }
+
+
+        .anak-info {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 18px;
+
+        }
+
+
+        .anak-avatar {
+
+            width: 75px;
+            height: 75px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            flex-shrink: 0;
+
+            border-radius: 22px;
+
+            font-size: 38px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffdce9,
+                    #fff0f6
+                );
+
+        }
+
+
+        .anak-info h2 {
+
+            margin: 0;
+
+            color: #31536c;
+
+            font-size: 21px;
+
+        }
+
+
+        .anak-info p {
+
+            margin: 7px 0 0;
+
+            color: #7f949e;
+
+            font-size: 13px;
+
+        }
+
+
+        /* =========================================
+           STATISTIC
+        ========================================= */
+
+        .stat-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    3,
+                    1fr
+                );
+
+            gap: 18px;
+
+            margin-top: 25px;
+
+        }
+
+
+        .stat-card {
+
+            padding: 20px;
+
+            border-radius: 20px;
+
+            background: #ffffff;
+
+            box-shadow:
+                0 10px 25px
+                rgba(50,100,120,.07);
+
+        }
+
+
+        .stat-icon {
+
+            font-size: 28px;
+
+        }
+
+
+        .stat-card h3 {
+
+            margin: 12px 0 5px;
+
+            color: #31536c;
+
+            font-size: 22px;
+
+        }
+
+
+        .stat-card p {
+
+            margin: 0;
+
+            color: #83959e;
+
+            font-size: 11px;
+
+        }
+
+
+        /* =========================================
+           CATATAN
+        ========================================= */
+
+        .catatan-section {
+
+            margin-top: 30px;
+
+            padding: 25px;
+
+            border-radius: 25px;
+
+            background: #ffffff;
+
+            box-shadow:
+                0 12px 30px
+                rgba(50,100,120,.08);
+
+        }
+
+
+        .catatan-section-header {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 15px;
+
+            margin-bottom: 22px;
+
+        }
+
+
+        .catatan-section-header h2 {
+
+            margin: 0;
+
+            color: #31536c;
+
+            font-size: 20px;
+
+        }
+
+
+        .catatan-count {
+
+            padding: 7px 12px;
+
+            border-radius: 20px;
+
+            background: #fff0f6;
+
+            color: #ef4f82;
+
+            font-size: 11px;
+
+            font-weight: 900;
+
+        }
+
+
+        .catatan-list {
+
+            display: grid;
+
+            gap: 15px;
+
+        }
+
+
+        .catatan-item {
+
+            padding: 20px;
+
+            border-radius: 20px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fffafd,
+                    #ffffff
+                );
+
+            border:
+                1px solid
+                rgba(
+                    239,
+                    79,
+                    130,
+                    .10
+                );
+
+            animation:
+                itemShow
+                .4s ease;
+
+        }
+
+
+        @keyframes itemShow {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(15px);
+
+            }
+
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+
+            }
+
+        }
+
+
+        .catatan-top {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 15px;
+
+        }
+
+
+        .perkembangan-badge {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            padding: 8px 12px;
+
+            border-radius: 20px;
+
+            background: #eafff1;
+
+            color: #3c9864;
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+        }
+
+
+        .catatan-date {
+
+            color: #9aaab1;
+
+            font-size: 10px;
+
+        }
+
+
+        .catatan-text {
+
+            margin-top: 15px;
+
+            padding: 15px;
+
+            border-radius: 14px;
+
+            background: #ffffff;
+
+            color: #647d89;
+
+            font-size: 13px;
+
+            line-height: 1.8;
+
+            white-space: pre-line;
+
+        }
+
+
+        /* =========================================
+           EMPTY
+        ========================================= */
+
+        .empty-box {
+
+            padding: 50px 20px;
+
+            text-align: center;
+
+            border-radius: 20px;
+
+            background: #f9fcfd;
+
+        }
+
+
+        .empty-icon {
+
+            font-size: 55px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .empty-box h3 {
+
+            margin: 0;
+
+            color: #526f80;
+
+            font-size: 17px;
+
+        }
+
+
+        .empty-box p {
+
+            margin: 8px 0 0;
+
+            color: #8a9ca5;
+
+            font-size: 12px;
+
+        }
+
+
+        /* =========================================
+           LOADING
+        ========================================= */
+
+        .loading-box {
+
+            padding: 40px;
+
+            text-align: center;
+
+            color: #81949e;
+
+            font-size: 13px;
+
+        }
+
+
+        /* =========================================
+           STATUS TERAKHIR
+        ========================================= */
+
+        .status-terakhir {
+
+            margin-top: 25px;
+
+            padding: 18px;
+
+            border-radius: 18px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f0fff5,
+                    #ffffff
+                );
+
+        }
+
+
+        .status-terakhir h3 {
+
+            margin: 0 0 10px;
+
+            color: #31536c;
+
+            font-size: 14px;
+
+        }
+
+
+        .status-terakhir-value {
+
+            color: #3c9864;
+
+            font-size: 16px;
+
+            font-weight: 900;
+
+        }
+
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+
+        @media (max-width: 700px) {
+
+            .stat-grid {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            .orangtua-header {
+
+                padding: 22px;
+
+            }
+
+
+            .orangtua-header-content {
+
+                align-items:
+                    flex-start;
+
+            }
+
+
+            .orangtua-header-icon {
+
+                width: 65px;
+                height: 65px;
+
+                font-size: 30px;
+
+            }
+
+
+            .orangtua-header h1 {
+
+                font-size: 21px;
+
+            }
+
+
+            .anak-info {
+
+                align-items:
+                    flex-start;
+
+            }
+
+
+            .anak-card,
+            .catatan-section {
+
+                padding: 18px;
+
+            }
+
+
+            .catatan-top {
+
+                flex-direction: column;
+
+                align-items:
+                    flex-start;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     HEADER
+========================================= -->
+
+<header class="top">
+
+    <div class="head wrap">
+
+        <a
+            class="brand"
+            href="index.html"
+        >
+
+            <div class="sun">
+                ☀️
+            </div>
+
+
+            <div>
+
+                <h1>
+
+                    Ra Miftahul
+
+                    <span>
+                        Hikmah
+                    </span>
+
+                </h1>
+
+
+                <p>
+                    Tangerang 💗
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <button
+            class="btn"
+            id="logoutButton"
+            type="button"
+        >
+
+            🚪 Logout
+
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================
+     HERO
+========================================= -->
+
+<section class="pagehero">
+
+    <div class="wrap">
+
+        <h2>
+
+            Portal
+
+            <span
+                style="color:#ef4f82"
+            >
+                Orang Tua
+            </span>
+
+            👨‍👩‍👧
+
+        </h2>
+
+
+        <p>
+
+            Pantau perkembangan anak
+            dengan mudah dan nyaman.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     CONTENT
+========================================= -->
+
+<section
+    class="section wrap orangtua-page"
+>
+
+
+    <!-- HEADER -->
+
+    <div
+        class="orangtua-header"
+    >
+
+        <div
+            class="orangtua-header-content"
+        >
+
+
+            <div
+                class="orangtua-header-icon"
+            >
+
+                👨‍👩‍👧
+
+            </div>
+
+
+            <div>
+
+                <h1>
+
+                    Halo,
+
+                    <span
+                        id="waliName"
+                    >
+
+                        Orang Tua
+
+                    </span>
+
+                    👋
+
+                </h1>
+
+
+                <p>
+
+                    Selamat datang di portal
+                    perkembangan anak RA
+                    Miftahul Hikmah.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- DATA ANAK -->
+
+    <div
+        class="anak-card"
+    >
+
+        <h2
+            class="anak-card-title"
+        >
+
+            👧 Data Anak
+
+        </h2>
+
+
+        <div
+            id="anakContainer"
+        >
+
+            <div
+                class="loading-box"
+            >
+
+                ⏳ Memuat data anak...
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- STATISTIK -->
+
+    <div
+        class="stat-grid"
+    >
+
+
+        <div
+            class="stat-card"
+        >
+
+            <div
+                class="stat-icon"
+            >
+
+                📝
+
+            </div>
+
+
+            <h3
+                id="jumlahCatatan"
+            >
+
+                0
+
+            </h3>
+
+
+            <p>
+
+                Total Catatan Guru
+
+            </p>
+
+        </div>
+
+
+        <div
+            class="stat-card"
+        >
+
+            <div
+                class="stat-icon"
+            >
+
+                🌱
+
+            </div>
+
+
+            <h3
+                id="statusPerkembangan"
+            >
+
+                -
+
+            </h3>
+
+
+            <p>
+
+                Status Perkembangan Terakhir
+
+            </p>
+
+        </div>
+
+
+        <div
+            class="stat-card"
+        >
+
+            <div
+                class="stat-icon"
+            >
+
+                📅
+
+            </div>
+
+
+            <h3
+                id="catatanTerakhir"
+            >
+
+                -
+
+            </h3>
+
+
+            <p>
+
+                Catatan Terakhir
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- STATUS TERAKHIR -->
+
+    <div
+        class="status-terakhir"
+    >
+
+        <h3>
+
+            🌱 Perkembangan Terakhir
+
+        </h3>
+
+
+        <div
+            class="status-terakhir-value"
+            id="statusDetail"
+        >
+
+            Belum ada catatan perkembangan
+
+        </div>
+
+    </div>
+
+
+    <!-- RIWAYAT CATATAN -->
+
+    <div
+        class="catatan-section"
+    >
+
+
+        <div
+            class="catatan-section-header"
+        >
+
+
+            <h2>
+
+                📚 Riwayat Catatan Guru
+
+            </h2>
+
+
+            <div
+                class="catatan-count"
+                id="catatanCount"
+            >
+
+                0 Catatan
+
+            </div>
+
+
+        </div>
+
+
+        <div
+            class="catatan-list"
+            id="catatanList"
+        >
+
+            <div
+                class="loading-box"
+            >
+
+                ⏳ Memuat catatan...
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer
+    class="footer"
+>
+
+    <div
+        class="copy wrap"
+    >
+
+        © 2026 RA Miftahul Hikmah.
+        All rights reserved.
+
+    </div>
+
+</footer>
+
+
+<!-- =========================================
+     SUPABASE
+========================================= -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+></script>
+
+
+<script>
+
+
+/* =========================================
+   SUPABASE CONFIG
+========================================= */
+
+const SUPABASE_URL =
+    "https://ervhwjrlqcsobawwhkpf.supabase.co";
+
+
+const SUPABASE_PUBLISHABLE_KEY =
+    "sb_publishable_u48E-Q-RjdFRFLC_Cv3rmg_gD0Z3y2K";
+
+
+const supabaseClient =
+    window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_PUBLISHABLE_KEY
+    );
+
+
+/* =========================================
+   ELEMENT
+========================================= */
+
+const waliName =
+    document.getElementById(
+        "waliName"
+    );
+
+
+const anakContainer =
+    document.getElementById(
+        "anakContainer"
+    );
+
+
+const jumlahCatatan =
+    document.getElementById(
+        "jumlahCatatan"
+    );
+
+
+const statusPerkembangan =
+    document.getElementById(
+        "statusPerkembangan"
+    );
+
+
+const catatanTerakhir =
+    document.getElementById(
+        "catatanTerakhir"
+    );
+
+
+const statusDetail =
+    document.getElementById(
+        "statusDetail"
+    );
+
+
+const catatanCount =
+    document.getElementById(
+        "catatanCount"
+    );
+
+
+const catatanList =
+    document.getElementById(
+        "catatanList"
+    );
+
+
+const logoutButton =
+    document.getElementById(
+        "logoutButton"
+    );
+
+
+/* =========================================
+   DATA
+========================================= */
+
+let currentUser =
+    null;
+
+
+let dataAnak =
+    null;
+
+
+/* =========================================
+   ESCAPE HTML
+========================================= */
+
+function escapeHTML(
+    text
+) {
+
+    const div =
+        document.createElement(
+            "div"
+        );
+
+
+    div.textContent =
+        text || "";
+
+
+    return div.innerHTML;
+
+}
+
+
+/* =========================================
+   FORMAT TANGGAL
+========================================= */
+
+function formatTanggal(
+    tanggal
+) {
+
+    if (!tanggal) {
+
+        return "-";
+
+    }
+
+
+    const date =
+        new Date(
+            tanggal
+        );
+
+
+    return date.toLocaleString(
+        "id-ID",
+        {
+
+            day:
+                "numeric",
+
+            month:
+                "long",
+
+            year:
+                "numeric",
+
+            hour:
+                "2-digit",
+
+            minute:
+                "2-digit"
+
+        }
+    );
+
+}
+
+
+/* =========================================
+   CEK LOGIN
+========================================= */
+
+async function cekWaliMurid() {
+
+    const {
+        data: {
+            user
+        },
+        error: userError
+    } =
+        await supabaseClient
+        .auth
+        .getUser();
+
+
+    if (
+        userError ||
+        !user
+    ) {
+
+        window.location.href =
+            "login.html";
+
+        return;
+
+    }
+
+
+    currentUser =
+        user;
+
+
+    const {
+        data: profile,
+        error: profileError
+    } =
+        await supabaseClient
+        .from("profiles")
+        .select(
+            "full_name, role"
+        )
+        .eq(
+            "id",
+            user.id
+        )
+        .single();
+
+
+    if (
+        profileError ||
+        !profile
+    ) {
+
+        console.error(
+            profileError
+        );
+
+
+        await supabaseClient
+        .auth
+        .signOut();
+
+
+        window.location.href =
+            "login.html";
+
+        return;
+
+    }
+
+
+    if (
+        profile.role !==
+        "wali_murid"
+    ) {
+
+        alert(
+            "⛔ Kamu tidak memiliki akses sebagai Wali Murid."
+        );
+
+
+        await supabaseClient
+        .auth
+        .signOut();
+
+
+        window.location.href =
+            "login.html";
+
+        return;
+
+    }
+
+
+    waliName.textContent =
+        profile.full_name ||
+        "Orang Tua";
+
+
+    await loadAnak();
+
+}
+
+
+/* =========================================
+   LOAD ANAK
+========================================= */
+
+async function loadAnak() {
+
+    anakContainer.innerHTML =
+        `
+        <div class="loading-box">
+
+            ⏳ Memuat data anak...
+
+        </div>
+        `;
+
+
+    const {
+        data,
+        error
+    } =
+        await supabaseClient
+        .from("murid")
+        .select("*")
+        .eq(
+            "wali_id",
+            currentUser.id
+        )
+        .limit(1)
+        .maybeSingle();
+
+
+    if (error) {
+
+        console.error(
+            "ERROR LOAD ANAK:",
+            error
+        );
+
+
+        anakContainer.innerHTML =
+            `
+            <div class="empty-box">
+
+                <div class="empty-icon">
+                    ⚠️
+                </div>
+
+                <h3>
+                    Data Anak Tidak Dapat Dimuat
+                </h3>
+
+                <p>
+                    ${escapeHTML(
+                        error.message
+                    )}
+                </p>
+
+            </div>
+            `;
+
+
+        return;
+
+    }
+
+
+    if (!data) {
+
+        anakContainer.innerHTML =
+            `
+            <div class="empty-box">
+
+                <div class="empty-icon">
+                    👧
+                </div>
+
+                <h3>
+                    Anak Belum Terhubung
+                </h3>
+
+                <p>
+                    Akun orang tua ini belum
+                    dihubungkan dengan data murid.
+
+                </p>
+
+            </div>
+            `;
+
+
+        return;
+
+    }
+
+
+    dataAnak =
+        data;
+
+
+    const kelompok =
+        data.kelas ||
+        data.kelompok ||
+        "-";
+
+
+    anakContainer.innerHTML =
+        `
+        <div class="anak-info">
+
+            <div class="anak-avatar">
+
+                👧
+
+            </div>
+
+
+            <div>
+
+                <h2>
+
+                    ${escapeHTML(
+                        data.nama
+                    )}
+
+                </h2>
+
+
+                <p>
+
+                    👥 Kelompok:
+                    ${escapeHTML(
+                        kelompok
+                    )}
+
+                </p>
+
+            </div>
+
+
+        </div>
+        `;
+
+
+    await loadCatatan();
+
+}
+
+
+/* =========================================
+   LOAD CATATAN
+========================================= */
+
+async function loadCatatan() {
+
+    if (!dataAnak) {
+
+        return;
+
+    }
+
+
+    catatanList.innerHTML =
+        `
+        <div class="loading-box">
+
+            ⏳ Memuat catatan...
+
+        </div>
+        `;
+
+
+    const {
+        data,
+        error
+    } =
+        await supabaseClient
+        .from("catatan_murid")
+        .select("*")
+        .eq(
+            "nama_murid",
+            dataAnak.nama
+        )
+        .order(
+            "created_at",
+            {
+                ascending: false
+            }
+        );
+
+
+    if (error) {
+
+        console.error(
+            "ERROR LOAD CATATAN:",
+            error
+        );
+
+
+        catatanList.innerHTML =
+            `
+            <div class="empty-box">
+
+                <div class="empty-icon">
+                    ⚠️
+                </div>
+
+                <h3>
+                    Catatan Tidak Dapat Dimuat
+                </h3>
+
+                <p>
+                    ${escapeHTML(
+                        error.message
+                    )}
+                </p>
+
+            </div>
+            `;
+
+
+        return;
+
+    }
+
+
+    renderCatatan(
+        data || []
+    );
+
+}
+
+
+/* =========================================
+   RENDER CATATAN
+========================================= */
+
+function renderCatatan(
+    data
+) {
+
+    jumlahCatatan.textContent =
+        data.length;
+
+
+    catatanCount.textContent =
+        data.length +
+        " Catatan";
+
+
+    if (
+        data.length === 0
+    ) {
+
+        statusPerkembangan.textContent =
+            "-";
+
+
+        catatanTerakhir.textContent =
+            "-";
+
+
+        statusDetail.textContent =
+            "Belum ada catatan perkembangan";
+
+
+        catatanList.innerHTML =
+            `
+            <div class="empty-box">
+
+                <div class="empty-icon">
+                    📝
+                </div>
+
+                <h3>
+                    Belum Ada Catatan
+                </h3>
+
+                <p>
+                    Catatan dari guru akan
+                    muncul di sini.
+
+                </p>
+
+            </div>
+            `;
+
+
+        return;
+
+    }
+
+
+    const catatanTerbaru =
+        data[0];
+
+
+    statusPerkembangan.textContent =
+        catatanTerbaru.perkembangan ||
+        "-";
+
+
+    statusDetail.textContent =
+        catatanTerbaru.perkembangan ||
+        "Belum ada status perkembangan";
+
+
+    catatanTerakhir.textContent =
+        formatTanggalSingkat(
+            catatanTerbaru.created_at
+        );
+
+
+    catatanList.innerHTML =
+        "";
+
+
+    data.forEach(
+        function(catatan) {
+
+
+            const item =
+                document.createElement(
+                    "div"
+                );
+
+
+            item.className =
+                "catatan-item";
+
+
+            item.innerHTML =
+                `
+                <div class="catatan-top">
+
+                    <div class="perkembangan-badge">
+
+                        🌱
+                        ${escapeHTML(
+                            catatan.perkembangan ||
+                            "-"
+                        )}
+
+                    </div>
+
+
+                    <div class="catatan-date">
+
+                        🕒
+                        ${formatTanggal(
+                            catatan.created_at
+                        )}
+
+                    </div>
+
+                </div>
+
+
+                <div class="catatan-text">
+
+                    ${escapeHTML(
+                        catatan.catatan ||
+                        ""
+                    )}
+
+                </div>
+                `;
+
+
+            catatanList.appendChild(
+                item
+            );
+
+
+        }
+    );
+
+}
+
+
+/* =========================================
+   FORMAT TANGGAL SINGKAT
+========================================= */
+
+function formatTanggalSingkat(
+    tanggal
+) {
+
+    if (!tanggal) {
+
+        return "-";
+
+    }
+
+
+    const date =
+        new Date(
+            tanggal
+        );
+
+
+    return date.toLocaleDateString(
+        "id-ID",
+        {
+
+            day:
+                "numeric",
+
+            month:
+                "short"
+
+        }
+    );
+
+}
+
+
+/* =========================================
+   LOGOUT
+========================================= */
+
+logoutButton.addEventListener(
+    "click",
+    async function() {
+
+
+        await supabaseClient
+        .auth
+        .signOut();
+
+
+        window.location.href =
+            "login.html";
+
+
+    }
+);
+
+
+/* =========================================
+   JALANKAN
+========================================= */
+
+cekWaliMurid();
+
+
+</script>
+
+
+</body>
+
+</html>

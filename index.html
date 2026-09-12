@@ -1,1 +1,3077 @@
+<!doctype html>
+<html lang="id">
 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Home | Ra Miftahul Hikmah</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* =========================================================
+           RESET
+           ========================================================= */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            overflow-x: hidden;
+            background: #fffaf4;
+        }
+
+
+        /* =========================================================
+           ANNOUNCEMENT
+           ========================================================= */
+
+        .announcement {
+            position: relative;
+            z-index: 10000;
+
+            min-height: 48px;
+            padding: 8px 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+
+            background: #fff3c7;
+            border-bottom: 1px solid #f5df9b;
+
+            color: #496575;
+        }
+
+        .announcement-icon {
+            font-size: 19px;
+        }
+
+        .announcement-content {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            min-width: 0;
+        }
+
+        .announcement-content strong {
+            color: #ef648f;
+            font-size: 11px;
+            font-weight: 900;
+            white-space: nowrap;
+        }
+
+        .announcement-content span {
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        #announcementButton {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 7px 13px;
+
+            border-radius: 20px;
+
+            background: #f45b8b;
+            color: #fff !important;
+
+            text-decoration: none;
+
+            font-size: 10px;
+            font-weight: 900;
+
+            white-space: nowrap;
+        }
+
+
+        /* =========================================================
+           NAVBAR
+           ========================================================= */
+
+        .top {
+            position: relative;
+            z-index: 9999;
+
+            width: 100%;
+
+            background: #fffaf4;
+
+            padding: 16px 20px;
+        }
+
+        .kiddoz-header {
+            position: relative;
+            width: 100%;
+        }
+
+        .kiddoz-navbar {
+            width: min(1250px, 100%);
+            min-height: 72px;
+
+            margin: 0 auto;
+            padding: 8px 10px 8px 18px;
+
+            display: flex !important;
+            flex-direction: row !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+
+            gap: 14px;
+
+            background: #ffffff;
+
+            border: 1px solid #eee3d7;
+            border-radius: 24px;
+
+            box-shadow:
+                0 10px 30px rgba(60, 70, 80, .09);
+
+            overflow: hidden;
+        }
+
+
+        /* =========================================================
+           LOGO
+           ========================================================= */
+
+        .kiddoz-logo {
+            display: flex !important;
+            flex-direction: row !important;
+            align-items: center !important;
+
+            flex: 0 0 auto !important;
+            flex-shrink: 0 !important;
+
+            gap: 9px;
+
+            text-decoration: none;
+
+            white-space: nowrap;
+        }
+
+        .kiddoz-logo-icon {
+            width: 46px;
+            height: 46px;
+
+            flex: 0 0 46px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 15px;
+
+            background: #fff0a8;
+
+            box-shadow:
+                0 4px 0 #e4cd67;
+
+            font-size: 23px;
+        }
+
+        .kiddoz-logo-text {
+            display: flex;
+            flex-direction: column;
+
+            line-height: 1.05;
+        }
+
+        .kiddoz-logo-title {
+            color: #285b76;
+
+            font-size: 15px;
+            font-weight: 900;
+
+            white-space: nowrap;
+        }
+
+        .kiddoz-logo-subtitle {
+            margin-top: 4px;
+
+            color: #f27b9e;
+
+            font-size: 9px;
+            font-weight: 800;
+        }
+
+
+        /* =========================================================
+           MENU — HORIZONTAL
+           ========================================================= */
+
+        .kiddoz-menu {
+            display: flex !important;
+            flex-direction: row !important;
+            align-items: center !important;
+            justify-content: center !important;
+
+            flex: 1 1 auto !important;
+
+            min-width: 0;
+
+            gap: 2px;
+
+            white-space: nowrap !important;
+
+            overflow: hidden;
+        }
+
+        .kiddoz-menu a {
+            position: relative;
+
+            display: inline-flex !important;
+            flex-direction: row !important;
+            align-items: center !important;
+            justify-content: center !important;
+
+            flex: 0 0 auto !important;
+
+            width: auto !important;
+            min-width: max-content !important;
+
+            height: 42px;
+
+            padding: 0 10px;
+
+            border-radius: 13px;
+
+            color: #68727a;
+
+            text-decoration: none;
+
+            font-size: 11px;
+            font-weight: 800;
+
+            white-space: nowrap !important;
+
+            transition:
+                background .2s ease,
+                color .2s ease,
+                transform .2s ease;
+        }
+
+        .kiddoz-menu a:hover {
+            color: #ef5b88;
+
+            background: #fff0f5;
+
+            transform: translateY(-2px);
+        }
+
+        .kiddoz-menu a.active {
+            color: #ef5b88;
+
+            background: #fff0f5;
+        }
+
+        .kiddoz-menu a.active::after {
+            content: "";
+
+            position: absolute;
+
+            left: 12px;
+            right: 12px;
+            bottom: 3px;
+
+            height: 3px;
+
+            border-radius: 20px;
+
+            background: #f45b8b;
+        }
+
+        .kiddoz-menu-icon {
+            margin-right: 4px;
+
+            font-size: 12px;
+        }
+
+
+        /* =========================================================
+           DAFTAR BUTTON
+           ========================================================= */
+
+        .kiddoz-register {
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+
+            flex: 0 0 auto !important;
+            flex-shrink: 0 !important;
+
+            width: auto !important;
+            min-width: 142px;
+
+            height: 46px;
+
+            padding: 0 18px;
+
+            border-radius: 23px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff6d9d,
+                    #f45b8b
+                );
+
+            color: #ffffff !important;
+
+            text-decoration: none;
+
+            font-size: 11px;
+            font-weight: 900;
+
+            white-space: nowrap !important;
+
+            box-shadow:
+                0 4px 0 #d83e6d,
+                0 8px 18px rgba(244,91,139,.18);
+
+            transition:
+                transform .2s ease,
+                box-shadow .2s ease;
+        }
+
+        .kiddoz-register:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 6px 0 #d83e6d,
+                0 12px 22px rgba(244,91,139,.22);
+        }
+
+
+        /* =========================================================
+           NAVBAR DECORATION
+           ========================================================= */
+
+        .kiddoz-header::before {
+            content: "✦";
+
+            position: absolute;
+
+            left: 2%;
+            top: -12px;
+
+            color: #ffd45c;
+
+            font-size: 17px;
+
+            animation: navFloat 3s ease-in-out infinite;
+        }
+
+        .kiddoz-header::after {
+            content: "✿";
+
+            position: absolute;
+
+            right: 3%;
+            bottom: -12px;
+
+            color: #7acb9b;
+
+            font-size: 17px;
+
+            animation: navFloat 4s ease-in-out infinite reverse;
+        }
+
+        @keyframes navFloat {
+            0%, 100% {
+                transform: translateY(0) rotate(0);
+            }
+
+            50% {
+                transform: translateY(-5px) rotate(8deg);
+            }
+        }
+
+
+        /* =========================================================
+           HERO
+           ========================================================= */
+
+        .hero-wow {
+            position: relative;
+
+            min-height: 680px;
+
+            padding: 75px 25px 110px;
+
+            overflow: hidden;
+
+            background:
+                radial-gradient(
+                    circle at 8% 15%,
+                    rgba(255,255,255,.95),
+                    transparent 20%
+                ),
+                radial-gradient(
+                    circle at 90% 10%,
+                    rgba(255,221,102,.65),
+                    transparent 18%
+                ),
+                radial-gradient(
+                    circle at 75% 85%,
+                    rgba(255,163,210,.30),
+                    transparent 25%
+                ),
+                linear-gradient(
+                    180deg,
+                    #67d1ff 0%,
+                    #9de5ff 38%,
+                    #c8f2ff 70%,
+                    #f7feff 100%
+                );
+        }
+
+        .hero-wow::before {
+            content: "";
+
+            position: absolute;
+
+            width: 650px;
+            height: 650px;
+
+            left: -250px;
+            top: -280px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(255,255,255,.75),
+                    transparent 70%
+                );
+
+            animation: heroGlow 8s ease-in-out infinite;
+
+            pointer-events: none;
+        }
+
+        .hero-wow::after {
+            content: "";
+
+            position: absolute;
+
+            width: 600px;
+            height: 600px;
+
+            right: -250px;
+            bottom: -300px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(255,177,216,.28),
+                    transparent 70%
+                );
+
+            animation: heroGlow 10s ease-in-out infinite reverse;
+
+            pointer-events: none;
+        }
+
+        @keyframes heroGlow {
+            0%, 100% {
+                transform: scale(1);
+                opacity: .7;
+            }
+
+            50% {
+                transform: scale(1.15);
+                opacity: 1;
+            }
+        }
+
+
+        /* =========================================================
+           CLOUDS
+           ========================================================= */
+
+        .hero-cloud {
+            position: absolute;
+
+            z-index: 2;
+
+            pointer-events: none;
+            user-select: none;
+
+            opacity: .75;
+
+            filter:
+                drop-shadow(
+                    0 12px 18px
+                    rgba(50,130,165,.12)
+                );
+        }
+
+        .cloud-1 {
+            top: 40px;
+            left: 3%;
+            font-size: 80px;
+
+            animation:
+                cloudOne 9s ease-in-out infinite;
+        }
+
+        .cloud-2 {
+            top: 125px;
+            right: 7%;
+
+            font-size: 105px;
+            opacity: .60;
+
+            animation:
+                cloudTwo 12s ease-in-out infinite;
+        }
+
+        .cloud-3 {
+            bottom: 75px;
+            left: 45%;
+
+            font-size: 70px;
+            opacity: .40;
+
+            animation:
+                cloudThree 10s ease-in-out infinite;
+        }
+
+        @keyframes cloudOne {
+            0%,100% {
+                transform: translate(0,0);
+            }
+
+            50% {
+                transform: translate(40px,-12px);
+            }
+        }
+
+        @keyframes cloudTwo {
+            0%,100% {
+                transform: translate(0,0);
+            }
+
+            50% {
+                transform: translate(-45px,18px);
+            }
+        }
+
+        @keyframes cloudThree {
+            0%,100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+
+        /* =========================================================
+           STARS
+           ========================================================= */
+
+        .hero-star {
+            position: absolute;
+
+            z-index: 4;
+
+            color: #ffffff;
+
+            text-shadow:
+                0 0 10px #ffffff,
+                0 0 22px #ffe27b;
+
+            pointer-events: none;
+
+            animation:
+                starMove 2.7s ease-in-out infinite;
+        }
+
+        .star-1 {
+            top: 19%;
+            left: 17%;
+            font-size: 23px;
+        }
+
+        .star-2 {
+            top: 12%;
+            left: 48%;
+            font-size: 17px;
+            animation-delay: .6s;
+        }
+
+        .star-3 {
+            top: 29%;
+            right: 23%;
+            font-size: 26px;
+            animation-delay: 1.1s;
+        }
+
+        .star-4 {
+            bottom: 23%;
+            left: 8%;
+            font-size: 20px;
+            animation-delay: 1.5s;
+        }
+
+        .star-5 {
+            bottom: 17%;
+            right: 12%;
+            font-size: 23px;
+            animation-delay: .8s;
+        }
+
+        @keyframes starMove {
+            0%,100% {
+                opacity: .3;
+                transform: scale(.75) rotate(0);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.3) rotate(25deg);
+            }
+        }
+
+
+        /* =========================================================
+           CIRCLES
+           ========================================================= */
+
+        .hero-circle {
+            position: absolute;
+
+            border-radius: 50%;
+
+            pointer-events: none;
+
+            animation:
+                bubbleMove 7s ease-in-out infinite;
+        }
+
+        .circle-1 {
+            width: 85px;
+            height: 85px;
+
+            left: 3%;
+            top: 32%;
+
+            background:
+                rgba(255,255,255,.27);
+        }
+
+        .circle-2 {
+            width: 58px;
+            height: 58px;
+
+            right: 35%;
+            top: 12%;
+
+            background:
+                rgba(255,220,94,.30);
+
+            animation-delay: 1s;
+        }
+
+        .circle-3 {
+            width: 115px;
+            height: 115px;
+
+            right: 4%;
+            bottom: 18%;
+
+            background:
+                rgba(255,153,201,.18);
+
+            animation-delay: 2s;
+        }
+
+        @keyframes bubbleMove {
+            0%,100% {
+                transform:
+                    translateY(0)
+                    scale(1);
+            }
+
+            50% {
+                transform:
+                    translateY(-25px)
+                    scale(1.08);
+            }
+        }
+
+
+        /* =========================================================
+           HERO CONTENT
+           ========================================================= */
+
+        .hero-container {
+            position: relative;
+
+            z-index: 10;
+
+            width: min(1200px,100%);
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                minmax(0,1.05fr)
+                minmax(360px,.95fr);
+
+            align-items: center;
+
+            gap: 55px;
+        }
+
+        .hero-welcome {
+            display: inline-flex;
+            align-items: center;
+
+            padding: 10px 16px;
+
+            border-radius: 30px;
+
+            background:
+                rgba(255,255,255,.72);
+
+            border:
+                1px solid rgba(255,255,255,.85);
+
+            backdrop-filter: blur(12px);
+
+            color: #287da5;
+
+            font-size: 11px;
+            font-weight: 900;
+
+            box-shadow:
+                0 9px 25px
+                rgba(56,143,181,.10);
+        }
+
+        .hero-tags {
+            display: flex;
+            align-items: center;
+
+            gap: 9px;
+
+            margin-top: 20px;
+
+            color: #62899b;
+
+            font-size: 11px;
+            font-weight: 900;
+
+            letter-spacing: 1.5px;
+        }
+
+        .hero-title {
+            margin: 15px 0 18px;
+
+            color: #214e69;
+
+            font-size:
+                clamp(43px,5vw,70px);
+
+            line-height: 1.04;
+
+            letter-spacing: -2px;
+
+            text-shadow:
+                0 4px 0
+                rgba(255,255,255,.55);
+        }
+
+        .hero-title span {
+            background:
+                linear-gradient(
+                    90deg,
+                    #ef5f91,
+                    #ff8c69,
+                    #f1b846
+                );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-description {
+            max-width: 620px;
+
+            color: #52778c;
+
+            font-size: 15px;
+
+            line-height: 1.8;
+        }
+
+        .hero-motto {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 8px;
+
+            margin-top: 19px;
+        }
+
+        .hero-motto span {
+            padding: 8px 12px;
+
+            border-radius: 20px;
+
+            background:
+                rgba(255,255,255,.55);
+
+            border:
+                1px solid rgba(255,255,255,.75);
+
+            color: #4f7587;
+
+            font-size: 10px;
+            font-weight: 800;
+
+            backdrop-filter: blur(8px);
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 12px;
+
+            margin-top: 27px;
+        }
+
+        .hero-btn {
+            display: inline-flex;
+            align-items: center;
+
+            gap: 9px;
+
+            padding: 14px 20px;
+
+            border-radius: 17px;
+
+            text-decoration: none;
+
+            font-weight: 900;
+
+            transition:
+                transform .25s ease,
+                box-shadow .25s ease;
+        }
+
+        .hero-btn.primary {
+            color: #ffffff;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff6e9e,
+                    #ff9a70
+                );
+
+            box-shadow:
+                0 12px 25px
+                rgba(255,110,158,.24);
+        }
+
+        .hero-btn.secondary {
+            color: #277da3;
+
+            background:
+                rgba(255,255,255,.75);
+
+            border:
+                1px solid rgba(255,255,255,.9);
+
+            box-shadow:
+                0 10px 25px
+                rgba(61,147,184,.10);
+        }
+
+        .hero-btn:hover {
+            transform:
+                translateY(-5px)
+                scale(1.02);
+        }
+
+
+        /* =========================================================
+           HERO STATS
+           ========================================================= */
+
+        .hero-stats {
+            display: flex;
+            align-items: center;
+
+            gap: 16px;
+
+            margin-top: 30px;
+        }
+
+        .hero-stat {
+            display: flex;
+            align-items: center;
+
+            gap: 7px;
+        }
+
+        .stat-icon {
+            width: 37px;
+            height: 37px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 12px;
+
+            background:
+                rgba(255,255,255,.65);
+
+            box-shadow:
+                0 6px 15px
+                rgba(60,140,175,.08);
+        }
+
+        .hero-stat strong {
+            display: block;
+
+            color: #2a607c;
+
+            font-size: 16px;
+        }
+
+        .hero-stat span {
+            display: block;
+
+            color: #7593a2;
+
+            font-size: 8px;
+        }
+
+        .stat-line {
+            width: 1px;
+            height: 34px;
+
+            background:
+                rgba(80,130,150,.20);
+        }
+
+
+        /* =========================================================
+           HERO PHOTO
+           ========================================================= */
+
+        .hero-visual {
+            position: relative;
+
+            min-height: 510px;
+
+            display: grid;
+            place-items: center;
+        }
+
+        .visual-circle {
+            position: absolute;
+
+            width: 450px;
+            height: 450px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(255,255,255,.90),
+                    rgba(255,255,255,.45) 45%,
+                    transparent 72%
+                );
+        }
+
+        .hero-kids {
+            position: relative;
+
+            z-index: 5;
+
+            width: min(445px,100%);
+
+            padding: 11px;
+
+            border-radius:
+                45% 45% 28% 28%;
+
+            background:
+                rgba(255,255,255,.78);
+
+            box-shadow:
+                0 30px 70px
+                rgba(38,121,159,.21);
+
+            transform: rotate(2deg);
+
+            transition:
+                transform .4s ease;
+        }
+
+        .hero-kids:hover {
+            transform:
+                rotate(0)
+                translateY(-8px)
+                scale(1.02);
+        }
+
+        .hero-kids img {
+            display: block;
+
+            width: 100%;
+
+            aspect-ratio: .95;
+
+            object-fit: cover;
+
+            border-radius:
+                40% 40% 24% 24%;
+        }
+
+
+        /* =========================================================
+           BADGES
+           ========================================================= */
+
+        .hero-badge {
+            position: absolute;
+
+            z-index: 20;
+
+            display: flex;
+            align-items: center;
+
+            gap: 7px;
+
+            padding: 10px 14px;
+
+            border-radius: 20px;
+
+            background:
+                rgba(255,255,255,.90);
+
+            backdrop-filter: blur(15px);
+
+            color: #446b7d;
+
+            font-size: 10px;
+            font-weight: 900;
+
+            box-shadow:
+                0 12px 30px
+                rgba(42,127,163,.14);
+        }
+
+        .badge-top {
+            top: 42px;
+            right: 3px;
+        }
+
+        .badge-bottom {
+            bottom: 55px;
+            left: 0;
+        }
+
+
+        /* =========================================================
+           FEATURES
+           ========================================================= */
+
+        .features-wow {
+            position: relative;
+
+            z-index: 30;
+
+            width:
+                min(1160px,calc(100% - 40px));
+
+            margin:
+                -52px auto 65px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4,minmax(0,1fr));
+
+            gap: 18px;
+        }
+
+        .feature-card {
+            position: relative;
+
+            min-width: 0;
+            min-height: 300px;
+
+            padding: 22px 19px;
+
+            border-radius: 27px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 20px 45px
+                rgba(57,125,153,.13);
+
+            transition:
+                transform .35s ease,
+                box-shadow .35s ease;
+        }
+
+        .feature-card:hover {
+            transform:
+                translateY(-11px);
+
+            box-shadow:
+                0 30px 60px
+                rgba(57,125,153,.21);
+        }
+
+        .feature-blue {
+            background:
+                linear-gradient(
+                    145deg,
+                    #e5faff,
+                    #b7edff
+                );
+        }
+
+        .feature-pink {
+            background:
+                linear-gradient(
+                    145deg,
+                    #fff1f7,
+                    #ffd4e8
+                );
+        }
+
+        .feature-green {
+            background:
+                linear-gradient(
+                    145deg,
+                    #f0ffed,
+                    #d0f2d3
+                );
+        }
+
+        .feature-orange {
+            background:
+                linear-gradient(
+                    145deg,
+                    #fff8e4,
+                    #ffe1b3
+                );
+        }
+
+        .feature-shine {
+            position: absolute;
+
+            width: 140px;
+            height: 140px;
+
+            top: -65px;
+            right: -55px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(255,255,255,.38);
+        }
+
+        .feature-top {
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .feature-icon {
+            font-size: 23px;
+        }
+
+        .feature-sparkle {
+            color: white;
+
+            font-size: 23px;
+        }
+
+        .feature-icon-circle {
+            width: 75px;
+            height: 75px;
+
+            display: grid;
+            place-items: center;
+
+            margin: 10px auto 15px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(255,255,255,.65);
+
+            box-shadow:
+                inset 0 0 0 7px
+                rgba(255,255,255,.20);
+        }
+
+        .feature-icon-big {
+            font-size: 31px;
+        }
+
+        .feature-card h3 {
+            margin: 13px 0 10px;
+
+            color: #345b6e;
+
+            font-size: 18px;
+
+            text-align: center;
+        }
+
+        .feature-card p {
+            margin: 0;
+
+            color: #587888;
+
+            font-size: 11px;
+
+            line-height: 1.7;
+
+            text-align: center;
+        }
+
+        .feature-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 7px;
+
+            margin-top: 14px;
+
+            color: #3f7185;
+
+            text-decoration: none;
+
+            font-size: 11px;
+            font-weight: 900;
+        }
+
+        .feature-decoration {
+            position: absolute;
+
+            right: 15px;
+            bottom: 10px;
+
+            color:
+                rgba(255,255,255,.75);
+
+            font-size: 28px;
+        }
+
+
+        /* =========================================================
+           RESPONSIVE TABLET
+           ========================================================= */
+
+        @media (max-width: 1150px) {
+
+            .kiddoz-navbar {
+                gap: 6px;
+                padding-left: 12px;
+            }
+
+            .kiddoz-logo-text {
+                display: none;
+            }
+
+            .kiddoz-menu {
+                gap: 0;
+            }
+
+            .kiddoz-menu a {
+                padding: 0 7px;
+                font-size: 10px;
+            }
+
+            .kiddoz-menu-icon {
+                display: none;
+            }
+
+            .kiddoz-register {
+                min-width: 118px;
+                padding: 0 12px;
+                font-size: 10px;
+            }
+
+            .features-wow {
+                grid-template-columns:
+                    repeat(2,minmax(0,1fr));
+            }
+        }
+
+
+        /* =========================================================
+           MOBILE
+           ========================================================= */
+
+        @media (max-width: 800px) {
+
+            .top {
+                padding: 10px;
+            }
+
+            .kiddoz-navbar {
+                min-height: 62px;
+
+                padding: 8px;
+
+                gap: 7px;
+
+                border-radius: 18px;
+
+                overflow: hidden;
+            }
+
+            .kiddoz-logo {
+                flex: 0 0 auto !important;
+            }
+
+            .kiddoz-logo-icon {
+                width: 42px;
+                height: 42px;
+
+                flex-basis: 42px;
+
+                font-size: 20px;
+            }
+
+            .kiddoz-logo-text {
+                display: none;
+            }
+
+            .kiddoz-menu {
+                flex: 1 1 auto !important;
+
+                min-width: 0 !important;
+
+                justify-content:
+                    flex-start !important;
+
+                overflow-x: auto !important;
+                overflow-y: hidden !important;
+
+                scrollbar-width: none;
+            }
+
+            .kiddoz-menu::-webkit-scrollbar {
+                display: none;
+            }
+
+            .kiddoz-menu a {
+                flex: 0 0 auto !important;
+
+                height: 38px;
+
+                padding: 0 9px;
+
+                font-size: 10px;
+            }
+
+            .kiddoz-register {
+                flex: 0 0 auto !important;
+
+                min-width: 102px;
+
+                height: 40px;
+
+                padding: 0 10px;
+
+                font-size: 9px;
+            }
+
+            .announcement {
+                justify-content:
+                    flex-start;
+
+                overflow: hidden;
+            }
+
+            .announcement-content span {
+                white-space: nowrap;
+
+                overflow: hidden;
+
+                text-overflow: ellipsis;
+            }
+
+            .hero-wow {
+                padding:
+                    60px 20px 100px;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+
+                gap: 30px;
+            }
+
+            .hero-content {
+                text-align: center;
+
+                display: flex;
+                flex-direction: column;
+
+                align-items: center;
+            }
+
+            .hero-description {
+                margin: auto;
+            }
+
+            .hero-motto,
+            .hero-buttons,
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .hero-visual {
+                min-height: 430px;
+            }
+        }
+
+
+        /* =========================================================
+           HP KECIL
+           ========================================================= */
+
+        @media (max-width: 600px) {
+
+            .announcement {
+                padding: 7px 10px;
+
+                gap: 7px;
+            }
+
+            .announcement-icon {
+                display: none;
+            }
+
+            .announcement-content strong {
+                display: none;
+            }
+
+            #announcementButton {
+                display: none !important;
+            }
+
+            .hero-title {
+                font-size: 39px;
+
+                letter-spacing: -1.3px;
+            }
+
+            .hero-description {
+                font-size: 13px;
+            }
+
+            .hero-visual {
+                min-height: 365px;
+            }
+
+            .visual-circle {
+                width: 300px;
+                height: 300px;
+            }
+
+            .hero-kids {
+                width: 90%;
+            }
+
+            .features-wow {
+                width:
+                    calc(100% - 26px);
+
+                grid-template-columns: 1fr;
+
+                margin-top: -38px;
+            }
+
+            .feature-card {
+                min-height: 285px;
+            }
+
+            .hero-stats {
+                gap: 10px;
+            }
+
+            .stat-line {
+                height: 28px;
+            }
+        }
+
+
+        /* =========================================================
+           MUSIC BUTTON
+           ========================================================= */
+
+        .music-button {
+            position: fixed;
+
+            right: 20px;
+            bottom: 20px;
+
+            z-index: 100000;
+
+            width: 50px;
+            height: 50px;
+
+            border: 0;
+
+            border-radius: 50%;
+
+            background: #ffffff;
+
+            box-shadow:
+                0 10px 30px
+                rgba(0,0,0,.15);
+
+            cursor: pointer;
+
+            font-size: 21px;
+
+            transition:
+                transform .2s ease;
+        }
+
+        .music-button:hover {
+            transform: scale(1.08);
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- =========================================================
+         MUSIC
+         ========================================================= -->
+
+    <audio id="bgMusic" loop preload="auto">
+        <source src="music/musik.mp3" type="audio/mpeg">
+        Browser Anda tidak mendukung audio.
+    </audio>
+
+    <button
+        id="musicButton"
+        class="music-button"
+        type="button"
+        aria-label="Putar musik"
+        title="Putar / Jeda Musik">
+        🔇
+    </button>
+
+
+    <!-- =========================================================
+         PENGUMUMAN
+         ========================================================= -->
+
+    <div class="announcement">
+
+        <div class="announcement-icon">
+            🔔
+        </div>
+
+        <div class="announcement-content">
+
+            <strong id="announcementLabel">
+                PENGUMUMAN
+            </strong>
+
+            <span id="announcementText">
+                Memuat pengumuman...
+            </span>
+
+        </div>
+
+        <a
+            id="announcementButton"
+            href="pendaftaran.html">
+            Daftar Sekarang 🚀
+        </a>
+
+    </div>
+
+
+    <!-- =========================================================
+         NAVBAR
+         ========================================================= -->
+
+    <div class="top">
+
+        <header class="kiddoz-header">
+
+            <nav class="kiddoz-navbar">
+
+                <a
+                    href="index.html"
+                    class="kiddoz-logo">
+
+                    <div class="kiddoz-logo-icon">
+                        🌞
+                    </div>
+
+                    <div class="kiddoz-logo-text">
+
+                        <div class="kiddoz-logo-title">
+                            Ra Miftahul Hikmah
+                        </div>
+
+                        <div class="kiddoz-logo-subtitle">
+                            Tangerang 💗
+                        </div>
+
+                    </div>
+
+                </a>
+
+
+                <div class="kiddoz-menu">
+
+                    <a
+                        href="index.html"
+                        class="active">
+
+                        <span class="kiddoz-menu-icon">
+                            🏠
+                        </span>
+
+                        Home
+
+                    </a>
+
+                    <a href="about.html">
+
+                        <span class="kiddoz-menu-icon">
+                            💗
+                        </span>
+
+                        About
+
+                    </a>
+
+                    <a href="programs.html">
+
+                        <span class="kiddoz-menu-icon">
+                            📚
+                        </span>
+
+                        Programs
+
+                    </a>
+
+                    <a href="classes.html">
+
+                        <span class="kiddoz-menu-icon">
+                            🎨
+                        </span>
+
+                        Classes
+
+                    </a>
+
+                    <a href="blog.html">
+
+                        <span class="kiddoz-menu-icon">
+                            ✏️
+                        </span>
+
+                        Blog
+
+                    </a>
+
+                    <a href="gallery.html">
+
+                        <span class="kiddoz-menu-icon">
+                            📸
+                        </span>
+
+                        Gallery
+
+                    </a>
+
+                    <a href="parents.html">
+
+                        <span class="kiddoz-menu-icon">
+                            👨‍👩‍👧
+                        </span>
+
+                        Parents
+
+                    </a>
+
+                    <a href="contact.html">
+
+                        <span class="kiddoz-menu-icon">
+                            💌
+                        </span>
+
+                        Contact
+
+                    </a>
+
+<a href="login.html" class="rainbow-item">🔐 Login</a>
+
+                </div>
+
+
+                <a
+                    href="pendaftaran.html"
+                    class="kiddoz-register">
+
+                    ✨ Daftar Sekarang
+
+                </a>
+
+            </nav>
+
+        </header>
+
+    </div>
+
+
+    <!-- =========================================================
+         HERO
+         ========================================================= -->
+
+    <section class="hero-wow">
+
+        <div class="hero-cloud cloud-1">
+            ☁️
+        </div>
+
+        <div class="hero-cloud cloud-2">
+            ☁️
+        </div>
+
+        <div class="hero-cloud cloud-3">
+            ☁️
+        </div>
+
+        <div class="hero-star star-1">
+            ✦
+        </div>
+
+        <div class="hero-star star-2">
+            ✦
+        </div>
+
+        <div class="hero-star star-3">
+            ✦
+        </div>
+
+        <div class="hero-star star-4">
+            ✦
+        </div>
+
+        <div class="hero-star star-5">
+            ✦
+        </div>
+
+        <div class="hero-circle circle-1"></div>
+        <div class="hero-circle circle-2"></div>
+        <div class="hero-circle circle-3"></div>
+
+
+        <div class="hero-container">
+
+            <div class="hero-content reveal">
+
+                <div class="hero-welcome">
+                    ✨ WELCOME TO RA MIFTAHUL HIKMAH ✨
+                </div>
+
+                <div class="hero-tags">
+
+                    <span>LEARN</span>
+
+                    <b>•</b>
+
+                    <span>PLAY</span>
+
+                    <b>•</b>
+
+                    <span>GROW</span>
+
+                </div>
+
+                <h1 class="hero-title">
+
+                    Tempat Kecil
+
+                    <br>
+
+                    untuk
+
+                    <span>
+                        Mimpi Besar
+                    </span>
+
+                    <br>
+
+                    Anak Hebat! 🌈
+
+                </h1>
+
+                <p class="hero-description">
+
+                    Setiap anak memiliki cahaya istimewa.
+                    Kami membantu mereka
+
+                    <strong class="text-blue">
+                        belajar
+                    </strong>,
+
+                    <strong class="text-green">
+                        bermain
+                    </strong>
+
+                    dan
+
+                    <strong class="text-orange">
+                        tumbuh
+                    </strong>
+
+                    dengan penuh cinta. 💗
+
+                </p>
+
+                <div class="hero-motto">
+
+                    <span>
+                        🌱 Tumbuh Bersama
+                    </span>
+
+                    <span>
+                        🎨 Belajar dengan Gembira
+                    </span>
+
+                    <span>
+                        ⭐ Raih Masa Depan Cerah
+                    </span>
+
+                </div>
+
+                <div class="hero-buttons">
+
+                    <a
+                        class="hero-btn primary"
+                        href="pendaftaran.html">
+
+                        🎒 Daftar Sekarang
+
+                        <span>→</span>
+
+                    </a>
+
+                    <a
+                        class="hero-btn secondary"
+                        href="about.html">
+
+                        ✨ Kenal Lebih Dekat
+
+                        <span>→</span>
+
+                    </a>
+
+                </div>
+
+                <div class="hero-stats">
+
+                    <div class="hero-stat">
+
+                        <div class="stat-icon">
+                            👧
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                100+
+                            </strong>
+
+                            <span>
+                                Anak Bahagia
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="stat-line"></div>
+
+                    <div class="hero-stat">
+
+                        <div class="stat-icon">
+                            🎨
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                10+
+                            </strong>
+
+                            <span>
+                                Aktivitas Seru
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="stat-line"></div>
+
+                    <div class="hero-stat">
+
+                        <div class="stat-icon">
+                            ❤️
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                100%
+                            </strong>
+
+                            <span>
+                                Cinta & Perhatian
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-visual reveal">
+
+                <div class="visual-circle"></div>
+
+                <div class="hero-badge badge-top">
+
+                    🌈
+
+                    <span>
+                        Fun Learning
+                    </span>
+
+                </div>
+
+                <div class="hero-badge badge-bottom">
+
+                    💖
+
+                    <span>
+                        Happy Kids
+                    </span>
+
+                </div>
+
+                <div class="hero-kids">
+
+                    <img
+                        src="images/anak2.jpg"
+                        alt="Anak-anak Ra Miftahul Hikmah">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         FEATURES
+         ========================================================= -->
+
+    <section class="features-wow">
+
+        <div class="feature-card feature-blue">
+
+            <div class="feature-shine"></div>
+
+            <div class="feature-top">
+
+                <span class="feature-icon">
+                    🌸
+                </span>
+
+                <span class="feature-sparkle">
+                    ✦
+                </span>
+
+            </div>
+
+            <div class="feature-icon-circle">
+
+                <div class="feature-icon-big">
+                    🧒
+                </div>
+
+            </div>
+
+            <h3>
+                Play & Learn
+            </h3>
+
+            <p>
+                Fun activities that encourage curiosity
+                and creativity.
+            </p>
+
+            <a
+                href="programs.html"
+                class="feature-btn">
+
+                Read More
+
+                <span>→</span>
+
+            </a>
+
+            <div class="feature-decoration">
+                ✦
+            </div>
+
+        </div>
+
+
+        <div class="feature-card feature-pink">
+
+            <div class="feature-shine"></div>
+
+            <div class="feature-top">
+
+                <span class="feature-icon">
+                    💗
+                </span>
+
+                <span class="feature-sparkle">
+                    ✦
+                </span>
+
+            </div>
+
+            <div class="feature-icon-circle">
+
+                <div class="feature-icon-big">
+                    👨‍👩‍👧
+                </div>
+
+            </div>
+
+            <h3>
+                Growing Together
+            </h3>
+
+            <p>
+                Building confidence, friendships and
+                social skills every day.
+            </p>
+
+            <a
+                href="about.html"
+                class="feature-btn">
+
+                Read More
+
+                <span>→</span>
+
+            </a>
+
+            <div class="feature-decoration">
+                ♥
+            </div>
+
+        </div>
+
+
+        <div class="feature-card feature-green">
+
+            <div class="feature-shine"></div>
+
+            <div class="feature-top">
+
+                <span class="feature-icon">
+                    📖
+                </span>
+
+                <span class="feature-sparkle">
+                    ✦
+                </span>
+
+            </div>
+
+            <div class="feature-icon-circle">
+
+                <div class="feature-icon-big">
+                    🧱
+                </div>
+
+            </div>
+
+            <h3>
+                Smart Start
+            </h3>
+
+            <p>
+                Early learning programs designed for
+                bright futures.
+            </p>
+
+            <a
+                href="classes.html"
+                class="feature-btn">
+
+                Read More
+
+                <span>→</span>
+
+            </a>
+
+            <div class="feature-decoration">
+                ★
+            </div>
+
+        </div>
+
+
+        <div class="feature-card feature-orange">
+
+            <div class="feature-shine"></div>
+
+            <div class="feature-top">
+
+                <span class="feature-icon">
+                    🤍
+                </span>
+
+                <span class="feature-sparkle">
+                    ✦
+                </span>
+
+            </div>
+
+            <div class="feature-icon-circle">
+
+                <div class="feature-icon-big">
+                    🤗
+                </div>
+
+            </div>
+
+            <h3>
+                Safe & Caring
+            </h3>
+
+            <p>
+                A safe, happy and nurturing environment
+                for every child.
+            </p>
+
+            <a
+                href="parents.html"
+                class="feature-btn">
+
+                Read More
+
+                <span>→</span>
+
+            </a>
+
+            <div class="feature-decoration">
+                ✦
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         WHY CHOOSE US
+         ========================================================= -->
+
+    <section class="section wrap">
+
+        <div class="why reveal">
+
+            <div>
+
+                <b>
+                    Why
+                </b>
+
+                <h2>
+                    Choose Us
+                </h2>
+
+            </div>
+
+            <div class="item">
+
+                <span class="emoji">
+                    👩‍🏫
+                </span>
+
+                <strong>
+                    30+
+                </strong>
+
+                <br>
+
+                Experienced Teachers
+
+            </div>
+
+            <div class="item">
+
+                <span class="emoji">
+                    🛡️
+                </span>
+
+                <strong>
+                    24/7
+                </strong>
+
+                <br>
+
+                Safe & Secure Environment
+
+            </div>
+
+            <div class="item">
+
+                <span class="emoji">
+                    ⭐
+                </span>
+
+                <strong>
+                    ∞
+                </strong>
+
+                <br>
+
+                Creative Learning Programs
+
+            </div>
+
+            <div class="item">
+
+                <span class="emoji">
+                    👨‍👩‍👧
+                </span>
+
+                <strong>
+                    Trusted
+                </strong>
+
+                <br>
+
+                Trusted by Parents
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         WELCOME + NEWS
+         ========================================================= -->
+
+    <section class="section wrap welcome">
+
+        <div class="reveal">
+
+            <h2 class="title">
+                Welcome to Our Kindergarten!
+                <span>♡</span>
+            </h2>
+
+            <div class="welcome-img">
+
+                <img
+                    src="images/anak-anak.jpg"
+                    alt="Anak-anak Ra Miftahul Hikmah">
+
+            </div>
+
+            <p>
+                We provide a loving and engaging environment
+                where children develop a lifelong love for learning.
+
+                Our programs focus on creativity, curiosity and
+                confidence through play-based education.
+            </p>
+
+            <a
+                class="btn"
+                href="about.html">
+
+                More About Us ›
+
+            </a>
+
+        </div>
+
+
+        <div class="reveal">
+
+            <h2 class="title">
+
+                Latest
+
+                <span>
+                    News
+                </span>
+
+            </h2>
+
+            <div class="news">
+
+                <div class="news-box">
+
+                    <div class="news-img">
+                        ☀️
+                    </div>
+
+                    <div>
+
+                        <h4>
+                            Fun Summer Camp 2026
+                        </h4>
+
+                        <p>
+                            Our summer camp is full of fun,
+                            learning and adventure!
+                        </p>
+
+                        <a
+                            class="read"
+                            href="blog.html">
+
+                            Read More →
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="news-box">
+
+                    <div class="news-img">
+                        👨‍👩‍👧
+                    </div>
+
+                    <div>
+
+                        <h4>
+                            Parent Workshop
+                        </h4>
+
+                        <p>
+                            Join our workshop on child development
+                            and learning.
+                        </p>
+
+                        <a
+                            class="read"
+                            href="blog.html">
+
+                            Read More →
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         GALLERY
+         ========================================================= -->
+
+    <section class="gallery-banner">
+
+        <div class="gallery-banner-grid wrap">
+
+            <div class="reveal">
+
+                <h2 class="title">
+
+                    Happy Children,
+
+                    <br>
+
+                    <span>
+                        Bright Futures!
+                    </span>
+
+                </h2>
+
+                <a
+                    class="btn"
+                    href="gallery.html">
+
+                    View Photo Gallery ›
+
+                </a>
+
+            </div>
+
+            <div class="reveal">
+
+                <div class="gallery-arc"></div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         FOOTER
+         ========================================================= -->
+
+    <footer class="footer">
+
+        <div class="footgrid wrap">
+
+            <div>
+
+                <h3>
+
+                    ☀️ KINDER
+
+                    <span style="color:#ef4f82">
+                        GARTEN
+                    </span>
+
+                </h3>
+
+                <p>
+                    Where Little Minds Bloom 💗
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <a href="about.html">
+                    About Us
+                </a>
+
+                <a href="programs.html">
+                    Programs
+                </a>
+
+                <a href="gallery.html">
+                    Gallery
+                </a>
+
+                <a href="contact.html">
+                    Contact Us
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Contact Us
+                </h3>
+
+                <p>
+                    ☎ +62 813-9875-4451
+                </p>
+
+                <p>
+                    ✉ info@kindergarten.com
+                </p>
+
+                <p>
+                    📍 Tangerang, Indonesia
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Follow Us
+                </h3>
+
+                <a href="#">
+                    Facebook
+                </a>
+
+                <a href="#">
+                    Instagram
+                </a>
+
+                <a href="#">
+                    YouTube
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================================================
+         SCRIPT
+         ========================================================= -->
+
+    <script src="js/script.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+    <!-- =========================================================
+         SUPABASE
+         ========================================================= -->
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            async function () {
+
+                const SUPABASE_URL =
+                    "https://ervhwjrlqcsobawwhkpf.supabase.co";
+
+                /*
+                   MASUKKAN KEMBALI PUBLISHABLE KEY
+                   YANG SUDAH ADA DI FILE LAMA KAMU.
+                */
+
+                const SUPABASE_KEY =
+                    "sb_publishable_u48E-Q-RjdFRFLC_Cv3rmg_gD0Z3y2K";
+
+
+                if (
+                    !window.supabase ||
+                    !SUPABASE_KEY ||
+                    SUPABASE_KEY ===
+                    "sb_publishable_u48E-Q-RjdFRFLC_Cv3rmg_gD0Z3y2K"
+                ) {
+
+                    console.warn(
+                        "Publishable key Supabase belum diisi."
+                    );
+
+                    return;
+                }
+
+
+                const supabaseClient =
+                    window.supabase.createClient(
+                        SUPABASE_URL,
+                        SUPABASE_KEY
+                    );
+
+
+                const announcementText =
+                    document.getElementById(
+                        "announcementText"
+                    );
+
+                const announcementButton =
+                    document.getElementById(
+                        "announcementButton"
+                    );
+
+
+                async function loadAnnouncement() {
+
+                    const {
+                        data,
+                        error
+                    } =
+                        await supabaseClient
+                            .from("announcements")
+                            .select(
+                                "id,title,content,button_text,button_link,active,created_at"
+                            )
+                            .eq(
+                                "active",
+                                true
+                            )
+                            .order(
+                                "created_at",
+                                {
+                                    ascending: false
+                                }
+                            )
+                            .limit(1)
+                            .maybeSingle();
+
+
+                    if (error) {
+
+                        console.error(
+                            "Gagal mengambil pengumuman:",
+                            error
+                        );
+
+                        announcementText.textContent =
+                            "Pendaftaran siswa baru Tahun Ajaran 2026/2027 telah dibuka!";
+
+                        announcementButton.textContent =
+                            "Daftar Sekarang 🚀";
+
+                        announcementButton.href =
+                            "pendaftaran.html";
+
+                        announcementButton.style.display =
+                            "inline-flex";
+
+                        return;
+                    }
+
+
+                    if (!data) {
+
+                        announcementText.textContent =
+                            "Belum ada pengumuman terbaru.";
+
+                        announcementButton.style.display =
+                            "none";
+
+                        return;
+                    }
+
+
+                    announcementText.textContent =
+                        data.content ||
+                        data.title ||
+                        "Ada pengumuman terbaru.";
+
+
+                    announcementButton.textContent =
+                        data.button_text ||
+                        "Daftar Sekarang 🚀";
+
+
+                    announcementButton.href =
+                        data.button_link ||
+                        "pendaftaran.html";
+
+
+                    announcementButton.style.display =
+                        "inline-flex";
+
+                }
+
+
+                await loadAnnouncement();
+
+
+                supabaseClient
+                    .channel("announcement-home")
+                    .on(
+                        "postgres_changes",
+                        {
+                            event: "*",
+                            schema: "public",
+                            table: "announcements"
+                        },
+                        function () {
+                            loadAnnouncement();
+                        }
+                    )
+                    .subscribe();
+
+            }
+        );
+
+    </script>
+
+
+    <!-- =========================================================
+         MUSIC + REVERB
+         ========================================================= -->
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                const music =
+                    document.getElementById(
+                        "bgMusic"
+                    );
+
+                const musicButton =
+                    document.getElementById(
+                        "musicButton"
+                    );
+
+
+                if (
+                    !music ||
+                    !musicButton
+                ) {
+                    return;
+                }
+
+
+                let audioContext = null;
+                let sourceNode = null;
+                let dryGain = null;
+                let wetGain = null;
+                let convolver = null;
+                let audioReady = false;
+
+
+                function setupAudio() {
+
+                    if (audioReady) {
+                        return;
+                    }
+
+
+                    try {
+
+                        audioContext =
+                            new (
+                                window.AudioContext ||
+                                window.webkitAudioContext
+                            )();
+
+
+                        sourceNode =
+                            audioContext
+                                .createMediaElementSource(
+                                    music
+                                );
+
+
+                        dryGain =
+                            audioContext
+                                .createGain();
+
+                        dryGain.gain.value =
+                            0.75;
+
+
+                        wetGain =
+                            audioContext
+                                .createGain();
+
+                        wetGain.gain.value =
+                            0.30;
+
+
+                        convolver =
+                            audioContext
+                                .createConvolver();
+
+
+                        const duration = 2.5;
+                        const decay = 2.2;
+
+
+                        const length =
+                            audioContext.sampleRate *
+                            duration;
+
+
+                        const impulse =
+                            audioContext.createBuffer(
+                                2,
+                                length,
+                                audioContext.sampleRate
+                            );
+
+
+                        for (
+                            let channel = 0;
+                            channel < 2;
+                            channel++
+                        ) {
+
+                            const data =
+                                impulse.getChannelData(
+                                    channel
+                                );
+
+
+                            for (
+                                let i = 0;
+                                i < length;
+                                i++
+                            ) {
+
+                                data[i] =
+                                    (
+                                        Math.random() * 2 - 1
+                                    ) *
+                                    Math.pow(
+                                        1 - i / length,
+                                        decay
+                                    );
+
+                            }
+
+                        }
+
+
+                        convolver.buffer =
+                            impulse;
+
+
+                        sourceNode.connect(
+                            dryGain
+                        );
+
+                        dryGain.connect(
+                            audioContext.destination
+                        );
+
+
+                        sourceNode.connect(
+                            convolver
+                        );
+
+                        convolver.connect(
+                            wetGain
+                        );
+
+                        wetGain.connect(
+                            audioContext.destination
+                        );
+
+
+                        audioReady = true;
+
+                    } catch (error) {
+
+                        console.log(
+                            "Audio/Reverb error:",
+                            error
+                        );
+
+                    }
+
+                }
+
+
+                async function playMusic() {
+
+                    try {
+
+                        setupAudio();
+
+
+                        if (
+                            audioContext &&
+                            audioContext.state ===
+                            "suspended"
+                        ) {
+
+                            await audioContext.resume();
+
+                        }
+
+
+                        await music.play();
+
+
+                        musicButton.textContent =
+                            "🔊";
+
+
+                        musicButton.setAttribute(
+                            "aria-label",
+                            "Jeda musik"
+                        );
+
+                    } catch (error) {
+
+                        console.log(
+                            "Autoplay diblokir browser."
+                        );
+
+                    }
+
+                }
+
+
+                function pauseMusic() {
+
+                    music.pause();
+
+                    musicButton.textContent =
+                        "🔇";
+
+                    musicButton.setAttribute(
+                        "aria-label",
+                        "Putar musik"
+                    );
+
+                }
+
+
+                musicButton.addEventListener(
+                    "click",
+                    async function (event) {
+
+                        event.stopPropagation();
+
+
+                        if (music.paused) {
+
+                            await playMusic();
+
+                        } else {
+
+                            pauseMusic();
+
+                        }
+
+                    }
+                );
+
+
+                playMusic();
+
+
+                function startAfterInteraction() {
+
+                    if (music.paused) {
+                        playMusic();
+                    }
+
+                    removeInteractionListeners();
+
+                }
+
+
+                function removeInteractionListeners() {
+
+                    document.removeEventListener(
+                        "click",
+                        startAfterInteraction
+                    );
+
+                    document.removeEventListener(
+                        "touchstart",
+                        startAfterInteraction
+                    );
+
+                    document.removeEventListener(
+                        "keydown",
+                        startAfterInteraction
+                    );
+
+                }
+
+
+                document.addEventListener(
+                    "click",
+                    startAfterInteraction
+                );
+
+                document.addEventListener(
+                    "touchstart",
+                    startAfterInteraction
+                );
+
+                document.addEventListener(
+                    "keydown",
+                    startAfterInteraction
+                );
+
+
+                music.addEventListener(
+                    "play",
+                    function () {
+
+                        musicButton.textContent =
+                            "🔊";
+
+                    }
+                );
+
+
+                music.addEventListener(
+                    "pause",
+                    function () {
+
+                        musicButton.textContent =
+                            "🔇";
+
+                    }
+                );
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,1651 @@
+<!DOCTYPE html>
+
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+
+>
+
+<title>Catatan Murid | RA Miftahul Hikmah</title>
+
+<link
+    rel="stylesheet"
+    href="css/style.css"
+>
+
+<style>
+
+:root {
+    --pink: #ef4f82;
+    --blue: #31536c;
+    --text: #647d89;
+    --green: #299654;
+    --yellow: #b87a09;
+    --red: #d9435e;
+}
+
+body {
+    margin: 0;
+    background:
+        linear-gradient(
+            135deg,
+            #fff8fb,
+            #f4fbff,
+            #fffaf5
+        );
+}
+
+.catatan-page {
+    max-width: 1200px;
+    margin: 35px auto;
+    padding: 20px;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.top-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 25px;
+    border-radius: 28px;
+    background: #ffffff;
+    box-shadow:
+        0 15px 40px
+        rgba(50, 100, 130, .10);
+    animation: fadeUp .5s ease both;
+}
+
+.title-box {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.title-icon {
+    width: 75px;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 24px;
+    background:
+        linear-gradient(
+            135deg,
+            #ffe1ec,
+            #fff0f6
+        );
+    font-size: 38px;
+}
+
+.title-box h1 {
+    margin: 0;
+    color: var(--blue);
+    font-size: 25px;
+    font-weight: 900;
+}
+
+.subtitle {
+    margin-top: 7px;
+    color: #81949e;
+    font-size: 13px;
+}
+
+.header-action {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.back-btn,
+.logout-btn {
+    border: none;
+    cursor: pointer;
+    padding: 12px 17px;
+    border-radius: 14px;
+    font-size: 13px;
+    font-weight: 800;
+    transition: .25s;
+}
+
+.back-btn {
+    background: #eef7fb;
+    color: var(--blue);
+}
+
+.logout-btn {
+    background:
+        linear-gradient(
+            135deg,
+            #ef4f82,
+            #ff7da5
+        );
+    color: #ffffff;
+}
+
+.back-btn:hover,
+.logout-btn:hover {
+    transform: translateY(-3px);
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.panel {
+    padding: 28px;
+    border-radius: 28px;
+    background: #ffffff;
+    box-shadow:
+        0 15px 40px
+        rgba(50, 100, 130, .08);
+    animation: fadeUp .6s ease both;
+}
+
+.panel h2 {
+    margin: 0 0 22px;
+    color: var(--blue);
+    font-size: 21px;
+    font-weight: 900;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--blue);
+    font-size: 13px;
+    font-weight: 800;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px 16px;
+    border: 1px solid #e6edf1;
+    outline: none;
+    border-radius: 15px;
+    background: #ffffff;
+    color: var(--text);
+    font-size: 14px;
+    font-family: inherit;
+    transition: .2s;
+}
+
+textarea {
+    min-height: 150px;
+    resize: vertical;
+    line-height: 1.7;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--pink);
+    box-shadow:
+        0 0 0 4px
+        rgba(239, 79, 130, .08);
+}
+
+.murid-info-box {
+    display: none;
+    margin-top: 12px;
+    padding: 15px;
+    border-radius: 16px;
+    background: #f8fcff;
+    color: var(--text);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.murid-info-box.show {
+    display: block;
+}
+
+.save-btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    background:
+        linear-gradient(
+            135deg,
+            #ef4f82,
+            #ff7da5
+        );
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 900;
+    box-shadow:
+        0 12px 25px
+        rgba(239, 79, 130, .20);
+    transition: .25s;
+}
+
+.save-btn:hover {
+    transform: translateY(-3px);
+}
+
+.save-btn:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.catatan-list {
+    display: grid;
+    gap: 15px;
+}
+
+.catatan-item {
+    padding: 20px;
+    border-radius: 20px;
+    background:
+        linear-gradient(
+            135deg,
+            #fffafd,
+            #ffffff
+        );
+    border:
+        1px solid
+        rgba(239, 79, 130, .10);
+    transition: .25s;
+}
+
+.catatan-item:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 12px 30px
+        rgba(50, 100, 120, .08);
+}
+
+.catatan-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.catatan-name {
+    color: var(--blue);
+    font-size: 15px;
+    font-weight: 900;
+}
+
+.catatan-kelas {
+    margin-top: 5px;
+    color: #8799a2;
+    font-size: 11px;
+}
+
+.catatan-date {
+    color: #98a8af;
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 13px;
+    padding: 8px 13px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 900;
+}
+
+.status-hijau {
+    background: #e8fff0;
+    color: var(--green);
+}
+
+.status-kuning {
+    background: #fff7d8;
+    color: var(--yellow);
+}
+
+.status-merah {
+    background: #fff0f2;
+    color: var(--red);
+}
+
+.catatan-text {
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 15px;
+    background: #ffffff;
+    color: var(--text);
+    font-size: 13px;
+    line-height: 1.8;
+    white-space: pre-line;
+}
+
+.delete-btn {
+    margin-top: 15px;
+    border: none;
+    padding: 9px 13px;
+    border-radius: 12px;
+    background: #fff0f3;
+    color: var(--red);
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.empty-box {
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: 22px;
+    background: #f9fcfd;
+}
+
+.empty-icon {
+    margin-bottom: 15px;
+    font-size: 50px;
+}
+
+.empty-box h3 {
+    margin: 0;
+    color: var(--blue);
+    font-size: 17px;
+}
+
+.empty-box p {
+    margin: 10px 0 0;
+    color: #8a9ca5;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.loading {
+    padding: 40px;
+    text-align: center;
+    color: #81949e;
+    font-size: 13px;
+}
+
+@media (max-width: 850px) {
+
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .top-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+}
+
+@media (max-width: 550px) {
+
+    .catatan-page {
+        padding: 14px;
+        margin: 15px auto;
+    }
+
+    .panel {
+        padding: 20px;
+    }
+
+    .title-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 30px;
+    }
+
+    .title-box h1 {
+        font-size: 20px;
+    }
+
+    .catatan-top {
+        flex-direction: column;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="catatan-page">
+
+<div class="top-card">
+
+```
+<div class="title-box">
+
+    <div class="title-icon">
+        📝
+    </div>
+
+    <div>
+
+        <h1>
+            Catatan Murid
+        </h1>
+
+        <div class="subtitle">
+            Tambahkan perkembangan dan catatan untuk murid
+        </div>
+
+    </div>
+
+</div>
+
+<div class="header-action">
+
+    <button
+        class="back-btn"
+        type="button"
+        onclick="window.location.href='guru.html'"
+    >
+        ← Dashboard
+    </button>
+
+    <button
+        class="logout-btn"
+        id="logoutButton"
+        type="button"
+    >
+        🚪 Logout
+    </button>
+
+</div>
+```
+
+</div>
+
+<div class="content-grid">
+
+<div class="panel">
+
+```
+<h2>
+    ➕ Tambah Catatan
+</h2>
+
+<form id="catatanForm">
+
+    <div class="form-group">
+
+        <label>
+            👧 Pilih Murid
+        </label>
+
+        <select
+            id="muridSelect"
+            required
+        >
+            <option value="">
+                ⏳ Memuat murid...
+            </option>
+        </select>
+
+        <div
+            class="murid-info-box"
+            id="muridInfoBox"
+        ></div>
+
+    </div>
+
+    <div class="form-group">
+
+        <label>
+            🌱 Status Perkembangan
+        </label>
+
+        <select
+            id="perkembanganInput"
+            required
+        >
+
+            <option value="">
+                Pilih Status
+            </option>
+
+            <option value="Berkembang Baik">
+                🟢 Berkembang Baik
+            </option>
+
+            <option value="Perlu Bimbingan">
+                🟡 Perlu Bimbingan
+            </option>
+
+            <option value="Perlu Perhatian">
+                🔴 Perlu Perhatian
+            </option>
+
+        </select>
+
+    </div>
+
+    <div class="form-group">
+
+        <label>
+            📚 Isi Catatan Guru
+        </label>
+
+        <textarea
+            id="isiCatatanInput"
+            placeholder="Tuliskan perkembangan atau catatan untuk murid..."
+            required
+        ></textarea>
+
+    </div>
+
+    <button
+        class="save-btn"
+        id="saveButton"
+        type="submit"
+    >
+        💾 Simpan Catatan
+    </button>
+
+</form>
+```
+
+</div>
+
+<div class="panel">
+
+```
+<h2>
+    📚 Riwayat Catatan
+</h2>
+
+<div
+    class="catatan-list"
+    id="catatanList"
+>
+
+    <div class="loading">
+        ⏳ Memuat catatan...
+    </div>
+
+</div>
+```
+
+</div>
+
+</div>
+
+</div>
+
+<script
+    src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+></script>
+
+<script>
+
+
+/* =========================================
+   SUPABASE CONFIG
+========================================= */
+
+const SUPABASE_URL =
+    "https://ervhwjrlqcsobawwhkpf.supabase.co";
+
+
+const SUPABASE_PUBLISHABLE_KEY =
+    "sb_publishable_u48E-Q-RjdFRFLC_Cv3rmg_gD0Z3y2K";
+
+
+const supabaseClient =
+    window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_PUBLISHABLE_KEY
+    );
+
+
+/* =========================================
+   ELEMENT
+========================================= */
+
+const catatanForm =
+    document.getElementById(
+        "catatanForm"
+    );
+
+
+const muridSelect =
+    document.getElementById(
+        "muridSelect"
+    );
+
+
+const perkembanganInput =
+    document.getElementById(
+        "perkembanganInput"
+    );
+
+
+const isiCatatanInput =
+    document.getElementById(
+        "isiCatatanInput"
+    );
+
+
+const muridInfoBox =
+    document.getElementById(
+        "muridInfoBox"
+    );
+
+
+const catatanList =
+    document.getElementById(
+        "catatanList"
+    );
+
+
+const saveButton =
+    document.getElementById(
+        "saveButton"
+    );
+
+
+const logoutButton =
+    document.getElementById(
+        "logoutButton"
+    );
+
+
+/* =========================================
+   DATA
+========================================= */
+
+let currentUser =
+    null;
+
+
+let semuaMurid =
+    [];
+
+
+/* =========================================
+   ESCAPE HTML
+========================================= */
+
+function escapeHTML(text) {
+
+    const div =
+        document.createElement("div");
+
+
+    div.textContent =
+        text || "";
+
+
+    return div.innerHTML;
+
+}
+
+
+/* =========================================
+   FORMAT TANGGAL
+========================================= */
+
+function formatTanggal(tanggal) {
+
+    if (!tanggal) {
+
+        return "-";
+
+    }
+
+
+    const date =
+        new Date(tanggal);
+
+
+    return date.toLocaleString(
+        "id-ID",
+        {
+            day: "numeric",
+            month: "long",
+            year: "numeric",
+            hour: "2-digit",
+            minute: "2-digit"
+        }
+    );
+
+}
+
+
+/* =========================================
+   STATUS INFO
+========================================= */
+
+function getStatusInfo(status) {
+
+    const value =
+        (status || "")
+        .toLowerCase()
+        .trim();
+
+
+    if (value.includes("baik")) {
+
+        return {
+            warna: "hijau",
+            emoji: "🟢"
+        };
+
+    }
+
+
+    if (value.includes("bimbingan")) {
+
+        return {
+            warna: "kuning",
+            emoji: "🟡"
+        };
+
+    }
+
+
+    if (value.includes("perhatian")) {
+
+        return {
+            warna: "merah",
+            emoji: "🔴"
+        };
+
+    }
+
+
+    return {
+        warna: "kuning",
+        emoji: "⚪"
+    };
+
+}
+
+
+/* =========================================
+   CEK LOGIN GURU
+========================================= */
+
+async function cekGuru() {
+
+    try {
+
+        const {
+            data: {
+                user
+            },
+            error: userError
+        } =
+            await supabaseClient
+            .auth
+            .getUser();
+
+
+        if (
+            userError ||
+            !user
+        ) {
+
+            window.location.href =
+                "login.html";
+
+            return false;
+
+        }
+
+
+        currentUser =
+            user;
+
+
+        const {
+            data: profile,
+            error: profileError
+        } =
+            await supabaseClient
+            .from("profiles")
+            .select("full_name, role")
+            .eq("id", user.id)
+            .single();
+
+
+        if (
+            profileError ||
+            !profile
+        ) {
+
+            throw new Error(
+                "Profil guru tidak ditemukan."
+            );
+
+        }
+
+
+        if (
+            profile.role !== "guru"
+        ) {
+
+            alert(
+                "⛔ Halaman ini hanya untuk guru."
+            );
+
+
+            await supabaseClient
+            .auth
+            .signOut();
+
+
+            window.location.href =
+                "login.html";
+
+
+            return false;
+
+        }
+
+
+        return true;
+
+    }
+
+    catch (error) {
+
+        console.error(
+            "CEK GURU ERROR:",
+            error
+        );
+
+
+        alert(
+            "❌ " +
+            error.message
+        );
+
+
+        return false;
+
+    }
+
+}
+
+
+/* =========================================
+   LOAD MURID
+========================================= */
+
+async function loadMurid() {
+
+    try {
+
+        muridSelect.innerHTML =
+            `
+            <option value="">
+                ⏳ Memuat murid...
+            </option>
+            `;
+
+
+        const {
+            data,
+            error
+        } =
+            await supabaseClient
+            .from("murid")
+            .select(
+                "id, nama, kelas, wali_id"
+            )
+            .order(
+                "nama",
+                {
+                    ascending: true
+                }
+            );
+
+
+        if (error) {
+
+            throw error;
+
+        }
+
+
+        semuaMurid =
+            data || [];
+
+
+        muridSelect.innerHTML =
+            `
+            <option value="">
+                👧 Pilih Murid
+            </option>
+            `;
+
+
+        if (
+            semuaMurid.length === 0
+        ) {
+
+            muridSelect.innerHTML =
+                `
+                <option value="">
+                    ⚠️ Belum ada murid
+                </option>
+                `;
+
+
+            return;
+
+        }
+
+
+        semuaMurid.forEach(
+            function(murid) {
+
+                const option =
+                    document.createElement(
+                        "option"
+                    );
+
+
+                option.value =
+                    murid.id;
+
+
+                option.textContent =
+                    murid.nama +
+                    " — " +
+                    (
+                        murid.kelas ||
+                        "-"
+                    );
+
+
+                muridSelect.appendChild(
+                    option
+                );
+
+            }
+        );
+
+    }
+
+    catch (error) {
+
+        console.error(
+            "LOAD MURID ERROR:",
+            error
+        );
+
+
+        muridSelect.innerHTML =
+            `
+            <option value="">
+                ❌ Gagal memuat murid
+            </option>
+            `;
+
+    }
+
+}
+
+
+/* =========================================
+   INFO MURID
+========================================= */
+
+muridSelect.addEventListener(
+    "change",
+    function() {
+
+        const muridId =
+            muridSelect.value;
+
+
+        if (!muridId) {
+
+            muridInfoBox.classList.remove(
+                "show"
+            );
+
+
+            return;
+
+        }
+
+
+        const murid =
+            semuaMurid.find(
+                function(item) {
+
+                    return (
+                        item.id ===
+                        muridId
+                    );
+
+                }
+            );
+
+
+        if (!murid) {
+
+            return;
+
+        }
+
+
+        muridInfoBox.innerHTML =
+            `
+            👧 <strong>
+                ${escapeHTML(murid.nama)}
+            </strong>
+
+            <br>
+
+            👥 Kelas:
+            ${escapeHTML(
+                murid.kelas || "-"
+            )}
+
+            <br>
+
+            🔗 Murid berhasil dipilih.
+            Catatan akan tersimpan khusus
+            untuk murid ini.
+            `;
+
+
+        muridInfoBox.classList.add(
+            "show"
+        );
+
+    }
+);
+
+
+/* =========================================
+   SIMPAN CATATAN
+========================================= */
+
+catatanForm.addEventListener(
+    "submit",
+    async function(event) {
+
+        event.preventDefault();
+
+
+        const muridId =
+            muridSelect.value;
+
+
+        const perkembangan =
+            perkembanganInput.value;
+
+
+        const isiCatatan =
+            isiCatatanInput.value
+            .trim();
+
+
+        if (
+            !muridId ||
+            !perkembangan ||
+            !isiCatatan
+        ) {
+
+            alert(
+                "⚠️ Semua data harus diisi."
+            );
+
+
+            return;
+
+        }
+
+
+        const murid =
+            semuaMurid.find(
+                function(item) {
+
+                    return (
+                        item.id ===
+                        muridId
+                    );
+
+                }
+            );
+
+
+        if (!murid) {
+
+            alert(
+                "⚠️ Data murid tidak ditemukan."
+            );
+
+
+            return;
+
+        }
+
+
+        saveButton.disabled =
+            true;
+
+
+        saveButton.textContent =
+            "⏳ Menyimpan...";
+
+
+        try {
+
+            const {
+                data,
+                error
+            } =
+                await supabaseClient
+                .from("catatan_murid")
+                
+                .insert({
+    murid_id:
+        murid.id,
+
+    guru_id:
+        currentUser.id,
+
+    nama_murid:
+        murid.nama,
+
+    kelas:
+        murid.kelas,
+
+    perkembangan:
+        perkembangan,
+
+    isi_catatan:
+        isiCatatan
+})
+                .select()
+                .single();
+
+
+            if (error) {
+
+                throw error;
+
+            }
+
+
+            alert(
+                "✅ Catatan untuk " +
+                murid.nama +
+                " berhasil disimpan!"
+            );
+
+
+            perkembanganInput.value =
+                "";
+
+
+            isiCatatanInput.value =
+                "";
+
+
+            await loadCatatan();
+
+        }
+
+        catch (error) {
+
+            console.error(
+                "SIMPAN CATATAN ERROR:",
+                error
+            );
+
+
+            alert(
+                "❌ Gagal menyimpan catatan:\n\n" +
+                error.message
+            );
+
+        }
+
+        finally {
+
+            saveButton.disabled =
+                false;
+
+
+            saveButton.textContent =
+                "💾 Simpan Catatan";
+
+        }
+
+    }
+);
+
+
+/* =========================================
+   LOAD CATATAN
+========================================= */
+
+async function loadCatatan() {
+
+    try {
+
+        catatanList.innerHTML =
+            `
+            <div class="loading">
+                ⏳ Memuat catatan...
+            </div>
+            `;
+
+
+       const {
+    data,
+    error
+} =
+    await supabaseClient
+    .from("catatan_murid")
+    .select(`
+    id,
+    murid_id,
+    guru_id,
+    nama_murid,
+    kelas,
+    perkembangan,
+    isi_catatan,
+    created_at
+`)
+    .order(
+        "created_at",
+        {
+            ascending: false
+        }
+    );
+        if (error) {
+
+            throw error;
+
+        }
+
+
+        tampilkanCatatan(
+            data || []
+        );
+
+    }
+
+    catch (error) {
+
+        console.error(
+            "LOAD CATATAN ERROR:",
+            error
+        );
+
+
+        catatanList.innerHTML =
+            `
+            <div class="empty-box">
+
+                <div class="empty-icon">
+                    ⚠️
+                </div>
+
+                <h3>
+                    Catatan Tidak Dapat Dimuat
+                </h3>
+
+                <p>
+                    ${escapeHTML(
+                        error.message
+                    )}
+                </p>
+
+            </div>
+            `;
+
+    }
+
+}
+
+
+/* =========================================
+   TAMPILKAN CATATAN
+========================================= */
+
+function tampilkanCatatan(data) {
+
+    catatanList.innerHTML =
+        "";
+
+
+    if (
+        data.length === 0
+    ) {
+
+        catatanList.innerHTML =
+            `
+            <div class="empty-box">
+
+                <div class="empty-icon">
+                    📝
+                </div>
+
+                <h3>
+                    Belum Ada Catatan
+                </h3>
+
+                <p>
+                    Catatan yang dibuat guru
+                    akan muncul di sini.
+                </p>
+
+            </div>
+            `;
+
+
+        return;
+
+    }
+
+
+    data.forEach(
+        function(catatan) {
+
+            const info =
+                getStatusInfo(
+                    catatan.perkembangan
+                );
+
+
+            const namaMurid =
+                catatan.nama_murid ||
+                "Murid";
+
+
+            const kelasMurid =
+                catatan.murid?.kelas ||
+                "-";
+
+
+            const item =
+                document.createElement(
+                    "div"
+                );
+
+
+            item.className =
+                "catatan-item";
+
+
+            item.innerHTML =
+                `
+
+                <div class="catatan-top">
+
+                    <div>
+
+                        <div class="catatan-name">
+
+                            👧 ${escapeHTML(
+                                namaMurid
+                            )}
+
+                        </div>
+
+                        <div class="catatan-kelas">
+
+                            👥 ${escapeHTML(
+                                kelasMurid
+                            )}
+
+                        </div>
+
+                    </div>
+
+                    <div class="catatan-date">
+
+                        🕒 ${formatTanggal(
+                            catatan.created_at
+                        )}
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="
+                    status-badge
+                    status-${info.warna}
+                    "
+                >
+
+                    ${info.emoji}
+
+                    ${escapeHTML(
+                        catatan.perkembangan
+                    )}
+
+                </div>
+
+
+                <div class="catatan-text">
+
+                    ${escapeHTML(
+                        catatan.isi_catatan
+                    )}
+
+                </div>
+
+
+                <button
+                    class="delete-btn"
+                    type="button"
+                >
+
+                    🗑 Hapus Catatan
+
+                </button>
+
+                `;
+
+
+            const deleteButton =
+                item.querySelector(
+                    ".delete-btn"
+                );
+
+
+            deleteButton.addEventListener(
+                "click",
+                function() {
+
+                    hapusCatatan(
+                        catatan.id,
+                        catatan.nama_murid
+                    );
+
+                }
+            );
+
+
+            catatanList.appendChild(
+                item
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================
+   HAPUS CATATAN
+========================================= */
+
+async function hapusCatatan(
+    id,
+    nama
+) {
+
+    const yakin =
+        confirm(
+            "Yakin ingin menghapus catatan " +
+            nama +
+            "?"
+        );
+
+
+    if (!yakin) {
+
+        return;
+
+    }
+
+
+    try {
+
+        const {
+            error
+        } =
+            await supabaseClient
+            .from("catatan_murid")
+            .delete()
+            .eq("id", id);
+
+
+        if (error) {
+
+            throw error;
+
+        }
+
+
+        alert(
+            "✅ Catatan berhasil dihapus."
+        );
+
+
+        await loadCatatan();
+
+    }
+
+    catch (error) {
+
+        console.error(
+            "HAPUS CATATAN ERROR:",
+            error
+        );
+
+
+        alert(
+            "❌ Gagal menghapus catatan:\n\n" +
+            error.message
+        );
+
+    }
+
+}
+
+
+/* =========================================
+   LOGOUT
+========================================= */
+
+logoutButton.addEventListener(
+    "click",
+    async function() {
+
+        try {
+
+            await supabaseClient
+            .auth
+            .signOut();
+
+
+            window.location.href =
+                "login.html";
+
+        }
+
+        catch (error) {
+
+            console.error(
+                "LOGOUT ERROR:",
+                error
+            );
+
+
+            alert(
+                "❌ Logout gagal."
+            );
+
+        }
+
+    }
+);
+
+
+/* =========================================
+   INIT
+========================================= */
+
+async function init() {
+
+    const bolehMasuk =
+        await cekGuru();
+
+
+    if (!bolehMasuk) {
+
+        return;
+
+    }
+
+
+    await loadMurid();
+
+
+    await loadCatatan();
+
+}
+
+
+init();
+
+
+</script>
+
+</body>
+
+</html>

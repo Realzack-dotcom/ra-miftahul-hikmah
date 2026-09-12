@@ -1,0 +1,3999 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    >
+
+    <title>
+        Daftar Akun | RA Miftahul Hikmah
+    </title>
+
+
+    <!-- CSS UTAMA WEBSITE -->
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+
+    <!-- =========================================
+         STYLE KHUSUS HALAMAN DAFTAR
+    ========================================= -->
+
+   <style>
+
+    /* =========================================
+       BODY
+    ========================================= */
+
+    body {
+
+        min-height:100vh;
+
+        overflow-x:hidden;
+
+        position:relative;
+
+        background:
+
+            radial-gradient(
+                circle at 10% 15%,
+                rgba(255,105,160,.48),
+                transparent 28%
+            ),
+
+            radial-gradient(
+                circle at 90% 20%,
+                rgba(70,185,255,.42),
+                transparent 30%
+            ),
+
+            radial-gradient(
+                circle at 50% 90%,
+                rgba(180,120,255,.38),
+                transparent 32%
+            ),
+
+            linear-gradient(
+                135deg,
+                #fff0f6,
+                #eaf8ff,
+                #fff6e8
+            );
+
+    }
+
+
+    /* =========================================
+       BACKGROUND EFFECT
+    ========================================= */
+
+    body::before {
+
+        content:"";
+
+        position:fixed;
+
+        width:420px;
+
+        height:420px;
+
+        top:-180px;
+
+        left:-150px;
+
+        border-radius:50%;
+
+        background:
+
+            radial-gradient(
+                circle,
+                rgba(255,60,135,.42),
+                transparent 70%
+            );
+
+        filter:blur(25px);
+
+        animation:
+            floatingBlobOne
+            12s
+            ease-in-out
+            infinite;
+
+        pointer-events:none;
+
+        z-index:-1;
+
+    }
+
+
+    body::after {
+
+        content:"";
+
+        position:fixed;
+
+        width:480px;
+
+        height:480px;
+
+        bottom:-220px;
+
+        right:-180px;
+
+        border-radius:50%;
+
+        background:
+
+            radial-gradient(
+                circle,
+                rgba(40,165,255,.38),
+                transparent 70%
+            );
+
+        filter:blur(25px);
+
+        animation:
+            floatingBlobTwo
+            14s
+            ease-in-out
+            infinite;
+
+        pointer-events:none;
+
+        z-index:-1;
+
+    }
+
+
+    @keyframes floatingBlobOne {
+
+        0%,
+        100% {
+
+            transform:
+                translate(0,0)
+                scale(1);
+
+        }
+
+        50% {
+
+            transform:
+                translate(70px,60px)
+                scale(1.15);
+
+        }
+
+    }
+
+
+    @keyframes floatingBlobTwo {
+
+        0%,
+        100% {
+
+            transform:
+                translate(0,0)
+                scale(1);
+
+        }
+
+        50% {
+
+            transform:
+                translate(-80px,-60px)
+                scale(1.13);
+
+        }
+
+    }
+
+
+
+    /* =========================================
+       HEADER
+    ========================================= */
+
+    .top {
+
+        position:relative;
+
+        background:
+            rgba(255,255,255,.88);
+
+        backdrop-filter:
+            blur(20px);
+
+        -webkit-backdrop-filter:
+            blur(20px);
+
+        border-bottom:
+            1px solid
+            rgba(255,150,190,.25);
+
+        box-shadow:
+            0 10px 40px
+            rgba(255,80,140,.10);
+
+    }
+
+
+    .head {
+
+        padding-top:18px;
+
+        padding-bottom:18px;
+
+    }
+
+
+    .brand {
+
+        transition:
+            transform .3s ease;
+
+    }
+
+
+    .brand:hover {
+
+        transform:
+            translateY(-3px);
+
+    }
+
+
+    .sun {
+
+        animation:
+            sunFloat
+            4s
+            ease-in-out
+            infinite;
+
+    }
+
+
+    @keyframes sunFloat {
+
+        0%,
+        100% {
+
+            transform:
+                translateY(0)
+                rotate(0deg);
+
+        }
+
+        50% {
+
+            transform:
+                translateY(-5px)
+                rotate(10deg);
+
+        }
+
+    }
+
+
+
+    /* =========================================
+       NAVIGATION
+    ========================================= */
+
+    .rainbow-item {
+
+        transition:
+            transform .3s ease,
+            filter .3s ease;
+
+    }
+
+
+    .rainbow-item:hover {
+
+        transform:
+            translateY(-4px)
+            scale(1.03);
+
+        filter:
+            brightness(1.12)
+            saturate(1.15);
+
+    }
+
+
+
+    /* =========================================
+       HERO
+    ========================================= */
+
+    .pagehero {
+
+        position:relative;
+
+        overflow:hidden;
+
+        text-align:center;
+
+        padding-top:65px !important;
+
+        padding-bottom:70px !important;
+
+        background:
+
+            linear-gradient(
+                135deg,
+                rgba(255,210,230,.82),
+                rgba(210,240,255,.82),
+                rgba(255,235,190,.82)
+            );
+
+    }
+
+
+    .pagehero::before {
+
+        content:"✦";
+
+        position:absolute;
+
+        top:25px;
+
+        left:10%;
+
+        font-size:30px;
+
+        color:
+            rgba(255,35,115,.55);
+
+        animation:
+            sparkleFloat
+            4s
+            ease-in-out
+            infinite;
+
+    }
+
+
+    .pagehero::after {
+
+        content:"✧";
+
+        position:absolute;
+
+        right:12%;
+
+        bottom:25px;
+
+        font-size:38px;
+
+        color:
+            rgba(20,135,255,.55);
+
+        animation:
+            sparkleFloat
+            5s
+            ease-in-out
+            infinite
+            reverse;
+
+    }
+
+
+    @keyframes sparkleFloat {
+
+        0%,
+        100% {
+
+            transform:
+                translateY(0)
+                rotate(0deg);
+
+            opacity:.5;
+
+        }
+
+        50% {
+
+            transform:
+                translateY(-15px)
+                rotate(15deg);
+
+            opacity:1;
+
+        }
+
+    }
+
+
+    .pagehero h2 {
+
+        font-size:
+            clamp(34px,5vw,55px)
+            !important;
+
+        margin-bottom:15px;
+
+        letter-spacing:-1px;
+
+        animation:
+            heroAppear
+            .8s
+            ease
+            both;
+
+    }
+
+
+    .pagehero p {
+
+        color:#426170;
+
+        font-size:16px;
+
+        animation:
+            heroAppear
+            1s
+            ease
+            both;
+
+    }
+
+
+    @keyframes heroAppear {
+
+        from {
+
+            opacity:0;
+
+            transform:
+                translateY(25px);
+
+        }
+
+        to {
+
+            opacity:1;
+
+            transform:
+                translateY(0);
+
+        }
+
+    }
+
+
+
+    /* =========================================
+       SECTION
+    ========================================= */
+
+    .section {
+
+        padding-top:55px !important;
+
+        padding-bottom:85px !important;
+
+    }
+
+
+
+    /* =========================================
+       FORM CARD
+    ========================================= */
+
+    #registerForm {
+
+        position:relative;
+
+        overflow:hidden;
+
+        max-width:650px;
+
+        margin:auto;
+
+        padding:
+            45px
+            40px
+            !important;
+
+        border-radius:
+            32px
+            !important;
+
+        background:
+            rgba(255,255,255,.92)
+            !important;
+
+        backdrop-filter:
+            blur(25px);
+
+        border:
+            1px solid
+            rgba(255,255,255,1);
+
+        box-shadow:
+
+            0 30px 80px
+            rgba(255,80,140,.14),
+
+            0 10px 30px
+            rgba(80,170,255,.10),
+
+            inset
+            0 1px 0
+            rgba(255,255,255,1);
+
+        animation:
+            formAppear
+            .9s
+            cubic-bezier(.2,.8,.2,1)
+            both;
+
+    }
+
+
+    #registerForm::before {
+
+        content:"";
+
+        position:absolute;
+
+        width:250px;
+
+        height:250px;
+
+        top:-130px;
+
+        right:-120px;
+
+        border-radius:50%;
+
+        background:
+
+            radial-gradient(
+                circle,
+                rgba(255,75,145,.28),
+                transparent 70%
+            );
+
+        pointer-events:none;
+
+    }
+
+
+    @keyframes formAppear {
+
+        from {
+
+            opacity:0;
+
+            transform:
+                translateY(45px)
+                scale(.97);
+
+        }
+
+        to {
+
+            opacity:1;
+
+            transform:
+                translateY(0)
+                scale(1);
+
+        }
+
+    }
+
+
+
+    /* =========================================
+       FORM TITLE
+    ========================================= */
+
+    #registerForm .title {
+
+        position:relative;
+
+        text-align:center;
+
+        font-size:34px;
+
+        margin-bottom:8px;
+
+    }
+
+
+    #registerForm .title span {
+
+        color:#ff2f78;
+
+        text-shadow:
+            0 5px 20px
+            rgba(255,47,120,.25);
+
+    }
+
+
+    #registerForm > p:first-of-type {
+
+        text-align:center;
+
+        color:#58707c;
+
+        margin-bottom:30px;
+
+    }
+
+
+
+    /* =========================================
+       LABEL
+    ========================================= */
+
+    #registerForm label {
+
+        display:block;
+
+        margin-top:21px;
+
+        margin-bottom:8px;
+
+        font-size:14px;
+
+        font-weight:800;
+
+        color:#304955;
+
+        transition:
+            color .25s ease,
+            transform .25s ease;
+
+    }
+
+
+    #registerForm label:hover {
+
+        color:#ff2f78;
+
+        transform:
+            translateX(2px);
+
+    }
+
+
+
+    /* =========================================
+       INPUT
+    ========================================= */
+
+    #registerForm input,
+    #registerForm select {
+
+        width:100%;
+
+        box-sizing:border-box;
+
+        border:
+            1px solid
+            #d8e6ed
+            !important;
+
+        background:
+            #ffffff
+            !important;
+
+        border-radius:
+            16px
+            !important;
+
+        padding:
+            16px
+            18px
+            !important;
+
+        color:#304955;
+
+        outline:none;
+
+        font-size:14px;
+
+        transition:
+
+            transform .25s ease,
+
+            box-shadow .25s ease,
+
+            border-color .25s ease;
+
+    }
+
+
+    #registerForm input::placeholder {
+
+        color:#8fa3ad;
+
+    }
+
+
+    #registerForm input:hover,
+    #registerForm select:hover {
+
+        border-color:
+            #ff9bbb
+            !important;
+
+    }
+
+
+    #registerForm input:focus,
+    #registerForm select:focus {
+
+        transform:
+            translateY(-2px);
+
+        border-color:
+            #ff4f88
+            !important;
+
+        background:
+            #ffffff
+            !important;
+
+        box-shadow:
+
+            0 10px 28px
+            rgba(255,47,120,.16),
+
+            0 0 0 4px
+            rgba(255,47,120,.08);
+
+    }
+
+
+
+    /* =========================================
+       EMAIL INFO
+    ========================================= */
+
+    .login-email-info {
+
+        margin-top:9px;
+
+        padding:
+            13px
+            16px;
+
+        border-radius:14px;
+
+        background:
+
+            linear-gradient(
+                135deg,
+                #e9f7ff,
+                #f7fcff
+            );
+
+        border-left:
+            4px solid
+            #38a9ff;
+
+        font-size:12px;
+
+        color:#426170;
+
+        line-height:1.7;
+
+    }
+
+
+
+    /* =========================================
+       DATA WALI MURID
+    ========================================= */
+
+    #childSection {
+
+        position:relative;
+
+        overflow:hidden;
+
+        margin-top:
+            32px
+            !important;
+
+        padding:
+            28px
+            !important;
+
+        border-radius:
+            25px
+            !important;
+
+        background:
+
+            linear-gradient(
+                135deg,
+                #ffe8f0,
+                #ffffff
+            )
+            !important;
+
+        border:
+            1px solid
+            #ffb8d0
+            !important;
+
+        box-shadow:
+
+            0 15px 45px
+            rgba(255,47,120,.12);
+
+        animation:
+            childAppear
+            .5s
+            ease
+            both;
+
+    }
+
+
+    #childSection::before {
+
+        content:"💗";
+
+        position:absolute;
+
+        top:-30px;
+
+        right:-15px;
+
+        font-size:100px;
+
+        opacity:.08;
+
+        transform:
+            rotate(-20deg);
+
+        pointer-events:none;
+
+    }
+
+
+    @keyframes childAppear {
+
+        from {
+
+            opacity:0;
+
+            transform:
+                translateY(20px);
+
+        }
+
+        to {
+
+            opacity:1;
+
+            transform:
+                translateY(0);
+
+        }
+
+    }
+
+
+    #childSection h3 {
+
+        position:relative;
+
+        font-size:21px !important;
+
+        margin-top:0;
+
+        margin-bottom:20px;
+
+    }
+
+
+
+    /* =========================================
+       WHATSAPP
+    ========================================= */
+
+    #whatsapp {
+
+        border-color:
+            #a9e8c0
+            !important;
+
+        background:
+            #f8fffa
+            !important;
+
+    }
+
+
+    #whatsapp:focus {
+
+        border-color:
+            #25c765
+            !important;
+
+        box-shadow:
+
+            0 10px 28px
+            rgba(30,200,90,.15),
+
+            0 0 0 4px
+            rgba(30,200,90,.07);
+
+    }
+
+
+    .whatsapp-info {
+
+        font-size:12px;
+
+        color:#426170;
+
+        margin-top:8px;
+
+        line-height:1.6;
+
+    }
+
+
+
+    /* =========================================
+       INFO ANAK
+    ========================================= */
+
+    .child-info-box {
+
+        position:relative;
+
+        margin-top:20px;
+
+        padding:17px;
+
+        border-radius:16px;
+
+        background:
+            rgba(255,255,255,.96);
+
+        border:
+            1px solid
+            #e1edf2;
+
+        font-size:13px;
+
+        color:#426170;
+
+        line-height:1.8;
+
+        box-shadow:
+
+            0 8px 25px
+            rgba(70,90,110,.06);
+
+    }
+
+
+
+    /* =========================================
+       INFO PENDAFTARAN
+    ========================================= */
+
+    .main-info {
+
+        position:relative;
+
+        overflow:hidden;
+
+        margin:25px 0;
+
+        padding:
+            18px
+            20px;
+
+        border-radius:
+            20px;
+
+        background:
+
+            linear-gradient(
+                135deg,
+                #fff3b8,
+                #fffdf2
+            );
+
+        border:
+            1px solid
+            #ffd65a;
+
+        box-shadow:
+
+            0 10px 30px
+            rgba(255,185,20,.12);
+
+        line-height:1.9;
+
+    }
+
+
+
+    /* =========================================
+       BUTTON
+    ========================================= */
+
+    #registerButton {
+
+        position:relative;
+
+        overflow:hidden;
+
+        width:100%;
+
+        margin-top:5px;
+
+        padding:
+            17px
+            25px
+            !important;
+
+        border:none !important;
+
+        border-radius:
+            17px
+            !important;
+
+        background:
+
+            linear-gradient(
+                135deg,
+                #ff2f78,
+                #ff6b9d,
+                #ff3f84
+            )
+            !important;
+
+        color:#ffffff !important;
+
+        font-size:16px;
+
+        font-weight:800;
+
+        box-shadow:
+
+            0 14px 32px
+            rgba(255,47,120,.35);
+
+        cursor:pointer;
+
+        transition:
+
+            transform .3s ease,
+
+            box-shadow .3s ease,
+
+            filter .3s ease;
+
+    }
+
+
+    #registerButton::before {
+
+        content:"";
+
+        position:absolute;
+
+        top:0;
+
+        left:-120%;
+
+        width:70%;
+
+        height:100%;
+
+        background:
+
+            linear-gradient(
+                90deg,
+                transparent,
+                rgba(255,255,255,.45),
+                transparent
+            );
+
+        transform:
+            skewX(-25deg);
+
+        transition:
+            left .7s ease;
+
+    }
+
+
+    #registerButton:hover {
+
+        transform:
+            translateY(-3px);
+
+        filter:
+            brightness(1.08)
+            saturate(1.1);
+
+        box-shadow:
+
+            0 20px 42px
+            rgba(255,47,120,.45);
+
+    }
+
+
+    #registerButton:hover::before {
+
+        left:150%;
+
+    }
+
+
+    #registerButton:active {
+
+        transform:
+            scale(.98);
+
+    }
+
+
+    #registerButton:disabled {
+
+        opacity:.75;
+
+        cursor:not-allowed;
+
+    }
+
+
+
+    /* =========================================
+       MESSAGE
+    ========================================= */
+
+    #registerMessage {
+
+        min-height:25px;
+
+        margin-top:18px;
+
+        padding:10px;
+
+        text-align:center;
+
+        font-weight:700;
+
+        line-height:1.6;
+
+        border-radius:14px;
+
+    }
+
+
+
+    /* =========================================
+       LOGIN TEXT
+    ========================================= */
+
+    .login-text {
+
+        margin-top:24px !important;
+
+        text-align:center;
+
+    }
+
+
+    .login-text a {
+
+        color:#ff2f78;
+
+        font-weight:800;
+
+        transition:
+            .25s ease;
+
+    }
+
+
+    .login-text a:hover {
+
+        color:#d9004f;
+
+    }
+
+
+
+    /* =========================================
+       FOOTER
+    ========================================= */
+
+    .footer {
+
+        position:relative;
+
+        overflow:hidden;
+
+        margin-top:0;
+
+        padding:0 !important;
+
+        background:
+
+            linear-gradient(
+                135deg,
+                #ffffff,
+                #fff0f6,
+                #eaf8ff
+            )
+            !important;
+
+        border-top:
+            1px solid
+            rgba(255,47,120,.20);
+
+    }
+
+
+    .footer::before {
+
+        content:"";
+
+        position:absolute;
+
+        width:350px;
+
+        height:350px;
+
+        top:-180px;
+
+        left:-120px;
+
+        border-radius:50%;
+
+        background:
+
+            radial-gradient(
+                circle,
+                rgba(255,65,135,.25),
+                transparent 70%
+            );
+
+        filter:blur(20px);
+
+        animation:
+            footerFloatOne
+            8s
+            ease-in-out
+            infinite;
+
+    }
+
+
+    .footer::after {
+
+        content:"";
+
+        position:absolute;
+
+        width:400px;
+
+        height:400px;
+
+        right:-180px;
+
+        bottom:-220px;
+
+        border-radius:50%;
+
+        background:
+
+            radial-gradient(
+                circle,
+                rgba(40,165,255,.22),
+                transparent 70%
+            );
+
+        filter:blur(20px);
+
+        animation:
+            footerFloatTwo
+            10s
+            ease-in-out
+            infinite;
+
+    }
+
+
+    @keyframes footerFloatOne {
+
+        0%,
+        100% {
+
+            transform:
+                translate(0,0);
+
+        }
+
+        50% {
+
+            transform:
+                translate(50px,40px);
+
+        }
+
+    }
+
+
+    @keyframes footerFloatTwo {
+
+        0%,
+        100% {
+
+            transform:
+                translate(0,0);
+
+        }
+
+        50% {
+
+            transform:
+                translate(-50px,-35px);
+
+        }
+
+    }
+
+
+    .premium-footer {
+
+        position:relative;
+
+        z-index:2;
+
+        display:grid;
+
+        grid-template-columns:
+
+            1fr
+            1fr
+            1fr;
+
+        gap:40px;
+
+        padding:
+
+            60px
+            20px
+            50px;
+
+    }
+
+
+    .footer-column {
+
+        animation:
+
+            footerAppear
+            .8s
+            ease
+            both;
+
+    }
+
+
+    .footer-column:nth-child(2) {
+
+        animation-delay:.1s;
+
+    }
+
+
+    .footer-column:nth-child(3) {
+
+        animation-delay:.2s;
+
+    }
+
+
+    @keyframes footerAppear {
+
+        from {
+
+            opacity:0;
+
+            transform:
+                translateY(25px);
+
+        }
+
+        to {
+
+            opacity:1;
+
+            transform:
+                translateY(0);
+
+        }
+
+    }
+
+
+    /* =========================================
+       KINDERGARTEN KIRI
+    ========================================= */
+
+    .footer-kindergarten {
+
+        text-align:left;
+
+    }
+
+
+    .footer-logo {
+
+        display:flex;
+
+        align-items:center;
+
+        gap:13px;
+
+        margin-bottom:18px;
+
+    }
+
+
+    .footer-sun {
+
+        width:58px;
+
+        height:58px;
+
+        display:flex;
+
+        align-items:center;
+
+        justify-content:center;
+
+        border-radius:20px;
+
+        font-size:30px;
+
+        background:
+
+            linear-gradient(
+                135deg,
+                #fff27a,
+                #ffc928
+            );
+
+        box-shadow:
+
+            0 12px 30px
+            rgba(255,180,20,.35);
+
+        animation:
+            footerSun
+            4s
+            ease-in-out
+            infinite;
+
+    }
+
+
+    @keyframes footerSun {
+
+        0%,
+        100% {
+
+            transform:
+                rotate(0deg)
+                translateY(0);
+
+        }
+
+        50% {
+
+            transform:
+                rotate(10deg)
+                translateY(-5px);
+
+        }
+
+    }
+
+
+    .footer-logo h2 {
+
+        margin:0;
+
+        font-size:22px;
+
+        color:#243d49;
+
+    }
+
+
+    .footer-logo span {
+
+        display:block;
+
+        margin-top:4px;
+
+        font-size:13px;
+
+        font-weight:700;
+
+        color:#ff2f78;
+
+    }
+
+
+    .footer-kindergarten p {
+
+        max-width:300px;
+
+        margin:0;
+
+        color:#58707c;
+
+        line-height:1.8;
+
+        font-size:14px;
+
+    }
+
+
+    .footer-hearts {
+
+        margin-top:20px;
+
+        font-size:19px;
+
+        letter-spacing:4px;
+
+        animation:
+            heartBounce
+            3s
+            ease-in-out
+            infinite;
+
+    }
+
+
+    @keyframes heartBounce {
+
+        0%,
+        100% {
+
+            transform:
+                translateY(0);
+
+        }
+
+        50% {
+
+            transform:
+                translateY(-6px);
+
+        }
+
+    }
+
+
+
+    /* =========================================
+       QUICK LINKS TENGAH
+    ========================================= */
+
+    .footer-links {
+
+        display:flex;
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+
+    .footer-links h3 {
+
+        margin:
+
+            8px
+            0
+            20px;
+
+        font-size:20px;
+
+        color:#243d49;
+
+    }
+
+
+    .footer-links a {
+
+        display:flex;
+
+        align-items:center;
+
+        gap:10px;
+
+        width:160px;
+
+        margin-bottom:11px;
+
+        color:#58707c;
+
+        text-decoration:none;
+
+        font-size:14px;
+
+        font-weight:600;
+
+        transition:
+            .25s ease;
+
+    }
+
+
+    .footer-links a span {
+
+        display:flex;
+
+        align-items:center;
+
+        justify-content:center;
+
+        width:30px;
+
+        height:30px;
+
+        border-radius:10px;
+
+        background:
+            rgba(255,47,120,.12);
+
+        transition:
+            .25s ease;
+
+    }
+
+
+    .footer-links a:hover {
+
+        color:#ff2f78;
+
+        transform:
+            translateX(7px);
+
+    }
+
+
+    .footer-links a:hover span {
+
+        transform:
+            scale(1.12)
+            rotate(-8deg);
+
+        box-shadow:
+
+            0 8px 20px
+            rgba(255,47,120,.18);
+
+    }
+
+
+
+    /* =========================================
+       CONTACT US KANAN
+    ========================================= */
+
+    .footer-contact {
+
+        text-align:left;
+
+    }
+
+
+    .footer-contact h3 {
+
+        margin:
+
+            8px
+            0
+            20px;
+
+        font-size:20px;
+
+        color:#243d49;
+
+    }
+
+
+    .contact-item {
+
+        display:flex;
+
+        align-items:center;
+
+        gap:13px;
+
+        margin-bottom:14px;
+
+        padding:10px;
+
+        border-radius:16px;
+
+        transition:
+            .3s ease;
+
+    }
+
+
+    .contact-item:hover {
+
+        transform:
+            translateX(-5px);
+
+        background:
+            rgba(255,255,255,.88);
+
+        box-shadow:
+
+            0 12px 28px
+            rgba(255,47,120,.10);
+
+    }
+
+
+    .contact-icon {
+
+        min-width:43px;
+
+        height:43px;
+
+        display:flex;
+
+        align-items:center;
+
+        justify-content:center;
+
+        border-radius:14px;
+
+        font-size:20px;
+
+        background:
+
+            linear-gradient(
+                135deg,
+                #ffe1ec,
+                #dff4ff
+            );
+
+        box-shadow:
+
+            0 8px 20px
+            rgba(70,100,130,.08);
+
+    }
+
+
+    .contact-text {
+
+        display:flex;
+
+        flex-direction:column;
+
+        gap:4px;
+
+    }
+
+
+    .contact-text strong {
+
+        font-size:13px;
+
+        color:#304955;
+
+    }
+
+
+    .contact-text span {
+
+        font-size:12px;
+
+        color:#718892;
+
+    }
+
+
+
+    /* =========================================
+       FOOTER BOTTOM
+    ========================================= */
+
+    .footer-bottom {
+
+        position:relative;
+
+        z-index:2;
+
+        border-top:
+
+            1px solid
+            rgba(255,47,120,.10);
+
+        background:
+            rgba(255,255,255,.70);
+
+    }
+
+
+    .footer-bottom .wrap {
+
+        display:flex;
+
+        align-items:center;
+
+        justify-content:center;
+
+        padding:
+            20px;
+
+        text-align:center;
+
+    }
+
+
+    .footer-bottom p {
+
+        margin:0;
+
+        font-size:13px;
+
+        color:#718892;
+
+    }
+
+
+    .footer-bottom strong {
+
+        color:#ff2f78;
+
+    }
+
+
+
+    /* =========================================
+       RESPONSIVE
+    ========================================= */
+
+    @media(max-width:800px) {
+
+        .premium-footer {
+
+            grid-template-columns:
+                1fr
+                1fr;
+
+            gap:45px;
+
+        }
+
+    }
+
+
+    @media(max-width:600px) {
+
+        .pagehero {
+
+            padding-top:45px !important;
+
+            padding-bottom:50px !important;
+
+        }
+
+
+        .section {
+
+            padding-top:35px !important;
+
+            padding-bottom:55px !important;
+
+        }
+
+
+        #registerForm {
+
+            padding:
+                30px
+                20px
+                !important;
+
+            border-radius:25px !important;
+
+        }
+
+
+        #childSection {
+
+            padding:20px !important;
+
+        }
+
+
+        .premium-footer {
+
+            grid-template-columns:
+                1fr;
+
+            gap:40px;
+
+            padding:
+                50px
+                25px
+                40px;
+
+        }
+
+
+        .footer-kindergarten {
+
+            text-align:center;
+
+        }
+
+
+        .footer-logo {
+
+            justify-content:center;
+
+        }
+
+
+        .footer-kindergarten p {
+
+            margin:auto;
+
+        }
+
+
+        .footer-links {
+
+            align-items:center;
+
+        }
+
+
+        .footer-contact {
+
+            text-align:center;
+
+        }
+
+
+        .contact-item {
+
+            justify-content:center;
+
+            text-align:left;
+
+        }
+
+    }
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     HEADER
+========================================= -->
+
+<header class="top">
+
+
+    <div class="head wrap">
+
+
+        <a
+            class="brand"
+            href="index.html"
+        >
+
+
+            <div class="sun">
+
+                ☀️
+
+            </div>
+
+
+            <div>
+
+
+                <h1>
+
+                    RA Miftahul
+
+                    <span>
+
+                        Hikmah
+
+                    </span>
+
+                </h1>
+
+
+                <p>
+
+                    Tangerang 💗
+
+                </p>
+
+
+            </div>
+
+
+        </a>
+
+
+
+        <a
+            class="btn"
+            href="login.html"
+        >
+
+            🔐 Login
+
+        </a>
+
+
+    </div>
+
+
+
+    <!-- NAVBAR -->
+
+    <nav class="rainbow-nav">
+
+
+        <a
+            href="index.html"
+            class="rainbow-item pink"
+        >
+
+            <span class="rainbow-icon">
+
+                🏠
+
+            </span>
+
+            <span class="rainbow-text">
+
+                HOME
+
+            </span>
+
+            <span class="sparkle">
+
+                ✦
+
+            </span>
+
+        </a>
+
+
+
+        <a
+            href="about.html"
+            class="rainbow-item blue"
+        >
+
+            <span class="rainbow-icon">
+
+                👥
+
+            </span>
+
+            <span class="rainbow-text">
+
+                ABOUT
+
+            </span>
+
+            <span class="sparkle">
+
+                ✦
+
+            </span>
+
+        </a>
+
+
+
+        <a
+            href="programs.html"
+            class="rainbow-item green"
+        >
+
+            <span class="rainbow-icon">
+
+                📚
+
+            </span>
+
+            <span class="rainbow-text">
+
+                PROGRAMS
+
+            </span>
+
+            <span class="sparkle">
+
+                ✦
+
+            </span>
+
+        </a>
+
+
+
+        <a
+            href="classes.html"
+            class="rainbow-item yellow"
+        >
+
+            <span class="rainbow-icon">
+
+                🎓
+
+            </span>
+
+            <span class="rainbow-text">
+
+                CLASSES
+
+            </span>
+
+            <span class="sparkle">
+
+                ✦
+
+            </span>
+
+        </a>
+
+
+
+        <a
+            href="blog.html"
+            class="rainbow-item orange"
+        >
+
+            <span class="rainbow-icon">
+
+                🖍️
+
+            </span>
+
+            <span class="rainbow-text">
+
+                BLOG
+
+            </span>
+
+            <span class="sparkle">
+
+                ✦
+
+            </span>
+
+        </a>
+
+
+
+        <a
+            href="gallery.html"
+            class="rainbow-item purple"
+        >
+
+            <span class="rainbow-icon">
+
+                🖼️
+
+            </span>
+
+            <span class="rainbow-text">
+
+                GALLERY
+
+            </span>
+
+            <span class="sparkle">
+
+                ✦
+
+            </span>
+
+        </a>
+
+
+
+        <a
+            href="parents.html"
+            class="rainbow-item pink2"
+        >
+
+            <span class="rainbow-icon">
+
+                💛
+
+            </span>
+
+            <span class="rainbow-text">
+
+                PARENTS
+
+            </span>
+
+            <span class="sparkle">
+
+                ✦
+
+            </span>
+
+        </a>
+
+
+
+        <a
+            href="contact.html"
+            class="rainbow-item blue2"
+        >
+
+            <span class="rainbow-icon">
+
+                ✉️
+
+            </span>
+
+            <span class="rainbow-text">
+
+                CONTACT
+
+            </span>
+
+            <span class="sparkle">
+
+                ✦
+
+            </span>
+
+        </a>
+
+
+    </nav>
+
+
+</header>
+
+
+
+<!-- =========================================
+     PAGE HERO
+========================================= -->
+
+<section class="pagehero">
+
+
+    <div class="wrap">
+
+
+        <h2>
+
+            Buat
+
+            <span
+                style="color:#ef4f82"
+            >
+
+                Akun
+
+            </span>
+
+            Baru ✨
+
+        </h2>
+
+
+        <p>
+
+            Bergabung bersama
+            RA Miftahul Hikmah
+            dengan mudah dan aman 💗
+
+        </p>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================
+     FORM REGISTER
+========================================= -->
+
+<section class="section wrap">
+
+
+    <div>
+
+
+        <form
+            class="form reveal"
+            id="registerForm"
+        >
+
+
+            <h2 class="title">
+
+                Daftar
+
+                <span>
+
+                    Akun
+
+                </span>
+
+                📝
+
+            </h2>
+
+
+            <p>
+
+                Lengkapi data di bawah
+                untuk membuat akun baru.
+
+            </p>
+
+
+
+            <!-- NAMA -->
+
+            <label for="fullName">
+
+                👤 Nama Lengkap
+
+            </label>
+
+
+            <input
+                type="text"
+                id="fullName"
+                placeholder="Masukkan nama lengkap"
+                autocomplete="name"
+                required
+            >
+
+
+
+            <!-- EMAIL -->
+
+            <label for="email">
+
+                📧 Email untuk Login
+
+            </label>
+
+
+            <input
+                type="email"
+                id="email"
+                placeholder="contoh@email.com"
+                autocomplete="email"
+                required
+            >
+
+
+            <div class="login-email-info">
+
+                🔐 Email ini hanya digunakan
+                untuk login ke akun Anda.
+
+                <br>
+
+                💬 Kode aktivasi anak
+                tidak dikirim melalui email.
+
+            </div>
+
+
+
+            <!-- PASSWORD -->
+
+            <label for="password">
+
+                🔒 Password
+
+            </label>
+
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Minimal 6 karakter"
+                autocomplete="new-password"
+                minlength="6"
+                required
+            >
+
+
+
+            <!-- KONFIRMASI -->
+
+            <label for="confirmPassword">
+
+                🔐 Konfirmasi Password
+
+            </label>
+
+
+            <input
+                type="password"
+                id="confirmPassword"
+                placeholder="Ulangi password"
+                autocomplete="new-password"
+                minlength="6"
+                required
+            >
+
+
+
+            <!-- ROLE -->
+
+            <label for="role">
+
+                👥 Daftar Sebagai
+
+            </label>
+
+
+            <select
+                id="role"
+                required
+            >
+
+                <option value="">
+
+                    -- Pilih Role --
+
+                </option>
+
+
+                <option value="guru">
+
+                    👩‍🏫 Guru
+
+                </option>
+
+
+                <option value="wali_murid">
+
+                    👨‍👩‍👧 Wali Murid
+
+                </option>
+
+            </select>
+
+
+
+            <!-- =================================
+                 DATA WALI MURID
+            ================================= -->
+
+            <div
+                id="childSection"
+                style="display:none"
+            >
+
+
+                <h3
+                    style="color:#ef4f82"
+                >
+
+                    💗 Data Wali Murid & Anak
+
+                </h3>
+
+
+
+                <!-- WHATSAPP -->
+
+                <label for="whatsapp">
+
+                    📱 Nomor WhatsApp
+
+                </label>
+
+
+                <input
+                    type="tel"
+                    id="whatsapp"
+                    placeholder="Contoh: 081234567890"
+                    inputmode="numeric"
+                >
+
+
+                <p class="whatsapp-info">
+
+                    💬 Nomor WhatsApp digunakan
+                    untuk membuka pesan
+                    kode aktivasi.
+
+                </p>
+
+
+
+                <!-- NAMA ANAK -->
+
+                <label for="childName">
+
+                    👧 Nama Lengkap Anak
+
+                </label>
+
+
+                <input
+                    type="text"
+                    id="childName"
+                    placeholder="Masukkan nama lengkap anak"
+                >
+
+
+
+                <!-- TANGGAL LAHIR -->
+
+                <label for="childBirthDate">
+
+                    🎂 Tanggal Lahir Anak
+
+                    <span
+                        style="
+                            font-size:12px;
+                            font-weight:normal;
+                        "
+                    >
+
+                        (Opsional)
+
+                    </span>
+
+                </label>
+
+
+                <input
+                    type="date"
+                    id="childBirthDate"
+                >
+
+
+
+                <!-- INFO -->
+
+                <div class="child-info-box">
+
+
+                    👧 Sistem akan mencari
+                    data anak di database sekolah.
+
+                    <br><br>
+
+                    🔑 Jika nama anak ditemukan,
+                    kode aktivasi akan diambil
+                    dari sistem.
+
+                    <br><br>
+
+                    💬 WhatsApp akan dibuka
+                    dengan pesan kode aktivasi
+                    yang sudah disiapkan.
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- INFO -->
+
+            <div class="main-info">
+
+
+                💡
+
+                <strong>
+
+                    Informasi Pendaftaran
+
+                </strong>
+
+                <br><br>
+
+                📧 Email digunakan
+                untuk login akun.
+
+                <br>
+
+                💬 Kode aktivasi anak
+                melalui WhatsApp.
+
+                <br>
+
+                👩‍🏫 Guru tidak memerlukan
+                kode aktivasi anak.
+
+
+            </div>
+
+
+
+            <!-- BUTTON -->
+
+            <button
+                type="submit"
+                class="btn"
+                id="registerButton"
+            >
+
+                ✨ Buat Akun
+
+            </button>
+
+
+
+            <!-- MESSAGE -->
+
+            <div
+                id="registerMessage"
+            >
+
+            </div>
+
+
+
+            <!-- LOGIN -->
+
+            <p class="login-text">
+
+
+                Sudah punya akun?
+
+
+                <a href="login.html">
+
+                    Login di sini 🔐
+
+                </a>
+
+
+            </p>
+
+
+        </form>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================
+     FOOTER
+     KINDERGARTEN | QUICK LINKS | CONTACT US
+========================================= -->
+
+<footer class="footer">
+
+
+    <div class="premium-footer wrap">
+
+
+        <!-- =====================================
+             KIRI - KINDERGARTEN
+        ====================================== -->
+
+        <div class="footer-column footer-kindergarten">
+
+
+            <div class="footer-logo">
+
+
+                <div class="footer-sun">
+
+                    🌈
+
+                </div>
+
+
+                <div>
+
+
+                    <h2>
+
+                        KINDERGARTEN
+
+                    </h2>
+
+
+                    <span>
+
+                        RA Miftahul Hikmah
+
+                    </span>
+
+
+                </div>
+
+
+            </div>
+
+
+            <p>
+
+                Sekolah yang menyenangkan,
+                nyaman, dan penuh kasih 💗
+                untuk mendukung tumbuh kembang
+                serta masa depan anak.
+
+            </p>
+
+
+            <div class="footer-hearts">
+
+                ✨ 🌈 💗 ⭐ 🧸
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =====================================
+             TENGAH - QUICK LINKS
+        ====================================== -->
+
+        <div class="footer-column footer-links">
+
+
+            <h3>
+
+                🔗 QUICK LINKS
+
+            </h3>
+
+
+            <a href="index.html">
+
+                <span>
+
+                    🏠
+
+                </span>
+
+                Home
+
+            </a>
+
+
+            <a href="about.html">
+
+                <span>
+
+                    👥
+
+                </span>
+
+                About
+
+            </a>
+
+
+            <a href="programs.html">
+
+                <span>
+
+                    📚
+
+                </span>
+
+                Programs
+
+            </a>
+
+
+            <a href="classes.html">
+
+                <span>
+
+                    🎓
+
+                </span>
+
+                Classes
+
+            </a>
+
+
+            <a href="gallery.html">
+
+                <span>
+
+                    🖼️
+
+                </span>
+
+                Gallery
+
+            </a>
+
+
+        </div>
+
+
+
+        <!-- =====================================
+             KANAN - CONTACT US
+        ====================================== -->
+
+        <div class="footer-column footer-contact">
+
+
+            <h3>
+
+                📞 CONTACT US
+
+            </h3>
+
+
+
+            <!-- LOCATION -->
+
+            <div class="contact-item">
+
+
+                <div class="contact-icon">
+
+                    📍
+
+                </div>
+
+
+                <div class="contact-text">
+
+
+                    <strong>
+
+                        Location
+
+                    </strong>
+
+
+                    <span>
+
+                        Tangerang, Indonesia
+
+                    </span>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- WHATSAPP -->
+
+            <div class="contact-item">
+
+
+                <div class="contact-icon">
+
+                    💬
+
+                </div>
+
+
+                <div class="contact-text">
+
+
+                    <strong>
+
+                        WhatsApp
+
+                    </strong>
+
+
+                    <span>
+
+                        Hubungi kami
+
+                    </span>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- EMAIL -->
+
+            <div class="contact-item">
+
+
+                <div class="contact-icon">
+
+                    ✉️
+
+                </div>
+
+
+                <div class="contact-text">
+
+
+                    <strong>
+
+                        Email
+
+                    </strong>
+
+
+                    <span>
+
+                        RA Miftahul Hikmah
+
+                    </span>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =========================================
+         COPYRIGHT
+    ========================================= -->
+
+    <div class="footer-bottom">
+
+
+        <div class="wrap">
+
+
+            <p>
+
+                © 2026
+
+                <strong>
+
+                    RA Miftahul Hikmah
+
+                </strong>
+
+                • All rights reserved.
+
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+
+</footer>
+
+
+
+<!-- =========================================
+     SUPABASE
+========================================= -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+></script>
+
+
+
+<!-- =========================================
+     WEBSITE JS
+========================================= -->
+
+<script
+    src="js/script.js"
+></script>
+
+
+
+<!-- =========================================
+     REGISTER SYSTEM
+========================================= -->
+
+<script>
+
+
+/* ==========================================
+   SUPABASE CONFIG
+========================================== */
+
+const SUPABASE_URL =
+    "https://ervhwjrlqcsobawwhkpf.supabase.co";
+
+
+const SUPABASE_PUBLISHABLE_KEY =
+    "sb_publishable_u48E-Q-RjdFRFLC_Cv3rmg_gD0Z3y2K";
+
+
+const supabaseClient =
+    window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_PUBLISHABLE_KEY
+    );
+
+
+
+/* ==========================================
+   ELEMENT
+========================================== */
+
+const registerForm =
+    document.getElementById(
+        "registerForm"
+    );
+
+
+const registerButton =
+    document.getElementById(
+        "registerButton"
+    );
+
+
+const registerMessage =
+    document.getElementById(
+        "registerMessage"
+    );
+
+
+const roleSelect =
+    document.getElementById(
+        "role"
+    );
+
+
+const childSection =
+    document.getElementById(
+        "childSection"
+    );
+
+
+const childNameInput =
+    document.getElementById(
+        "childName"
+    );
+
+
+const childBirthDateInput =
+    document.getElementById(
+        "childBirthDate"
+    );
+
+
+const whatsappInput =
+    document.getElementById(
+        "whatsapp"
+    );
+
+
+
+/* ==========================================
+   TAMPILKAN DATA ANAK
+========================================== */
+
+function tampilkanDataAnak() {
+
+
+    if (
+        roleSelect.value ===
+        "wali_murid"
+    ) {
+
+
+        childSection.style.display =
+            "block";
+
+
+        childNameInput.required =
+            true;
+
+
+        whatsappInput.required =
+            true;
+
+
+    }
+
+
+    else {
+
+
+        childSection.style.display =
+            "none";
+
+
+        childNameInput.required =
+            false;
+
+
+        whatsappInput.required =
+            false;
+
+
+        childNameInput.value =
+            "";
+
+
+        childBirthDateInput.value =
+            "";
+
+
+        whatsappInput.value =
+            "";
+
+
+    }
+
+
+}
+
+
+roleSelect.addEventListener(
+    "change",
+    tampilkanDataAnak
+);
+
+
+tampilkanDataAnak();
+
+
+
+/* ==========================================
+   FORMAT NOMOR WHATSAPP
+========================================== */
+
+function formatWhatsAppNumber(
+    number
+) {
+
+
+    let cleaned =
+        number.replace(
+            /\D/g,
+            ""
+        );
+
+
+    if (
+        cleaned.startsWith(
+            "0"
+        )
+    ) {
+
+
+        cleaned =
+            "62" +
+            cleaned.substring(1);
+
+
+    }
+
+
+    else if (
+        cleaned.startsWith(
+            "8"
+        )
+    ) {
+
+
+        cleaned =
+            "62" +
+            cleaned;
+
+
+    }
+
+
+    return cleaned;
+
+
+}
+
+
+
+/* ==========================================
+   REGISTER FORM
+========================================== */
+
+registerForm.addEventListener(
+    "submit",
+    async function(event) {
+
+
+        event.preventDefault();
+
+
+
+        /* ==============================
+           AMBIL DATA
+        ============================== */
+
+        const fullName =
+            document
+            .getElementById(
+                "fullName"
+            )
+            .value
+            .trim();
+
+
+        const email =
+            document
+            .getElementById(
+                "email"
+            )
+            .value
+            .trim();
+
+
+        const password =
+            document
+            .getElementById(
+                "password"
+            )
+            .value;
+
+
+        const confirmPassword =
+            document
+            .getElementById(
+                "confirmPassword"
+            )
+            .value;
+
+
+        const role =
+            roleSelect.value;
+
+
+        const childName =
+            childNameInput.value
+            .trim();
+
+
+        const childBirthDate =
+            childBirthDateInput.value;
+
+
+        const whatsapp =
+            whatsappInput.value
+            .trim();
+
+
+
+        /* ==============================
+           VALIDASI
+        ============================== */
+
+        if (
+            !fullName
+        ) {
+
+
+            tampilkanPesan(
+                "⚠️ Nama lengkap wajib diisi.",
+                "error"
+            );
+
+
+            return;
+
+
+        }
+
+
+        if (
+            !email
+        ) {
+
+
+            tampilkanPesan(
+                "⚠️ Email untuk login wajib diisi.",
+                "error"
+            );
+
+
+            return;
+
+
+        }
+
+
+        if (
+            password.length < 6
+        ) {
+
+
+            tampilkanPesan(
+                "⚠️ Password minimal 6 karakter.",
+                "error"
+            );
+
+
+            return;
+
+
+        }
+
+
+        if (
+            password !==
+            confirmPassword
+        ) {
+
+
+            tampilkanPesan(
+                "⚠️ Konfirmasi password tidak sama.",
+                "error"
+            );
+
+
+            return;
+
+
+        }
+
+
+        if (
+            role !== "guru"
+            &&
+            role !== "wali_murid"
+        ) {
+
+
+            tampilkanPesan(
+                "⚠️ Silakan pilih role akun.",
+                "error"
+            );
+
+
+            return;
+
+
+        }
+
+
+        if (
+            role ===
+            "wali_murid"
+        ) {
+
+
+            if (
+                !childName
+            ) {
+
+
+                tampilkanPesan(
+                    "⚠️ Nama lengkap anak wajib diisi.",
+                    "error"
+                );
+
+
+                return;
+
+
+            }
+
+
+            if (
+                !whatsapp
+            ) {
+
+
+                tampilkanPesan(
+                    "⚠️ Nomor WhatsApp wajib diisi.",
+                    "error"
+                );
+
+
+                return;
+
+
+            }
+
+
+        }
+
+
+
+        /* ==============================
+           LOADING
+        ============================== */
+
+        registerButton.disabled =
+            true;
+
+
+        registerButton.textContent =
+            "⏳ Memeriksa data anak...";
+
+
+        registerMessage.textContent =
+            "";
+
+
+
+        try {
+
+
+            let childData =
+                null;
+
+
+
+            /* ==============================
+               CARI DATA ANAK
+            ============================== */
+
+            if (
+                role ===
+                "wali_murid"
+            ) {
+
+
+                const namaDicari =
+                    childName
+                    .trim()
+                    .replace(
+                        /\s+/g,
+                        " "
+                    );
+
+
+                let query =
+                    supabaseClient
+                    .from(
+                        "murid"
+                    )
+                    .select(
+                        `
+                        id,
+                        nama,
+                        kelas,
+                        tanggal_lahir,
+                        kode_aktivasi
+                        `
+                    )
+                    .ilike(
+                        "nama",
+                        `%${namaDicari}%`
+                    );
+
+
+                if (
+                    childBirthDate
+                ) {
+
+
+                    query =
+                        query.eq(
+                            "tanggal_lahir",
+                            childBirthDate
+                        );
+
+
+                }
+
+
+                const {
+                    data:
+                    childResult,
+
+                    error:
+                    childError
+
+                } =
+                    await query
+                    .limit(1)
+                    .maybeSingle();
+
+
+                if (
+                    childError
+                ) {
+
+
+                    console.error(
+                        "CHILD ERROR:",
+                        childError
+                    );
+
+
+                    throw new Error(
+                        "Gagal mencari data anak."
+                    );
+
+
+                }
+
+
+                if (
+                    !childResult
+                ) {
+
+
+                    throw new Error(
+                        "Data anak tidak ditemukan. Pastikan nama anak sudah benar."
+                    );
+
+
+                }
+
+
+                if (
+                    !childResult.kode_aktivasi
+                ) {
+
+
+                    throw new Error(
+                        "Kode aktivasi anak belum tersedia."
+                    );
+
+
+                }
+
+
+                childData =
+                    childResult;
+
+
+            }
+
+
+
+            /* ==============================
+               BUAT AKUN
+            ============================== */
+
+            registerButton.textContent =
+                "⏳ Membuat akun...";
+
+
+            const {
+                data:
+                registerData,
+
+                error:
+                registerError
+
+            } =
+                await supabaseClient
+                .auth
+                .signUp({
+
+
+                    email:
+                        email,
+
+
+                    password:
+                        password,
+
+
+                    options: {
+
+
+                        data: {
+
+
+                            full_name:
+                                fullName,
+
+
+                            role:
+                                role,
+
+
+                            whatsapp:
+
+                                role ===
+                                "wali_murid"
+
+                                ?
+
+                                formatWhatsAppNumber(
+                                    whatsapp
+                                )
+
+                                :
+
+                                null
+
+
+                        }
+
+
+                    }
+
+
+                });
+
+
+            if (
+                registerError
+            ) {
+
+
+                throw registerError;
+
+
+            }
+
+
+
+            /* ==============================
+               WALI MURID WHATSAPP
+            ============================== */
+
+            if (
+                role ===
+                "wali_murid"
+                &&
+                childData
+            ) {
+
+
+                registerButton.textContent =
+                    "💬 Menyiapkan WhatsApp...";
+
+
+                const nomorWhatsApp =
+                    formatWhatsAppNumber(
+                        whatsapp
+                    );
+
+
+                if (
+                    nomorWhatsApp.length < 10
+                ) {
+
+
+                    throw new Error(
+                        "Nomor WhatsApp tidak valid."
+                    );
+
+
+                }
+
+
+                const pesanWhatsApp =
+`🎉 *Pendaftaran Berhasil!*
+
+Halo Bapak/Ibu *${fullName}* 👋
+
+Akun Anda di *RA Miftahul Hikmah* berhasil dibuat.
+
+━━━━━━━━━━━━━━
+
+📧 *Email Login:*
+${email}
+
+🔐 Email di atas digunakan untuk login.
+
+━━━━━━━━━━━━━━
+
+👧 *Nama Anak:*
+${childData.nama}
+
+🏫 *Kelas:*
+${childData.kelas || "-"}
+
+🔑 *Kode Aktivasi:*
+*${childData.kode_aktivasi}*
+
+━━━━━━━━━━━━━━
+
+💬 Simpan kode aktivasi ini dengan baik.
+
+Terima kasih 💗
+
+*RA Miftahul Hikmah*`;
+
+
+                const whatsappURL =
+                    "https://wa.me/" +
+                    nomorWhatsApp +
+                    "?text=" +
+                    encodeURIComponent(
+                        pesanWhatsApp
+                    );
+
+
+                tampilkanPesan(
+                    "🎉 Akun berhasil dibuat! Membuka WhatsApp...",
+                    "success"
+                );
+
+
+                window.open(
+                    whatsappURL,
+                    "_blank"
+                );
+
+
+                registerForm.reset();
+
+
+                childSection.style.display =
+                    "none";
+
+
+                setTimeout(
+                    function() {
+
+
+                        window.location.href =
+                            "login.html";
+
+
+                    },
+                    3000
+                );
+
+
+            }
+
+
+
+            /* ==============================
+               GURU
+            ============================== */
+
+            else {
+
+
+                tampilkanPesan(
+                    "🎉 Akun Guru berhasil dibuat! Silakan login menggunakan email dan password.",
+                    "success"
+                );
+
+
+                registerForm.reset();
+
+
+                setTimeout(
+                    function() {
+
+
+                        window.location.href =
+                            "login.html";
+
+
+                    },
+                    2500
+                );
+
+
+            }
+
+
+        }
+
+
+
+        /* ==============================
+           ERROR
+        ============================== */
+
+        catch (
+            error
+        ) {
+
+
+            console.error(
+                "REGISTER ERROR:",
+                error
+            );
+
+
+            let message =
+                "❌ Pendaftaran gagal.";
+
+
+            if (
+                error.message
+            ) {
+
+
+                const errorText =
+                    error.message
+                    .toLowerCase();
+
+
+                if (
+                    errorText.includes(
+                        "user already registered"
+                    )
+                ) {
+
+
+                    message =
+                        "❌ Email tersebut sudah terdaftar.";
+
+
+                }
+
+
+                else {
+
+
+                    message =
+                        "❌ " +
+                        error.message;
+
+
+                }
+
+
+            }
+
+
+            tampilkanPesan(
+                message,
+                "error"
+            );
+
+
+        }
+
+
+
+        /* ==============================
+           SELESAI
+        ============================== */
+
+        finally {
+
+
+            registerButton.disabled =
+                false;
+
+
+            registerButton.textContent =
+                "✨ Buat Akun";
+
+
+        }
+
+
+    }
+);
+
+
+
+/* ==========================================
+   TAMPILKAN PESAN
+========================================== */
+
+function tampilkanPesan(
+    message,
+    type
+) {
+
+
+    registerMessage.textContent =
+        message;
+
+
+    if (
+        type ===
+        "success"
+    ) {
+
+
+        registerMessage.style.color =
+            "#299654";
+
+
+        registerMessage.style.background =
+            "#f0fff5";
+
+
+        registerMessage.style.border =
+            "1px solid #cdeed8";
+
+
+    }
+
+
+    else {
+
+
+        registerMessage.style.color =
+            "#d9365c";
+
+
+        registerMessage.style.background =
+            "#fff4f6";
+
+
+        registerMessage.style.border =
+            "1px solid #ffd7df";
+
+
+    }
+
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>

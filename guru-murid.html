@@ -1,0 +1,1511 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    >
+
+    <title>Data Murid | RA Miftahul Hikmah</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f5fbff,
+                    #fff7fb
+                );
+
+            color:
+                #31536c;
+        }
+
+
+        .guru-page {
+            max-width:
+                1100px;
+
+            margin:
+                35px auto;
+
+            padding:
+                20px;
+        }
+
+
+        .top-card {
+            display:
+                flex;
+
+            justify-content:
+                space-between;
+
+            align-items:
+                center;
+
+            gap:
+                20px;
+
+            padding:
+                25px;
+
+            border-radius:
+                25px;
+
+            background:
+                white;
+
+            box-shadow:
+                0 15px 40px
+                rgba(
+                    50,
+                    100,
+                    130,
+                    .10
+                );
+        }
+
+
+        .title-box {
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            gap:
+                15px;
+        }
+
+
+        .title-icon {
+            width:
+                70px;
+
+            height:
+                70px;
+
+            display:
+                grid;
+
+            place-items:
+                center;
+
+            border-radius:
+                22px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #dff4ff,
+                    #c7ecff
+                );
+
+            font-size:
+                35px;
+        }
+
+
+        h1 {
+            margin:
+                0;
+
+            font-size:
+                25px;
+        }
+
+
+        .subtitle {
+            margin-top:
+                7px;
+
+            color:
+                #748a97;
+
+            font-size:
+                13px;
+        }
+
+
+        .back-btn,
+        .logout-btn {
+            border:
+                none;
+
+            cursor:
+                pointer;
+
+            padding:
+                12px 17px;
+
+            border-radius:
+                14px;
+
+            font-weight:
+                bold;
+
+            transition:
+                .25s;
+        }
+
+
+        .back-btn {
+            background:
+                #eaf6ff;
+
+            color:
+                #31536c;
+        }
+
+
+        .logout-btn {
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff719f,
+                    #ef4f82
+                );
+
+            color:
+                white;
+        }
+
+
+        .back-btn:hover,
+        .logout-btn:hover {
+            transform:
+                translateY(-3px);
+        }
+
+
+        .content-grid {
+            display:
+                grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap:
+                25px;
+
+            margin-top:
+                25px;
+        }
+
+
+        .panel {
+            background:
+                white;
+
+            padding:
+                25px;
+
+            border-radius:
+                25px;
+
+            box-shadow:
+                0 15px 40px
+                rgba(
+                    50,
+                    100,
+                    130,
+                    .08
+                );
+        }
+
+
+        .panel h2 {
+            margin-top:
+                0;
+        }
+
+
+        .form-group {
+            margin-bottom:
+                15px;
+        }
+
+
+        input,
+        select {
+            width:
+                100%;
+
+            padding:
+                13px 15px;
+
+            border:
+                1px solid #dfeaf0;
+
+            border-radius:
+                14px;
+
+            outline:
+                none;
+
+            font-size:
+                14px;
+        }
+
+
+        input:focus,
+        select:focus {
+            border-color:
+                #65b8e8;
+
+            box-shadow:
+                0 0 0 4px
+                rgba(
+                    101,
+                    184,
+                    232,
+                    .12
+                );
+        }
+
+
+        .save-btn {
+            width:
+                100%;
+
+            padding:
+                14px;
+
+            border:
+                none;
+
+            border-radius:
+                14px;
+
+            cursor:
+                pointer;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #65b8e8,
+                    #4c9fd0
+                );
+
+            color:
+                white;
+
+            font-weight:
+                bold;
+
+            font-size:
+                14px;
+
+            transition:
+                .25s;
+        }
+
+
+        .save-btn:hover {
+            transform:
+                translateY(-3px);
+        }
+
+
+        .save-btn:disabled {
+            opacity:
+                .6;
+
+            cursor:
+                not-allowed;
+        }
+
+
+        .murid-list {
+            display:
+                grid;
+
+            gap:
+                13px;
+        }
+
+
+        .murid-item {
+            display:
+                flex;
+
+            justify-content:
+                space-between;
+
+            align-items:
+                center;
+
+            gap:
+                15px;
+
+            padding:
+                16px;
+
+            border-radius:
+                18px;
+
+            background:
+                #f8fcff;
+
+            border:
+                1px solid
+                rgba(
+                    80,
+                    140,
+                    170,
+                    .10
+                );
+
+            animation:
+                muncul .4s ease;
+        }
+
+
+        @keyframes muncul {
+
+            from {
+                opacity:
+                    0;
+
+                transform:
+                    translateY(15px);
+            }
+
+            to {
+                opacity:
+                    1;
+
+                transform:
+                    translateY(0);
+            }
+
+        }
+
+
+        .murid-name {
+            font-weight:
+                bold;
+
+            font-size:
+                14px;
+        }
+
+
+        .murid-info {
+            margin-top:
+                5px;
+
+            color:
+                #7c929d;
+
+            font-size:
+                12px;
+        }
+
+
+        .delete-btn {
+            border:
+                none;
+
+            padding:
+                9px 12px;
+
+            border-radius:
+                11px;
+
+            background:
+                #fff0f5;
+
+            color:
+                #ef4f82;
+
+            cursor:
+                pointer;
+
+            font-weight:
+                bold;
+        }
+
+
+        .empty {
+            text-align:
+                center;
+
+            padding:
+                30px;
+
+            color:
+                #81949e;
+
+            font-size:
+                13px;
+        }
+
+
+        .loading {
+            text-align:
+                center;
+
+            padding:
+                30px;
+
+            color:
+                #81949e;
+        }
+
+
+        .info-box {
+            margin-bottom:
+                15px;
+
+            padding:
+                13px;
+
+            border-radius:
+                14px;
+
+            background:
+                #fff8df;
+
+            color:
+                #8a6a17;
+
+            font-size:
+                12px;
+
+            line-height:
+                1.6;
+        }
+
+
+        @media(
+            max-width:800px
+        ) {
+
+            .content-grid {
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .top-card {
+                flex-direction:
+                    column;
+
+                align-items:
+                    flex-start;
+            }
+
+
+            .murid-item {
+                flex-direction:
+                    column;
+
+                align-items:
+                    flex-start;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="guru-page">
+
+
+    <!-- HEADER -->
+
+    <div class="top-card">
+
+
+        <div class="title-box">
+
+            <div class="title-icon">
+
+                👨‍👩‍👧
+
+            </div>
+
+
+            <div>
+
+                <h1>
+
+                    Data Murid
+
+                </h1>
+
+
+                <div class="subtitle">
+
+                    Kelola data siswa
+                    RA Miftahul Hikmah
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div>
+
+            <button
+                class="back-btn"
+                onclick="window.location.href='guru.html'"
+            >
+
+                ← Dashboard
+
+            </button>
+
+
+            <button
+                class="logout-btn"
+                id="logoutButton"
+                type="button"
+            >
+
+                🚪 Logout
+
+            </button>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- CONTENT -->
+
+    <div class="content-grid">
+
+
+        <!-- FORM -->
+
+        <div class="panel">
+
+            <h2>
+
+                ➕ Tambah Murid
+
+            </h2>
+
+
+            <div class="info-box">
+
+                💡 Masukkan ID akun wali murid yang
+                akan dihubungkan dengan anak ini.
+                ID tersebut harus sesuai dengan
+                <code>profiles.id</code> akun wali murid.
+
+            </div>
+
+
+            <form id="muridForm">
+
+
+                <div class="form-group">
+
+                    <input
+                        id="namaMurid"
+                        type="text"
+                        placeholder="Nama murid"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <select
+                        id="kelasMurid"
+                        required
+                    >
+
+                        <option value="">
+
+                            Pilih Kelompok
+
+                        </option>
+
+
+                        <option value="Kelompok A">
+
+                            Kelompok A
+
+                        </option>
+
+
+                        <option value="Kelompok B">
+
+                            Kelompok B
+
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <input
+                        id="waliId"
+                        type="text"
+                        placeholder="ID akun wali murid"
+                        required
+                    >
+
+                </div>
+
+
+                <button
+                    class="save-btn"
+                    id="saveButton"
+                    type="submit"
+                >
+
+                    💾 Simpan Data Murid
+
+                </button>
+
+
+            </form>
+
+
+        </div>
+
+
+        <!-- LIST -->
+
+        <div class="panel">
+
+            <h2>
+
+                📋 Daftar Murid
+
+            </h2>
+
+
+            <div
+                class="murid-list"
+                id="muridList"
+            >
+
+                <div class="loading">
+
+                    ⏳ Memuat data murid...
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+<!-- SUPABASE -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+></script>
+
+
+<script>
+
+
+/* =========================================
+   SUPABASE CONFIG
+========================================= */
+
+const SUPABASE_URL =
+    "https://ervhwjrlqcsobawwhkpf.supabase.co";
+
+
+const SUPABASE_PUBLISHABLE_KEY =
+    "sb_publishable_u48E-Q-RjdFRFLC_Cv3rmg_gD0Z3y2K";
+
+
+const supabaseClient =
+    window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_PUBLISHABLE_KEY
+    );
+
+
+/* =========================================
+   ELEMENT
+========================================= */
+
+const muridForm =
+    document.getElementById(
+        "muridForm"
+    );
+
+
+const namaMurid =
+    document.getElementById(
+        "namaMurid"
+    );
+
+
+const kelasMurid =
+    document.getElementById(
+        "kelasMurid"
+    );
+
+
+const waliId =
+    document.getElementById(
+        "waliId"
+    );
+
+
+const muridList =
+    document.getElementById(
+        "muridList"
+    );
+
+
+const saveButton =
+    document.getElementById(
+        "saveButton"
+    );
+
+
+const logoutButton =
+    document.getElementById(
+        "logoutButton"
+    );
+
+
+/* =========================================
+   DATA
+========================================= */
+
+let currentUser =
+    null;
+
+
+let muridData =
+    [];
+
+
+/* =========================================
+   ESCAPE HTML
+========================================= */
+
+function escapeHTML(
+    text
+) {
+
+    const div =
+        document.createElement(
+            "div"
+        );
+
+
+    div.textContent =
+        text || "";
+
+
+    return div.innerHTML;
+
+}
+
+
+/* =========================================
+   CEK LOGIN GURU
+========================================= */
+
+async function cekGuru() {
+
+    try {
+
+
+        const {
+            data: {
+                user
+            },
+            error: userError
+        } =
+            await supabaseClient
+            .auth
+            .getUser();
+
+
+        if (
+            userError ||
+            !user
+        ) {
+
+            window.location.href =
+                "login.html";
+
+            return false;
+
+        }
+
+
+        currentUser =
+            user;
+
+
+        const {
+            data: profile,
+            error: profileError
+        } =
+            await supabaseClient
+            .from(
+                "profiles"
+            )
+            .select(
+                "role"
+            )
+            .eq(
+                "id",
+                user.id
+            )
+            .single();
+
+
+        if (
+            profileError ||
+            !profile
+        ) {
+
+            alert(
+                "Profil akun tidak ditemukan."
+            );
+
+
+            await supabaseClient
+            .auth
+            .signOut();
+
+
+            window.location.href =
+                "login.html";
+
+            return false;
+
+        }
+
+
+        if (
+            profile.role !==
+            "guru"
+        ) {
+
+            alert(
+                "⛔ Halaman ini hanya untuk guru."
+            );
+
+
+            await supabaseClient
+            .auth
+            .signOut();
+
+
+            window.location.href =
+                "login.html";
+
+            return false;
+
+        }
+
+
+        return true;
+
+
+    }
+
+    catch (
+        error
+    ) {
+
+        console.error(
+            "CEK GURU ERROR:",
+            error
+        );
+
+
+        alert(
+            "❌ Terjadi kesalahan saat memeriksa akun."
+        );
+
+
+        return false;
+
+    }
+
+}
+
+
+/* =========================================
+   LOAD MURID DARI SUPABASE
+========================================= */
+
+async function loadMurid() {
+
+    try {
+
+
+        muridList.innerHTML =
+            `
+            <div class="loading">
+
+                ⏳ Memuat data murid...
+
+            </div>
+            `;
+
+
+        const {
+            data,
+            error
+        } =
+            await supabaseClient
+            .from(
+                "murid"
+            )
+            .select(
+                `
+                id,
+                nama,
+                kelas,
+                wali_id,
+                created_at
+                `
+            )
+            .order(
+                "created_at",
+                {
+                    ascending:
+                        false
+                }
+            );
+
+
+        if (
+            error
+        ) {
+
+            throw error;
+
+        }
+
+
+        muridData =
+            data || [];
+
+
+        tampilkanMurid();
+
+
+    }
+
+    catch (
+        error
+    ) {
+
+        console.error(
+            "LOAD MURID ERROR:",
+            error
+        );
+
+
+        muridList.innerHTML =
+            `
+            <div class="empty">
+
+                ⚠️ Gagal memuat data murid.
+
+                <br><br>
+
+                ${escapeHTML(
+                    error.message
+                )}
+
+            </div>
+            `;
+
+    }
+
+}
+
+
+/* =========================================
+   TAMPILKAN MURID
+========================================= */
+
+function tampilkanMurid() {
+
+
+    muridList.innerHTML =
+        "";
+
+
+    if (
+        muridData.length ===
+        0
+    ) {
+
+
+        muridList.innerHTML =
+            `
+            <div class="empty">
+
+                👋 Belum ada data murid.
+
+            </div>
+            `;
+
+
+        return;
+
+    }
+
+
+    muridData.forEach(
+        function(
+            murid
+        ) {
+
+
+            const item =
+                document.createElement(
+                    "div"
+                );
+
+
+            item.className =
+                "murid-item";
+
+
+            item.innerHTML =
+                `
+
+                <div>
+
+                    <div class="murid-name">
+
+                        👧 ${escapeHTML(
+                            murid.nama
+                        )}
+
+                    </div>
+
+
+                    <div class="murid-info">
+
+                        ${escapeHTML(
+                            murid.kelas ||
+                            "-"
+                        )}
+
+                        • Aktif
+
+                    </div>
+
+
+                    <div
+                        class="murid-info"
+                        style="
+                            margin-top:8px;
+                            word-break:break-all;
+                        "
+                    >
+
+                        🔗 Wali ID:
+                        ${escapeHTML(
+                            murid.wali_id ||
+                            "-"
+                        )}
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="delete-btn"
+                    type="button"
+                >
+
+                    🗑 Hapus
+
+                </button>
+
+                `;
+
+
+            const deleteButton =
+                item.querySelector(
+                    ".delete-btn"
+                );
+
+
+            deleteButton.addEventListener(
+                "click",
+                function() {
+
+                    hapusMurid(
+                        murid.id,
+                        murid.nama
+                    );
+
+                }
+            );
+
+
+            muridList.appendChild(
+                item
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================
+   SIMPAN MURID KE SUPABASE
+========================================= */
+
+muridForm.addEventListener(
+    "submit",
+    async function(
+        event
+    ) {
+
+
+        event.preventDefault();
+
+
+        const nama =
+            namaMurid.value
+            .trim();
+
+
+        const kelas =
+            kelasMurid.value;
+
+
+        const wali_id =
+            waliId.value
+            .trim();
+
+
+        if (
+            !nama ||
+            !kelas ||
+            !wali_id
+        ) {
+
+            alert(
+                "⚠️ Semua data harus diisi."
+            );
+
+
+            return;
+
+        }
+
+
+        saveButton.disabled =
+            true;
+
+
+        saveButton.textContent =
+            "⏳ Menyimpan...";
+
+
+        try {
+
+
+            const {
+                data,
+                error
+            } =
+                await supabaseClient
+                .from(
+                    "murid"
+                )
+                .insert(
+                    {
+
+                        nama:
+                            nama,
+
+                        kelas:
+                            kelas,
+
+                        wali_id:
+                            wali_id
+
+                    }
+                )
+                .select(
+                    `
+                    id,
+                    nama,
+                    kelas,
+                    wali_id,
+                    created_at
+                    `
+                )
+                .single();
+
+
+            if (
+                error
+            ) {
+
+                throw error;
+
+            }
+
+
+            alert(
+                "✅ Data murid berhasil disimpan!"
+            );
+
+
+            muridForm.reset();
+
+
+            await loadMurid();
+
+
+        }
+
+        catch (
+            error
+        ) {
+
+            console.error(
+                "SIMPAN MURID ERROR:",
+                error
+            );
+
+
+            alert(
+                "❌ Gagal menyimpan murid:\n\n" +
+                error.message
+            );
+
+        }
+
+        finally {
+
+
+            saveButton.disabled =
+                false;
+
+
+            saveButton.textContent =
+                "💾 Simpan Data Murid";
+
+        }
+
+    }
+);
+
+
+/* =========================================
+   HAPUS MURID
+========================================= */
+
+async function hapusMurid(
+    id,
+    nama
+) {
+
+
+    const yakin =
+        confirm(
+            "Hapus murid " +
+            nama +
+            "?\n\n" +
+            "Catatan murid yang sudah ada " +
+            "sebaiknya dihapus terlebih dahulu."
+        );
+
+
+    if (
+        !yakin
+    ) {
+
+        return;
+
+    }
+
+
+    try {
+
+
+        const {
+            error
+        } =
+            await supabaseClient
+            .from(
+                "murid"
+            )
+            .delete()
+            .eq(
+                "id",
+                id
+            );
+
+
+        if (
+            error
+        ) {
+
+            throw error;
+
+        }
+
+
+        alert(
+            "✅ Data murid berhasil dihapus."
+        );
+
+
+        await loadMurid();
+
+
+    }
+
+    catch (
+        error
+    ) {
+
+        console.error(
+            "HAPUS MURID ERROR:",
+            error
+        );
+
+
+        alert(
+            "❌ Gagal menghapus murid:\n\n" +
+            error.message
+        );
+
+    }
+
+}
+
+
+/* =========================================
+   LOGOUT
+========================================= */
+
+logoutButton.addEventListener(
+    "click",
+    async function() {
+
+
+        try {
+
+
+            await supabaseClient
+            .auth
+            .signOut();
+
+
+            window.location.href =
+                "login.html";
+
+
+        }
+
+        catch (
+            error
+        ) {
+
+            console.error(
+                "LOGOUT ERROR:",
+                error
+            );
+
+
+            alert(
+                "❌ Logout gagal."
+            );
+
+        }
+
+    }
+);
+
+
+/* =========================================
+   JALANKAN
+========================================= */
+
+async function init() {
+
+
+    const bolehMasuk =
+        await cekGuru();
+
+
+    if (
+        !bolehMasuk
+    ) {
+
+        return;
+
+    }
+
+
+    await loadMurid();
+
+}
+
+
+init();
+
+
+</script>
+
+
+</body>
+
+</html>

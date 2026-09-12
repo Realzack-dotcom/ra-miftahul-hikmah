@@ -1,0 +1,981 @@
+<!doctype html>
+
+<html lang="id">
+
+<head>
+
+```
+<meta charset="utf-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+>
+
+<title>Login | RA Miftahul Hikmah</title>
+
+<link
+    rel="stylesheet"
+    href="css/style.css"
+>
+```
+
+</head>
+
+<body data-page="login">
+
+```
+<!-- =====================================================
+     HEADER
+====================================================== -->
+
+<div class="top">
+
+    <header class="head wrap">
+
+
+        <!-- LOGO -->
+
+        <a
+            class="brand"
+            href="index.html"
+        >
+
+            <div class="sun">
+                ☀️
+            </div>
+
+            <div>
+
+                <h1>
+                    RA Miftahul
+                    <span>Hikmah</span>
+                </h1>
+
+                <p>
+                    Tangerang 💗
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <!-- CALL US -->
+
+        <div class="call">
+
+            ⌕
+
+            <div>
+
+                <small>
+                    Call Us
+                </small>
+
+                <b>
+                    +62 813-9875-4451
+                </b>
+
+            </div>
+
+        </div>
+
+
+        <!-- DAFTAR -->
+
+        <a
+            class="btn"
+            href="daftar.html"
+        >
+            ✨ Daftar Akun
+        </a>
+
+    </header>
+
+
+    <!-- =================================================
+         NAVBAR
+    ================================================== -->
+
+    <nav class="rainbow-nav">
+
+
+        <a
+            href="index.html"
+            class="rainbow-item pink"
+        >
+            <span class="rainbow-icon">🏠</span>
+            <span class="rainbow-text">HOME</span>
+            <span class="sparkle">✦</span>
+        </a>
+
+
+        <a
+            href="about.html"
+            class="rainbow-item blue"
+        >
+            <span class="rainbow-icon">👥</span>
+            <span class="rainbow-text">ABOUT</span>
+            <span class="sparkle">✦</span>
+        </a>
+
+
+        <a
+            href="programs.html"
+            class="rainbow-item green"
+        >
+            <span class="rainbow-icon">📚</span>
+            <span class="rainbow-text">PROGRAMS</span>
+            <span class="sparkle">✦</span>
+        </a>
+
+
+        <a
+            href="classes.html"
+            class="rainbow-item yellow"
+        >
+            <span class="rainbow-icon">🎓</span>
+            <span class="rainbow-text">CLASSES</span>
+            <span class="sparkle">✦</span>
+        </a>
+
+
+        <a
+            href="blog.html"
+            class="rainbow-item orange"
+        >
+            <span class="rainbow-icon">🖍️</span>
+            <span class="rainbow-text">BLOG</span>
+            <span class="sparkle">✦</span>
+        </a>
+
+
+        <a
+            href="gallery.html"
+            class="rainbow-item purple"
+        >
+            <span class="rainbow-icon">🖼️</span>
+            <span class="rainbow-text">GALLERY</span>
+            <span class="sparkle">✦</span>
+        </a>
+
+
+        <a
+            href="parents.html"
+            class="rainbow-item pink2"
+        >
+            <span class="rainbow-icon">💛</span>
+            <span class="rainbow-text">PARENTS</span>
+            <span class="sparkle">✦</span>
+        </a>
+
+
+        <a
+            href="contact.html"
+            class="rainbow-item blue2"
+        >
+            <span class="rainbow-icon">✉️</span>
+            <span class="rainbow-text">CONTACT</span>
+            <span class="sparkle">✦</span>
+        </a>
+
+
+    </nav>
+
+</div>
+
+
+<!-- =====================================================
+     HERO
+====================================================== -->
+
+<section class="pagehero">
+
+    <div class="wrap">
+
+        <h2>
+
+            Selamat
+
+            <span style="color:#ed4f82">
+                Datang
+            </span>
+
+            Kembali! 👋
+
+        </h2>
+
+
+        <p>
+
+            Login untuk masuk ke akun
+            Guru atau Wali Murid.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     LOGIN
+====================================================== -->
+
+<section class="section wrap">
+
+    <div
+        style="
+            max-width:600px;
+            margin:0 auto;
+        "
+    >
+
+        <form
+            class="form reveal"
+            id="loginForm"
+        >
+
+
+            <h2 class="title">
+
+                Login
+
+                <span>
+                    Akun
+                </span>
+
+                🔐
+
+            </h2>
+
+
+            <p>
+
+                Masukkan email dan password
+                yang sudah kamu daftarkan.
+
+            </p>
+
+
+            <!-- EMAIL -->
+
+            <label for="loginEmail">
+                Email
+            </label>
+
+            <input
+                type="email"
+                id="loginEmail"
+                placeholder="contoh@email.com"
+                autocomplete="email"
+                required
+            >
+
+
+            <!-- PASSWORD -->
+
+            <label for="loginPassword">
+                Password
+            </label>
+
+            <input
+                type="password"
+                id="loginPassword"
+                placeholder="Masukkan password"
+                autocomplete="current-password"
+                required
+            >
+
+
+            <!-- BUTTON -->
+
+            <button
+                class="btn"
+                type="submit"
+                id="loginButton"
+            >
+                🔐 Login
+            </button>
+
+
+            <!-- PESAN -->
+
+            <div
+                id="loginMessage"
+                style="
+                    margin-top:15px;
+                    text-align:center;
+                    font-weight:700;
+                "
+            ></div>
+
+
+            <!-- DAFTAR -->
+
+            <p
+                style="
+                    margin-top:20px;
+                    text-align:center;
+                "
+            >
+
+                Belum punya akun?
+
+                <a
+                    href="daftar.html"
+                    style="
+                        color:#ed4f82;
+                        font-weight:800;
+                    "
+                >
+                    Daftar di sini ✨
+                </a>
+
+            </p>
+
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+
+<footer class="footer">
+
+    <div class="footgrid wrap">
+
+
+        <div>
+
+            <h3>
+
+                ☀️ KINDER
+
+                <span style="color:#ef4f82">
+                    GARTEN
+                </span>
+
+            </h3>
+
+            <p>
+                Where Little Minds Bloom 💗
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Quick Links
+            </h3>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="about.html">
+                About Us
+            </a>
+
+            <a href="programs.html">
+                Programs
+            </a>
+
+            <a href="classes.html">
+                Classes
+            </a>
+
+            <a href="blog.html">
+                Blog
+            </a>
+
+            <a href="gallery.html">
+                Gallery
+            </a>
+
+            <a href="parents.html">
+                Parents
+            </a>
+
+            <a href="contact.html">
+                Contact Us
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Contact Us
+            </h3>
+
+            <p>
+                ☎ +62 813-9875-4451
+            </p>
+
+            <p>
+                ✉ info@kindergarten.com
+            </p>
+
+            <p>
+                📍 Tangerang, Indonesia
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="copy wrap">
+
+        © 2026 RA Miftahul Hikmah.
+        All rights reserved.
+
+    </div>
+
+</footer>
+
+
+<!-- =====================================================
+     SUPABASE
+====================================================== -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+></script>
+
+
+<!-- WEBSITE JAVASCRIPT -->
+
+<script src="js/script.js"></script>
+
+
+<!-- =====================================================
+     LOGIN SYSTEM
+====================================================== -->
+
+<script>
+
+
+    /* =========================================
+       SUPABASE CONFIG
+    ========================================= */
+
+    const SUPABASE_URL =
+        "https://ervhwjrlqcsobawwhkpf.supabase.co";
+
+
+    const SUPABASE_PUBLISHABLE_KEY =
+        "sb_publishable_u48E-Q-RjdFRFLC_Cv3rmg_gD0Z3y2K";
+
+
+    const supabaseClient =
+        window.supabase.createClient(
+            SUPABASE_URL,
+            SUPABASE_PUBLISHABLE_KEY
+        );
+
+
+    /* =========================================
+       ELEMENT
+    ========================================= */
+
+    const loginForm =
+        document.getElementById(
+            "loginForm"
+        );
+
+
+    const loginButton =
+        document.getElementById(
+            "loginButton"
+        );
+
+
+    const loginMessage =
+        document.getElementById(
+            "loginMessage"
+        );
+
+
+    /* =========================================
+       TAMPILKAN PESAN
+    ========================================= */
+
+    function tampilkanPesan(
+        pesan,
+        tipe
+    ) {
+
+        loginMessage.textContent =
+            pesan;
+
+
+        if (
+            tipe === "success"
+        ) {
+
+            loginMessage.style.color =
+                "#3b9b52";
+
+        }
+
+        else {
+
+            loginMessage.style.color =
+                "#d9365c";
+
+        }
+
+    }
+
+
+    /* =========================================
+       LOGIN
+    ========================================= */
+
+    loginForm.addEventListener(
+        "submit",
+
+        async function(event) {
+
+            event.preventDefault();
+
+
+            const email =
+                document
+                .getElementById(
+                    "loginEmail"
+                )
+                .value
+                .trim();
+
+
+            const password =
+                document
+                .getElementById(
+                    "loginPassword"
+                )
+                .value;
+
+
+            if (
+                !email ||
+                !password
+            ) {
+
+                tampilkanPesan(
+                    "⚠️ Email dan password wajib diisi.",
+                    "error"
+                );
+
+
+                return;
+
+            }
+
+
+            /* =====================================
+               LOADING
+            ===================================== */
+
+            loginButton.disabled =
+                true;
+
+
+            loginButton.textContent =
+                "⏳ Sedang login...";
+
+
+            loginMessage.textContent =
+                "";
+
+
+            try {
+
+
+                /* =====================================
+                   LOGIN SUPABASE
+                ===================================== */
+
+                const {
+                    data,
+                    error
+                } =
+                    await supabaseClient
+                    .auth
+                    .signInWithPassword({
+
+                        email:
+                            email,
+
+                        password:
+                            password
+
+                    });
+
+
+                if (error) {
+
+                    throw error;
+
+                }
+
+
+                if (!data.user) {
+
+                    throw new Error(
+                        "User tidak ditemukan."
+                    );
+
+                }
+
+
+                /* =====================================
+                   AMBIL PROFILE
+                ===================================== */
+
+                loginButton.textContent =
+                    "⏳ Memeriksa akun...";
+
+
+                const {
+                    data: profile,
+                    error: profileError
+                } =
+                    await supabaseClient
+                    .from("profiles")
+                    .select(
+                        "id, full_name, role"
+                    )
+                    .eq(
+                        "id",
+                        data.user.id
+                    )
+                    .single();
+
+
+                if (profileError) {
+
+                    console.error(
+                        "PROFILE ERROR:",
+                        profileError
+                    );
+
+
+                    throw new Error(
+                        "Profil akun belum tersedia."
+                    );
+
+                }
+
+
+                if (!profile) {
+
+                    throw new Error(
+                        "Profil akun tidak ditemukan."
+                    );
+
+                }
+
+
+                /* =====================================
+                   SIMPAN DATA LOGIN
+                ===================================== */
+
+                localStorage.setItem(
+                    "userRole",
+                    profile.role
+                );
+
+
+                localStorage.setItem(
+                    "userName",
+                    profile.full_name || ""
+                );
+
+
+                localStorage.setItem(
+                    "userId",
+                    data.user.id
+                );
+
+
+                /* =====================================
+                   PESAN BERHASIL
+                ===================================== */
+
+                tampilkanPesan(
+                    "✅ Login berhasil! Mengarahkan...",
+                    "success"
+                );
+
+
+                /* =====================================
+                   ADMIN
+                ===================================== */
+
+                if (
+                    profile.role ===
+                    "admin"
+                ) {
+
+                    setTimeout(
+                        function() {
+
+                            window.location.href =
+                                "admin.html";
+
+                        },
+                        700
+                    );
+
+
+                    return;
+
+                }
+
+
+                /* =====================================
+                   GURU
+                ===================================== */
+
+                if (
+                    profile.role ===
+                    "guru"
+                ) {
+
+                    setTimeout(
+                        function() {
+
+                            window.location.href =
+                                "guru.html";
+
+                        },
+                        700
+                    );
+
+
+                    return;
+
+                }
+
+
+                /* =====================================
+                   WALI MURID
+                ===================================== */
+
+                if (
+                    profile.role ===
+                    "wali_murid"
+                ) {
+
+                    loginButton.textContent =
+                        "⏳ Memeriksa data anak...";
+
+
+                    /* =============================
+                       CEK APAKAH WALI SUDAH
+                       TERHUBUNG DENGAN ANAK
+                    ============================= */
+
+                    const {
+                        data: hubunganAnak,
+                        error: hubunganError
+                    } =
+                        await supabaseClient
+                        .from("wali_murid")
+                        .select(
+                            "id, murid_id"
+                        )
+                        .eq(
+                            "wali_id",
+                            data.user.id
+                        )
+                        .limit(1);
+
+
+                    if (
+                        hubunganError
+                    ) {
+
+                        console.error(
+                            "CEK HUBUNGAN ERROR:",
+                            hubunganError
+                        );
+
+
+                        /*
+                         * Jika tabel atau nama kolom
+                         * berbeda, tampilkan error asli
+                         */
+
+                        throw new Error(
+                            hubunganError.message
+                        );
+
+                    }
+
+
+                    /* =============================
+                       BELUM ADA ANAK
+                    ============================= */
+
+                    if (
+                        !hubunganAnak ||
+                        hubunganAnak.length === 0
+                    ) {
+
+                        tampilkanPesan(
+                            "🔗 Hubungkan akun dengan anak terlebih dahulu...",
+                            "success"
+                        );
+
+
+                        setTimeout(
+                            function() {
+
+                                window.location.href =
+                                    "hubungkan-anak.html";
+
+                            },
+                            900
+                        );
+
+
+                        return;
+
+                    }
+
+
+                    /* =============================
+                       SUDAH TERHUBUNG
+                    ============================= */
+
+                    tampilkanPesan(
+                        "✅ Anak ditemukan! Mengarahkan...",
+                        "success"
+                    );
+
+
+                    setTimeout(
+                        function() {
+
+                            window.location.href =
+                                "wali-murid.html";
+
+                        },
+                        700
+                    );
+
+
+                    return;
+
+                }
+
+
+                /* =====================================
+                   ROLE TIDAK DIKENALI
+                ===================================== */
+
+                throw new Error(
+                    "Role akun tidak dikenali: " +
+                    profile.role
+                );
+
+
+            }
+
+            catch (error) {
+
+                console.error(
+                    "LOGIN ERROR:",
+                    error
+                );
+
+
+                let pesan =
+                    "❌ Login gagal.";
+
+
+                if (
+                    error.message
+                ) {
+
+                    const errorText =
+                        error.message
+                        .toLowerCase();
+
+
+                    if (
+                        errorText.includes(
+                            "invalid login credentials"
+                        )
+                    ) {
+
+                        pesan =
+                            "❌ Email atau password salah.";
+
+                    }
+
+                    else if (
+                        errorText.includes(
+                            "email not confirmed"
+                        )
+                    ) {
+
+                        pesan =
+                            "⚠️ Email belum dikonfirmasi.";
+
+                    }
+
+                    else {
+
+                        pesan =
+                            "❌ " +
+                            error.message;
+
+                    }
+
+                }
+
+
+                tampilkanPesan(
+                    pesan,
+                    "error"
+                );
+
+            }
+
+            finally {
+
+                loginButton.disabled =
+                    false;
+
+
+                loginButton.textContent =
+                    "🔐 Login";
+
+            }
+
+        }
+
+    );
+
+
+</script>
+```
+
+</body>
+
+</html>

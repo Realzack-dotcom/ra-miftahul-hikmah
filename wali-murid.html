@@ -1,0 +1,4153 @@
+<!DOCTYPE html>
+
+<html lang="id">
+
+<head>
+
+```
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+    Dashboard Wali Murid | RA Miftahul Hikmah
+</title>
+
+
+<!-- CSS UTAMA -->
+
+<link
+    rel="stylesheet"
+    href="css/style.css"
+>
+
+
+<!-- CSS DASHBOARD -->
+
+<style>
+
+    :root {
+
+        --pink:
+            #ef4f82;
+
+        --blue:
+            #31536c;
+
+        --green:
+            #299654;
+
+        --yellow:
+            #b87a09;
+
+        --red:
+            #d9435e;
+
+    }
+
+
+    body {
+
+        background:
+            linear-gradient(
+                180deg,
+                #fff9fc 0%,
+                #f7fcff 50%,
+                #fffaf5 100%
+            );
+
+    }
+
+
+    .wali-page {
+
+        padding-top: 35px;
+
+        padding-bottom: 70px;
+
+    }
+
+
+    /* ================================
+       ANIMATION
+    ================================= */
+
+    @keyframes fadeUp {
+
+        from {
+
+            opacity: 0;
+
+            transform:
+                translateY(30px);
+
+        }
+
+        to {
+
+            opacity: 1;
+
+            transform:
+                translateY(0);
+
+        }
+
+    }
+
+
+    @keyframes float {
+
+        0% {
+
+            transform:
+                translateY(0);
+
+        }
+
+        50% {
+
+            transform:
+                translateY(-8px);
+
+        }
+
+        100% {
+
+            transform:
+                translateY(0);
+
+        }
+
+    }
+
+
+    /* ================================
+       ACTION
+    ================================= */
+
+    .dashboard-action {
+
+        display: flex;
+
+        justify-content: flex-end;
+
+        margin-bottom: 20px;
+
+    }
+
+
+    .refresh-button {
+
+        border: none;
+
+        cursor: pointer;
+
+        padding: 13px 20px;
+
+        border-radius: 16px;
+
+        background:
+            linear-gradient(
+                135deg,
+                #ef4f82,
+                #ff7da5
+            );
+
+        color: white;
+
+        font-size: 13px;
+
+        font-weight: 800;
+
+        box-shadow:
+            0 10px 25px
+            rgba(
+                239,
+                79,
+                130,
+                .25
+            );
+
+        transition:
+            .3s;
+
+    }
+
+
+    .refresh-button:hover {
+
+        transform:
+            translateY(-4px);
+
+    }
+
+
+    /* ================================
+       WELCOME
+    ================================= */
+
+    .welcome-card {
+
+        position: relative;
+
+        overflow: hidden;
+
+        padding: 32px;
+
+        border-radius: 30px;
+
+        background:
+            linear-gradient(
+                135deg,
+                #ffe4ee,
+                #fff7fa
+            );
+
+        box-shadow:
+            0 18px 40px
+            rgba(
+                239,
+                79,
+                130,
+                .12
+            );
+
+        animation:
+            fadeUp .6s ease both;
+
+    }
+
+
+    .welcome-card::before {
+
+        content: "";
+
+        position: absolute;
+
+        width: 250px;
+
+        height: 250px;
+
+        top: -120px;
+
+        right: -80px;
+
+        border-radius: 50%;
+
+        background:
+            rgba(
+                255,
+                255,
+                255,
+                .55
+            );
+
+    }
+
+
+    .welcome-content {
+
+        position: relative;
+
+        z-index: 2;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 20px;
+
+    }
+
+
+    .welcome-icon {
+
+        width: 85px;
+
+        height: 85px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        flex-shrink: 0;
+
+        border-radius: 26px;
+
+        background:
+            rgba(
+                255,
+                255,
+                255,
+                .85
+            );
+
+        font-size: 42px;
+
+        animation:
+            float 3s ease-in-out infinite;
+
+    }
+
+
+    .welcome-card h1 {
+
+        margin: 0;
+
+        color: #704456;
+
+        font-size: 29px;
+
+        font-weight: 900;
+
+    }
+
+
+    .welcome-card h1 span {
+
+        color:
+            var(--pink);
+
+    }
+
+
+    .welcome-card p {
+
+        margin: 8px 0 0;
+
+        color: #936879;
+
+        font-size: 14px;
+
+        line-height: 1.7;
+
+    }
+
+
+    /* ================================
+       ANAK
+    ================================= */
+
+    .anak-card {
+
+        margin-top: 30px;
+
+        padding: 28px;
+
+        border-radius: 28px;
+
+        background:
+            #ffffff;
+
+        box-shadow:
+            0 15px 35px
+            rgba(
+                50,
+                100,
+                120,
+                .08
+            );
+
+    }
+
+
+    .section-title {
+
+        margin: 0 0 22px;
+
+        color:
+            var(--blue);
+
+        font-size: 21px;
+
+        font-weight: 900;
+
+    }
+
+
+    .anak-selector {
+
+        display: flex;
+
+        flex-wrap: wrap;
+
+        gap: 10px;
+
+        margin-bottom: 25px;
+
+    }
+
+
+    .anak-select-btn {
+
+        border: none;
+
+        cursor: pointer;
+
+        padding: 12px 18px;
+
+        border-radius: 15px;
+
+        background:
+            #f3f7fa;
+
+        color:
+            #647d89;
+
+        font-weight: 800;
+
+        transition:
+            .25s;
+
+    }
+
+
+    .anak-select-btn:hover {
+
+        transform:
+            translateY(-3px);
+
+    }
+
+
+    .anak-select-btn.active {
+
+        background:
+            var(--pink);
+
+        color:
+            white;
+
+        box-shadow:
+            0 10px 20px
+            rgba(
+                239,
+                79,
+                130,
+                .20
+            );
+
+    }
+
+
+    .anak-info {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 20px;
+
+    }
+
+
+    .anak-avatar {
+
+        width: 85px;
+
+        height: 85px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        flex-shrink: 0;
+
+        border-radius: 26px;
+
+        background:
+            linear-gradient(
+                135deg,
+                #ffd9e7,
+                #fff0f6
+            );
+
+        font-size: 43px;
+
+    }
+
+
+    .anak-detail h2 {
+
+        margin: 0;
+
+        color:
+            var(--blue);
+
+        font-size: 23px;
+
+    }
+
+
+    .anak-detail p {
+
+        margin: 8px 0 0;
+
+        color:
+            #81949e;
+
+        font-size: 14px;
+
+    }
+
+
+    /* ================================
+       STAT
+    ================================= */
+
+    .stat-grid {
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(
+                3,
+                1fr
+            );
+
+        gap: 20px;
+
+        margin-top: 25px;
+
+    }
+
+
+    .stat-card {
+
+        padding: 23px;
+
+        border-radius: 24px;
+
+        background:
+            white;
+
+        box-shadow:
+            0 12px 30px
+            rgba(
+                50,
+                100,
+                120,
+                .07
+            );
+
+        transition:
+            .25s;
+
+    }
+
+
+    .stat-card:hover {
+
+        transform:
+            translateY(-7px);
+
+    }
+
+
+    .stat-icon {
+
+        font-size: 32px;
+
+    }
+
+
+    .stat-card h3 {
+
+        margin: 14px 0 6px;
+
+        color:
+            var(--blue);
+
+        font-size: 24px;
+
+        font-weight: 900;
+
+    }
+
+
+    .stat-card p {
+
+        margin: 0;
+
+        color:
+            #8799a2;
+
+        font-size: 12px;
+
+    }
+
+
+    /* ================================
+       STATUS
+    ================================= */
+
+    .status-card {
+
+        margin-top: 25px;
+
+        padding: 26px;
+
+        border-radius: 26px;
+
+        background:
+            white;
+
+        box-shadow:
+            0 12px 30px
+            rgba(
+                50,
+                100,
+                120,
+                .06
+            );
+
+    }
+
+
+    .status-card h2 {
+
+        margin: 0 0 15px;
+
+        color:
+            var(--blue);
+
+        font-size: 19px;
+
+    }
+
+
+    .status-value {
+
+        display: inline-flex;
+
+        align-items: center;
+
+        gap: 8px;
+
+        padding: 13px 18px;
+
+        border-radius: 20px;
+
+        font-size: 15px;
+
+        font-weight: 900;
+
+    }
+
+
+    .status-hijau {
+
+        background:
+            #e8fff0;
+
+        color:
+            #299654;
+
+    }
+
+
+    .status-kuning {
+
+        background:
+            #fff7d8;
+
+        color:
+            #b87a09;
+
+    }
+
+
+    .status-merah {
+
+        background:
+            #fff0f2;
+
+        color:
+            #d9435e;
+
+    }
+
+
+    .status-abu {
+
+        background:
+            #f1f5f7;
+
+        color:
+            #71818a;
+
+    }
+
+
+    /* ================================
+       GRAFIK
+    ================================= */
+
+    .grafik-section {
+
+        margin-top: 30px;
+
+        padding: 28px;
+
+        border-radius: 28px;
+
+        background:
+            white;
+
+        box-shadow:
+            0 15px 35px
+            rgba(
+                50,
+                100,
+                120,
+                .08
+            );
+
+    }
+
+
+    .grafik-header {
+
+        margin-bottom: 25px;
+
+    }
+
+
+    .grafik-header h2 {
+
+        margin: 0;
+
+        color:
+            var(--blue);
+
+    }
+
+
+    .grafik-subtitle {
+
+        color:
+            #8799a2;
+
+        font-size: 12px;
+
+    }
+
+
+    .chart-wrapper {
+
+        position: relative;
+
+        width: 100%;
+
+        height: 280px;
+
+    }
+
+
+    /* ================================
+       SUMMARY
+    ================================= */
+
+    .status-summary {
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(
+                3,
+                1fr
+            );
+
+        gap: 15px;
+
+        margin-top: 25px;
+
+    }
+
+
+    .summary-card {
+
+        padding: 18px;
+
+        border-radius: 20px;
+
+        text-align: center;
+
+    }
+
+
+    .summary-card h3 {
+
+        margin: 0;
+
+        font-size: 27px;
+
+    }
+
+
+    .summary-card p {
+
+        margin: 7px 0 0;
+
+        font-size: 12px;
+
+    }
+
+
+    .summary-hijau {
+
+        background:
+            #eafff0;
+
+        color:
+            #299654;
+
+    }
+
+
+    .summary-kuning {
+
+        background:
+            #fff8dd;
+
+        color:
+            #b87a09;
+
+    }
+
+
+    .summary-merah {
+
+        background:
+            #fff0f2;
+
+        color:
+            #d9435e;
+
+    }
+
+
+    /* ================================
+       TIMELINE
+    ================================= */
+
+    .timeline-section {
+
+        margin-top: 30px;
+
+        padding: 28px;
+
+        border-radius: 28px;
+
+        background:
+            white;
+
+        box-shadow:
+            0 15px 35px
+            rgba(
+                50,
+                100,
+                120,
+                .08
+            );
+
+    }
+
+
+    .timeline-section h2 {
+
+        margin: 0 0 25px;
+
+        color:
+            var(--blue);
+
+    }
+
+
+    .timeline {
+
+        margin-left: 10px;
+
+        padding-left: 30px;
+
+        border-left:
+            3px solid
+            #edf2f5;
+
+    }
+
+
+    .timeline-item {
+
+        position: relative;
+
+        padding-bottom: 28px;
+
+    }
+
+
+    .timeline-dot {
+
+        position: absolute;
+
+        width: 18px;
+
+        height: 18px;
+
+        left: -41px;
+
+        top: 4px;
+
+        border-radius: 50%;
+
+        border:
+            4px solid white;
+
+    }
+
+
+    .dot-hijau {
+
+        background:
+            #48b970;
+
+    }
+
+
+    .dot-kuning {
+
+        background:
+            #e8b43f;
+
+    }
+
+
+    .dot-merah {
+
+        background:
+            #e35c70;
+
+    }
+
+
+    .dot-abu {
+
+        background:
+            #9aaab1;
+
+    }
+
+
+    .timeline-date {
+
+        margin-bottom: 8px;
+
+        color:
+            #98a8af;
+
+        font-size: 11px;
+
+    }
+
+
+    .timeline-status {
+
+        display: inline-flex;
+
+        padding: 8px 13px;
+
+        border-radius: 20px;
+
+        font-size: 12px;
+
+        font-weight: 900;
+
+    }
+
+
+    .timeline-text {
+
+        margin-top: 10px;
+
+        color:
+            #647d89;
+
+        font-size: 13px;
+
+        line-height: 1.7;
+
+    }
+
+
+    /* ================================
+       CATATAN
+    ================================= */
+
+    .catatan-section {
+
+        margin-top: 30px;
+
+        padding: 28px;
+
+        border-radius: 28px;
+
+        background:
+            white;
+
+        box-shadow:
+            0 15px 35px
+            rgba(
+                50,
+                100,
+                120,
+                .08
+            );
+
+    }
+
+
+    .catatan-header {
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        gap: 15px;
+
+        margin-bottom: 25px;
+
+    }
+
+
+    .catatan-header h2 {
+
+        margin: 0;
+
+        color:
+            var(--blue);
+
+    }
+
+
+    .catatan-count {
+
+        padding: 9px 15px;
+
+        border-radius: 20px;
+
+        background:
+            #fff0f6;
+
+        color:
+            var(--pink);
+
+        font-size: 11px;
+
+        font-weight: 900;
+
+    }
+
+
+    .filter-box {
+
+        margin-bottom: 25px;
+
+        padding: 20px;
+
+        border-radius: 22px;
+
+        background:
+            #f9fcff;
+
+    }
+
+
+    .search-input {
+
+        width: 100%;
+
+        box-sizing:
+            border-box;
+
+        padding: 15px 18px;
+
+        border:
+            1px solid #edf1f3;
+
+        outline: none;
+
+        border-radius: 15px;
+
+        font-size: 14px;
+
+    }
+
+
+    .filter-row {
+
+        display: flex;
+
+        flex-wrap: wrap;
+
+        gap: 10px;
+
+        margin-top: 15px;
+
+    }
+
+
+    .filter-btn {
+
+        padding: 10px 15px;
+
+        border: none;
+
+        border-radius: 20px;
+
+        background:
+            white;
+
+        color:
+            #71818a;
+
+        font-size: 12px;
+
+        font-weight: 800;
+
+        cursor: pointer;
+
+    }
+
+
+    .filter-btn.active {
+
+        background:
+            var(--pink);
+
+        color:
+            white;
+
+    }
+
+
+    .date-filter {
+
+        margin-top: 15px;
+
+        display: flex;
+
+        gap: 10px;
+
+        flex-wrap: wrap;
+
+    }
+
+
+    .date-input {
+
+        padding: 10px 13px;
+
+        border:
+            1px solid #edf1f3;
+
+        border-radius: 12px;
+
+    }
+
+
+    .reset-btn {
+
+        padding: 10px 15px;
+
+        border: none;
+
+        border-radius: 12px;
+
+        background:
+            var(--blue);
+
+        color:
+            white;
+
+        cursor: pointer;
+
+    }
+
+
+    .catatan-list {
+
+        display: grid;
+
+        gap: 17px;
+
+    }
+
+
+    .catatan-item {
+
+        padding: 22px;
+
+        border-radius: 22px;
+
+        background:
+            #fffafd;
+
+        border:
+            1px solid
+            rgba(
+                239,
+                79,
+                130,
+                .10
+            );
+
+    }
+
+
+    .catatan-top {
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        gap: 15px;
+
+    }
+
+
+    .perkembangan-badge {
+
+        padding: 9px 14px;
+
+        border-radius: 20px;
+
+        font-size: 12px;
+
+        font-weight: 900;
+
+    }
+
+
+    .catatan-date {
+
+        color:
+            #99a9b0;
+
+        font-size: 11px;
+
+    }
+
+
+    .catatan-text {
+
+        margin-top: 17px;
+
+        padding: 17px;
+
+        border-radius: 16px;
+
+        background:
+            white;
+
+        color:
+            #647d89;
+
+        font-size: 13px;
+
+        line-height: 1.8;
+
+        white-space:
+            pre-line;
+
+    }
+
+
+    /* ================================
+       EMPTY
+    ================================= */
+
+    .empty-box {
+
+        padding: 50px 20px;
+
+        text-align: center;
+
+        border-radius: 22px;
+
+        background:
+            #f9fcfd;
+
+    }
+
+
+    .empty-icon {
+
+        margin-bottom: 15px;
+
+        font-size: 55px;
+
+    }
+
+
+    .empty-box h3 {
+
+        margin: 0;
+
+        color:
+            #526f80;
+
+    }
+
+
+    .empty-box p {
+
+        color:
+            #8a9ca5;
+
+        font-size: 13px;
+
+    }
+
+
+    .loading-box {
+
+        padding: 45px;
+
+        text-align: center;
+
+        color:
+            #81949e;
+
+    }
+
+
+    /* ================================
+       RESPONSIVE
+    ================================= */
+
+    @media (
+        max-width: 700px
+    ) {
+
+        .welcome-card {
+
+            padding: 22px;
+
+        }
+
+
+        .welcome-icon {
+
+            width: 65px;
+
+            height: 65px;
+
+            font-size: 32px;
+
+        }
+
+
+        .welcome-card h1 {
+
+            font-size: 21px;
+
+        }
+
+
+        .anak-card,
+        .catatan-section,
+        .grafik-section,
+        .timeline-section,
+        .status-card {
+
+            padding: 20px;
+
+        }
+
+
+        .stat-grid,
+        .status-summary {
+
+            grid-template-columns:
+                1fr;
+
+        }
+
+
+        .catatan-top {
+
+            flex-direction:
+                column;
+
+            align-items:
+                flex-start;
+
+        }
+
+
+        .chart-wrapper {
+
+            height: 230px;
+
+        }
+
+
+        .filter-row {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+        }
+
+
+        .date-filter {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr;
+
+        }
+
+
+        .refresh-button {
+
+            width: 100%;
+
+        }
+
+
+        .anak-info {
+
+            align-items:
+                flex-start;
+
+        }
+
+    }
+
+</style>
+```
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header class="top">
+
+```
+<div class="head wrap">
+
+    <a
+        class="brand"
+        href="index.html"
+    >
+
+        <div class="sun">
+            ☀️
+        </div>
+
+
+        <div>
+
+            <h1>
+
+                Ra Miftahul
+
+                <span>
+                    Hikmah
+                </span>
+
+            </h1>
+
+
+            <p>
+                Tangerang 💗
+            </p>
+
+        </div>
+
+    </a>
+
+
+    <button
+        class="btn"
+        id="logoutButton"
+        type="button"
+    >
+        🚪 Logout
+    </button>
+
+</div>
+```
+
+</header>
+
+<!-- HERO -->
+
+<section class="pagehero">
+
+```
+<div class="wrap">
+
+    <h2>
+
+        Dashboard
+
+        <span style="color:#ef4f82">
+            Wali Murid
+        </span>
+
+        👨‍👩‍👧
+
+    </h2>
+
+
+    <p>
+        Pantau perkembangan anak
+        dengan mudah dan nyaman.
+    </p>
+
+</div>
+```
+
+</section>
+
+<!-- CONTENT -->
+
+<section class="section wrap wali-page">
+
+```
+<div class="dashboard-action">
+
+    <button
+        class="refresh-button"
+        id="refreshButton"
+        type="button"
+    >
+        🔄 Refresh Data
+    </button>
+
+</div>
+
+
+<!-- WELCOME -->
+
+<div class="welcome-card">
+
+    <div class="welcome-content">
+
+        <div class="welcome-icon">
+            👨‍👩‍👧
+        </div>
+
+
+        <div>
+
+            <h1>
+
+                Halo,
+
+                <span id="waliName">
+                    Wali Murid
+                </span>
+
+                👋
+
+            </h1>
+
+
+            <p>
+                Selamat datang di portal
+                perkembangan anak
+                RA Miftahul Hikmah.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- DATA ANAK -->
+
+<div class="anak-card">
+
+    <h2 class="section-title">
+        👧 Data Anak
+    </h2>
+
+
+    <div
+        id="anakSelector"
+        class="anak-selector"
+    ></div>
+
+
+    <div id="anakContainer">
+
+        <div class="loading-box">
+            ⏳ Memuat data anak...
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- STATISTIK -->
+
+<div class="stat-grid">
+
+    <div class="stat-card">
+
+        <div class="stat-icon">
+            📝
+        </div>
+
+        <h3 id="jumlahCatatan">
+            0
+        </h3>
+
+        <p>
+            Total Catatan Guru
+        </p>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <div class="stat-icon">
+            🌱
+        </div>
+
+        <h3 id="statusPerkembangan">
+            -
+        </h3>
+
+        <p>
+            Perkembangan Terakhir
+        </p>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <div class="stat-icon">
+            📅
+        </div>
+
+        <h3 id="catatanTerakhir">
+            -
+        </h3>
+
+        <p>
+            Catatan Terakhir
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- STATUS -->
+
+<div class="status-card">
+
+    <h2>
+        🌱 Status Perkembangan Terakhir
+    </h2>
+
+
+    <div
+        class="status-value status-abu"
+        id="statusDetail"
+    >
+        Belum ada catatan perkembangan
+    </div>
+
+</div>
+
+
+<!-- GRAFIK -->
+
+<div class="grafik-section">
+
+    <div class="grafik-header">
+
+        <h2>
+            📊 Grafik Perkembangan Anak
+        </h2>
+
+
+        <p class="grafik-subtitle">
+            Grafik berdasarkan status catatan guru.
+        </p>
+
+    </div>
+
+
+    <div class="chart-wrapper">
+
+        <canvas
+            id="perkembanganChart"
+        ></canvas>
+
+    </div>
+
+
+    <div class="status-summary">
+
+        <div class="summary-card summary-hijau">
+
+            <h3 id="jumlahBaik">
+                0
+            </h3>
+
+            <p>
+                🟢 Berkembang Baik
+            </p>
+
+        </div>
+
+
+        <div class="summary-card summary-kuning">
+
+            <h3 id="jumlahBimbingan">
+                0
+            </h3>
+
+            <p>
+                🟡 Perlu Bimbingan
+            </p>
+
+        </div>
+
+
+        <div class="summary-card summary-merah">
+
+            <h3 id="jumlahPerhatian">
+                0
+            </h3>
+
+            <p>
+                🔴 Perlu Perhatian
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- TIMELINE -->
+
+<div class="timeline-section">
+
+    <h2>
+        📈 Timeline Perkembangan Anak
+    </h2>
+
+
+    <div
+        class="timeline"
+        id="timelineList"
+    >
+
+        <div class="loading-box">
+            ⏳ Memuat timeline...
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- CATATAN -->
+
+<div class="catatan-section">
+
+    <div class="catatan-header">
+
+        <h2>
+            📚 Riwayat Catatan Guru
+        </h2>
+
+
+        <div
+            class="catatan-count"
+            id="catatanCount"
+        >
+            0 Catatan
+        </div>
+
+    </div>
+
+
+    <div class="filter-box">
+
+        <input
+            type="text"
+            id="searchCatatan"
+            class="search-input"
+            placeholder="🔎 Cari isi catatan atau status perkembangan..."
+        >
+
+
+        <div class="filter-row">
+
+            <button
+                class="filter-btn active"
+                data-filter="semua"
+                type="button"
+            >
+                📚 Semua
+            </button>
+
+
+            <button
+                class="filter-btn"
+                data-filter="hijau"
+                type="button"
+            >
+                🟢 Baik
+            </button>
+
+
+            <button
+                class="filter-btn"
+                data-filter="kuning"
+                type="button"
+            >
+                🟡 Bimbingan
+            </button>
+
+
+            <button
+                class="filter-btn"
+                data-filter="merah"
+                type="button"
+            >
+                🔴 Perhatian
+            </button>
+
+        </div>
+
+
+        <div class="date-filter">
+
+            <input
+                type="date"
+                id="tanggalFilter"
+                class="date-input"
+            >
+
+
+            <button
+                type="button"
+                id="resetFilter"
+                class="reset-btn"
+            >
+                🔄 Reset Filter
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div
+        class="catatan-list"
+        id="catatanList"
+    >
+
+        <div class="loading-box">
+            ⏳ Memuat catatan...
+        </div>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<footer class="footer">
+
+```
+<div class="copy wrap">
+
+    © 2026 RA Miftahul Hikmah.
+    All rights reserved.
+
+</div>
+```
+
+</footer>
+
+<!-- SUPABASE -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+></script>
+
+<!-- CHART -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/chart.js"
+></script>
+
+<script>
+
+
+/* =========================================
+   SUPABASE CONFIG
+========================================= */
+
+const SUPABASE_URL =
+    "https://ervhwjrlqcsobawwhkpf.supabase.co";
+
+
+const SUPABASE_PUBLISHABLE_KEY =
+    "sb_publishable_u48E-Q-RjdFRFLC_Cv3rmg_gD0Z3y2K";
+
+
+const supabaseClient =
+    window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_PUBLISHABLE_KEY
+    );
+
+
+/* =========================================
+   ELEMENT
+========================================= */
+
+const waliName =
+    document.getElementById(
+        "waliName"
+    );
+
+
+const anakSelector =
+    document.getElementById(
+        "anakSelector"
+    );
+
+
+const anakContainer =
+    document.getElementById(
+        "anakContainer"
+    );
+
+
+const jumlahCatatan =
+    document.getElementById(
+        "jumlahCatatan"
+    );
+
+
+const statusPerkembangan =
+    document.getElementById(
+        "statusPerkembangan"
+    );
+
+
+const catatanTerakhir =
+    document.getElementById(
+        "catatanTerakhir"
+    );
+
+
+const statusDetail =
+    document.getElementById(
+        "statusDetail"
+    );
+
+
+const catatanCount =
+    document.getElementById(
+        "catatanCount"
+    );
+
+
+const catatanList =
+    document.getElementById(
+        "catatanList"
+    );
+
+
+const timelineList =
+    document.getElementById(
+        "timelineList"
+    );
+
+
+const jumlahBaik =
+    document.getElementById(
+        "jumlahBaik"
+    );
+
+
+const jumlahBimbingan =
+    document.getElementById(
+        "jumlahBimbingan"
+    );
+
+
+const jumlahPerhatian =
+    document.getElementById(
+        "jumlahPerhatian"
+    );
+
+
+const logoutButton =
+    document.getElementById(
+        "logoutButton"
+    );
+
+
+const refreshButton =
+    document.getElementById(
+        "refreshButton"
+    );
+
+
+const searchCatatan =
+    document.getElementById(
+        "searchCatatan"
+    );
+
+
+const tanggalFilter =
+    document.getElementById(
+        "tanggalFilter"
+    );
+
+
+const resetFilter =
+    document.getElementById(
+        "resetFilter"
+    );
+
+
+const filterButtons =
+    document.querySelectorAll(
+        ".filter-btn"
+    );
+
+
+/* =========================================
+   DATA GLOBAL
+========================================= */
+
+let currentUser =
+    null;
+
+
+let semuaAnak =
+    [];
+
+
+let dataAnak =
+    null;
+
+
+let semuaCatatan =
+    [];
+
+
+let perkembanganChart =
+    null;
+
+
+let filterStatus =
+    "semua";
+
+
+/* =========================================
+   ESCAPE HTML
+========================================= */
+
+function escapeHTML(
+    text
+) {
+
+    const div =
+        document.createElement(
+            "div"
+        );
+
+
+    div.textContent =
+        text || "";
+
+
+    return div.innerHTML;
+
+}
+
+
+/* =========================================
+   FORMAT TANGGAL
+========================================= */
+
+function formatTanggal(
+    tanggal
+) {
+
+    if (!tanggal) {
+
+        return "-";
+
+    }
+
+
+    return new Date(
+        tanggal
+    )
+    .toLocaleString(
+        "id-ID",
+        {
+
+            day:
+                "numeric",
+
+            month:
+                "long",
+
+            year:
+                "numeric",
+
+            hour:
+                "2-digit",
+
+            minute:
+                "2-digit"
+
+        }
+    );
+
+}
+
+
+function formatTanggalSingkat(
+    tanggal
+) {
+
+    if (!tanggal) {
+
+        return "-";
+
+    }
+
+
+    return new Date(
+        tanggal
+    )
+    .toLocaleDateString(
+        "id-ID",
+        {
+
+            day:
+                "numeric",
+
+            month:
+                "short"
+
+        }
+    );
+
+}
+
+
+function formatDateInput(
+    tanggal
+) {
+
+    if (!tanggal) {
+
+        return "";
+
+    }
+
+
+    const date =
+        new Date(
+            tanggal
+        );
+
+
+    return date
+        .toISOString()
+        .split(
+            "T"
+        )[0];
+
+}
+
+
+/* =========================================
+   STATUS
+========================================= */
+
+function getStatusInfo(
+    status
+) {
+
+    const value =
+        (
+            status ||
+            ""
+        )
+        .toLowerCase()
+        .trim();
+
+
+    if (
+
+        value.includes(
+            "baik"
+        )
+
+    ) {
+
+        return {
+
+            nama:
+                status ||
+                "Berkembang Baik",
+
+            warna:
+                "hijau",
+
+            emoji:
+                "🟢",
+
+            nilai:
+                3
+
+        };
+
+    }
+
+
+    if (
+
+        value.includes(
+            "bimbingan"
+        ) ||
+
+        value.includes(
+            "cukup"
+        )
+
+    ) {
+
+        return {
+
+            nama:
+                status ||
+                "Perlu Bimbingan",
+
+            warna:
+                "kuning",
+
+            emoji:
+                "🟡",
+
+            nilai:
+                2
+
+        };
+
+    }
+
+
+    if (
+
+        value.includes(
+            "perhatian"
+        ) ||
+
+        value.includes(
+            "kurang"
+        ) ||
+
+        value.includes(
+            "belum"
+        )
+
+    ) {
+
+        return {
+
+            nama:
+                status ||
+                "Perlu Perhatian",
+
+            warna:
+                "merah",
+
+            emoji:
+                "🔴",
+
+            nilai:
+                1
+
+        };
+
+    }
+
+
+    return {
+
+        nama:
+            status ||
+            "Belum ada status",
+
+        warna:
+            "abu",
+
+        emoji:
+            "⚪",
+
+        nilai:
+            0
+
+    };
+
+}
+
+
+/* =========================================
+   CEK LOGIN
+========================================= */
+
+async function cekWaliMurid() {
+
+    try {
+
+
+        const {
+            data:
+            {
+                user
+            },
+            error:
+            userError
+        } =
+            await supabaseClient
+            .auth
+            .getUser();
+
+
+        if (
+
+            userError ||
+
+            !user
+
+        ) {
+
+            window.location.href =
+                "login.html";
+
+            return;
+
+        }
+
+
+        currentUser =
+            user;
+
+
+        const {
+            data:
+            profile,
+            error:
+            profileError
+        } =
+            await supabaseClient
+            .from(
+                "profiles"
+            )
+            .select(
+                "id, full_name, role"
+            )
+            .eq(
+                "id",
+                user.id
+            )
+            .maybeSingle();
+
+
+        if (
+            profileError
+        ) {
+
+            throw profileError;
+
+        }
+
+
+        if (
+            !profile
+        ) {
+
+            throw new Error(
+                "Profil akun tidak ditemukan."
+            );
+
+        }
+
+
+        const allowedRoles =
+            [
+
+                "wali_murid",
+
+                "wali",
+
+                "orang_tua"
+
+            ];
+
+
+        const role =
+            (
+                profile.role ||
+                ""
+            )
+            .toLowerCase()
+            .trim();
+
+
+        if (
+
+            !allowedRoles.includes(
+                role
+            )
+
+        ) {
+
+            alert(
+                "⛔ Akun ini bukan akun Wali Murid."
+            );
+
+
+            await supabaseClient
+            .auth
+            .signOut();
+
+
+            window.location.href =
+                "login.html";
+
+
+            return;
+
+        }
+
+
+        waliName.textContent =
+            profile.full_name ||
+            "Wali Murid";
+
+
+        await loadSemuaAnak();
+
+
+    }
+
+    catch (
+        error
+    ) {
+
+        console.error(
+            "CEK LOGIN ERROR:",
+            error
+        );
+
+
+        tampilkanErrorAnak(
+            error.message
+        );
+
+    }
+
+}
+
+
+/* =========================================
+   LOAD SEMUA ANAK
+
+   RELASI:
+
+   wali_murid
+
+   wali_id
+   murid_id
+
+========================================= */
+
+async function loadSemuaAnak() {
+
+    try {
+
+
+        anakContainer.innerHTML =
+            `
+            <div class="loading-box">
+                ⏳ Memuat data anak...
+            </div>
+            `;
+
+
+        anakSelector.innerHTML =
+            "";
+
+
+        semuaAnak =
+            [];
+
+
+        dataAnak =
+            null;
+
+
+        /*
+        AMBIL SEMUA RELASI
+        */
+
+        const {
+            data:
+            relasiData,
+            error:
+            relasiError
+        } =
+            await supabaseClient
+            .from(
+                "wali_murid"
+            )
+            .select(
+                "id, wali_id, murid_id"
+            )
+            .eq(
+                "wali_id",
+                currentUser.id
+            );
+
+
+        if (
+            relasiError
+        ) {
+
+            console.error(
+                "ERROR RELASI:",
+                relasiError
+            );
+
+        }
+
+
+        /*
+        JIKA ADA RELASI
+        */
+
+        if (
+
+            relasiData &&
+
+            relasiData.length > 0
+
+        ) {
+
+
+            const muridIds =
+                relasiData
+                .map(
+                    function(
+                        item
+                    ) {
+
+                        return item.murid_id;
+
+                    }
+                )
+                .filter(
+                    Boolean
+                );
+
+
+            if (
+                muridIds.length > 0
+            ) {
+
+
+                const {
+                    data:
+                    muridData,
+                    error:
+                    muridError
+                } =
+                    await supabaseClient
+                    .from(
+                        "murid"
+                    )
+                    .select(
+                        "*"
+                    )
+                    .in(
+                        "id",
+                        muridIds
+                    );
+
+
+                if (
+                    muridError
+                ) {
+
+                    throw muridError;
+
+                }
+
+
+                semuaAnak =
+                    muridData ||
+                    [];
+
+            }
+
+        }
+
+
+        /*
+        FALLBACK
+
+        CARI DI murid.wali_id
+
+        HANYA JIKA TABEL
+        MEMANG MEMILIKI KOLOM
+        */
+
+        if (
+            semuaAnak.length === 0
+        ) {
+
+            const {
+                data:
+                anakLangsung,
+                error:
+                anakLangsungError
+            } =
+                await supabaseClient
+                .from(
+                    "murid"
+                )
+                .select(
+                    "*"
+                )
+                .eq(
+                    "wali_id",
+                    currentUser.id
+                );
+
+
+            if (
+
+                !anakLangsungError &&
+
+                anakLangsung
+
+            ) {
+
+                semuaAnak =
+                    anakLangsung;
+
+            }
+
+        }
+
+
+        /*
+        TIDAK ADA ANAK
+        */
+
+        if (
+            semuaAnak.length === 0
+        ) {
+
+
+            tampilkanAnakKosong();
+
+
+            resetDashboard();
+
+
+            return;
+
+        }
+
+
+        /*
+        RENDER PILIHAN ANAK
+        */
+
+        renderPilihanAnak();
+
+
+        /*
+        PILIH ANAK PERTAMA
+        */
+
+        pilihAnak(
+            semuaAnak[0].id
+        );
+
+
+    }
+
+    catch (
+        error
+    ) {
+
+        console.error(
+            "LOAD SEMUA ANAK ERROR:",
+            error
+        );
+
+
+        tampilkanErrorAnak(
+            error.message
+        );
+
+
+        resetDashboard();
+
+    }
+
+}
+
+
+/* =========================================
+   RENDER PILIHAN ANAK
+========================================= */
+
+function renderPilihanAnak() {
+
+
+    anakSelector.innerHTML =
+        "";
+
+
+    if (
+        semuaAnak.length <= 1
+    ) {
+
+        return;
+
+    }
+
+
+    semuaAnak.forEach(
+        function(
+            anak
+        ) {
+
+
+            const button =
+                document.createElement(
+                    "button"
+                );
+
+
+            button.type =
+                "button";
+
+
+            button.className =
+                "anak-select-btn";
+
+
+            button.dataset.id =
+                anak.id;
+
+
+            button.textContent =
+                "👧 " +
+                (
+                    anak.nama ||
+                    "Anak"
+                );
+
+
+            button.addEventListener(
+                "click",
+                function() {
+
+                    pilihAnak(
+                        anak.id
+                    );
+
+                }
+            );
+
+
+            anakSelector.appendChild(
+                button
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================
+   PILIH ANAK
+========================================= */
+
+async function pilihAnak(
+    muridId
+) {
+
+
+    const anak =
+        semuaAnak.find(
+            function(
+                item
+            ) {
+
+                return item.id ===
+                    muridId;
+
+            }
+        );
+
+
+    if (
+        !anak
+    ) {
+
+        return;
+
+    }
+
+
+    dataAnak =
+        anak;
+
+
+    document
+        .querySelectorAll(
+            ".anak-select-btn"
+        )
+        .forEach(
+            function(
+                button
+            ) {
+
+                button.classList.remove(
+                    "active"
+                );
+
+
+                if (
+
+                    button.dataset.id ===
+                    muridId
+
+                ) {
+
+                    button.classList.add(
+                        "active"
+                    );
+
+                }
+
+            }
+        );
+
+
+    tampilkanDataAnak(
+        anak
+    );
+
+
+    resetDashboard();
+
+
+    await loadCatatan();
+
+}
+
+
+/* =========================================
+   DATA ANAK
+========================================= */
+
+function tampilkanDataAnak(
+    anak
+) {
+
+    anakContainer.innerHTML =
+        `
+
+        <div class="anak-info">
+
+
+            <div class="anak-avatar">
+                👧
+            </div>
+
+
+            <div class="anak-detail">
+
+                <h2>
+
+                    ${escapeHTML(
+                        anak.nama ||
+                        "Nama belum tersedia"
+                    )}
+
+                </h2>
+
+
+                <p>
+
+                    👥 Kelas:
+
+                    ${escapeHTML(
+                        anak.kelas ||
+                        "-"
+                    )}
+
+                </p>
+
+
+                <p>
+                    💗 Terhubung dengan akun wali murid
+                </p>
+
+            </div>
+
+        </div>
+
+        `;
+
+}
+
+
+/* =========================================
+   ANAK KOSONG
+========================================= */
+
+function tampilkanAnakKosong() {
+
+    anakContainer.innerHTML =
+        `
+
+        <div class="empty-box">
+
+            <div class="empty-icon">
+                👧
+            </div>
+
+
+            <h3>
+                Anak Belum Terhubung
+            </h3>
+
+
+            <p>
+                Belum ditemukan hubungan
+                antara akun wali dan murid.
+            </p>
+
+
+            <p style="
+                margin-top:15px;
+                font-size:12px;
+            ">
+
+                Admin perlu menambahkan data
+                ke tabel wali_murid:
+
+                wali_id → murid_id
+
+            </p>
+
+        </div>
+
+        `;
+
+}
+
+
+/* =========================================
+   ERROR ANAK
+========================================= */
+
+function tampilkanErrorAnak(
+    pesan
+) {
+
+    anakContainer.innerHTML =
+        `
+
+        <div class="empty-box">
+
+            <div class="empty-icon">
+                ⚠️
+            </div>
+
+
+            <h3>
+                Data Anak Tidak Dapat Dimuat
+            </h3>
+
+
+            <p>
+
+                ${escapeHTML(
+                    pesan ||
+                    "Terjadi kesalahan."
+                )}
+
+            </p>
+
+        </div>
+
+        `;
+
+}
+
+
+/* =========================================
+   RESET DASHBOARD
+========================================= */
+
+function resetDashboard() {
+
+
+    semuaCatatan =
+        [];
+
+
+    jumlahCatatan.textContent =
+        "0";
+
+
+    catatanCount.textContent =
+        "0 Catatan";
+
+
+    statusPerkembangan.textContent =
+        "-";
+
+
+    catatanTerakhir.textContent =
+        "-";
+
+
+    statusDetail.textContent =
+        "Belum ada catatan perkembangan";
+
+
+    statusDetail.className =
+        "status-value status-abu";
+
+
+    jumlahBaik.textContent =
+        "0";
+
+
+    jumlahBimbingan.textContent =
+        "0";
+
+
+    jumlahPerhatian.textContent =
+        "0";
+
+
+    renderListCatatan(
+        []
+    );
+
+
+    buatTimeline(
+        []
+    );
+
+
+    buatGrafik(
+        []
+    );
+
+}
+
+
+/* =========================================
+   LOAD CATATAN
+========================================= */
+
+async function loadCatatan() {
+
+    if (
+
+        !dataAnak ||
+
+        !dataAnak.id
+
+    ) {
+
+        resetDashboard();
+
+        return;
+
+    }
+
+
+    try {
+
+
+        catatanList.innerHTML =
+            `
+            <div class="loading-box">
+                ⏳ Memuat catatan...
+            </div>
+            `;
+
+
+        const {
+            data,
+            error
+        } =
+            await supabaseClient
+            .from(
+                "catatan_murid"
+            )
+            .select(
+                "*"
+            )
+            .eq(
+                "murid_id",
+                dataAnak.id
+            )
+            .order(
+                "created_at",
+                {
+
+                    ascending:
+                        false
+
+                }
+            );
+
+
+        if (
+            error
+        ) {
+
+            throw error;
+
+        }
+
+
+        semuaCatatan =
+            data ||
+            [];
+
+
+        renderDashboard(
+            semuaCatatan
+        );
+
+
+    }
+
+    catch (
+        error
+    ) {
+
+        console.error(
+            "LOAD CATATAN ERROR:",
+            error
+        );
+
+
+        catatanList.innerHTML =
+            `
+
+            <div class="empty-box">
+
+                <div class="empty-icon">
+                    ⚠️
+                </div>
+
+
+                <h3>
+                    Catatan Tidak Dapat Dimuat
+                </h3>
+
+
+                <p>
+
+                    ${escapeHTML(
+                        error.message
+                    )}
+
+                </p>
+
+            </div>
+
+            `;
+
+    }
+
+}
+
+
+/* =========================================
+   RENDER DASHBOARD
+========================================= */
+
+function renderDashboard(
+    data
+) {
+
+
+    jumlahCatatan.textContent =
+        data.length;
+
+
+    catatanCount.textContent =
+        data.length +
+        " Catatan";
+
+
+    if (
+        data.length === 0
+    ) {
+
+
+        buatGrafik(
+            []
+        );
+
+
+        buatTimeline(
+            []
+        );
+
+
+        renderListCatatan(
+            []
+        );
+
+
+        return;
+
+    }
+
+
+    const terbaru =
+        data[0];
+
+
+    const status =
+        getStatusInfo(
+            terbaru.perkembangan
+        );
+
+
+    statusPerkembangan.textContent =
+        status.nama;
+
+
+    catatanTerakhir.textContent =
+        formatTanggalSingkat(
+            terbaru.created_at
+        );
+
+
+    statusDetail.textContent =
+        status.emoji +
+        " " +
+        status.nama;
+
+
+    statusDetail.className =
+        "status-value status-" +
+        status.warna;
+
+
+    let totalBaik =
+        0;
+
+
+    let totalBimbingan =
+        0;
+
+
+    let totalPerhatian =
+        0;
+
+
+    data.forEach(
+        function(
+            catatan
+        ) {
+
+
+            const info =
+                getStatusInfo(
+                    catatan.perkembangan
+                );
+
+
+            if (
+                info.warna ===
+                "hijau"
+            ) {
+
+                totalBaik++;
+
+            }
+
+
+            if (
+                info.warna ===
+                "kuning"
+            ) {
+
+                totalBimbingan++;
+
+            }
+
+
+            if (
+                info.warna ===
+                "merah"
+            ) {
+
+                totalPerhatian++;
+
+            }
+
+        }
+    );
+
+
+    jumlahBaik.textContent =
+        totalBaik;
+
+
+    jumlahBimbingan.textContent =
+        totalBimbingan;
+
+
+    jumlahPerhatian.textContent =
+        totalPerhatian;
+
+
+    buatGrafik(
+        data
+    );
+
+
+    buatTimeline(
+        data
+    );
+
+
+    applyFilter();
+
+}
+
+
+/* =========================================
+   FILTER
+========================================= */
+
+function applyFilter() {
+
+
+    const keyword =
+        searchCatatan.value
+        .toLowerCase()
+        .trim();
+
+
+    const tanggal =
+        tanggalFilter.value;
+
+
+    const hasil =
+        semuaCatatan.filter(
+            function(
+                catatan
+            ) {
+
+
+                const info =
+                    getStatusInfo(
+                        catatan.perkembangan
+                    );
+
+
+                const isi =
+                    (
+                        catatan.isi_catatan ||
+                        ""
+                    )
+                    .toLowerCase();
+
+
+                const status =
+                    (
+                        catatan.perkembangan ||
+                        ""
+                    )
+                    .toLowerCase();
+
+
+                const cocokKeyword =
+
+                    isi.includes(
+                        keyword
+                    ) ||
+
+                    status.includes(
+                        keyword
+                    );
+
+
+                const cocokStatus =
+
+                    filterStatus ===
+                    "semua"
+
+                    ||
+
+                    info.warna ===
+                    filterStatus;
+
+
+                const cocokTanggal =
+
+                    !tanggal
+
+                    ||
+
+                    formatDateInput(
+                        catatan.created_at
+                    ) ===
+                    tanggal;
+
+
+                return (
+
+                    cocokKeyword &&
+
+                    cocokStatus &&
+
+                    cocokTanggal
+
+                );
+
+            }
+        );
+
+
+    renderListCatatan(
+        hasil
+    );
+
+}
+
+
+/* =========================================
+   LIST CATATAN
+========================================= */
+
+function renderListCatatan(
+    data
+) {
+
+
+    catatanList.innerHTML =
+        "";
+
+
+    if (
+        data.length === 0
+    ) {
+
+
+        catatanList.innerHTML =
+            `
+
+            <div class="empty-box">
+
+                <div class="empty-icon">
+                    📚
+                </div>
+
+
+                <h3>
+                    Belum Ada Catatan
+                </h3>
+
+
+                <p>
+                    Catatan perkembangan
+                    akan muncul setelah
+                    guru menambahkan data.
+                </p>
+
+            </div>
+
+            `;
+
+
+        return;
+
+    }
+
+
+    data.forEach(
+        function(
+            catatan
+        ) {
+
+
+            const info =
+                getStatusInfo(
+                    catatan.perkembangan
+                );
+
+
+            const item =
+                document.createElement(
+                    "div"
+                );
+
+
+            item.className =
+                "catatan-item";
+
+
+            item.innerHTML =
+                `
+
+                <div class="catatan-top">
+
+
+                    <div
+                        class="
+                        perkembangan-badge
+                        status-${info.warna}
+                        "
+                    >
+
+                        ${info.emoji}
+
+                        ${escapeHTML(
+                            info.nama
+                        )}
+
+                    </div>
+
+
+                    <div class="catatan-date">
+
+                        🕒
+
+                        ${formatTanggal(
+                            catatan.created_at
+                        )}
+
+                    </div>
+
+                </div>
+
+
+                <div class="catatan-text">
+
+                    ${escapeHTML(
+                        catatan.isi_catatan ||
+                        "Guru belum menambahkan isi catatan."
+                    )}
+
+                </div>
+
+                `;
+
+
+            catatanList.appendChild(
+                item
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================
+   TIMELINE
+========================================= */
+
+function buatTimeline(
+    data
+) {
+
+
+    timelineList.innerHTML =
+        "";
+
+
+    if (
+        data.length === 0
+    ) {
+
+
+        timelineList.innerHTML =
+            `
+            <div class="empty-box">
+
+                <div class="empty-icon">
+                    📈
+                </div>
+
+                <h3>
+                    Timeline Belum Tersedia
+                </h3>
+
+                <p>
+                    Belum ada perkembangan
+                    yang tercatat.
+                </p>
+
+            </div>
+            `;
+
+
+        return;
+
+    }
+
+
+    [
+        ...data
+    ]
+    .reverse()
+    .forEach(
+        function(
+            catatan
+        ) {
+
+
+            const info =
+                getStatusInfo(
+                    catatan.perkembangan
+                );
+
+
+            const item =
+                document.createElement(
+                    "div"
+                );
+
+
+            item.className =
+                "timeline-item";
+
+
+            item.innerHTML =
+                `
+
+                <div
+                    class="
+                    timeline-dot
+                    dot-${info.warna}
+                    "
+                ></div>
+
+
+                <div class="timeline-date">
+
+                    📅
+
+                    ${formatTanggal(
+                        catatan.created_at
+                    )}
+
+                </div>
+
+
+                <div
+                    class="
+                    timeline-status
+                    status-${info.warna}
+                    "
+                >
+
+                    ${info.emoji}
+
+                    ${escapeHTML(
+                        info.nama
+                    )}
+
+                </div>
+
+
+                <div class="timeline-text">
+
+                    ${escapeHTML(
+                        catatan.isi_catatan ||
+                        "Guru belum menambahkan isi catatan."
+                    )}
+
+                </div>
+
+                `;
+
+
+            timelineList.appendChild(
+                item
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================
+   GRAFIK
+========================================= */
+
+function buatGrafik(
+    data
+) {
+
+
+    const canvas =
+        document.getElementById(
+            "perkembanganChart"
+        );
+
+
+    if (
+        perkembanganChart
+    ) {
+
+        perkembanganChart.destroy();
+
+    }
+
+
+    const chartData =
+        [
+            ...data
+        ]
+        .reverse();
+
+
+    perkembanganChart =
+        new Chart(
+            canvas,
+            {
+
+                type:
+                    "line",
+
+                data:
+                    {
+
+                        labels:
+                            chartData.map(
+                                function(
+                                    item
+                                ) {
+
+                                    return formatTanggalSingkat(
+                                        item.created_at
+                                    );
+
+                                }
+                            ),
+
+                        datasets:
+                            [
+
+                                {
+
+                                    label:
+                                        "Perkembangan Anak",
+
+                                    data:
+                                        chartData.map(
+                                            function(
+                                                item
+                                            ) {
+
+                                                return getStatusInfo(
+                                                    item.perkembangan
+                                                ).nilai;
+
+                                            }
+                                        ),
+
+                                    borderColor:
+                                        "#ef4f82",
+
+                                    backgroundColor:
+                                        "rgba(239,79,130,.10)",
+
+                                    borderWidth:
+                                        3,
+
+                                    tension:
+                                        .4,
+
+                                    fill:
+                                        true,
+
+                                    pointRadius:
+                                        6
+
+                                }
+
+                            ]
+
+                    },
+
+                options:
+                    {
+
+                        responsive:
+                            true,
+
+                        maintainAspectRatio:
+                            false,
+
+                        plugins:
+                            {
+
+                                legend:
+                                    {
+
+                                        display:
+                                            false
+
+                                    }
+
+                            },
+
+                        scales:
+                            {
+
+                                y:
+                                    {
+
+                                        min:
+                                            0,
+
+                                        max:
+                                            3,
+
+                                        ticks:
+                                            {
+
+                                                stepSize:
+                                                    1,
+
+                                                callback:
+                                                    function(
+                                                        value
+                                                    ) {
+
+                                                        if (
+                                                            value === 3
+                                                        ) {
+
+                                                            return "Baik";
+
+                                                        }
+
+
+                                                        if (
+                                                            value === 2
+                                                        ) {
+
+                                                            return "Bimbingan";
+
+                                                        }
+
+
+                                                        if (
+                                                            value === 1
+                                                        ) {
+
+                                                            return "Perhatian";
+
+                                                        }
+
+
+                                                        return "";
+
+                                                    }
+
+                                            }
+
+                                    }
+
+                            }
+
+                    }
+
+            }
+        );
+
+}
+
+
+/* =========================================
+   EVENT SEARCH
+========================================= */
+
+searchCatatan.addEventListener(
+    "input",
+    applyFilter
+);
+
+
+/* =========================================
+   EVENT FILTER STATUS
+========================================= */
+
+filterButtons.forEach(
+    function(
+        button
+    ) {
+
+
+        button.addEventListener(
+            "click",
+            function() {
+
+
+                filterButtons.forEach(
+                    function(
+                        btn
+                    ) {
+
+                        btn.classList.remove(
+                            "active"
+                        );
+
+                    }
+                );
+
+
+                button.classList.add(
+                    "active"
+                );
+
+
+                filterStatus =
+                    button.dataset.filter;
+
+
+                applyFilter();
+
+            }
+        );
+
+    }
+);
+
+
+/* =========================================
+   FILTER TANGGAL
+========================================= */
+
+tanggalFilter.addEventListener(
+    "change",
+    applyFilter
+);
+
+
+/* =========================================
+   RESET FILTER
+========================================= */
+
+resetFilter.addEventListener(
+    "click",
+    function() {
+
+
+        searchCatatan.value =
+            "";
+
+
+        tanggalFilter.value =
+            "";
+
+
+        filterStatus =
+            "semua";
+
+
+        filterButtons.forEach(
+            function(
+                button
+            ) {
+
+
+                button.classList.remove(
+                    "active"
+                );
+
+
+                if (
+                    button.dataset.filter ===
+                    "semua"
+                ) {
+
+                    button.classList.add(
+                        "active"
+                    );
+
+                }
+
+            }
+        );
+
+
+        applyFilter();
+
+    }
+);
+
+
+/* =========================================
+   REFRESH
+========================================= */
+
+refreshButton.addEventListener(
+    "click",
+    async function() {
+
+
+        refreshButton.disabled =
+            true;
+
+
+        refreshButton.textContent =
+            "⏳ Memuat...";
+
+
+        try {
+
+
+            await loadSemuaAnak();
+
+
+            refreshButton.textContent =
+                "✅ Berhasil";
+
+
+        }
+
+        catch (
+            error
+        ) {
+
+            console.error(
+                error
+            );
+
+
+            refreshButton.textContent =
+                "❌ Gagal";
+
+        }
+
+
+        setTimeout(
+            function() {
+
+
+                refreshButton.textContent =
+                    "🔄 Refresh Data";
+
+
+                refreshButton.disabled =
+                    false;
+
+
+            },
+            1200
+        );
+
+    }
+);
+
+
+/* =========================================
+   LOGOUT
+========================================= */
+
+logoutButton.addEventListener(
+    "click",
+    async function() {
+
+
+        await supabaseClient
+        .auth
+        .signOut();
+
+
+        window.location.href =
+            "login.html";
+
+    }
+);
+
+
+/* =========================================
+   START
+========================================= */
+
+cekWaliMurid();
+
+
+</script>
+
+</body>
+
+</html>

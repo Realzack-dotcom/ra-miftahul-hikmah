@@ -1,0 +1,2193 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    >
+
+    <title>Gallery | RA Miftahul Hikmah</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <style>
+
+        /* =========================================================
+           CLOUD MEMORY GALLERY
+        ========================================================== */
+
+        body {
+            overflow-x: hidden;
+        }
+
+        /* =========================================================
+           MAIN SKY
+        ========================================================== */
+
+        .cloud-gallery-page {
+            position: relative;
+            min-height: 100vh;
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #8edfff 0%,
+                    #b9edff 35%,
+                    #dff8ff 70%,
+                    #ffffff 100%
+                );
+        }
+
+
+        /* =========================================================
+           ANIMATED CLOUDS
+        ========================================================== */
+
+        .sky-cloud {
+            position: absolute;
+            z-index: 1;
+
+            width: 180px;
+            height: 55px;
+
+            background: rgba(255,255,255,.9);
+
+            border-radius: 100px;
+
+            filter: blur(.2px);
+
+            pointer-events: none;
+
+            animation: cloudMove linear infinite;
+        }
+
+
+        .sky-cloud::before,
+        .sky-cloud::after {
+            content: "";
+
+            position: absolute;
+
+            background: inherit;
+
+            border-radius: 50%;
+        }
+
+
+        .sky-cloud::before {
+            width: 82px;
+            height: 82px;
+
+            left: 25px;
+            bottom: 12px;
+        }
+
+
+        .sky-cloud::after {
+            width: 105px;
+            height: 105px;
+
+            right: 20px;
+            bottom: 10px;
+        }
+
+
+        .sky-cloud-1 {
+            top: 120px;
+            left: -250px;
+
+            transform: scale(.8);
+
+            animation-duration: 55s;
+        }
+
+
+        .sky-cloud-2 {
+            top: 280px;
+            left: -300px;
+
+            transform: scale(1.2);
+
+            animation-duration: 72s;
+
+            animation-delay: -25s;
+        }
+
+
+        .sky-cloud-3 {
+            top: 480px;
+            left: -300px;
+
+            transform: scale(.7);
+
+            animation-duration: 65s;
+
+            animation-delay: -40s;
+        }
+
+
+        .sky-cloud-4 {
+            top: 680px;
+            left: -300px;
+
+            transform: scale(1);
+
+            animation-duration: 85s;
+
+            animation-delay: -55s;
+        }
+
+
+        @keyframes cloudMove {
+
+            from {
+                margin-left: -250px;
+            }
+
+            to {
+                margin-left: calc(100vw + 500px);
+            }
+
+        }
+
+
+        /* =========================================================
+           SUN
+        ========================================================== */
+
+        .sky-sun {
+
+            position: absolute;
+
+            z-index: 1;
+
+            top: 95px;
+            right: 8%;
+
+            width: 120px;
+            height: 120px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    #fff4a6 0%,
+                    #ffe26b 55%,
+                    #ffc94f 100%
+                );
+
+            box-shadow:
+                0 0 35px rgba(255,218,80,.65),
+                0 0 90px rgba(255,218,80,.28);
+
+            animation: sunFloat 4s ease-in-out infinite;
+
+            pointer-events: none;
+        }
+
+
+        .sky-sun::before {
+
+            content: "☀";
+
+            position: absolute;
+
+            inset: 0;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 67px;
+
+            color: #fff9c8;
+        }
+
+
+        @keyframes sunFloat {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+
+        }
+
+
+        /* =========================================================
+           RAINBOW
+        ========================================================== */
+
+        .sky-rainbow {
+
+            position: absolute;
+
+            z-index: 1;
+
+            top: 100px;
+            left: 5%;
+
+            width: 330px;
+            height: 180px;
+
+            overflow: hidden;
+
+            opacity: .78;
+
+            pointer-events: none;
+
+            animation: rainbowAppear 2s ease both;
+        }
+
+
+        .rainbow-line {
+
+            position: absolute;
+
+            left: 50%;
+            bottom: -110px;
+
+            transform: translateX(-50%);
+
+            border-radius:
+                50% 50% 0 0;
+
+            border-style: solid;
+
+            border-bottom: 0;
+        }
+
+
+        .rainbow-line-1 {
+
+            width: 330px;
+            height: 330px;
+
+            border-width: 20px;
+
+            border-color: #ff7896;
+        }
+
+
+        .rainbow-line-2 {
+
+            width: 290px;
+            height: 290px;
+
+            border-width: 20px;
+
+            border-color: #ffbd69;
+        }
+
+
+        .rainbow-line-3 {
+
+            width: 250px;
+            height: 250px;
+
+            border-width: 20px;
+
+            border-color: #ffe36b;
+        }
+
+
+        .rainbow-line-4 {
+
+            width: 210px;
+            height: 210px;
+
+            border-width: 20px;
+
+            border-color: #7bd99a;
+        }
+
+
+        .rainbow-line-5 {
+
+            width: 170px;
+            height: 170px;
+
+            border-width: 20px;
+
+            border-color: #70b9ff;
+        }
+
+
+        @keyframes rainbowAppear {
+
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(.9);
+            }
+
+            to {
+                opacity: .78;
+                transform: translateY(0) scale(1);
+            }
+
+        }
+
+
+        /* =========================================================
+           SPARKLES
+        ========================================================== */
+
+        .sparkle-cloud {
+
+            position: absolute;
+
+            z-index: 2;
+
+            color: white;
+
+            font-size: 23px;
+
+            text-shadow:
+                0 0 12px rgba(255,255,255,.9);
+
+            animation:
+                sparkleFloat 3s ease-in-out infinite,
+                sparkleBlink 2s ease-in-out infinite;
+
+            pointer-events: none;
+        }
+
+
+        .sparkle-1 {
+            top: 190px;
+            left: 42%;
+
+            animation-delay: -.4s;
+        }
+
+
+        .sparkle-2 {
+            top: 350px;
+            right: 16%;
+
+            font-size: 17px;
+
+            animation-delay: -1s;
+        }
+
+
+        .sparkle-3 {
+            top: 520px;
+            left: 14%;
+
+            font-size: 18px;
+
+            animation-delay: -1.8s;
+        }
+
+
+        .sparkle-4 {
+            top: 610px;
+            right: 35%;
+
+            font-size: 14px;
+
+            animation-delay: -.8s;
+        }
+
+
+        @keyframes sparkleFloat {
+
+            0%,
+            100% {
+                transform:
+                    translateY(0)
+                    rotate(0deg);
+            }
+
+            50% {
+                transform:
+                    translateY(-14px)
+                    rotate(12deg);
+            }
+
+        }
+
+
+        @keyframes sparkleBlink {
+
+            0%,
+            100% {
+                opacity: .35;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+        }
+
+
+        /* =========================================================
+           HERO
+        ========================================================== */
+
+        .cloud-gallery-hero {
+
+            position: relative;
+
+            z-index: 5;
+
+            padding:
+                95px
+                20px
+                35px;
+
+            text-align: center;
+        }
+
+
+        .cloud-gallery-badge {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding:
+                10px
+                20px;
+
+            border-radius: 999px;
+
+            background:
+                rgba(255,255,255,.8);
+
+            border:
+                1px solid
+                rgba(255,255,255,.9);
+
+            box-shadow:
+                0 10px 30px
+                rgba(49,126,160,.13);
+
+            color: #3285ad;
+
+            font-size: 13px;
+
+            font-weight: 800;
+
+            letter-spacing: .8px;
+
+            animation:
+                heroDown .8s ease both;
+        }
+
+
+        .cloud-gallery-hero h1 {
+
+            margin:
+                18px
+                0
+                8px;
+
+            color: #215a80;
+
+            font-size:
+                clamp(
+                    44px,
+                    7vw,
+                    78px
+                );
+
+            line-height: .95;
+
+            font-weight: 900;
+
+            text-shadow:
+                0 5px 0
+                rgba(255,255,255,.75),
+                0 15px 35px
+                rgba(39,101,136,.12);
+
+            animation:
+                heroDown .9s ease both;
+
+            animation-delay: .15s;
+        }
+
+
+        .cloud-gallery-hero h1 span {
+
+            display: block;
+
+            color: #ff7193;
+
+            animation:
+                titleFloat
+                4s
+                ease-in-out
+                infinite;
+        }
+
+
+        .cloud-gallery-hero p {
+
+            max-width: 650px;
+
+            margin:
+                20px
+                auto
+                0;
+
+            color: #4d7790;
+
+            font-size: 17px;
+
+            line-height: 1.7;
+
+            animation:
+                heroDown 1s ease both;
+
+            animation-delay: .3s;
+        }
+
+
+        @keyframes heroDown {
+
+            from {
+                opacity: 0;
+                transform: translateY(-25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+
+        @keyframes titleFloat {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-5px);
+            }
+
+        }
+
+
+        /* =========================================================
+           GALLERY BOARD
+        ========================================================== */
+
+        .cloud-gallery-wrapper {
+
+            position: relative;
+
+            z-index: 5;
+
+            width:
+                min(
+                    1180px,
+                    calc(100% - 30px)
+                );
+
+            margin:
+                0 auto;
+
+            padding:
+                25px
+                0
+                110px;
+        }
+
+
+        .cloud-gallery-board {
+
+            position: relative;
+
+            min-height: 600px;
+
+            padding:
+                60px 50px
+                80px;
+
+            border-radius: 48px;
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .62
+                );
+
+            border:
+                2px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .8
+                );
+
+            box-shadow:
+                0 30px 90px
+                rgba(35,111,149,.15);
+
+            backdrop-filter:
+                blur(15px);
+
+            animation:
+                boardAppear
+                1s
+                ease both;
+
+            animation-delay: .3s;
+        }
+
+
+        @keyframes boardAppear {
+
+            from {
+                opacity: 0;
+                transform:
+                    translateY(35px)
+                    scale(.97);
+            }
+
+            to {
+                opacity: 1;
+                transform:
+                    translateY(0)
+                    scale(1);
+            }
+
+        }
+
+
+        /* =========================================================
+           MINI CLOUD DECORATIONS
+        ========================================================== */
+
+        .mini-cloud {
+
+            position: absolute;
+
+            width: 125px;
+            height: 38px;
+
+            background: white;
+
+            border-radius: 50px;
+
+            opacity: .85;
+
+            pointer-events: none;
+        }
+
+
+        .mini-cloud::before,
+        .mini-cloud::after {
+
+            content: "";
+
+            position: absolute;
+
+            background: white;
+
+            border-radius: 50%;
+        }
+
+
+        .mini-cloud::before {
+
+            width: 55px;
+            height: 55px;
+
+            left: 18px;
+            bottom: 5px;
+        }
+
+
+        .mini-cloud::after {
+
+            width: 65px;
+            height: 65px;
+
+            right: 15px;
+            bottom: 3px;
+        }
+
+
+        .mini-cloud-1 {
+
+            top: 25px;
+            right: 55px;
+
+            animation:
+                miniCloudFloat
+                5s
+                ease-in-out
+                infinite;
+        }
+
+
+        .mini-cloud-2 {
+
+            bottom: 30px;
+            left: 40px;
+
+            transform: scale(.75);
+
+            animation:
+                miniCloudFloat
+                6s
+                ease-in-out
+                infinite;
+
+            animation-delay: -2s;
+        }
+
+
+        @keyframes miniCloudFloat {
+
+            0%,
+            100% {
+                transform:
+                    translateY(0)
+                    scale(1);
+            }
+
+            50% {
+                transform:
+                    translateY(-9px)
+                    scale(1.03);
+            }
+
+        }
+
+
+        /* =========================================================
+           PHOTO GRID
+        ========================================================== */
+
+        .cloud-photo-grid {
+
+            position: relative;
+
+            z-index: 5;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap:
+                65px
+                38px;
+
+            align-items: start;
+        }
+
+
+        /* =========================================================
+           POLAROID
+        ========================================================== */
+
+        .cloud-photo-card {
+
+            position: relative;
+
+            width: 100%;
+
+            padding:
+                13px
+                13px
+                20px;
+
+            background: #fff;
+
+            border-radius: 5px;
+
+            box-shadow:
+                0 18px 35px
+                rgba(30,90,120,.14),
+                0 4px 10px
+                rgba(30,90,120,.08);
+
+            cursor: pointer;
+
+            transform:
+                rotate(var(--rotate))
+                translateY(35px);
+
+            opacity: 0;
+
+            animation:
+                photoEnter
+                .8s
+                cubic-bezier(
+                    .2,
+                    .8,
+                    .2,
+                    1
+                )
+                forwards;
+
+            transition:
+                transform
+                .45s
+                cubic-bezier(
+                    .2,
+                    .8,
+                    .2,
+                    1
+                ),
+                box-shadow
+                .45s ease;
+        }
+
+
+        .cloud-photo-card:nth-child(1) {
+            --rotate: -3deg;
+            animation-delay: .15s;
+        }
+
+
+        .cloud-photo-card:nth-child(2) {
+            --rotate: 2.5deg;
+            animation-delay: .3s;
+        }
+
+
+        .cloud-photo-card:nth-child(3) {
+            --rotate: -2deg;
+            animation-delay: .45s;
+        }
+
+
+        .cloud-photo-card:nth-child(4) {
+            --rotate: 3deg;
+            animation-delay: .6s;
+        }
+
+
+        .cloud-photo-card:nth-child(5) {
+            --rotate: -2.5deg;
+            animation-delay: .75s;
+        }
+
+
+        .cloud-photo-card:nth-child(6) {
+            --rotate: 1.5deg;
+            animation-delay: .9s;
+        }
+
+
+        .cloud-photo-card:nth-child(7) {
+            --rotate: -1.5deg;
+            animation-delay: 1.05s;
+        }
+
+
+        .cloud-photo-card:nth-child(8) {
+            --rotate: 2deg;
+            animation-delay: 1.2s;
+        }
+
+
+        .cloud-photo-card:nth-child(9) {
+            --rotate: -3deg;
+            animation-delay: 1.35s;
+        }
+
+
+        @keyframes photoEnter {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    rotate(var(--rotate))
+                    translateY(60px)
+                    scale(.92);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    rotate(var(--rotate))
+                    translateY(0)
+                    scale(1);
+            }
+
+        }
+
+
+        .cloud-photo-card:hover {
+
+            z-index: 50;
+
+            transform:
+                translateY(-20px)
+                rotate(0deg)
+                scale(1.045);
+
+            box-shadow:
+                0 38px 65px
+                rgba(30,90,120,.24),
+                0 8px 20px
+                rgba(30,90,120,.1);
+        }
+
+
+        /* =========================================================
+           PIN
+        ========================================================== */
+
+        .cloud-photo-pin {
+
+            position: absolute;
+
+            z-index: 8;
+
+            top: -18px;
+
+            left: 50%;
+
+            width: 30px;
+            height: 30px;
+
+            transform:
+                translateX(-50%);
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff8ca5,
+                    #ff658b
+                );
+
+            border:
+                4px solid white;
+
+            box-shadow:
+                0 5px 15px
+                rgba(50,90,120,.2);
+
+            animation:
+                pinBounce
+                3s
+                ease-in-out
+                infinite;
+        }
+
+
+        .cloud-photo-pin::after {
+
+            content: "";
+
+            position: absolute;
+
+            top: 100%;
+            left: 50%;
+
+            width: 2px;
+            height: 28px;
+
+            transform:
+                translateX(-50%);
+
+            background:
+                #d6bca5;
+        }
+
+
+        @keyframes pinBounce {
+
+            0%,
+            100% {
+                margin-top: 0;
+            }
+
+            50% {
+                margin-top: -3px;
+            }
+
+        }
+
+
+        /* =========================================================
+           PHOTO
+        ========================================================== */
+
+        .cloud-photo-image {
+
+            position: relative;
+
+            overflow: hidden;
+
+            aspect-ratio: 4 / 3;
+
+            background:
+                #e9f8ff;
+        }
+
+
+        .cloud-photo-image img {
+
+            display: block;
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition:
+                transform
+                .7s
+                cubic-bezier(
+                    .2,
+                    .8,
+                    .2,
+                    1
+                );
+        }
+
+
+        .cloud-photo-card:hover
+        .cloud-photo-image img {
+
+            transform:
+                scale(1.09);
+        }
+
+
+        /* =========================================================
+           LIGHT SWEEP
+        ========================================================== */
+
+        .cloud-photo-shine {
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    115deg,
+                    transparent 25%,
+                    rgba(255,255,255,.55) 48%,
+                    transparent 68%
+                );
+
+            transform:
+                translateX(-130%);
+
+            transition:
+                transform
+                .8s
+                ease;
+
+            pointer-events: none;
+        }
+
+
+        .cloud-photo-card:hover
+        .cloud-photo-shine {
+
+            transform:
+                translateX(130%);
+        }
+
+
+        /* =========================================================
+           PHOTO INFO
+        ========================================================== */
+
+        .cloud-photo-info {
+
+            padding:
+                15px
+                7px
+                2px;
+
+            text-align: center;
+        }
+
+
+        .cloud-photo-info h3 {
+
+            margin:
+                0 0 6px;
+
+            color: #31536a;
+
+            font-size: 17px;
+
+            line-height: 1.35;
+
+            font-weight: 800;
+        }
+
+
+        .cloud-photo-info span {
+
+            color: #94aab8;
+
+            font-size: 12px;
+        }
+
+
+        /* =========================================================
+           LOADING
+        ========================================================== */
+
+        .cloud-loading {
+
+            min-height: 400px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 15px;
+
+            color: #64869b;
+        }
+
+
+        .cloud-loading-icon {
+
+            font-size: 55px;
+
+            animation:
+                loadingCloud
+                1.5s
+                ease-in-out
+                infinite;
+        }
+
+
+        @keyframes loadingCloud {
+
+            0%,
+            100% {
+                transform:
+                    translateY(0)
+                    scale(1);
+            }
+
+            50% {
+                transform:
+                    translateY(-15px)
+                    scale(1.08);
+            }
+
+        }
+
+
+        /* =========================================================
+           EMPTY
+        ========================================================== */
+
+        .cloud-empty {
+
+            min-height: 400px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            color: #6d8999;
+        }
+
+
+        .cloud-empty-icon {
+
+            font-size: 65px;
+
+            margin-bottom: 15px;
+
+            animation:
+                emptyFloat
+                3s
+                ease-in-out
+                infinite;
+        }
+
+
+        .cloud-empty h3 {
+
+            margin:
+                0 0 8px;
+
+            color: #31536a;
+
+            font-size: 24px;
+        }
+
+
+        .cloud-empty p {
+            margin: 0;
+        }
+
+
+        @keyframes emptyFloat {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+
+        }
+
+
+        /* =========================================================
+           LIGHTBOX
+        ========================================================== */
+
+        .cloud-lightbox {
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 99999;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 30px;
+
+            background:
+                rgba(
+                    18,
+                    55,
+                    78,
+                    .95
+                );
+
+            backdrop-filter:
+                blur(13px);
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            pointer-events: none;
+
+            transition:
+                opacity .3s ease,
+                visibility .3s ease;
+        }
+
+
+        .cloud-lightbox.active {
+
+            opacity: 1;
+
+            visibility: visible;
+
+            pointer-events: auto;
+        }
+
+
+        .cloud-lightbox-content {
+
+            position: relative;
+
+            max-width: 92vw;
+            max-height: 90vh;
+
+            text-align: center;
+
+            animation:
+                lightboxOpen
+                .4s
+                ease;
+        }
+
+
+        @keyframes lightboxOpen {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    scale(.82)
+                    translateY(25px);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    scale(1)
+                    translateY(0);
+            }
+
+        }
+
+
+        .cloud-lightbox-content img {
+
+            display: block;
+
+            max-width: 88vw;
+
+            max-height: 75vh;
+
+            object-fit: contain;
+
+            padding: 8px;
+
+            background: white;
+
+            border-radius: 5px;
+
+            box-shadow:
+                0 35px 100px
+                rgba(0,0,0,.45);
+        }
+
+
+        .cloud-lightbox-caption {
+
+            margin-top: 15px;
+
+            color: white;
+        }
+
+
+        .cloud-lightbox-caption strong {
+
+            display: block;
+
+            font-size: 21px;
+
+            margin-bottom: 5px;
+        }
+
+
+        .cloud-lightbox-caption span {
+
+            font-size: 13px;
+
+            opacity: .7;
+        }
+
+
+        .cloud-lightbox-close,
+        .cloud-lightbox-prev,
+        .cloud-lightbox-next {
+
+            position: fixed;
+
+            z-index: 100001;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border: 0;
+
+            cursor: pointer;
+
+            color: white;
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .15
+                );
+
+            backdrop-filter:
+                blur(8px);
+
+            transition:
+                .25s ease;
+        }
+
+
+        .cloud-lightbox-close:hover,
+        .cloud-lightbox-prev:hover,
+        .cloud-lightbox-next:hover {
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .3
+                );
+
+            transform:
+                scale(1.08);
+        }
+
+
+        .cloud-lightbox-close {
+
+            top: 25px;
+            right: 25px;
+
+            width: 50px;
+            height: 50px;
+
+            border-radius: 50%;
+
+            font-size: 23px;
+        }
+
+
+        .cloud-lightbox-prev,
+        .cloud-lightbox-next {
+
+            top: 50%;
+
+            width: 55px;
+            height: 55px;
+
+            border-radius: 50%;
+
+            font-size: 22px;
+        }
+
+
+        .cloud-lightbox-prev {
+            left: 25px;
+        }
+
+
+        .cloud-lightbox-next {
+            right: 25px;
+        }
+
+
+        body.cloud-lightbox-open {
+            overflow: hidden;
+        }
+
+
+        /* =========================================================
+           MOBILE
+        ========================================================== */
+
+        @media (max-width: 900px) {
+
+            .cloud-photo-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+                gap:
+                    55px
+                    25px;
+            }
+
+
+            .cloud-gallery-board {
+
+                padding:
+                    45px
+                    25px
+                    70px;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .cloud-gallery-hero {
+
+                padding-top: 65px;
+            }
+
+
+            .cloud-gallery-hero h1 {
+
+                font-size: 48px;
+            }
+
+
+            .cloud-gallery-hero p {
+
+                font-size: 14px;
+
+                padding:
+                    0 12px;
+            }
+
+
+            .cloud-gallery-wrapper {
+
+                width:
+                    calc(100% - 16px);
+            }
+
+
+            .cloud-gallery-board {
+
+                padding:
+                    40px
+                    10px
+                    60px;
+
+                border-radius: 30px;
+            }
+
+
+            .cloud-photo-grid {
+
+                grid-template-columns: 1fr;
+
+                gap: 50px;
+
+                padding:
+                    0 12px;
+            }
+
+
+            .cloud-photo-card {
+
+                width: 100%;
+
+                max-width: 390px;
+
+                margin:
+                    0 auto;
+            }
+
+
+            .sky-rainbow {
+
+                left: -100px;
+
+                transform:
+                    scale(.55);
+
+                transform-origin:
+                    top left;
+            }
+
+
+            .sky-sun {
+
+                top: 85px;
+                right: -20px;
+
+                transform:
+                    scale(.55);
+            }
+
+
+            .cloud-lightbox {
+
+                padding: 15px;
+            }
+
+
+            .cloud-lightbox-content img {
+
+                max-width: 92vw;
+
+                max-height: 70vh;
+
+                padding: 5px;
+            }
+
+
+            .cloud-lightbox-prev,
+            .cloud-lightbox-next {
+
+                width: 44px;
+                height: 44px;
+            }
+
+
+            .cloud-lightbox-prev {
+                left: 8px;
+            }
+
+
+            .cloud-lightbox-next {
+                right: 8px;
+            }
+
+
+            .cloud-lightbox-close {
+
+                top: 12px;
+                right: 12px;
+
+                width: 44px;
+                height: 44px;
+            }
+
+        }
+
+    
+
+        /* =========================================================
+           FIX NAVBAR GALLERY - MENU TETAP HORIZONTAL
+           Hanya memperbaiki navbar, bagian lain tidak diubah
+        ========================================================== */
+
+        .navbar {
+            width: 100%;
+            position: relative;
+            z-index: 9999;
+        }
+
+        .navbar .nav-container {
+            width: 100%;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            box-sizing: border-box !important;
+        }
+
+        .navbar .rainbow-menu {
+            width: 100% !important;
+            max-width: 100% !important;
+            display: flex !important;
+            flex-direction: row !important;
+            flex-wrap: nowrap !important;
+            align-items: center !important;
+            justify-content: flex-start !important;
+            gap: 8px !important;
+            margin: 12px 0 !important;
+            padding: 12px 16px !important;
+            box-sizing: border-box !important;
+            overflow-x: auto !important;
+            overflow-y: hidden !important;
+            white-space: nowrap !important;
+            scrollbar-width: none !important;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .navbar .rainbow-menu::-webkit-scrollbar {
+            display: none !important;
+        }
+
+        .navbar .rainbow-menu .rainbow-item {
+            display: flex !important;
+            flex: 0 0 auto !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: center !important;
+            width: auto !important;
+            min-width: 105px !important;
+            max-width: none !important;
+            height: 70px !important;
+            margin: 0 !important;
+            box-sizing: border-box !important;
+            white-space: nowrap !important;
+        }
+
+        @media (max-width: 900px) {
+            .navbar .rainbow-menu {
+                flex-direction: row !important;
+                flex-wrap: nowrap !important;
+                overflow-x: auto !important;
+            }
+
+            .navbar .rainbow-menu .rainbow-item {
+                min-width: 90px !important;
+                height: 65px !important;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .navbar .rainbow-menu {
+                flex-direction: row !important;
+                flex-wrap: nowrap !important;
+                padding: 10px !important;
+            }
+
+            .navbar .rainbow-menu .rainbow-item {
+                flex: 0 0 82px !important;
+                min-width: 82px !important;
+                width: 82px !important;
+                height: 62px !important;
+            }
+        }
+</style>
+
+</head>
+
+
+<body data-page="gallery">
+
+
+    <!-- =========================================================
+         NAVBAR
+    ========================================================== -->
+
+    <nav class="navbar">
+
+        <div class="nav-container">
+
+
+            <a href="index.html" class="logo">
+
+                <span class="logo-icon">
+                    ☀️
+                </span>
+
+                <span>
+
+                    <strong>
+                        Ra Miftahul Hikmah
+                    </strong>
+
+                    <small>
+                        Tangerang 💗
+                    </small>
+
+                </span>
+
+            </a>
+
+
+            <div class="rainbow-menu">
+
+
+                <a
+                    href="index.html"
+                    class="rainbow-item pink"
+                >
+                    <span class="rainbow-icon">
+                        🏠
+                    </span>
+
+                    <span class="rainbow-text">
+                        HOME
+                    </span>
+
+                    <span class="sparkle">
+                        ✦
+                    </span>
+                </a>
+
+
+                <a
+                    href="about.html"
+                    class="rainbow-item blue"
+                >
+                    <span class="rainbow-icon">
+                        🌱
+                    </span>
+
+                    <span class="rainbow-text">
+                        ABOUT
+                    </span>
+
+                    <span class="sparkle">
+                        ✦
+                    </span>
+                </a>
+
+
+                <a
+                    href="programs.html"
+                    class="rainbow-item green"
+                >
+                    <span class="rainbow-icon">
+                        🎨
+                    </span>
+
+                    <span class="rainbow-text">
+                        PROGRAMS
+                    </span>
+
+                    <span class="sparkle">
+                        ✦
+                    </span>
+                </a>
+
+
+                <a
+                    href="classes.html"
+                    class="rainbow-item yellow"
+                >
+                    <span class="rainbow-icon">
+                        🧸
+                    </span>
+
+                    <span class="rainbow-text">
+                        CLASSES
+                    </span>
+
+                    <span class="sparkle">
+                        ✦
+                    </span>
+                </a>
+
+
+                <a
+                    href="blog.html"
+                    class="rainbow-item orange"
+                >
+                    <span class="rainbow-icon">
+                        📝
+                    </span>
+
+                    <span class="rainbow-text">
+                        BLOG
+                    </span>
+
+                    <span class="sparkle">
+                        ✦
+                    </span>
+                </a>
+
+
+                <a
+                    href="gallery.html"
+                    class="rainbow-item purple active"
+                >
+                    <span class="rainbow-icon">
+                        📸
+                    </span>
+
+                    <span class="rainbow-text">
+                        GALLERY
+                    </span>
+
+                    <span class="sparkle">
+                        ✦
+                    </span>
+                </a>
+
+
+                <a
+                    href="parents.html"
+                    class="rainbow-item pink2"
+                >
+                    <span class="rainbow-icon">
+                        👨‍👩‍👧
+                    </span>
+
+                    <span class="rainbow-text">
+                        PARENTS
+                    </span>
+
+                    <span class="sparkle">
+                        ✦
+                    </span>
+                </a>
+
+
+                <a
+                    href="contact.html"
+                    class="rainbow-item blue2"
+                >
+                    <span class="rainbow-icon">
+                        📞
+                    </span>
+
+                    <span class="rainbow-text">
+                        CONTACT
+                    </span>
+
+                    <span class="sparkle">
+                        ✦
+                    </span>
+                </a>
+
+
+                <a
+                    href="login.html"
+                    class="rainbow-item login-menu"
+                >
+                    <span class="rainbow-icon">
+                        🔐
+                    </span>
+
+                    <span class="rainbow-text">
+                        LOGIN
+                    </span>
+
+                    <span class="sparkle">
+                        ✦
+                    </span>
+                </a>
+
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =========================================================
+         CLOUD GALLERY
+    ========================================================== -->
+
+    <main class="cloud-gallery-page">
+
+
+        <!-- SKY -->
+
+        <div class="sky-cloud sky-cloud-1"></div>
+
+        <div class="sky-cloud sky-cloud-2"></div>
+
+        <div class="sky-cloud sky-cloud-3"></div>
+
+        <div class="sky-cloud sky-cloud-4"></div>
+
+
+        <!-- SUN -->
+
+        <div class="sky-sun"></div>
+
+
+        <!-- RAINBOW -->
+
+        <div class="sky-rainbow">
+
+            <div class="rainbow-line rainbow-line-1"></div>
+
+            <div class="rainbow-line rainbow-line-2"></div>
+
+            <div class="rainbow-line rainbow-line-3"></div>
+
+            <div class="rainbow-line rainbow-line-4"></div>
+
+            <div class="rainbow-line rainbow-line-5"></div>
+
+        </div>
+
+
+        <!-- SPARKLES -->
+
+        <div class="sparkle-cloud sparkle-1">
+            ✦
+        </div>
+
+        <div class="sparkle-cloud sparkle-2">
+            ✨
+        </div>
+
+        <div class="sparkle-cloud sparkle-3">
+            ✦
+        </div>
+
+        <div class="sparkle-cloud sparkle-4">
+            ✧
+        </div>
+
+
+        <!-- HERO -->
+
+        <section class="cloud-gallery-hero">
+
+            <div class="cloud-gallery-badge">
+
+                ☁️
+                OUR SCHOOL MEMORIES
+                ✨
+
+            </div>
+
+
+            <h1>
+
+                Happy
+
+                <span>
+                    Moments
+                </span>
+
+            </h1>
+
+
+            <p>
+
+                Setiap senyum memiliki cerita.
+                Setiap kegiatan menjadi kenangan.
+                Mari lihat momen indah
+                RA Miftahul Hikmah 💕
+
+            </p>
+
+        </section>
+
+
+        <!-- GALLERY -->
+
+        <section class="cloud-gallery-wrapper">
+
+
+            <div class="cloud-gallery-board">
+
+
+                <div
+                    class="mini-cloud mini-cloud-1"
+                ></div>
+
+
+                <div
+                    class="mini-cloud mini-cloud-2"
+                ></div>
+
+
+                <div id="postsContainer">
+
+                    <div class="cloud-loading">
+
+                        <div class="cloud-loading-icon">
+                            ☁️
+                        </div>
+
+                        <strong>
+                            Sedang mengambil kenangan...
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =========================================================
+         LIGHTBOX
+    ========================================================== -->
+
+    <div
+        id="galleryLightbox"
+        class="cloud-lightbox"
+    >
+
+
+        <button
+            type="button"
+            id="galleryClose"
+            class="cloud-lightbox-close"
+        >
+            ✕
+        </button>
+
+
+        <button
+            type="button"
+            id="galleryPrev"
+            class="cloud-lightbox-prev"
+        >
+            ←
+        </button>
+
+
+        <div class="cloud-lightbox-content">
+
+
+            <img
+                id="galleryLightboxImage"
+                src=""
+                alt="Foto gallery"
+            >
+
+
+            <div class="cloud-lightbox-caption">
+
+                <strong
+                    id="galleryLightboxTitle"
+                >
+                    Kenangan
+                </strong>
+
+
+                <span
+                    id="galleryLightboxDate"
+                ></span>
+
+            </div>
+
+
+        </div>
+
+
+        <button
+            type="button"
+            id="galleryNext"
+            class="cloud-lightbox-next"
+        >
+            →
+        </button>
+
+
+    </div>
+
+
+    <!-- =========================================================
+         SCRIPT
+    ========================================================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="js/script.js"></script>
+
+    <script src="js/posts.js"></script>
+
+
+</body>
+
+</html>

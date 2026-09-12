@@ -1,0 +1,2084 @@
+<!DOCTYPE html>
+
+<html lang="id">
+
+<head>
+
+```
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+    Catatan Anak | RA Miftahul Hikmah
+</title>
+
+
+<link
+    rel="stylesheet"
+    href="css/style.css"
+>
+
+
+<style>
+
+    * {
+        box-sizing: border-box;
+    }
+
+
+    :root {
+
+        --pink:
+            #ef4f82;
+
+        --blue:
+            #31536c;
+
+        --text:
+            #647d89;
+
+        --green:
+            #299654;
+
+        --yellow:
+            #b87a09;
+
+        --red:
+            #d9435e;
+
+    }
+
+
+    body {
+
+        margin:
+            0;
+
+        font-family:
+            Arial,
+            sans-serif;
+
+        background:
+            linear-gradient(
+                135deg,
+                #fff8fb,
+                #f4fbff,
+                #fffaf5
+            );
+
+        color:
+            var(--blue);
+
+    }
+
+
+    /* =========================================
+       PAGE
+    ========================================= */
+
+    .catatan-page {
+
+        max-width:
+            1100px;
+
+        margin:
+            35px auto;
+
+        padding:
+            20px;
+
+    }
+
+
+    /* =========================================
+       ANIMATION
+    ========================================= */
+
+    @keyframes fadeUp {
+
+        from {
+
+            opacity:
+                0;
+
+            transform:
+                translateY(25px);
+
+        }
+
+
+        to {
+
+            opacity:
+                1;
+
+            transform:
+                translateY(0);
+
+        }
+
+    }
+
+
+    /* =========================================
+       HEADER
+    ========================================= */
+
+    .top-card {
+
+        display:
+            flex;
+
+        align-items:
+            center;
+
+        justify-content:
+            space-between;
+
+        gap:
+            20px;
+
+        padding:
+            25px;
+
+        border-radius:
+            28px;
+
+        background:
+            #ffffff;
+
+        box-shadow:
+            0 15px 40px
+            rgba(
+                50,
+                100,
+                130,
+                .10
+            );
+
+        animation:
+            fadeUp .5s ease both;
+
+    }
+
+
+    .title-box {
+
+        display:
+            flex;
+
+        align-items:
+            center;
+
+        gap:
+            16px;
+
+    }
+
+
+    .title-icon {
+
+        width:
+            75px;
+
+        height:
+            75px;
+
+        display:
+            flex;
+
+        align-items:
+            center;
+
+        justify-content:
+            center;
+
+        flex-shrink:
+            0;
+
+        border-radius:
+            24px;
+
+        background:
+            linear-gradient(
+                135deg,
+                #ffe1ec,
+                #fff0f6
+            );
+
+        font-size:
+            38px;
+
+    }
+
+
+    .title-box h1 {
+
+        margin:
+            0;
+
+        color:
+            var(--blue);
+
+        font-size:
+            25px;
+
+        font-weight:
+            900;
+
+    }
+
+
+    .subtitle {
+
+        margin-top:
+            7px;
+
+        color:
+            #81949e;
+
+        font-size:
+            13px;
+
+        line-height:
+            1.6;
+
+    }
+
+
+    .header-action {
+
+        display:
+            flex;
+
+        gap:
+            10px;
+
+        flex-wrap:
+            wrap;
+
+    }
+
+
+    .back-btn,
+    .logout-btn {
+
+        border:
+            none;
+
+        cursor:
+            pointer;
+
+        padding:
+            12px 17px;
+
+        border-radius:
+            14px;
+
+        font-size:
+            13px;
+
+        font-weight:
+            800;
+
+        transition:
+            .25s;
+
+    }
+
+
+    .back-btn {
+
+        background:
+            #eef7fb;
+
+        color:
+            var(--blue);
+
+    }
+
+
+    .logout-btn {
+
+        background:
+            linear-gradient(
+                135deg,
+                #ef4f82,
+                #ff7da5
+            );
+
+        color:
+            #ffffff;
+
+    }
+
+
+    .back-btn:hover,
+    .logout-btn:hover {
+
+        transform:
+            translateY(-3px);
+
+    }
+
+
+    /* =========================================
+       CONTENT
+    ========================================= */
+
+    .content-panel {
+
+        margin-top:
+            25px;
+
+        padding:
+            28px;
+
+        border-radius:
+            28px;
+
+        background:
+            #ffffff;
+
+        box-shadow:
+            0 15px 40px
+            rgba(
+                50,
+                100,
+                130,
+                .08
+            );
+
+        animation:
+            fadeUp .7s ease both;
+
+    }
+
+
+    .section-title {
+
+        display:
+            flex;
+
+        align-items:
+            center;
+
+        gap:
+            10px;
+
+        margin:
+            0 0 22px;
+
+        font-size:
+            21px;
+
+        font-weight:
+            900;
+
+        color:
+            var(--blue);
+
+    }
+
+
+    /* =========================================
+       ANAK CARD
+    ========================================= */
+
+    .anak-list {
+
+        display:
+            grid;
+
+        gap:
+            20px;
+
+    }
+
+
+    .anak-card {
+
+        overflow:
+            hidden;
+
+        border-radius:
+            24px;
+
+        background:
+            linear-gradient(
+                135deg,
+                #fffafd,
+                #ffffff
+            );
+
+        border:
+            1px solid
+            rgba(
+                239,
+                79,
+                130,
+                .10
+            );
+
+        transition:
+            .25s;
+
+    }
+
+
+    .anak-card:hover {
+
+        transform:
+            translateY(-4px);
+
+        box-shadow:
+            0 15px 35px
+            rgba(
+                50,
+                100,
+                130,
+                .08
+            );
+
+    }
+
+
+    .anak-header {
+
+        display:
+            flex;
+
+        align-items:
+            center;
+
+        justify-content:
+            space-between;
+
+        gap:
+            15px;
+
+        padding:
+            20px;
+
+        background:
+            linear-gradient(
+                135deg,
+                #fff1f6,
+                #f6fbff
+            );
+
+        border-bottom:
+            1px solid
+            rgba(
+                239,
+                79,
+                130,
+                .08
+            );
+
+    }
+
+
+    .anak-profile {
+
+        display:
+            flex;
+
+        align-items:
+            center;
+
+        gap:
+            14px;
+
+    }
+
+
+    .anak-avatar {
+
+        width:
+            58px;
+
+        height:
+            58px;
+
+        display:
+            flex;
+
+        align-items:
+            center;
+
+        justify-content:
+            center;
+
+        flex-shrink:
+            0;
+
+        border-radius:
+            18px;
+
+        background:
+            #ffffff;
+
+        font-size:
+            28px;
+
+        box-shadow:
+            0 8px 20px
+            rgba(
+                239,
+                79,
+                130,
+                .10
+            );
+
+    }
+
+
+    .anak-name {
+
+        color:
+            var(--blue);
+
+        font-size:
+            17px;
+
+        font-weight:
+            900;
+
+    }
+
+
+    .anak-kelas {
+
+        margin-top:
+            5px;
+
+        color:
+            #81949e;
+
+        font-size:
+            12px;
+
+    }
+
+
+    .catatan-count {
+
+        padding:
+            9px 13px;
+
+        border-radius:
+            20px;
+
+        background:
+            #ffffff;
+
+        color:
+            var(--pink);
+
+        font-size:
+            11px;
+
+        font-weight:
+            900;
+
+        white-space:
+            nowrap;
+
+    }
+
+
+    /* =========================================
+       CATATAN
+    ========================================= */
+
+    .catatan-container {
+
+        display:
+            grid;
+
+        gap:
+            14px;
+
+        padding:
+            20px;
+
+    }
+
+
+    .catatan-item {
+
+        padding:
+            18px;
+
+        border-radius:
+            19px;
+
+        background:
+            #ffffff;
+
+        border:
+            1px solid
+            rgba(
+                80,
+                140,
+                170,
+                .10
+            );
+
+        transition:
+            .25s;
+
+    }
+
+
+    .catatan-item:hover {
+
+        transform:
+            translateY(-3px);
+
+        box-shadow:
+            0 10px 25px
+            rgba(
+                50,
+                100,
+                120,
+                .06
+            );
+
+    }
+
+
+    .catatan-top {
+
+        display:
+            flex;
+
+        align-items:
+            flex-start;
+
+        justify-content:
+            space-between;
+
+        gap:
+            15px;
+
+    }
+
+
+    .catatan-label {
+
+        color:
+            var(--blue);
+
+        font-size:
+            13px;
+
+        font-weight:
+            900;
+
+    }
+
+
+    .catatan-date {
+
+        color:
+            #98a8af;
+
+        font-size:
+            11px;
+
+        white-space:
+            nowrap;
+
+    }
+
+
+    /* =========================================
+       STATUS
+    ========================================= */
+
+    .status-badge {
+
+        display:
+            inline-flex;
+
+        align-items:
+            center;
+
+        gap:
+            6px;
+
+        margin-top:
+            13px;
+
+        padding:
+            8px 13px;
+
+        border-radius:
+            20px;
+
+        font-size:
+            11px;
+
+        font-weight:
+            900;
+
+    }
+
+
+    .status-hijau {
+
+        background:
+            #e8fff0;
+
+        color:
+            var(--green);
+
+    }
+
+
+    .status-kuning {
+
+        background:
+            #fff7d8;
+
+        color:
+            var(--yellow);
+
+    }
+
+
+    .status-merah {
+
+        background:
+            #fff0f2;
+
+        color:
+            var(--red);
+
+    }
+
+
+    /* =========================================
+       CATATAN TEXT
+    ========================================= */
+
+    .catatan-text {
+
+        margin-top:
+            15px;
+
+        padding:
+            15px;
+
+        border-radius:
+            15px;
+
+        background:
+            #f8fcff;
+
+        color:
+            var(--text);
+
+        font-size:
+            13px;
+
+        line-height:
+            1.8;
+
+        white-space:
+            pre-line;
+
+    }
+
+
+    /* =========================================
+       EMPTY
+    ========================================= */
+
+    .empty-box {
+
+        padding:
+            50px 20px;
+
+        text-align:
+            center;
+
+        border-radius:
+            22px;
+
+        background:
+            #f9fcfd;
+
+    }
+
+
+    .empty-icon {
+
+        margin-bottom:
+            15px;
+
+        font-size:
+            50px;
+
+    }
+
+
+    .empty-box h3 {
+
+        margin:
+            0;
+
+        color:
+            var(--blue);
+
+        font-size:
+            17px;
+
+    }
+
+
+    .empty-box p {
+
+        margin:
+            10px 0 0;
+
+        color:
+            #8a9ca5;
+
+        font-size:
+            13px;
+
+        line-height:
+            1.6;
+
+    }
+
+
+    /* =========================================
+       NO CATATAN
+    ========================================= */
+
+    .no-catatan {
+
+        padding:
+            25px;
+
+        text-align:
+            center;
+
+        border-radius:
+            18px;
+
+        background:
+            #f9fcfd;
+
+        color:
+            #81949e;
+
+        font-size:
+            13px;
+
+        line-height:
+            1.7;
+
+    }
+
+
+    /* =========================================
+       LOADING
+    ========================================= */
+
+    .loading {
+
+        padding:
+            50px;
+
+        text-align:
+            center;
+
+        color:
+            #81949e;
+
+        font-size:
+            13px;
+
+    }
+
+
+    /* =========================================
+       RESPONSIVE
+    ========================================= */
+
+    @media (
+        max-width: 700px
+    ) {
+
+        .top-card {
+
+            flex-direction:
+                column;
+
+            align-items:
+                flex-start;
+
+        }
+
+
+        .anak-header {
+
+            flex-direction:
+                column;
+
+            align-items:
+                flex-start;
+
+        }
+
+
+        .catatan-top {
+
+            flex-direction:
+                column;
+
+        }
+
+    }
+
+
+    @media (
+        max-width: 550px
+    ) {
+
+        .catatan-page {
+
+            padding:
+                14px;
+
+            margin:
+                15px auto;
+
+        }
+
+
+        .content-panel {
+
+            padding:
+                20px;
+
+        }
+
+
+        .title-icon {
+
+            width:
+                60px;
+
+            height:
+                60px;
+
+            font-size:
+                30px;
+
+        }
+
+
+        .title-box h1 {
+
+            font-size:
+                20px;
+
+        }
+
+
+        .anak-profile {
+
+            align-items:
+                flex-start;
+
+        }
+
+    }
+
+</style>
+```
+
+</head>
+
+<body>
+
+<div class="catatan-page">
+
+```
+<!-- =====================================
+     HEADER
+====================================== -->
+
+<div class="top-card">
+
+
+    <div class="title-box">
+
+
+        <div class="title-icon">
+
+            📝
+
+        </div>
+
+
+        <div>
+
+
+            <h1>
+
+                Catatan Anak
+
+            </h1>
+
+
+            <div class="subtitle">
+
+                Lihat perkembangan dan
+                catatan guru untuk anak Anda
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+    <div class="header-action">
+
+
+        <button
+            class="back-btn"
+            type="button"
+            onclick="window.location.href='wali.html'"
+        >
+
+            ← Dashboard
+
+        </button>
+
+
+        <button
+            class="logout-btn"
+            id="logoutButton"
+            type="button"
+        >
+
+            🚪 Logout
+
+        </button>
+
+
+    </div>
+
+
+</div>
+
+
+<!-- =====================================
+     CONTENT
+====================================== -->
+
+<div class="content-panel">
+
+
+    <h2 class="section-title">
+
+        📚 Perkembangan Anak
+
+    </h2>
+
+
+    <div
+        class="anak-list"
+        id="anakList"
+    >
+
+
+        <div class="loading">
+
+            ⏳ Memuat data anak
+            dan catatan...
+
+        </div>
+
+
+    </div>
+
+
+</div>
+```
+
+</div>
+
+<!-- =========================================
+     SUPABASE
+========================================= -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+></script>
+
+<script>
+
+
+/* =========================================
+   SUPABASE CONFIG
+========================================= */
+
+const SUPABASE_URL =
+    "https://ervhwjrlqcsobawwhkpf.supabase.co";
+
+
+const SUPABASE_PUBLISHABLE_KEY =
+    "sb_publishable_u48E-Q-RjdFRFLC_Cv3rmg_gD0Z3y2K";
+
+
+const supabaseClient =
+    window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_PUBLISHABLE_KEY
+    );
+
+
+/* =========================================
+   ELEMENT
+========================================= */
+
+const anakList =
+    document.getElementById(
+        "anakList"
+    );
+
+
+const logoutButton =
+    document.getElementById(
+        "logoutButton"
+    );
+
+
+/* =========================================
+   DATA
+========================================= */
+
+let currentUser =
+    null;
+
+
+let dataAnak =
+    [];
+
+
+let dataCatatan =
+    [];
+
+
+/* =========================================
+   ESCAPE HTML
+========================================= */
+
+function escapeHTML(
+    text
+) {
+
+    const div =
+        document.createElement(
+            "div"
+        );
+
+
+    div.textContent =
+        text || "";
+
+
+    return div.innerHTML;
+
+}
+
+
+/* =========================================
+   FORMAT TANGGAL
+========================================= */
+
+function formatTanggal(
+    tanggal
+) {
+
+    if (
+        !tanggal
+    ) {
+
+        return "-";
+
+    }
+
+
+    const date =
+        new Date(
+            tanggal
+        );
+
+
+    return date.toLocaleString(
+        "id-ID",
+        {
+
+            day:
+                "numeric",
+
+            month:
+                "long",
+
+            year:
+                "numeric",
+
+            hour:
+                "2-digit",
+
+            minute:
+                "2-digit"
+
+        }
+    );
+
+}
+
+
+/* =========================================
+   STATUS INFO
+========================================= */
+
+function getStatusInfo(
+    status
+) {
+
+    const value =
+        (
+            status ||
+            ""
+        )
+        .toLowerCase()
+        .trim();
+
+
+    if (
+        value.includes(
+            "baik"
+        )
+    ) {
+
+        return {
+
+            warna:
+                "hijau",
+
+            emoji:
+                "🟢"
+
+        };
+
+    }
+
+
+    if (
+        value.includes(
+            "bimbingan"
+        )
+    ) {
+
+        return {
+
+            warna:
+                "kuning",
+
+            emoji:
+                "🟡"
+
+        };
+
+    }
+
+
+    if (
+        value.includes(
+            "perhatian"
+        )
+    ) {
+
+        return {
+
+            warna:
+                "merah",
+
+            emoji:
+                "🔴"
+
+        };
+
+    }
+
+
+    return {
+
+        warna:
+            "kuning",
+
+        emoji:
+            "⚪"
+
+    };
+
+}
+
+
+/* =========================================
+   CEK LOGIN WALI
+========================================= */
+
+async function cekWali() {
+
+    try {
+
+
+        const {
+            data: {
+                user
+            },
+            error: userError
+        } =
+            await supabaseClient
+            .auth
+            .getUser();
+
+
+        if (
+            userError ||
+            !user
+        ) {
+
+            window.location.href =
+                "login.html";
+
+
+            return false;
+
+        }
+
+
+        currentUser =
+            user;
+
+
+        const {
+            data: profile,
+            error: profileError
+        } =
+            await supabaseClient
+            .from(
+                "profiles"
+            )
+            .select(
+                "full_name, role"
+            )
+            .eq(
+                "id",
+                user.id
+            )
+            .single();
+
+
+        if (
+            profileError ||
+            !profile
+        ) {
+
+            throw new Error(
+                "Profil wali murid tidak ditemukan."
+            );
+
+        }
+
+
+        if (
+            profile.role !==
+            "wali_murid"
+        ) {
+
+            alert(
+                "⛔ Halaman ini hanya untuk wali murid."
+            );
+
+
+            await supabaseClient
+            .auth
+            .signOut();
+
+
+            window.location.href =
+                "login.html";
+
+
+            return false;
+
+        }
+
+
+        return true;
+
+
+    }
+
+    catch (
+        error
+    ) {
+
+        console.error(
+            "CEK WALI ERROR:",
+            error
+        );
+
+
+        alert(
+            "❌ " +
+            error.message
+        );
+
+
+        return false;
+
+    }
+
+}
+
+
+/* =========================================
+   LOAD DATA ANAK
+========================================= */
+
+async function loadAnak() {
+
+    try {
+
+
+        const {
+            data,
+            error
+        } =
+            await supabaseClient
+            .from(
+                "murid"
+            )
+            .select(
+                `
+                id,
+                nama,
+                kelas,
+                wali_id
+                `
+            )
+            .eq(
+                "wali_id",
+                currentUser.id
+            )
+            .order(
+                "nama",
+                {
+                    ascending:
+                        true
+                }
+            );
+
+
+        if (
+            error
+        ) {
+
+            throw error;
+
+        }
+
+
+        dataAnak =
+            data || [];
+
+
+    }
+
+    catch (
+        error
+    ) {
+
+        console.error(
+            "LOAD ANAK ERROR:",
+            error
+        );
+
+
+        throw error;
+
+    }
+
+}
+
+
+/* =========================================
+   LOAD CATATAN
+========================================= */
+
+async function loadCatatan() {
+
+    try {
+
+
+        if (
+            dataAnak.length ===
+            0
+        ) {
+
+            dataCatatan =
+                [];
+
+
+            return;
+
+        }
+
+
+        const daftarIdAnak =
+            dataAnak.map(
+                function(
+                    anak
+                ) {
+
+                    return anak.id;
+
+                }
+            );
+
+
+        const {
+            data,
+            error
+        } =
+            await supabaseClient
+            .from(
+                "catatan_murid"
+            )
+            .select(
+    `
+    id,
+    murid_id,
+    guru_id,
+    perkembangan,
+    isi_catatan,
+    created_at
+    `
+).in(
+                "murid_id",
+                daftarIdAnak
+            )
+            .order(
+                "created_at",
+                {
+                    ascending:
+                        false
+                }
+            );
+
+
+        if (
+            error
+        ) {
+
+            throw error;
+
+        }
+
+
+        dataCatatan =
+            data || [];
+
+
+    }
+
+    catch (
+        error
+    ) {
+
+        console.error(
+            "LOAD CATATAN ERROR:",
+            error
+        );
+
+
+        throw error;
+
+    }
+
+}
+
+
+/* =========================================
+   TAMPILKAN DATA
+========================================= */
+
+function tampilkanData() {
+
+
+    anakList.innerHTML =
+        "";
+
+
+    if (
+        dataAnak.length ===
+        0
+    ) {
+
+
+        anakList.innerHTML =
+            `
+
+            <div class="empty-box">
+
+
+                <div class="empty-icon">
+
+                    👧
+
+                </div>
+
+
+                <h3>
+
+                    Data Anak Belum Ditemukan
+
+                </h3>
+
+
+                <p>
+
+                    Belum ada data murid
+                    yang terhubung dengan
+                    akun wali murid ini.
+
+                    <br><br>
+
+                    Silakan hubungi guru
+                    untuk menghubungkan
+                    akun Anda dengan
+                    data anak.
+
+                </p>
+
+
+            </div>
+
+            `;
+
+
+        return;
+
+    }
+
+
+    dataAnak.forEach(
+        function(
+            anak
+        ) {
+
+
+            const catatanAnak =
+                dataCatatan.filter(
+                    function(
+                        catatan
+                    ) {
+
+                        return (
+                            catatan.murid_id ===
+                            anak.id
+                        );
+
+                    }
+                );
+
+
+            const anakCard =
+                document.createElement(
+                    "div"
+                );
+
+
+            anakCard.className =
+                "anak-card";
+
+
+            let isiCatatan =
+                "";
+
+
+            if (
+                catatanAnak.length ===
+                0
+            ) {
+
+
+                isiCatatan =
+                    `
+
+                    <div class="no-catatan">
+
+                        📝
+
+                        <br><br>
+
+                        Belum ada catatan
+                        dari guru untuk
+                        ${escapeHTML(
+                            anak.nama
+                        )}.
+
+                    </div>
+
+                    `;
+
+
+            }
+
+            else {
+
+
+                catatanAnak.forEach(
+                    function(
+                        catatan
+                    ) {
+
+
+                        const info =
+                            getStatusInfo(
+                                catatan.perkembangan
+                            );
+
+
+                        isiCatatan +=
+                            `
+
+                            <div class="catatan-item">
+
+
+                                <div class="catatan-top">
+
+
+                                    <div>
+
+
+                                        <div class="catatan-label">
+
+                                            📚 Catatan Guru
+
+                                        </div>
+
+
+                                        <div
+                                            class="
+                                            status-badge
+                                            status-${info.warna}
+                                            "
+                                        >
+
+                                            ${info.emoji}
+
+                                            ${escapeHTML(
+                                                catatan.perkembangan ||
+                                                "-"
+                                            )}
+
+                                        </div>
+
+
+                                    </div>
+
+
+                                    <div class="catatan-date">
+
+                                        🕒 ${formatTanggal(
+                                            catatan.created_at
+                                        )}
+
+                                    </div>
+
+
+                                </div>
+
+
+                                <div class="catatan-text">
+
+                                    ${escapeHTML(
+                                        catatan.isi_catatan ||
+                                        "-"
+                                    )}
+
+                                </div>
+
+
+                            </div>
+
+                            `;
+
+                    }
+                );
+
+            }
+
+
+            anakCard.innerHTML =
+                `
+
+                <!-- HEADER ANAK -->
+
+                <div class="anak-header">
+
+
+                    <div class="anak-profile">
+
+
+                        <div class="anak-avatar">
+
+                            👧
+
+                        </div>
+
+
+                        <div>
+
+
+                            <div class="anak-name">
+
+                                ${escapeHTML(
+                                    anak.nama
+                                )}
+
+                            </div>
+
+
+                            <div class="anak-kelas">
+
+                                👥 ${
+                                    escapeHTML(
+                                        anak.kelas ||
+                                        "-"
+                                    )
+                                }
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="catatan-count">
+
+                        📝 ${
+                            catatanAnak.length
+                        } Catatan
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- CATATAN -->
+
+                <div class="catatan-container">
+
+                    ${isiCatatan}
+
+                </div>
+
+                `;
+
+
+            anakList.appendChild(
+                anakCard
+            );
+
+
+        }
+    );
+
+}
+
+
+/* =========================================
+   LOAD SEMUA DATA
+========================================= */
+
+async function loadSemuaData() {
+
+    try {
+
+
+        anakList.innerHTML =
+            `
+
+            <div class="loading">
+
+                ⏳ Memuat data anak
+                dan catatan...
+
+            </div>
+
+            `;
+
+
+        await loadAnak();
+
+
+        await loadCatatan();
+
+
+        tampilkanData();
+
+
+    }
+
+    catch (
+        error
+    ) {
+
+        console.error(
+            "LOAD SEMUA DATA ERROR:",
+            error
+        );
+
+
+        anakList.innerHTML =
+            `
+
+            <div class="empty-box">
+
+
+                <div class="empty-icon">
+
+                    ⚠️
+
+                </div>
+
+
+                <h3>
+
+                    Data Tidak Dapat Dimuat
+
+                </h3>
+
+
+                <p>
+
+                    ${escapeHTML(
+                        error.message
+                    )}
+
+                </p>
+
+
+            </div>
+
+            `;
+
+    }
+
+}
+
+
+/* =========================================
+   LOGOUT
+========================================= */
+
+logoutButton.addEventListener(
+    "click",
+    async function() {
+
+
+        try {
+
+
+            await supabaseClient
+            .auth
+            .signOut();
+
+
+            window.location.href =
+                "login.html";
+
+
+        }
+
+        catch (
+            error
+        ) {
+
+            console.error(
+                "LOGOUT ERROR:",
+                error
+            );
+
+
+            alert(
+                "❌ Logout gagal."
+            );
+
+        }
+
+    }
+);
+
+
+/* =========================================
+   INIT
+========================================= */
+
+async function init() {
+
+
+    const bolehMasuk =
+        await cekWali();
+
+
+    if (
+        !bolehMasuk
+    ) {
+
+        return;
+
+    }
+
+
+    await loadSemuaData();
+
+
+}
+
+
+init();
+
+
+</script>
+
+</body>
+
+</html>
