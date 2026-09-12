@@ -2589,7 +2589,827 @@ body[data-page="about"] button {
     }
 
 }
+/* =====================================================
+   PREMIUM EXTRA ANIMATION
+   TAMBAHAN SAJA - TIDAK MENGUBAH LAYOUT
+===================================================== */
 
+
+/* ================= BACKGROUND BERGERAK ================= */
+
+body[data-page="about"] {
+
+    background-size: 300% 300%;
+
+    animation:
+
+        aboutBackgroundMove
+        18s
+        ease
+        infinite;
+
+}
+
+
+@keyframes aboutBackgroundMove {
+
+    0% {
+
+        background-position:
+            0% 50%;
+
+    }
+
+    50% {
+
+        background-position:
+            100% 50%;
+
+    }
+
+    100% {
+
+        background-position:
+            0% 50%;
+
+    }
+
+}
+
+
+
+/* ================= FLOATING LIGHT EFFECT ================= */
+
+body[data-page="about"] .about-hero {
+
+    isolation: isolate;
+
+}
+
+
+body[data-page="about"] .about-hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+
+    height: 220px;
+
+    border-radius: 50%;
+
+    top: 10%;
+
+    right: -80px;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.8),
+            rgba(255,190,220,.25),
+            transparent 70%
+        );
+
+    filter:
+
+        blur(8px);
+
+    animation:
+
+        premiumLightFloat
+        9s
+        ease-in-out
+        infinite;
+
+    pointer-events: none;
+
+}
+
+
+@keyframes premiumLightFloat {
+
+    0%,
+    100% {
+
+        transform:
+
+            translateY(0)
+            translateX(0)
+            scale(1);
+
+        opacity: .6;
+
+    }
+
+    50% {
+
+        transform:
+
+            translateY(-40px)
+            translateX(-30px)
+            scale(1.2);
+
+        opacity: 1;
+
+    }
+
+}
+
+
+
+/* ================= HERO BADGE FLOAT ================= */
+
+body[data-page="about"] .hero-badge {
+
+    animation:
+
+        heroBadgeFloat
+        4s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes heroBadgeFloat {
+
+    0%,
+    100% {
+
+        transform:
+
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+
+            translateY(-7px);
+
+    }
+
+}
+
+
+
+/* ================= JUDUL HERO GLOW ================= */
+
+body[data-page="about"] .about-hero h2 {
+
+    animation:
+
+        heroTitlePremium
+        5s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes heroTitlePremium {
+
+    0%,
+    100% {
+
+        transform:
+
+            translateY(0)
+            scale(1);
+
+        text-shadow:
+
+            0 0 0
+            rgba(239,79,130,0);
+
+    }
+
+    50% {
+
+        transform:
+
+            translateY(-5px)
+            scale(1.015);
+
+        text-shadow:
+
+            0 12px 30px
+            rgba(239,79,130,.12);
+
+    }
+
+}
+
+
+
+/* ================= IMAGE PREMIUM FLOAT ================= */
+
+body[data-page="about"] .story-image-card {
+
+    animation:
+
+        storyImageFloat
+        6s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes storyImageFloat {
+
+    0%,
+    100% {
+
+        transform:
+
+            translateY(0)
+            rotate(0deg);
+
+    }
+
+    50% {
+
+        transform:
+
+            translateY(-10px)
+            rotate(.4deg);
+
+    }
+
+}
+
+
+
+/* ================= IMAGE SHINE EFFECT ================= */
+
+body[data-page="about"] .story-image-card {
+
+    overflow: hidden;
+
+}
+
+
+body[data-page="about"] .story-image-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: -100%;
+
+    left: -70%;
+
+    width: 50%;
+
+    height: 300%;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.45),
+            transparent
+        );
+
+    transform:
+
+        rotate(25deg);
+
+    animation:
+
+        imageShine
+        7s
+        ease-in-out
+        infinite;
+
+    pointer-events: none;
+
+}
+
+
+@keyframes imageShine {
+
+    0% {
+
+        left: -70%;
+
+        opacity: 0;
+
+    }
+
+    20% {
+
+        opacity: 0;
+
+    }
+
+    45% {
+
+        opacity: 1;
+
+    }
+
+    70% {
+
+        opacity: 0;
+
+    }
+
+    100% {
+
+        left: 140%;
+
+        opacity: 0;
+
+    }
+
+}
+
+
+
+/* ================= VALUE CARD HOVER PREMIUM ================= */
+
+body[data-page="about"] .value-card {
+
+    transition:
+
+        transform .35s ease,
+        box-shadow .35s ease;
+
+}
+
+
+body[data-page="about"] .value-card:hover {
+
+    transform:
+
+        translateY(-10px)
+        scale(1.02);
+
+}
+
+
+/* ICON BERDENYUT HALUS */
+
+body[data-page="about"] .value-icon {
+
+    animation:
+
+        valueIconPulse
+        4s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes valueIconPulse {
+
+    0%,
+    100% {
+
+        transform:
+
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+
+            scale(1.08);
+
+    }
+
+}
+
+
+
+/* ================= CARD GLOW ================= */
+
+body[data-page="about"] .value-card {
+
+    position: relative;
+
+}
+
+
+body[data-page="about"] .value-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: inherit;
+
+    padding: 1px;
+
+    background:
+
+        linear-gradient(
+            120deg,
+            transparent,
+            rgba(255,255,255,.9),
+            transparent
+        );
+
+    opacity: .45;
+
+    pointer-events: none;
+
+}
+
+
+
+/* ================= CTA FLOATING ================= */
+
+body[data-page="about"] .about-cta {
+
+    animation:
+
+        ctaFloat
+        7s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes ctaFloat {
+
+    0%,
+    100% {
+
+        transform:
+
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+
+            translateY(-7px);
+
+    }
+
+}
+
+
+
+/* ================= CTA BUTTON PULSE ================= */
+
+body[data-page="about"] .about-cta .about-btn {
+
+    animation:
+
+        ctaButtonPulse
+        2.5s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes ctaButtonPulse {
+
+    0%,
+    100% {
+
+        box-shadow:
+
+            0 12px 25px
+            rgba(239,79,130,.25);
+
+    }
+
+    50% {
+
+        box-shadow:
+
+            0 15px 40px
+            rgba(239,79,130,.5);
+
+    }
+
+}
+
+
+
+/* ================= NAV ACTIVE ANIMATION ================= */
+
+body[data-page="about"] .about-nav a.active {
+
+    animation:
+
+        activeNavGlow
+        3s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes activeNavGlow {
+
+    0%,
+    100% {
+
+        box-shadow:
+
+            0 8px 20px
+            rgba(125,108,255,.25);
+
+    }
+
+    50% {
+
+        box-shadow:
+
+            0 10px 30px
+            rgba(125,108,255,.5);
+
+    }
+
+}
+
+
+
+/* ================= BUTTON SHINE ================= */
+
+body[data-page="about"] .about-btn {
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+body[data-page="about"] .about-btn::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: -100%;
+
+    width: 60%;
+
+    height: 100%;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.35),
+            transparent
+        );
+
+    transform:
+
+        skewX(-20deg);
+
+    animation:
+
+        buttonShine
+        5s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes buttonShine {
+
+    0% {
+
+        left: -100%;
+
+    }
+
+    45% {
+
+        left: -100%;
+
+    }
+
+    75% {
+
+        left: 160%;
+
+    }
+
+    100% {
+
+        left: 160%;
+
+    }
+
+}
+
+
+
+/* =====================================================
+   MOBILE ANIMATION
+   LEBIH HALUS AGAR TIDAK BERAT DI HP
+===================================================== */
+
+@media (max-width: 768px) {
+
+
+    body[data-page="about"] {
+
+        background-size:
+
+            250% 250%;
+
+    }
+
+
+    body[data-page="about"] .story-image-card {
+
+        animation:
+
+            storyImageFloatMobile
+            6s
+            ease-in-out
+            infinite;
+
+    }
+
+
+    @keyframes storyImageFloatMobile {
+
+        0%,
+        100% {
+
+            transform:
+
+                translateY(0);
+
+        }
+
+        50% {
+
+            transform:
+
+                translateY(-6px);
+
+        }
+
+    }
+
+
+    body[data-page="about"] .value-card {
+
+        animation:
+
+            mobileCardFloat
+            6s
+            ease-in-out
+            infinite;
+
+    }
+
+
+    body[data-page="about"] .value-card:nth-child(2) {
+
+        animation-delay:
+
+            .5s;
+
+    }
+
+
+    body[data-page="about"] .value-card:nth-child(3) {
+
+        animation-delay:
+
+            1s;
+
+    }
+
+
+    body[data-page="about"] .value-card:nth-child(4) {
+
+        animation-delay:
+
+            1.5s;
+
+    }
+
+
+    @keyframes mobileCardFloat {
+
+        0%,
+        100% {
+
+            transform:
+
+                translateY(0);
+
+        }
+
+        50% {
+
+            transform:
+
+                translateY(-4px);
+
+        }
+
+    }
+
+
+    body[data-page="about"] .about-cta {
+
+        animation:
+
+            ctaFloatMobile
+            6s
+            ease-in-out
+            infinite;
+
+    }
+
+
+    @keyframes ctaFloatMobile {
+
+        0%,
+        100% {
+
+            transform:
+
+                translateY(0);
+
+        }
+
+        50% {
+
+            transform:
+
+                translateY(-4px);
+
+        }
+
+    }
+
+
+    /* Kurangi efek berat */
+
+    body[data-page="about"]::before {
+
+        animation-duration:
+
+            16s;
+
+    }
+
+
+    body[data-page="about"]::after {
+
+        animation-duration:
+
+            18s;
+
+    }
+
+}
+
+
+
+/* ================= AKSESIBILITAS ================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    body[data-page="about"] * {
+
+        animation:
+
+            none
+            !important;
+
+        transition:
+
+            none
+            !important;
+
+    }
+
+}
 </style>
 
 </head>
