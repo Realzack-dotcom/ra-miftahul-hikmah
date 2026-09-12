@@ -19,29 +19,54 @@
 <style>
 
 /* =====================================================
-   ABOUT US KHUSUS MOBILE
-   HANYA BERLAKU DI about.html
+   ABOUT US PREMIUM MOBILE DESIGN
+   KHUSUS HALAMAN ABOUT
+   Tidak mengubah halaman lain
 ===================================================== */
 
-body[data-page="about"] {
-    overflow-x: hidden;
-}
 
-
-/* =====================================================
-   ANIMASI
-===================================================== */
+/* ================= ANIMATION ================= */
 
 @keyframes aboutFadeUp {
 
     from {
         opacity: 0;
-        transform: translateY(40px);
+        transform: translateY(35px);
     }
 
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+
+}
+
+
+@keyframes aboutFadeLeft {
+
+    from {
+        opacity: 0;
+        transform: translateX(-35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
+@keyframes aboutFadeRight {
+
+    from {
+        opacity: 0;
+        transform: translateX(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
     }
 
 }
@@ -55,7 +80,44 @@ body[data-page="about"] {
     }
 
     50% {
-        transform: translateY(-12px);
+        transform: translateY(-10px);
+    }
+
+}
+
+
+@keyframes aboutGlow {
+
+    0% {
+        box-shadow:
+            0 0 0 rgba(239,79,130,0);
+    }
+
+    50% {
+        box-shadow:
+            0 15px 35px rgba(239,79,130,.18);
+    }
+
+    100% {
+        box-shadow:
+            0 0 0 rgba(239,79,130,0);
+    }
+
+}
+
+
+@keyframes aboutGradient {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
     }
 
 }
@@ -68,7 +130,7 @@ body[data-page="about"] {
     }
 
     50% {
-        transform: scale(1.04);
+        transform: scale(1.06);
     }
 
     100% {
@@ -78,200 +140,222 @@ body[data-page="about"] {
 }
 
 
-@keyframes aboutGlow {
+@keyframes aboutSparkle {
 
     0% {
-        box-shadow:
-            0 10px 30px rgba(239,79,130,.12);
+        opacity: .3;
+        transform: translateY(0) rotate(0deg);
     }
 
     50% {
-        box-shadow:
-            0 18px 45px rgba(239,79,130,.28);
+        opacity: 1;
     }
 
     100% {
-        box-shadow:
-            0 10px 30px rgba(239,79,130,.12);
+        opacity: .3;
+        transform: translateY(-12px) rotate(20deg);
     }
 
 }
 
 
+
 /* =====================================================
-   TABLET & HP
+   MOBILE
 ===================================================== */
 
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
 
 
-    /* =================================================
-       HEADER
-    ================================================= */
+    /* ================= BODY ================= */
 
-    body[data-page="about"] .head {
+    body[data-page="about"] {
 
-        padding: 14px 15px !important;
+        overflow-x: hidden;
 
-        gap: 10px !important;
+        background:
 
-        width: 100% !important;
+            radial-gradient(
+                circle at top left,
+                rgba(255,221,238,.6),
+                transparent 35%
+            ),
 
-        box-sizing: border-box !important;
+            radial-gradient(
+                circle at bottom right,
+                rgba(220,240,255,.7),
+                transparent 40%
+            );
 
     }
 
 
-    body[data-page="about"] .brand {
+    /* ================= HEADER ================= */
 
-        min-width: 0 !important;
+    body[data-page="about"] .head {
 
-        gap: 8px !important;
+        padding: 14px 16px;
+
+        gap: 10px;
 
     }
 
 
     body[data-page="about"] .brand h1 {
 
-        font-size: 18px !important;
+        font-size: 20px;
 
-        line-height: 1.05 !important;
+        line-height: 1.05;
 
     }
 
 
     body[data-page="about"] .brand p {
 
-        font-size: 11px !important;
+        font-size: 11px;
 
     }
 
 
     body[data-page="about"] .sun {
 
-        font-size: 27px !important;
+        font-size: 29px;
 
         animation:
-            aboutFloat 3s ease-in-out infinite !important;
+            aboutFloat
+            3s
+            ease-in-out
+            infinite;
 
     }
 
 
     body[data-page="about"] .call {
 
-        display: none !important;
+        display: none;
 
     }
 
 
     body[data-page="about"] .head > .btn {
 
+        font-size: 11px;
+
         padding:
-            9px 12px !important;
+            9px
+            12px;
 
-        font-size:
-            11px !important;
+        border-radius: 12px;
 
-        white-space:
-            nowrap !important;
-
-        border-radius:
-            12px !important;
+        white-space: nowrap;
 
     }
 
 
-    /* =================================================
-       NAVBAR MOBILE
-    ================================================= */
+
+    /* ================= NAVBAR ================= */
 
     body[data-page="about"] .rainbow-nav {
 
-        display:
-            flex !important;
+        overflow-x: auto;
 
-        justify-content:
-            flex-start !important;
+        overflow-y: hidden;
 
-        overflow-x:
-            auto !important;
+        -webkit-overflow-scrolling: touch;
 
-        overflow-y:
-            hidden !important;
+        scrollbar-width: none;
 
-        width:
-            100% !important;
+        justify-content: flex-start;
 
-        -webkit-overflow-scrolling:
-            touch !important;
-
-        scrollbar-width:
-            none !important;
-
-        padding:
-            5px 0 !important;
+        padding-bottom: 2px;
 
     }
 
 
     body[data-page="about"] .rainbow-nav::-webkit-scrollbar {
 
-        display:
-            none !important;
+        display: none;
 
     }
 
 
     body[data-page="about"] .rainbow-item {
 
-        flex:
-            0 0 82px !important;
+        flex: 0 0 auto;
 
-        min-width:
-            82px !important;
+        min-width: 80px;
 
         padding:
-            10px 6px !important;
+            10px
+            7px;
 
     }
 
 
     body[data-page="about"] .rainbow-icon {
 
-        font-size:
-            19px !important;
+        font-size: 19px;
+
+        transition:
+            transform
+            .3s
+            ease;
+
+    }
+
+
+    body[data-page="about"] .rainbow-item:active
+    .rainbow-icon {
+
+        transform:
+            scale(1.25)
+            rotate(-8deg);
 
     }
 
 
     body[data-page="about"] .rainbow-text {
 
-        font-size:
-            9px !important;
+        font-size: 9px;
 
     }
 
 
-    /* =================================================
-       HERO ABOUT US
-    ================================================= */
+
+    /* ================= HERO ================= */
 
     body[data-page="about"] .pagehero {
 
+        position: relative;
+
+        overflow: hidden;
+
         padding:
-            55px 18px !important;
+            65px
+            18px
+            70px;
 
-        min-height:
-            auto !important;
+        text-align: center;
 
-        text-align:
-            center !important;
+        background:
 
-        position:
-            relative !important;
+            linear-gradient(
+                120deg,
+                #fff0f6,
+                #f1f8ff,
+                #fff9df,
+                #f3eeff
+            );
 
-        overflow:
-            hidden !important;
+        background-size:
+            300%
+            300%;
+
+        animation:
+            aboutGradient
+            10s
+            ease
+            infinite;
 
     }
 
@@ -279,184 +363,220 @@ body[data-page="about"] {
     body[data-page="about"] .pagehero::before {
 
         content:
-            "🌈";
+            "✦";
 
-        position:
-            absolute;
+        position: absolute;
 
-        font-size:
-            100px;
+        top: 18px;
 
-        opacity:
-            .08;
+        left: 10%;
 
-        top:
-            -20px;
+        font-size: 24px;
 
-        right:
-            -20px;
+        opacity: .5;
 
         animation:
-            aboutFloat 5s ease-in-out infinite;
+            aboutSparkle
+            2.5s
+            ease-in-out
+            infinite
+            alternate;
+
+    }
+
+
+    body[data-page="about"] .pagehero::after {
+
+        content:
+            "🌈";
+
+        position: absolute;
+
+        right: 8%;
+
+        bottom: 12px;
+
+        font-size: 38px;
+
+        opacity: .45;
+
+        animation:
+            aboutFloat
+            4s
+            ease-in-out
+            infinite;
 
     }
 
 
     body[data-page="about"] .pagehero h2 {
 
+        position: relative;
+
+        z-index: 2;
+
         font-size:
-            clamp(34px, 10vw, 48px) !important;
+            clamp(
+                34px,
+                10vw,
+                48px
+            );
 
-        line-height:
-            1.1 !important;
+        line-height: 1.1;
 
-        margin-bottom:
-            14px !important;
+        margin-bottom: 14px;
 
         animation:
-            aboutFadeUp .7s ease both !important;
+
+            aboutFadeUp
+
+            .8s
+
+            ease
+
+            both;
 
     }
 
 
     body[data-page="about"] .pagehero p {
 
-        font-size:
-            15px !important;
+        position: relative;
 
-        line-height:
-            1.7 !important;
+        z-index: 2;
+
+        max-width: 320px;
+
+        margin: auto;
+
+        font-size: 14px;
+
+        line-height: 1.7;
 
         animation:
-            aboutFadeUp .9s ease both !important;
+
+            aboutFadeUp
+
+            .9s
+
+            ease
+
+            .15s
+
+            both;
 
     }
 
 
-    /* =================================================
-       SECTION
-    ================================================= */
+
+    /* ================= SECTION ================= */
 
     body[data-page="about"] .section {
 
-        padding:
-            50px 18px 20px !important;
+        position: relative;
 
-        width:
-            100% !important;
+        padding-top: 55px;
 
-        box-sizing:
-            border-box !important;
+        padding-bottom: 20px;
 
     }
 
 
-    /* =================================================
-       WELCOME
-    ================================================= */
+
+    /* ================= WELCOME ================= */
 
     body[data-page="about"] .welcome {
 
-        display:
-            flex !important;
+        display: flex;
 
-        flex-direction:
-            column !important;
+        flex-direction: column;
 
-        gap:
-            35px !important;
-
-        width:
-            100% !important;
+        gap: 30px;
 
     }
 
 
     body[data-page="about"] .welcome > div {
 
-        width:
-            100% !important;
+        width: 100%;
 
-        min-width:
-            0 !important;
-
-        animation:
-            aboutFadeUp .8s ease both !important;
-
-    }
-
-
-    body[data-page="about"] .welcome > div:nth-child(2) {
-
-        animation-delay:
-            .15s !important;
+        min-width: 0;
 
     }
 
 
     body[data-page="about"] .title {
 
-        font-size:
-            28px !important;
+        font-size: 27px;
 
-        line-height:
-            1.25 !important;
-
-        margin-bottom:
-            15px !important;
+        line-height: 1.25;
 
     }
 
 
-    /* =================================================
-       FOTO
-    ================================================= */
-
     body[data-page="about"] .welcome-img {
 
-        width:
-            100% !important;
+        position: relative;
 
-        max-width:
-            100% !important;
+        width: 100%;
 
         margin:
-            20px auto 0 !important;
+            20px
+            auto
+            0;
 
-        border-radius:
-            24px !important;
+        overflow: hidden;
 
-        overflow:
-            hidden !important;
+        border-radius: 24px;
 
-        position:
-            relative !important;
+        box-shadow:
 
-        animation:
-            aboutGlow 3s ease-in-out infinite !important;
+            0 15px 35px
+
+            rgba(0,0,0,.12);
+
+    }
+
+
+    body[data-page="about"] .welcome-img::after {
+
+        content:
+            "";
+
+        position: absolute;
+
+        inset: 0;
+
+        background:
+
+            linear-gradient(
+                135deg,
+                rgba(255,255,255,.25),
+                transparent
+            );
+
+        pointer-events: none;
 
     }
 
 
     body[data-page="about"] .welcome-img img {
 
-        display:
-            block !important;
+        display: block;
 
-        width:
-            100% !important;
+        width: 100%;
 
-        height:
-            auto !important;
+        height: auto;
 
-        max-width:
-            100% !important;
-
-        object-fit:
-            cover !important;
+        max-width: 100%;
 
         transition:
-            transform .5s ease !important;
+
+            transform
+
+            .7s
+
+            ease;
 
     }
 
@@ -464,163 +584,157 @@ body[data-page="about"] {
     body[data-page="about"] .welcome-img:active img {
 
         transform:
-            scale(1.05) !important;
+            scale(1.05);
 
     }
 
 
-    /* =================================================
-       CERITA
-    ================================================= */
-
     body[data-page="about"] .welcome p {
 
-        font-size:
-            15px !important;
+        font-size: 15px;
 
-        line-height:
-            1.8 !important;
-
-        margin-bottom:
-            16px !important;
+        line-height: 1.8;
 
     }
 
 
     body[data-page="about"] .welcome .btn {
 
-        display:
-            inline-flex !important;
+        display: inline-flex;
 
-        align-items:
-            center !important;
+        align-items: center;
 
-        justify-content:
-            center !important;
+        gap: 8px;
 
-        margin-top:
-            8px !important;
+        margin-top: 8px;
 
-        animation:
-            aboutPulse 2.5s ease-in-out infinite !important;
+        border-radius: 14px;
+
+        transition:
+
+            transform .3s ease,
+
+            box-shadow .3s ease;
 
     }
 
 
-    /* =================================================
-       SECTION TITLE
-    ================================================= */
+    body[data-page="about"] .welcome .btn:active {
+
+        transform:
+            scale(.96);
+
+    }
+
+
+
+    /* ================= SECTION TITLE ================= */
 
     body[data-page="about"] .section-title {
 
-        width:
-            100% !important;
-
-        text-align:
-            center !important;
-
         padding:
-            0 !important;
+            0
+            10px;
 
-        margin-bottom:
-            28px !important;
-
-        animation:
-            aboutFadeUp .7s ease both !important;
+        margin-bottom: 25px;
 
     }
 
 
     body[data-page="about"] .section-title h2 {
 
-        font-size:
-            29px !important;
+        font-size: 29px;
 
-        line-height:
-            1.2 !important;
+        line-height: 1.2;
 
     }
 
 
     body[data-page="about"] .section-title p {
 
-        font-size:
-            14px !important;
+        font-size: 14px;
 
-        line-height:
-            1.7 !important;
+        line-height: 1.7;
 
     }
 
 
-    /* =================================================
-       VALUES
-    ================================================= */
+
+    /* ================= VALUES ================= */
 
     body[data-page="about"] .features {
 
-        display:
-            grid !important;
+        display: grid;
 
         grid-template-columns:
-            1fr !important;
+            1fr;
 
-        gap:
-            18px !important;
-
-        width:
-            100% !important;
+        gap: 16px;
 
     }
 
 
     body[data-page="about"] .feature {
 
-        width:
-            100% !important;
+        position: relative;
 
-        min-width:
-            0 !important;
+        width: 100%;
+
+        min-width: 0;
+
+        box-sizing: border-box;
 
         padding:
-            26px 20px !important;
 
-        box-sizing:
-            border-box !important;
+            25px
 
-        border-radius:
-            22px !important;
+            20px;
 
-        animation:
-            aboutFadeUp .8s ease both !important;
+        overflow: hidden;
+
+        border-radius: 22px;
 
         transition:
-            transform .3s ease,
-            box-shadow .3s ease !important;
+
+            transform .35s ease,
+
+            box-shadow .35s ease;
 
     }
 
 
-    body[data-page="about"] .feature:nth-child(2) {
+    body[data-page="about"] .feature::before {
 
-        animation-delay:
-            .1s !important;
+        content:
+            "";
 
-    }
+        position: absolute;
 
+        top: 0;
 
-    body[data-page="about"] .feature:nth-child(3) {
+        left: 0;
 
-        animation-delay:
-            .2s !important;
+        width: 5px;
 
-    }
+        height: 100%;
 
+        border-radius:
+            5px
+            0
+            0
+            5px;
 
-    body[data-page="about"] .feature:nth-child(4) {
+        background:
 
-        animation-delay:
-            .3s !important;
+            linear-gradient(
+
+                #ff8fb3,
+
+                #ffd45c,
+
+                #80d6ff
+
+            );
 
     }
 
@@ -628,307 +742,378 @@ body[data-page="about"] {
     body[data-page="about"] .feature:active {
 
         transform:
-            scale(.97) !important;
+
+            translateY(-5px)
+
+            scale(.99);
+
+        box-shadow:
+
+            0
+
+            15px
+
+            30px
+
+            rgba(0,0,0,.1);
 
     }
 
 
     body[data-page="about"] .feature .big {
 
-        font-size:
-            45px !important;
+        display: inline-flex;
 
-        margin-bottom:
-            10px !important;
+        align-items: center;
+
+        justify-content: center;
+
+        width: 64px;
+
+        height: 64px;
+
+        margin-bottom: 12px;
+
+        font-size: 35px;
+
+        border-radius: 18px;
+
+        background:
+
+            rgba(255,255,255,.65);
 
         animation:
-            aboutFloat 3s ease-in-out infinite !important;
+
+            aboutFloat
+
+            4s
+
+            ease-in-out
+
+            infinite;
 
     }
 
 
     body[data-page="about"] .feature h3 {
 
-        font-size:
-            21px !important;
+        font-size: 21px;
 
-        margin-bottom:
-            8px !important;
+        margin-bottom: 8px;
 
     }
 
 
     body[data-page="about"] .feature p {
 
-        font-size:
-            14px !important;
+        font-size: 14px;
 
-        line-height:
-            1.7 !important;
+        line-height: 1.7;
 
     }
 
 
-    /* =================================================
-       POSTINGAN
-    ================================================= */
+
+    /* ================= POST COUNTER ================= */
 
     body[data-page="about"] .post-counter {
 
-        width:
-            fit-content !important;
+        display: block;
+
+        width: fit-content;
 
         max-width:
-            100% !important;
+            calc(100% - 20px);
 
         margin:
-            0 auto 22px !important;
+
+            0
+
+            auto
+
+            22px;
 
         padding:
-            10px 16px !important;
 
-        font-size:
-            13px !important;
+            10px
 
-        box-sizing:
-            border-box !important;
+            18px;
 
-        border-radius:
-            15px !important;
+        border-radius: 30px;
+
+        box-sizing: border-box;
+
+        font-size: 13px;
+
+        animation:
+
+            aboutGlow
+
+            3s
+
+            ease-in-out
+
+            infinite;
 
     }
 
+
+
+    /* ================= POSTS ================= */
 
     body[data-page="about"] .posts-grid {
 
-        display:
-            grid !important;
-
         grid-template-columns:
-            1fr !important;
+            1fr;
 
-        gap:
-            18px !important;
-
-        width:
-            100% !important;
+        gap: 18px;
 
     }
 
 
-    /* =================================================
-       CTA
-    ================================================= */
+
+    /* ================= CTA ================= */
 
     body[data-page="about"] .box {
 
-        width:
-            100% !important;
+        position: relative;
+
+        overflow: hidden;
 
         padding:
-            35px 20px !important;
 
-        box-sizing:
-            border-box !important;
+            38px
 
-        border-radius:
-            25px !important;
+            20px;
 
-        text-align:
-            center !important;
+        border-radius: 26px;
+
+        text-align: center;
+
+    }
+
+
+    body[data-page="about"] .box::before {
+
+        content:
+            "✦ ✧ ✦";
+
+        position: absolute;
+
+        top: 15px;
+
+        right: 18px;
+
+        opacity: .25;
+
+        font-size: 18px;
+
+        letter-spacing: 8px;
 
         animation:
-            aboutFadeUp .8s ease both,
-            aboutGlow 3s ease-in-out infinite !important;
+
+            aboutSparkle
+
+            3s
+
+            ease-in-out
+
+            infinite;
 
     }
 
 
     body[data-page="about"] .box .big {
 
-        font-size:
-            48px !important;
+        font-size: 48px;
 
         animation:
-            aboutFloat 3s ease-in-out infinite !important;
+
+            aboutPulse
+
+            2.5s
+
+            ease-in-out
+
+            infinite;
 
     }
 
 
     body[data-page="about"] .box .title {
 
-        font-size:
-            29px !important;
+        font-size: 29px;
 
     }
 
 
     body[data-page="about"] .box p {
 
-        font-size:
-            14px !important;
+        font-size: 14px;
 
-        line-height:
-            1.8 !important;
+        line-height: 1.8;
 
     }
 
 
     body[data-page="about"] .box .btn {
 
-        display:
-            inline-flex !important;
+        display: inline-block;
 
-        justify-content:
-            center !important;
+        max-width: 100%;
 
-        max-width:
-            100% !important;
+        padding:
 
-        box-sizing:
-            border-box !important;
+            13px
 
-        animation:
-            aboutPulse 2.5s ease-in-out infinite !important;
+            22px;
+
+        box-sizing: border-box;
+
+        border-radius: 15px;
+
+        transition:
+
+            transform .3s ease;
+
+    }
+
+
+    body[data-page="about"] .box .btn:active {
+
+        transform:
+
+            scale(.95);
 
     }
 
 
-    /* =================================================
-       FOOTER
-    ================================================= */
 
-    body[data-page="about"] .footer {
-
-        padding-top:
-            45px !important;
-
-        margin-top:
-            30px !important;
-
-    }
-
+    /* ================= FOOTER ================= */
 
     body[data-page="about"] .footgrid {
 
-        display:
-            grid !important;
-
         grid-template-columns:
-            1fr !important;
+            1fr;
 
-        gap:
-            30px !important;
+        gap: 28px;
 
-        text-align:
-            center !important;
+        text-align: center;
 
     }
 
 
-    body[data-page="about"] .footgrid h3 {
+    body[data-page="about"] .footer {
 
-        font-size:
-            20px !important;
+        margin-top: 40px;
 
-    }
-
-
-    body[data-page="about"] .footgrid p {
-
-        font-size:
-            14px !important;
-
-    }
-
-
-    body[data-page="about"] .footgrid a {
-
-        display:
-            block !important;
-
-        margin:
-            8px 0 !important;
-
-        font-size:
-            14px !important;
+        padding-top: 42px;
 
     }
 
 
     body[data-page="about"] .copy {
 
-        text-align:
-            center !important;
+        text-align: center;
 
-        font-size:
-            12px !important;
+        font-size: 12px;
 
         padding:
-            20px 15px !important;
+
+            18px
+
+            15px;
 
     }
 
+
+
+    /* =====================================================
+       SCROLL ANIMATION
+    ===================================================== */
+
+    body[data-page="about"] .reveal {
+
+        opacity: 0;
+
+        transform:
+
+            translateY(35px);
+
+        transition:
+
+            opacity .8s ease,
+
+            transform .8s ease;
+
+    }
+
+
+    body[data-page="about"] .reveal.show {
+
+        opacity: 1;
+
+        transform:
+
+            translateY(0);
+
+    }
+
+
 }
+
 
 
 /* =====================================================
    HP KECIL
 ===================================================== */
 
-@media screen and (max-width: 480px) {
+@media (max-width: 480px) {
 
 
     body[data-page="about"] .head {
 
-        padding:
-            11px !important;
+        padding: 12px;
 
     }
 
 
     body[data-page="about"] .brand h1 {
 
-        font-size:
-            16px !important;
-
-    }
-
-
-    body[data-page="about"] .brand p {
-
-        font-size:
-            10px !important;
+        font-size: 18px;
 
     }
 
 
     body[data-page="about"] .sun {
 
-        font-size:
-            24px !important;
+        font-size: 25px;
 
     }
 
 
     body[data-page="about"] .head > .btn {
 
-        padding:
-            8px 9px !important;
+        font-size: 10px;
 
-        font-size:
-            10px !important;
+        padding:
+
+            8px
+
+            10px;
 
     }
 
 
     body[data-page="about"] .rainbow-item {
 
-        flex:
-            0 0 74px !important;
+        min-width: 75px;
 
-        min-width:
-            74px !important;
+        padding:
+
+            9px
+
+            6px;
 
     }
 
@@ -936,47 +1121,42 @@ body[data-page="about"] {
     body[data-page="about"] .pagehero {
 
         padding:
-            45px 15px !important;
+
+            55px
+
+            15px
+
+            60px;
 
     }
 
 
     body[data-page="about"] .pagehero h2 {
 
-        font-size:
-            34px !important;
+        font-size: 34px;
 
     }
 
 
     body[data-page="about"] .section {
 
-        padding:
-            40px 15px 15px !important;
+        padding-left: 15px;
+
+        padding-right: 15px;
 
     }
 
 
     body[data-page="about"] .title {
 
-        font-size:
-            25px !important;
-
-    }
-
-
-    body[data-page="about"] .welcome {
-
-        gap:
-            28px !important;
+        font-size: 25px;
 
     }
 
 
     body[data-page="about"] .welcome-img {
 
-        border-radius:
-            20px !important;
+        border-radius: 20px;
 
     }
 
@@ -984,15 +1164,21 @@ body[data-page="about"] {
     body[data-page="about"] .feature {
 
         padding:
-            23px 17px !important;
+
+            22px
+
+            17px;
 
     }
 
 
-    body[data-page="about"] .section-title h2 {
+    body[data-page="about"] .feature .big {
 
-        font-size:
-            26px !important;
+        width: 58px;
+
+        height: 58px;
+
+        font-size: 31px;
 
     }
 
@@ -1000,9 +1186,13 @@ body[data-page="about"] {
     body[data-page="about"] .box {
 
         padding:
-            30px 17px !important;
+
+            32px
+
+            17px;
 
     }
+
 
 }
 
