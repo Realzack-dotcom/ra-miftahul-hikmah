@@ -12,7 +12,7 @@
 
     <meta
         name="description"
-        content="Daftar Akun Wali Murid RA Miftahul Hikmah"
+        content="Pendaftaran Akun Wali Murid RA Miftahul Hikmah"
     >
 
     <meta
@@ -47,9 +47,9 @@
     <style>
 
 
-        /* =====================================================
+        /* =========================================
            RESET
-        ===================================================== */
+        ========================================= */
 
         * {
 
@@ -109,17 +109,9 @@
         }
 
 
-        button {
-
-            cursor:
-                pointer;
-
-        }
-
-
-        /* =====================================================
+        /* =========================================
            BACKGROUND
-        ===================================================== */
+        ========================================= */
 
         .page-bg {
 
@@ -314,9 +306,9 @@
         }
 
 
-        /* =====================================================
+        /* =========================================
            CONTAINER
-        ===================================================== */
+        ========================================= */
 
         .container {
 
@@ -332,9 +324,9 @@
         }
 
 
-        /* =====================================================
+        /* =========================================
            HEADER
-        ===================================================== */
+        ========================================= */
 
         .header {
 
@@ -348,7 +340,7 @@
                 100;
 
             background:
-                rgba(255,255,255,.85);
+                rgba(255,255,255,.88);
 
             backdrop-filter:
                 blur(20px);
@@ -357,7 +349,8 @@
                 blur(20px);
 
             border-bottom:
-                1px solid rgba(100,80,140,.07);
+                1px solid
+                rgba(100,80,140,.07);
 
         }
 
@@ -382,9 +375,9 @@
         }
 
 
-        /* =====================================================
+        /* =========================================
            BRAND
-        ===================================================== */
+        ========================================= */
 
         .brand {
 
@@ -441,7 +434,8 @@
                 );
 
             box-shadow:
-                0 10px 25px rgba(239,79,130,.15);
+                0 10px 25px
+                rgba(239,79,130,.15);
 
         }
 
@@ -503,9 +497,9 @@
         }
 
 
-        /* =====================================================
+        /* =========================================
            BACK BUTTON
-        ===================================================== */
+        ========================================= */
 
         .back-button {
 
@@ -549,7 +543,8 @@
                 1px solid #eeeaf3;
 
             box-shadow:
-                0 8px 20px rgba(60,40,90,.05);
+                0 8px 20px
+                rgba(60,40,90,.05);
 
             transition:
                 .25s ease;
@@ -568,9 +563,9 @@
         }
 
 
-        /* =====================================================
+        /* =========================================
            NAVIGATION
-        ===================================================== */
+        ========================================= */
 
         .nav {
 
@@ -584,12 +579,9 @@
                 90;
 
             background:
-                rgba(255,255,255,.92);
+                rgba(255,255,255,.94);
 
             backdrop-filter:
-                blur(20px);
-
-            -webkit-backdrop-filter:
                 blur(20px);
 
             border-bottom:
@@ -700,14 +692,15 @@
                 );
 
             box-shadow:
-                0 8px 18px rgba(239,79,130,.20);
+                0 8px 18px
+                rgba(239,79,130,.20);
 
         }
 
 
-        /* =====================================================
+        /* =========================================
            MAIN
-        ===================================================== */
+        ========================================= */
 
         .main {
 
@@ -717,9 +710,9 @@
         }
 
 
-        /* =====================================================
+        /* =========================================
            HERO
-        ===================================================== */
+        ========================================= */
 
         .register-hero {
 
@@ -760,7 +753,8 @@
                 250% 250%;
 
             box-shadow:
-                0 25px 60px rgba(100,60,120,.20);
+                0 25px 60px
+                rgba(100,60,120,.20);
 
             animation:
                 gradientMove 10s ease infinite;
@@ -805,7 +799,7 @@
                 absolute;
 
             top:
-                -60px;
+                -50px;
 
             right:
                 5%;
@@ -825,7 +819,7 @@
         .register-hero::after {
 
             content:
-                "✨";
+                "📱";
 
             position:
                 absolute;
@@ -969,9 +963,9 @@
         }
 
 
-        /* =====================================================
+        /* =========================================
            LAYOUT
-        ===================================================== */
+        ========================================= */
 
         .register-layout {
 
@@ -994,9 +988,9 @@
         }
 
 
-        /* =====================================================
+        /* =========================================
            CARD
-        ===================================================== */
+        ========================================= */
 
         .register-card {
 
@@ -1007,13 +1001,15 @@
                 28px;
 
             background:
-                rgba(255,255,255,.92);
+                rgba(255,255,255,.94);
 
             border:
-                1px solid rgba(255,255,255,.90);
+                1px solid
+                rgba(255,255,255,.90);
 
             box-shadow:
-                0 20px 50px rgba(60,40,90,.08);
+                0 20px 50px
+                rgba(60,40,90,.08);
 
         }
 
@@ -1093,9 +1089,120 @@
         }
 
 
-        /* =====================================================
+        /* =========================================
+           STEPS
+        ========================================= */
+
+        .steps {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(3,1fr);
+
+            gap:
+                10px;
+
+            padding:
+                25px 28px 0;
+
+        }
+
+
+        .step {
+
+            padding:
+                13px 8px;
+
+            text-align:
+                center;
+
+            border-radius:
+                18px;
+
+            background:
+                #faf9ff;
+
+            border:
+                1px solid #eeeaf3;
+
+        }
+
+
+        .step-number {
+
+            width:
+                32px;
+
+            height:
+                32px;
+
+            margin:
+                0 auto 7px;
+
+            display:
+                grid;
+
+            place-items:
+                center;
+
+            border-radius:
+                50%;
+
+            color:
+                white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #7b6cff,
+                    #a47fff
+                );
+
+            font-size:
+                11px;
+
+            font-weight:
+                900;
+
+        }
+
+
+        .step b {
+
+            display:
+                block;
+
+            font-size:
+                9px;
+
+        }
+
+
+        .step small {
+
+            display:
+                block;
+
+            margin-top:
+                3px;
+
+            color:
+                #958c9d;
+
+            font-size:
+                7px;
+
+            line-height:
+                1.4;
+
+        }
+
+
+        /* =========================================
            FORM
-        ===================================================== */
+        ========================================= */
 
         .register-form {
 
@@ -1111,7 +1218,7 @@
                 grid;
 
             grid-template-columns:
-                1fr 1fr;
+                repeat(2,1fr);
 
             gap:
                 15px;
@@ -1158,10 +1265,13 @@
         .optional {
 
             color:
-                #a49ba9;
+                #a29aa8;
 
             font-weight:
                 700;
+
+            font-size:
+                9px;
 
         }
 
@@ -1206,7 +1316,7 @@
                 54px;
 
             padding:
-                12px 50px;
+                12px 15px 12px 48px;
 
             border:
                 1px solid #e8e3ee;
@@ -1238,7 +1348,8 @@
                 #a47fff;
 
             box-shadow:
-                0 0 0 4px rgba(164,127,255,.10);
+                0 0 0 4px
+                rgba(164,127,255,.10);
 
         }
 
@@ -1266,6 +1377,9 @@
             border:
                 none;
 
+            cursor:
+                pointer;
+
             display:
                 grid;
 
@@ -1284,69 +1398,9 @@
         }
 
 
-        /* =====================================================
-           INFO BOX
-        ===================================================== */
-
-        .register-info {
-
-            margin:
-                5px 0 20px;
-
-            padding:
-                16px;
-
-            border-radius:
-                18px;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #f1edff,
-                    #fff4f8,
-                    #effaff
-                );
-
-            border:
-                1px solid #e8e1f7;
-
-        }
-
-
-        .register-info b {
-
-            display:
-                block;
-
-            margin-bottom:
-                6px;
-
-            font-size:
-                11px;
-
-        }
-
-
-        .register-info p {
-
-            margin:
-                0;
-
-            color:
-                #817889;
-
-            font-size:
-                10px;
-
-            line-height:
-                1.7;
-
-        }
-
-
-        /* =====================================================
+        /* =========================================
            REGISTER BUTTON
-        ===================================================== */
+        ========================================= */
 
         .register-button {
 
@@ -1358,6 +1412,9 @@
 
             border:
                 none;
+
+            cursor:
+                pointer;
 
             display:
                 flex;
@@ -1391,7 +1448,8 @@
                 );
 
             box-shadow:
-                0 14px 28px rgba(123,108,255,.25);
+                0 14px 28px
+                rgba(123,108,255,.25);
 
             transition:
                 .3s ease;
@@ -1405,28 +1463,15 @@
                 translateY(-3px);
 
             box-shadow:
-                0 18px 35px rgba(123,108,255,.30);
+                0 18px 35px
+                rgba(123,108,255,.30);
 
         }
 
 
-        .register-button:disabled {
-
-            opacity:
-                .75;
-
-            cursor:
-                not-allowed;
-
-            transform:
-                none;
-
-        }
-
-
-        /* =====================================================
+        /* =========================================
            MESSAGE
-        ===================================================== */
+        ========================================= */
 
         .message {
 
@@ -1499,6 +1544,20 @@
         }
 
 
+        .message.info {
+
+            color:
+                #6b58a0;
+
+            background:
+                #f4f1ff;
+
+            border:
+                1px solid #e3dcff;
+
+        }
+
+
         @keyframes messageShow {
 
             from {
@@ -1525,34 +1584,35 @@
         }
 
 
-        /* =====================================================
-           ACTIVATION SECTION
-        ===================================================== */
+        /* =========================================
+           ACTIVATION CARD
+        ========================================= */
 
         .activation-box {
 
             display:
                 none;
 
-            margin:
-                0 28px 28px;
+            margin-top:
+                20px;
 
             padding:
-                22px;
+                20px;
 
             border-radius:
-                23px;
+                22px;
 
             background:
                 linear-gradient(
                     135deg,
-                    #fff7ed,
-                    #fff3f8,
-                    #f2efff
+                    #f1edff,
+                    #fff2f7,
+                    #ecf8ff
                 );
 
             border:
-                1px solid #f0e0ea;
+                1px solid
+                rgba(164,127,255,.20);
 
         }
 
@@ -1563,18 +1623,35 @@
                 block;
 
             animation:
-                messageShow .5s ease;
+                messageShow .4s ease;
 
         }
 
 
-        .activation-icon {
+        .activation-title {
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            gap:
+                10px;
+
+            margin-bottom:
+                8px;
+
+        }
+
+
+        .activation-title span {
 
             width:
-                60px;
+                48px;
 
             height:
-                60px;
+                48px;
 
             display:
                 grid;
@@ -1582,35 +1659,26 @@
             place-items:
                 center;
 
-            margin-bottom:
-                13px;
-
             border-radius:
-                20px;
+                16px;
 
             background:
                 white;
 
             font-size:
-                30px;
+                23px;
 
             box-shadow:
-                0 10px 25px rgba(60,40,90,.08);
+                0 8px 20px
+                rgba(60,40,90,.08);
 
         }
 
 
-        .activation-box h3 {
-
-            margin:
-                0 0 8px;
-
-            font-family:
-                "Baloo 2",
-                cursive;
+        .activation-title b {
 
             font-size:
-                26px;
+                14px;
 
         }
 
@@ -1618,149 +1686,16 @@
         .activation-box p {
 
             margin:
-                0 0 18px;
+                10px 0 15px;
 
             color:
-                #817889;
+                #756c7d;
 
             font-size:
-                11px;
+                10px;
 
             line-height:
                 1.8;
-
-        }
-
-
-        .activation-code-preview {
-
-            margin:
-                15px 0;
-
-            padding:
-                14px;
-
-            text-align:
-                center;
-
-            border-radius:
-                16px;
-
-            background:
-                rgba(255,255,255,.70);
-
-            border:
-                1px dashed #c8b9e8;
-
-        }
-
-
-        .activation-code-preview small {
-
-            display:
-                block;
-
-            margin-bottom:
-                6px;
-
-            color:
-                #91879d;
-
-            font-size:
-                9px;
-
-            font-weight:
-                800;
-
-        }
-
-
-        .activation-code-preview strong {
-
-            color:
-                #7b63bd;
-
-            font-size:
-                22px;
-
-            letter-spacing:
-                2px;
-
-        }
-
-
-        .activation-actions {
-
-            display:
-                grid;
-
-            grid-template-columns:
-                1fr 1fr;
-
-            gap:
-                10px;
-
-            margin-bottom:
-                18px;
-
-        }
-
-
-        .wa-button {
-
-            min-height:
-                50px;
-
-            border:
-                none;
-
-            border-radius:
-                15px;
-
-            color:
-                white;
-
-            font-size:
-                10px;
-
-            font-weight:
-                900;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #25d366,
-                    #18b957
-                );
-
-            box-shadow:
-                0 10px 22px rgba(37,211,102,.20);
-
-        }
-
-
-        .copy-button {
-
-            min-height:
-                50px;
-
-            border:
-                1px solid #e5dff0;
-
-            border-radius:
-                15px;
-
-            color:
-                #6f6578;
-
-            font-size:
-                10px;
-
-            font-weight:
-                900;
-
-            background:
-                white;
 
         }
 
@@ -1771,10 +1706,22 @@
                 100%;
 
             min-height:
-                55px;
+                54px;
 
             padding:
                 12px 15px;
+
+            border:
+                1px solid #ddd6ef;
+
+            outline:
+                none;
+
+            border-radius:
+                16px;
+
+            background:
+                white;
 
             text-align:
                 center;
@@ -1785,23 +1732,8 @@
             letter-spacing:
                 2px;
 
-            border:
-                1px solid #dfd7ea;
-
-            outline:
-                none;
-
-            border-radius:
-                16px;
-
-            color:
-                #493f59;
-
-            background:
-                white;
-
             font-size:
-                16px;
+                15px;
 
             font-weight:
                 900;
@@ -1815,24 +1747,28 @@
                 #a47fff;
 
             box-shadow:
-                0 0 0 4px rgba(164,127,255,.10);
+                0 0 0 4px
+                rgba(164,127,255,.10);
 
         }
 
 
-        .activate-button {
+        .activation-button {
 
             width:
                 100%;
 
             min-height:
-                54px;
+                52px;
 
             margin-top:
                 12px;
 
             border:
                 none;
+
+            cursor:
+                pointer;
 
             border-radius:
                 16px;
@@ -1850,18 +1786,62 @@
                 linear-gradient(
                     135deg,
                     #ef4f82,
-                    #ff7ca6
+                    #ff7ca7
                 );
 
             box-shadow:
-                0 12px 25px rgba(239,79,130,.20);
+                0 12px 25px
+                rgba(239,79,130,.20);
 
         }
 
 
-        /* =====================================================
+        .whatsapp-button {
+
+            width:
+                100%;
+
+            min-height:
+                52px;
+
+            margin-top:
+                10px;
+
+            border:
+                none;
+
+            cursor:
+                pointer;
+
+            border-radius:
+                16px;
+
+            color:
+                white;
+
+            font-size:
+                11px;
+
+            font-weight:
+                900;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #20c96b,
+                    #45db83
+                );
+
+            box-shadow:
+                0 12px 25px
+                rgba(32,201,107,.20);
+
+        }
+
+
+        /* =========================================
            SIDEBAR
-        ===================================================== */
+        ========================================= */
 
         .sidebar {
 
@@ -1883,10 +1863,11 @@
                 25px;
 
             background:
-                rgba(255,255,255,.90);
+                rgba(255,255,255,.92);
 
             box-shadow:
-                0 16px 38px rgba(60,40,90,.08);
+                0 16px 38px
+                rgba(60,40,90,.08);
 
         }
 
@@ -1931,11 +1912,11 @@
         }
 
 
-        /* =====================================================
-           STEPS
-        ===================================================== */
+        /* =========================================
+           FLOW
+        ========================================= */
 
-        .steps {
+        .flow-list {
 
             display:
                 grid;
@@ -1944,12 +1925,12 @@
                 10px;
 
             margin-top:
-                17px;
+                16px;
 
         }
 
 
-        .step {
+        .flow-item {
 
             display:
                 flex;
@@ -1972,13 +1953,13 @@
         }
 
 
-        .step-number {
+        .flow-icon {
 
             width:
-                37px;
+                45px;
 
             height:
-                37px;
+                45px;
 
             flex:
                 0 0 auto;
@@ -1990,28 +1971,22 @@
                 center;
 
             border-radius:
-                13px;
-
-            color:
-                white;
+                15px;
 
             background:
-                linear-gradient(
-                    135deg,
-                    #7b6cff,
-                    #a47fff
-                );
+                white;
 
             font-size:
-                11px;
+                21px;
 
-            font-weight:
-                900;
+            box-shadow:
+                0 7px 17px
+                rgba(60,40,90,.06);
 
         }
 
 
-        .step b {
+        .flow-item b {
 
             display:
                 block;
@@ -2022,7 +1997,7 @@
         }
 
 
-        .step small {
+        .flow-item small {
 
             display:
                 block;
@@ -2031,7 +2006,7 @@
                 3px;
 
             color:
-                #978e9d;
+                #9a91a1;
 
             font-size:
                 8px;
@@ -2042,9 +2017,9 @@
         }
 
 
-        /* =====================================================
+        /* =========================================
            LOGIN CARD
-        ===================================================== */
+        ========================================= */
 
         .login-side-card {
 
@@ -2105,19 +2080,20 @@
             background:
                 linear-gradient(
                     135deg,
-                    #ef4f82,
-                    #ff7ca7
+                    #7b6cff,
+                    #a47fff
                 );
 
             box-shadow:
-                0 12px 25px rgba(239,79,130,.20);
+                0 12px 25px
+                rgba(123,108,255,.20);
 
         }
 
 
-        /* =====================================================
+        /* =========================================
            FOOTER
-        ===================================================== */
+        ========================================= */
 
         .footer {
 
@@ -2214,7 +2190,8 @@
                 center;
 
             border-top:
-                1px solid rgba(255,255,255,.08);
+                1px solid
+                rgba(255,255,255,.08);
 
             color:
                 #aaa0bb;
@@ -2225,9 +2202,9 @@
         }
 
 
-        /* =====================================================
+        /* =========================================
            REVEAL
-        ===================================================== */
+        ========================================= */
 
         .reveal {
 
@@ -2255,9 +2232,9 @@
         }
 
 
-        /* =====================================================
+        /* =========================================
            MOBILE
-        ===================================================== */
+        ========================================= */
 
         @media (
             max-width:
@@ -2332,9 +2309,6 @@
 
                 font-size:
                     9px;
-
-                border-radius:
-                    12px;
 
             }
 
@@ -2452,27 +2426,10 @@
                 font-size:
                     11px;
 
-                line-height:
-                    1.7;
-
-            }
-
-
-            .hero-info {
-
-                gap:
-                    6px;
-
-                margin-top:
-                    16px;
-
             }
 
 
             .hero-info span {
-
-                padding:
-                    7px 9px;
 
                 font-size:
                     8px;
@@ -2516,14 +2473,6 @@
             }
 
 
-            .article-tag {
-
-                font-size:
-                    8px;
-
-            }
-
-
             .card-header h2 {
 
                 margin:
@@ -2539,6 +2488,55 @@
 
                 font-size:
                     10px;
+
+            }
+
+
+            .steps {
+
+                gap:
+                    6px;
+
+                padding:
+                    17px 17px 0;
+
+            }
+
+
+            .step {
+
+                padding:
+                    10px 4px;
+
+            }
+
+
+            .step-number {
+
+                width:
+                    28px;
+
+                height:
+                    28px;
+
+                font-size:
+                    9px;
+
+            }
+
+
+            .step b {
+
+                font-size:
+                    8px;
+
+            }
+
+
+            .step small {
+
+                display:
+                    none;
 
             }
 
@@ -2562,13 +2560,10 @@
             }
 
 
-            .form-group {
+            .form-group.full {
 
-                gap:
-                    6px;
-
-                margin-bottom:
-                    12px;
+                grid-column:
+                    auto;
 
             }
 
@@ -2586,42 +2581,11 @@
                 min-height:
                     49px;
 
-                padding:
-                    10px 45px;
-
-                border-radius:
-                    14px;
-
                 font-size:
                     10px;
 
-            }
-
-
-            .input-icon {
-
-                left:
-                    13px;
-
-                font-size:
-                    14px;
-
-            }
-
-
-            .password-toggle {
-
-                width:
-                    34px;
-
-                height:
-                    34px;
-
                 border-radius:
-                    10px;
-
-                font-size:
-                    13px;
+                    14px;
 
             }
 
@@ -2631,41 +2595,8 @@
                 min-height:
                     51px;
 
-                border-radius:
-                    15px;
-
                 font-size:
                     11px;
-
-            }
-
-
-            .activation-box {
-
-                margin:
-                    0 17px 20px;
-
-                padding:
-                    18px;
-
-                border-radius:
-                    20px;
-
-            }
-
-
-            .activation-box h3 {
-
-                font-size:
-                    23px;
-
-            }
-
-
-            .activation-actions {
-
-                grid-template-columns:
-                    1fr;
 
             }
 
@@ -2692,22 +2623,6 @@
             }
 
 
-            .side-card h3 {
-
-                font-size:
-                    20px;
-
-            }
-
-
-            .side-card p {
-
-                font-size:
-                    10px;
-
-            }
-
-
             .footer {
 
                 padding:
@@ -2729,48 +2644,6 @@
 
             }
 
-        }
-
-
-        @media (
-            max-width:
-            420px
-        ) {
-
-
-            .brand h1 {
-
-                font-size:
-                    13px;
-
-            }
-
-
-            .brand p {
-
-                font-size:
-                    6px;
-
-            }
-
-
-            .back-button {
-
-                padding:
-                    0 9px;
-
-                font-size:
-                    8px;
-
-            }
-
-
-            .hero-content h2 {
-
-                font-size:
-                    36px;
-
-            }
 
         }
 
@@ -2783,10 +2656,6 @@
 <body>
 
 
-<!-- =====================================================
-     BACKGROUND
-===================================================== -->
-
 <div class="page-bg"></div>
 
 <div class="floating-shape shape-one"></div>
@@ -2796,12 +2665,11 @@
 <div class="floating-shape shape-three"></div>
 
 
-<!-- =====================================================
+<!-- =========================================
      HEADER
-===================================================== -->
+========================================= -->
 
 <header class="header">
-
 
     <div class="container header-inner">
 
@@ -2811,7 +2679,6 @@
             class="brand"
         >
 
-
             <div class="brand-logo">
 
                 🌈
@@ -2820,7 +2687,6 @@
 
 
             <div class="brand-text">
-
 
                 <h1>
 
@@ -2839,9 +2705,7 @@
 
                 </p>
 
-
             </div>
-
 
         </a>
 
@@ -2858,108 +2722,86 @@
 
     </div>
 
-
 </header>
 
 
-<!-- =====================================================
+<!-- =========================================
      NAVIGATION
-===================================================== -->
+========================================= -->
 
 <nav class="nav">
 
-
     <div class="nav-inner">
 
-
         <a href="index.html">
-
             🏠 Home
-
         </a>
-
 
         <a href="about.html">
-
             👥 About
-
         </a>
-
 
         <a href="programs.html">
-
             📚 Programs
-
         </a>
-
 
         <a href="blog.html">
-
             🖍️ Blog
-
         </a>
-
 
         <a
             href="daftar.html"
             class="active"
         >
-
             📝 Daftar Akun
-
         </a>
-
 
         <a href="login.html">
-
             🔐 Login
-
         </a>
 
-
     </div>
-
 
 </nav>
 
 
-<!-- =====================================================
+<!-- =========================================
      MAIN
-===================================================== -->
+========================================= -->
 
 <main class="main">
-
 
     <div class="container">
 
 
         <!-- HERO -->
 
-        <section class="register-hero reveal">
-
+        <section
+            class="register-hero reveal"
+        >
 
             <div class="hero-content">
 
 
                 <div class="hero-badge">
 
-                    ✨ BUAT AKUN WALI MURID
+                    🎉 BUAT AKUN WALI MURID
 
                 </div>
 
 
                 <h2>
 
-                    Daftar Akun
-                    Anda 🎉
+                    Bergabung Bersama
+                    Kami 🌈
 
                 </h2>
 
 
                 <p>
 
-                    Buat akun Wali Murid untuk mendapatkan
-                    akses ke informasi dan perkembangan anak.
+                    Buat akun Wali Murid untuk mengakses
+                    informasi dan perkembangan anak.
                     Setelah mendaftar, Anda akan mendapatkan
                     kode aktivasi melalui WhatsApp.
 
@@ -2968,77 +2810,124 @@
 
                 <div class="hero-info">
 
-
                     <span>
-
-                        👤 Buat Akun
-
+                        📝 Daftar Akun
                     </span>
 
-
                     <span>
-
-                        📱 Aktivasi WhatsApp
-
+                        💬 WhatsApp
                     </span>
 
-
                     <span>
-
-                        🔐 Login
-
+                        🔐 Aktivasi
                     </span>
 
+                    <span>
+                        🎓 Dashboard Wali
+                    </span>
 
                 </div>
 
 
             </div>
 
-
         </section>
 
 
-        <!-- REGISTER LAYOUT -->
+        <!-- LAYOUT -->
 
         <div class="register-layout">
 
 
-            <!-- REGISTER CARD -->
+            <!-- =========================================
+                 REGISTER CARD
+            ========================================== -->
 
             <section
                 class="register-card reveal"
-                id="daftar"
             >
 
 
-                <!-- HEADER -->
-
                 <div class="card-header">
-
 
                     <div class="article-tag">
 
-                        📝 PENDAFTARAN AKUN WALI
+                        ✨ PENDAFTARAN AKUN WALI
 
                     </div>
 
 
                     <h2>
 
-                        Buat Akun Baru 👋
+                        Buat Akun Baru 👨‍👩‍👧
 
                     </h2>
 
 
                     <p>
 
-                        Isi data dengan benar. Setelah klik
-                        daftar, kode aktivasi akan dibuat
-                        secara otomatis.
+                        Isi data dengan benar. Setelah itu
+                        sistem akan membuat kode aktivasi
+                        otomatis untuk akun Anda.
 
                     </p>
 
+                </div>
+
+
+                <!-- STEPS -->
+
+                <div class="steps">
+
+                    <div class="step">
+
+                        <div class="step-number">
+                            1
+                        </div>
+
+                        <b>
+                            Isi Data
+                        </b>
+
+                        <small>
+                            Lengkapi data akun
+                        </small>
+
+                    </div>
+
+
+                    <div class="step">
+
+                        <div class="step-number">
+                            2
+                        </div>
+
+                        <b>
+                            WhatsApp
+                        </b>
+
+                        <small>
+                            Dapatkan kode
+                        </small>
+
+                    </div>
+
+
+                    <div class="step">
+
+                        <div class="step-number">
+                            3
+                        </div>
+
+                        <b>
+                            Aktivasi
+                        </b>
+
+                        <small>
+                            Masuk ke login
+                        </small>
+
+                    </div>
 
                 </div>
 
@@ -3058,8 +2947,9 @@
 
                         <div class="form-group">
 
-
-                            <label for="username">
+                            <label
+                                for="username"
+                            >
 
                                 Buat Username
 
@@ -3068,25 +2958,19 @@
 
                             <div class="input-wrap">
 
-
                                 <span class="input-icon">
-
                                     👤
-
                                 </span>
 
 
                                 <input
                                     type="text"
                                     id="username"
-                                    placeholder="Contoh: budi123"
-                                    autocomplete="username"
+                                    placeholder="Contoh: zack123"
                                     required
                                 >
 
-
                             </div>
-
 
                         </div>
 
@@ -3095,21 +2979,19 @@
 
                         <div class="form-group">
 
+                            <label
+                                for="email"
+                            >
 
-                            <label for="email">
-
-                                Gmail
+                                Gmail / Email
 
                             </label>
 
 
                             <div class="input-wrap">
 
-
                                 <span class="input-icon">
-
-                                    ✉️
-
+                                    📧
                                 </span>
 
 
@@ -3117,23 +2999,21 @@
                                     type="email"
                                     id="email"
                                     placeholder="nama@gmail.com"
-                                    autocomplete="email"
                                     required
                                 >
 
-
                             </div>
-
 
                         </div>
 
 
                         <!-- PASSWORD -->
 
-                        <div class="form-group full">
+                        <div class="form-group">
 
-
-                            <label for="password">
+                            <label
+                                for="password"
+                            >
 
                                 Buat Password
 
@@ -3142,11 +3022,8 @@
 
                             <div class="input-wrap">
 
-
                                 <span class="input-icon">
-
                                     🔑
-
                                 </span>
 
 
@@ -3154,7 +3031,6 @@
                                     type="password"
                                     id="password"
                                     placeholder="Minimal 6 karakter"
-                                    autocomplete="new-password"
                                     minlength="6"
                                     required
                                 >
@@ -3164,26 +3040,57 @@
                                     type="button"
                                     class="password-toggle"
                                     id="passwordToggle"
-                                    aria-label="Tampilkan password"
                                 >
 
                                     👁️
 
                                 </button>
 
-
                             </div>
-
 
                         </div>
 
 
-                        <!-- NAMA ANAK -->
+                        <!-- CONFIRM PASSWORD -->
 
-                        <div class="form-group full">
+                        <div class="form-group">
+
+                            <label
+                                for="confirmPassword"
+                            >
+
+                                Ulangi Password
+
+                            </label>
 
 
-                            <label for="childName">
+                            <div class="input-wrap">
+
+                                <span class="input-icon">
+                                    🔐
+                                </span>
+
+
+                                <input
+                                    type="password"
+                                    id="confirmPassword"
+                                    placeholder="Ulangi password"
+                                    minlength="6"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- CHILD NAME -->
+
+                        <div class="form-group">
+
+                            <label
+                                for="childName"
+                            >
 
                                 Nama Anak
 
@@ -3192,41 +3099,35 @@
 
                             <div class="input-wrap">
 
-
                                 <span class="input-icon">
-
-                                    👶
-
+                                    🧒
                                 </span>
 
 
                                 <input
                                     type="text"
                                     id="childName"
-                                    placeholder="Masukkan nama lengkap anak"
+                                    placeholder="Nama lengkap anak"
                                     required
                                 >
 
-
                             </div>
-
 
                         </div>
 
 
-                        <!-- TANGGAL LAHIR -->
+                        <!-- BIRTH DATE -->
 
                         <div class="form-group">
 
-
-                            <label for="birthDate">
+                            <label
+                                for="birthDate"
+                            >
 
                                 Tanggal Lahir
 
                                 <span class="optional">
-
                                     (Opsional)
-
                                 </span>
 
                             </label>
@@ -3234,11 +3135,8 @@
 
                             <div class="input-wrap">
 
-
                                 <span class="input-icon">
-
                                     🎂
-
                                 </span>
 
 
@@ -3247,19 +3145,18 @@
                                     id="birthDate"
                                 >
 
-
                             </div>
-
 
                         </div>
 
 
                         <!-- WHATSAPP -->
 
-                        <div class="form-group">
+                        <div class="form-group full">
 
-
-                            <label for="whatsapp">
+                            <label
+                                for="whatsapp"
+                            >
 
                                 Nomor WhatsApp Wali
 
@@ -3268,11 +3165,8 @@
 
                             <div class="input-wrap">
 
-
                                 <span class="input-icon">
-
-                                    📱
-
+                                    💬
                                 </span>
 
 
@@ -3280,13 +3174,10 @@
                                     type="tel"
                                     id="whatsapp"
                                     placeholder="Contoh: 081234567890"
-                                    inputmode="numeric"
                                     required
                                 >
 
-
                             </div>
-
 
                         </div>
 
@@ -3294,32 +3185,7 @@
                     </div>
 
 
-                    <!-- INFO -->
-
-                    <div class="register-info">
-
-
-                        <b>
-
-                            💡 Bagaimana cara aktivasi?
-
-                        </b>
-
-
-                        <p>
-
-                            Setelah Anda klik DAFTAR, sistem akan
-                            membuat kode aktivasi otomatis.
-                            Kemudian WhatsApp akan dibuka dengan
-                            pesan kode aktivasi Anda.
-
-                        </p>
-
-
-                    </div>
-
-
-                    <!-- REGISTER BUTTON -->
+                    <!-- BUTTON -->
 
                     <button
                         type="submit"
@@ -3327,7 +3193,7 @@
                         id="registerButton"
                     >
 
-                        🚀 DAFTAR SEKARANG
+                        📝 DAFTAR & DAPATKAN KODE AKTIVASI
 
                     </button>
 
@@ -3336,22 +3202,96 @@
 
                     <div
                         class="message"
-                        id="registerMessage"
+                        id="message"
+                    >
+
+                        <span id="messageIcon">
+                            ⚠️
+                        </span>
+
+                        <span id="messageText">
+                            Pesan
+                        </span>
+
+                    </div>
+
+
+                    <!-- ACTIVATION -->
+
+                    <div
+                        class="activation-box"
+                        id="activationBox"
                     >
 
 
-                        <span id="messageIcon">
+                        <div class="activation-title">
 
-                            ⚠️
+                            <span>
+                                🔐
+                            </span>
 
-                        </span>
+
+                            <div>
+
+                                <b>
+
+                                    Aktivasi Akun Anda
+
+                                </b>
+
+                            </div>
+
+                        </div>
 
 
-                        <span id="messageText">
+                        <p>
 
-                            Pesan
+                            Kode aktivasi sudah dibuat.
+                            Klik tombol WhatsApp untuk
+                            mendapatkan pesan kode aktivasi,
+                            kemudian kembali ke halaman ini
+                            dan masukkan kode tersebut.
 
-                        </span>
+                        </p>
+
+
+                        <button
+                            type="button"
+                            class="whatsapp-button"
+                            id="whatsappButton"
+                        >
+
+                            💬 BUKA WHATSAPP & DAPATKAN KODE
+
+                        </button>
+
+
+                        <p>
+
+                            Setelah mendapatkan kode,
+                            masukkan kode aktivasi di bawah.
+
+                        </p>
+
+
+                        <input
+                            type="text"
+                            class="activation-input"
+                            id="activationCode"
+                            placeholder="RA-XXXXXX"
+                            maxlength="9"
+                        >
+
+
+                        <button
+                            type="button"
+                            class="activation-button"
+                            id="activateButton"
+                        >
+
+                            ✅ AKTIFKAN AKUN SEKARANG
+
+                        </button>
 
 
                     </div>
@@ -3360,146 +3300,19 @@
                 </form>
 
 
-                <!-- ACTIVATION -->
-
-                <div
-                    class="activation-box"
-                    id="activationBox"
-                >
-
-
-                    <div class="activation-icon">
-
-                        📱
-
-                    </div>
-
-
-                    <h3>
-
-                        Aktivasi Akun 🔐
-
-                    </h3>
-
-
-                    <p>
-
-                        Kode aktivasi akun Anda sudah dibuat.
-                        Klik tombol WhatsApp untuk mendapatkan
-                        pesan kode, lalu masukkan kode tersebut
-                        di bawah ini.
-
-                    </p>
-
-
-                    <div class="activation-code-preview">
-
-
-                        <small>
-
-                            KODE AKTIVASI ANDA
-
-                        </small>
-
-
-                        <strong
-                            id="generatedCode"
-                        >
-
-                            RA-XXXXXX
-
-                        </strong>
-
-
-                    </div>
-
-
-                    <div class="activation-actions">
-
-
-                        <button
-                            type="button"
-                            class="wa-button"
-                            id="openWhatsApp"
-                        >
-
-                            📱 BUKA WHATSAPP
-
-                        </button>
-
-
-                        <button
-                            type="button"
-                            class="copy-button"
-                            id="copyCode"
-                        >
-
-                            📋 SALIN KODE
-
-                        </button>
-
-
-                    </div>
-
-
-                    <input
-                        type="text"
-                        id="activationInput"
-                        class="activation-input"
-                        placeholder="MASUKKAN KODE"
-                        autocomplete="off"
-                    >
-
-
-                    <button
-                        type="button"
-                        class="activate-button"
-                        id="activateButton"
-                    >
-
-                        ✅ AKTIFKAN AKUN
-
-                    </button>
-
-
-                    <div
-                        class="message"
-                        id="activationMessage"
-                    >
-
-
-                        <span id="activationMessageIcon">
-
-                            ⚠️
-
-                        </span>
-
-
-                        <span id="activationMessageText">
-
-                            Pesan Aktivasi
-
-                        </span>
-
-
-                    </div>
-
-
-                </div>
-
-
             </section>
 
 
-            <!-- SIDEBAR -->
+            <!-- =========================================
+                 SIDEBAR
+            ========================================== -->
 
             <aside class="sidebar">
 
 
-                <!-- STEPS -->
+                <!-- FLOW -->
 
                 <div class="side-card reveal">
-
 
                     <h3>
 
@@ -3514,148 +3327,108 @@
 
                     <p>
 
-                        Ikuti langkah sederhana berikut.
+                        Ikuti langkah mudah berikut
+                        untuk membuat akun Wali Murid.
 
                     </p>
 
 
-                    <div class="steps">
+                    <div class="flow-list">
 
 
-                        <div class="step">
+                        <div class="flow-item">
 
-
-                            <div class="step-number">
-
-                                1
-
+                            <div class="flow-icon">
+                                📝
                             </div>
 
 
                             <div>
 
-
                                 <b>
-
                                     Isi Data
-
                                 </b>
 
-
                                 <small>
-
-                                    Buat username dan isi data wali.
-
+                                    Username, email,
+                                    password dan data anak.
                                 </small>
 
-
                             </div>
-
 
                         </div>
 
 
-                        <div class="step">
+                        <div class="flow-item">
 
-
-                            <div class="step-number">
-
-                                2
-
+                            <div class="flow-icon">
+                                💬
                             </div>
 
 
                             <div>
 
-
                                 <b>
-
-                                    Klik Daftar
-
-                                </b>
-
-
-                                <small>
-
-                                    Sistem membuat kode otomatis.
-
-                                </small>
-
-
-                            </div>
-
-
-                        </div>
-
-
-                        <div class="step">
-
-
-                            <div class="step-number">
-
-                                3
-
-                            </div>
-
-
-                            <div>
-
-
-                                <b>
-
                                     Buka WhatsApp
-
                                 </b>
 
-
                                 <small>
-
-                                    Dapatkan kode aktivasi.
-
+                                    Kode aktivasi otomatis
+                                    dibuat oleh website.
                                 </small>
 
-
                             </div>
-
 
                         </div>
 
 
-                        <div class="step">
+                        <div class="flow-item">
 
-
-                            <div class="step-number">
-
-                                4
-
+                            <div class="flow-icon">
+                                🔐
                             </div>
 
 
                             <div>
 
-
                                 <b>
-
                                     Aktivasi
-
                                 </b>
 
-
                                 <small>
-
-                                    Masukkan kode dan lanjut login.
-
+                                    Masukkan kode untuk
+                                    mengaktifkan akun.
                                 </small>
-
 
                             </div>
 
+                        </div>
+
+
+                        <div class="flow-item">
+
+                            <div class="flow-icon">
+                                🚀
+                            </div>
+
+
+                            <div>
+
+                                <b>
+                                    Login
+                                </b>
+
+                                <small>
+                                    Akun aktif dan siap
+                                    digunakan.
+                                </small>
+
+                            </div>
 
                         </div>
 
 
                     </div>
-
 
                 </div>
 
@@ -3701,55 +3474,9 @@
                         class="login-side-button"
                     >
 
-                        🔐 Login Sekarang
+                        🔐 Masuk ke Akun
 
                     </a>
-
-
-                </div>
-
-
-                <!-- SECURITY -->
-
-                <div class="side-card reveal">
-
-
-                    <h3>
-
-                        Keamanan
-
-                        <span>
-                            Akun
-                        </span>
-
-                    </h3>
-
-
-                    <p>
-
-                        🔒 Jangan bagikan password kepada orang lain.
-
-                    </p>
-
-
-                    <br>
-
-
-                    <p>
-
-                        📱 Gunakan nomor WhatsApp aktif milik wali.
-
-                    </p>
-
-
-                    <br>
-
-
-                    <p>
-
-                        🔐 Simpan username dan password dengan aman.
-
-                    </p>
 
 
                 </div>
@@ -3763,16 +3490,14 @@
 
     </div>
 
-
 </main>
 
 
-<!-- =====================================================
+<!-- =========================================
      FOOTER
-===================================================== -->
+========================================= -->
 
 <footer class="footer">
-
 
     <div class="container">
 
@@ -3780,10 +3505,7 @@
         <div class="footer-grid">
 
 
-            <!-- SEKOLAH -->
-
             <div>
-
 
                 <h3>
 
@@ -3804,90 +3526,59 @@
 
                 </p>
 
-
             </div>
 
 
-            <!-- MENU -->
-
             <div>
 
-
                 <h3>
-
                     Menu
-
                 </h3>
 
 
                 <p>
-
                     <a href="index.html">
-
                         Home
-
                     </a>
-
                 </p>
 
 
                 <p>
-
                     <a href="daftar.html">
-
                         Daftar Akun
-
                     </a>
-
                 </p>
 
 
                 <p>
-
                     <a href="login.html">
-
                         Login
-
                     </a>
-
                 </p>
-
 
             </div>
 
 
-            <!-- CONTACT -->
-
             <div>
 
-
                 <h3>
-
                     Hubungi Kami
-
                 </h3>
 
 
                 <p>
-
                     💬 WhatsApp Admin
-
                 </p>
 
 
                 <p>
-
                     ✉️ Email Sekolah
-
                 </p>
 
 
                 <p>
-
                     📍 Indonesia
-
                 </p>
-
 
             </div>
 
@@ -3905,13 +3596,12 @@
 
     </div>
 
-
 </footer>
 
 
-<!-- =====================================================
+<!-- =========================================
      JAVASCRIPT
-===================================================== -->
+========================================= -->
 
 <script>
 
@@ -3923,9 +3613,9 @@
         function () {
 
 
-            /* =================================================
-               REVEAL ANIMATION
-            ================================================= */
+            /* =====================================
+               REVEAL
+            ===================================== */
 
             const revealItems =
 
@@ -4039,9 +3729,9 @@
             }
 
 
-            /* =================================================
+            /* =====================================
                ELEMENTS
-            ================================================= */
+            ===================================== */
 
             const registerForm =
 
@@ -4071,6 +3761,13 @@
                 );
 
 
+            const confirmPassword =
+
+                document.getElementById(
+                    "confirmPassword"
+                );
+
+
             const childName =
 
                 document.getElementById(
@@ -4092,13 +3789,6 @@
                 );
 
 
-            const passwordToggle =
-
-                document.getElementById(
-                    "passwordToggle"
-                );
-
-
             const registerButton =
 
                 document.getElementById(
@@ -4106,10 +3796,17 @@
                 );
 
 
-            const registerMessage =
+            const passwordToggle =
 
                 document.getElementById(
-                    "registerMessage"
+                    "passwordToggle"
+                );
+
+
+            const message =
+
+                document.getElementById(
+                    "message"
                 );
 
 
@@ -4134,31 +3831,10 @@
                 );
 
 
-            const generatedCode =
+            const activationCode =
 
                 document.getElementById(
-                    "generatedCode"
-                );
-
-
-            const openWhatsApp =
-
-                document.getElementById(
-                    "openWhatsApp"
-                );
-
-
-            const copyCode =
-
-                document.getElementById(
-                    "copyCode"
-                );
-
-
-            const activationInput =
-
-                document.getElementById(
-                    "activationInput"
+                    "activationCode"
                 );
 
 
@@ -4169,35 +3845,26 @@
                 );
 
 
-            const activationMessage =
+            const whatsappButton =
 
                 document.getElementById(
-                    "activationMessage"
+                    "whatsappButton"
                 );
 
 
-            const activationMessageIcon =
-
-                document.getElementById(
-                    "activationMessageIcon"
-                );
-
-
-            const activationMessageText =
-
-                document.getElementById(
-                    "activationMessageText"
-                );
-
-
-            let currentActivationCode =
+            let generatedCode =
 
                 "";
 
 
-            /* =================================================
+            let registeredData =
+
+                null;
+
+
+            /* =====================================
                PASSWORD TOGGLE
-            ================================================= */
+            ===================================== */
 
             passwordToggle.addEventListener(
 
@@ -4244,9 +3911,64 @@
             );
 
 
-            /* =================================================
-               GENERATE ACTIVATION CODE
-            ================================================= */
+            /* =====================================
+               SHOW MESSAGE
+            ===================================== */
+
+            function showMessage(
+
+                type,
+
+                icon,
+
+                text
+
+            ) {
+
+
+                message.className =
+                    "message";
+
+
+                message.classList.add(
+                    "show"
+                );
+
+
+                message.classList.add(
+                    type
+                );
+
+
+                messageIcon.textContent =
+                    icon;
+
+
+                messageText.textContent =
+                    text;
+
+
+            }
+
+
+            /* =====================================
+               HIDE MESSAGE
+            ===================================== */
+
+            function hideMessage() {
+
+
+                message.classList.remove(
+                    "show"
+                );
+
+
+            }
+
+
+            /* =====================================
+               GENERATE CODE
+            ===================================== */
 
             function generateActivationCode() {
 
@@ -4256,7 +3978,7 @@
                     "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
 
 
-                let result =
+                let code =
 
                     "RA-";
 
@@ -4272,7 +3994,7 @@
                 ) {
 
 
-                    const randomNumber =
+                    const randomIndex =
 
                         Math.floor(
 
@@ -4283,35 +4005,39 @@
                         );
 
 
-                    result +=
+                    code +=
 
-                        characters.charAt(
-                            randomNumber
-                        );
+                        characters[
+                            randomIndex
+                        ];
 
 
                 }
 
 
-                return result;
+                return code;
 
 
             }
 
 
-            /* =================================================
+            /* =====================================
                FORMAT WHATSAPP
-            ================================================= */
+            ===================================== */
 
             function formatWhatsAppNumber(
+
                 number
+
             ) {
 
 
                 let formatted =
 
-                    number
-                    .replace(/\D/g, "");
+                    number.replace(
+                        /\D/g,
+                        ""
+                    );
 
 
                 if (
@@ -4335,23 +4061,13 @@
                 }
 
 
-                else if (
+                if (
 
                     formatted.startsWith(
-                        "62"
+                        "8"
                     )
 
                 ) {
-
-
-                    formatted =
-                        formatted;
-
-
-                }
-
-
-                else {
 
 
                     formatted =
@@ -4369,109 +4085,9 @@
             }
 
 
-            /* =================================================
-               SHOW REGISTER MESSAGE
-            ================================================= */
-
-            function showRegisterMessage(
-
-                type,
-
-                icon,
-
-                text
-
-            ) {
-
-
-                registerMessage.className =
-                    "message";
-
-
-                registerMessage.classList.add(
-                    "show"
-                );
-
-
-                registerMessage.classList.add(
-                    type
-                );
-
-
-                messageIcon.textContent =
-                    icon;
-
-
-                messageText.textContent =
-                    text;
-
-
-            }
-
-
-            /* =================================================
-               SHOW ACTIVATION MESSAGE
-            ================================================= */
-
-            function showActivationMessage(
-
-                type,
-
-                icon,
-
-                text
-
-            ) {
-
-
-                activationMessage.className =
-                    "message";
-
-
-                activationMessage.classList.add(
-                    "show"
-                );
-
-
-                activationMessage.classList.add(
-                    type
-                );
-
-
-                activationMessageIcon.textContent =
-                    icon;
-
-
-                activationMessageText.textContent =
-                    text;
-
-
-            }
-
-
-            /* =================================================
-               HIDE MESSAGES
-            ================================================= */
-
-            function hideMessages() {
-
-
-                registerMessage.classList.remove(
-                    "show"
-                );
-
-
-                activationMessage.classList.remove(
-                    "show"
-                );
-
-
-            }
-
-
-            /* =================================================
-               REGISTER FORM
-            ================================================= */
+            /* =====================================
+               REGISTER
+            ===================================== */
 
             registerForm.addEventListener(
 
@@ -4485,7 +4101,7 @@
                     event.preventDefault();
 
 
-                    hideMessages();
+                    hideMessage();
 
 
                     /* USERNAME */
@@ -4497,7 +4113,7 @@
                     ) {
 
 
-                        showRegisterMessage(
+                        showMessage(
 
                             "error",
 
@@ -4526,13 +4142,13 @@
                     ) {
 
 
-                        showRegisterMessage(
+                        showMessage(
 
                             "error",
 
                             "⚠️",
 
-                            "Silakan masukkan alamat Gmail Anda."
+                            "Silakan masukkan Gmail atau email."
 
                         );
 
@@ -4555,13 +4171,13 @@
                     ) {
 
 
-                        showRegisterMessage(
+                        showMessage(
 
                             "error",
 
                             "⚠️",
 
-                            "Password minimal harus terdiri dari 6 karakter."
+                            "Password minimal harus 6 karakter."
 
                         );
 
@@ -4575,7 +4191,37 @@
                     }
 
 
-                    /* CHILD NAME */
+                    /* CONFIRM PASSWORD */
+
+                    if (
+
+                        password.value !==
+                        confirmPassword.value
+
+                    ) {
+
+
+                        showMessage(
+
+                            "error",
+
+                            "⚠️",
+
+                            "Password dan ulangi password tidak sama."
+
+                        );
+
+
+                        confirmPassword.focus();
+
+
+                        return;
+
+
+                    }
+
+
+                    /* CHILD */
 
                     if (
 
@@ -4584,7 +4230,7 @@
                     ) {
 
 
-                        showRegisterMessage(
+                        showMessage(
 
                             "error",
 
@@ -4613,13 +4259,13 @@
                     ) {
 
 
-                        showRegisterMessage(
+                        showMessage(
 
                             "error",
 
                             "⚠️",
 
-                            "Silakan masukkan nomor WhatsApp Wali."
+                            "Silakan masukkan nomor WhatsApp."
 
                         );
 
@@ -4633,62 +4279,7 @@
                     }
 
 
-                    /* GENERATE CODE */
-
-                    currentActivationCode =
-
-                        generateActivationCode();
-
-
-                    /* SAVE DATA */
-
-                    const accountData = {
-
-                        role:
-                            "wali",
-
-                        username:
-                            username.value.trim(),
-
-                        email:
-                            email.value.trim(),
-
-                        password:
-                            password.value,
-
-                        childName:
-                            childName.value.trim(),
-
-                        birthDate:
-                            birthDate.value,
-
-                        whatsapp:
-                            whatsapp.value.trim(),
-
-                        activationCode:
-                            currentActivationCode,
-
-                        activated:
-                            false,
-
-                        createdAt:
-                            new Date().toISOString()
-
-                    };
-
-
-                    localStorage.setItem(
-
-                        "raPendingWaliAccount",
-
-                        JSON.stringify(
-                            accountData
-                        )
-
-                    );
-
-
-                    /* BUTTON LOADING */
+                    /* LOADING */
 
                     registerButton.disabled =
                         true;
@@ -4703,49 +4294,113 @@
                         function () {
 
 
-                            generatedCode.textContent =
+                            /* CREATE CODE */
 
-                                currentActivationCode;
+                            generatedCode =
+
+                                generateActivationCode();
 
 
-                            registerForm.style.display =
+                            /* SAVE DATA */
 
-                                "none";
+                            registeredData = {
 
+                                username:
+                                    username.value.trim(),
+
+                                email:
+                                    email.value.trim(),
+
+                                password:
+                                    password.value,
+
+                                childName:
+                                    childName.value.trim(),
+
+                                birthDate:
+                                    birthDate.value,
+
+                                whatsapp:
+                                    whatsapp.value.trim(),
+
+                                activationCode:
+                                    generatedCode,
+
+                                activated:
+                                    false
+
+                            };
+
+
+                            /* TEMP SAVE */
+
+                            localStorage.setItem(
+
+                                "raPendingRegistration",
+
+                                JSON.stringify(
+                                    registeredData
+                                )
+
+                            );
+
+
+                            /* MESSAGE */
+
+                            showMessage(
+
+                                "success",
+
+                                "🎉",
+
+                                "Pendaftaran berhasil! Kode aktivasi telah dibuat. Silakan buka WhatsApp untuk mendapatkan kode."
+
+                            );
+
+
+                            /* SHOW ACTIVATION */
 
                             activationBox.classList.add(
-
                                 "show"
-
                             );
 
 
-                            activationBox.scrollIntoView(
+                            /* SCROLL */
 
-                                {
+                            setTimeout(
 
-                                    behavior:
-                                        "smooth",
+                                function () {
 
-                                    block:
-                                        "center"
 
-                                }
+                                    activationBox.scrollIntoView(
+
+                                        {
+
+                                            behavior:
+                                                "smooth",
+
+                                            block:
+                                                "center"
+
+                                        }
+
+                                    );
+
+
+                                },
+
+                                300
 
                             );
-
-
-                            registerButton.disabled =
-                                false;
 
 
                             registerButton.innerHTML =
-                                "🚀 DAFTAR SEKARANG";
+                                "✅ DATA BERHASIL DIDAFTARKAN";
 
 
                         },
 
-                        700
+                        800
 
                     );
 
@@ -4755,11 +4410,11 @@
             );
 
 
-            /* =================================================
+            /* =====================================
                OPEN WHATSAPP
-            ================================================= */
+            ===================================== */
 
-            openWhatsApp.addEventListener(
+            whatsappButton.addEventListener(
 
                 "click",
 
@@ -4768,18 +4423,18 @@
 
                     if (
 
-                        currentActivationCode === ""
+                        generatedCode === ""
 
                     ) {
 
 
-                        showActivationMessage(
+                        showMessage(
 
                             "error",
 
                             "⚠️",
 
-                            "Kode aktivasi belum dibuat."
+                            "Silakan isi formulir dan daftar terlebih dahulu."
 
                         );
 
@@ -4793,32 +4448,32 @@
                     const waNumber =
 
                         formatWhatsAppNumber(
+
                             whatsapp.value
+
                         );
 
 
-                    const message =
+                    const waMessage =
 
-                        "Halo "
-                        +
-                        username.value.trim()
-                        +
-                        " 👋\n\n"
-                        +
-                        "Selamat datang di RA Miftahul Hikmah.\n\n"
-                        +
-                        "Kode aktivasi akun Anda adalah:\n\n"
-                        +
-                        currentActivationCode
-                        +
-                        "\n\n"
-                        +
-                        "Masukkan kode tersebut pada halaman aktivasi.\n\n"
-                        +
-                        "Terima kasih 🌈";
+                        `Halo ${username.value.trim()} 👋
+
+Selamat datang di RA Miftahul Hikmah 🌈
+
+Kode aktivasi akun Anda adalah:
+
+🔐 ${generatedCode}
+
+Masukkan kode tersebut pada halaman aktivasi untuk mengaktifkan akun Anda.
+
+Data Anak:
+👶 ${childName.value.trim()}
+
+Terima kasih 🙏
+RA Miftahul Hikmah`;
 
 
-                    const whatsappURL =
+                    const waUrl =
 
                         "https://wa.me/"
                         +
@@ -4827,128 +4482,26 @@
                         "?text="
                         +
                         encodeURIComponent(
-                            message
+                            waMessage
                         );
 
 
                     window.open(
 
-                        whatsappURL,
+                        waUrl,
 
                         "_blank"
 
                     );
 
 
-                    showActivationMessage(
+                    showMessage(
 
-                        "success",
+                        "info",
 
-                        "📱",
+                        "💬",
 
-                        "WhatsApp telah dibuka. Kirim atau simpan pesan kode aktivasi Anda, kemudian masukkan kode di bawah."
-
-                    );
-
-
-                }
-
-            );
-
-
-            /* =================================================
-               COPY CODE
-            ================================================= */
-
-            copyCode.addEventListener(
-
-                "click",
-
-                function () {
-
-
-                    if (
-
-                        currentActivationCode === ""
-
-                    ) {
-
-
-                        return;
-
-
-                    }
-
-
-                    if (
-
-                        navigator.clipboard
-
-                    ) {
-
-
-                        navigator.clipboard.writeText(
-
-                            currentActivationCode
-
-                        );
-
-
-                    }
-
-
-                    else {
-
-
-                        const temporaryInput =
-
-                            document.createElement(
-                                "input"
-                            );
-
-
-                        temporaryInput.value =
-
-                            currentActivationCode;
-
-
-                        document.body.appendChild(
-                            temporaryInput
-                        );
-
-
-                        temporaryInput.select();
-
-
-                        document.execCommand(
-                            "copy"
-                        );
-
-
-                        document.body.removeChild(
-                            temporaryInput
-                        );
-
-
-                    }
-
-
-                    copyCode.textContent =
-                        "✅ KODE DISALIN";
-
-
-                    setTimeout(
-
-                        function () {
-
-
-                            copyCode.textContent =
-                                "📋 SALIN KODE";
-
-
-                        },
-
-                        2000
+                        "WhatsApp telah dibuka. Kirim pesan tersebut, lalu kembali ke halaman ini dan masukkan kode aktivasi."
 
                     );
 
@@ -4958,25 +4511,20 @@
             );
 
 
-            /* =================================================
+            /* =====================================
                ACTIVATION INPUT
-            ================================================= */
+            ===================================== */
 
-            activationInput.addEventListener(
+            activationCode.addEventListener(
 
                 "input",
 
                 function () {
 
 
-                    activationInput.value =
+                    activationCode.value =
 
-                        activationInput.value.toUpperCase();
-
-
-                    activationMessage.classList.remove(
-                        "show"
-                    );
+                        activationCode.value.toUpperCase();
 
 
                 }
@@ -4984,9 +4532,9 @@
             );
 
 
-            /* =================================================
+            /* =====================================
                ACTIVATE ACCOUNT
-            ================================================= */
+            ===================================== */
 
             activateButton.addEventListener(
 
@@ -4995,32 +4543,32 @@
                 function () {
 
 
-                    const inputCode =
+                    const enteredCode =
 
-                        activationInput.value
+                        activationCode.value
                         .trim()
                         .toUpperCase();
 
 
                     if (
 
-                        inputCode === ""
+                        enteredCode === ""
 
                     ) {
 
 
-                        showActivationMessage(
+                        showMessage(
 
                             "error",
 
                             "⚠️",
 
-                            "Silakan masukkan kode aktivasi Anda."
+                            "Silakan masukkan kode aktivasi."
 
                         );
 
 
-                        activationInput.focus();
+                        activationCode.focus();
 
 
                         return;
@@ -5031,24 +4579,24 @@
 
                     if (
 
-                        inputCode !==
-                        currentActivationCode
+                        enteredCode !==
+                        generatedCode
 
                     ) {
 
 
-                        showActivationMessage(
+                        showMessage(
 
                             "error",
 
                             "❌",
 
-                            "Kode aktivasi salah. Silakan periksa kembali kode Anda."
+                            "Kode aktivasi salah. Silakan periksa kembali kode dari WhatsApp."
 
                         );
 
 
-                        activationInput.focus();
+                        activationCode.focus();
 
 
                         return;
@@ -5057,88 +4605,37 @@
                     }
 
 
-                    /* GET PENDING DATA */
+                    /* ACTIVATE */
 
-                    const pendingAccount =
-
-                        localStorage.getItem(
-
-                            "raPendingWaliAccount"
-
-                        );
-
-
-                    if (
-
-                        !pendingAccount
-
-                    ) {
-
-
-                        showActivationMessage(
-
-                            "error",
-
-                            "⚠️",
-
-                            "Data pendaftaran tidak ditemukan. Silakan daftar kembali."
-
-                        );
-
-
-                        return;
-
-
-                    }
-
-
-                    const accountData =
-
-                        JSON.parse(
-                            pendingAccount
-                        );
-
-
-                    accountData.activated =
+                    registeredData.activated =
                         true;
 
-
-                    accountData.activatedAt =
-
-                        new Date().toISOString();
-
-
-                    /* SAVE ACTIVE ACCOUNT */
 
                     localStorage.setItem(
 
                         "raWaliAccount",
 
                         JSON.stringify(
-                            accountData
+                            registeredData
                         )
 
                     );
 
 
-                    /* REMOVE PENDING */
-
                     localStorage.removeItem(
 
-                        "raPendingWaliAccount"
+                        "raPendingRegistration"
 
                     );
 
 
-                    /* SUCCESS */
-
-                    showActivationMessage(
+                    showMessage(
 
                         "success",
 
                         "🎉",
 
-                        "Akun berhasil diaktifkan! Anda akan diarahkan ke halaman Login..."
+                        "Akun berhasil diaktifkan! Anda akan diarahkan ke halaman Login."
 
                     );
 
@@ -5148,7 +4645,7 @@
 
 
                     activateButton.textContent =
-                        "⏳ AKUN BERHASIL DIAKTIFKAN";
+                        "⏳ MENGARAHKAN KE LOGIN...";
 
 
                     setTimeout(
@@ -5162,7 +4659,7 @@
 
                         },
 
-                        1800
+                        1500
 
                     );
 
