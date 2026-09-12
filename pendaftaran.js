@@ -20,7 +20,9 @@
     </title>
 
 
-    <!-- GOOGLE FONT -->
+    <!-- =====================================================
+         GOOGLE FONT
+    ====================================================== -->
 
     <link
         rel="preconnect"
@@ -39,3016 +41,3643 @@
     >
 
 
-<style>
+    <style>
 
 
-/* =====================================================
-   RESET
-===================================================== */
+        /* =====================================================
+           RESET
+        ====================================================== */
 
-* {
+        * {
 
-    box-sizing:
-        border-box;
+            box-sizing:
+                border-box;
 
-}
+        }
 
 
-html {
+        html {
 
-    scroll-behavior:
-        smooth;
+            scroll-behavior:
+                smooth;
 
-}
+        }
 
 
-body {
+        body {
 
-    margin:
-        0;
+            margin:
+                0;
 
-    overflow-x:
-        hidden;
+            overflow-x:
+                hidden;
 
-    font-family:
-        "Nunito",
-        sans-serif;
+            font-family:
+                "Nunito",
+                sans-serif;
 
-    color:
-        #342d4c;
+            color:
+                #302b3c;
 
-    background:
-        #f7f7fb;
+            background:
+                #f7f7fb;
 
-}
+        }
 
 
-button,
-input,
-select,
-textarea {
+        body::before {
 
-    font-family:
-        inherit;
+            content:
+                "";
 
-}
+            position:
+                fixed;
 
+            width:
+                500px;
 
-a {
+            height:
+                500px;
 
-    -webkit-tap-highlight-color:
-        transparent;
+            top:
+                -250px;
 
-}
+            left:
+                -200px;
 
+            border-radius:
+                50%;
 
-/* =====================================================
-   CONTAINER
-===================================================== */
+            background:
+                #ffd5e4;
 
-.container {
+            filter:
+                blur(100px);
 
-    width:
-        min(
-            1180px,
-            calc(100% - 32px)
-        );
+            opacity:
+                .55;
 
-    margin:
-        auto;
+            pointer-events:
+                none;
 
-}
+            z-index:
+                -2;
 
+        }
 
-/* =====================================================
-   BACKGROUND
-===================================================== */
 
-.page-bg {
+        body::after {
 
-    position:
-        fixed;
+            content:
+                "";
 
-    inset:
-        0;
+            position:
+                fixed;
 
-    z-index:
-        -2;
+            width:
+                500px;
 
-    pointer-events:
-        none;
+            height:
+                500px;
 
-    overflow:
-        hidden;
+            bottom:
+                -250px;
 
-}
+            right:
+                -200px;
 
+            border-radius:
+                50%;
 
-.page-bg::before {
+            background:
+                #d9d3ff;
 
-    content:
-        "";
+            filter:
+                blur(110px);
 
-    position:
-        absolute;
+            opacity:
+                .6;
 
-    width:
-        450px;
+            pointer-events:
+                none;
 
-    height:
-        450px;
+            z-index:
+                -2;
 
-    top:
-        -150px;
+        }
 
-    left:
-        -150px;
 
-    border-radius:
-        50%;
+        button,
+        input,
+        select,
+        textarea {
 
-    background:
-        rgba(255,174,210,.25);
+            font-family:
+                inherit;
 
-    filter:
-        blur(80px);
+        }
 
-}
 
+        a {
 
-.page-bg::after {
+            -webkit-tap-highlight-color:
+                transparent;
 
-    content:
-        "";
+        }
 
-    position:
-        absolute;
 
-    width:
-        500px;
+        img {
 
-    height:
-        500px;
+            max-width:
+                100%;
 
-    right:
-        -220px;
+        }
 
-    bottom:
-        -200px;
 
-    border-radius:
-        50%;
+        /* =====================================================
+           CONTAINER
+        ====================================================== */
 
-    background:
-        rgba(150,200,255,.22);
+        .container {
 
-    filter:
-        blur(90px);
+            width:
+                min(
+                    1180px,
+                    calc(100% - 32px)
+                );
 
-}
+            margin:
+                auto;
 
+        }
 
-/* =====================================================
-   HEADER
-===================================================== */
 
-.header {
+        /* =====================================================
+           HEADER
+        ====================================================== */
 
-    position:
-        sticky;
+        .header {
 
-    top:
-        0;
+            position:
+                sticky;
 
-    z-index:
-        100;
+            top:
+                0;
 
-    background:
-        rgba(255,255,255,.88);
+            z-index:
+                1000;
 
-    backdrop-filter:
-        blur(20px);
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .86
+                );
 
-    border-bottom:
-        1px solid rgba(100,80,140,.07);
+            backdrop-filter:
+                blur(20px);
 
-}
+            border-bottom:
+                1px solid
+                rgba(
+                    70,
+                    50,
+                    100,
+                    .06
+                );
 
+        }
 
-.header-inner {
 
-    min-height:
-        74px;
+        .header-inner {
 
-    display:
-        flex;
+            min-height:
+                76px;
 
-    align-items:
-        center;
+            display:
+                flex;
 
-    justify-content:
-        space-between;
+            align-items:
+                center;
 
-    gap:
-        15px;
+            justify-content:
+                space-between;
 
-}
+            gap:
+                15px;
 
+        }
 
-.brand {
 
-    display:
-        flex;
+        .brand {
 
-    align-items:
-        center;
+            display:
+                flex;
 
-    gap:
-        10px;
+            align-items:
+                center;
 
-    text-decoration:
-        none;
+            gap:
+                12px;
 
-    color:
-        #342d4c;
+            text-decoration:
+                none;
 
-}
+            color:
+                #302b3c;
 
+        }
 
-.brand-logo {
 
-    width:
-        48px;
+        .brand-logo {
 
-    height:
-        48px;
+            width:
+                52px;
 
-    display:
-        grid;
+            height:
+                52px;
 
-    place-items:
-        center;
+            flex:
+                0 0 auto;
 
-    flex:
-        0 0 auto;
+            display:
+                grid;
 
-    border-radius:
-        16px;
+            place-items:
+                center;
 
-    font-size:
-        24px;
+            border-radius:
+                18px;
 
-    background:
-        linear-gradient(
-            135deg,
-            #ffe29a,
-            #ffc9dc,
-            #cfefff
-        );
+            font-size:
+                26px;
 
-    box-shadow:
-        0 10px 25px rgba(239,79,130,.16);
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffe49a,
+                    #ffc8dc,
+                    #d2efff
+                );
 
-}
+            box-shadow:
+                0 12px 28px
+                rgba(
+                    239,
+                    79,
+                    130,
+                    .18
+                );
 
+        }
 
-.brand h1 {
 
-    margin:
-        0;
+        .brand-text h1 {
 
-    font-family:
-        "Baloo 2",
-        cursive;
+            margin:
+                0;
 
-    font-size:
-        19px;
+            font-family:
+                "Baloo 2",
+                cursive;
 
-    line-height:
-        1;
+            font-size:
+                20px;
 
-}
+            line-height:
+                1;
 
+        }
 
-.brand h1 span {
 
-    color:
-        #ef4f82;
+        .brand-text h1 span {
 
-}
+            color:
+                #ef4f82;
 
+        }
 
-.brand p {
 
-    margin:
-        5px 0 0;
+        .brand-text p {
 
-    color:
-        #8a8294;
+            margin:
+                5px 0 0;
 
-    font-size:
-        9px;
+            color:
+                #918998;
 
-}
+            font-size:
+                10px;
 
+            font-weight:
+                700;
 
-.status-link {
+        }
 
-    display:
-        inline-flex;
 
-    align-items:
-        center;
+        .header-status {
 
-    justify-content:
-        center;
+            display:
+                inline-flex;
 
-    gap:
-        7px;
+            align-items:
+                center;
 
-    padding:
-        11px 15px;
+            justify-content:
+                center;
 
-    border-radius:
-        14px;
+            gap:
+                8px;
 
-    text-decoration:
-        none;
+            min-height:
+                46px;
 
-    color:
-        white;
+            padding:
+                0 18px;
 
-    font-size:
-        11px;
+            border-radius:
+                16px;
 
-    font-weight:
-        900;
+            text-decoration:
+                none;
 
-    background:
-        linear-gradient(
-            135deg,
-            #7b6cff,
-            #a47fff
-        );
+            color:
+                white;
 
-    box-shadow:
-        0 10px 22px rgba(123,108,255,.20);
+            font-size:
+                11px;
 
-}
+            font-weight:
+                900;
 
+            background:
+                linear-gradient(
+                    135deg,
+                    #7b6cff,
+                    #a57fff
+                );
 
-/* =====================================================
-   NAV
-===================================================== */
+            box-shadow:
+                0 12px 25px
+                rgba(
+                    123,
+                    108,
+                    255,
+                    .22
+                );
 
-.nav {
+            transition:
+                .3s ease;
 
-    position:
-        sticky;
+        }
 
-    top:
-        74px;
 
-    z-index:
-        90;
+        .header-status:hover {
 
-    background:
-        rgba(255,255,255,.94);
+            transform:
+                translateY(-2px);
 
-    backdrop-filter:
-        blur(20px);
+        }
 
-    border-bottom:
-        1px solid #f0edf5;
 
-}
+        /* =====================================================
+           NAVIGATION
+        ====================================================== */
 
+        .nav {
 
-.nav-inner {
+            position:
+                sticky;
 
-    width:
-        min(
-            1180px,
-            calc(100% - 20px)
-        );
+            top:
+                76px;
 
-    margin:
-        auto;
+            z-index:
+                900;
 
-    display:
-        flex;
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .93
+                );
 
-    align-items:
-        center;
+            backdrop-filter:
+                blur(20px);
 
-    gap:
-        8px;
+            border-bottom:
+                1px solid #efedf4;
 
-    padding:
-        8px 0;
+        }
 
-    overflow-x:
-        auto;
 
-    scrollbar-width:
-        none;
+        .nav-inner {
 
-}
+            width:
+                min(
+                    1180px,
+                    calc(100% - 24px)
+                );
 
+            margin:
+                auto;
 
-.nav-inner::-webkit-scrollbar {
+            display:
+                flex;
 
-    display:
-        none;
+            align-items:
+                center;
 
-}
+            gap:
+                7px;
 
+            padding:
+                9px 0;
 
-.nav a {
+            overflow-x:
+                auto;
 
-    flex:
-        0 0 auto;
+            scrollbar-width:
+                none;
 
-    display:
-        flex;
+        }
 
-    align-items:
-        center;
 
-    justify-content:
-        center;
+        .nav-inner::-webkit-scrollbar {
 
-    gap:
-        6px;
+            display:
+                none;
 
-    padding:
-        10px 14px;
+        }
 
-    border-radius:
-        13px;
 
-    text-decoration:
-        none;
+        .nav a {
 
-    color:
-        #766e80;
+            flex:
+                0 0 auto;
 
-    font-size:
-        11px;
+            display:
+                inline-flex;
 
-    font-weight:
-        900;
+            align-items:
+                center;
 
-}
+            justify-content:
+                center;
 
+            gap:
+                6px;
 
-.nav a.active {
+            padding:
+                10px 15px;
 
-    color:
-        white;
+            border-radius:
+                13px;
 
-    background:
-        linear-gradient(
-            135deg,
-            #ef4f82,
-            #ff7ca6
-        );
+            text-decoration:
+                none;
 
-    box-shadow:
-        0 8px 18px rgba(239,79,130,.20);
+            color:
+                #746c7c;
 
-}
+            font-size:
+                11px;
 
+            font-weight:
+                900;
 
-/* =====================================================
-   MAIN
-===================================================== */
+            transition:
+                .25s ease;
 
-.main {
+        }
 
-    padding:
-        28px 0 60px;
 
-}
+        .nav a:hover {
 
+            background:
+                #f7f5ff;
 
-/* =====================================================
-   BLOG HERO
-===================================================== */
+        }
 
-.blog-hero {
 
-    position:
-        relative;
+        .nav a.active {
 
-    overflow:
-        hidden;
+            color:
+                white;
 
-    min-height:
-        420px;
+            background:
+                linear-gradient(
+                    135deg,
+                    #ef4f82,
+                    #ff7da8
+                );
 
-    display:
-        flex;
+            box-shadow:
+                0 9px 20px
+                rgba(
+                    239,
+                    79,
+                    130,
+                    .20
+                );
 
-    align-items:
-        flex-end;
+        }
 
-    padding:
-        40px;
 
-    border-radius:
-        32px;
+        /* =====================================================
+           MAIN
+        ====================================================== */
 
-    background:
+        .main {
 
-        linear-gradient(
-            135deg,
-            rgba(123,108,255,.95),
-            rgba(239,79,130,.90),
-            rgba(255,145,100,.85)
-        );
+            padding:
+                32px 0 65px;
 
-    box-shadow:
-        0 25px 60px rgba(100,60,120,.20);
+        }
 
-}
 
+        /* =====================================================
+           BLOG HERO
+        ====================================================== */
 
-.blog-hero::before {
+        .blog-hero {
 
-    content:
-        "🌈";
+            position:
+                relative;
 
-    position:
-        absolute;
+            overflow:
+                hidden;
 
-    top:
-        -30px;
+            min-height:
+                480px;
 
-    right:
-        5%;
+            display:
+                flex;
 
-    font-size:
-        180px;
+            align-items:
+                flex-end;
 
-    opacity:
-        .16;
+            padding:
+                48px;
 
-    transform:
-        rotate(-15deg);
+            border-radius:
+                35px;
 
-}
+            background:
+                linear-gradient(
+                    135deg,
+                    #7566ef,
+                    #c264dc 48%,
+                    #ef618d
+                );
 
+            box-shadow:
+                0 30px 70px
+                rgba(
+                    104,
+                    70,
+                    150,
+                    .25
+                );
 
-.blog-hero::after {
+        }
 
-    content:
-        "🎒";
 
-    position:
-        absolute;
+        .blog-hero::before {
 
-    left:
-        5%;
+            content:
+                "🌈";
 
-    top:
-        30px;
+            position:
+                absolute;
 
-    font-size:
-        70px;
+            top:
+                -60px;
 
-    opacity:
-        .18;
+            right:
+                4%;
 
-}
+            font-size:
+                230px;
 
+            opacity:
+                .14;
 
-.hero-content {
+            transform:
+                rotate(
+                    -12deg
+                );
 
-    position:
-        relative;
+        }
 
-    z-index:
-        2;
 
-    max-width:
-        700px;
+        .blog-hero::after {
 
-    color:
-        white;
+            content:
+                "🎒";
 
-}
+            position:
+                absolute;
 
+            top:
+                55px;
 
-.hero-category {
+            left:
+                8%;
 
-    display:
-        inline-flex;
+            font-size:
+                85px;
 
-    align-items:
-        center;
+            opacity:
+                .16;
 
-    gap:
-        7px;
+            transform:
+                rotate(
+                    -10deg
+                );
 
-    padding:
-        9px 14px;
+        }
 
-    border-radius:
-        50px;
 
-    background:
-        rgba(255,255,255,.18);
+        .hero-dots {
 
-    backdrop-filter:
-        blur(10px);
+            position:
+                absolute;
 
-    font-size:
-        10px;
+            width:
+                260px;
 
-    font-weight:
-        900;
+            height:
+                260px;
 
-}
+            right:
+                12%;
 
+            bottom:
+                -120px;
 
-.hero-content h2 {
+            border:
+                2px dashed
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .25
+                );
 
-    margin:
-        17px 0 12px;
+            border-radius:
+                50%;
 
-    font-family:
-        "Baloo 2",
-        cursive;
+        }
 
-    font-size:
-        clamp(40px,7vw,68px);
 
-    line-height:
-        1;
+        .hero-content {
 
-}
+            position:
+                relative;
 
+            z-index:
+                2;
 
-.hero-content p {
+            max-width:
+                720px;
 
-    max-width:
-        600px;
+            color:
+                white;
 
-    margin:
-        0;
+        }
 
-    color:
-        rgba(255,255,255,.90);
 
-    font-size:
-        14px;
+        .hero-category {
 
-    line-height:
-        1.8;
+            display:
+                inline-flex;
 
-}
+            align-items:
+                center;
 
+            gap:
+                8px;
 
-.hero-meta {
+            padding:
+                10px 16px;
 
-    display:
-        flex;
+            border-radius:
+                50px;
 
-    flex-wrap:
-        wrap;
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .17
+                );
 
-    gap:
-        10px;
+            border:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .15
+                );
 
-    margin-top:
-        22px;
+            backdrop-filter:
+                blur(10px);
 
-}
+            font-size:
+                10px;
 
+            font-weight:
+                900;
 
-.hero-meta span {
+            letter-spacing:
+                .5px;
 
-    padding:
-        8px 12px;
+        }
 
-    border-radius:
-        50px;
 
-    background:
-        rgba(255,255,255,.16);
+        .hero-content h2 {
 
-    font-size:
-        10px;
+            margin:
+                20px 0 14px;
 
-    font-weight:
-        800;
+            font-family:
+                "Baloo 2",
+                cursive;
 
-}
+            font-size:
+                clamp(
+                    42px,
+                    7vw,
+                    72px
+                );
 
+            line-height:
+                .98;
 
-/* =====================================================
-   BLOG LAYOUT
-===================================================== */
+        }
 
-.blog-layout {
 
-    display:
-        grid;
+        .hero-content p {
 
-    grid-template-columns:
-        minmax(0,1.5fr)
-        minmax(280px,.75fr);
+            max-width:
+                620px;
 
-    gap:
-        25px;
+            margin:
+                0;
 
-    margin-top:
-        25px;
+            color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .90
+                );
 
-}
+            font-size:
+                15px;
 
+            line-height:
+                1.85;
 
-/* =====================================================
-   ARTICLE CARD
-===================================================== */
+        }
 
-.article-card {
 
-    overflow:
-        hidden;
+        .hero-info {
 
-    border-radius:
-        26px;
+            display:
+                flex;
 
-    background:
-        rgba(255,255,255,.90);
+            flex-wrap:
+                wrap;
 
-    border:
-        1px solid rgba(255,255,255,.90);
+            gap:
+                10px;
 
-    box-shadow:
-        0 18px 45px rgba(60,40,90,.08);
+            margin-top:
+                25px;
 
-}
+        }
 
 
-.article-head {
+        .hero-info span {
 
-    padding:
-        25px 25px 0;
+            display:
+                inline-flex;
 
-}
+            align-items:
+                center;
 
+            gap:
+                6px;
 
-.article-tag {
+            padding:
+                9px 13px;
 
-    display:
-        inline-flex;
+            border-radius:
+                50px;
 
-    padding:
-        7px 12px;
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .15
+                );
 
-    border-radius:
-        30px;
+            font-size:
+                10px;
 
-    background:
-        #f1edff;
+            font-weight:
+                800;
 
-    color:
-        #7b63bd;
+        }
 
-    font-size:
-        10px;
 
-    font-weight:
-        900;
+        /* =====================================================
+           MOBILE QUICK MENU
+        ====================================================== */
 
-}
+        .quick-menu {
 
+            display:
+                none;
 
-.article-head h2 {
+        }
 
-    margin:
-        13px 0 8px;
 
-    font-family:
-        "Baloo 2",
-        cursive;
+        /* =====================================================
+           BLOG LAYOUT
+        ====================================================== */
 
-    font-size:
-        31px;
+        .blog-layout {
 
-    line-height:
-        1.1;
+            display:
+                grid;
 
-}
+            grid-template-columns:
+                minmax(
+                    0,
+                    1.55fr
+                )
+                minmax(
+                    280px,
+                    .75fr
+                );
 
+            gap:
+                25px;
 
-.article-head p {
+            margin-top:
+                28px;
 
-    margin:
-        0;
+            align-items:
+                start;
 
-    color:
-        #837a8d;
+        }
 
-    font-size:
-        12px;
 
-    line-height:
-        1.8;
+        /* =====================================================
+           ARTICLE CARD
+        ====================================================== */
 
-}
+        .article-card {
 
+            overflow:
+                hidden;
 
-.article-body {
+            border-radius:
+                28px;
 
-    padding:
-        25px;
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .93
+                );
 
-}
+            border:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .9
+                );
 
+            box-shadow:
+                0 20px 50px
+                rgba(
+                    50,
+                    35,
+                    80,
+                    .08
+                );
 
-/* =====================================================
-   FLOW BLOG
-===================================================== */
+        }
 
-.flow-grid {
 
-    display:
-        grid;
+        .article-cover {
 
-    grid-template-columns:
-        repeat(4,1fr);
+            min-height:
+                170px;
 
-    gap:
-        10px;
+            position:
+                relative;
 
-}
+            display:
+                flex;
 
+            align-items:
+                center;
 
-.flow-item {
+            padding:
+                30px;
 
-    position:
-        relative;
+            overflow:
+                hidden;
 
-    min-height:
-        130px;
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff0f5,
+                    #eeeaff,
+                    #e7f8ff
+                );
 
-    padding:
-        15px 10px;
+        }
 
-    display:
-        flex;
 
-    flex-direction:
-        column;
+        .article-cover::after {
 
-    align-items:
-        center;
+            content:
+                "🖍️";
 
-    justify-content:
-        center;
+            position:
+                absolute;
 
-    text-align:
-        center;
+            right:
+                30px;
 
-    border-radius:
-        18px;
+            font-size:
+                90px;
 
-    background:
-        #faf9ff;
+            opacity:
+                .75;
 
-}
+            transform:
+                rotate(
+                    12deg
+                );
 
+        }
 
-.flow-icon {
 
-    width:
-        45px;
+        .article-cover-content {
 
-    height:
-        45px;
+            position:
+                relative;
 
-    display:
-        grid;
+            z-index:
+                2;
 
-    place-items:
-        center;
+        }
 
-    margin-bottom:
-        8px;
 
-    border-radius:
-        15px;
+        .article-cover small {
 
-    font-size:
-        22px;
+            display:
+                inline-block;
 
-    background:
-        white;
+            padding:
+                7px 11px;
 
-    box-shadow:
-        0 7px 17px rgba(60,40,90,.07);
+            border-radius:
+                30px;
 
-}
+            color:
+                #8068b8;
 
+            background:
+                white;
 
-.flow-item b {
+            font-size:
+                9px;
 
-    font-size:
-        10px;
+            font-weight:
+                900;
 
-}
+        }
 
 
-.flow-item small {
+        .article-cover h2 {
 
-    margin-top:
-        5px;
+            max-width:
+                480px;
 
-    color:
-        #938a9b;
+            margin:
+                13px 0 0;
 
-    font-size:
-        8px;
+            font-family:
+                "Baloo 2",
+                cursive;
 
-}
+            font-size:
+                32px;
 
+            line-height:
+                1.1;
 
-/* =====================================================
-   FORM
-===================================================== */
+        }
 
-.form-card {
 
-    margin-top:
-        25px;
+        .article-body {
 
-    padding:
-        25px;
+            padding:
+                25px;
 
-    border-radius:
-        26px;
+        }
 
-    background:
-        rgba(255,255,255,.92);
 
-    box-shadow:
-        0 18px 45px rgba(60,40,90,.08);
+        .article-body > p {
 
-}
+            margin:
+                0 0 20px;
 
+            color:
+                #82798b;
 
-.form-card-header {
+            font-size:
+                12px;
 
-    display:
-        flex;
+            line-height:
+                1.85;
 
-    align-items:
-        center;
+        }
 
-    gap:
-        13px;
 
-    margin-bottom:
-        20px;
+        /* =====================================================
+           STEPS
+        ====================================================== */
 
-}
+        .steps-grid {
 
+            display:
+                grid;
 
-.form-card-icon {
+            grid-template-columns:
+                repeat(
+                    4,
+                    1fr
+                );
 
-    width:
-        55px;
+            gap:
+                11px;
 
-    height:
-        55px;
+        }
 
-    display:
-        grid;
 
-    place-items:
-        center;
+        .step-card {
 
-    flex:
-        0 0 auto;
+            position:
+                relative;
 
-    border-radius:
-        18px;
+            min-height:
+                155px;
 
-    font-size:
-        26px;
+            padding:
+                15px 10px;
 
-    background:
-        linear-gradient(
-            135deg,
-            #fff0f6,
-            #eeeaff
-        );
+            display:
+                flex;
 
-}
+            flex-direction:
+                column;
 
+            align-items:
+                center;
 
-.form-card-header h2 {
+            justify-content:
+                center;
 
-    margin:
-        0;
+            text-align:
+                center;
 
-    font-family:
-        "Baloo 2",
-        cursive;
+            border-radius:
+                20px;
 
-    font-size:
-        25px;
+            background:
+                #faf9ff;
 
-}
+            border:
+                1px solid
+                #f1edf7;
 
+            transition:
+                .3s ease;
 
-.form-card-header p {
+        }
 
-    margin:
-        3px 0 0;
 
-    color:
-        #918898;
+        .step-card:hover {
 
-    font-size:
-        10px;
+            transform:
+                translateY(-5px);
 
-}
+            background:
+                white;
 
+            box-shadow:
+                0 15px 30px
+                rgba(
+                    70,
+                    50,
+                    110,
+                    .08
+                );
 
-/* =====================================================
-   FORM SECTION
-===================================================== */
+        }
 
-.form-section {
 
-    margin-bottom:
-        16px;
+        .step-number {
 
-    padding:
-        18px;
+            position:
+                absolute;
 
-    border-radius:
-        20px;
+            top:
+                10px;
 
-    background:
-        #fbfaff;
+            left:
+                10px;
 
-    border:
-        1px solid #f0edf6;
+            width:
+                23px;
 
-}
+            height:
+                23px;
 
+            display:
+                grid;
 
-.form-section-title {
+            place-items:
+                center;
 
-    display:
-        flex;
+            border-radius:
+                8px;
 
-    align-items:
-        center;
+            color:
+                #9c91a9;
 
-    gap:
-        10px;
+            background:
+                white;
 
-    margin-bottom:
-        17px;
+            font-size:
+                8px;
 
-}
+            font-weight:
+                900;
 
+        }
 
-.form-number {
 
-    width:
-        34px;
+        .step-icon {
 
-    height:
-        34px;
+            width:
+                48px;
 
-    display:
-        grid;
+            height:
+                48px;
 
-    place-items:
-        center;
+            display:
+                grid;
 
-    border-radius:
-        11px;
+            place-items:
+                center;
 
-    color:
-        white;
+            margin-bottom:
+                10px;
 
-    font-size:
-        10px;
+            border-radius:
+                16px;
 
-    font-weight:
-        900;
+            background:
+                white;
 
-    background:
-        linear-gradient(
-            135deg,
-            #7b6cff,
-            #a47fff
-        );
+            font-size:
+                22px;
 
-}
+            box-shadow:
+                0 8px 18px
+                rgba(
+                    60,
+                    40,
+                    90,
+                    .07
+                );
 
+        }
 
-.form-section-title h3 {
 
-    margin:
-        0;
+        .step-card b {
 
-    font-size:
-        13px;
+            font-size:
+                10px;
 
-}
+        }
 
 
-/* =====================================================
-   INPUT
-===================================================== */
+        .step-card small {
 
-.form-grid {
+            margin-top:
+                5px;
 
-    display:
-        grid;
+            color:
+                #99909f;
 
-    grid-template-columns:
-        repeat(2,1fr);
+            font-size:
+                8px;
 
-    gap:
-        14px;
+            line-height:
+                1.5;
 
-}
+        }
 
 
-.form-group {
+        /* =====================================================
+           FORM
+        ====================================================== */
 
-    display:
-        grid;
+        .form-card {
 
-    gap:
-        7px;
+            margin-top:
+                25px;
 
-}
+            padding:
+                28px;
 
+            border-radius:
+                28px;
 
-.form-group.full {
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .94
+                );
 
-    grid-column:
-        1 / -1;
+            box-shadow:
+                0 20px 50px
+                rgba(
+                    50,
+                    35,
+                    80,
+                    .08
+                );
 
-}
+        }
 
 
-.form-group label {
+        .form-header {
 
-    font-size:
-        10px;
+            display:
+                flex;
 
-    font-weight:
-        900;
+            align-items:
+                center;
 
-    color:
-        #5f566c;
+            gap:
+                15px;
 
-}
+            margin-bottom:
+                24px;
 
+        }
 
-.required {
 
-    color:
-        #ef4f82;
+        .form-header-icon {
 
-}
+            width:
+                62px;
 
+            height:
+                62px;
 
-.form-group input,
-.form-group select,
-.form-group textarea {
+            display:
+                grid;
 
-    width:
-        100%;
+            place-items:
+                center;
 
-    min-height:
-        48px;
+            flex:
+                0 0 auto;
 
-    padding:
-        12px 13px;
+            border-radius:
+                20px;
 
-    border:
-        1px solid #e8e3ee;
+            font-size:
+                28px;
 
-    outline:
-        none;
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff0f5,
+                    #ede9ff
+                );
 
-    border-radius:
-        14px;
+        }
 
-    background:
-        white;
 
-    color:
-        #433b4d;
+        .form-header h2 {
 
-    font-size:
-        11px;
+            margin:
+                0;
 
-    transition:
-        .25s ease;
+            font-family:
+                "Baloo 2",
+                cursive;
 
-}
+            font-size:
+                28px;
 
+            line-height:
+                1.1;
 
-.form-group textarea {
+        }
 
-    min-height:
-        105px;
 
-    resize:
-        vertical;
+        .form-header p {
 
-}
+            margin:
+                5px 0 0;
 
+            color:
+                #928997;
 
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
+            font-size:
+                10px;
 
-    border-color:
-        #a47fff;
+        }
 
-    box-shadow:
-        0 0 0 4px rgba(164,127,255,.10);
 
-}
+        /* =====================================================
+           FORM SECTION
+        ====================================================== */
 
+        .form-section {
 
-/* =====================================================
-   GENDER
-===================================================== */
+            margin-bottom:
+                17px;
 
-.gender-grid {
+            padding:
+                20px;
 
-    display:
-        grid;
+            border-radius:
+                22px;
 
-    grid-template-columns:
-        repeat(2,1fr);
+            background:
+                #fbfaff;
 
-    gap:
-        10px;
+            border:
+                1px solid
+                #efedf5;
 
-}
+        }
 
 
-.gender-option {
+        .form-section-head {
 
-    cursor:
-        pointer;
+            display:
+                flex;
 
-}
+            align-items:
+                center;
 
+            gap:
+                10px;
 
-.gender-option input {
+            margin-bottom:
+                18px;
 
-    display:
-        none;
+        }
 
-}
 
+        .section-number {
 
-.gender-box {
+            width:
+                36px;
 
-    min-height:
-        48px;
+            height:
+                36px;
 
-    display:
-        flex;
+            display:
+                grid;
 
-    align-items:
-        center;
+            place-items:
+                center;
 
-    justify-content:
-        center;
+            flex:
+                0 0 auto;
 
-    gap:
-        7px;
+            border-radius:
+                12px;
 
-    border:
-        1px solid #e8e3ee;
+            color:
+                white;
 
-    border-radius:
-        14px;
+            font-size:
+                10px;
 
-    background:
-        white;
+            font-weight:
+                900;
 
-    color:
-        #756c7c;
+            background:
+                linear-gradient(
+                    135deg,
+                    #7b6cff,
+                    #a47fff
+                );
 
-    font-size:
-        10px;
+        }
 
-    font-weight:
-        900;
 
-    transition:
-        .25s ease;
+        .form-section-head h3 {
 
-}
+            margin:
+                0;
 
+            font-size:
+                13px;
 
-.gender-option input:checked
-+
-.gender-box {
+        }
 
-    border-color:
-        #a47fff;
 
-    background:
-        #f5f2ff;
+        .form-section-head p {
 
-    color:
-        #7259bd;
+            margin:
+                3px 0 0;
 
-}
+            color:
+                #a198a8;
 
+            font-size:
+                9px;
 
-/* =====================================================
-   AGREEMENT
-===================================================== */
+        }
 
-.agreement {
 
-    display:
-        flex;
+        /* =====================================================
+           FORM GRID
+        ====================================================== */
 
-    align-items:
-        flex-start;
+        .form-grid {
 
-    gap:
-        10px;
+            display:
+                grid;
 
-    margin-top:
-        15px;
+            grid-template-columns:
+                repeat(
+                    2,
+                    1fr
+                );
 
-    padding:
-        14px;
+            gap:
+                15px;
 
-    border-radius:
-        16px;
+        }
 
-    background:
-        #fff9ed;
 
-    color:
-        #776e64;
+        .form-group {
 
-    font-size:
-        10px;
+            display:
+                grid;
 
-    line-height:
-        1.7;
+            gap:
+                7px;
 
-}
+        }
 
 
-.agreement input {
+        .form-group.full {
 
-    width:
-        18px;
+            grid-column:
+                1 / -1;
 
-    height:
-        18px;
+        }
 
-    flex:
-        0 0 auto;
 
-    accent-color:
-        #ef4f82;
+        .form-group label {
 
-}
+            font-size:
+                10px;
 
+            font-weight:
+                900;
 
-/* =====================================================
-   BUTTON
-===================================================== */
+            color:
+                #5d5567;
 
-.submit-button {
+        }
 
-    width:
-        100%;
 
-    min-height:
-        55px;
+        .required {
 
-    border:
-        none;
+            color:
+                #ef4f82;
 
-    cursor:
-        pointer;
+        }
 
-    display:
-        flex;
 
-    align-items:
-        center;
+        /* =====================================================
+           INPUT
+        ====================================================== */
 
-    justify-content:
-        center;
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
 
-    gap:
-        8px;
+            width:
+                100%;
 
-    margin-top:
-        16px;
+            min-height:
+                50px;
 
-    border-radius:
-        16px;
+            padding:
+                13px 14px;
 
-    color:
-        white;
+            border:
+                1px solid
+                #e8e3ee;
 
-    font-size:
-        13px;
+            outline:
+                none;
 
-    font-weight:
-        900;
+            border-radius:
+                15px;
 
-    background:
-        linear-gradient(
-            135deg,
-            #ef4f82,
-            #ff7ca7
-        );
+            background:
+                white;
 
-    box-shadow:
-        0 14px 28px rgba(239,79,130,.23);
+            color:
+                #443b4d;
 
-    transition:
-        .3s ease;
+            font-size:
+                11px;
 
-}
+            transition:
+                .25s ease;
 
+        }
 
-.submit-button:hover {
 
-    transform:
-        translateY(-3px);
+        .form-group textarea {
 
-}
+            min-height:
+                115px;
 
+            resize:
+                vertical;
 
-.submit-button:disabled {
+        }
 
-    opacity:
-        .7;
 
-    cursor:
-        not-allowed;
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
 
-}
+            border-color:
+                #9a80ed;
 
+            box-shadow:
+                0 0 0 4px
+                rgba(
+                    154,
+                    128,
+                    237,
+                    .10
+                );
 
-/* =====================================================
-   SUCCESS
-===================================================== */
+        }
 
-.success-box {
 
-    display:
-        none;
+        /* =====================================================
+           GENDER
+        ====================================================== */
 
-    margin-top:
-        20px;
+        .gender-grid {
 
-    padding:
-        25px;
+            display:
+                grid;
 
-    text-align:
-        center;
+            grid-template-columns:
+                repeat(
+                    2,
+                    1fr
+                );
 
-    border-radius:
-        22px;
+            gap:
+                10px;
 
-    background:
-        linear-gradient(
-            135deg,
-            #effff5,
-            #f3f0ff
-        );
+        }
 
-    border:
-        1px solid #d8f3e1;
 
-}
+        .gender-option {
 
+            cursor:
+                pointer;
 
-.success-box.show {
+        }
 
-    display:
-        block;
 
-    animation:
-        successPop .5s ease;
+        .gender-option input {
 
-}
+            display:
+                none;
 
+        }
 
-@keyframes successPop {
 
-    from {
+        .gender-box {
 
-        opacity:
-            0;
+            min-height:
+                50px;
 
-        transform:
-            scale(.92);
+            display:
+                flex;
 
-    }
+            align-items:
+                center;
 
-    to {
+            justify-content:
+                center;
 
-        opacity:
-            1;
+            gap:
+                8px;
 
-        transform:
-            scale(1);
+            border:
+                1px solid
+                #e8e3ee;
 
-    }
+            border-radius:
+                15px;
 
-}
+            background:
+                white;
 
+            color:
+                #766d7d;
 
-.success-icon {
+            font-size:
+                10px;
 
-    font-size:
-        50px;
+            font-weight:
+                900;
 
-}
+            transition:
+                .25s ease;
 
+        }
 
-.success-box h3 {
 
-    margin:
-        10px 0 5px;
+        .gender-option input:checked
+        +
+        .gender-box {
 
-    font-family:
-        "Baloo 2",
-        cursive;
+            border-color:
+                #9a80ed;
 
-    font-size:
-        25px;
+            background:
+                #f4f1ff;
 
-}
+            color:
+                #715ab7;
 
+        }
 
-.success-box p {
 
-    margin:
-        0;
+        /* =====================================================
+           AGREEMENT
+        ====================================================== */
 
-    color:
-        #687466;
+        .agreement {
 
-    font-size:
-        11px;
+            display:
+                flex;
 
-    line-height:
-        1.7;
+            align-items:
+                flex-start;
 
-}
+            gap:
+                10px;
 
+            padding:
+                15px;
 
-.registration-code {
+            border-radius:
+                17px;
 
-    margin:
-        18px auto;
+            background:
+                #fff9ec;
 
-    padding:
-        18px;
+            color:
+                #776e63;
 
-    max-width:
-        350px;
+            font-size:
+                10px;
 
-    border-radius:
-        18px;
+            line-height:
+                1.75;
 
-    background:
-        white;
+        }
 
-    box-shadow:
-        0 10px 25px rgba(60,40,90,.08);
 
-}
+        .agreement input {
 
+            width:
+                18px;
 
-.registration-code small {
+            height:
+                18px;
 
-    display:
-        block;
+            flex:
+                0 0 auto;
 
-    margin-bottom:
-        7px;
+            accent-color:
+                #ef4f82;
 
-    color:
-        #948a9c;
+        }
 
-    font-size:
-        9px;
 
-}
+        /* =====================================================
+           SUBMIT
+        ====================================================== */
 
+        .submit-button {
 
-.registration-code b {
+            width:
+                100%;
 
-    display:
-        block;
+            min-height:
+                57px;
 
-    color:
-        #7b63bd;
+            margin-top:
+                16px;
 
-    font-size:
-        23px;
+            border:
+                none;
 
-    letter-spacing:
-        2px;
+            cursor:
+                pointer;
 
-}
+            display:
+                flex;
 
+            align-items:
+                center;
 
-.success-actions {
+            justify-content:
+                center;
 
-    display:
-        grid;
+            gap:
+                8px;
 
-    gap:
-        10px;
+            border-radius:
+                17px;
 
-    max-width:
-        400px;
+            color:
+                white;
 
-    margin:
-        auto;
+            font-size:
+                13px;
 
-}
+            font-weight:
+                900;
 
+            background:
+                linear-gradient(
+                    135deg,
+                    #ef4f82,
+                    #ff7da8
+                );
 
-.whatsapp-button {
+            box-shadow:
+                0 15px 30px
+                rgba(
+                    239,
+                    79,
+                    130,
+                    .24
+                );
 
-    min-height:
-        52px;
+            transition:
+                .3s ease;
 
-    display:
-        flex;
+        }
 
-    align-items:
-        center;
 
-    justify-content:
-        center;
+        .submit-button:hover {
 
-    gap:
-        8px;
+            transform:
+                translateY(-3px);
 
-    border-radius:
-        15px;
+            box-shadow:
+                0 20px 35px
+                rgba(
+                    239,
+                    79,
+                    130,
+                    .30
+                );
 
-    text-decoration:
-        none;
+        }
 
-    color:
-        white;
 
-    font-size:
-        11px;
+        .submit-button:disabled {
 
-    font-weight:
-        900;
+            opacity:
+                .7;
 
-    background:
-        linear-gradient(
-            135deg,
-            #25d366,
-            #55e58c
-        );
+            cursor:
+                not-allowed;
 
-}
+        }
 
 
-.check-button {
+        /* =====================================================
+           SUCCESS
+        ====================================================== */
 
-    min-height:
-        52px;
+        .success-box {
 
-    display:
-        flex;
+            display:
+                none;
 
-    align-items:
-        center;
+            padding:
+                35px 20px;
 
-    justify-content:
-        center;
+            text-align:
+                center;
 
-    gap:
-        8px;
+            border-radius:
+                24px;
 
-    border-radius:
-        15px;
+            background:
+                linear-gradient(
+                    135deg,
+                    #f0fff6,
+                    #f5f1ff
+                );
 
-    text-decoration:
-        none;
+            border:
+                1px solid
+                #dcf4e5;
 
-    color:
-        #695a7a;
+        }
 
-    font-size:
-        11px;
 
-    font-weight:
-        900;
+        .success-box.show {
 
-    background:
-        white;
+            display:
+                block;
 
-    border:
-        1px solid #e9e4f0;
+            animation:
+                successPop
+                .6s
+                ease;
 
-}
+        }
 
 
-/* =====================================================
-   SIDEBAR
-===================================================== */
+        @keyframes successPop {
 
-.sidebar {
+            from {
 
-    display:
-        grid;
+                opacity:
+                    0;
 
-    gap:
-        18px;
+                transform:
+                    scale(.92)
+                    translateY(15px);
 
-}
+            }
 
 
-.side-card {
+            to {
 
-    padding:
-        22px;
+                opacity:
+                    1;
 
-    border-radius:
-        24px;
+                transform:
+                    scale(1)
+                    translateY(0);
 
-    background:
-        rgba(255,255,255,.90);
+            }
 
-    box-shadow:
-        0 16px 38px rgba(60,40,90,.08);
+        }
 
-}
 
+        .success-icon {
 
-.side-card h3 {
+            font-size:
+                58px;
 
-    margin:
-        0 0 10px;
+        }
 
-    font-family:
-        "Baloo 2",
-        cursive;
 
-    font-size:
-        22px;
+        .success-box h3 {
 
-}
+            margin:
+                12px 0 7px;
 
+            font-family:
+                "Baloo 2",
+                cursive;
 
-.side-card h3 span {
+            font-size:
+                29px;
 
-    color:
-        #ef4f82;
+        }
 
-}
 
+        .success-box p {
 
-.side-card p {
+            max-width:
+                450px;
 
-    margin:
-        0;
+            margin:
+                auto;
 
-    color:
-        #817889;
+            color:
+                #6c776f;
 
-    font-size:
-        11px;
+            font-size:
+                11px;
 
-    line-height:
-        1.8;
+            line-height:
+                1.8;
 
-}
+        }
 
 
-/* =====================================================
-   BLOG STEPS
-===================================================== */
+        .registration-code {
 
-.blog-steps {
+            max-width:
+                380px;
 
-    display:
-        grid;
+            margin:
+                20px auto;
 
-    gap:
-        10px;
+            padding:
+                20px;
 
-    margin-top:
-        15px;
+            border-radius:
+                20px;
 
-}
+            background:
+                white;
 
+            box-shadow:
+                0 12px 30px
+                rgba(
+                    60,
+                    40,
+                    90,
+                    .08
+                );
 
-.blog-step {
+        }
 
-    display:
-        flex;
 
-    align-items:
-        center;
+        .registration-code small {
 
-    gap:
-        11px;
+            display:
+                block;
 
-    padding:
-        11px;
+            margin-bottom:
+                8px;
 
-    border-radius:
-        16px;
+            color:
+                #968c9d;
 
-    background:
-        #faf9ff;
+            font-size:
+                9px;
 
-}
+            font-weight:
+                800;
 
+        }
 
-.blog-step-icon {
 
-    width:
-        42px;
+        .registration-code b {
 
-    height:
-        42px;
+            display:
+                block;
 
-    display:
-        grid;
+            color:
+                #765fc1;
 
-    place-items:
-        center;
+            font-size:
+                26px;
 
-    flex:
-        0 0 auto;
+            letter-spacing:
+                2px;
 
-    border-radius:
-        14px;
+        }
 
-    background:
-        white;
 
-    font-size:
-        19px;
+        .success-actions {
 
-    box-shadow:
-        0 7px 17px rgba(60,40,90,.06);
+            display:
+                grid;
 
-}
+            gap:
+                10px;
 
+            max-width:
+                420px;
 
-.blog-step b {
+            margin:
+                auto;
 
-    display:
-        block;
+        }
 
-    font-size:
-        10px;
 
-}
+        .whatsapp-button {
 
+            min-height:
+                54px;
 
-.blog-step small {
+            display:
+                flex;
 
-    display:
-        block;
+            align-items:
+                center;
 
-    margin-top:
-        3px;
+            justify-content:
+                center;
 
-    color:
-        #9a91a1;
+            gap:
+                8px;
 
-    font-size:
-        8px;
+            border-radius:
+                16px;
 
-}
+            text-decoration:
+                none;
 
+            color:
+                white;
 
-/* =====================================================
-   STATUS CARD
-===================================================== */
+            font-size:
+                11px;
 
-.status-card {
+            font-weight:
+                900;
 
-    background:
-        linear-gradient(
-            135deg,
-            #f1edff,
-            #fff0f6,
-            #ecf8ff
-        );
+            background:
+                linear-gradient(
+                    135deg,
+                    #25d366,
+                    #52df88
+                );
 
-}
+        }
 
 
-.status-card-icon {
+        .check-button {
 
-    font-size:
-        45px;
+            min-height:
+                54px;
 
-    margin-bottom:
-        8px;
+            display:
+                flex;
 
-}
+            align-items:
+                center;
 
+            justify-content:
+                center;
 
-.status-button {
+            gap:
+                8px;
 
-    display:
-        flex;
+            border-radius:
+                16px;
 
-    align-items:
-        center;
+            text-decoration:
+                none;
 
-    justify-content:
-        center;
+            color:
+                #6d6279;
 
-    margin-top:
-        15px;
+            background:
+                white;
 
-    min-height:
-        48px;
+            border:
+                1px solid
+                #e8e3ed;
 
-    border-radius:
-        14px;
+            font-size:
+                11px;
 
-    text-decoration:
-        none;
+            font-weight:
+                900;
 
-    color:
-        white;
+        }
 
-    font-size:
-        10px;
 
-    font-weight:
-        900;
+        /* =====================================================
+           SIDEBAR
+        ====================================================== */
 
-    background:
-        linear-gradient(
-            135deg,
-            #7b6cff,
-            #a47fff
-        );
+        .sidebar {
 
-}
+            display:
+                grid;
 
+            gap:
+                18px;
 
-/* =====================================================
-   INFO LIST
-===================================================== */
+            position:
+                sticky;
 
-.info-list {
+            top:
+                150px;
 
-    display:
-        grid;
+        }
 
-    gap:
-        10px;
 
-    margin-top:
-        15px;
+        .side-card {
 
-}
+            padding:
+                23px;
 
+            border-radius:
+                25px;
 
-.info-item {
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .92
+                );
 
-    display:
-        flex;
+            box-shadow:
+                0 18px 42px
+                rgba(
+                    60,
+                    40,
+                    90,
+                    .08
+                );
 
-    align-items:
-        flex-start;
+        }
 
-    gap:
-        9px;
 
-    padding:
-        11px;
+        .side-card h3 {
 
-    border-radius:
-        15px;
+            margin:
+                0 0 8px;
 
-    background:
-        #f9fcff;
+            font-family:
+                "Baloo 2",
+                cursive;
 
-}
+            font-size:
+                23px;
 
+            line-height:
+                1.1;
 
-.info-item span {
+        }
 
-    font-size:
-        18px;
 
-}
+        .side-card h3 span {
 
+            color:
+                #ef4f82;
 
-.info-item b {
+        }
 
-    display:
-        block;
 
-    font-size:
-        10px;
+        .side-card > p {
 
-}
+            margin:
+                0;
 
+            color:
+                #857c8c;
 
-.info-item small {
+            font-size:
+                11px;
 
-    display:
-        block;
+            line-height:
+                1.8;
 
-    margin-top:
-        3px;
+        }
 
-    color:
-        #908797;
 
-    font-size:
-        8px;
+        /* =====================================================
+           SIDE STEPS
+        ====================================================== */
 
-    line-height:
-        1.5;
+        .side-steps {
 
-}
+            display:
+                grid;
 
+            gap:
+                10px;
 
-/* =====================================================
-   MOBILE BLOG NAV
-===================================================== */
+            margin-top:
+                17px;
 
-.mobile-blog-menu {
+        }
 
-    display:
-        none;
 
-}
+        .side-step {
 
+            display:
+                flex;
 
-/* =====================================================
-   FOOTER
-===================================================== */
+            align-items:
+                center;
 
-.footer {
+            gap:
+                11px;
 
-    padding:
-        40px 0 20px;
+            padding:
+                11px;
 
-    background:
-        linear-gradient(
-            135deg,
-            #302843,
-            #433657
-        );
+            border-radius:
+                17px;
 
-    color:
-        white;
+            background:
+                #faf9ff;
 
-}
+        }
 
 
-.footer-grid {
+        .side-step-icon {
 
-    display:
-        grid;
+            width:
+                43px;
 
-    grid-template-columns:
-        repeat(3,1fr);
+            height:
+                43px;
 
-    gap:
-        30px;
+            display:
+                grid;
 
-}
+            place-items:
+                center;
 
+            flex:
+                0 0 auto;
 
-.footer h3 {
+            border-radius:
+                14px;
 
-    margin:
-        0 0 10px;
+            background:
+                white;
 
-    font-family:
-        "Baloo 2",
-        cursive;
+            font-size:
+                19px;
 
-    font-size:
-        20px;
+            box-shadow:
+                0 7px 17px
+                rgba(
+                    60,
+                    40,
+                    90,
+                    .06
+                );
 
-}
+        }
 
 
-.footer h3 span {
+        .side-step b {
 
-    color:
-        #ff91b7;
+            display:
+                block;
 
-}
+            font-size:
+                10px;
 
+        }
 
-.footer p {
 
-    margin:
-        0 0 7px;
+        .side-step small {
 
-    color:
-        #c8c0d4;
+            display:
+                block;
 
-    font-size:
-        11px;
+            margin-top:
+                3px;
 
-    line-height:
-        1.7;
+            color:
+                #9b92a1;
 
-}
+            font-size:
+                8px;
 
+        }
 
-.footer a {
 
-    color:
-        #c8c0d4;
+        /* =====================================================
+           STATUS CARD
+        ====================================================== */
 
-    text-decoration:
-        none;
+        .status-card {
 
-}
+            background:
+                linear-gradient(
+                    135deg,
+                    #f2efff,
+                    #fff0f7,
+                    #ebf9ff
+                );
 
+        }
 
-.copyright {
 
-    margin-top:
-        30px;
+        .status-icon {
 
-    padding-top:
-        18px;
+            font-size:
+                45px;
 
-    text-align:
-        center;
+            margin-bottom:
+                8px;
 
-    border-top:
-        1px solid rgba(255,255,255,.08);
+        }
 
-    color:
-        #aaa0bb;
 
-    font-size:
-        10px;
+        .status-button {
 
-}
+            width:
+                100%;
 
+            min-height:
+                50px;
 
-/* =====================================================
-   MOBILE
-===================================================== */
+            display:
+                flex;
 
-@media (max-width: 768px) {
+            align-items:
+                center;
 
+            justify-content:
+                center;
 
-    /* CONTAINER */
+            margin-top:
+                17px;
 
-    .container {
+            border-radius:
+                15px;
 
-        width:
-            calc(100% - 24px);
+            text-decoration:
+                none;
 
-    }
+            color:
+                white;
 
+            font-size:
+                10px;
 
-    /* HEADER */
+            font-weight:
+                900;
 
-    .header-inner {
+            background:
+                linear-gradient(
+                    135deg,
+                    #7b6cff,
+                    #a57fff
+                );
 
-        min-height:
-            66px;
+            box-shadow:
+                0 10px 23px
+                rgba(
+                    123,
+                    108,
+                    255,
+                    .18
+                );
 
-    }
+        }
 
 
-    .brand-logo {
+        /* =====================================================
+           INFO
+        ====================================================== */
 
-        width:
-            40px;
+        .info-list {
 
-        height:
-            40px;
+            display:
+                grid;
 
-        border-radius:
-            13px;
+            gap:
+                10px;
 
-        font-size:
-            20px;
+            margin-top:
+                15px;
 
-    }
+        }
 
 
-    .brand h1 {
+        .info-item {
 
-        font-size:
-            15px;
+            display:
+                flex;
 
-    }
+            align-items:
+                flex-start;
 
+            gap:
+                10px;
 
-    .brand p {
+            padding:
+                12px;
 
-        font-size:
-            8px;
+            border-radius:
+                16px;
 
-        white-space:
-            nowrap;
+            background:
+                #f9fbff;
 
-    }
+        }
 
 
-    .status-link {
+        .info-item-icon {
 
-        padding:
-            9px 10px;
+            font-size:
+                20px;
 
-        border-radius:
-            12px;
+        }
 
-        font-size:
-            9px;
 
-    }
+        .info-item b {
 
+            display:
+                block;
 
-    /* NAV */
+            font-size:
+                10px;
 
-    .nav {
+        }
 
-        top:
-            66px;
 
-    }
+        .info-item small {
 
+            display:
+                block;
 
-    .nav-inner {
+            margin-top:
+                3px;
 
-        gap:
-            5px;
+            color:
+                #948b9b;
 
-        padding:
-            7px 0;
+            font-size:
+                8px;
 
-    }
+            line-height:
+                1.6;
 
+        }
 
-    .nav a {
 
-        padding:
-            9px 12px;
+        /* =====================================================
+           MOBILE BOTTOM NAV
+        ====================================================== */
 
-        font-size:
-            9px;
+        .mobile-bottom-nav {
 
-    }
+            display:
+                none;
 
+        }
 
-    /* MAIN */
 
-    .main {
+        /* =====================================================
+           FOOTER
+        ====================================================== */
 
-        padding:
-            15px 0 40px;
+        .footer {
 
-    }
+            padding:
+                50px 0 22px;
 
+            background:
+                linear-gradient(
+                    135deg,
+                    #302842,
+                    #46375b
+                );
 
-    /* HERO BLOG */
+            color:
+                white;
 
-    .blog-hero {
+        }
 
-        min-height:
-            390px;
 
-        padding:
-            24px 20px;
+        .footer-grid {
 
-        border-radius:
-            25px;
+            display:
+                grid;
 
-        align-items:
-            flex-end;
+            grid-template-columns:
+                1.2fr
+                .8fr
+                1fr;
 
-    }
+            gap:
+                35px;
 
+        }
 
-    .blog-hero::before {
 
-        top:
-            -5px;
+        .footer h3 {
 
-        right:
-            -15px;
+            margin:
+                0 0 11px;
 
-        font-size:
-            125px;
+            font-family:
+                "Baloo 2",
+                cursive;
 
-    }
+            font-size:
+                21px;
 
+        }
 
-    .blog-hero::after {
 
-        top:
-            22px;
+        .footer h3 span {
 
-        left:
-            20px;
+            color:
+                #ff91b8;
 
-        font-size:
-            45px;
+        }
 
-    }
 
+        .footer p {
 
-    .hero-category {
+            margin:
+                0 0 8px;
 
-        padding:
-            7px 11px;
+            color:
+                #c7bfd2;
 
-        font-size:
-            8px;
+            font-size:
+                11px;
 
-    }
+            line-height:
+                1.75;
 
+        }
 
-    .hero-content h2 {
 
-        margin:
-            13px 0 10px;
+        .footer a {
 
-        font-size:
-            42px;
+            color:
+                #c7bfd2;
 
-        line-height:
-            .95;
+            text-decoration:
+                none;
 
-    }
+        }
 
 
-    .hero-content p {
+        .copyright {
 
-        font-size:
-            11px;
+            margin-top:
+                35px;
 
-        line-height:
-            1.7;
+            padding-top:
+                20px;
 
-    }
+            text-align:
+                center;
 
+            border-top:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .08
+                );
 
-    .hero-meta {
+            color:
+                #aaa0ba;
 
-        gap:
-            6px;
+            font-size:
+                10px;
 
-        margin-top:
-            16px;
+        }
 
-    }
 
+        /* =====================================================
+           REVEAL
+        ====================================================== */
 
-    .hero-meta span {
+        .reveal {
 
-        padding:
-            7px 9px;
+            opacity:
+                0;
 
-        font-size:
-            8px;
+            transform:
+                translateY(30px);
 
-    }
+            transition:
+                opacity .7s ease,
+                transform .7s ease;
 
+        }
 
-    /* MOBILE BLOG MENU */
 
-    .mobile-blog-menu {
+        .reveal.show {
 
-        display:
-            flex;
+            opacity:
+                1;
 
-        gap:
-            8px;
+            transform:
+                translateY(0);
 
-        margin-top:
-            12px;
+        }
 
-        overflow-x:
-            auto;
 
-        scrollbar-width:
-            none;
+        /* =====================================================
+           MOBILE
+        ====================================================== */
 
-    }
+        @media (max-width: 768px) {
 
 
-    .mobile-blog-menu::-webkit-scrollbar {
+            /* BODY */
 
-        display:
-            none;
+            body {
 
-    }
+                padding-bottom:
+                    78px;
 
+            }
 
-    .mobile-blog-menu a {
 
-        flex:
-            0 0 auto;
+            /* CONTAINER */
 
-        padding:
-            10px 13px;
+            .container {
 
-        border-radius:
-            14px;
+                width:
+                    calc(
+                        100% - 24px
+                    );
 
-        background:
-            white;
+            }
 
-        box-shadow:
-            0 8px 20px rgba(60,40,90,.07);
 
-        text-decoration:
-            none;
+            /* HEADER */
 
-        color:
-            #6d6478;
+            .header-inner {
 
-        font-size:
-            9px;
+                min-height:
+                    65px;
 
-        font-weight:
-            900;
+            }
 
-    }
 
+            .brand {
 
-    /* BLOG LAYOUT */
+                gap:
+                    9px;
 
-    .blog-layout {
+            }
 
-        display:
-            flex;
 
-        flex-direction:
-            column;
+            .brand-logo {
 
-        gap:
-            15px;
+                width:
+                    42px;
 
-        margin-top:
-            15px;
+                height:
+                    42px;
 
-    }
+                border-radius:
+                    14px;
 
+                font-size:
+                    21px;
 
-    /* ARTICLE */
+            }
 
-    .article-card {
 
-        border-radius:
-            21px;
+            .brand-text h1 {
 
-    }
+                font-size:
+                    15px;
 
+            }
 
-    .article-head {
 
-        padding:
-            20px 17px 0;
+            .brand-text p {
 
-    }
+                font-size:
+                    7px;
 
+                white-space:
+                    nowrap;
 
-    .article-tag {
+            }
 
-        font-size:
-            8px;
 
-    }
+            .header-status {
 
+                min-height:
+                    39px;
 
-    .article-head h2 {
+                padding:
+                    0 11px;
 
-        margin:
-            10px 0 6px;
+                border-radius:
+                    12px;
 
-        font-size:
-            25px;
+                font-size:
+                    9px;
 
-    }
+            }
 
 
-    .article-head p {
+            /* NAV DESKTOP */
 
-        font-size:
-            10px;
+            .nav {
 
-        line-height:
-            1.7;
+                display:
+                    none;
 
-    }
+            }
 
 
-    .article-body {
+            /* MAIN */
 
-        padding:
-            17px;
+            .main {
 
-    }
+                padding:
+                    13px 0 35px;
 
+            }
 
-    /* FLOW MOBILE BLOG */
 
-    .flow-grid {
+            /* HERO */
 
-        display:
-            flex;
+            .blog-hero {
 
-        overflow-x:
-            auto;
+                min-height:
+                    460px;
 
-        gap:
-            10px;
+                padding:
+                    28px 21px;
 
-        padding-bottom:
-            5px;
+                border-radius:
+                    25px;
 
-        scrollbar-width:
-            none;
+            }
 
-    }
 
+            .blog-hero::before {
 
-    .flow-grid::-webkit-scrollbar {
+                top:
+                    -10px;
 
-        display:
-            none;
+                right:
+                    -40px;
 
-    }
+                font-size:
+                    155px;
 
+            }
 
-    .flow-item {
 
-        flex:
-            0 0 145px;
+            .blog-hero::after {
 
-        min-height:
-            145px;
+                top:
+                    35px;
 
-        border-radius:
-            18px;
+                left:
+                    22px;
 
-    }
+                font-size:
+                    48px;
 
+            }
 
-    .flow-icon {
 
-        width:
-            43px;
+            .hero-dots {
 
-        height:
-            43px;
+                width:
+                    170px;
 
-        font-size:
-            20px;
+                height:
+                    170px;
 
-    }
+                right:
+                    -50px;
 
+                bottom:
+                    -70px;
 
-    .flow-item b {
+            }
 
-        font-size:
-            9px;
 
-    }
+            .hero-category {
 
+                padding:
+                    7px 11px;
 
-    .flow-item small {
+                font-size:
+                    8px;
 
-        font-size:
-            8px;
+            }
 
-    }
 
+            .hero-content h2 {
 
-    /* FORM */
+                margin:
+                    14px 0 12px;
 
-    .form-card {
+                font-size:
+                    46px;
 
-        margin-top:
-            15px;
+                line-height:
+                    .95;
 
-        padding:
-            13px;
+            }
 
-        border-radius:
-            21px;
 
-    }
+            .hero-content p {
 
+                font-size:
+                    11px;
 
-    .form-card-header {
+                line-height:
+                    1.8;
 
-        gap:
-            10px;
+            }
 
-        margin-bottom:
-            15px;
 
-        padding:
-            4px;
+            .hero-info {
 
-    }
+                gap:
+                    7px;
 
+                margin-top:
+                    17px;
 
-    .form-card-icon {
+            }
 
-        width:
-            45px;
 
-        height:
-            45px;
+            .hero-info span {
 
-        border-radius:
-            14px;
+                padding:
+                    7px 10px;
 
-        font-size:
-            21px;
+                font-size:
+                    8px;
 
-    }
+            }
 
 
-    .form-card-header h2 {
+            /* QUICK MENU */
 
-        font-size:
-            19px;
+            .quick-menu {
 
-    }
+                display:
+                    flex;
 
+                gap:
+                    8px;
 
-    .form-card-header p {
+                margin:
+                    13px 0;
 
-        font-size:
-            8px;
+                overflow-x:
+                    auto;
 
-    }
+                scrollbar-width:
+                    none;
 
+            }
 
-    /* FORM SECTION */
 
-    .form-section {
+            .quick-menu::-webkit-scrollbar {
 
-        padding:
-            13px;
+                display:
+                    none;
 
-        margin-bottom:
-            11px;
+            }
 
-        border-radius:
-            17px;
 
-    }
+            .quick-menu a {
 
+                flex:
+                    0 0 auto;
 
-    .form-section-title {
+                padding:
+                    11px 14px;
 
-        gap:
-            8px;
+                border-radius:
+                    15px;
 
-        margin-bottom:
-            13px;
+                background:
+                    white;
 
-    }
+                box-shadow:
+                    0 8px 20px
+                    rgba(
+                        60,
+                        40,
+                        90,
+                        .07
+                    );
 
+                text-decoration:
+                    none;
 
-    .form-number {
+                color:
+                    #716778;
 
-        width:
-            29px;
+                font-size:
+                    9px;
 
-        height:
-            29px;
+                font-weight:
+                    900;
 
-        border-radius:
-            9px;
+            }
 
-        font-size:
-            8px;
 
-    }
+            /* BLOG LAYOUT */
 
+            .blog-layout {
 
-    .form-section-title h3 {
+                display:
+                    flex;
 
-        font-size:
-            10px;
+                flex-direction:
+                    column;
 
-    }
+                gap:
+                    15px;
 
+                margin-top:
+                    0;
 
-    /* INPUT MOBILE */
+            }
 
-    .form-grid {
 
-        grid-template-columns:
-            1fr;
+            .content-column {
 
-        gap:
-            11px;
+                width:
+                    100%;
 
-    }
+            }
 
 
-    .form-group {
+            /* ARTICLE */
 
-        gap:
-            5px;
+            .article-card {
 
-    }
+                width:
+                    100%;
 
+                border-radius:
+                    23px;
 
-    .form-group label {
+            }
 
-        font-size:
-            9px;
 
-    }
+            .article-cover {
 
+                min-height:
+                    180px;
 
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
+                padding:
+                    20px;
 
-        min-height:
-            46px;
+            }
 
-        padding:
-            11px;
 
-        border-radius:
-            12px;
+            .article-cover::after {
 
-        font-size:
-            10px;
+                right:
+                    18px;
 
-    }
+                font-size:
+                    70px;
 
+            }
 
-    .form-group textarea {
 
-        min-height:
-            90px;
+            .article-cover h2 {
 
-    }
+                max-width:
+                    220px;
 
+                font-size:
+                    25px;
 
-    /* GENDER */
+            }
 
-    .gender-grid {
 
-        gap:
-            7px;
+            .article-cover small {
 
-    }
+                font-size:
+                    8px;
 
+            }
 
-    .gender-box {
 
-        min-height:
-            45px;
+            .article-body {
 
-        font-size:
-            9px;
+                padding:
+                    17px;
 
-        border-radius:
-            12px;
+            }
 
-    }
 
+            .article-body > p {
 
-    /* AGREEMENT */
+                font-size:
+                    10px;
 
-    .agreement {
+                line-height:
+                    1.8;
 
-        gap:
-            7px;
+            }
 
-        padding:
-            11px;
 
-        margin-top:
-            11px;
+            /* STEPS */
 
-        border-radius:
-            14px;
+            .steps-grid {
 
-        font-size:
-            8px;
+                display:
+                    flex;
 
-    }
+                gap:
+                    10px;
 
+                overflow-x:
+                    auto;
 
-    .agreement input {
+                padding-bottom:
+                    5px;
 
-        width:
-            16px;
+                scrollbar-width:
+                    none;
 
-        height:
-            16px;
+            }
 
-    }
 
+            .steps-grid::-webkit-scrollbar {
 
-    /* BUTTON */
+                display:
+                    none;
 
-    .submit-button {
+            }
 
-        min-height:
-            51px;
 
-        margin-top:
-            12px;
+            .step-card {
 
-        border-radius:
-            14px;
+                flex:
+                    0 0 145px;
 
-        font-size:
-            11px;
+                min-height:
+                    145px;
 
-    }
+            }
 
 
-    /* SUCCESS */
+            /* FORM */
 
-    .success-box {
+            .form-card {
 
-        padding:
-            20px 13px;
+                width:
+                    100%;
 
-        border-radius:
-            18px;
+                margin-top:
+                    15px;
 
-    }
+                padding:
+                    13px;
 
+                border-radius:
+                    23px;
 
-    .success-icon {
+            }
 
-        font-size:
-            40px;
 
-    }
+            .form-header {
 
+                gap:
+                    10px;
 
-    .success-box h3 {
+                margin-bottom:
+                    16px;
 
-        font-size:
-            21px;
+                padding:
+                    5px;
 
-    }
+            }
 
 
-    .success-box p {
+            .form-header-icon {
 
-        font-size:
-            9px;
+                width:
+                    48px;
 
-    }
+                height:
+                    48px;
 
+                border-radius:
+                    15px;
 
-    .registration-code b {
+                font-size:
+                    22px;
 
-        font-size:
-            19px;
+            }
 
-    }
 
+            .form-header h2 {
 
-    /* SIDEBAR */
+                font-size:
+                    20px;
 
-    .sidebar {
+            }
 
-        display:
-            contents;
 
-    }
+            .form-header p {
 
+                font-size:
+                    8px;
 
-    .side-card {
+            }
 
-        padding:
-            17px;
 
-        border-radius:
-            21px;
+            /* FORM SECTION */
 
-    }
+            .form-section {
 
+                padding:
+                    13px;
 
-    .side-card h3 {
+                margin-bottom:
+                    12px;
 
-        font-size:
-            20px;
+                border-radius:
+                    18px;
 
-    }
+            }
 
 
-    .side-card p {
+            .form-section-head {
 
-        font-size:
-            10px;
+                gap:
+                    8px;
 
-    }
+                margin-bottom:
+                    14px;
 
+            }
 
-    /* FOOTER */
 
-    .footer {
+            .section-number {
 
-        padding:
-            30px 0 18px;
+                width:
+                    30px;
 
-    }
+                height:
+                    30px;
 
+                border-radius:
+                    10px;
 
-    .footer-grid {
+                font-size:
+                    8px;
 
-        grid-template-columns:
-            1fr;
+            }
 
-        gap:
-            20px;
 
-        text-align:
-            center;
+            .form-section-head h3 {
 
-    }
+                font-size:
+                    10px;
 
+            }
 
-}
 
+            .form-section-head p {
 
-/* =====================================================
-   ANIMATION
-===================================================== */
+                font-size:
+                    7px;
 
-.reveal {
+            }
 
-    opacity:
-        0;
 
-    transform:
-        translateY(25px);
+            /* FORM GRID */
 
-    transition:
-        opacity .7s ease,
-        transform .7s ease;
+            .form-grid {
 
-}
+                grid-template-columns:
+                    1fr;
 
+                gap:
+                    11px;
 
-.reveal.show {
+            }
 
-    opacity:
-        1;
 
-    transform:
-        translateY(0);
+            .form-group {
 
-}
+                gap:
+                    5px;
 
+            }
 
-</style>
+
+            .form-group label {
+
+                font-size:
+                    9px;
+
+            }
+
+
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+
+                min-height:
+                    47px;
+
+                padding:
+                    11px;
+
+                border-radius:
+                    13px;
+
+                font-size:
+                    10px;
+
+            }
+
+
+            .form-group textarea {
+
+                min-height:
+                    95px;
+
+            }
+
+
+            /* GENDER */
+
+            .gender-grid {
+
+                gap:
+                    8px;
+
+            }
+
+
+            .gender-box {
+
+                min-height:
+                    47px;
+
+                border-radius:
+                    13px;
+
+                font-size:
+                    9px;
+
+            }
+
+
+            /* AGREEMENT */
+
+            .agreement {
+
+                gap:
+                    8px;
+
+                padding:
+                    12px;
+
+                border-radius:
+                    15px;
+
+                font-size:
+                    8px;
+
+            }
+
+
+            .agreement input {
+
+                width:
+                    16px;
+
+                height:
+                    16px;
+
+            }
+
+
+            /* BUTTON */
+
+            .submit-button {
+
+                min-height:
+                    53px;
+
+                margin-top:
+                    13px;
+
+                border-radius:
+                    15px;
+
+                font-size:
+                    11px;
+
+            }
+
+
+            /* SUCCESS */
+
+            .success-box {
+
+                padding:
+                    25px 13px;
+
+                border-radius:
+                    20px;
+
+            }
+
+
+            .success-icon {
+
+                font-size:
+                    48px;
+
+            }
+
+
+            .success-box h3 {
+
+                font-size:
+                    23px;
+
+            }
+
+
+            .success-box p {
+
+                font-size:
+                    9px;
+
+            }
+
+
+            .registration-code {
+
+                padding:
+                    16px;
+
+            }
+
+
+            .registration-code b {
+
+                font-size:
+                    20px;
+
+            }
+
+
+            /* SIDEBAR */
+
+            .sidebar {
+
+                width:
+                    100%;
+
+                position:
+                    static;
+
+                display:
+                    grid;
+
+                gap:
+                    15px;
+
+            }
+
+
+            .side-card {
+
+                padding:
+                    18px;
+
+                border-radius:
+                    22px;
+
+            }
+
+
+            .side-card h3 {
+
+                font-size:
+                    21px;
+
+            }
+
+
+            .side-card > p {
+
+                font-size:
+                    10px;
+
+            }
+
+
+            /* SIDE STEPS */
+
+            .side-step {
+
+                padding:
+                    10px;
+
+            }
+
+
+            .side-step-icon {
+
+                width:
+                    39px;
+
+                height:
+                    39px;
+
+                border-radius:
+                    12px;
+
+                font-size:
+                    17px;
+
+            }
+
+
+            /* FOOTER */
+
+            .footer {
+
+                padding:
+                    35px 0 22px;
+
+            }
+
+
+            .footer-grid {
+
+                grid-template-columns:
+                    1fr;
+
+                gap:
+                    23px;
+
+                text-align:
+                    center;
+
+            }
+
+
+            /* MOBILE BOTTOM NAV */
+
+            .mobile-bottom-nav {
+
+                position:
+                    fixed;
+
+                left:
+                    0;
+
+                right:
+                    0;
+
+                bottom:
+                    0;
+
+                z-index:
+                    2000;
+
+                min-height:
+                    68px;
+
+                display:
+                    grid;
+
+                grid-template-columns:
+                    repeat(
+                        4,
+                        1fr
+                    );
+
+                background:
+                    rgba(
+                        255,
+                        255,
+                        255,
+                        .96
+                    );
+
+                backdrop-filter:
+                    blur(20px);
+
+                border-top:
+                    1px solid
+                    #ece8f1;
+
+                box-shadow:
+                    0 -10px 30px
+                    rgba(
+                        40,
+                        30,
+                        60,
+                        .06
+                    );
+
+            }
+
+
+            .mobile-bottom-nav a {
+
+                display:
+                    flex;
+
+                flex-direction:
+                    column;
+
+                align-items:
+                    center;
+
+                justify-content:
+                    center;
+
+                gap:
+                    3px;
+
+                text-decoration:
+                    none;
+
+                color:
+                    #8b8292;
+
+                font-size:
+                    8px;
+
+                font-weight:
+                    800;
+
+            }
+
+
+            .mobile-bottom-nav a.active {
+
+                color:
+                    #ef4f82;
+
+            }
+
+
+            .mobile-bottom-nav strong {
+
+                font-size:
+                    18px;
+
+                line-height:
+                    1;
+
+            }
+
+
+        }
+
+
+    </style>
+
 
 </head>
 
@@ -3056,14 +3685,12 @@ a {
 <body>
 
 
-<div class="page-bg"></div>
-
-
 <!-- =====================================================
      HEADER
 ===================================================== -->
 
 <header class="header">
+
 
     <div class="container header-inner">
 
@@ -3073,6 +3700,7 @@ a {
             class="brand"
         >
 
+
             <div class="brand-logo">
 
                 🌈
@@ -3080,7 +3708,8 @@ a {
             </div>
 
 
-            <div>
+            <div class="brand-text">
+
 
                 <h1>
 
@@ -3099,14 +3728,16 @@ a {
 
                 </p>
 
+
             </div>
+
 
         </a>
 
 
         <a
             href="status-pendaftaran.html"
-            class="status-link"
+            class="header-status"
         >
 
             📊 Status
@@ -3116,14 +3747,16 @@ a {
 
     </div>
 
+
 </header>
 
 
 <!-- =====================================================
-     NAVIGATION
+     NAVIGATION DESKTOP
 ===================================================== -->
 
 <nav class="nav">
+
 
     <div class="nav-inner">
 
@@ -3168,6 +3801,7 @@ a {
 
     </div>
 
+
 </nav>
 
 
@@ -3177,14 +3811,18 @@ a {
 
 <main class="main">
 
+
     <div class="container">
 
 
-        <!-- HERO BLOG -->
+        <!-- HERO -->
 
         <section
             class="blog-hero reveal"
         >
+
+
+            <div class="hero-dots"></div>
 
 
             <div class="hero-content">
@@ -3199,24 +3837,28 @@ a {
 
                 <h2>
 
-                    Mulai Petualangan
-                    Baru Bersama Kami 🌈
+                    Mulai
+                    Petualangan Baru
+                    Bersama Kami 🌈
 
                 </h2>
 
 
                 <p>
 
-                    Selamat datang di halaman
-                    pendaftaran online RA Miftahul Hikmah.
-                    Isi data calon peserta didik,
-                    kirim formulir dan dapatkan
-                    kode pendaftaran Anda.
+                    Daftarkan buah hati Anda
+                    di RA Miftahul Hikmah dengan
+                    mudah melalui formulir online.
+                    Setelah formulir dikirim,
+                    Anda akan mendapatkan kode
+                    pendaftaran untuk mengecek
+                    status selanjutnya.
 
                 </p>
 
 
-                <div class="hero-meta">
+                <div class="hero-info">
+
 
                     <span>
 
@@ -3234,7 +3876,7 @@ a {
 
                     <span>
 
-                        💬 WhatsApp
+                        💬 WhatsApp Admin
 
                     </span>
 
@@ -3248,9 +3890,10 @@ a {
         </section>
 
 
-        <!-- MOBILE BLOG MENU -->
+        <!-- MOBILE QUICK MENU -->
 
-        <div class="mobile-blog-menu">
+        <div class="quick-menu">
+
 
             <a href="#cara">
 
@@ -3283,10 +3926,10 @@ a {
 
             <!-- CONTENT -->
 
-            <div>
+            <div class="content-column">
 
 
-                <!-- ARTICLE CARA DAFTAR -->
+                <!-- CARA DAFTAR -->
 
                 <article
                     class="article-card reveal"
@@ -3294,32 +3937,28 @@ a {
                 >
 
 
-                    <div class="article-head">
+                    <div class="article-cover">
 
 
-                        <div class="article-tag">
+                        <div class="article-cover-content">
 
-                            📖 PANDUAN PENDAFTARAN
+
+                            <small>
+
+                                📖 PANDUAN PENDAFTARAN
+
+                            </small>
+
+
+                            <h2>
+
+                                Cara Daftar
+                                Sangat Mudah ✨
+
+                            </h2>
+
 
                         </div>
-
-
-                        <h2>
-
-                            Cara Mendaftar
-                            Sangat Mudah ✨
-
-                        </h2>
-
-
-                        <p>
-
-                            Pendaftaran dibuat sederhana
-                            agar orang tua atau wali dapat
-                            mendaftarkan buah hati dengan
-                            cepat melalui website.
-
-                        </p>
 
 
                     </div>
@@ -3328,12 +3967,31 @@ a {
                     <div class="article-body">
 
 
-                        <div class="flow-grid">
+                        <p>
+
+                            Tidak perlu datang langsung
+                            hanya untuk mengisi formulir.
+                            Orang tua atau wali dapat
+                            melakukan pendaftaran secara
+                            online melalui halaman ini.
+
+                        </p>
 
 
-                            <div class="flow-item">
+                        <div class="steps-grid">
 
-                                <div class="flow-icon">
+
+                            <div class="step-card">
+
+
+                                <div class="step-number">
+
+                                    01
+
+                                </div>
+
+
+                                <div class="step-icon">
 
                                     👶
 
@@ -3349,7 +4007,8 @@ a {
 
                                 <small>
 
-                                    Data calon siswa
+                                    Lengkapi data
+                                    calon peserta didik
 
                                 </small>
 
@@ -3357,9 +4016,17 @@ a {
                             </div>
 
 
-                            <div class="flow-item">
+                            <div class="step-card">
 
-                                <div class="flow-icon">
+
+                                <div class="step-number">
+
+                                    02
+
+                                </div>
+
+
+                                <div class="step-icon">
 
                                     📤
 
@@ -3368,7 +4035,7 @@ a {
 
                                 <b>
 
-                                    Kirim
+                                    Kirim Data
 
                                 </b>
 
@@ -3376,6 +4043,7 @@ a {
                                 <small>
 
                                     Kirim formulir
+                                    pendaftaran
 
                                 </small>
 
@@ -3383,9 +4051,17 @@ a {
                             </div>
 
 
-                            <div class="flow-item">
+                            <div class="step-card">
 
-                                <div class="flow-icon">
+
+                                <div class="step-number">
+
+                                    03
+
+                                </div>
+
+
+                                <div class="step-icon">
 
                                     🔑
 
@@ -3394,7 +4070,7 @@ a {
 
                                 <b>
 
-                                    Kode Daftar
+                                    Dapat Kode
 
                                 </b>
 
@@ -3402,6 +4078,7 @@ a {
                                 <small>
 
                                     Simpan kode
+                                    pendaftaran
 
                                 </small>
 
@@ -3409,9 +4086,17 @@ a {
                             </div>
 
 
-                            <div class="flow-item">
+                            <div class="step-card">
 
-                                <div class="flow-icon">
+
+                                <div class="step-number">
+
+                                    04
+
+                                </div>
+
+
+                                <div class="step-icon">
 
                                     💬
 
@@ -3427,7 +4112,8 @@ a {
 
                                 <small>
 
-                                    Konfirmasi admin
+                                    Hubungi admin
+                                    untuk konfirmasi
 
                                 </small>
 
@@ -3452,10 +4138,10 @@ a {
                 >
 
 
-                    <div class="form-card-header">
+                    <div class="form-header">
 
 
-                        <div class="form-card-icon">
+                        <div class="form-header-icon">
 
                             🎒
 
@@ -3463,6 +4149,7 @@ a {
 
 
                         <div>
+
 
                             <h2>
 
@@ -3474,8 +4161,10 @@ a {
                             <p>
 
                                 Lengkapi data dengan benar
+                                dan pastikan nomor WhatsApp aktif.
 
                             </p>
+
 
                         </div>
 
@@ -3483,7 +4172,9 @@ a {
                     </div>
 
 
-                    <form id="registrationForm">
+                    <form
+                        id="registrationForm"
+                    >
 
 
                         <!-- DATA ANAK -->
@@ -3491,21 +4182,34 @@ a {
                         <div class="form-section">
 
 
-                            <div class="form-section-title">
+                            <div class="form-section-head">
 
 
-                                <div class="form-number">
+                                <div class="section-number">
 
                                     01
 
                                 </div>
 
 
-                                <h3>
+                                <div>
 
-                                    👶 Data Calon Peserta Didik
 
-                                </h3>
+                                    <h3>
+
+                                        👶 Data Calon Peserta Didik
+
+                                    </h3>
+
+
+                                    <p>
+
+                                        Informasi dasar anak
+
+                                    </p>
+
+
+                                </div>
 
 
                             </div>
@@ -3515,6 +4219,7 @@ a {
 
 
                                 <div class="form-group">
+
 
                                     <label>
 
@@ -3534,10 +4239,12 @@ a {
                                         required
                                     >
 
+
                                 </div>
 
 
                                 <div class="form-group">
+
 
                                     <label>
 
@@ -3551,10 +4258,12 @@ a {
                                         placeholder="Contoh: Aisyah"
                                     >
 
+
                                 </div>
 
 
                                 <div class="form-group">
+
 
                                     <label>
 
@@ -3573,10 +4282,12 @@ a {
                                         required
                                     >
 
+
                                 </div>
 
 
                                 <div class="form-group">
+
 
                                     <label>
 
@@ -3593,6 +4304,7 @@ a {
                                         type="date"
                                         required
                                     >
+
 
                                 </div>
 
@@ -3614,13 +4326,13 @@ a {
                                     <div class="gender-grid">
 
 
-                                        <label
-                                            class="gender-option"
-                                        >
+                                        <label class="gender-option">
+
 
                                             <input
                                                 type="radio"
                                                 name="gender"
+                                                value="Laki-laki"
                                                 required
                                             >
 
@@ -3631,16 +4343,17 @@ a {
 
                                             </div>
 
+
                                         </label>
 
 
-                                        <label
-                                            class="gender-option"
-                                        >
+                                        <label class="gender-option">
+
 
                                             <input
                                                 type="radio"
                                                 name="gender"
+                                                value="Perempuan"
                                             >
 
 
@@ -3649,6 +4362,7 @@ a {
                                                 👧 Perempuan
 
                                             </div>
+
 
                                         </label>
 
@@ -3670,21 +4384,34 @@ a {
                         <div class="form-section">
 
 
-                            <div class="form-section-title">
+                            <div class="form-section-head">
 
 
-                                <div class="form-number">
+                                <div class="section-number">
 
                                     02
 
                                 </div>
 
 
-                                <h3>
+                                <div>
 
-                                    👨‍👩‍👧 Data Orang Tua / Wali
 
-                                </h3>
+                                    <h3>
+
+                                        👨‍👩‍👧 Data Orang Tua / Wali
+
+                                    </h3>
+
+
+                                    <p>
+
+                                        Informasi yang dapat dihubungi
+
+                                    </p>
+
+
+                                </div>
 
 
                             </div>
@@ -3694,6 +4421,7 @@ a {
 
 
                                 <div class="form-group">
+
 
                                     <label>
 
@@ -3713,10 +4441,12 @@ a {
                                         required
                                     >
 
+
                                 </div>
 
 
                                 <div class="form-group">
+
 
                                     <label>
 
@@ -3727,7 +4457,8 @@ a {
 
                                     <select>
 
-                                        <option>
+
+                                        <option value="">
 
                                             Pilih hubungan
 
@@ -3754,12 +4485,15 @@ a {
 
                                         </option>
 
+
                                     </select>
+
 
                                 </div>
 
 
                                 <div class="form-group">
+
 
                                     <label>
 
@@ -3779,10 +4513,12 @@ a {
                                         required
                                     >
 
+
                                 </div>
 
 
                                 <div class="form-group">
+
 
                                     <label>
 
@@ -3795,6 +4531,7 @@ a {
                                         type="email"
                                         placeholder="email@gmail.com"
                                     >
+
 
                                 </div>
 
@@ -3810,21 +4547,34 @@ a {
                         <div class="form-section">
 
 
-                            <div class="form-section-title">
+                            <div class="form-section-head">
 
 
-                                <div class="form-number">
+                                <div class="section-number">
 
                                     03
 
                                 </div>
 
 
-                                <h3>
+                                <div>
 
-                                    🏠 Alamat & Informasi
 
-                                </h3>
+                                    <h3>
+
+                                        🏠 Alamat & Informasi
+
+                                    </h3>
+
+
+                                    <p>
+
+                                        Informasi tempat tinggal dan kelas
+
+                                    </p>
+
+
+                                </div>
 
 
                             </div>
@@ -3834,6 +4584,7 @@ a {
 
 
                                 <div class="form-group full">
+
 
                                     <label>
 
@@ -3851,10 +4602,12 @@ a {
                                         required
                                     ></textarea>
 
+
                                 </div>
 
 
                                 <div class="form-group">
+
 
                                     <label>
 
@@ -3865,7 +4618,8 @@ a {
 
                                     <select>
 
-                                        <option>
+
+                                        <option value="">
 
                                             Pilih program
 
@@ -3892,12 +4646,15 @@ a {
 
                                         </option>
 
+
                                     </select>
+
 
                                 </div>
 
 
                                 <div class="form-group">
+
 
                                     <label>
 
@@ -3907,6 +4664,7 @@ a {
 
 
                                     <select>
+
 
                                         <option>
 
@@ -3921,7 +4679,9 @@ a {
 
                                         </option>
 
+
                                     </select>
+
 
                                 </div>
 
@@ -3945,12 +4705,11 @@ a {
 
                             <span>
 
-                                Saya menyatakan bahwa data
-                                yang saya isi adalah benar
+                                Saya menyatakan bahwa seluruh
+                                data yang saya isi adalah benar
                                 dan bersedia dihubungi oleh
-                                pihak RA Miftahul Hikmah
-                                untuk proses pendaftaran
-                                selanjutnya.
+                                pihak RA Miftahul Hikmah untuk
+                                proses pendaftaran selanjutnya.
 
                             </span>
 
@@ -3958,14 +4717,14 @@ a {
                         </label>
 
 
-                        <!-- SUBMIT -->
+                        <!-- BUTTON -->
 
                         <button
                             type="submit"
                             class="submit-button"
                         >
 
-                            🚀 Kirim Pendaftaran
+                            🚀 Kirim Pendaftaran Sekarang
 
                         </button>
 
@@ -3997,9 +4756,10 @@ a {
 
                         <p>
 
-                            Simpan kode pendaftaran
-                            berikut untuk melakukan
-                            pengecekan status.
+                            Data pendaftaran Anda telah
+                            berhasil dibuat. Silakan simpan
+                            kode berikut untuk melakukan
+                            pengecekan status pendaftaran.
 
                         </p>
 
@@ -4009,12 +4769,14 @@ a {
 
                             <small>
 
-                                KODE PENDAFTARAN
+                                🔑 KODE PENDAFTARAN ANDA
 
                             </small>
 
 
-                            <b id="registrationCode">
+                            <b
+                                id="registrationCode"
+                            >
 
                                 RA-000000
 
@@ -4034,7 +4796,7 @@ a {
                                 id="whatsappButton"
                             >
 
-                                💬 Lanjut ke WhatsApp
+                                💬 Lanjut ke WhatsApp Admin
 
                             </a>
 
@@ -4068,7 +4830,7 @@ a {
             >
 
 
-                <!-- CARA -->
+                <!-- ALUR -->
 
                 <div
                     class="side-card reveal"
@@ -4088,19 +4850,19 @@ a {
 
                     <p>
 
-                        Ikuti proses pendaftaran
-                        berikut dengan mudah.
+                        Empat langkah sederhana
+                        untuk mendaftarkan buah hati Anda.
 
                     </p>
 
 
-                    <div class="blog-steps">
+                    <div class="side-steps">
 
 
-                        <div class="blog-step">
+                        <div class="side-step">
 
 
-                            <div class="blog-step-icon">
+                            <div class="side-step-icon">
 
                                 📝
 
@@ -4108,6 +4870,7 @@ a {
 
 
                             <div>
+
 
                                 <b>
 
@@ -4118,9 +4881,10 @@ a {
 
                                 <small>
 
-                                    Lengkapi data anak
+                                    Lengkapi semua data
 
                                 </small>
+
 
                             </div>
 
@@ -4128,10 +4892,10 @@ a {
                         </div>
 
 
-                        <div class="blog-step">
+                        <div class="side-step">
 
 
-                            <div class="blog-step-icon">
+                            <div class="side-step-icon">
 
                                 📤
 
@@ -4139,6 +4903,7 @@ a {
 
 
                             <div>
+
 
                                 <b>
 
@@ -4153,16 +4918,17 @@ a {
 
                                 </small>
 
+
                             </div>
 
 
                         </div>
 
 
-                        <div class="blog-step">
+                        <div class="side-step">
 
 
-                            <div class="blog-step-icon">
+                            <div class="side-step-icon">
 
                                 🔑
 
@@ -4170,6 +4936,7 @@ a {
 
 
                             <div>
+
 
                                 <b>
 
@@ -4184,16 +4951,17 @@ a {
 
                                 </small>
 
+
                             </div>
 
 
                         </div>
 
 
-                        <div class="blog-step">
+                        <div class="side-step">
 
 
-                            <div class="blog-step-icon">
+                            <div class="side-step-icon">
 
                                 💬
 
@@ -4202,18 +4970,20 @@ a {
 
                             <div>
 
+
                                 <b>
 
-                                    WhatsApp
+                                    Hubungi Admin
 
                                 </b>
 
 
                                 <small>
 
-                                    Hubungi admin
+                                    Konfirmasi melalui WA
 
                                 </small>
+
 
                             </div>
 
@@ -4237,7 +5007,7 @@ a {
                 >
 
 
-                    <div class="status-card-icon">
+                    <div class="status-icon">
 
                         📊
 
@@ -4257,9 +5027,9 @@ a {
 
                     <p>
 
-                        Sudah mendaftar?
-                        Gunakan kode pendaftaran
-                        Anda untuk melihat status
+                        Sudah pernah mendaftar?
+                        Gunakan kode pendaftaran Anda
+                        untuk melihat status proses
                         pendaftaran.
 
                     </p>
@@ -4302,14 +5072,15 @@ a {
                         <div class="info-item">
 
 
-                            <span>
+                            <div class="info-item-icon">
 
                                 🔑
 
-                            </span>
+                            </div>
 
 
                             <div>
+
 
                                 <b>
 
@@ -4325,6 +5096,7 @@ a {
 
                                 </small>
 
+
                             </div>
 
 
@@ -4334,14 +5106,15 @@ a {
                         <div class="info-item">
 
 
-                            <span>
+                            <div class="info-item-icon">
 
                                 💬
 
-                            </span>
+                            </div>
 
 
                             <div>
+
 
                                 <b>
 
@@ -4357,6 +5130,7 @@ a {
 
                                 </small>
 
+
                             </div>
 
 
@@ -4366,14 +5140,15 @@ a {
                         <div class="info-item">
 
 
-                            <span>
+                            <div class="info-item-icon">
 
                                 📋
 
-                            </span>
+                            </div>
 
 
                             <div>
+
 
                                 <b>
 
@@ -4384,10 +5159,11 @@ a {
 
                                 <small>
 
-                                    Pastikan data
+                                    Pastikan seluruh data
                                     sudah sesuai.
 
                                 </small>
+
 
                             </div>
 
@@ -4408,6 +5184,7 @@ a {
 
 
     </div>
+
 
 </main>
 
@@ -4441,8 +5218,8 @@ a {
 
                 <p>
 
-                    Tempat belajar,
-                    bermain dan bertumbuh
+                    Tempat belajar, bermain,
+                    dan bertumbuh bersama
                     dengan bahagia.
 
                 </p>
@@ -4474,6 +5251,17 @@ a {
 
                 <p>
 
+                    <a href="about.html">
+
+                        About
+
+                    </a>
+
+                </p>
+
+
+                <p>
+
                     <a href="blog.html">
 
                         Blog
@@ -4488,17 +5276,6 @@ a {
                     <a href="pendaftaran.html">
 
                         Pendaftaran
-
-                    </a>
-
-                </p>
-
-
-                <p>
-
-                    <a href="status-pendaftaran.html">
-
-                        Status Pendaftaran
 
                     </a>
 
@@ -4560,384 +5337,151 @@ a {
 
 
 <!-- =====================================================
+     MOBILE BOTTOM NAV
+===================================================== -->
+
+<div class="mobile-bottom-nav">
+
+
+    <a href="index.html">
+
+
+        <strong>
+
+            🏠
+
+        </strong>
+
+
+        Home
+
+
+    </a>
+
+
+    <a href="blog.html">
+
+
+        <strong>
+
+            🖍️
+
+        </strong>
+
+
+        Blog
+
+
+    </a>
+
+
+    <a
+        href="pendaftaran.html"
+        class="active"
+    >
+
+
+        <strong>
+
+            📝
+
+        </strong>
+
+
+        Daftar
+
+
+    </a>
+
+
+    <a href="status-pendaftaran.html">
+
+
+        <strong>
+
+            📊
+
+        </strong>
+
+
+        Status
+
+
+    </a>
+
+
+</div>
+
+
+<!-- =====================================================
      JAVASCRIPT
 ===================================================== -->
 
 <script>
 
 
-document.addEventListener(
+    document.addEventListener(
 
-    "DOMContentLoaded",
+        "DOMContentLoaded",
 
-    function () {
-
-
-        /* =============================================
-           REVEAL
-        ============================================= */
-
-        const revealItems =
-
-            document.querySelectorAll(
-                ".reveal"
-            );
+        function () {
 
 
-        if (
+            /* =============================================
+               REVEAL ANIMATION
+            ============================================= */
 
-            "IntersectionObserver"
-            in
-            window
+            const revealItems =
 
-        ) {
-
-
-            const observer =
-
-                new IntersectionObserver(
-
-                    function (
-                        entries
-                    ) {
-
-
-                        entries.forEach(
-
-                            function (
-                                entry
-                            ) {
-
-
-                                if (
-                                    entry.isIntersecting
-                                ) {
-
-
-                                    entry.target.classList.add(
-                                        "show"
-                                    );
-
-
-                                    observer.unobserve(
-                                        entry.target
-                                    );
-
-
-                                }
-
-
-                            }
-
-                        );
-
-
-                    },
-
-
-                    {
-
-                        threshold:
-                            0.1
-
-                    }
-
+                document.querySelectorAll(
+                    ".reveal"
                 );
 
 
-            revealItems.forEach(
+            if (
 
-                function (
-                    item
-                ) {
+                "IntersectionObserver"
+                in
+                window
 
+            ) {
 
-                    observer.observe(
-                        item
-                    );
 
+                const observer =
 
-                }
+                    new IntersectionObserver(
 
-            );
+                        function (
+                            entries
+                        ) {
 
 
-        }
+                            entries.forEach(
 
+                                function (
+                                    entry
+                                ) {
 
-        else {
 
+                                    if (
 
-            revealItems.forEach(
+                                        entry.isIntersecting
 
-                function (
-                    item
-                ) {
+                                    ) {
 
 
-                    item.classList.add(
-                        "show"
-                    );
+                                        entry.target.classList.add(
+                                            "show"
+                                        );
 
 
-                }
+                                        observer.unobserve(
+                                            entry.target
+                                        );
 
-            );
 
+                                    }
 
-        }
-
-
-        /* =============================================
-           FORM
-        ============================================= */
-
-        const form =
-
-            document.getElementById(
-                "registrationForm"
-            );
-
-
-        const successBox =
-
-            document.getElementById(
-                "successBox"
-            );
-
-
-        const registrationCode =
-
-            document.getElementById(
-                "registrationCode"
-            );
-
-
-        const whatsappButton =
-
-            document.getElementById(
-                "whatsappButton"
-            );
-
-
-        if (
-            form
-        ) {
-
-
-            form.addEventListener(
-
-                "submit",
-
-                function (
-                    event
-                ) {
-
-
-                    event.preventDefault();
-
-
-                    if (
-                        !form.checkValidity()
-                    ) {
-
-
-                        form.reportValidity();
-
-
-                        return;
-
-
-                    }
-
-
-                    const submitButton =
-
-                        form.querySelector(
-                            ".submit-button"
-                        );
-
-
-                    submitButton.disabled =
-                        true;
-
-
-                    submitButton.innerHTML =
-                        "⏳ Memproses Pendaftaran...";
-
-
-                    setTimeout(
-
-                        function () {
-
-
-                            /* =====================
-                               CREATE CODE
-                            ===================== */
-
-                            const randomNumber =
-
-                                Math.floor(
-
-                                    100000
-                                    +
-
-                                    Math.random()
-                                    *
-
-                                    900000
-
-                                );
-
-
-                            const code =
-
-                                "RA-"
-                                +
-                                randomNumber;
-
-
-                            registrationCode.textContent =
-                                code;
-
-
-                            /* =====================
-                               GET DATA
-                            ===================== */
-
-                            const namaAnak =
-
-                                document.getElementById(
-                                    "namaAnak"
-                                ).value;
-
-
-                            const namaWali =
-
-                                document.getElementById(
-                                    "namaWali"
-                                ).value;
-
-
-                            const whatsapp =
-
-                                document.getElementById(
-                                    "whatsapp"
-                                ).value;
-
-
-                            /* =====================
-                               FORMAT NUMBER
-                            ===================== */
-
-                            let phoneNumber =
-                                whatsapp.replace(
-                                    /\D/g,
-                                    ""
-                                );
-
-
-                            if (
-                                phoneNumber.startsWith(
-                                    "0"
-                                )
-                            ) {
-
-
-                                phoneNumber =
-                                    "62"
-                                    +
-                                    phoneNumber.substring(
-                                        1
-                                    );
-
-
-                            }
-
-
-                            /* =====================
-                               WHATSAPP MESSAGE
-                            ===================== */
-
-                            const message =
-
-                                "Halo Admin RA Miftahul Hikmah 👋%0A%0A"
-
-                                +
-
-                                "Saya sudah melakukan pendaftaran.%0A%0A"
-
-                                +
-
-                                "👶 Nama Anak: "
-                                +
-                                namaAnak
-                                +
-                                "%0A"
-
-                                +
-
-                                "👨‍👩‍👧 Nama Wali: "
-                                +
-                                namaWali
-                                +
-                                "%0A"
-
-                                +
-
-                                "🔑 Kode Pendaftaran: "
-                                +
-                                code
-                                +
-                                "%0A%0A"
-
-                                +
-
-                                "Mohon informasi proses selanjutnya. Terima kasih 🙏";
-
-
-                            /* =====================
-                               ADMIN NUMBER
-                            ===================== */
-
-                            const adminNumber =
-
-                                "6281234567890";
-
-
-                            whatsappButton.href =
-
-                                "https://wa.me/"
-                                +
-                                adminNumber
-                                +
-                                "?text="
-                                +
-                                message;
-
-
-                            /* =====================
-                               SHOW SUCCESS
-                            ===================== */
-
-                            form.style.display =
-                                "none";
-
-
-                            successBox.classList.add(
-                                "show"
-                            );
-
-
-                            successBox.scrollIntoView(
-
-                                {
-
-                                    behavior:
-                                        "smooth",
-
-                                    block:
-                                        "center"
 
                                 }
 
@@ -4946,22 +5490,369 @@ document.addEventListener(
 
                         },
 
-                        1000
+
+                        {
+
+                            threshold:
+                                0.08
+
+                        }
 
                     );
 
 
-                }
+                revealItems.forEach(
 
-            );
+                    function (
+                        item
+                    ) {
+
+
+                        observer.observe(
+                            item
+                        );
+
+
+                    }
+
+                );
+
+
+            }
+
+
+            else {
+
+
+                revealItems.forEach(
+
+                    function (
+                        item
+                    ) {
+
+
+                        item.classList.add(
+                            "show"
+                        );
+
+
+                    }
+
+                );
+
+
+            }
+
+
+            /* =============================================
+               FORM
+            ============================================= */
+
+            const form =
+
+                document.getElementById(
+                    "registrationForm"
+                );
+
+
+            const successBox =
+
+                document.getElementById(
+                    "successBox"
+                );
+
+
+            const registrationCode =
+
+                document.getElementById(
+                    "registrationCode"
+                );
+
+
+            const whatsappButton =
+
+                document.getElementById(
+                    "whatsappButton"
+                );
+
+
+            if (
+
+                form
+
+            ) {
+
+
+                form.addEventListener(
+
+                    "submit",
+
+                    function (
+                        event
+                    ) {
+
+
+                        event.preventDefault();
+
+
+                        if (
+
+                            !form.checkValidity()
+
+                        ) {
+
+
+                            form.reportValidity();
+
+
+                            return;
+
+
+                        }
+
+
+                        const submitButton =
+
+                            form.querySelector(
+                                ".submit-button"
+                            );
+
+
+                        submitButton.disabled =
+                            true;
+
+
+                        submitButton.innerHTML =
+                            "⏳ Memproses Pendaftaran...";
+
+
+                        setTimeout(
+
+                            function () {
+
+
+                                /* =====================
+                                   CREATE CODE
+                                ===================== */
+
+                                const randomNumber =
+
+                                    Math.floor(
+
+                                        100000
+
+                                        +
+
+                                        Math.random()
+
+                                        *
+
+                                        900000
+
+                                    );
+
+
+                                const code =
+
+                                    "RA-"
+
+                                    +
+
+                                    randomNumber;
+
+
+                                registrationCode.textContent =
+                                    code;
+
+
+                                /* =====================
+                                   GET DATA
+                                ===================== */
+
+                                const namaAnak =
+
+                                    document.getElementById(
+                                        "namaAnak"
+                                    ).value.trim();
+
+
+                                const namaWali =
+
+                                    document.getElementById(
+                                        "namaWali"
+                                    ).value.trim();
+
+
+                                const whatsapp =
+
+                                    document.getElementById(
+                                        "whatsapp"
+                                    ).value.trim();
+
+
+                                /* =====================
+                                   FORMAT WHATSAPP
+                                ===================== */
+
+                                let phoneNumber =
+
+                                    whatsapp.replace(
+                                        /\D/g,
+                                        ""
+                                    );
+
+
+                                if (
+
+                                    phoneNumber.startsWith(
+                                        "0"
+                                    )
+
+                                ) {
+
+
+                                    phoneNumber =
+
+                                        "62"
+
+                                        +
+
+                                        phoneNumber.substring(
+                                            1
+                                        );
+
+
+                                }
+
+
+                                /* =====================
+                                   WHATSAPP MESSAGE
+                                ===================== */
+
+                                const message =
+
+                                    "Halo Admin RA Miftahul Hikmah 👋\n\n"
+
+                                    +
+
+                                    "Saya sudah melakukan pendaftaran online.\n\n"
+
+                                    +
+
+                                    "👶 Nama Anak: "
+
+                                    +
+
+                                    namaAnak
+
+                                    +
+
+                                    "\n"
+
+                                    +
+
+                                    "👨‍👩‍👧 Nama Wali: "
+
+                                    +
+
+                                    namaWali
+
+                                    +
+
+                                    "\n"
+
+                                    +
+
+                                    "🔑 Kode Pendaftaran: "
+
+                                    +
+
+                                    code
+
+                                    +
+
+                                    "\n\n"
+
+                                    +
+
+                                    "Mohon informasi proses selanjutnya. Terima kasih 🙏";
+
+
+                                /* =====================
+                                   ADMIN NUMBER
+                                ===================== */
+
+                                const adminNumber =
+
+                                    "6281234567890";
+
+
+                                whatsappButton.href =
+
+                                    "https://wa.me/"
+
+                                    +
+
+                                    adminNumber
+
+                                    +
+
+                                    "?text="
+
+                                    +
+
+                                    encodeURIComponent(
+                                        message
+                                    );
+
+
+                                /* =====================
+                                   SHOW SUCCESS
+                                ===================== */
+
+                                form.style.display =
+                                    "none";
+
+
+                                successBox.classList.add(
+                                    "show"
+                                );
+
+
+                                successBox.scrollIntoView(
+
+                                    {
+
+                                        behavior:
+                                            "smooth",
+
+                                        block:
+                                            "center"
+
+                                    }
+
+                                );
+
+
+                            },
+
+
+                            900
+
+                        );
+
+
+                    }
+
+                );
+
+
+            }
 
 
         }
 
-
-    }
-
-);
+    );
 
 
 </script>
