@@ -1,540 +1,4076 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="id">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Classes | Ra Miftahul Hikmah</title>
+    <meta charset="UTF-8">
 
-    <link rel="stylesheet" href="css/style.css">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Kelas Pembelajaran RA Miftahul Hikmah"
+    >
+
+    <title>
+        Classes | RA Miftahul Hikmah
+    </title>
+
+
+    <!-- GOOGLE FONT -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+
+<style>
+
+/* =====================================================
+   RA MIFTAHUL HIKMAH
+   CLASSES PAGE
+===================================================== */
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+
+    box-sizing:
+        border-box;
+
+}
+
+
+html {
+
+    scroll-behavior:
+        smooth;
+
+}
+
+
+body {
+
+    margin:
+        0;
+
+    overflow-x:
+        hidden;
+
+    font-family:
+        "Nunito",
+        sans-serif;
+
+    color:
+        #342d4c;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            #fff9fc 0%,
+            #f9f5ff 30%,
+            #f4fbff 60%,
+            #fffaf2 100%
+        );
+
+    background-size:
+        300% 300%;
+
+    animation:
+        backgroundMove 18s ease infinite;
+
+}
+
+
+@keyframes backgroundMove {
+
+    0% {
+
+        background-position:
+            0% 50%;
+
+    }
+
+
+    50% {
+
+        background-position:
+            100% 50%;
+
+    }
+
+
+    100% {
+
+        background-position:
+            0% 50%;
+
+    }
+
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.au-container {
+
+    width:
+        min(
+            1180px,
+            calc(100% - 32px)
+        );
+
+    margin:
+        auto;
+
+}
+
+
+/* =====================================================
+   BACKGROUND
+===================================================== */
+
+.cl-bg {
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    z-index:
+        -1;
+
+    pointer-events:
+        none;
+
+    overflow:
+        hidden;
+
+}
+
+
+.cl-bg::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        320px;
+
+    height:
+        320px;
+
+    border-radius:
+        50%;
+
+    top:
+        8%;
+
+    left:
+        -170px;
+
+    background:
+        rgba(255,139,184,.20);
+
+    filter:
+        blur(65px);
+
+    animation:
+        blobOne 12s ease-in-out infinite;
+
+}
+
+
+.cl-bg::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        350px;
+
+    height:
+        350px;
+
+    border-radius:
+        50%;
+
+    bottom:
+        4%;
+
+    right:
+        -180px;
+
+    background:
+        rgba(126,189,255,.22);
+
+    filter:
+        blur(65px);
+
+    animation:
+        blobTwo 14s ease-in-out infinite;
+
+}
+
+
+@keyframes blobOne {
+
+    0%,
+    100% {
+
+        transform:
+            translate(0,0)
+            scale(1);
+
+    }
+
+
+    50% {
+
+        transform:
+            translate(100px,80px)
+            scale(1.2);
+
+    }
+
+}
+
+
+@keyframes blobTwo {
+
+    0%,
+    100% {
+
+        transform:
+            translate(0,0)
+            scale(1);
+
+    }
+
+
+    50% {
+
+        transform:
+            translate(-80px,-90px)
+            scale(1.2);
+
+    }
+
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.au-header {
+
+    position:
+        relative;
+
+    z-index:
+        100;
+
+    background:
+        rgba(255,255,255,.78);
+
+    backdrop-filter:
+        blur(20px);
+
+    border-bottom:
+        1px solid rgba(255,255,255,.9);
+
+}
+
+
+.au-header-inner {
+
+    min-height:
+        72px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        12px;
+
+}
+
+
+.au-brand {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+
+    text-decoration:
+        none;
+
+    color:
+        #342d4c;
+
+}
+
+
+.au-logo {
+
+    width:
+        46px;
+
+    height:
+        46px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    border-radius:
+        15px;
+
+    font-size:
+        24px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #fff1a8,
+            #ffd5e5,
+            #d6efff
+        );
+
+    box-shadow:
+        0 8px 25px rgba(239,79,130,.18);
+
+    animation:
+        logoFloat 4s ease-in-out infinite;
+
+}
+
+
+@keyframes logoFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+
+    50% {
+
+        transform:
+            translateY(-5px)
+            rotate(5deg);
+
+    }
+
+}
+
+
+.au-brand h1 {
+
+    margin:
+        0;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size:
+        18px;
+
+    line-height:
+        1;
+
+}
+
+
+.au-brand h1 span {
+
+    color:
+        #ef4f82;
+
+}
+
+
+.au-brand p {
+
+    margin:
+        4px 0 0;
+
+    color:
+        #817991;
+
+    font-size:
+        10px;
+
+}
+
+
+.au-visit {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        10px 13px;
+
+    border-radius:
+        13px;
+
+    text-decoration:
+        none;
+
+    color:
+        white;
+
+    font-size:
+        11px;
+
+    font-weight:
+        900;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #ef4f82,
+            #ff7da7
+        );
+
+    box-shadow:
+        0 9px 20px rgba(239,79,130,.25);
+
+    transition:
+        .3s ease;
+
+}
+
+
+.au-visit:hover {
+
+    transform:
+        translateY(-3px);
+
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.au-nav {
+
+    position:
+        sticky;
+
+    top:
+        0;
+
+    z-index:
+        99;
+
+    background:
+        rgba(255,255,255,.92);
+
+    backdrop-filter:
+        blur(20px);
+
+    border-bottom:
+        1px solid rgba(120,90,180,.08);
+
+}
+
+
+.au-nav-inner {
+
+    width:
+        min(
+            1180px,
+            calc(100% - 20px)
+        );
+
+    margin:
+        auto;
+
+    display:
+        flex;
+
+    gap:
+        6px;
+
+    padding:
+        8px 0;
+
+    overflow-x:
+        auto;
+
+    scrollbar-width:
+        none;
+
+}
+
+
+.au-nav-inner::-webkit-scrollbar {
+
+    display:
+        none;
+
+}
+
+
+.au-nav-link {
+
+    flex:
+        0 0 auto;
+
+    min-width:
+        62px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        3px;
+
+    padding:
+        8px 9px;
+
+    border-radius:
+        14px;
+
+    text-decoration:
+        none;
+
+    color:
+        #6f687d;
+
+    font-size:
+        9px;
+
+    font-weight:
+        900;
+
+    transition:
+        .3s ease;
+
+}
+
+
+.au-nav-link:hover {
+
+    background:
+        #f5f1ff;
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+.au-nav-icon {
+
+    font-size:
+        19px;
+
+}
+
+
+.au-nav-link.active {
+
+    color:
+        white;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #7b6cff,
+            #a47fff
+        );
+
+    box-shadow:
+        0 7px 18px rgba(125,108,255,.25);
+
+}
+
+
+.au-more-wrap {
+
+    flex:
+        0 0 auto;
+
+}
+
+
+.au-more-button {
+
+    height:
+        100%;
+
+    min-width:
+        72px;
+
+    border:
+        none;
+
+    cursor:
+        pointer;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        3px;
+
+    padding:
+        8px 10px;
+
+    border-radius:
+        14px;
+
+    background:
+        #f5f2fb;
+
+    color:
+        #6b617b;
+
+    font-size:
+        9px;
+
+    font-weight:
+        900;
+
+    transition:
+        .3s ease;
+
+}
+
+
+.au-more-button:hover {
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+.au-more-button span {
+
+    font-size:
+        18px;
+
+}
+
+
+/* =====================================================
+   DROPDOWN
+===================================================== */
+
+.au-more-menu {
+
+    position:
+        fixed;
+
+    top:
+        138px;
+
+    left:
+        16px;
+
+    right:
+        16px;
+
+    z-index:
+        300;
+
+    display:
+        none;
+
+    overflow:
+        hidden;
+
+    border-radius:
+        22px;
+
+    background:
+        rgba(255,255,255,.97);
+
+    box-shadow:
+        0 20px 55px rgba(57,40,90,.18);
+
+    opacity:
+        0;
+
+    transform:
+        translateY(-10px);
+
+    transition:
+        .25s ease;
+
+}
+
+
+.au-more-menu.open {
+
+    display:
+        block;
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+.au-more-title {
+
+    padding:
+        16px 18px;
+
+    font-size:
+        14px;
+
+    font-weight:
+        900;
+
+    border-bottom:
+        1px solid #f0edf5;
+
+}
+
+
+.au-more-menu a {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        13px;
+
+    padding:
+        15px 18px;
+
+    text-decoration:
+        none;
+
+    color:
+        #665e72;
+
+    font-size:
+        14px;
+
+    font-weight:
+        800;
+
+    border-bottom:
+        1px solid #f5f2f7;
+
+    transition:
+        .25s ease;
+
+}
+
+
+.au-more-menu a:hover {
+
+    background:
+        #faf7ff;
+
+    padding-left:
+        24px;
+
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.cl-hero {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    padding:
+        65px 0 70px;
+
+    text-align:
+        center;
+
+}
+
+
+.cl-hero::before {
+
+    content:
+        "🎓";
+
+    position:
+        absolute;
+
+    top:
+        25px;
+
+    left:
+        8%;
+
+    font-size:
+        50px;
+
+    opacity:
+        .25;
+
+    animation:
+        emojiFloat 5s ease-in-out infinite;
+
+}
+
+
+.cl-hero::after {
+
+    content:
+        "🧸";
+
+    position:
+        absolute;
+
+    right:
+        7%;
+
+    bottom:
+        20px;
+
+    font-size:
+        55px;
+
+    opacity:
+        .3;
+
+    animation:
+        emojiFloat 6s ease-in-out infinite reverse;
+
+}
+
+
+@keyframes emojiFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(0);
+
+    }
+
+
+    50% {
+
+        transform:
+            translateY(-12px)
+            rotate(8deg);
+
+    }
+
+}
+
+
+.cl-hero-content {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+}
+
+
+.cl-badge {
+
+    display:
+        inline-flex;
+
+    padding:
+        9px 15px;
+
+    border-radius:
+        50px;
+
+    background:
+        rgba(255,255,255,.8);
+
+    font-size:
+        12px;
+
+    font-weight:
+        900;
+
+    color:
+        #8466bd;
+
+    box-shadow:
+        0 10px 30px rgba(80,60,120,.08);
+
+    animation:
+        badgeFloat 4s ease-in-out infinite;
+
+}
+
+
+@keyframes badgeFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+
+    50% {
+
+        transform:
+            translateY(-6px);
+
+    }
+
+}
+
+
+.cl-hero h2 {
+
+    margin:
+        17px 0 0;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size:
+        clamp(48px,15vw,72px);
+
+    line-height:
+        .95;
+
+}
+
+
+.cl-hero h2 span {
+
+    color:
+        #ef4f82;
+
+}
+
+
+.cl-hero p {
+
+    max-width:
+        600px;
+
+    margin:
+        18px auto 0;
+
+    color:
+        #766d84;
+
+    font-size:
+        14px;
+
+    line-height:
+        1.8;
+
+}
+
+
+/* =====================================================
+   SECTION
+===================================================== */
+
+.cl-section {
+
+    padding:
+        40px 0;
+
+}
+
+
+.cl-heading {
+
+    text-align:
+        center;
+
+    margin-bottom:
+        28px;
+
+}
+
+
+.cl-heading-badge {
+
+    display:
+        inline-block;
+
+    padding:
+        7px 13px;
+
+    border-radius:
+        30px;
+
+    background:
+        #f0eaff;
+
+    color:
+        #8864c9;
+
+    font-size:
+        10px;
+
+    font-weight:
+        900;
+
+}
+
+
+.cl-heading h2 {
+
+    margin:
+        10px 0;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size:
+        34px;
+
+    line-height:
+        1.1;
+
+}
+
+
+.cl-heading h2 span {
+
+    color:
+        #ef4f82;
+
+}
+
+
+.cl-heading p {
+
+    max-width:
+        600px;
+
+    margin:
+        auto;
+
+    color:
+        #7c7489;
+
+    font-size:
+        13px;
+
+    line-height:
+        1.7;
+
+}
+
+
+/* =====================================================
+   CLASS CARDS
+===================================================== */
+
+.classes-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr;
+
+    gap:
+        18px;
+
+}
+
+
+.class-card {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    padding:
+        24px 20px;
+
+    border-radius:
+        26px;
+
+    background:
+        rgba(255,255,255,.78);
+
+    border:
+        1px solid rgba(255,255,255,.95);
+
+    box-shadow:
+        0 15px 40px rgba(70,50,110,.09);
+
+    transition:
+        .35s ease;
+
+}
+
+
+.class-card:hover {
+
+    transform:
+        translateY(-8px);
+
+    box-shadow:
+        0 25px 55px rgba(70,50,110,.15);
+
+}
+
+
+.class-card::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        150px;
+
+    height:
+        150px;
+
+    border-radius:
+        50%;
+
+    right:
+        -70px;
+
+    bottom:
+        -70px;
+
+    background:
+        rgba(255,180,215,.20);
+
+}
+
+
+.class-icon {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    width:
+        72px;
+
+    height:
+        72px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    margin-bottom:
+        16px;
+
+    border-radius:
+        22px;
+
+    font-size:
+        34px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #fff5fa,
+            #f0edff
+        );
+
+    animation:
+        iconPulse 4s ease-in-out infinite;
+
+}
+
+
+@keyframes iconPulse {
+
+    0%,
+    100% {
+
+        transform:
+            scale(1);
+
+    }
+
+
+    50% {
+
+        transform:
+            scale(1.08);
+
+    }
+
+}
+
+
+.class-card h3 {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    margin:
+        0 0 8px;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size:
+        25px;
+
+}
+
+
+.class-age {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    display:
+        inline-block;
+
+    margin-bottom:
+        12px;
+
+    padding:
+        7px 12px;
+
+    border-radius:
+        30px;
+
+    background:
+        #f5efff;
+
+    color:
+        #8062bd;
+
+    font-size:
+        10px;
+
+    font-weight:
+        900;
+
+}
+
+
+.class-card p {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    margin:
+        0;
+
+    color:
+        #766e83;
+
+    font-size:
+        13px;
+
+    line-height:
+        1.75;
+
+}
+
+
+.class-feature {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    margin-top:
+        16px;
+
+    font-size:
+        11px;
+
+    font-weight:
+        800;
+
+    color:
+        #655d70;
+
+}
+
+
+/* =====================================================
+   CLASS DIFFERENT COLORS
+===================================================== */
+
+.class-card.pink::after {
+
+    background:
+        rgba(255,142,190,.22);
+
+}
+
+
+.class-card.blue::after {
+
+    background:
+        rgba(111,194,255,.20);
+
+}
+
+
+.class-card.yellow::after {
+
+    background:
+        rgba(255,211,112,.24);
+
+}
+
+
+.class-card.green::after {
+
+    background:
+        rgba(122,220,170,.20);
+
+}
+
+
+/* =====================================================
+   DAILY ACTIVITIES
+===================================================== */
+
+.daily-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:
+        14px;
+
+}
+
+
+.daily-card {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    padding:
+        22px 12px;
+
+    text-align:
+        center;
+
+    border-radius:
+        22px;
+
+    background:
+        rgba(255,255,255,.75);
+
+    box-shadow:
+        0 12px 30px rgba(70,50,100,.08);
+
+    transition:
+        .3s ease;
+
+}
+
+
+.daily-card:hover {
+
+    transform:
+        translateY(-7px)
+        rotate(1deg);
+
+}
+
+
+.daily-card span {
+
+    display:
+        block;
+
+    margin-bottom:
+        8px;
+
+    font-size:
+        38px;
+
+    animation:
+        dailyFloat 4s ease-in-out infinite;
+
+}
+
+
+.daily-card:nth-child(even) span {
+
+    animation-delay:
+        .5s;
+
+}
+
+
+@keyframes dailyFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+
+    50% {
+
+        transform:
+            translateY(-7px);
+
+    }
+
+}
+
+
+.daily-card b {
+
+    font-size:
+        12px;
+
+    color:
+        #51465f;
+
+}
+
+
+/* =====================================================
+   CLASS JOURNEY
+===================================================== */
+
+.class-journey {
+
+    display:
+        grid;
+
+    gap:
+        15px;
+
+}
+
+
+.class-step {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        60px 1fr;
+
+    align-items:
+        center;
+
+    gap:
+        15px;
+
+    padding:
+        18px;
+
+    border-radius:
+        22px;
+
+    background:
+        rgba(255,255,255,.75);
+
+    box-shadow:
+        0 12px 32px rgba(74,53,120,.08);
+
+    transition:
+        .3s ease;
+
+}
+
+
+.class-step:hover {
+
+    transform:
+        translateX(6px);
+
+}
+
+
+.class-step-number {
+
+    width:
+        60px;
+
+    height:
+        60px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    border-radius:
+        18px;
+
+    color:
+        white;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size:
+        22px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #7b6cff,
+            #a47fff
+        );
+
+    box-shadow:
+        0 10px 20px rgba(123,108,255,.20);
+
+}
+
+
+.class-step-content h3 {
+
+    margin:
+        0 0 4px;
+
+    font-size:
+        17px;
+
+}
+
+
+.class-step-content p {
+
+    margin:
+        0;
+
+    color:
+        #7a7287;
+
+    font-size:
+        12px;
+
+    line-height:
+        1.65;
+
+}
+
+
+/* =====================================================
+   TEACHER SECTION
+===================================================== */
+
+.teacher-box {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    padding:
+        30px 20px;
+
+    border-radius:
+        30px;
+
+    text-align:
+        center;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(255,240,246,.9),
+            rgba(240,236,255,.9),
+            rgba(229,247,255,.9)
+        );
+
+    box-shadow:
+        0 22px 55px rgba(75,55,120,.12);
+
+}
+
+
+.teacher-box::before {
+
+    content:
+        "👩‍🏫";
+
+    position:
+        absolute;
+
+    left:
+        -10px;
+
+    bottom:
+        -15px;
+
+    font-size:
+        100px;
+
+    opacity:
+        .10;
+
+}
+
+
+.teacher-icon {
+
+    width:
+        90px;
+
+    height:
+        90px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    margin:
+        0 auto 15px;
+
+    border-radius:
+        28px;
+
+    font-size:
+        45px;
+
+    background:
+        rgba(255,255,255,.8);
+
+    box-shadow:
+        0 15px 35px rgba(75,55,120,.12);
+
+    animation:
+        teacherFloat 4s ease-in-out infinite;
+
+}
+
+
+@keyframes teacherFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+
+    50% {
+
+        transform:
+            translateY(-8px);
+
+    }
+
+}
+
+
+.teacher-box h2 {
+
+    position:
+        relative;
+
+    margin:
+        0 0 10px;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size:
+        32px;
+
+}
+
+
+.teacher-box h2 span {
+
+    color:
+        #ef4f82;
+
+}
+
+
+.teacher-box p {
+
+    position:
+        relative;
+
+    max-width:
+        600px;
+
+    margin:
+        auto;
+
+    color:
+        #756c82;
+
+    font-size:
+        13px;
+
+    line-height:
+        1.75;
+
+}
+
+
+/* =====================================================
+   POSTS SUPABASE
+===================================================== */
+
+.posts-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr;
+
+    gap:
+        18px;
+
+}
+
+
+.post-card {
+
+    overflow:
+        hidden;
+
+    border-radius:
+        25px;
+
+    background:
+        rgba(255,255,255,.80);
+
+    border:
+        1px solid rgba(255,255,255,.95);
+
+    box-shadow:
+        0 15px 40px rgba(70,50,110,.09);
+
+    transition:
+        .35s ease;
+
+}
+
+
+.post-card:hover {
+
+    transform:
+        translateY(-7px);
+
+    box-shadow:
+        0 25px 55px rgba(70,50,110,.14);
+
+}
+
+
+.post-card-image {
+
+    height:
+        220px;
+
+    overflow:
+        hidden;
+
+}
+
+
+.post-card-image img {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    object-fit:
+        cover;
+
+    transition:
+        .5s ease;
+
+}
+
+
+.post-card:hover
+.post-card-image img {
+
+    transform:
+        scale(1.08);
+
+}
+
+
+.post-card-content {
+
+    padding:
+        20px;
+
+}
+
+
+.post-card-date {
+
+    display:
+        inline-block;
+
+    margin-bottom:
+        8px;
+
+    padding:
+        6px 10px;
+
+    border-radius:
+        20px;
+
+    background:
+        #f4efff;
+
+    color:
+        #8766c5;
+
+    font-size:
+        10px;
+
+    font-weight:
+        900;
+
+}
+
+
+.post-card h3 {
+
+    margin:
+        0 0 8px;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size:
+        22px;
+
+}
+
+
+.post-card p {
+
+    margin:
+        0;
+
+    color:
+        #756d82;
+
+    font-size:
+        13px;
+
+    line-height:
+        1.75;
+
+}
+
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+.cloud-loading,
+.cloud-empty {
+
+    padding:
+        45px 20px;
+
+    text-align:
+        center;
+
+    border-radius:
+        25px;
+
+    background:
+        rgba(255,255,255,.70);
+
+    box-shadow:
+        0 15px 40px rgba(70,50,110,.08);
+
+}
+
+
+.cloud-loading-icon,
+.cloud-empty-icon {
+
+    margin-bottom:
+        12px;
+
+    font-size:
+        45px;
+
+    animation:
+        loadingFloat 2s ease-in-out infinite;
+
+}
+
+
+@keyframes loadingFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+
+    50% {
+
+        transform:
+            translateY(-8px);
+
+    }
+
+}
+
+
+.cloud-empty h3 {
+
+    margin:
+        0 0 8px;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+}
+
+
+.cloud-empty p {
+
+    margin:
+        0;
+
+    color:
+        #766e83;
+
+}
+
+
+/* =====================================================
+   CTA
+===================================================== */
+
+.cl-cta {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    margin:
+        20px 0 45px;
+
+    padding:
+        48px 20px;
+
+    border-radius:
+        30px;
+
+    text-align:
+        center;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #fff0f6,
+            #f0ecff,
+            #e5f7ff
+        );
+
+    box-shadow:
+        0 22px 55px rgba(75,55,120,.12);
+
+}
+
+
+.cl-cta::before {
+
+    content:
+        "🌈";
+
+    position:
+        absolute;
+
+    top:
+        10px;
+
+    left:
+        8%;
+
+    font-size:
+        55px;
+
+    opacity:
+        .18;
+
+    animation:
+        emojiFloat 5s ease-in-out infinite;
+
+}
+
+
+.cl-cta::after {
+
+    content:
+        "⭐";
+
+    position:
+        absolute;
+
+    right:
+        10%;
+
+    bottom:
+        10px;
+
+    font-size:
+        50px;
+
+    opacity:
+        .18;
+
+    animation:
+        emojiFloat 5s ease-in-out infinite reverse;
+
+}
+
+
+.cl-cta-content {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+}
+
+
+.cl-cta h2 {
+
+    margin:
+        0 0 12px;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size:
+        35px;
+
+}
+
+
+.cl-cta h2 span {
+
+    color:
+        #ef4f82;
+
+}
+
+
+.cl-cta p {
+
+    max-width:
+        500px;
+
+    margin:
+        0 auto 22px;
+
+    color:
+        #756c82;
+
+    font-size:
+        13px;
+
+    line-height:
+        1.75;
+
+}
+
+
+.cl-button {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        14px 22px;
+
+    border-radius:
+        15px;
+
+    text-decoration:
+        none;
+
+    color:
+        white;
+
+    font-size:
+        13px;
+
+    font-weight:
+        900;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #ef4f82,
+            #ff7ea7
+        );
+
+    box-shadow:
+        0 12px 25px rgba(239,79,130,.25);
+
+    transition:
+        .3s ease;
+
+}
+
+
+.cl-button:hover {
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 18px 30px rgba(239,79,130,.32);
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.au-footer {
+
+    padding:
+        42px 0 0;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #302843,
+            #403556
+        );
+
+    color:
+        white;
+
+}
+
+
+.au-footer-grid {
+
+    display:
+        grid;
+
+    gap:
+        25px;
+
+    text-align:
+        center;
+
+}
+
+
+.au-footer h3 {
+
+    margin:
+        0 0 10px;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size:
+        22px;
+
+}
+
+
+.au-footer h3 span {
+
+    color:
+        #ff8db3;
+
+}
+
+
+.au-footer p {
+
+    margin:
+        0 0 7px;
+
+    color:
+        #c9c1d7;
+
+    font-size:
+        13px;
+
+    line-height:
+        1.7;
+
+}
+
+
+.au-copyright {
+
+    margin-top:
+        35px;
+
+    padding:
+        18px;
+
+    text-align:
+        center;
+
+    border-top:
+        1px solid rgba(255,255,255,.08);
+
+    color:
+        #aaa0bc;
+
+    font-size:
+        11px;
+
+}
+
+
+/* =====================================================
+   REVEAL
+===================================================== */
+
+.au-reveal {
+
+    opacity:
+        0;
+
+    transform:
+        translateY(28px);
+
+    transition:
+
+        opacity .8s ease,
+        transform .8s cubic-bezier(.2,.8,.2,1);
+
+}
+
+
+.au-reveal.au-show {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* =====================================================
+   DESKTOP
+===================================================== */
+
+@media (min-width: 769px) {
+
+
+    .au-header-inner {
+
+        min-height:
+            90px;
+
+    }
+
+
+    .au-logo {
+
+        width:
+            55px;
+
+        height:
+            55px;
+
+        font-size:
+            29px;
+
+    }
+
+
+    .au-brand h1 {
+
+        font-size:
+            25px;
+
+    }
+
+
+    .au-brand p {
+
+        font-size:
+            13px;
+
+    }
+
+
+    .au-visit {
+
+        padding:
+            13px 22px;
+
+        font-size:
+            13px;
+
+    }
+
+
+    .au-nav-inner {
+
+        justify-content:
+            center;
+
+        overflow:
+            visible;
+
+    }
+
+
+    .au-nav-link {
+
+        flex-direction:
+            row;
+
+        min-width:
+            auto;
+
+        font-size:
+            12px;
+
+        padding:
+            10px 15px;
+
+    }
+
+
+    .au-more-wrap {
+
+        display:
+            none;
+
+    }
+
+
+    .cl-hero {
+
+        padding:
+            100px 0;
+
+    }
+
+
+    .cl-hero p {
+
+        font-size:
+            16px;
+
+    }
+
+
+    .cl-section {
+
+        padding:
+            65px 0;
+
+    }
+
+
+    .classes-grid {
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+        gap:
+            22px;
+
+    }
+
+
+    .daily-grid {
+
+        grid-template-columns:
+            repeat(4,1fr);
+
+    }
+
+
+    .class-journey {
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+
+    .posts-grid {
+
+        grid-template-columns:
+            repeat(3,1fr);
+
+        gap:
+            22px;
+
+    }
+
+
+    .au-footer-grid {
+
+        grid-template-columns:
+            repeat(3,1fr);
+
+        text-align:
+            left;
+
+    }
+
+}
+
+
+/* =====================================================
+   REDUCE MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    * {
+
+        animation:
+            none !important;
+
+        transition:
+            none !important;
+
+        scroll-behavior:
+            auto !important;
+
+    }
+
+}
+
+</style>
+
 </head>
+
 
 <body data-page="classes">
 
-    <!-- ================= HEADER ================= -->
 
-    <div class="top">
+<!-- =====================================================
+     BACKGROUND
+===================================================== -->
 
-        <header class="head wrap">
-
-            <a class="brand" href="index.html">
-
-                <div class="sun">☀️</div>
-
-                <div>
-                    <h1>
-                        Ra Miftahul
-                        <span>Hikmah</span>
-                    </h1>
-
-                    <p>Tangerang 💗</p>
-                </div>
-
-            </a>
+<div class="cl-bg"></div>
 
 
-            <div class="call">
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
-                ⌕
+<header class="au-header">
 
-                <div>
-                    <small>Call Us</small>
-                    <b>+62 813-9875-4451</b>
-                </div>
+    <div class="au-container au-header-inner">
 
+
+        <a
+            href="index.html"
+            class="au-brand"
+        >
+
+            <div class="au-logo">
+                🌈
             </div>
 
 
-            <a class="btn" href="contact.html">
-                Book a Visit
-            </a>
+            <div>
 
-        </header>
+                <h1>
+
+                    RA Miftahul
+
+                    <span>
+                        Hikmah
+                    </span>
+
+                </h1>
 
 
-        <!-- ================= RAINBOW NAVBAR ================= -->
+                <p>
 
-        <nav class="rainbow-nav">
+                    Belajar • Bermain • Berprestasi
 
-            <a href="index.html" class="rainbow-item pink">
-                <span class="rainbow-icon">🏠</span>
-                <span class="rainbow-text">HOME</span>
-                <span class="sparkle">✦</span>
-            </a>
+                </p>
 
-            <a href="about.html" class="rainbow-item blue">
-                <span class="rainbow-icon">👥</span>
-                <span class="rainbow-text">ABOUT</span>
-                <span class="sparkle">✦</span>
-            </a>
+            </div>
 
-            <a href="programs.html" class="rainbow-item green">
-                <span class="rainbow-icon">📚</span>
-                <span class="rainbow-text">PROGRAMS</span>
-                <span class="sparkle">✦</span>
-            </a>
+        </a>
 
-            <a href="classes.html" class="rainbow-item yellow active">
-                <span class="rainbow-icon">🎓</span>
-                <span class="rainbow-text">CLASSES</span>
-                <span class="sparkle">✦</span>
-            </a>
 
-            <a href="blog.html" class="rainbow-item orange">
-                <span class="rainbow-icon">🖍️</span>
-                <span class="rainbow-text">BLOG</span>
-                <span class="sparkle">✦</span>
-            </a>
+        <a
+            href="contact.html"
+            class="au-visit"
+        >
 
-            <a href="gallery.html" class="rainbow-item purple">
-                <span class="rainbow-icon">🖼️</span>
-                <span class="rainbow-text">GALLERY</span>
-                <span class="sparkle">✦</span>
-            </a>
+            📅 Book Visit
 
-            <a href="parents.html" class="rainbow-item pink2">
-                <span class="rainbow-icon">💛</span>
-                <span class="rainbow-text">PARENTS</span>
-                <span class="sparkle">✦</span>
-            </a>
+        </a>
 
-            <a href="contact.html" class="rainbow-item blue2">
-                <span class="rainbow-icon">✉️</span>
-                <span class="rainbow-text">CONTACT</span>
-                <span class="sparkle">✦</span>
-            </a>
 
-        </nav>
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<nav class="au-nav">
+
+    <div class="au-nav-inner">
+
+
+        <a
+            href="index.html"
+            class="au-nav-link"
+        >
+
+            <span class="au-nav-icon">
+                🏠
+            </span>
+
+            HOME
+
+        </a>
+
+
+        <a
+            href="about.html"
+            class="au-nav-link"
+        >
+
+            <span class="au-nav-icon">
+                👥
+            </span>
+
+            ABOUT
+
+        </a>
+
+
+        <a
+            href="programs.html"
+            class="au-nav-link"
+        >
+
+            <span class="au-nav-icon">
+                📚
+            </span>
+
+            PROGRAMS
+
+        </a>
+
+
+        <a
+            href="gallery.html"
+            class="au-nav-link"
+        >
+
+            <span class="au-nav-icon">
+                🖼️
+            </span>
+
+            GALLERY
+
+        </a>
+
+
+        <div class="au-more-wrap">
+
+            <button
+                type="button"
+                class="au-more-button"
+                id="auMoreButton"
+            >
+
+                <span>
+                    ✨
+                </span>
+
+                MORE
+
+            </button>
+
+        </div>
+
+
+    </div>
+
+</nav>
+
+
+<!-- =====================================================
+     DROPDOWN
+===================================================== -->
+
+<div
+    class="au-more-menu"
+    id="auMoreMenu"
+>
+
+
+    <div class="au-more-title">
+
+        ✨ Menu Lainnya
 
     </div>
 
 
-    <!-- ================= HERO ================= -->
+    <a
+        href="classes.html"
+    >
 
-    <section class="pagehero">
+        🎓 Classes
 
-        <div class="wrap">
+    </a>
 
-            <h2>
-                Our
-                <span>Classes</span>
-                🎓
-            </h2>
 
-            <p>
-                Temukan kelas yang menyenangkan
-                untuk tumbuh dan belajar bersama.
-            </p>
+    <a
+        href="blog.html"
+    >
+
+        🖍️ Blog
+
+    </a>
+
+
+    <a
+        href="parents.html"
+    >
+
+        💛 Parents
+
+    </a>
+
+
+    <a
+        href="contact.html"
+    >
+
+        ✉️ Contact
+
+    </a>
+
+
+    <a
+        href="contact.html"
+    >
+
+        📅 Book Visit
+
+    </a>
+
+
+</div>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="cl-hero">
+
+    <div
+        class="au-container
+               cl-hero-content
+               au-reveal"
+    >
+
+
+        <div class="cl-badge">
+
+            🎓 KELAS KAMI
 
         </div>
 
-    </section>
+
+        <h2>
+
+            Tempat Anak
+
+            <span>
+                Tumbuh!
+            </span>
+
+        </h2>
 
 
-    <!-- ================= CLASS CONTENT ================= -->
+        <p>
 
-    <section class="section wrap">
+            Setiap kelas di RA Miftahul Hikmah
+            dirancang menjadi ruang belajar yang
+            nyaman, menyenangkan dan penuh
+            pengalaman berharga untuk anak.
 
-        <div class="cards">
+        </p>
 
-            <!-- CLASS 1 -->
 
-            <article class="card reveal">
+    </div>
 
-                <div class="big">
-                    🌱
+</section>
+
+
+<!-- =====================================================
+     CLASSES
+===================================================== -->
+
+<section class="cl-section">
+
+    <div class="au-container">
+
+
+        <div class="cl-heading au-reveal">
+
+
+            <div class="cl-heading-badge">
+
+                🌈 PILIHAN KELAS
+
+            </div>
+
+
+            <h2>
+
+                Belajar Sesuai
+                <span>
+                    Tahapan Anak
+                </span>
+
+            </h2>
+
+
+            <p>
+
+                Anak mendapatkan pengalaman belajar
+                yang disesuaikan dengan usia,
+                perkembangan dan kebutuhan mereka.
+
+            </p>
+
+
+        </div>
+
+
+        <div class="classes-grid">
+
+
+            <!-- KELAS 1 -->
+
+            <article
+                class="class-card pink au-reveal"
+            >
+
+                <div class="class-icon">
+                    🧸
                 </div>
 
+
                 <h3>
-                    Playgroup
+
+                    Kelas Bermain
+
                 </h3>
 
+
+                <div class="class-age">
+
+                    🌱 Usia Dini
+
+                </div>
+
+
                 <p>
-                    Kelas bermain dan belajar
-                    untuk anak usia dini dengan
-                    kegiatan yang menyenangkan.
+
+                    Ruang pertama anak untuk mengenal
+                    lingkungan, bermain bersama,
+                    belajar mandiri dan membangun
+                    rasa percaya diri.
+
                 </p>
 
-                <span>
-                    👶 Usia 3–4 Tahun
-                </span>
+
+                <div class="class-feature">
+
+                    ✨ Belajar sambil bermain
+
+                </div>
+
 
             </article>
 
 
-            <!-- CLASS 2 -->
+            <!-- KELAS 2 -->
 
-            <article class="card reveal">
+            <article
+                class="class-card blue au-reveal"
+            >
 
-                <div class="big">
-                    🎨
+                <div class="class-icon">
+                    🌈
                 </div>
 
+
                 <h3>
-                    Kindergarten A
+
+                    Kelas A
+
                 </h3>
 
+
+                <div class="class-age">
+
+                    🎈 Tahap Awal
+
+                </div>
+
+
                 <p>
-                    Mengembangkan kreativitas,
-                    kemandirian, dan kemampuan
-                    sosial melalui berbagai aktivitas.
+
+                    Anak mulai mengenal kegiatan
+                    belajar yang lebih terarah
+                    melalui permainan, kreativitas,
+                    bahasa dan eksplorasi.
+
                 </p>
 
-                <span>
-                    🧒 Usia 4–5 Tahun
-                </span>
+
+                <div class="class-feature">
+
+                    📚 Belajar dengan menyenangkan
+
+                </div>
+
 
             </article>
 
 
-            <!-- CLASS 3 -->
+            <!-- KELAS 3 -->
 
-            <article class="card reveal">
+            <article
+                class="class-card yellow au-reveal"
+            >
 
-                <div class="big">
-                    🚀
-                </div>
-
-                <h3>
-                    Kindergarten B
-                </h3>
-
-                <p>
-                    Persiapan menuju sekolah dasar
-                    melalui kegiatan belajar yang
-                    aktif, kreatif, dan menyenangkan.
-                </p>
-
-                <span>
-                    👦 Usia 5–6 Tahun
-                </span>
-
-            </article>
-
-
-            <!-- CLASS 4 -->
-
-            <article class="card reveal">
-
-                <div class="big">
+                <div class="class-icon">
                     ⭐
                 </div>
 
+
                 <h3>
-                    Creative Class
+
+                    Kelas B
+
                 </h3>
 
+
+                <div class="class-age">
+
+                    🚀 Tahap Persiapan
+
+                </div>
+
+
                 <p>
-                    Kegiatan khusus untuk mengasah
-                    kreativitas anak melalui seni,
-                    musik, permainan, dan kerajinan.
+
+                    Membantu anak mengembangkan
+                    kemampuan belajar, kemandirian,
+                    kreativitas dan kesiapan menuju
+                    jenjang pendidikan berikutnya.
+
                 </p>
 
-                <span>
-                    🎵 Semua Anak
-                </span>
+
+                <div class="class-feature">
+
+                    🎓 Siap menuju tahap berikutnya
+
+                </div>
+
 
             </article>
 
+
+            <!-- KELAS 4 -->
+
+            <article
+                class="class-card green au-reveal"
+            >
+
+                <div class="class-icon">
+                    🕌
+                </div>
+
+
+                <h3>
+
+                    Kelas Islami
+
+                </h3>
+
+
+                <div class="class-age">
+
+                    🌙 Pendidikan Karakter
+
+                </div>
+
+
+                <p>
+
+                    Mengenalkan nilai-nilai Islam,
+                    doa harian, akhlak mulia dan
+                    kebiasaan baik dalam kegiatan
+                    sehari-hari anak.
+
+                </p>
+
+
+                <div class="class-feature">
+
+                    💛 Tumbuh dengan akhlak mulia
+
+                </div>
+
+
+            </article>
+
+
         </div>
 
-    </section>
+
+    </div>
+
+</section>
 
 
-    <!-- ================= WHY OUR CLASSES ================= -->
+<!-- =====================================================
+     DAILY ACTIVITIES
+===================================================== -->
 
-    <section class="section wrap">
+<section class="cl-section">
 
-        <div class="section-title">
+    <div class="au-container">
+
+
+        <div class="cl-heading au-reveal">
+
+
+            <div class="cl-heading-badge">
+
+                🎉 AKTIVITAS DI KELAS
+
+            </div>
+
 
             <h2>
-                Why Our
-                <span>Classes?</span>
-                🌈
+
+                Belajar Itu
+
+                <span>
+                    Menyenangkan!
+                </span>
+
             </h2>
 
+
             <p>
-                Setiap kelas dirancang agar anak
-                belajar sambil bermain.
+
+                Setiap hari selalu ada pengalaman
+                baru yang membantu anak belajar,
+                bermain dan berkembang.
+
             </p>
 
-        </div>
-
-
-        <div class="features">
-
-            <div class="feature reveal">
-
-                <div class="big">
-                    🎯
-                </div>
-
-                <h3>
-                    Learning by Playing
-                </h3>
-
-                <p>
-                    Anak belajar melalui permainan
-                    yang aktif dan menyenangkan.
-                </p>
-
-            </div>
-
-
-            <div class="feature reveal">
-
-                <div class="big">
-                    💡
-                </div>
-
-                <h3>
-                    Creative Learning
-                </h3>
-
-                <p>
-                    Mengembangkan rasa ingin tahu
-                    dan kreativitas setiap anak.
-                </p>
-
-            </div>
-
-
-            <div class="feature reveal">
-
-                <div class="big">
-                    🤝
-                </div>
-
-                <h3>
-                    Social Skills
-                </h3>
-
-                <p>
-                    Anak belajar bekerja sama,
-                    berbagi, dan berteman.
-                </p>
-
-            </div>
-
-
-            <div class="feature reveal">
-
-                <div class="big">
-                    ❤️
-                </div>
-
-                <h3>
-                    Caring Teachers
-                </h3>
-
-                <p>
-                    Guru mendampingi anak dengan
-                    penuh perhatian dan kasih sayang.
-                </p>
-
-            </div>
 
         </div>
 
-    </section>
+
+        <div class="daily-grid">
 
 
-    <!-- ================= POSTINGAN KELAS ================= -->
+            <div
+                class="daily-card au-reveal"
+            >
 
-    <section class="section wrap">
+                <span>
+                    📚
+                </span>
 
-        <div class="section-title">
+                <b>
+                    Membaca
+                </b>
+
+            </div>
+
+
+            <div
+                class="daily-card au-reveal"
+            >
+
+                <span>
+                    🎨
+                </span>
+
+                <b>
+                    Berkarya
+                </b>
+
+            </div>
+
+
+            <div
+                class="daily-card au-reveal"
+            >
+
+                <span>
+                    🎵
+                </span>
+
+                <b>
+                    Bernyanyi
+                </b>
+
+            </div>
+
+
+            <div
+                class="daily-card au-reveal"
+            >
+
+                <span>
+                    🧩
+                </span>
+
+                <b>
+                    Bermain
+                </b>
+
+            </div>
+
+
+            <div
+                class="daily-card au-reveal"
+            >
+
+                <span>
+                    🌱
+                </span>
+
+                <b>
+                    Berkebun
+                </b>
+
+            </div>
+
+
+            <div
+                class="daily-card au-reveal"
+            >
+
+                <span>
+                    🔬
+                </span>
+
+                <b>
+                    Eksperimen
+                </b>
+
+            </div>
+
+
+            <div
+                class="daily-card au-reveal"
+            >
+
+                <span>
+                    🤸
+                </span>
+
+                <b>
+                    Olahraga
+                </b>
+
+            </div>
+
+
+            <div
+                class="daily-card au-reveal"
+            >
+
+                <span>
+                    🕌
+                </span>
+
+                <b>
+                    Ibadah
+                </b>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     LEARNING JOURNEY
+===================================================== -->
+
+<section class="cl-section">
+
+    <div class="au-container">
+
+
+        <div class="cl-heading au-reveal">
+
+
+            <div class="cl-heading-badge">
+
+                🚀 PERJALANAN BELAJAR
+
+            </div>
+
 
             <h2>
-                🎨 Cerita
-                <span>Kelas</span>
+
+                Setiap Anak
+
+                <span>
+                    Punya Cerita
+                </span>
+
             </h2>
 
-            <p>
-                Lihat berbagai cerita dan kegiatan
-                menarik dari kelas kami.
-            </p>
-
-            <div class="post-counter">
-
-                📝 Total posting:
-                <span id="postCount">0</span>
-
-            </div>
 
         </div>
 
 
-        <!-- POSTINGAN DARI SUPABASE -->
+        <div class="class-journey">
+
+
+            <!-- STEP 1 -->
+
+            <div
+                class="class-step au-reveal"
+            >
+
+                <div class="class-step-number">
+
+                    01
+
+                </div>
+
+
+                <div class="class-step-content">
+
+                    <h3>
+
+                        Datang dengan Bahagia
+
+                    </h3>
+
+
+                    <p>
+
+                        Anak datang dan memulai hari
+                        dengan suasana yang nyaman
+                        dan menyenangkan.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- STEP 2 -->
+
+            <div
+                class="class-step au-reveal"
+            >
+
+                <div class="class-step-number">
+
+                    02
+
+                </div>
+
+
+                <div class="class-step-content">
+
+                    <h3>
+
+                        Bermain & Belajar
+
+                    </h3>
+
+
+                    <p>
+
+                        Anak belajar melalui kegiatan
+                        kreatif, permainan dan
+                        eksplorasi.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- STEP 3 -->
+
+            <div
+                class="class-step au-reveal"
+            >
+
+                <div class="class-step-number">
+
+                    03
+
+                </div>
+
+
+                <div class="class-step-content">
+
+                    <h3>
+
+                        Berkarya
+
+                    </h3>
+
+
+                    <p>
+
+                        Anak mengekspresikan ide
+                        dan kreativitas melalui
+                        berbagai kegiatan.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- STEP 4 -->
+
+            <div
+                class="class-step au-reveal"
+            >
+
+                <div class="class-step-number">
+
+                    04
+
+                </div>
+
+
+                <div class="class-step-content">
+
+                    <h3>
+
+                        Pulang dengan Cerita
+
+                    </h3>
+
+
+                    <p>
+
+                        Anak membawa pengalaman,
+                        pengetahuan dan cerita
+                        baru setiap harinya.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     TEACHER
+===================================================== -->
+
+<section class="cl-section">
+
+    <div class="au-container">
+
+
+        <div
+            class="teacher-box
+                   au-reveal"
+        >
+
+
+            <div class="teacher-icon">
+
+                👩‍🏫
+
+            </div>
+
+
+            <h2>
+
+                Didampingi Guru
+
+                <span>
+                    Penuh Kasih
+                </span>
+
+            </h2>
+
+
+            <p>
+
+                Guru dan pendamping kami hadir untuk
+                membantu anak belajar, bermain dan
+                berkembang dalam suasana yang aman,
+                hangat dan menyenangkan.
+
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     POSTS DARI SUPABASE
+===================================================== -->
+
+<section class="cl-section">
+
+    <div class="au-container">
+
+
+        <div class="cl-heading au-reveal">
+
+
+            <div class="cl-heading-badge">
+
+                📢 INFORMASI KELAS
+
+            </div>
+
+
+            <h2>
+
+                Cerita dari
+
+                <span>
+                    Kelas Kami
+                </span>
+
+            </h2>
+
+
+            <p>
+
+                Informasi terbaru dan kegiatan
+                pembelajaran akan muncul di sini.
+
+            </p>
+
+
+        </div>
+
+
+        <!--
+            POSTINGAN SUPABASE
+
+            JavaScript posts yang kamu kirim
+            sebelumnya akan otomatis mencari:
+
+            page_name = classes
+
+            dan menampilkan postingannya
+            ke dalam container ini.
+        -->
 
         <div
             id="postsContainer"
-            class="posts-grid"
-        ></div>
+            class="au-reveal"
+        >
 
-    </section>
+            <div class="cloud-loading">
+
+                <div class="cloud-loading-icon">
+
+                    ☁️
+
+                </div>
 
 
-    <!-- ================= CTA ================= -->
+                <strong>
 
-    <section class="section wrap">
+                    Sedang mengambil postingan...
 
-        <div class="box reveal">
+                </strong>
 
-            <div class="big">
-                🌈
+
             </div>
-
-            <h2 class="title">
-                Yuk,
-                <span>Bergabung!</span>
-                💗
-            </h2>
-
-            <p>
-                Berikan pengalaman belajar yang
-                menyenangkan untuk buah hati Anda
-                bersama Ra Miftahul Hikmah.
-            </p>
-
-            <br>
-
-            <a
-                href="pendaftaran.html"
-                class="btn"
-            >
-                Daftar Sekarang 🚀
-            </a>
 
         </div>
 
-    </section>
+
+    </div>
+
+</section>
 
 
-    <!-- ================= FOOTER ================= -->
+<!-- =====================================================
+     CTA
+===================================================== -->
 
-    <footer class="footer">
+<section class="cl-section">
 
-        <div class="footgrid wrap">
+    <div class="au-container">
 
-            <!-- BRAND -->
 
-            <div>
+        <div
+            class="cl-cta
+                   au-reveal"
+        >
 
-                <h3>
-                    ☀️ KINDER
-                    <span style="color:#ef4f82">
-                        GARTEN
+
+            <div class="cl-cta-content">
+
+
+                <div
+                    style="
+                        font-size:55px;
+                        margin-bottom:8px;
+                    "
+                >
+
+                    🎓
+
+                </div>
+
+
+                <h2>
+
+                    Siap Bergabung
+
+                    <span>
+                        Bersama Kami?
                     </span>
-                </h3>
+
+                </h2>
+
 
                 <p>
-                    Where Little Minds Bloom 💗
+
+                    Mari berikan pengalaman belajar
+                    yang menyenangkan dan penuh
+                    makna untuk buah hati Anda
+                    bersama RA Miftahul Hikmah.
+
                 </p>
+
+
+                <a
+                    href="contact.html"
+                    class="cl-button"
+                >
+
+                    📅 Daftarkan Sekarang
+
+                </a>
+
 
             </div>
 
 
-            <!-- QUICK LINKS -->
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="au-footer">
+
+    <div class="au-container">
+
+
+        <div class="au-footer-grid">
+
+
+            <!-- FOOTER 1 -->
 
             <div>
 
+
                 <h3>
-                    Quick Links
+
+                    RA Miftahul
+
+                    <span>
+                        Hikmah
+                    </span>
+
                 </h3>
 
-                <a href="about.html">
-                    About Us
-                </a>
 
-                <a href="programs.html">
+                <p>
+
+                    Tempat belajar, bermain dan
+                    bertumbuh dengan bahagia.
+
+                </p>
+
+
+            </div>
+
+
+            <!-- FOOTER 2 -->
+
+            <div>
+
+
+                <h3>
+
+                    Menu
+
+                </h3>
+
+
+                <p>
+
+                    Home
+
+                </p>
+
+
+                <p>
+
+                    About
+
+                </p>
+
+
+                <p>
+
                     Programs
-                </a>
 
-                <a href="classes.html">
+                </p>
+
+
+                <p>
+
                     Classes
-                </a>
 
-                <a href="gallery.html">
-                    Gallery
-                </a>
+                </p>
 
-                <a href="contact.html">
-                    Contact Us
-                </a>
 
             </div>
 
 
-            <!-- CONTACT -->
+            <!-- FOOTER 3 -->
 
             <div>
 
+
                 <h3>
-                    Contact Us
+
+                    Hubungi Kami
+
                 </h3>
 
-                <p>
-                    ☎ +62 813-9875-4451
-                </p>
 
                 <p>
-                    ✉
-                    <a href="mailto:info@kindergarten.com">
-                        info@kindergarten.com
-                    </a>
+
+                    📞 WhatsApp
+
                 </p>
 
+
                 <p>
-                    📍 Tangerang, Indonesia
+
+                    ✉️ Email Sekolah
+
                 </p>
+
 
             </div>
 
-
-            <!-- SOCIAL -->
-
-            <div>
-
-                <h3>
-                    Follow Us
-                </h3>
-
-                <p style="font-size:28px">
-                    ●　◎　▶
-                </p>
-
-            </div>
 
         </div>
 
 
-        <div class="copy wrap">
+        <div class="au-copyright">
 
-            © 2026 Ra Miftahul Hikmah.
-            All rights reserved.
+            © 2026 RA Miftahul Hikmah
+            • All Rights Reserved
 
         </div>
 
-    </footer>
+
+    </div>
+
+</footer>
 
 
-    <!-- ================= JAVASCRIPT ================= -->
+<!-- =====================================================
+     SUPABASE
+===================================================== -->
 
-    <!-- SUPABASE -->
-
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-
-    <!-- SCRIPT WEBSITE -->
-
-    <script src="js/script.js"></script>
+<script
+    src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+></script>
 
 
-    <!-- SISTEM POSTING SUPABASE -->
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
 
-    <script src="js/posts.js"></script>
+<script>
+
+
+/* =====================================================
+   MENU + REVEAL
+===================================================== */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+
+        /* =============================================
+           MORE MENU
+        ============================================= */
+
+        const moreButton =
+            document.getElementById(
+                "auMoreButton"
+            );
+
+
+        const moreMenu =
+            document.getElementById(
+                "auMoreMenu"
+            );
+
+
+        if (
+            moreButton &&
+            moreMenu
+        ) {
+
+
+            moreButton.addEventListener(
+                "click",
+                function (event) {
+
+
+                    event.stopPropagation();
+
+
+                    moreMenu.classList.toggle(
+                        "open"
+                    );
+
+
+                }
+            );
+
+
+            document.addEventListener(
+                "click",
+                function (event) {
+
+
+                    if (
+
+                        !moreMenu.contains(
+                            event.target
+                        )
+
+                        &&
+
+                        !moreButton.contains(
+                            event.target
+                        )
+
+                    ) {
+
+
+                        moreMenu.classList.remove(
+                            "open"
+                        );
+
+
+                    }
+
+
+                }
+            );
+
+
+        }
+
+
+        /* =============================================
+           REVEAL
+        ============================================= */
+
+        const revealItems =
+            document.querySelectorAll(
+                ".au-reveal"
+            );
+
+
+        if (
+            "IntersectionObserver"
+            in
+            window
+        ) {
+
+
+            const observer =
+                new IntersectionObserver(
+
+                    function (
+                        entries
+                    ) {
+
+
+                        entries.forEach(
+
+                            function (
+                                entry
+                            ) {
+
+
+                                if (
+                                    entry.isIntersecting
+                                ) {
+
+
+                                    entry.target.classList.add(
+                                        "au-show"
+                                    );
+
+
+                                    observer.unobserve(
+                                        entry.target
+                                    );
+
+
+                                }
+
+
+                            }
+
+                        );
+
+
+                    },
+
+
+                    {
+
+                        threshold:
+                            0.12,
+
+                        rootMargin:
+                            "0px 0px -35px 0px"
+
+                    }
+
+                );
+
+
+            revealItems.forEach(
+
+                function (
+                    item,
+                    index
+                ) {
+
+
+                    item.style.transitionDelay =
+                        (
+                            index % 4
+                        ) * 70
+                        + "ms";
+
+
+                    observer.observe(
+                        item
+                    );
+
+
+                }
+
+            );
+
+
+        }
+
+
+        else {
+
+
+            revealItems.forEach(
+
+                function (
+                    item
+                ) {
+
+
+                    item.classList.add(
+                        "au-show"
+                    );
+
+
+                }
+
+            );
+
+
+        }
+
+
+    }
+);
+
+
+</script>
+
+
+<!-- =====================================================
+     LOAD POSTS
+
+     PENTING:
+
+     Ganti:
+
+     posts.js
+
+     dengan nama file JavaScript kamu
+     yang berisi kode Supabase
+     sebelumnya.
+
+     Jika JavaScript kamu sudah
+     ditempel langsung ke HTML lain,
+     kamu bisa membuat file:
+
+     posts.js
+
+     lalu tempelkan kode Supabase
+     yang kamu kirim sebelumnya ke sana.
+===================================================== -->
+
+<script
+    src="posts.js"
+></script>
+
 
 </body>
 
