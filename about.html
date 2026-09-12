@@ -10,351 +10,3475 @@
         content="width=device-width, initial-scale=1"
     >
 
-    <title>About Us | Ra Miftahul Hikmah</title>
+    <title>
+        About Us | RA Miftahul Hikmah
+    </title>
+
+
+    <!-- CSS UTAMA WEBSITE -->
 
     <link
         rel="stylesheet"
         href="css/style.css"
     >
+
+
+    <!-- GOOGLE FONT -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+
 <style>
 
 /* =====================================================
-   ABOUT US PREMIUM MOBILE
-   KHUSUS HALAMAN ABOUT
-   TIDAK MENGUBAH HALAMAN LAIN
+   ABOUT US PREMIUM
+   RA MIFTAHUL HIKMAH
 ===================================================== */
 
 
+/* ================= RESET KHUSUS ABOUT ================= */
+
+body[data-page="about"] {
+
+    margin: 0;
+
+    overflow-x: hidden;
+
+    font-family:
+        "Nunito",
+        sans-serif;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #fff7fb 0%,
+            #f5f0ff 35%,
+            #eff8ff 70%,
+            #fff9e8 100%
+        );
+
+    color: #30294b;
+
+}
+
+
+/* ================= ANIMATED BACKGROUND ================= */
+
+body[data-page="about"]::before {
+
+    content: "";
+
+    position: fixed;
+
+    width: 420px;
+
+    height: 420px;
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(255, 130, 180, .22),
+            rgba(255, 130, 180, 0)
+        );
+
+    top: -120px;
+
+    left: -120px;
+
+    filter: blur(20px);
+
+    animation:
+
+        aboutBlobOne
+        12s
+        ease-in-out
+        infinite;
+
+    z-index: -2;
+
+}
+
+
+body[data-page="about"]::after {
+
+    content: "";
+
+    position: fixed;
+
+    width: 500px;
+
+    height: 500px;
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(120, 200, 255, .20),
+            rgba(120, 200, 255, 0)
+        );
+
+    bottom: -180px;
+
+    right: -150px;
+
+    filter: blur(25px);
+
+    animation:
+
+        aboutBlobTwo
+        15s
+        ease-in-out
+        infinite;
+
+    z-index: -2;
+
+}
+
+
+@keyframes aboutBlobOne {
+
+    0% {
+
+        transform:
+            translate(0, 0)
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            translate(120px, 80px)
+            scale(1.2);
+
+    }
+
+    100% {
+
+        transform:
+            translate(0, 0)
+            scale(1);
+
+    }
+
+}
+
+
+@keyframes aboutBlobTwo {
+
+    0% {
+
+        transform:
+            translate(0, 0)
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            translate(-100px, -80px)
+            scale(1.25);
+
+    }
+
+    100% {
+
+        transform:
+            translate(0, 0)
+            scale(1);
+
+    }
+
+}
+
+
+
 /* =====================================================
-   MOBILE & TABLET
+   CONTAINER
+===================================================== */
+
+body[data-page="about"] .about-wrap {
+
+    width: min(
+        1180px,
+        calc(100% - 40px)
+    );
+
+    margin:
+
+        0
+        auto;
+
+}
+
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+body[data-page="about"] .about-header {
+
+    position: relative;
+
+    z-index: 20;
+
+    background:
+
+        rgba(
+            255,
+            255,
+            255,
+            .72
+        );
+
+    backdrop-filter:
+
+        blur(20px);
+
+    -webkit-backdrop-filter:
+
+        blur(20px);
+
+    border-bottom:
+
+        1px
+        solid
+        rgba(
+            255,
+            255,
+            255,
+            .8
+        );
+
+}
+
+
+body[data-page="about"] .about-head-inner {
+
+    min-height: 90px;
+
+    display:
+
+        flex;
+
+    align-items:
+
+        center;
+
+    justify-content:
+
+        space-between;
+
+    gap: 20px;
+
+}
+
+
+/* BRAND */
+
+body[data-page="about"] .about-brand {
+
+    text-decoration:
+
+        none;
+
+    display:
+
+        flex;
+
+    align-items:
+
+        center;
+
+    gap: 12px;
+
+    color: #30294b;
+
+}
+
+
+body[data-page="about"] .about-logo {
+
+    width: 55px;
+
+    height: 55px;
+
+    border-radius: 18px;
+
+    display:
+
+        grid;
+
+    place-items:
+
+        center;
+
+    font-size: 30px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #fff3a7,
+            #ffd0e3,
+            #cdefff
+        );
+
+    box-shadow:
+
+        0 10px 30px
+        rgba(
+            239,
+            79,
+            130,
+            .18
+        );
+
+    animation:
+
+        logoFloat
+        4s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes logoFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-5px)
+            rotate(5deg);
+
+    }
+
+}
+
+
+body[data-page="about"] .about-brand h1 {
+
+    margin: 0;
+
+    font-family:
+
+        "Baloo 2",
+        cursive;
+
+    font-size: 25px;
+
+    font-weight: 800;
+
+    line-height: 1;
+
+}
+
+
+body[data-page="about"] .about-brand h1 span {
+
+    color: #ef4f82;
+
+}
+
+
+body[data-page="about"] .about-brand p {
+
+    margin:
+
+        6px
+        0
+        0;
+
+    font-size: 13px;
+
+    color: #817a99;
+
+}
+
+
+/* HEADER ACTION */
+
+body[data-page="about"] .about-header-right {
+
+    display:
+
+        flex;
+
+    align-items:
+
+        center;
+
+    gap: 15px;
+
+}
+
+
+body[data-page="about"] .about-call {
+
+    display:
+
+        flex;
+
+    align-items:
+
+        center;
+
+    gap: 10px;
+
+}
+
+
+body[data-page="about"] .call-icon {
+
+    width: 42px;
+
+    height: 42px;
+
+    border-radius: 50%;
+
+    display:
+
+        grid;
+
+    place-items:
+
+        center;
+
+    background:
+
+        #fff;
+
+    box-shadow:
+
+        0 8px 20px
+        rgba(
+            74,
+            55,
+            120,
+            .08
+        );
+
+}
+
+
+body[data-page="about"] .about-call small {
+
+    display: block;
+
+    color: #958da8;
+
+}
+
+
+body[data-page="about"] .about-call b {
+
+    font-size: 14px;
+
+}
+
+
+/* BUTTON */
+
+body[data-page="about"] .about-btn {
+
+    display:
+
+        inline-flex;
+
+    align-items:
+
+        center;
+
+    justify-content:
+
+        center;
+
+    gap: 8px;
+
+    border:
+
+        none;
+
+    text-decoration:
+
+        none;
+
+    color: white;
+
+    font-weight: 800;
+
+    padding:
+
+        13px
+        22px;
+
+    border-radius: 16px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #ef4f82,
+            #ff7ca5
+        );
+
+    box-shadow:
+
+        0 12px 25px
+        rgba(
+            239,
+            79,
+            130,
+            .25
+        );
+
+    transition:
+
+        .3s
+        ease;
+
+}
+
+
+body[data-page="about"] .about-btn:hover {
+
+    transform:
+
+        translateY(-4px);
+
+    box-shadow:
+
+        0 18px 35px
+        rgba(
+            239,
+            79,
+            130,
+            .35
+        );
+
+}
+
+
+
+/* =====================================================
+   PREMIUM NAVBAR
+===================================================== */
+
+body[data-page="about"] .about-nav {
+
+    position: relative;
+
+    z-index: 15;
+
+    background:
+
+        rgba(
+            255,
+            255,
+            255,
+            .85
+        );
+
+    backdrop-filter:
+
+        blur(18px);
+
+    border-bottom:
+
+        1px
+        solid
+        rgba(
+            100,
+            80,
+            150,
+            .06
+        );
+
+}
+
+
+body[data-page="about"] .about-nav-inner {
+
+    display:
+
+        flex;
+
+    align-items:
+
+        center;
+
+    justify-content:
+
+        center;
+
+    gap: 8px;
+
+    padding:
+
+        10px
+        0;
+
+}
+
+
+body[data-page="about"] .about-nav a {
+
+    text-decoration:
+
+        none;
+
+    color: #5c5670;
+
+    display:
+
+        flex;
+
+    align-items:
+
+        center;
+
+    gap: 7px;
+
+    padding:
+
+        10px
+        15px;
+
+    border-radius: 14px;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    transition:
+
+        .25s
+        ease;
+
+}
+
+
+body[data-page="about"] .about-nav a:hover {
+
+    background:
+
+        #f5f1ff;
+
+    transform:
+
+        translateY(-2px);
+
+}
+
+
+body[data-page="about"] .about-nav a.active {
+
+    color: white;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #7d6cff,
+            #a27dff
+        );
+
+    box-shadow:
+
+        0 8px 20px
+        rgba(
+            125,
+            108,
+            255,
+            .25
+        );
+
+}
+
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+body[data-page="about"] .about-hero {
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding:
+
+        100px
+        0
+        110px;
+
+}
+
+
+body[data-page="about"] .hero-orb {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter:
+
+        blur(1px);
+
+    opacity: .7;
+
+}
+
+
+body[data-page="about"] .orb-one {
+
+    width: 160px;
+
+    height: 160px;
+
+    top: 30px;
+
+    left: 8%;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #ffd3e2,
+            #ffe9a8
+        );
+
+    animation:
+
+        orbFloat
+        7s
+        ease-in-out
+        infinite;
+
+}
+
+
+body[data-page="about"] .orb-two {
+
+    width: 100px;
+
+    height: 100px;
+
+    right: 10%;
+
+    bottom: 30px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #b8e8ff,
+            #ded0ff
+        );
+
+    animation:
+
+        orbFloat
+        9s
+        ease-in-out
+        infinite
+        reverse;
+
+}
+
+
+@keyframes orbFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-25px);
+
+    }
+
+}
+
+
+body[data-page="about"] .hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+
+}
+
+
+body[data-page="about"] .hero-badge {
+
+    display:
+
+        inline-flex;
+
+    align-items:
+
+        center;
+
+    gap: 8px;
+
+    padding:
+
+        10px
+        16px;
+
+    border-radius: 50px;
+
+    background:
+
+        rgba(
+            255,
+            255,
+            255,
+            .75
+        );
+
+    box-shadow:
+
+        0 10px 30px
+        rgba(
+            70,
+            50,
+            110,
+            .08
+        );
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    margin-bottom: 20px;
+
+    animation:
+
+        heroFade
+        .8s
+        ease
+        both;
+
+}
+
+
+body[data-page="about"] .about-hero h2 {
+
+    margin: 0;
+
+    font-family:
+
+        "Baloo 2",
+        cursive;
+
+    font-size:
+
+        clamp(
+            48px,
+            7vw,
+            82px
+        );
+
+    line-height: 1;
+
+    font-weight: 800;
+
+    animation:
+
+        heroFade
+        1s
+        ease
+        .1s
+        both;
+
+}
+
+
+body[data-page="about"] .about-hero h2 span {
+
+    color: #ef4f82;
+
+}
+
+
+body[data-page="about"] .about-hero p {
+
+    max-width: 600px;
+
+    margin:
+
+        20px
+        auto
+        0;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    color: #746d85;
+
+    animation:
+
+        heroFade
+        1s
+        ease
+        .25s
+        both;
+
+}
+
+
+@keyframes heroFade {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+
+            translateY(25px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+
+            translateY(0);
+
+    }
+
+}
+
+
+
+/* =====================================================
+   SECTION
+===================================================== */
+
+body[data-page="about"] .about-section {
+
+    position: relative;
+
+    padding:
+
+        55px
+        0;
+
+}
+
+
+body[data-page="about"] .section-heading {
+
+    text-align: center;
+
+    margin-bottom: 35px;
+
+}
+
+
+body[data-page="about"] .section-heading span {
+
+    display:
+
+        inline-block;
+
+    color: #ef4f82;
+
+}
+
+
+body[data-page="about"] .section-heading h2 {
+
+    margin:
+
+        0
+        0
+        12px;
+
+    font-family:
+
+        "Baloo 2",
+        cursive;
+
+    font-size:
+
+        clamp(
+            30px,
+            5vw,
+            45px
+        );
+
+    line-height: 1.1;
+
+}
+
+
+body[data-page="about"] .section-heading p {
+
+    max-width: 600px;
+
+    margin:
+
+        auto;
+
+    color: #7d758b;
+
+    line-height: 1.7;
+
+}
+
+
+
+/* =====================================================
+   WELCOME SECTION
+===================================================== */
+
+body[data-page="about"] .about-story {
+
+    display:
+
+        grid;
+
+    grid-template-columns:
+
+        1fr
+        1fr;
+
+    gap: 55px;
+
+    align-items:
+
+        center;
+
+}
+
+
+body[data-page="about"] .story-image-card {
+
+    position: relative;
+
+    padding: 10px;
+
+    border-radius: 32px;
+
+    background:
+
+        rgba(
+            255,
+            255,
+            255,
+            .65
+        );
+
+    box-shadow:
+
+        0 25px 60px
+        rgba(
+            77,
+            55,
+            130,
+            .12
+        );
+
+}
+
+
+body[data-page="about"] .story-image-card::before {
+
+    content: "🌈";
+
+    position: absolute;
+
+    font-size: 45px;
+
+    top: -22px;
+
+    right: -10px;
+
+    animation:
+
+        emojiFloat
+        4s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes emojiFloat {
+
+    0%,
+    100% {
+
+        transform:
+
+            translateY(0)
+            rotate(0);
+
+    }
+
+    50% {
+
+        transform:
+
+            translateY(-10px)
+            rotate(8deg);
+
+    }
+
+}
+
+
+body[data-page="about"] .story-image-card img {
+
+    display: block;
+
+    width: 100%;
+
+    aspect-ratio:
+
+        4
+        /
+        3;
+
+    object-fit: cover;
+
+    border-radius: 25px;
+
+}
+
+
+body[data-page="about"] .story-text {
+
+    padding: 10px;
+
+}
+
+
+body[data-page="about"] .story-text .mini-label {
+
+    display:
+
+        inline-block;
+
+    padding:
+
+        8px
+        14px;
+
+    border-radius: 30px;
+
+    color: #8b63db;
+
+    font-weight: 800;
+
+    background:
+
+        #f1eaff;
+
+    margin-bottom: 14px;
+
+}
+
+
+body[data-page="about"] .story-text h2 {
+
+    margin:
+
+        0
+        0
+        20px;
+
+    font-family:
+
+        "Baloo 2",
+        cursive;
+
+    font-size: 42px;
+
+    line-height: 1.15;
+
+}
+
+
+body[data-page="about"] .story-text h2 span {
+
+    color: #ef4f82;
+
+}
+
+
+body[data-page="about"] .story-text p {
+
+    color: #746d85;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+}
+
+
+
+/* =====================================================
+   VALUES
+===================================================== */
+
+body[data-page="about"] .values-grid {
+
+    display:
+
+        grid;
+
+    grid-template-columns:
+
+        repeat(
+            4,
+            1fr
+        );
+
+    gap: 20px;
+
+}
+
+
+body[data-page="about"] .value-card {
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding:
+
+        30px
+        22px;
+
+    border-radius: 26px;
+
+    background:
+
+        rgba(
+            255,
+            255,
+            255,
+            .68
+        );
+
+    border:
+
+        1px
+        solid
+        rgba(
+            255,
+            255,
+            255,
+            .8
+        );
+
+    box-shadow:
+
+        0 15px 40px
+        rgba(
+            75,
+            55,
+            120,
+            .08
+        );
+
+    transition:
+
+        .35s
+        ease;
+
+}
+
+
+body[data-page="about"] .value-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 130px;
+
+    height: 130px;
+
+    border-radius: 50%;
+
+    right: -60px;
+
+    bottom: -60px;
+
+    background:
+
+        rgba(
+            255,
+            220,
+            240,
+            .45
+        );
+
+}
+
+
+body[data-page="about"] .value-card:hover {
+
+    transform:
+
+        translateY(-10px);
+
+    box-shadow:
+
+        0 25px 50px
+        rgba(
+            75,
+            55,
+            120,
+            .14
+        );
+
+}
+
+
+body[data-page="about"] .value-icon {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 65px;
+
+    height: 65px;
+
+    border-radius: 20px;
+
+    display:
+
+        grid;
+
+    place-items:
+
+        center;
+
+    font-size: 32px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #fff5fa,
+            #f2efff
+        );
+
+    margin-bottom: 18px;
+
+}
+
+
+body[data-page="about"] .value-card h3 {
+
+    position: relative;
+
+    z-index: 2;
+
+    margin:
+
+        0
+        0
+        10px;
+
+    font-family:
+
+        "Baloo 2",
+        cursive;
+
+    font-size: 23px;
+
+}
+
+
+body[data-page="about"] .value-card p {
+
+    position: relative;
+
+    z-index: 2;
+
+    margin: 0;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    color: #766e84;
+
+}
+
+
+
+/* =====================================================
+   POSTS
+===================================================== */
+
+body[data-page="about"] .post-counter {
+
+    display:
+
+        table;
+
+    margin:
+
+        0
+        auto
+        25px;
+
+    padding:
+
+        12px
+        20px;
+
+    border-radius: 50px;
+
+    background:
+
+        rgba(
+            255,
+            255,
+            255,
+            .7
+        );
+
+    box-shadow:
+
+        0 10px 30px
+        rgba(
+            70,
+            50,
+            100,
+            .08
+        );
+
+    font-weight: 800;
+
+}
+
+
+body[data-page="about"] .post-counter span {
+
+    color: #ef4f82;
+
+}
+
+
+body[data-page="about"] .posts-grid {
+
+    display: grid;
+
+    grid-template-columns:
+
+        repeat(
+            3,
+            1fr
+        );
+
+    gap: 22px;
+
+}
+
+
+
+/* =====================================================
+   CTA
+===================================================== */
+
+body[data-page="about"] .about-cta {
+
+    position: relative;
+
+    overflow: hidden;
+
+    text-align: center;
+
+    padding:
+
+        60px
+        30px;
+
+    border-radius: 40px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #fff0f6,
+            #f0ebff,
+            #e8f8ff
+        );
+
+    box-shadow:
+
+        0 25px 70px
+        rgba(
+            85,
+            60,
+            140,
+            .12
+        );
+
+}
+
+
+body[data-page="about"] .about-cta::before {
+
+    content: "✨";
+
+    position: absolute;
+
+    font-size: 70px;
+
+    top: 20px;
+
+    left: 7%;
+
+    opacity: .5;
+
+    animation:
+
+        emojiFloat
+        5s
+        infinite;
+
+}
+
+
+body[data-page="about"] .about-cta::after {
+
+    content: "🌈";
+
+    position: absolute;
+
+    font-size: 80px;
+
+    right: 6%;
+
+    bottom: 20px;
+
+    opacity: .5;
+
+    animation:
+
+        emojiFloat
+        6s
+        infinite
+        reverse;
+
+}
+
+
+body[data-page="about"] .about-cta .cta-icon {
+
+    font-size: 58px;
+
+    animation:
+
+        logoFloat
+        4s
+        infinite;
+
+}
+
+
+body[data-page="about"] .about-cta h2 {
+
+    position: relative;
+
+    z-index: 2;
+
+    margin:
+
+        10px
+        0;
+
+    font-family:
+
+        "Baloo 2",
+        cursive;
+
+    font-size: 45px;
+
+}
+
+
+body[data-page="about"] .about-cta h2 span {
+
+    color: #ef4f82;
+
+}
+
+
+body[data-page="about"] .about-cta p {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 550px;
+
+    margin:
+
+        0
+        auto
+        25px;
+
+    line-height: 1.8;
+
+    color: #746d85;
+
+}
+
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+body[data-page="about"] .about-footer {
+
+    margin-top: 70px;
+
+    padding:
+
+        60px
+        0
+        0;
+
+    background:
+
+        #332c4d;
+
+    color: white;
+
+}
+
+
+body[data-page="about"] .footer-grid {
+
+    display: grid;
+
+    grid-template-columns:
+
+        1.5fr
+        1fr
+        1fr
+        1fr;
+
+    gap: 35px;
+
+}
+
+
+body[data-page="about"] .footer-grid h3 {
+
+    font-family:
+
+        "Baloo 2",
+        cursive;
+
+    margin-top: 0;
+
+    font-size: 22px;
+
+}
+
+
+body[data-page="about"] .footer-grid p {
+
+    color: #c5bed7;
+
+    line-height: 1.8;
+
+}
+
+
+body[data-page="about"] .footer-grid a {
+
+    display: block;
+
+    color: #d7d1e6;
+
+    text-decoration: none;
+
+    margin-bottom: 10px;
+
+    transition: .2s;
+
+}
+
+
+body[data-page="about"] .footer-grid a:hover {
+
+    color: #ff91b2;
+
+    transform:
+
+        translateX(4px);
+
+}
+
+
+body[data-page="about"] .footer-copy {
+
+    margin-top: 40px;
+
+    padding:
+
+        22px
+        0;
+
+    text-align: center;
+
+    color: #aaa1be;
+
+    border-top:
+
+        1px
+        solid
+        rgba(
+            255,
+            255,
+            255,
+            .08
+        );
+
+}
+
+
+
+/* =====================================================
+   REVEAL ANIMATION
+===================================================== */
+
+body[data-page="about"] .about-reveal {
+
+    opacity: 0;
+
+    transform:
+
+        translateY(35px);
+
+    transition:
+
+        1s
+        cubic-bezier(
+            .2,
+            .8,
+            .2,
+            1
+        );
+
+}
+
+
+body[data-page="about"] .about-reveal.show {
+
+    opacity: 1;
+
+    transform:
+
+        translateY(0);
+
+}
+
+
+
+/* =====================================================
+   RESPONSIVE TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+
+    body[data-page="about"] .about-story {
+
+        grid-template-columns:
+
+            1fr;
+
+    }
+
+
+    body[data-page="about"] .values-grid {
+
+        grid-template-columns:
+
+            repeat(
+                2,
+                1fr
+            );
+
+    }
+
+
+    body[data-page="about"] .footer-grid {
+
+        grid-template-columns:
+
+            repeat(
+                2,
+                1fr
+            );
+
+    }
+
+
+    body[data-page="about"] .about-nav-inner {
+
+        justify-content:
+
+            flex-start;
+
+        overflow-x: auto;
+
+        scrollbar-width: none;
+
+    }
+
+
+    body[data-page="about"] .about-nav-inner::-webkit-scrollbar {
+
+        display: none;
+
+    }
+
+
+    body[data-page="about"] .about-nav a {
+
+        flex: 0 0 auto;
+
+    }
+
+}
+
+
+
+/* =====================================================
+   PREMIUM MOBILE
 ===================================================== */
 
 @media (max-width: 768px) {
 
 
-    /* =====================================================
-       BODY PREMIUM BACKGROUND
-    ===================================================== */
+    /* WRAPPER */
 
-    body[data-page="about"] {
-
-        overflow-x: hidden;
-
-        background:
-            linear-gradient(
-                135deg,
-                #fff7fb,
-                #f7f4ff,
-                #f1f8ff,
-                #fffaf0
-            );
-
-        background-size: 400% 400%;
-
-        animation:
-            aboutBackground
-            15s
-            ease
-            infinite;
-
-    }
-
-
-    @keyframes aboutBackground {
-
-        0% {
-            background-position: 0% 50%;
-        }
-
-        25% {
-            background-position: 50% 100%;
-        }
-
-        50% {
-            background-position: 100% 50%;
-        }
-
-        75% {
-            background-position: 50% 0%;
-        }
-
-        100% {
-            background-position: 0% 50%;
-        }
-
-    }
-
-
-    /* =====================================================
-       SEMUA BAGIAN DI ATAS BACKGROUND
-    ===================================================== */
-
-    body[data-page="about"] .top,
-    body[data-page="about"] .pagehero,
-    body[data-page="about"] .section,
-    body[data-page="about"] .footer {
-
-        position: relative;
-
-        z-index: 2;
-
-    }
-
-
-    /* =====================================================
-       HEADER PREMIUM
-    ===================================================== */
-
-    body[data-page="about"] .top {
-
-        background:
-
-            linear-gradient(
-                135deg,
-                rgba(255,255,255,0.92),
-                rgba(255,245,251,0.88)
-            );
-
-        backdrop-filter:
-            blur(20px);
-
-        -webkit-backdrop-filter:
-            blur(20px);
-
-        border-bottom:
-
-            1px solid
-            rgba(255,255,255,0.8);
-
-        box-shadow:
-
-            0 8px 30px
-            rgba(70,40,100,0.08);
-
-    }
-
-
-    body[data-page="about"] .head {
-
-        padding:
-            16px 18px;
-
-        display:
-
-            flex;
-
-        align-items:
-
-            center;
-
-        justify-content:
-
-            space-between;
-
-        gap:
-
-            10px;
-
-    }
-
-
-    /* =====================================================
-       BRAND
-    ===================================================== */
-
-    body[data-page="about"] .brand {
-
-        display:
-
-            flex;
-
-        align-items:
-
-            center;
-
-        gap:
-
-            10px;
-
-        min-width:
-
-            0;
-
-        text-decoration:
-
-            none;
-
-    }
-
-
-    body[data-page="about"] .sun {
+    body[data-page="about"] .about-wrap {
 
         width:
 
-            46px;
+            calc(
+                100% - 30px
+            );
 
-        height:
+    }
 
-            46px;
+
+    /* HEADER */
+
+    body[data-page="about"] .about-head-inner {
+
+        min-height: 72px;
+
+    }
+
+
+    body[data-page="about"] .about-logo {
+
+        width: 45px;
+
+        height: 45px;
+
+        font-size: 24px;
+
+        border-radius: 15px;
+
+    }
+
+
+    body[data-page="about"] .about-brand h1 {
+
+        font-size: 19px;
+
+    }
+
+
+    body[data-page="about"] .about-brand p {
+
+        font-size: 11px;
+
+    }
+
+
+    body[data-page="about"] .about-call {
+
+        display: none;
+
+    }
+
+
+    body[data-page="about"] .about-btn {
+
+        padding:
+
+            10px
+            14px;
+
+        font-size: 12px;
+
+        border-radius: 13px;
+
+    }
+
+
+    /* NAVBAR */
+
+    body[data-page="about"] .about-nav {
+
+        position: sticky;
+
+        top: 0;
+
+        z-index: 100;
+
+        box-shadow:
+
+            0 8px 25px
+            rgba(
+                70,
+                50,
+                100,
+                .05
+            );
+
+    }
+
+
+    body[data-page="about"] .about-nav-inner {
+
+        padding:
+
+            9px
+            10px;
+
+        gap: 7px;
+
+    }
+
+
+    body[data-page="about"] .about-nav a {
+
+        flex-direction: column;
+
+        gap: 3px;
+
+        min-width: 62px;
+
+        padding:
+
+            8px
+            9px;
+
+        font-size: 9px;
+
+        border-radius: 13px;
+
+    }
+
+
+    body[data-page="about"] .about-nav .nav-icon {
+
+        font-size: 19px;
+
+    }
+
+
+    /* HERO */
+
+    body[data-page="about"] .about-hero {
+
+        padding:
+
+            70px
+            0
+            75px;
+
+    }
+
+
+    body[data-page="about"] .hero-badge {
+
+        font-size: 12px;
+
+        padding:
+
+            9px
+            14px;
+
+    }
+
+
+    body[data-page="about"] .about-hero h2 {
+
+        font-size: 52px;
+
+    }
+
+
+    body[data-page="about"] .about-hero p {
+
+        font-size: 15px;
+
+        padding:
+
+            0
+            10px;
+
+    }
+
+
+    body[data-page="about"] .orb-one {
+
+        width: 100px;
+
+        height: 100px;
+
+        left: -30px;
+
+    }
+
+
+    body[data-page="about"] .orb-two {
+
+        width: 80px;
+
+        height: 80px;
+
+        right: -25px;
+
+    }
+
+
+    /* SECTION */
+
+    body[data-page="about"] .about-section {
+
+        padding:
+
+            35px
+            0;
+
+    }
+
+
+    body[data-page="about"] .section-heading {
+
+        margin-bottom: 25px;
+
+    }
+
+
+    body[data-page="about"] .section-heading h2 {
+
+        font-size: 32px;
+
+    }
+
+
+    body[data-page="about"] .section-heading p {
+
+        font-size: 14px;
+
+    }
+
+
+    /* STORY */
+
+    body[data-page="about"] .about-story {
+
+        gap: 30px;
+
+    }
+
+
+    body[data-page="about"] .story-image-card {
+
+        padding: 7px;
+
+        border-radius: 25px;
+
+    }
+
+
+    body[data-page="about"] .story-image-card img {
+
+        border-radius: 20px;
+
+        aspect-ratio:
+
+            4
+            /
+            3;
+
+    }
+
+
+    body[data-page="about"] .story-image-card::before {
+
+        font-size: 35px;
+
+        top: -18px;
+
+    }
+
+
+    body[data-page="about"] .story-text {
+
+        padding: 0;
+
+        text-align: center;
+
+    }
+
+
+    body[data-page="about"] .story-text .mini-label {
+
+        font-size: 12px;
+
+    }
+
+
+    body[data-page="about"] .story-text h2 {
+
+        font-size: 34px;
+
+    }
+
+
+    body[data-page="about"] .story-text p {
+
+        font-size: 14px;
+
+        line-height: 1.8;
+
+        text-align: left;
+
+    }
+
+
+    /* VALUES */
+
+    body[data-page="about"] .values-grid {
+
+        grid-template-columns:
+
+            1fr
+            1fr;
+
+        gap: 12px;
+
+    }
+
+
+    body[data-page="about"] .value-card {
+
+        padding:
+
+            20px
+            15px;
+
+        border-radius: 21px;
+
+    }
+
+
+    body[data-page="about"] .value-card:hover {
+
+        transform:
+
+            translateY(-5px);
+
+    }
+
+
+    body[data-page="about"] .value-icon {
+
+        width: 52px;
+
+        height: 52px;
+
+        border-radius: 16px;
+
+        font-size: 26px;
+
+        margin-bottom: 12px;
+
+    }
+
+
+    body[data-page="about"] .value-card h3 {
+
+        font-size: 18px;
+
+        line-height: 1.1;
+
+    }
+
+
+    body[data-page="about"] .value-card p {
+
+        font-size: 12px;
+
+        line-height: 1.6;
+
+    }
+
+
+    /* POSTS */
+
+    body[data-page="about"] .posts-grid {
+
+        grid-template-columns:
+
+            1fr;
+
+        gap: 15px;
+
+    }
+
+
+    body[data-page="about"] .post-counter {
+
+        font-size: 13px;
+
+        padding:
+
+            10px
+            16px;
+
+    }
+
+
+    /* CTA */
+
+    body[data-page="about"] .about-cta {
+
+        padding:
+
+            45px
+            20px;
+
+        border-radius: 28px;
+
+    }
+
+
+    body[data-page="about"] .about-cta h2 {
+
+        font-size: 35px;
+
+        line-height: 1.15;
+
+    }
+
+
+    body[data-page="about"] .about-cta p {
+
+        font-size: 14px;
+
+    }
+
+
+    body[data-page="about"] .about-cta::before {
+
+        font-size: 40px;
+
+        left: 3%;
+
+    }
+
+
+    body[data-page="about"] .about-cta::after {
+
+        font-size: 50px;
+
+        right: 3%;
+
+    }
+
+
+    /* FOOTER */
+
+    body[data-page="about"] .about-footer {
+
+        margin-top: 45px;
+
+        padding-top: 45px;
+
+    }
+
+
+    body[data-page="about"] .footer-grid {
+
+        grid-template-columns:
+
+            1fr;
+
+        gap: 28px;
+
+        text-align: center;
+
+    }
+
+
+    body[data-page="about"] .footer-grid a:hover {
+
+        transform: none;
+
+    }
+
+
+    body[data-page="about"] .footer-copy {
+
+        font-size: 12px;
+
+        padding:
+
+            18px
+            10px;
+
+    }
+
+}
+
+
+
+/* =====================================================
+   HP KECIL
+===================================================== */
+
+@media (max-width: 480px) {
+
+
+    body[data-page="about"] .about-wrap {
+
+        width:
+
+            calc(
+                100% - 24px
+            );
+
+    }
+
+
+    body[data-page="about"] .about-brand h1 {
+
+        font-size: 17px;
+
+    }
+
+
+    body[data-page="about"] .about-btn {
+
+        font-size: 10px;
+
+        padding:
+
+            9px
+            11px;
+
+    }
+
+
+    body[data-page="about"] .about-hero {
+
+        padding:
+
+            60px
+            0;
+
+    }
+
+
+    body[data-page="about"] .about-hero h2 {
+
+        font-size: 45px;
+
+    }
+
+
+    body[data-page="about"] .values-grid {
+
+        grid-template-columns:
+
+            1fr;
+
+    }
+
+
+    body[data-page="about"] .value-card {
 
         display:
 
-            flex;
+            grid;
 
-        align-items:
+        grid-template-columns:
 
-            center;
+            65px
+            1fr;
 
-        justify-content:
+        column-gap: 15px;
 
-            center;
+        align-items: center;
 
-        font-size:
+    }
 
-            28px;
 
-        border-radius:
+    body[data-page="about"] .value-icon {
 
-            15px;
+        grid-row:
+
+            span 2;
+
+        margin: 0;
+
+    }
+
+
+    body[data-page="about"] .value-card h3 {
+
+        margin-bottom: 5px;
+
+    }
+
+}
+
+
+/* ================= REDUCE MOTION ================= */
+
+@media (
+    prefers-reduced-motion:
+    reduce
+) {
+
+    body[data-page="about"] *,
+    body[data-page="about"]::before,
+    body[data-page="about"]::after {
+
+        animation-duration:
+
+            .01ms
+            !important;
+
+        animation-iteration-count:
+
+            1
+            !important;
+
+        transition-duration:
+
+            .01ms
+            !important;
+
+    }
+
+}
+/* =====================================================
+   ABOUT US - FINAL PREMIUM FIX
+   KHUSUS MENGATASI BENTROK CSS & MOBILE
+===================================================== */
+
+
+/* =====================================================
+   ISOLASI HALAMAN ABOUT
+===================================================== */
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body[data-page="about"] {
+
+    position: relative;
+
+    min-height: 100vh;
+
+    overflow-x: hidden !important;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #fff7fb 0%,
+            #f5f0ff 35%,
+            #eef8ff 70%,
+            #fff9e8 100%
+        ) !important;
+
+}
+
+
+/* =====================================================
+   BACKGROUND ANIMASI PREMIUM
+===================================================== */
+
+body[data-page="about"]::before {
+
+    content: "";
+
+    position: fixed;
+
+    width: 450px;
+
+    height: 450px;
+
+    top: -180px;
+
+    left: -180px;
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(255, 108, 163, .28) 0%,
+            rgba(255, 174, 208, .15) 40%,
+            transparent 70%
+        );
+
+    filter: blur(35px);
+
+    pointer-events: none;
+
+    z-index: 0 !important;
+
+    animation:
+
+        aboutBackgroundOne
+        14s
+        ease-in-out
+        infinite;
+
+}
+
+
+body[data-page="about"]::after {
+
+    content: "";
+
+    position: fixed;
+
+    width: 500px;
+
+    height: 500px;
+
+    right: -220px;
+
+    bottom: -220px;
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(92, 190, 255, .28) 0%,
+            rgba(168, 220, 255, .12) 45%,
+            transparent 72%
+        );
+
+    filter: blur(40px);
+
+    pointer-events: none;
+
+    z-index: 0 !important;
+
+    animation:
+
+        aboutBackgroundTwo
+        17s
+        ease-in-out
+        infinite;
+
+}
+
+
+/* SEMUA ISI HALAMAN DI ATAS BACKGROUND */
+
+body[data-page="about"] > * {
+
+    position: relative;
+
+    z-index: 1;
+
+}
+
+
+@keyframes aboutBackgroundOne {
+
+    0%,
+    100% {
+
+        transform:
+
+            translate(
+                0,
+                0
+            )
+
+            scale(1);
+
+    }
+
+
+    50% {
+
+        transform:
+
+            translate(
+                140px,
+                100px
+            )
+
+            scale(1.25);
+
+    }
+
+}
+
+
+@keyframes aboutBackgroundTwo {
+
+    0%,
+    100% {
+
+        transform:
+
+            translate(
+                0,
+                0
+            )
+
+            scale(1);
+
+    }
+
+
+    50% {
+
+        transform:
+
+            translate(
+                -120px,
+                -90px
+            )
+
+            scale(1.3);
+
+    }
+
+}
+
+
+/* =====================================================
+   HEADER FIX
+===================================================== */
+
+body[data-page="about"] .about-header {
+
+    width: 100%;
+
+    background:
+
+        rgba(
+            255,
+            255,
+            255,
+            .72
+        );
+
+    backdrop-filter:
+
+        blur(20px);
+
+    -webkit-backdrop-filter:
+
+        blur(20px);
+
+}
+
+
+body[data-page="about"] .about-head-inner {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+}
+
+
+body[data-page="about"] .about-brand {
+
+    min-width: 0;
+
+}
+
+
+body[data-page="about"] .about-brand > div:last-child {
+
+    min-width: 0;
+
+}
+
+
+body[data-page="about"] .about-brand h1 {
+
+    white-space: nowrap;
+
+}
+
+
+/* =====================================================
+   NAVBAR FIX
+===================================================== */
+
+body[data-page="about"] .about-nav {
+
+    width: 100%;
+
+    overflow: hidden;
+
+}
+
+
+body[data-page="about"] .about-nav-inner {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+}
+
+
+body[data-page="about"] .about-nav a {
+
+    white-space: nowrap;
+
+}
+
+
+/* =====================================================
+   HERO PREMIUM
+===================================================== */
+
+body[data-page="about"] .about-hero {
+
+    min-height: 460px;
+
+    display:
+
+        flex;
+
+    align-items:
+
+        center;
+
+    justify-content:
+
+        center;
+
+    isolation: isolate;
+
+}
+
+
+body[data-page="about"] .about-hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+
+    height: 250px;
+
+    border-radius: 50%;
+
+    top: 50%;
+
+    left: 50%;
+
+    transform:
+
+        translate(
+            -50%,
+            -50%
+        );
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.65),
+            transparent 70%
+        );
+
+    filter: blur(15px);
+
+    z-index: -1;
+
+}
+
+
+body[data-page="about"] .hero-content {
+
+    width: 100%;
+
+}
+
+
+body[data-page="about"] .hero-badge {
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+body[data-page="about"] .hero-badge::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 40px;
+
+    height: 100%;
+
+    top: 0;
+
+    left: -60px;
+
+    background:
+
+        rgba(
+            255,
+            255,
+            255,
+            .5
+        );
+
+    transform:
+
+        skewX(-25deg);
+
+    animation:
+
+        badgeShine
+        4s
+        infinite;
+
+}
+
+
+@keyframes badgeShine {
+
+    0% {
+
+        left: -60px;
+
+    }
+
+
+    50% {
+
+        left: 120%;
+
+    }
+
+
+    100% {
+
+        left: 120%;
+
+    }
+
+}
+
+
+body[data-page="about"] .about-hero h2 {
+
+    letter-spacing:
+
+        -2px;
+
+    text-shadow:
+
+        0 15px 40px
+        rgba(
+            69,
+            56,
+            110,
+            .12
+        );
+
+}
+
+
+body[data-page="about"] .about-hero p {
+
+    text-shadow:
+
+        0 3px 15px
+        rgba(
+            255,
+            255,
+            255,
+            .7
+        );
+
+}
+
+
+/* =====================================================
+   STORY IMAGE FIX
+===================================================== */
+
+body[data-page="about"] .story-image-card {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    overflow: visible;
+
+}
+
+
+body[data-page="about"] .story-image-card img {
+
+    width: 100% !important;
+
+    height: auto !important;
+
+    min-height: 0 !important;
+
+    max-height: none !important;
+
+    display: block !important;
+
+    object-fit: cover !important;
+
+}
+
+
+/* =====================================================
+   STORY SECTION PREMIUM
+===================================================== */
+
+body[data-page="about"] .story-text {
+
+    position: relative;
+
+}
+
+
+body[data-page="about"] .story-text::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 100px;
+
+    height: 100px;
+
+    border-radius: 50%;
+
+    right: -30px;
+
+    top: -30px;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(255,211,226,.55),
+            transparent 70%
+        );
+
+    pointer-events: none;
+
+    z-index: -1;
+
+}
+
+
+body[data-page="about"] .story-text h2 {
+
+    letter-spacing:
+
+        -.8px;
+
+}
+
+
+body[data-page="about"] .story-text p {
+
+    max-width: 100%;
+
+}
+
+
+/* =====================================================
+   VALUE CARD PREMIUM
+===================================================== */
+
+body[data-page="about"] .value-card {
+
+    isolation: isolate;
+
+}
+
+
+body[data-page="about"] .value-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.4),
+            transparent
+        );
+
+    pointer-events: none;
+
+    z-index: -1;
+
+}
+
+
+body[data-page="about"] .value-card {
+
+    animation:
+
+        valueFloat
+        6s
+        ease-in-out
+        infinite;
+
+}
+
+
+body[data-page="about"] .value-card:nth-child(2) {
+
+    animation-delay:
+
+        .6s;
+
+}
+
+
+body[data-page="about"] .value-card:nth-child(3) {
+
+    animation-delay:
+
+        1.2s;
+
+}
+
+
+body[data-page="about"] .value-card:nth-child(4) {
+
+    animation-delay:
+
+        1.8s;
+
+}
+
+
+@keyframes valueFloat {
+
+    0%,
+    100% {
+
+        transform:
+
+            translateY(0);
+
+    }
+
+
+    50% {
+
+        transform:
+
+            translateY(-5px);
+
+    }
+
+}
+
+
+body[data-page="about"] .value-card:hover {
+
+    animation-play-state:
+
+        paused;
+
+}
+
+
+/* =====================================================
+   POSTS FIX
+===================================================== */
+
+body[data-page="about"] #postsContainer {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+}
+
+
+body[data-page="about"] #postsContainer > * {
+
+    min-width: 0;
+
+    max-width: 100%;
+
+}
+
+
+/* =====================================================
+   CTA PREMIUM
+===================================================== */
+
+body[data-page="about"] .about-cta {
+
+    isolation: isolate;
+
+}
+
+
+body[data-page="about"] .about-cta::before {
+
+    z-index: -1;
+
+}
+
+
+body[data-page="about"] .about-cta::after {
+
+    z-index: -1;
+
+}
+
+
+body[data-page="about"] .about-cta h2 {
+
+    letter-spacing:
+
+        -1px;
+
+}
+
+
+/* =====================================================
+   REVEAL FIX
+===================================================== */
+
+body[data-page="about"] .about-reveal {
+
+    will-change:
+
+        transform,
+        opacity;
+
+}
+
+
+/* =====================================================
+   MOBILE FINAL PREMIUM
+===================================================== */
+
+@media (max-width: 768px) {
+
+
+    /* BODY */
+
+    body[data-page="about"] {
 
         background:
 
             linear-gradient(
-                135deg,
-                #fff1a8,
-                #ffd76b
-            );
-
-        box-shadow:
-
-            0 8px 20px
-            rgba(255,190,60,0.28);
-
-        animation:
-
-            sunFloat
-            4s
-            ease-in-out
-            infinite;
-
-        flex-shrink:
-
-            0;
+                160deg,
+                #fff8fb 0%,
+                #f5f1ff 45%,
+                #eff9ff 75%,
+                #fff9ec 100%
+            ) !important;
 
     }
 
 
-    @keyframes sunFloat {
+    /* BACKGROUND BLOB */
 
-        0% {
+    body[data-page="about"]::before {
 
-            transform:
-                translateY(0)
-                rotate(0deg);
+        width: 300px;
 
-        }
+        height: 300px;
 
-        50% {
+        top: -130px;
 
-            transform:
-                translateY(-4px)
-                rotate(5deg);
+        left: -140px;
 
-        }
+        filter:
 
-        100% {
-
-            transform:
-                translateY(0)
-                rotate(0deg);
-
-        }
+            blur(25px);
 
     }
 
 
-    body[data-page="about"] .brand h1 {
+    body[data-page="about"]::after {
 
-        font-size:
+        width: 330px;
 
-            19px;
+        height: 330px;
 
-        line-height:
+        right: -180px;
 
-            1.1;
+        bottom: -150px;
 
-        margin:
+        filter:
 
-            0;
-
-        white-space:
-
-            nowrap;
+            blur(30px);
 
     }
 
 
-    body[data-page="about"] .brand p {
+    /* WRAPPER */
 
-        margin:
+    body[data-page="about"] .about-wrap {
 
-            4px 0 0;
+        width:
 
-        font-size:
+            calc(
+                100% - 32px
+            ) !important;
 
-            11px;
-
-        opacity:
-
-            0.75;
+        max-width: none;
 
     }
 
 
-    body[data-page="about"] .call {
+    /* ================= HEADER ================= */
 
-        display:
+    body[data-page="about"] .about-header {
 
-            none;
+        position: relative;
+
+        z-index: 200;
 
     }
 
 
-    body[data-page="about"] .head > .btn {
+    body[data-page="about"] .about-head-inner {
 
-        font-size:
+        min-height: 76px;
 
-            11px;
+        gap: 10px;
+
+    }
+
+
+    body[data-page="about"] .about-logo {
+
+        width: 46px;
+
+        height: 46px;
+
+        min-width: 46px;
+
+        font-size: 24px;
+
+        border-radius: 16px;
+
+    }
+
+
+    body[data-page="about"] .about-brand {
+
+        gap: 9px;
+
+    }
+
+
+    body[data-page="about"] .about-brand h1 {
+
+        font-size: 18px;
+
+        line-height: 1.1;
+
+        letter-spacing:
+
+            -.3px;
+
+    }
+
+
+    body[data-page="about"] .about-brand p {
+
+        font-size: 10px;
+
+        margin-top: 4px;
+
+    }
+
+
+    body[data-page="about"] .about-header-right {
+
+        flex-shrink: 0;
+
+    }
+
+
+    body[data-page="about"] .about-call {
+
+        display: none !important;
+
+    }
+
+
+    body[data-page="about"] .about-btn {
 
         padding:
 
-            10px 13px;
-
-        border-radius:
-
+            10px
             13px;
 
-        white-space:
+        border-radius: 13px;
 
-            nowrap;
+        font-size: 11px;
 
-        box-shadow:
+        gap: 5px;
 
-            0 8px 20px
-            rgba(239,79,130,0.22);
+        white-space: nowrap;
 
     }
 
 
-    /* =====================================================
-       PREMIUM NAVBAR
-    ===================================================== */
+    /* ================= NAVBAR ================= */
 
-    body[data-page="about"] .rainbow-nav {
+    body[data-page="about"] .about-nav {
 
-        display:
+        position: sticky;
 
-            flex;
+        top: 0;
+
+        z-index: 500;
+
+        background:
+
+            rgba(
+                255,
+                255,
+                255,
+                .88
+            );
+
+        backdrop-filter:
+
+            blur(18px);
+
+        -webkit-backdrop-filter:
+
+            blur(18px);
+
+        border-bottom:
+
+            1px
+            solid
+            rgba(
+                255,
+                255,
+                255,
+                .9
+            );
+
+    }
+
+
+    body[data-page="about"] .about-nav-inner {
+
+        justify-content:
+
+            flex-start !important;
 
         overflow-x:
 
@@ -364,22 +3488,14 @@
 
             hidden;
 
-        justify-content:
-
-            flex-start;
-
-        gap:
-
-            8px;
+        gap: 7px;
 
         padding:
 
-            12px 14px
-            16px;
+            9px
+            12px !important;
 
-        scroll-snap-type:
-
-            x mandatory;
+        width: 100% !important;
 
         -webkit-overflow-scrolling:
 
@@ -392,715 +3508,41 @@
     }
 
 
-    body[data-page="about"] .rainbow-nav::-webkit-scrollbar {
+    body[data-page="about"] .about-nav-inner::-webkit-scrollbar {
 
-        display:
-
-            none;
+        display: none;
 
     }
 
 
-    body[data-page="about"] .rainbow-item {
+    body[data-page="about"] .about-nav a {
 
         flex:
 
-            0 0 auto;
-
-        width:
-
-            78px;
-
-        min-height:
-
-            72px;
-
-        padding:
-
-            10px 6px;
-
-        display:
-
-            flex;
-
-        flex-direction:
-
-            column;
-
-        align-items:
-
-            center;
-
-        justify-content:
-
-            center;
-
-        gap:
-
-            5px;
-
-        border-radius:
-
-            18px;
-
-        scroll-snap-align:
-
-            start;
-
-        transition:
-
-            0.3s
-            ease;
-
-        background:
-
-            rgba(255,255,255,0.72);
-
-        box-shadow:
-
-            0 6px 18px
-            rgba(60,40,100,0.08);
-
-        border:
-
-            1px solid
-            rgba(255,255,255,0.8);
-
-    }
-
-
-    body[data-page="about"] .rainbow-item:active {
-
-        transform:
-
-            scale(0.93);
-
-    }
-
-
-    body[data-page="about"] .rainbow-item.active {
-
-        transform:
-
-            translateY(-3px);
-
-        box-shadow:
-
-            0 12px 25px
-            rgba(60,60,140,0.18);
-
-    }
-
-
-    body[data-page="about"] .rainbow-icon {
-
-        font-size:
-
-            23px;
-
-        line-height:
-
-            1;
-
-    }
-
-
-    body[data-page="about"] .rainbow-text {
-
-        font-size:
-
-            9px;
-
-        font-weight:
-
-            700;
-
-        letter-spacing:
-
-            0.3px;
-
-    }
-
-
-    body[data-page="about"] .sparkle {
-
-        display:
-
-            none;
-
-    }
-
-
-    /* =====================================================
-       HERO PREMIUM
-    ===================================================== */
-
-    body[data-page="about"] .pagehero {
-
-        margin:
-
-            16px 14px
-            0;
-
-        padding:
-
-            65px 20px
-            70px;
-
-        border-radius:
-
-            28px;
-
-        overflow:
-
-            hidden;
-
-        text-align:
-
-            center;
-
-        background:
-
-            linear-gradient(
-                135deg,
-                rgba(255,224,241,0.95),
-                rgba(229,236,255,0.95),
-                rgba(255,245,205,0.92)
-            );
-
-        background-size:
-
-            250% 250%;
-
-        animation:
-
-            heroGradient
-            8s
-            ease
-            infinite;
-
-        box-shadow:
-
-            0 15px 40px
-            rgba(80,50,120,0.10);
-
-    }
-
-
-    @keyframes heroGradient {
-
-        0% {
-
-            background-position:
-                0% 50%;
-
-        }
-
-        50% {
-
-            background-position:
-                100% 50%;
-
-        }
-
-        100% {
-
-            background-position:
-                0% 50%;
-
-        }
-
-    }
-
-
-    /* CAHAYA HERO */
-
-    body[data-page="about"] .pagehero::before {
-
-        content:
-
-            "";
-
-        position:
-
-            absolute;
-
-        width:
-
-            180px;
-
-        height:
-
-            180px;
-
-        border-radius:
-
-            50%;
-
-        background:
-
-            rgba(255,255,255,0.40);
-
-        filter:
-
-            blur(20px);
-
-        top:
-
-            -80px;
-
-        left:
-
-            -60px;
-
-        animation:
-
-            blobOne
-            7s
-            ease-in-out
-            infinite;
-
-    }
-
-
-    body[data-page="about"] .pagehero::after {
-
-        content:
-
-            "🌈";
-
-        position:
-
-            absolute;
-
-        font-size:
-
-            52px;
-
-        right:
-
-            18px;
-
-        bottom:
-
-            15px;
-
-        opacity:
-
-            0.75;
-
-        animation:
-
-            rainbowFloat
-            4s
-            ease-in-out
-            infinite;
-
-    }
-
-
-    @keyframes blobOne {
-
-        0% {
-
-            transform:
-                translate(0,0)
-                scale(1);
-
-        }
-
-        50% {
-
-            transform:
-                translate(50px,40px)
-                scale(1.25);
-
-        }
-
-        100% {
-
-            transform:
-                translate(0,0)
-                scale(1);
-
-        }
-
-    }
-
-
-    @keyframes rainbowFloat {
-
-        0% {
-
-            transform:
-                translateY(0)
-                rotate(-5deg);
-
-        }
-
-        50% {
-
-            transform:
-                translateY(-10px)
-                rotate(5deg);
-
-        }
-
-        100% {
-
-            transform:
-                translateY(0)
-                rotate(-5deg);
-
-        }
-
-    }
-
-
-    body[data-page="about"] .pagehero .wrap {
-
-        position:
-
-            relative;
-
-        z-index:
-
-            2;
-
-    }
-
-
-    body[data-page="about"] .pagehero h2 {
-
-        font-size:
-
-            clamp(
-                38px,
-                11vw,
-                52px
-            );
-
-        line-height:
-
-            1.1;
-
-        margin:
-
-            0 0 15px;
-
-        animation:
-
-            heroTitle
-            1s
-            ease
-            both;
-
-    }
-
-
-    @keyframes heroTitle {
-
-        from {
-
-            opacity:
-
-                0;
-
-            transform:
-
-                translateY(30px)
-                scale(0.9);
-
-        }
-
-        to {
-
-            opacity:
-
-                1;
-
-            transform:
-
-                translateY(0)
-                scale(1);
-
-        }
-
-    }
-
-
-    body[data-page="about"] .pagehero p {
-
-        font-size:
-
-            15px;
-
-        line-height:
-
-            1.7;
-
-        margin:
-
+            0
+            0
             auto;
-
-        animation:
-
-            heroText
-            1s
-            0.2s
-            ease
-            both;
-
-    }
-
-
-    @keyframes heroText {
-
-        from {
-
-            opacity:
-
-                0;
-
-            transform:
-
-                translateY(20px);
-
-        }
-
-        to {
-
-            opacity:
-
-                1;
-
-            transform:
-
-                translateY(0);
-
-        }
-
-    }
-
-
-    /* =====================================================
-       SECTION
-    ===================================================== */
-
-    body[data-page="about"] .section {
-
-        padding:
-
-            55px 20px
-            10px;
-
-    }
-
-
-    /* =====================================================
-       WELCOME
-    ===================================================== */
-
-    body[data-page="about"] .welcome {
-
-        display:
-
-            flex;
-
-        flex-direction:
-
-            column;
-
-        gap:
-
-            35px;
-
-    }
-
-
-    body[data-page="about"] .welcome > div {
-
-        width:
-
-            100%;
 
         min-width:
 
-            0;
-
-    }
-
-
-    body[data-page="about"] .title {
-
-        font-size:
-
-            29px;
-
-        line-height:
-
-            1.25;
-
-        margin:
-
-            0 0 18px;
-
-    }
-
-
-    body[data-page="about"] .welcome p {
-
-        font-size:
-
-            15px;
-
-        line-height:
-
-            1.8;
-
-        margin-bottom:
-
-            16px;
-
-    }
-
-
-    /* =====================================================
-       IMAGE PREMIUM
-    ===================================================== */
-
-    body[data-page="about"] .welcome-img {
-
-        position:
-
-            relative;
-
-        width:
-
-            100%;
-
-        margin:
-
-            20px auto
-            0;
-
-        border-radius:
-
-            25px;
-
-        overflow:
-
-            hidden;
-
-        background:
-
-            #f2f2f2;
-
-        box-shadow:
-
-            0 20px 45px
-            rgba(70,40,100,0.16);
-
-        animation:
-
-            imageFloat
-            5s
-            ease-in-out
-            infinite;
-
-    }
-
-
-    @keyframes imageFloat {
-
-        0% {
-
-            transform:
-                translateY(0);
-
-        }
-
-        50% {
-
-            transform:
-                translateY(-8px);
-
-        }
-
-        100% {
-
-            transform:
-                translateY(0);
-
-        }
-
-    }
-
-
-    body[data-page="about"] .welcome-img::after {
-
-        content:
-
-            "";
-
-        position:
-
-            absolute;
-
-        inset:
-
-            0;
-
-        border:
-
-            2px solid
-            rgba(255,255,255,0.6);
-
-        border-radius:
-
-            25px;
-
-        pointer-events:
-
-            none;
-
-    }
-
-
-    body[data-page="about"] .welcome-img img {
-
-        display:
-
-            block;
-
-        width:
-
-            100%;
-
-        height:
-
-            auto;
+            66px;
 
         min-height:
 
-            240px;
+            58px;
 
-        object-fit:
+        padding:
 
-            cover;
-
-    }
-
-
-    /* =====================================================
-       BUTTON PREMIUM
-    ===================================================== */
-
-    body[data-page="about"] .section .btn {
+            7px
+            9px !important;
 
         display:
 
-            inline-flex;
+            flex;
+
+        flex-direction:
+
+            column;
 
         align-items:
 
@@ -1110,611 +3552,119 @@
 
             center;
 
-        margin-top:
+        gap: 4px;
 
-            10px;
+        font-size:
 
-        padding:
-
-            13px 20px;
+            8px;
 
         border-radius:
 
-            15px;
-
-        font-size:
-
             14px;
 
-        box-shadow:
+        letter-spacing:
 
-            0 10px 25px
-            rgba(239,79,130,0.25);
-
-        transition:
-
-            0.3s
-            ease;
+            .2px;
 
     }
 
 
-    body[data-page="about"] .section .btn:active {
-
-        transform:
-
-            scale(0.95);
-
-    }
-
-
-    /* =====================================================
-       SECTION TITLE
-    ===================================================== */
-
-    body[data-page="about"] .section-title {
-
-        text-align:
-
-            center;
-
-        margin-bottom:
-
-            28px;
-
-    }
-
-
-    body[data-page="about"] .section-title h2 {
+    body[data-page="about"] .about-nav .nav-icon {
 
         font-size:
 
-            31px;
+            18px;
 
-        line-height:
-
-            1.25;
-
-        margin-bottom:
-
-            12px;
+        line-height: 1;
 
     }
 
 
-    body[data-page="about"] .section-title p {
+    /* ================= HERO ================= */
 
-        font-size:
+    body[data-page="about"] .about-hero {
 
-            14px;
+        min-height:
 
-        line-height:
-
-            1.7;
+            auto;
 
         padding:
 
-            0 8px;
+            65px
+            0
+            70px !important;
 
     }
 
 
-    /* =====================================================
-       VALUES CARDS
-    ===================================================== */
+    body[data-page="about"] .hero-content {
 
-    body[data-page="about"] .features {
+        padding:
 
-        display:
+            0
+            5px;
 
-            grid;
+        box-sizing:
 
-        grid-template-columns:
+            border-box;
 
-            1fr;
+    }
 
-        gap:
+
+    body[data-page="about"] .hero-badge {
+
+        font-size:
+
+            11px;
+
+        padding:
+
+            9px
+            14px;
+
+        margin-bottom:
 
             17px;
 
     }
 
 
-    body[data-page="about"] .feature {
-
-        position:
-
-            relative;
-
-        width:
-
-            100%;
-
-        padding:
-
-            25px 22px;
-
-        box-sizing:
-
-            border-box;
-
-        border-radius:
-
-            24px;
-
-        overflow:
-
-            hidden;
-
-        background:
-
-            rgba(255,255,255,0.78);
-
-        backdrop-filter:
-
-            blur(12px);
-
-        -webkit-backdrop-filter:
-
-            blur(12px);
-
-        border:
-
-            1px solid
-            rgba(255,255,255,0.85);
-
-        box-shadow:
-
-            0 12px 30px
-            rgba(60,40,100,0.08);
-
-        transition:
-
-            0.35s
-            ease;
-
-    }
-
-
-    body[data-page="about"] .feature::before {
-
-        content:
-
-            "";
-
-        position:
-
-            absolute;
-
-        width:
-
-            90px;
-
-        height:
-
-            90px;
-
-        border-radius:
-
-            50%;
-
-        background:
-
-            rgba(255,200,225,0.22);
-
-        right:
-
-            -30px;
-
-        top:
-
-            -30px;
-
-    }
-
-
-    body[data-page="about"] .feature:active {
-
-        transform:
-
-            scale(0.97);
-
-        box-shadow:
-
-            0 8px 20px
-            rgba(60,40,100,0.10);
-
-    }
-
-
-    body[data-page="about"] .feature .big {
-
-        position:
-
-            relative;
-
-        z-index:
-
-            2;
-
-        display:
-
-            inline-flex;
-
-        width:
-
-            58px;
-
-        height:
-
-            58px;
-
-        align-items:
-
-            center;
-
-        justify-content:
-
-            center;
+    body[data-page="about"] .about-hero h2 {
 
         font-size:
 
-            32px;
-
-        border-radius:
-
-            18px;
-
-        background:
-
-            linear-gradient(
-                135deg,
-                #fff5fa,
-                #f5f0ff
-            );
-
-        animation:
-
-            emojiFloat
-            3.5s
-            ease-in-out
-            infinite;
-
-    }
-
-
-    @keyframes emojiFloat {
-
-        0% {
-
-            transform:
-                translateY(0)
-                rotate(0deg);
-
-        }
-
-        50% {
-
-            transform:
-                translateY(-6px)
-                rotate(5deg);
-
-        }
-
-        100% {
-
-            transform:
-                translateY(0)
-                rotate(0deg);
-
-        }
-
-    }
-
-
-    body[data-page="about"] .feature h3 {
-
-        position:
-
-            relative;
-
-        z-index:
-
-            2;
-
-        font-size:
-
-            21px;
-
-        margin:
-
-            16px 0 8px;
-
-    }
-
-
-    body[data-page="about"] .feature p {
-
-        position:
-
-            relative;
-
-        z-index:
-
-            2;
-
-        font-size:
-
-            14px;
+            clamp(
+                46px,
+                14vw,
+                62px
+            ) !important;
 
         line-height:
 
-            1.7;
+            .95;
+
+        letter-spacing:
+
+            -1px;
+
+    }
+
+
+    body[data-page="about"] .about-hero p {
+
+        max-width:
+
+            330px;
 
         margin:
 
+            18px
+            auto
             0;
 
-    }
-
-
-    /* =====================================================
-       POST COUNTER
-    ===================================================== */
-
-    body[data-page="about"] .post-counter {
-
-        width:
-
-            fit-content;
-
-        margin:
-
-            0 auto
-            22px;
-
         padding:
 
-            11px 18px;
-
-        border-radius:
-
-            50px;
-
-        font-size:
-
-            13px;
-
-        background:
-
-            rgba(255,255,255,0.75);
-
-        border:
-
-            1px solid
-            rgba(255,255,255,0.9);
-
-        box-shadow:
-
-            0 8px 20px
-            rgba(70,40,100,0.08);
-
-    }
-
-
-    /* =====================================================
-       POSTS
-    ===================================================== */
-
-    body[data-page="about"] .posts-grid {
-
-        display:
-
-            grid;
-
-        grid-template-columns:
-
-            1fr;
-
-        gap:
-
-            18px;
-
-    }
-
-
-    /* =====================================================
-       CTA PREMIUM
-    ===================================================== */
-
-    body[data-page="about"] .box {
-
-        position:
-
-            relative;
-
-        padding:
-
-            42px 22px;
-
-        border-radius:
-
-            30px;
-
-        text-align:
-
-            center;
-
-        overflow:
-
-            hidden;
-
-        background:
-
-            linear-gradient(
-                135deg,
-                #ffe8f3,
-                #eee9ff,
-                #e6f5ff
-            );
-
-        box-shadow:
-
-            0 20px 45px
-            rgba(80,50,120,0.12);
-
-    }
-
-
-    body[data-page="about"] .box::before {
-
-        content:
-
-            "";
-
-        position:
-
-            absolute;
-
-        width:
-
-            180px;
-
-        height:
-
-            180px;
-
-        border-radius:
-
-            50%;
-
-        background:
-
-            rgba(255,255,255,0.4);
-
-        top:
-
-            -80px;
-
-        right:
-
-            -60px;
-
-        animation:
-
-            ctaBlob
-            7s
-            ease-in-out
-            infinite;
-
-    }
-
-
-    @keyframes ctaBlob {
-
-        0% {
-
-            transform:
-                translate(0,0)
-                scale(1);
-
-        }
-
-        50% {
-
-            transform:
-                translate(-40px,50px)
-                scale(1.2);
-
-        }
-
-        100% {
-
-            transform:
-                translate(0,0)
-                scale(1);
-
-        }
-
-    }
-
-
-    body[data-page="about"] .box > * {
-
-        position:
-
-            relative;
-
-        z-index:
-
-            2;
-
-    }
-
-
-    body[data-page="about"] .box .big {
-
-        display:
-
-            inline-block;
-
-        font-size:
-
-            52px;
-
-        animation:
-
-            ctaEmoji
-            4s
-            ease-in-out
-            infinite;
-
-    }
-
-
-    @keyframes ctaEmoji {
-
-        0% {
-
-            transform:
-                translateY(0)
-                rotate(-5deg);
-
-        }
-
-        50% {
-
-            transform:
-                translateY(-10px)
-                rotate(5deg);
-
-        }
-
-        100% {
-
-            transform:
-                translateY(0)
-                rotate(-5deg);
-
-        }
-
-    }
-
-
-    body[data-page="about"] .box .title {
-
-        font-size:
-
-            31px;
-
-        margin-top:
-
-            15px;
-
-    }
-
-
-    body[data-page="about"] .box p {
+            0 !important;
 
         font-size:
 
@@ -1727,66 +3677,324 @@
     }
 
 
-    /* =====================================================
-       FOOTER PREMIUM
-    ===================================================== */
+    body[data-page="about"] .orb-one {
 
-    body[data-page="about"] .footer {
+        width:
 
-        margin-top:
+            105px;
 
-            60px;
+        height:
 
-        padding-top:
+            105px;
 
-            45px;
+        left:
 
-        background:
+            -45px;
 
-            linear-gradient(
-                135deg,
-                #2e2440,
-                #3b2d52
-            );
+        top:
 
-        color:
+            20px;
 
-            white;
+        opacity:
+
+            .65;
 
     }
 
 
-    body[data-page="about"] .footgrid {
+    body[data-page="about"] .orb-two {
+
+        width:
+
+            85px;
+
+        height:
+
+            85px;
+
+        right:
+
+            -35px;
+
+        bottom:
+
+            25px;
+
+        opacity:
+
+            .65;
+
+    }
+
+
+    /* ================= SECTION ================= */
+
+    body[data-page="about"] .about-section {
+
+        padding:
+
+            45px
+            0 !important;
+
+    }
+
+
+    body[data-page="about"] .section-heading {
+
+        margin-bottom:
+
+            28px;
+
+        padding:
+
+            0
+            8px;
+
+    }
+
+
+    body[data-page="about"] .section-heading h2 {
+
+        font-size:
+
+            31px;
+
+        line-height:
+
+            1.15;
+
+    }
+
+
+    body[data-page="about"] .section-heading p {
+
+        font-size:
+
+            13px;
+
+        line-height:
+
+            1.75;
+
+    }
+
+
+    /* ================= STORY ================= */
+
+    body[data-page="about"] .about-story {
 
         display:
 
-            grid;
+            flex !important;
 
-        grid-template-columns:
+        flex-direction:
 
-            1fr;
+            column;
 
         gap:
 
-            30px;
+            32px;
+
+    }
+
+
+    body[data-page="about"] .story-image-card {
+
+        order:
+
+            1;
+
+        width:
+
+            100%;
+
+        padding:
+
+            7px;
+
+        border-radius:
+
+            25px;
+
+        box-sizing:
+
+            border-box;
+
+    }
+
+
+    body[data-page="about"] .story-image-card img {
+
+        width:
+
+            100% !important;
+
+        height:
+
+            auto !important;
+
+        min-height:
+
+            0 !important;
+
+        aspect-ratio:
+
+            4 / 3;
+
+        object-fit:
+
+            cover;
+
+        border-radius:
+
+            19px;
+
+    }
+
+
+    body[data-page="about"] .story-text {
+
+        order:
+
+            2;
+
+        padding:
+
+            0 !important;
 
         text-align:
 
             center;
 
-        padding:
+        width:
 
-            0 20px
-            35px;
+            100%;
+
+        box-sizing:
+
+            border-box;
 
     }
 
 
-    body[data-page="about"] .footgrid h3 {
+    body[data-page="about"] .story-text .mini-label {
 
         font-size:
 
-            19px;
+            11px;
+
+        padding:
+
+            8px
+            13px;
+
+        margin-bottom:
+
+            13px;
+
+    }
+
+
+    body[data-page="about"] .story-text h2 {
+
+        font-size:
+
+            32px;
+
+        line-height:
+
+            1.15;
+
+        margin-bottom:
+
+            17px;
+
+    }
+
+
+    body[data-page="about"] .story-text p {
+
+        font-size:
+
+            14px;
+
+        line-height:
+
+            1.85;
+
+        text-align:
+
+            left;
+
+        margin:
+
+            0
+            0
+            15px;
+
+    }
+
+
+    /* ================= VALUES ================= */
+
+    body[data-page="about"] .values-grid {
+
+        grid-template-columns:
+
+            repeat(
+                2,
+                minmax(
+                    0,
+                    1fr
+                )
+            ) !important;
+
+        gap:
+
+            12px;
+
+    }
+
+
+    body[data-page="about"] .value-card {
+
+        padding:
+
+            18px
+            14px;
+
+        min-width:
+
+            0;
+
+        border-radius:
+
+            20px;
+
+        animation:
+
+            none;
+
+    }
+
+
+    body[data-page="about"] .value-icon {
+
+        width:
+
+            50px;
+
+        height:
+
+            50px;
+
+        font-size:
+
+            25px;
+
+        border-radius:
+
+            15px;
 
         margin-bottom:
 
@@ -1795,191 +4003,257 @@
     }
 
 
-    body[data-page="about"] .footgrid p {
+    body[data-page="about"] .value-card h3 {
 
         font-size:
 
-            14px;
+            17px;
 
         line-height:
 
-            1.7;
+            1.15;
+
+        word-break:
+
+            normal;
 
     }
 
 
-    body[data-page="about"] .footgrid a {
-
-        display:
-
-            block;
-
-        margin:
-
-            9px 0;
-
-        font-size:
-
-            14px;
-
-    }
-
-
-    body[data-page="about"] .copy {
-
-        text-align:
-
-            center;
-
-        padding:
-
-            20px 15px;
+    body[data-page="about"] .value-card p {
 
         font-size:
 
             11px;
 
+        line-height:
+
+            1.65;
+
+    }
+
+
+    /* ================= POSTS ================= */
+
+    body[data-page="about"] .posts-grid {
+
+        grid-template-columns:
+
+            1fr !important;
+
+        gap:
+
+            16px;
+
+    }
+
+
+    body[data-page="about"] .post-counter {
+
+        font-size:
+
+            12px;
+
+        padding:
+
+            10px
+            15px;
+
+        margin-bottom:
+
+            20px;
+
+    }
+
+
+    /* ================= CTA ================= */
+
+    body[data-page="about"] .about-cta {
+
+        padding:
+
+            48px
+            20px !important;
+
+        border-radius:
+
+            28px;
+
+    }
+
+
+    body[data-page="about"] .about-cta .cta-icon {
+
+        font-size:
+
+            50px;
+
+    }
+
+
+    body[data-page="about"] .about-cta h2 {
+
+        font-size:
+
+            34px;
+
+        line-height:
+
+            1.15;
+
+        margin:
+
+            12px
+            0;
+
+    }
+
+
+    body[data-page="about"] .about-cta p {
+
+        font-size:
+
+            13px;
+
+        line-height:
+
+            1.8;
+
+        margin-bottom:
+
+            22px;
+
+    }
+
+
+    body[data-page="about"] .about-cta::before {
+
+        font-size:
+
+            38px;
+
+        left:
+
+            1%;
+
+        top:
+
+            15px;
+
         opacity:
 
-            0.7;
-
-        border-top:
-
-            1px solid
-            rgba(255,255,255,0.12);
+            .3;
 
     }
 
 
-    /* =====================================================
-       ANIMASI REVEAL PREMIUM
-    ===================================================== */
+    body[data-page="about"] .about-cta::after {
 
-    body[data-page="about"] .reveal {
+        font-size:
 
-        animation:
+            45px;
 
-            mobileReveal
-            0.8s
-            ease
-            both;
+        right:
 
-    }
+            1%;
 
+        bottom:
 
-    @keyframes mobileReveal {
+            10px;
 
-        from {
+        opacity:
 
-            opacity:
-
-                0;
-
-            transform:
-
-                translateY(30px);
-
-        }
-
-        to {
-
-            opacity:
-
-                1;
-
-            transform:
-
-                translateY(0);
-
-        }
+            .3;
 
     }
 
 
-    /* ANIMASI CARD BERTAHAP */
+    /* ================= FOOTER ================= */
 
-    body[data-page="about"] .feature:nth-child(1) {
+    body[data-page="about"] .about-footer {
 
-        animation:
+        margin-top:
 
-            featureShow
-            0.6s
-            0.1s
-            ease
-            both;
+            35px;
 
-    }
+        padding:
 
-
-    body[data-page="about"] .feature:nth-child(2) {
-
-        animation:
-
-            featureShow
-            0.6s
-            0.2s
-            ease
-            both;
+            45px
+            0
+            0;
 
     }
 
 
-    body[data-page="about"] .feature:nth-child(3) {
+    body[data-page="about"] .footer-grid {
 
-        animation:
+        grid-template-columns:
 
-            featureShow
-            0.6s
-            0.3s
-            ease
-            both;
+            1fr !important;
 
-    }
+        gap:
 
+            25px;
 
-    body[data-page="about"] .feature:nth-child(4) {
+        text-align:
 
-        animation:
-
-            featureShow
-            0.6s
-            0.4s
-            ease
-            both;
+            center;
 
     }
 
 
-    @keyframes featureShow {
+    body[data-page="about"] .footer-grid h3 {
 
-        from {
+        font-size:
 
-            opacity:
+            21px;
 
-                0;
+        margin-bottom:
 
-            transform:
-
-                translateY(25px)
-                scale(0.96);
-
-        }
-
-        to {
-
-            opacity:
-
-                1;
-
-            transform:
-
-                translateY(0)
-                scale(1);
-
-        }
+            10px;
 
     }
 
+
+    body[data-page="about"] .footer-grid p {
+
+        font-size:
+
+            13px;
+
+        margin:
+
+            8px
+            0;
+
+    }
+
+
+    body[data-page="about"] .footer-grid a {
+
+        font-size:
+
+            13px;
+
+    }
+
+
+    body[data-page="about"] .footer-copy {
+
+        margin-top:
+
+            30px;
+
+        padding:
+
+            18px
+            15px;
+
+        font-size:
+
+            11px;
+
+    }
 
 }
 
@@ -1991,72 +4265,20 @@
 @media (max-width: 480px) {
 
 
-    body[data-page="about"] .head {
-
-        padding:
-
-            14px 13px;
-
-    }
-
-
-    body[data-page="about"] .sun {
+    body[data-page="about"] .about-wrap {
 
         width:
 
-            40px;
-
-        height:
-
-            40px;
-
-        font-size:
-
-            24px;
-
-        border-radius:
-
-            13px;
+            calc(
+                100% - 24px
+            ) !important;
 
     }
 
 
-    body[data-page="about"] .brand h1 {
+    /* HEADER */
 
-        font-size:
-
-            17px;
-
-    }
-
-
-    body[data-page="about"] .brand p {
-
-        font-size:
-
-            10px;
-
-    }
-
-
-    body[data-page="about"] .head > .btn {
-
-        padding:
-
-            9px 10px;
-
-        font-size:
-
-            10px;
-
-    }
-
-
-    body[data-page="about"] .rainbow-item {
-
-        width:
-
-            72px;
+    body[data-page="about"] .about-head-inner {
 
         min-height:
 
@@ -2065,186 +4287,382 @@
     }
 
 
-    body[data-page="about"] .rainbow-icon {
+    body[data-page="about"] .about-logo {
+
+        width:
+
+            42px;
+
+        height:
+
+            42px;
+
+        min-width:
+
+            42px;
 
         font-size:
 
             21px;
 
+        border-radius:
+
+            14px;
+
     }
 
 
-    body[data-page="about"] .rainbow-text {
+    body[data-page="about"] .about-brand {
 
-        font-size:
+        gap:
 
             8px;
 
     }
 
 
-    body[data-page="about"] .pagehero {
+    body[data-page="about"] .about-brand h1 {
 
-        margin:
+        font-size:
 
-            13px 10px
-            0;
+            15px;
+
+    }
+
+
+    body[data-page="about"] .about-brand p {
+
+        font-size:
+
+            9px;
+
+    }
+
+
+    body[data-page="about"] .about-btn {
 
         padding:
 
-            55px 15px
-            65px;
-
-        border-radius:
-
-            24px;
-
-    }
-
-
-    body[data-page="about"] .pagehero h2 {
+            9px
+            10px;
 
         font-size:
 
-            39px;
+            10px;
+
+        border-radius:
+
+            12px;
 
     }
 
 
-    body[data-page="about"] .section {
+    /* HERO */
+
+    body[data-page="about"] .about-hero {
 
         padding:
 
-            48px 16px
-            8px;
+            55px
+            0
+            60px !important;
 
     }
 
 
-    body[data-page="about"] .title {
+    body[data-page="about"] .about-hero h2 {
 
         font-size:
 
-            26px;
+            48px !important;
 
     }
 
 
-    body[data-page="about"] .section-title h2 {
+    body[data-page="about"] .about-hero p {
 
         font-size:
 
-            28px;
+            13px;
+
+        max-width:
+
+            310px;
 
     }
 
 
-    body[data-page="about"] .welcome-img {
+    /* NAV */
 
-        border-radius:
+    body[data-page="about"] .about-nav a {
 
-            21px;
+        min-width:
 
-    }
-
-
-    body[data-page="about"] .welcome-img img {
+            60px;
 
         min-height:
 
-            220px;
-
-    }
-
-
-    body[data-page="about"] .feature {
-
-        padding:
-
-            22px 18px;
-
-        border-radius:
-
-            21px;
-
-    }
-
-
-    body[data-page="about"] .box {
-
-        padding:
-
-            35px 18px;
-
-        border-radius:
-
-            25px;
-
-    }
-
-
-    body[data-page="about"] .box .title {
+            55px;
 
         font-size:
 
-            27px;
+            7px;
+
+    }
+
+
+    body[data-page="about"] .about-nav .nav-icon {
+
+        font-size:
+
+            17px;
+
+    }
+
+
+    /* STORY */
+
+    body[data-page="about"] .story-text h2 {
+
+        font-size:
+
+            29px;
+
+    }
+
+
+    body[data-page="about"] .story-text p {
+
+        font-size:
+
+            13px;
+
+    }
+
+
+    /* VALUES */
+
+    body[data-page="about"] .values-grid {
+
+        grid-template-columns:
+
+            1fr !important;
+
+    }
+
+
+    body[data-page="about"] .value-card {
+
+        display:
+
+            grid;
+
+        grid-template-columns:
+
+            55px
+            minmax(
+                0,
+                1fr
+            );
+
+        column-gap:
+
+            14px;
+
+        align-items:
+
+            center;
+
+        padding:
+
+            17px;
+
+    }
+
+
+    body[data-page="about"] .value-icon {
+
+        grid-row:
+
+            span 2;
+
+        width:
+
+            52px;
+
+        height:
+
+            52px;
+
+        margin:
+
+            0;
+
+    }
+
+
+    body[data-page="about"] .value-card h3 {
+
+        margin:
+
+            0
+            0
+            5px;
+
+    }
+
+
+    body[data-page="about"] .value-card p {
+
+        margin:
+
+            0;
+
+    }
+
+
+    /* CTA */
+
+    body[data-page="about"] .about-cta h2 {
+
+        font-size:
+
+            30px;
 
     }
 
 }
 
+
+/* =====================================================
+   DISABLE ANIMASI BERAT DI HP
+===================================================== */
+
+@media (max-width: 768px) {
+
+
+    body[data-page="about"] .value-card {
+
+        transition:
+
+            transform
+            .25s
+            ease;
+
+    }
+
+
+    body[data-page="about"] .value-card:hover {
+
+        transform:
+
+            translateY(
+                -4px
+            );
+
+    }
+
+}
+
+
+/* =====================================================
+   REDUCE MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+
+    body[data-page="about"] *,
+    body[data-page="about"]::before,
+    body[data-page="about"]::after {
+
+        animation:
+
+            none !important;
+
+        transition:
+
+            none !important;
+
+    }
+
+}
 </style>
+
 </head>
+
 
 
 <body data-page="about">
 
 
-    <!-- ================= HEADER ================= -->
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
-    <div class="top">
+<header class="about-header">
 
-        <header class="head wrap">
+    <div
+        class="
+            about-wrap
+            about-head-inner
+        "
+    >
 
 
-            <!-- BRAND -->
+        <!-- BRAND -->
 
-            <a
-                class="brand"
-                href="index.html"
-            >
+        <a
+            href="index.html"
+            class="about-brand"
+        >
 
-                <div class="sun">
-                    ☀️
+            <div class="about-logo">
+                ☀️
+            </div>
+
+
+            <div>
+
+                <h1>
+
+                    RA Miftahul
+
+                    <span>
+                        Hikmah
+                    </span>
+
+                </h1>
+
+
+                <p>
+                    Tangerang 💗
+                </p>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- RIGHT -->
+
+        <div class="about-header-right">
+
+
+            <div class="about-call">
+
+                <div class="call-icon">
+                    📞
                 </div>
 
-                <div>
-
-                    <h1>
-                        Ra Miftahul
-                        <span>Hikmah</span>
-                    </h1>
-
-                    <p>
-                        Tangerang 💗
-                    </p>
-
-                </div>
-
-            </a>
-
-
-            <!-- CONTACT HEADER -->
-
-            <div class="call">
-
-                ⌕
 
                 <div>
 
                     <small>
-                        Call Us
+                        Hubungi Kami
                     </small>
+
 
                     <b>
                         +62 813-9875-4451
@@ -2255,453 +4673,542 @@
             </div>
 
 
-            <!-- BOOK A VISIT -->
-
-            <a
-                class="btn"
-                href="contact.html"
-            >
-                Book a Visit
-            </a>
-
-        </header>
-
-
-        <!-- ================= RAINBOW NAVBAR ================= -->
-
-        <nav class="rainbow-nav">
-
-
-            <!-- HOME -->
-
-            <a
-                href="index.html"
-                class="rainbow-item pink"
-            >
-
-                <span class="rainbow-icon">
-                    🏠
-                </span>
-
-                <span class="rainbow-text">
-                    HOME
-                </span>
-
-                <span class="sparkle">
-                    ✦
-                </span>
-
-            </a>
-
-
-            <!-- ABOUT -->
-
-            <a
-                href="about.html"
-                class="rainbow-item blue active"
-            >
-
-                <span class="rainbow-icon">
-                    👥
-                </span>
-
-                <span class="rainbow-text">
-                    ABOUT
-                </span>
-
-                <span class="sparkle">
-                    ✦
-                </span>
-
-            </a>
-
-
-            <!-- PROGRAMS -->
-
-            <a
-                href="programs.html"
-                class="rainbow-item green"
-            >
-
-                <span class="rainbow-icon">
-                    📚
-                </span>
-
-                <span class="rainbow-text">
-                    PROGRAMS
-                </span>
-
-                <span class="sparkle">
-                    ✦
-                </span>
-
-            </a>
-
-
-            <!-- CLASSES -->
-
-            <a
-                href="classes.html"
-                class="rainbow-item yellow"
-            >
-
-                <span class="rainbow-icon">
-                    🎓
-                </span>
-
-                <span class="rainbow-text">
-                    CLASSES
-                </span>
-
-                <span class="sparkle">
-                    ✦
-                </span>
-
-            </a>
-
-
-            <!-- BLOG -->
-
-            <a
-                href="blog.html"
-                class="rainbow-item orange"
-            >
-
-                <span class="rainbow-icon">
-                    🖍️
-                </span>
-
-                <span class="rainbow-text">
-                    BLOG
-                </span>
-
-                <span class="sparkle">
-                    ✦
-                </span>
-
-            </a>
-
-
-            <!-- GALLERY -->
-
-            <a
-                href="gallery.html"
-                class="rainbow-item purple"
-            >
-
-                <span class="rainbow-icon">
-                    🖼️
-                </span>
-
-                <span class="rainbow-text">
-                    GALLERY
-                </span>
-
-                <span class="sparkle">
-                    ✦
-                </span>
-
-            </a>
-
-
-            <!-- PARENTS -->
-
-            <a
-                href="parents.html"
-                class="rainbow-item pink2"
-            >
-
-                <span class="rainbow-icon">
-                    💛
-                </span>
-
-                <span class="rainbow-text">
-                    PARENTS
-                </span>
-
-                <span class="sparkle">
-                    ✦
-                </span>
-
-            </a>
-
-
-            <!-- CONTACT -->
-
             <a
                 href="contact.html"
-                class="rainbow-item blue2"
+                class="about-btn"
             >
 
-                <span class="rainbow-icon">
-                    ✉️
-                </span>
+                📅
 
-                <span class="rainbow-text">
-                    CONTACT
-                </span>
-
-                <span class="sparkle">
-                    ✦
-                </span>
+                Book Visit
 
             </a>
 
 
-        </nav>
+        </div>
+
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<nav class="about-nav">
+
+    <div
+        class="
+            about-wrap
+            about-nav-inner
+        "
+    >
+
+
+        <a href="index.html">
+
+            <span class="nav-icon">
+                🏠
+            </span>
+
+            HOME
+
+        </a>
+
+
+        <a
+            href="about.html"
+            class="active"
+        >
+
+            <span class="nav-icon">
+                👥
+            </span>
+
+            ABOUT
+
+        </a>
+
+
+        <a href="programs.html">
+
+            <span class="nav-icon">
+                📚
+            </span>
+
+            PROGRAMS
+
+        </a>
+
+
+        <a href="classes.html">
+
+            <span class="nav-icon">
+                🎓
+            </span>
+
+            CLASSES
+
+        </a>
+
+
+        <a href="blog.html">
+
+            <span class="nav-icon">
+                🖍️
+            </span>
+
+            BLOG
+
+        </a>
+
+
+        <a href="gallery.html">
+
+            <span class="nav-icon">
+                🖼️
+            </span>
+
+            GALLERY
+
+        </a>
+
+
+        <a href="parents.html">
+
+            <span class="nav-icon">
+                💛
+            </span>
+
+            PARENTS
+
+        </a>
+
+
+        <a href="contact.html">
+
+            <span class="nav-icon">
+                ✉️
+            </span>
+
+            CONTACT
+
+        </a>
+
+
+    </div>
+
+</nav>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="about-hero">
+
+
+    <div class="hero-orb orb-one"></div>
+
+    <div class="hero-orb orb-two"></div>
+
+
+    <div
+        class="
+            about-wrap
+            hero-content
+        "
+    >
+
+
+        <div class="hero-badge">
+
+            ✨
+
+            Mengenal Kami Lebih Dekat
+
+        </div>
+
+
+        <h2>
+
+            About
+
+            <span>
+                Us
+            </span>
+
+            💗
+
+        </h2>
+
+
+        <p>
+
+            Tempat di mana anak-anak belajar,
+            bermain, tumbuh dan menemukan
+            potensi terbaik mereka dengan
+            penuh kebahagiaan.
+
+        </p>
+
 
     </div>
 
 
-    <!-- ================= PAGE HERO ================= -->
+</section>
 
-    <section class="pagehero">
 
-        <div class="wrap">
+
+<!-- =====================================================
+     WELCOME
+===================================================== -->
+
+<section class="about-section">
+
+
+    <div
+        class="
+            about-wrap
+            about-story
+        "
+    >
+
+
+        <!-- IMAGE -->
+
+        <div
+            class="
+                story-image-card
+                about-reveal
+            "
+        >
+
+            <img
+                src="images/anak-anak.jpg"
+                alt="Anak-anak RA Miftahul Hikmah"
+            >
+
+        </div>
+
+
+
+        <!-- TEXT -->
+
+        <div
+            class="
+                story-text
+                about-reveal
+            "
+        >
+
+
+            <div class="mini-label">
+
+                🌈 OUR STORY
+
+            </div>
+
 
             <h2>
 
-                About
-                <span>Us</span>
-                💗
+                Welcome to Our
+
+                <span>
+                    Kindergarten!
+                </span>
 
             </h2>
 
+
             <p>
 
-                Mengenal lebih dekat
-                Ra Miftahul Hikmah.
+                RA Miftahul Hikmah adalah tempat
+                belajar yang menyenangkan, aman,
+                nyaman dan penuh kasih untuk
+                membantu anak berkembang secara
+                optimal.
 
             </p>
 
-        </div>
 
-    </section>
+            <p>
 
+                Kami percaya bahwa setiap anak
+                memiliki potensi yang unik.
+                Melalui bermain, kreativitas,
+                eksplorasi dan pembelajaran yang
+                menyenangkan, anak-anak dapat
+                tumbuh dengan percaya diri setiap hari.
 
-    <!-- ================= WELCOME ================= -->
-
-    <section class="section wrap">
-
-        <div class="welcome">
-
-
-            <!-- FOTO -->
-
-            <div class="reveal">
-
-                <h2 class="title">
-
-                    Welcome to Our
-                    <span>Kindergarten!</span>
-                    🌈
-
-                </h2>
+            </p>
 
 
-                <div class="welcome-img">
-
-                    <img
-                        src="images/anak-anak.jpg"
-                        alt="Anak-anak Ra Miftahul Hikmah"
-                    >
-
-                </div>
-
-            </div>
+            <br>
 
 
-            <!-- STORY -->
+            <a
+                href="programs.html"
+                class="about-btn"
+            >
 
-            <div class="reveal">
+                Lihat Program
 
-                <h2 class="title">
+                →
 
-                    Our
-                    <span>Story</span>
-                    📖
-
-                </h2>
-
-
-                <p>
-
-                    Ra Miftahul Hikmah adalah tempat belajar
-                    yang menyenangkan, aman dan penuh kasih
-                    untuk membantu anak berkembang secara optimal.
-
-                </p>
-
-
-                <p>
-
-                    Kami percaya bahwa setiap anak memiliki
-                    potensi yang unik. Melalui bermain,
-                    kreativitas dan eksplorasi, anak-anak
-                    dapat belajar dengan gembira setiap hari.
-
-                </p>
-
-
-                <a
-                    class="btn"
-                    href="programs.html"
-                >
-                    Lihat Programs →
-                </a>
-
-            </div>
+            </a>
 
 
         </div>
 
-    </section>
+
+    </div>
 
 
-    <!-- ================= VALUES ================= -->
+</section>
 
-    <section class="section wrap">
 
-        <div class="section-title">
+
+<!-- =====================================================
+     VALUES
+===================================================== -->
+
+<section class="about-section">
+
+
+    <div class="about-wrap">
+
+
+        <div
+            class="
+                section-heading
+                about-reveal
+            "
+        >
 
             <h2>
 
                 Our
-                <span>Values</span>
+
+                <span>
+                    Values
+                </span>
+
                 ⭐
 
             </h2>
 
+
             <p>
 
                 Nilai-nilai yang menjadi dasar
-                pembelajaran di Ra Miftahul Hikmah.
+                pembelajaran dan perjalanan
+                anak-anak bersama kami.
 
             </p>
+
 
         </div>
 
 
-        <div class="features">
+
+        <div class="values-grid">
 
 
             <!-- VALUE 1 -->
 
-            <div class="feature reveal">
+            <div
+                class="
+                    value-card
+                    about-reveal
+                "
+            >
 
-                <div class="big">
+                <div class="value-icon">
                     ❤️
                 </div>
 
-                <h3>
-                    Penuh Kasih
-                </h3>
 
-                <p>
+                <div>
 
-                    Menciptakan lingkungan belajar
-                    yang hangat, aman dan penuh kasih.
+                    <h3>
+                        Penuh Kasih
+                    </h3>
 
-                </p>
+
+                    <p>
+
+                        Lingkungan belajar yang
+                        hangat, aman dan penuh kasih.
+
+                    </p>
+
+                </div>
+
 
             </div>
+
 
 
             <!-- VALUE 2 -->
 
-            <div class="feature reveal">
+            <div
+                class="
+                    value-card
+                    about-reveal
+                "
+            >
 
-                <div class="big">
+                <div class="value-icon">
                     🌱
                 </div>
 
-                <h3>
-                    Tumbuh Bersama
-                </h3>
 
-                <p>
+                <div>
 
-                    Mendukung setiap anak agar tumbuh
-                    sesuai dengan potensi dan keunikannya.
+                    <h3>
+                        Tumbuh Bersama
+                    </h3>
 
-                </p>
+
+                    <p>
+
+                        Mendukung setiap anak
+                        sesuai potensinya.
+
+                    </p>
+
+                </div>
+
 
             </div>
+
 
 
             <!-- VALUE 3 -->
 
-            <div class="feature reveal">
+            <div
+                class="
+                    value-card
+                    about-reveal
+                "
+            >
 
-                <div class="big">
+                <div class="value-icon">
                     🎨
                 </div>
 
-                <h3>
-                    Kreatif
-                </h3>
 
-                <p>
+                <div>
 
-                    Memberikan ruang bagi anak untuk
-                    bereksplorasi dan mengembangkan kreativitas.
+                    <h3>
+                        Kreatif
+                    </h3>
 
-                </p>
+
+                    <p>
+
+                        Memberikan ruang untuk
+                        bereksplorasi dan berkarya.
+
+                    </p>
+
+                </div>
+
 
             </div>
+
 
 
             <!-- VALUE 4 -->
 
-            <div class="feature reveal">
+            <div
+                class="
+                    value-card
+                    about-reveal
+                "
+            >
 
-                <div class="big">
+                <div class="value-icon">
                     🌈
                 </div>
 
-                <h3>
-                    Menyenangkan
-                </h3>
 
-                <p>
+                <div>
 
-                    Belajar melalui permainan dan aktivitas
-                    yang membuat anak merasa bahagia.
+                    <h3>
+                        Menyenangkan
+                    </h3>
 
-                </p>
+
+                    <p>
+
+                        Belajar sambil bermain
+                        dengan penuh kebahagiaan.
+
+                    </p>
+
+                </div>
+
 
             </div>
 
 
         </div>
 
-    </section>
+
+    </div>
 
 
-    <!-- ================= POSTINGAN SEKOLAH ================= -->
-
-    <section class="section wrap">
+</section>
 
 
-        <div class="section-title">
+
+<!-- =====================================================
+     POSTS
+===================================================== -->
+
+<section class="about-section">
+
+
+    <div class="about-wrap">
+
+
+        <div
+            class="
+                section-heading
+                about-reveal
+            "
+        >
 
             <h2>
 
                 Cerita & Kegiatan
-                <span>Sekolah</span>
+
+                <span>
+                    Sekolah
+                </span>
+
                 ✨
 
             </h2>
 
+
             <p>
 
-                Lihat berbagai cerita, kegiatan,
+                Berbagai kegiatan, cerita,
                 informasi dan dokumentasi terbaru
-                dari Ra Miftahul Hikmah.
+                dari RA Miftahul Hikmah.
 
             </p>
 
+
         </div>
+
 
 
         <!-- COUNTER -->
@@ -2717,7 +5224,8 @@
         </div>
 
 
-        <!-- POSTINGAN DARI SUPABASE -->
+
+        <!-- POSTS -->
 
         <div
             id="postsContainer"
@@ -2725,24 +5233,44 @@
         ></div>
 
 
-    </section>
+    </div>
 
 
-    <!-- ================= CTA ================= -->
+</section>
 
-    <section class="section wrap">
 
-        <div class="box reveal">
 
-            <div class="big">
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section class="about-section">
+
+
+    <div class="about-wrap">
+
+
+        <div
+            class="
+                about-cta
+                about-reveal
+            "
+        >
+
+
+            <div class="cta-icon">
                 🌈
             </div>
 
 
-            <h2 class="title">
+            <h2>
 
                 Yuk,
-                <span>Bergabung!</span>
+
+                <span>
+                    Bergabung!
+                </span>
+
                 💗
 
             </h2>
@@ -2751,228 +5279,291 @@
             <p>
 
                 Mari menjadi bagian dari perjalanan
-                belajar dan tumbuh bersama
-                Ra Miftahul Hikmah.
+                belajar, bermain dan tumbuh bersama
+                RA Miftahul Hikmah.
 
             </p>
 
 
-            <br>
-
-
             <a
                 href="pendaftaran.html"
-                class="btn"
+                class="about-btn"
             >
-                Daftar Sekarang 🚀
+
+                🚀
+
+                Daftar Sekarang
+
             </a>
 
+
         </div>
 
-    </section>
+
+    </div>
 
 
-    <!-- ================= FOOTER ================= -->
-
-    <footer class="footer">
+</section>
 
 
-        <div class="footgrid wrap">
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="about-footer">
 
 
-            <!-- BRAND -->
-
-            <div>
-
-                <h3>
-
-                    ☀️ KINDER
-
-                    <span style="color:#ef4f82">
-                        GARTEN
-                    </span>
-
-                </h3>
+    <div
+        class="
+            about-wrap
+            footer-grid
+        "
+    >
 
 
-                <p>
-                    Where Little Minds Bloom 💗
-                </p>
+        <!-- BRAND -->
 
-            </div>
+        <div>
 
+            <h3>
 
-            <!-- QUICK LINKS -->
+                ☀️ RA MIFTAHUL
 
-            <div>
+                <span style="color:#ff86ad">
 
-                <h3>
-                    Quick Links
-                </h3>
+                    HIKMAH
 
+                </span>
 
-                <a href="about.html">
-                    About Us
-                </a>
+            </h3>
 
 
-                <a href="programs.html">
-                    Programs
-                </a>
+            <p>
+
+                Tempat belajar yang menyenangkan
+                untuk membantu anak-anak tumbuh,
+                berkembang dan bersinar.
+
+            </p>
 
 
-                <a href="classes.html">
-                    Classes
-                </a>
+            <p>
 
+                🌈 Where Little Minds Bloom
 
-                <a href="gallery.html">
-                    Gallery
-                </a>
-
-
-                <a href="contact.html">
-                    Contact Us
-                </a>
-
-            </div>
-
-
-            <!-- CONTACT -->
-
-            <div>
-
-                <h3>
-                    Contact Us
-                </h3>
-
-
-                <p>
-                    ☎ +62 813-9875-4451
-                </p>
-
-
-                <p>
-
-                    ✉
-
-                    <a href="mailto:info@kindergarten.com">
-                        info@kindergarten.com
-                    </a>
-
-                </p>
-
-
-                <p>
-                    📍 Tangerang, Indonesia
-                </p>
-
-            </div>
-
-
-            <!-- SOCIAL -->
-
-            <div>
-
-                <h3>
-                    Follow Us
-                </h3>
-
-
-                <p style="font-size:28px">
-                    ●　◎　▶
-                </p>
-
-            </div>
+            </p>
 
 
         </div>
 
 
-        <!-- COPYRIGHT -->
 
-        <div class="copy wrap">
+        <!-- LINKS -->
 
-            © 2026 Ra Miftahul Hikmah.
-            All rights reserved.
+        <div>
+
+            <h3>
+                Menu
+            </h3>
+
+
+            <a href="about.html">
+                About Us
+            </a>
+
+
+            <a href="programs.html">
+                Programs
+            </a>
+
+
+            <a href="classes.html">
+                Classes
+            </a>
+
+
+            <a href="gallery.html">
+                Gallery
+            </a>
+
 
         </div>
 
 
-    </footer>
+
+        <!-- CONTACT -->
+
+        <div>
+
+            <h3>
+                Contact
+            </h3>
 
 
-    <!-- ================= JAVASCRIPT ================= -->
-
-    <!-- SUPABASE -->
-
-    <script
-        src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
-    ></script>
+            <p>
+                📞 +62 813-9875-4451
+            </p>
 
 
-    <!-- WEBSITE SCRIPT -->
-
-    <script
-        src="js/script.js"
-    ></script>
+            <p>
+                ✉️ info@ramiftahulhikmah.com
+            </p>
 
 
-    <!-- SISTEM POSTING -->
+            <p>
+                📍 Tangerang, Indonesia
+            </p>
 
-    <script
-        src="js/posts.js"
-    ></script>
 
-    <script>
+        </div>
 
-/* =====================================================
-   ABOUT US SCROLL ANIMATION
-===================================================== */
+
+
+        <!-- SOCIAL -->
+
+        <div>
+
+            <h3>
+                Follow Us
+            </h3>
+
+
+            <p style="font-size:28px">
+
+                📘
+
+                📸
+
+                ▶️
+
+            </p>
+
+
+            <p>
+
+                Ikuti kegiatan terbaru
+                kami melalui media sosial.
+
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- COPYRIGHT -->
+
+    <div class="footer-copy">
+
+        © 2026 RA Miftahul Hikmah.
+        All Rights Reserved. 💗
+
+    </div>
+
+
+</footer>
+
+
+
+<!-- =====================================================
+     SUPABASE
+===================================================== -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+></script>
+
+
+
+<!-- =====================================================
+     SCRIPT WEBSITE
+===================================================== -->
+
+<script
+    src="js/script.js"
+></script>
+
+
+
+<!-- =====================================================
+     SCRIPT POSTS
+===================================================== -->
+
+<script
+    src="js/posts.js"
+></script>
+
+
+
+<!-- =====================================================
+     REVEAL ANIMATION
+===================================================== -->
+
+<script>
 
 document.addEventListener(
     "DOMContentLoaded",
     function () {
 
-        const reveals =
-            document.querySelectorAll(".reveal");
+
+        const elements =
+
+            document.querySelectorAll(
+                ".about-reveal"
+            );
 
 
         const observer =
+
             new IntersectionObserver(
 
                 function (entries) {
 
+
                     entries.forEach(
+
                         function (entry) {
+
 
                             if (
                                 entry.isIntersecting
                             ) {
 
+
                                 entry.target.classList.add(
                                     "show"
                                 );
 
-                                observer.unobserve(
-                                    entry.target
-                                );
 
                             }
 
+
                         }
+
                     );
+
 
                 },
 
                 {
-                    threshold: 0.12
+
+                    threshold: 0.12,
+
+                    rootMargin:
+
+                        "0px 0px -40px 0px"
+
                 }
 
             );
 
 
-        reveals.forEach(
+        elements.forEach(
+
             function (element) {
 
                 observer.observe(
@@ -2980,12 +5571,15 @@ document.addEventListener(
                 );
 
             }
+
         );
+
 
     }
 );
 
 </script>
+
 
 </body>
 
