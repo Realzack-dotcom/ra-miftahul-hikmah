@@ -17,244 +17,13 @@
         href="css/style.css"
     >
 
-    <style>
-        /* =========================================================
-           ABOUT PAGE POLISH
-           ========================================================= */
-
-        body[data-page="about"] {
-            overflow-x: hidden;
-        }
-
-        /* ================= PAGE HERO ================= */
-
-        body[data-page="about"] .pagehero {
-            position: relative;
-            overflow: hidden;
-            padding: 72px 20px 78px;
-            background:
-                radial-gradient(
-                    circle at 12% 25%,
-                    rgba(255, 255, 255, .32) 0 55px,
-                    transparent 56px
-                ),
-                radial-gradient(
-                    circle at 88% 70%,
-                    rgba(255, 255, 255, .25) 0 75px,
-                    transparent 76px
-                ),
-                linear-gradient(
-                    135deg,
-                    #70d9ff 0%,
-                    #7e9cff 45%,
-                    #d18cff 100%
-                );
-        }
-
-        body[data-page="about"] .pagehero::before,
-        body[data-page="about"] .pagehero::after {
-            content: "";
-            position: absolute;
-            border-radius: 50%;
-            pointer-events: none;
-        }
-
-        body[data-page="about"] .pagehero::before {
-            width: 180px;
-            height: 180px;
-            left: -70px;
-            bottom: -95px;
-            background: rgba(255, 255, 255, .18);
-        }
-
-        body[data-page="about"] .pagehero::after {
-            width: 220px;
-            height: 220px;
-            right: -80px;
-            top: -110px;
-            background: rgba(255, 255, 255, .16);
-        }
-
-        body[data-page="about"] .pagehero .wrap {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-        }
-
-        body[data-page="about"] .pagehero h2 {
-            margin: 0 0 12px;
-            font-size: clamp(2.2rem, 6vw, 4rem);
-            line-height: 1.05;
-            text-shadow: 0 4px 14px rgba(65, 55, 120, .16);
-        }
-
-        body[data-page="about"] .pagehero p {
-            margin: 0 auto;
-            max-width: 620px;
-            font-size: 1.05rem;
-        }
-
-        /* ================= SECTION ================= */
-
-        body[data-page="about"] .section {
-            padding-top: 70px;
-            padding-bottom: 20px;
-        }
-
-        /* ================= WELCOME ================= */
-
-        body[data-page="about"] .welcome {
-            align-items: center;
-            gap: clamp(28px, 5vw, 70px);
-        }
-
-        body[data-page="about"] .welcome-img {
-            overflow: hidden;
-            border-radius: 28px;
-            box-shadow:
-                0 18px 45px rgba(72, 91, 150, .18);
-            transform: rotate(-1deg);
-            background: #fff;
-        }
-
-        body[data-page="about"] .welcome-img img {
-            display: block;
-            width: 100%;
-            height: auto;
-            transition: transform .45s ease;
-        }
-
-        body[data-page="about"] .welcome-img:hover img {
-            transform: scale(1.035);
-        }
-
-        /* ================= VALUES ================= */
-
-        body[data-page="about"] .feature {
-            border-radius: 24px;
-            padding: 30px 22px;
-            box-shadow:
-                0 12px 32px rgba(68, 82, 130, .10);
-            transition:
-                transform .25s ease,
-                box-shadow .25s ease;
-        }
-
-        body[data-page="about"] .feature:hover {
-            transform: translateY(-6px);
-            box-shadow:
-                0 18px 38px rgba(68, 82, 130, .16);
-        }
-
-        body[data-page="about"] .feature .big {
-            font-size: 42px;
-            margin-bottom: 8px;
-        }
-
-        /* ================= POST COUNTER ================= */
-
-        body[data-page="about"] .post-counter {
-            width: fit-content;
-            max-width: 100%;
-            margin: 0 auto 24px;
-            padding: 10px 18px;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, .9);
-            box-shadow:
-                0 8px 24px rgba(70, 80, 120, .10);
-        }
-
-        /* ================= CTA ================= */
-
-        body[data-page="about"] .box {
-            border-radius: 30px;
-            padding: clamp(30px, 6vw, 55px);
-            box-shadow:
-                0 18px 45px rgba(70, 80, 130, .12);
-        }
-
-        /* ================= MOBILE ================= */
-
-        @media (max-width: 768px) {
-
-            body[data-page="about"] .pagehero {
-                padding: 52px 16px 58px;
-            }
-
-            body[data-page="about"] .pagehero h2 {
-                font-size: clamp(2rem, 10vw, 3rem);
-            }
-
-            body[data-page="about"] .pagehero p {
-                font-size: .98rem;
-            }
-
-            body[data-page="about"] .section {
-                padding-top: 48px;
-            }
-
-            body[data-page="about"] .welcome {
-                gap: 30px;
-            }
-
-            body[data-page="about"] .welcome-img {
-                transform: none;
-                border-radius: 22px;
-            }
-
-            body[data-page="about"] .feature {
-                padding: 24px 18px;
-            }
-
-            body[data-page="about"] .box {
-                border-radius: 24px;
-            }
-        }
-
-        /* ================= SMALL PHONE ================= */
-
-        @media (max-width: 480px) {
-
-            body[data-page="about"] .pagehero {
-                padding: 44px 14px 48px;
-            }
-
-            body[data-page="about"] .section {
-                padding-top: 40px;
-            }
-
-            body[data-page="about"] .welcome-img {
-                border-radius: 18px;
-            }
-
-            body[data-page="about"] .feature {
-                border-radius: 20px;
-            }
-
-            body[data-page="about"] .feature .big {
-                font-size: 36px;
-            }
-
-            body[data-page="about"] .post-counter {
-                font-size: .9rem;
-                padding: 9px 14px;
-            }
-
-            body[data-page="about"] .box {
-                padding: 28px 20px;
-            }
-        }
-    </style>
-
 </head>
 
 
 <body data-page="about">
 
 
-    <!-- =========================================================
-         HEADER
-         ========================================================= -->
+    <!-- ================= HEADER ================= -->
 
     <div class="top">
 
@@ -318,13 +87,10 @@
                 Book a Visit
             </a>
 
-
         </header>
 
 
-        <!-- =====================================================
-             RAINBOW NAVBAR
-             ===================================================== -->
+        <!-- ================= RAINBOW NAVBAR ================= -->
 
         <nav class="rainbow-nav">
 
@@ -510,23 +276,25 @@
     </div>
 
 
-    <!-- =========================================================
-         PAGE HERO
-         ========================================================= -->
+    <!-- ================= PAGE HERO ================= -->
 
     <section class="pagehero">
 
         <div class="wrap">
 
             <h2>
+
                 About
                 <span>Us</span>
                 💗
+
             </h2>
 
             <p>
+
                 Mengenal lebih dekat
                 Ra Miftahul Hikmah.
+
             </p>
 
         </div>
@@ -534,9 +302,7 @@
     </section>
 
 
-    <!-- =========================================================
-         WELCOME
-         ========================================================= -->
+    <!-- ================= WELCOME ================= -->
 
     <section class="section wrap">
 
@@ -559,9 +325,8 @@
                 <div class="welcome-img">
 
                     <img
-                        src="./anak-anak.jpg"
+                        src="images/anak-anak.jpg"
                         alt="Anak-anak Ra Miftahul Hikmah"
-                        loading="lazy"
                     >
 
                 </div>
@@ -616,9 +381,7 @@
     </section>
 
 
-    <!-- =========================================================
-         VALUES
-         ========================================================= -->
+    <!-- ================= VALUES ================= -->
 
     <section class="section wrap">
 
@@ -738,9 +501,7 @@
     </section>
 
 
-    <!-- =========================================================
-         POSTINGAN SEKOLAH
-         ========================================================= -->
+    <!-- ================= POSTINGAN SEKOLAH ================= -->
 
     <section class="section wrap">
 
@@ -790,9 +551,7 @@
     </section>
 
 
-    <!-- =========================================================
-         CTA
-         ========================================================= -->
+    <!-- ================= CTA ================= -->
 
     <section class="section wrap">
 
@@ -836,9 +595,7 @@
     </section>
 
 
-    <!-- =========================================================
-         FOOTER
-         ========================================================= -->
+    <!-- ================= FOOTER ================= -->
 
     <footer class="footer">
 
@@ -968,9 +725,7 @@
     </footer>
 
 
-    <!-- =========================================================
-         JAVASCRIPT
-         ========================================================= -->
+    <!-- ================= JAVASCRIPT ================= -->
 
     <!-- SUPABASE -->
 
