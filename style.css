@@ -10653,3 +10653,561 @@ body {
         animation: none !important;
     }
 }
+
+
+/* =========================================================
+   RMH — FINAL MOBILE POLISH
+   KHUSUS RESPONSIVE HP
+   TIDAK MENGUBAH DESKTOP
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    /* ---------- PAGE ---------- */
+    html,
+    body {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+
+    body {
+        font-size: 15px;
+    }
+
+    /* ---------- TOP HEADER ---------- */
+    .top {
+        padding: 0 !important;
+    }
+
+    .head.wrap {
+        width: calc(100% - 24px) !important;
+        min-height: auto !important;
+        padding: 12px 0 !important;
+        gap: 10px !important;
+        flex-wrap: wrap !important;
+    }
+
+    .brand {
+        flex: 1 1 auto !important;
+        min-width: 0 !important;
+    }
+
+    .brand h1 {
+        font-size: 17px !important;
+        line-height: 1.05 !important;
+    }
+
+    .brand p {
+        font-size: 10px !important;
+    }
+
+    .brand .sun {
+        width: 42px !important;
+        height: 42px !important;
+        min-width: 42px !important;
+        font-size: 20px !important;
+    }
+
+    .call {
+        display: none !important;
+    }
+
+    .head > .btn {
+        display: none !important;
+    }
+
+    /* ---------- SCRAPBOOK NAVIGATION ----------
+       INI YANG DIPAKAI INDEX.HTML
+    */
+    .scrap-nav {
+        width: calc(100% - 18px) !important;
+        max-width: none !important;
+        margin: 8px auto 10px !important;
+        padding: 10px !important;
+        box-sizing: border-box !important;
+        border-radius: 22px !important;
+        overflow: hidden !important;
+    }
+
+    .scrap-title {
+        width: 100% !important;
+        min-width: 0 !important;
+        justify-content: center !important;
+        font-size: 13px !important;
+        margin-bottom: 8px !important;
+    }
+
+    .scrap-menu {
+        width: 100% !important;
+        min-width: 0 !important;
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: flex-start !important;
+        align-items: stretch !important;
+        gap: 7px !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        padding: 2px 2px 5px !important;
+        -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important;
+    }
+
+    .scrap-menu::-webkit-scrollbar {
+        display: none !important;
+    }
+
+    .scrap-menu-item,
+    .scrap-login {
+        flex: 0 0 auto !important;
+        min-width: 72px !important;
+        height: 52px !important;
+        padding: 7px 10px !important;
+        box-sizing: border-box !important;
+        border-radius: 16px !important;
+        font-size: 10px !important;
+        line-height: 1.1 !important;
+        white-space: nowrap !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 4px !important;
+    }
+
+    .scrap-icon {
+        font-size: 15px !important;
+    }
+
+    .scrap-login {
+        min-width: 76px !important;
+    }
+
+    /* ---------- ANNOUNCEMENT ---------- */
+    .announcement {
+        width: 100% !important;
+        min-height: 48px !important;
+        padding: 7px 10px !important;
+        box-sizing: border-box !important;
+        gap: 7px !important;
+    }
+
+    .announcement-icon {
+        font-size: 18px !important;
+    }
+
+    .announcement-content {
+        min-width: 0 !important;
+        overflow: hidden !important;
+    }
+
+    .announcement-content strong,
+    .announcement-content span {
+        font-size: 10px !important;
+    }
+
+    #announcementText {
+        display: block !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+    }
+
+    #announcementButton {
+        flex: 0 0 auto !important;
+        padding: 8px 11px !important;
+        font-size: 9px !important;
+        white-space: nowrap !important;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero-wow {
+        min-height: auto !important;
+        padding: 42px 16px 55px !important;
+        border-radius: 0 !important;
+    }
+
+    .hero-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+        margin: 0 auto !important;
+        text-align: center !important;
+    }
+
+    .hero-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    .hero-welcome {
+        max-width: 100% !important;
+        padding: 8px 13px !important;
+        font-size: 9px !important;
+        border-radius: 999px !important;
+        box-sizing: border-box !important;
+    }
+
+    .hero-motto {
+        justify-content: center !important;
+        gap: 7px !important;
+        font-size: 10px !important;
+        flex-wrap: wrap !important;
+    }
+
+    .hero-title,
+    .hero-content h1 {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 14px 0 14px !important;
+        font-size: clamp(31px, 9.5vw, 42px) !important;
+        line-height: 1.02 !important;
+        letter-spacing: -1px !important;
+        overflow-wrap: normal !important;
+    }
+
+    .hero-description {
+        width: 100% !important;
+        max-width: 430px !important;
+        margin: 0 auto !important;
+        font-size: 13px !important;
+        line-height: 1.6 !important;
+    }
+
+    .hero-buttons {
+        width: 100% !important;
+        margin-top: 18px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 10px !important;
+    }
+
+    .hero-btn {
+        width: min(100%, 300px) !important;
+        max-width: 300px !important;
+        min-height: 52px !important;
+        box-sizing: border-box !important;
+    }
+
+    .hero-stats {
+        width: 100% !important;
+        display: grid !important;
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 7px !important;
+        margin-top: 18px !important;
+    }
+
+    .hero-stat {
+        min-width: 0 !important;
+        padding: 8px 4px !important;
+        justify-content: center !important;
+        flex-direction: column !important;
+        text-align: center !important;
+        border-radius: 15px !important;
+    }
+
+    .hero-stat strong {
+        font-size: 16px !important;
+    }
+
+    .hero-stat small,
+    .hero-stat span {
+        font-size: 8px !important;
+        line-height: 1.25 !important;
+    }
+
+    .stat-line {
+        display: none !important;
+    }
+
+    /* FOTO HERO: JANGAN BIARKAN TERLALU BESAR */
+    .hero-visual {
+        width: 100% !important;
+        min-height: 290px !important;
+        height: 290px !important;
+        margin: 2px auto 0 !important;
+        display: grid !important;
+        place-items: center !important;
+    }
+
+    .visual-circle {
+        width: min(78vw, 285px) !important;
+        height: min(78vw, 285px) !important;
+        max-width: 285px !important;
+        max-height: 285px !important;
+    }
+
+    .hero-kids {
+        width: min(92%, 330px) !important;
+        max-width: 330px !important;
+        height: auto !important;
+        object-fit: contain !important;
+    }
+
+    .hero-badge {
+        max-width: 120px !important;
+        padding: 7px 10px !important;
+        font-size: 9px !important;
+        white-space: nowrap !important;
+    }
+
+    .badge-top {
+        top: 8px !important;
+        right: 2px !important;
+    }
+
+    .badge-bottom {
+        left: 2px !important;
+        bottom: 8px !important;
+    }
+
+    .hero-cloud {
+        font-size: 24px !important;
+    }
+
+    .cloud-2,
+    .cloud-3,
+    .star-4,
+    .circle-3 {
+        display: none !important;
+    }
+
+    /* ---------- FEATURES ---------- */
+    .features-wow {
+        width: calc(100% - 20px) !important;
+        max-width: none !important;
+        margin: 25px auto 35px !important;
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+        box-sizing: border-box !important;
+    }
+
+    .feature-card {
+        width: 100% !important;
+        min-width: 0 !important;
+        min-height: 0 !important;
+        height: auto !important;
+        padding: 25px 20px 23px !important;
+        border-radius: 25px !important;
+        box-sizing: border-box !important;
+    }
+
+    .feature-card h3 {
+        font-size: 22px !important;
+        margin: 12px 0 !important;
+    }
+
+    .feature-card p {
+        font-size: 12px !important;
+        line-height: 1.55 !important;
+    }
+
+    .feature-icon-circle {
+        width: 82px !important;
+        height: 82px !important;
+    }
+
+    .feature-icon-big {
+        font-size: 34px !important;
+    }
+
+    .feature-btn {
+        min-height: 42px !important;
+        padding: 9px 15px !important;
+    }
+
+    /* ---------- WHY ---------- */
+    .why {
+        width: calc(100% - 20px) !important;
+        margin: 25px auto !important;
+        grid-template-columns: 1fr !important;
+        box-sizing: border-box !important;
+        border-radius: 24px !important;
+    }
+
+    .why > * {
+        min-width: 0 !important;
+    }
+
+    /* ---------- WELCOME + NEWS ---------- */
+    .section.wrap.welcome,
+    .welcome {
+        width: calc(100% - 20px) !important;
+        max-width: none !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        grid-template-columns: 1fr !important;
+        gap: 28px !important;
+        box-sizing: border-box !important;
+        border-radius: 25px !important;
+        padding: 28px 17px !important;
+    }
+
+    .welcome .title,
+    .welcome h2.title {
+        font-size: clamp(25px, 7.5vw, 34px) !important;
+        line-height: 1.12 !important;
+        text-align: center !important;
+    }
+
+    .welcome p {
+        font-size: 13px !important;
+        line-height: 1.7 !important;
+    }
+
+    .welcome-img {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow: hidden !important;
+        border-radius: 20px !important;
+    }
+
+    .welcome-img img {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        object-fit: cover !important;
+    }
+
+    .news {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    .news-box {
+        width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+        padding: 15px !important;
+        border-radius: 20px !important;
+        gap: 12px !important;
+    }
+
+    .news-img {
+        flex: 0 0 62px !important;
+        width: 62px !important;
+        height: 62px !important;
+    }
+
+    .news-box h4 {
+        font-size: 15px !important;
+        line-height: 1.25 !important;
+    }
+
+    .news-box p {
+        font-size: 11px !important;
+        line-height: 1.45 !important;
+    }
+
+    /* ---------- GALLERY BANNER ---------- */
+    .gallery-banner {
+        width: 100% !important;
+        min-height: auto !important;
+        padding: 48px 16px !important;
+        box-sizing: border-box !important;
+    }
+
+    .gallery-banner-grid {
+        width: 100% !important;
+        max-width: 100% !important;
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        text-align: center !important;
+    }
+
+    .gallery-banner .title {
+        font-size: clamp(27px, 8vw, 38px) !important;
+        line-height: 1.08 !important;
+    }
+
+    .gallery-banner .btn {
+        display: inline-flex !important;
+        max-width: 290px !important;
+        margin: 10px auto 0 !important;
+    }
+
+    .gallery-arc {
+        width: min(82vw, 300px) !important;
+        height: min(82vw, 300px) !important;
+        margin: 0 auto !important;
+    }
+
+    /* ---------- FOOTER ---------- */
+    .footer {
+        overflow: hidden !important;
+    }
+
+    .footgrid {
+        width: calc(100% - 24px) !important;
+        grid-template-columns: 1fr !important;
+        gap: 22px !important;
+    }
+
+    /* ---------- BUTTONS / IMAGES ---------- */
+    img,
+    video,
+    iframe {
+        max-width: 100% !important;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+}
+
+/* HP SANGAT KECIL */
+@media (max-width: 380px) {
+
+    .scrap-nav {
+        width: calc(100% - 12px) !important;
+    }
+
+    .scrap-menu-item,
+    .scrap-login {
+        min-width: 67px !important;
+        height: 49px !important;
+        padding: 6px 8px !important;
+        font-size: 9px !important;
+    }
+
+    .scrap-icon {
+        font-size: 14px !important;
+    }
+
+    .hero-wow {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+    }
+
+    .hero-title,
+    .hero-content h1 {
+        font-size: 31px !important;
+    }
+
+    .hero-visual {
+        min-height: 265px !important;
+        height: 265px !important;
+    }
+
+    .visual-circle {
+        width: 245px !important;
+        height: 245px !important;
+    }
+
+    .hero-stats {
+        gap: 5px !important;
+    }
+
+    .hero-stat strong {
+        font-size: 14px !important;
+    }
+}
