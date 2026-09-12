@@ -10290,335 +10290,366 @@ body {
 
 
 /* =========================================================
-   RA MIFTAHUL HIKMAH — RESPONSIVE HD MOBILE + LAPTOP
-   Tambahan ini hanya mengatur tampilan responsif.
-   Tidak mengubah struktur HTML.
+   RA MIFTAHUL HIKMAH — HD COLORFUL SMOOTH BACKGROUND
+   BACKGROUND + ANIMATION ONLY
+   TIDAK MENGUBAH LAYOUT, UKURAN, POSISI, ATAU STRUKTUR
    ========================================================= */
 
-/* Mencegah halaman melebar ke samping */
+/* WARNA DASAR WEBSITE */
 html,
 body {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden !important;
+    background-color: #eafcff !important;
 }
 
-/* Semua gambar/video tidak boleh keluar layar */
-img,
-video,
-iframe {
-    max-width: 100%;
+body {
+    background-image:
+        radial-gradient(circle at 5% 12%, rgba(0, 210, 255, .30) 0 95px, transparent 250px),
+        radial-gradient(circle at 94% 16%, rgba(255, 72, 150, .26) 0 100px, transparent 260px),
+        radial-gradient(circle at 86% 82%, rgba(255, 205, 45, .25) 0 105px, transparent 270px),
+        radial-gradient(circle at 10% 86%, rgba(75, 220, 135, .24) 0 100px, transparent 260px),
+        radial-gradient(circle at 50% 48%, rgba(151, 101, 255, .16) 0 120px, transparent 300px),
+        linear-gradient(
+            120deg,
+            #dffaff 0%,
+            #dceeff 18%,
+            #eee2ff 36%,
+            #ffe2ef 54%,
+            #e0fff0 72%,
+            #fff3c9 86%,
+            #e5e2ff 100%
+        ) !important;
+    background-size:
+        900px 900px,
+        950px 950px,
+        1000px 1000px,
+        950px 950px,
+        1100px 1100px,
+        450% 450% !important;
+    background-position:
+        0% 0%,
+        100% 0%,
+        100% 100%,
+        0% 100%,
+        50% 50%,
+        0% 50% !important;
+    background-repeat: no-repeat !important;
+    animation: rmhHDColorFlow 24s ease-in-out infinite alternate !important;
 }
 
-/* Container utama tetap fleksibel */
-.wrap,
-.nav-container {
-    width: min(100% - 32px, 1180px);
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* =========================================================
-   NAVBAR
-   ========================================================= */
-
-.navbar {
-    width: 100%;
-    max-width: 100%;
-    overflow: visible !important;
-}
-
-.navbar .nav-container {
-    min-width: 0;
-}
-
-.navbar .rainbow-menu {
-    min-width: 0;
-    max-width: 100%;
-    flex-wrap: nowrap !important;
-    overflow-x: auto !important;
-    overflow-y: hidden !important;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-}
-
-.navbar .rainbow-menu::-webkit-scrollbar {
-    display: none;
-}
-
-.navbar .rainbow-menu .rainbow-item {
-    flex: 0 0 auto !important;
-    white-space: nowrap !important;
-}
-
-/* =========================================================
-   DESKTOP / LAPTOP
-   ========================================================= */
-
-@media (min-width: 901px) {
-
-    .navbar .rainbow-menu {
-        justify-content: flex-end;
+@keyframes rmhHDColorFlow {
+    0% {
+        background-position:
+            0% 0%,
+            100% 0%,
+            100% 100%,
+            0% 100%,
+            50% 50%,
+            0% 50%;
     }
 
+    25% {
+        background-position:
+            14% 10%,
+            88% 12%,
+            90% 88%,
+            10% 90%,
+            42% 58%,
+            28% 46%;
+    }
+
+    50% {
+        background-position:
+            24% 20%,
+            76% 24%,
+            78% 76%,
+            22% 78%,
+            58% 42%,
+            55% 54%;
+    }
+
+    75% {
+        background-position:
+            12% 28%,
+            90% 18%,
+            86% 84%,
+            8% 72%,
+            46% 62%,
+            78% 48%;
+    }
+
+    100% {
+        background-position:
+            0% 0%,
+            100% 0%,
+            100% 100%,
+            0% 100%,
+            50% 50%,
+            100% 50%;
+    }
+}
+
+/* HEADER ATAS — LEBIH CERAH */
+.top {
+    background:
+        linear-gradient(
+            115deg,
+            #bff5ff 0%,
+            #d9efff 28%,
+            #eee3ff 52%,
+            #ffe1ee 76%,
+            #fff0bd 100%
+        ) !important;
+    background-size: 350% 350% !important;
+    animation: rmhHeaderColor 18s ease-in-out infinite alternate !important;
+}
+
+@keyframes rmhHeaderColor {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 50% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* HERO UTAMA — CYAN + PINK + UNGU + KUNING */
+.hero-wow {
+    background:
+        radial-gradient(circle at 8% 22%, rgba(0, 225, 255, .34) 0 105px, transparent 285px),
+        radial-gradient(circle at 92% 18%, rgba(255, 60, 145, .28) 0 110px, transparent 290px),
+        radial-gradient(circle at 78% 86%, rgba(255, 214, 45, .25) 0 120px, transparent 300px),
+        radial-gradient(circle at 30% 78%, rgba(112, 92, 255, .20) 0 120px, transparent 310px),
+        linear-gradient(
+            120deg,
+            #7ee9ff 0%,
+            #9bdfff 20%,
+            #c8d8ff 38%,
+            #ead0ff 55%,
+            #ffd2e5 72%,
+            #c9ffe9 88%,
+            #fff0b5 100%
+        ) !important;
+    background-size:
+        900px 900px,
+        950px 950px,
+        1000px 1000px,
+        1050px 1050px,
+        420% 420% !important;
+    background-position:
+        0% 20%,
+        100% 15%,
+        90% 90%,
+        20% 80%,
+        0% 50% !important;
+    animation: rmhHeroHD 20s ease-in-out infinite alternate !important;
+}
+
+@keyframes rmhHeroHD {
+    0% {
+        background-position:
+            0% 20%,
+            100% 15%,
+            90% 90%,
+            20% 80%,
+            0% 50%;
+    }
+    50% {
+        background-position:
+            18% 34%,
+            82% 26%,
+            72% 72%,
+            34% 66%,
+            55% 50%;
+    }
+    100% {
+        background-position:
+            28% 45%,
+            72% 40%,
+            62% 62%,
+            46% 52%,
+            100% 50%;
+    }
+}
+
+/* HERO LAMA / HALAMAN UMUM */
+.hero,
+.pagehero {
+    background:
+        radial-gradient(circle at 12% 25%, rgba(0, 220, 255, .24) 0 90px, transparent 250px),
+        radial-gradient(circle at 88% 72%, rgba(255, 75, 155, .22) 0 100px, transparent 270px),
+        linear-gradient(
+            120deg,
+            #8feaff 0%,
+            #c8e9ff 30%,
+            #e8dcff 55%,
+            #ffdce9 78%,
+            #ddffed 100%
+        ) !important;
+    background-size: 850px 850px, 900px 900px, 380% 380% !important;
+    background-position: 0% 20%, 100% 80%, 0% 50% !important;
+    animation: rmhGeneralHeroHD 23s ease-in-out infinite alternate !important;
+}
+
+@keyframes rmhGeneralHeroHD {
+    0%   { background-position: 0% 20%, 100% 80%, 0% 50%; }
+    50%  { background-position: 16% 38%, 84% 62%, 55% 50%; }
+    100% { background-position: 28% 52%, 72% 48%, 100% 50%; }
+}
+
+/* AREA FITUR — RAINBOW LEMBUT TAPI JELAS */
+.features-wow {
+    background:
+        radial-gradient(circle at 10% 40%, rgba(0, 214, 255, .25) 0 85px, transparent 240px),
+        radial-gradient(circle at 90% 35%, rgba(255, 71, 157, .22) 0 95px, transparent 250px),
+        radial-gradient(circle at 48% 92%, rgba(255, 208, 47, .18) 0 90px, transparent 250px),
+        linear-gradient(
+            115deg,
+            rgba(193, 246, 255, .96),
+            rgba(218, 237, 255, .96),
+            rgba(235, 221, 255, .96),
+            rgba(255, 222, 238, .96),
+            rgba(219, 255, 238, .96)
+        ) !important;
+    background-size: 800px 800px, 850px 850px, 900px 900px, 420% 420% !important;
+    background-position: 0% 50%, 100% 40%, 50% 100%, 0% 50% !important;
+    animation: rmhFeaturesHD 22s ease-in-out infinite alternate !important;
+}
+
+@keyframes rmhFeaturesHD {
+    0%   { background-position: 0% 50%, 100% 40%, 50% 100%, 0% 50%; }
+    50%  { background-position: 18% 44%, 82% 56%, 48% 82%, 55% 50%; }
+    100% { background-position: 30% 56%, 70% 44%, 55% 70%, 100% 50%; }
+}
+
+/* SECTION BIASA — TIDAK MENGUBAH LAYOUT */
+.section {
+    background:
+        radial-gradient(circle at 8% 20%, rgba(0, 210, 255, .13) 0 100px, transparent 270px),
+        radial-gradient(circle at 92% 78%, rgba(255, 82, 159, .13) 0 110px, transparent 280px),
+        linear-gradient(
+            125deg,
+            rgba(225, 250, 255, .96),
+            rgba(239, 230, 255, .96),
+            rgba(255, 235, 246, .96),
+            rgba(232, 255, 243, .96),
+            rgba(255, 246, 207, .96)
+        ) !important;
+    background-size: 900px 900px, 950px 950px, 430% 430% !important;
+    background-position: 0% 20%, 100% 80%, 0% 50% !important;
+    animation: rmhSectionHD 30s ease-in-out infinite alternate !important;
+}
+
+@keyframes rmhSectionHD {
+    0%   { background-position: 0% 20%, 100% 80%, 0% 50%; }
+    50%  { background-position: 14% 36%, 86% 64%, 50% 50%; }
+    100% { background-position: 26% 50%, 74% 50%, 100% 50%; }
+}
+
+/* WHY CHOOSE US */
+.why {
+    background:
+        radial-gradient(circle at 12% 40%, rgba(0, 215, 255, .24) 0 80px, transparent 230px),
+        radial-gradient(circle at 88% 60%, rgba(255, 80, 158, .20) 0 90px, transparent 240px),
+        linear-gradient(
+            115deg,
+            #c9f5ff 0%,
+            #dceaff 28%,
+            #e8dcff 52%,
+            #ffe0ed 76%,
+            #dcffeb 100%
+        ) !important;
+    background-size: 850px 850px, 900px 900px, 400% 400% !important;
+    background-position: 0% 50%, 100% 50%, 0% 50% !important;
+    animation: rmhWhyHD 26s ease-in-out infinite alternate !important;
+}
+
+@keyframes rmhWhyHD {
+    0%   { background-position: 0% 50%, 100% 50%, 0% 50%; }
+    50%  { background-position: 16% 42%, 84% 58%, 55% 50%; }
+    100% { background-position: 28% 58%, 72% 42%, 100% 50%; }
+}
+
+/* WELCOME */
+.welcome {
+    background:
+        radial-gradient(circle at 10% 70%, rgba(0, 220, 255, .18) 0 95px, transparent 250px),
+        radial-gradient(circle at 88% 25%, rgba(255, 204, 42, .20) 0 100px, transparent 260px),
+        linear-gradient(
+            120deg,
+            #d9f9ff 0%,
+            #e5edff 28%,
+            #f0e1ff 50%,
+            #ffe4ef 74%,
+            #e0ffef 100%
+        ) !important;
+    background-size: 900px 900px, 950px 950px, 420% 420% !important;
+    background-position: 0% 70%, 100% 20%, 0% 50% !important;
+    animation: rmhWelcomeHD 28s ease-in-out infinite alternate !important;
+}
+
+@keyframes rmhWelcomeHD {
+    0%   { background-position: 0% 70%, 100% 20%, 0% 50%; }
+    50%  { background-position: 15% 55%, 85% 45%, 52% 50%; }
+    100% { background-position: 28% 45%, 72% 60%, 100% 50%; }
+}
+
+/* NEWS */
+.news-box {
+    background:
+        linear-gradient(
+            125deg,
+            rgba(193, 246, 255, .97),
+            rgba(224, 237, 255, .97),
+            rgba(239, 224, 255, .97),
+            rgba(255, 224, 241, .97)
+        ) !important;
+    background-size: 360% 360% !important;
+    background-position: 0% 50% !important;
+    animation: rmhNewsHD 17s ease-in-out infinite alternate !important;
+}
+
+@keyframes rmhNewsHD {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 50% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* GALLERY / AREA BAWAH */
+.gallery-banner {
+    background:
+        radial-gradient(circle at 12% 35%, rgba(0, 215, 255, .22) 0 100px, transparent 270px),
+        radial-gradient(circle at 88% 68%, rgba(255, 76, 158, .20) 0 105px, transparent 280px),
+        radial-gradient(circle at 52% 92%, rgba(255, 208, 43, .16) 0 95px, transparent 260px),
+        linear-gradient(
+            120deg,
+            #d9faff 0%,
+            #e5e9ff 28%,
+            #f0e0ff 50%,
+            #ffe1ee 72%,
+            #dcfff0 100%
+        ) !important;
+    background-size: 900px 900px, 950px 950px, 900px 900px, 420% 420% !important;
+    background-position: 0% 35%, 100% 65%, 50% 100%, 0% 50% !important;
+    animation: rmhGalleryHD 29s ease-in-out infinite alternate !important;
+}
+
+@keyframes rmhGalleryHD {
+    0%   { background-position: 0% 35%, 100% 65%, 50% 100%, 0% 50%; }
+    50%  { background-position: 16% 48%, 84% 52%, 44% 84%, 55% 50%; }
+    100% { background-position: 28% 60%, 72% 40%, 58% 68%, 100% 50%; }
+}
+
+/* REDUCE MOTION */
+@media (prefers-reduced-motion: reduce) {
+    html,
+    body,
+    .top,
     .hero-wow,
+    .hero,
+    .pagehero,
     .features-wow,
+    .section,
     .why,
     .welcome,
+    .news-box,
     .gallery-banner {
-        max-width: 100%;
+        animation: none !important;
     }
-
-}
-
-/* =========================================================
-   TABLET
-   ========================================================= */
-
-@media (max-width: 900px) {
-
-    .wrap,
-    .nav-container {
-        width: min(100% - 28px, 760px);
-    }
-
-    .hero-wow,
-    .features-wow,
-    .why,
-    .welcome,
-    .gallery-banner {
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    .welcome {
-        grid-template-columns: 1fr !important;
-    }
-
-    .why {
-        grid-template-columns: 1fr !important;
-    }
-
-    .news {
-        width: 100%;
-        max-width: 100%;
-        box-sizing: border-box;
-    }
-
-    .features-wow {
-        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    }
-
-}
-
-/* =========================================================
-   HP
-   ========================================================= */
-
-@media (max-width: 600px) {
-
-    /* ---------- GLOBAL ---------- */
-
-    html {
-        font-size: 15px;
-    }
-
-    body {
-        min-width: 0 !important;
-        width: 100% !important;
-    }
-
-    .wrap,
-    .nav-container {
-        width: calc(100% - 24px) !important;
-        max-width: none !important;
-    }
-
-    /* ---------- NAVBAR ---------- */
-
-    .navbar .nav-container {
-        gap: 8px;
-        min-width: 0;
-    }
-
-    .navbar .logo {
-        flex: 0 0 auto !important;
-        white-space: nowrap !important;
-    }
-
-    .navbar .rainbow-menu {
-        flex: 1 1 auto !important;
-        min-width: 0 !important;
-    }
-
-    .navbar .rainbow-menu .rainbow-item {
-        font-size: 13px !important;
-        padding: 8px 11px !important;
-    }
-
-    /* ---------- HERO ---------- */
-
-    .hero-wow {
-        box-sizing: border-box;
-        background-size: 700px 700px, 760px 760px, 520% 520% !important;
-    }
-
-    /* Jangan biarkan judul/teks hero melebar */
-    .hero-wow h1,
-    .hero-wow h2,
-    .hero-wow h3,
-    .hero-wow p {
-        max-width: 100%;
-        overflow-wrap: anywhere;
-    }
-
-    .hero-wow img {
-        max-width: 100% !important;
-        height: auto !important;
-    }
-
-    /* ---------- FEATURES ---------- */
-
-    .features-wow {
-        grid-template-columns: 1fr !important;
-        width: 100% !important;
-        box-sizing: border-box;
-    }
-
-    .features-wow > * {
-        min-width: 0 !important;
-        max-width: 100% !important;
-        box-sizing: border-box;
-    }
-
-    /* ---------- WHY ---------- */
-
-    .why {
-        grid-template-columns: 1fr !important;
-        width: 100% !important;
-        box-sizing: border-box;
-    }
-
-    .why > * {
-        min-width: 0 !important;
-        max-width: 100% !important;
-        box-sizing: border-box;
-    }
-
-    /* ---------- WELCOME ---------- */
-
-    .welcome {
-        grid-template-columns: 1fr !important;
-        width: 100% !important;
-        box-sizing: border-box;
-    }
-
-    .welcome > * {
-        min-width: 0 !important;
-        max-width: 100% !important;
-        box-sizing: border-box;
-    }
-
-    .welcome-img {
-        max-width: 100% !important;
-        height: auto !important;
-    }
-
-    /* ---------- NEWS ---------- */
-
-    .news,
-    .news-box {
-        width: 100% !important;
-        max-width: 100% !important;
-        min-width: 0 !important;
-        box-sizing: border-box;
-    }
-
-    /* ---------- GALLERY ---------- */
-
-    .gallery-banner {
-        width: 100% !important;
-        box-sizing: border-box;
-    }
-
-    .gallery-banner img {
-        max-width: 100% !important;
-        height: auto !important;
-    }
-
-    /* ---------- TABLES ---------- */
-
-    table {
-        width: 100%;
-        max-width: 100%;
-        display: block;
-        overflow-x: auto;
-    }
-
-    /* ---------- FORMS ---------- */
-
-    input,
-    textarea,
-    select,
-    button {
-        max-width: 100%;
-        box-sizing: border-box;
-    }
-
-    /* ---------- MODAL ---------- */
-
-    .modal,
-    #modal {
-        box-sizing: border-box;
-    }
-
-    /* ---------- TEXT ---------- */
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    p {
-        overflow-wrap: break-word;
-    }
-
-}
-
-/* =========================================================
-   HP KECIL
-   ========================================================= */
-
-@media (max-width: 380px) {
-
-    .wrap,
-    .nav-container {
-        width: calc(100% - 18px) !important;
-    }
-
-    .navbar .rainbow-menu .rainbow-item {
-        font-size: 12px !important;
-        padding: 7px 9px !important;
-    }
-
-    .features-wow {
-        grid-template-columns: 1fr !important;
-    }
-
-}
-
-/* =========================================================
-   SAFE IMAGE FALLBACK
-   Jika gambar gagal dimuat, area tidak menyebabkan
-   layout melebar.
-   ========================================================= */
-
-.hero-wow img,
-.features-wow img,
-.why img,
-.welcome img,
-.gallery-banner img {
-    max-width: 100%;
-    object-fit: contain;
 }
