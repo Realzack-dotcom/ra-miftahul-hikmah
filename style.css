@@ -10289,4 +10289,336 @@ body {
 }
 
 
+/* =========================================================
+   RA MIFTAHUL HIKMAH — RESPONSIVE HD MOBILE + LAPTOP
+   Tambahan ini hanya mengatur tampilan responsif.
+   Tidak mengubah struktur HTML.
+   ========================================================= */
 
+/* Mencegah halaman melebar ke samping */
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden !important;
+}
+
+/* Semua gambar/video tidak boleh keluar layar */
+img,
+video,
+iframe {
+    max-width: 100%;
+}
+
+/* Container utama tetap fleksibel */
+.wrap,
+.nav-container {
+    width: min(100% - 32px, 1180px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+.navbar {
+    width: 100%;
+    max-width: 100%;
+    overflow: visible !important;
+}
+
+.navbar .nav-container {
+    min-width: 0;
+}
+
+.navbar .rainbow-menu {
+    min-width: 0;
+    max-width: 100%;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.navbar .rainbow-menu::-webkit-scrollbar {
+    display: none;
+}
+
+.navbar .rainbow-menu .rainbow-item {
+    flex: 0 0 auto !important;
+    white-space: nowrap !important;
+}
+
+/* =========================================================
+   DESKTOP / LAPTOP
+   ========================================================= */
+
+@media (min-width: 901px) {
+
+    .navbar .rainbow-menu {
+        justify-content: flex-end;
+    }
+
+    .hero-wow,
+    .features-wow,
+    .why,
+    .welcome,
+    .gallery-banner {
+        max-width: 100%;
+    }
+
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .wrap,
+    .nav-container {
+        width: min(100% - 28px, 760px);
+    }
+
+    .hero-wow,
+    .features-wow,
+    .why,
+    .welcome,
+    .gallery-banner {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .welcome {
+        grid-template-columns: 1fr !important;
+    }
+
+    .why {
+        grid-template-columns: 1fr !important;
+    }
+
+    .news {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .features-wow {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+
+}
+
+/* =========================================================
+   HP
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    /* ---------- GLOBAL ---------- */
+
+    html {
+        font-size: 15px;
+    }
+
+    body {
+        min-width: 0 !important;
+        width: 100% !important;
+    }
+
+    .wrap,
+    .nav-container {
+        width: calc(100% - 24px) !important;
+        max-width: none !important;
+    }
+
+    /* ---------- NAVBAR ---------- */
+
+    .navbar .nav-container {
+        gap: 8px;
+        min-width: 0;
+    }
+
+    .navbar .logo {
+        flex: 0 0 auto !important;
+        white-space: nowrap !important;
+    }
+
+    .navbar .rainbow-menu {
+        flex: 1 1 auto !important;
+        min-width: 0 !important;
+    }
+
+    .navbar .rainbow-menu .rainbow-item {
+        font-size: 13px !important;
+        padding: 8px 11px !important;
+    }
+
+    /* ---------- HERO ---------- */
+
+    .hero-wow {
+        box-sizing: border-box;
+        background-size: 700px 700px, 760px 760px, 520% 520% !important;
+    }
+
+    /* Jangan biarkan judul/teks hero melebar */
+    .hero-wow h1,
+    .hero-wow h2,
+    .hero-wow h3,
+    .hero-wow p {
+        max-width: 100%;
+        overflow-wrap: anywhere;
+    }
+
+    .hero-wow img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+
+    /* ---------- FEATURES ---------- */
+
+    .features-wow {
+        grid-template-columns: 1fr !important;
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    .features-wow > * {
+        min-width: 0 !important;
+        max-width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    /* ---------- WHY ---------- */
+
+    .why {
+        grid-template-columns: 1fr !important;
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    .why > * {
+        min-width: 0 !important;
+        max-width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    /* ---------- WELCOME ---------- */
+
+    .welcome {
+        grid-template-columns: 1fr !important;
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    .welcome > * {
+        min-width: 0 !important;
+        max-width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    .welcome-img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+
+    /* ---------- NEWS ---------- */
+
+    .news,
+    .news-box {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box;
+    }
+
+    /* ---------- GALLERY ---------- */
+
+    .gallery-banner {
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    .gallery-banner img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+
+    /* ---------- TABLES ---------- */
+
+    table {
+        width: 100%;
+        max-width: 100%;
+        display: block;
+        overflow-x: auto;
+    }
+
+    /* ---------- FORMS ---------- */
+
+    input,
+    textarea,
+    select,
+    button {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* ---------- MODAL ---------- */
+
+    .modal,
+    #modal {
+        box-sizing: border-box;
+    }
+
+    /* ---------- TEXT ---------- */
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+        overflow-wrap: break-word;
+    }
+
+}
+
+/* =========================================================
+   HP KECIL
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .wrap,
+    .nav-container {
+        width: calc(100% - 18px) !important;
+    }
+
+    .navbar .rainbow-menu .rainbow-item {
+        font-size: 12px !important;
+        padding: 7px 9px !important;
+    }
+
+    .features-wow {
+        grid-template-columns: 1fr !important;
+    }
+
+}
+
+/* =========================================================
+   SAFE IMAGE FALLBACK
+   Jika gambar gagal dimuat, area tidak menyebabkan
+   layout melebar.
+   ========================================================= */
+
+.hero-wow img,
+.features-wow img,
+.why img,
+.welcome img,
+.gallery-banner img {
+    max-width: 100%;
+    object-fit: contain;
+}
