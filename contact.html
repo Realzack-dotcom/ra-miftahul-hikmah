@@ -1,21 +1,2704 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 
 <head>
 
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
 
     <meta
         name="viewport"
-        content="width=device-width, initial-scale=1"
+        content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Contact | Ra Miftahul Hikmah</title>
+    <meta
+        name="description"
+        content="Hubungi RA Miftahul Hikmah"
+    >
+
+    <title>
+        Contact | RA Miftahul Hikmah
+    </title>
+
+
+    <!-- GOOGLE FONT -->
 
     <link
-        rel="stylesheet"
-        href="css/style.css"
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
     >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+
+<style>
+
+/* =====================================================
+   RA MIFTAHUL HIKMAH
+   CONTACT PAGE
+===================================================== */
+
+* {
+
+    box-sizing:
+        border-box;
+
+}
+
+
+html {
+
+    scroll-behavior:
+        smooth;
+
+}
+
+
+body {
+
+    margin:
+        0;
+
+    overflow-x:
+        hidden;
+
+    font-family:
+        "Nunito",
+        sans-serif;
+
+    color:
+        #342d4c;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            #fff9fc 0%,
+            #f9f5ff 30%,
+            #f4fbff 60%,
+            #fffaf2 100%
+        );
+
+    background-size:
+        300% 300%;
+
+    animation:
+        backgroundMove 18s ease infinite;
+
+}
+
+
+@keyframes backgroundMove {
+
+    0% {
+
+        background-position:
+            0% 50%;
+
+    }
+
+    50% {
+
+        background-position:
+            100% 50%;
+
+    }
+
+    100% {
+
+        background-position:
+            0% 50%;
+
+    }
+
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.au-container {
+
+    width:
+        min(
+            1180px,
+            calc(100% - 32px)
+        );
+
+    margin:
+        auto;
+
+}
+
+
+/* =====================================================
+   BACKGROUND
+===================================================== */
+
+.ct-bg {
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    z-index:
+        -2;
+
+    pointer-events:
+        none;
+
+    overflow:
+        hidden;
+
+}
+
+
+.ct-bg::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        320px;
+
+    height:
+        320px;
+
+    border-radius:
+        50%;
+
+    top:
+        8%;
+
+    left:
+        -150px;
+
+    background:
+        rgba(255,139,184,.20);
+
+    filter:
+        blur(65px);
+
+    animation:
+        blobOne 12s ease-in-out infinite;
+
+}
+
+
+.ct-bg::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        360px;
+
+    height:
+        360px;
+
+    border-radius:
+        50%;
+
+    bottom:
+        5%;
+
+    right:
+        -180px;
+
+    background:
+        rgba(126,189,255,.22);
+
+    filter:
+        blur(70px);
+
+    animation:
+        blobTwo 14s ease-in-out infinite;
+
+}
+
+
+@keyframes blobOne {
+
+    0%,
+    100% {
+
+        transform:
+            translate(0,0)
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            translate(110px,80px)
+            scale(1.2);
+
+    }
+
+}
+
+
+@keyframes blobTwo {
+
+    0%,
+    100% {
+
+        transform:
+            translate(0,0)
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            translate(-90px,-100px)
+            scale(1.18);
+
+    }
+
+}
+
+
+/* =====================================================
+   FLOATING DECORATION
+===================================================== */
+
+.ct-decoration {
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    z-index:
+        -1;
+
+    pointer-events:
+        none;
+
+    overflow:
+        hidden;
+
+}
+
+
+.ct-star {
+
+    position:
+        absolute;
+
+    opacity:
+        .45;
+
+    animation:
+        starFloat 7s ease-in-out infinite;
+
+}
+
+
+.ct-star.one {
+
+    top:
+        22%;
+
+    left:
+        6%;
+
+    font-size:
+        30px;
+
+}
+
+
+.ct-star.two {
+
+    top:
+        55%;
+
+    right:
+        7%;
+
+    font-size:
+        38px;
+
+    animation-delay:
+        -2s;
+
+}
+
+
+.ct-star.three {
+
+    bottom:
+        12%;
+
+    left:
+        9%;
+
+    font-size:
+        32px;
+
+    animation-delay:
+        -4s;
+
+}
+
+
+@keyframes starFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-18px)
+            rotate(12deg);
+
+    }
+
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.au-header {
+
+    position:
+        relative;
+
+    z-index:
+        100;
+
+    background:
+        rgba(255,255,255,.78);
+
+    backdrop-filter:
+        blur(20px);
+
+    border-bottom:
+        1px solid rgba(255,255,255,.9);
+
+}
+
+
+.au-header-inner {
+
+    min-height:
+        72px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        12px;
+
+}
+
+
+.au-brand {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+
+    text-decoration:
+        none;
+
+    color:
+        #342d4c;
+
+}
+
+
+.au-logo {
+
+    width:
+        46px;
+
+    height:
+        46px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    border-radius:
+        15px;
+
+    font-size:
+        24px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #fff1a8,
+            #ffd5e5,
+            #d6efff
+        );
+
+    box-shadow:
+        0 8px 25px rgba(239,79,130,.18);
+
+    animation:
+        logoFloat 4s ease-in-out infinite;
+
+}
+
+
+@keyframes logoFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-5px)
+            rotate(5deg);
+
+    }
+
+}
+
+
+.au-brand h1 {
+
+    margin:
+        0;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size:
+        18px;
+
+    line-height:
+        1;
+
+}
+
+
+.au-brand h1 span {
+
+    color:
+        #ef4f82;
+
+}
+
+
+.au-brand p {
+
+    margin:
+        4px 0 0;
+
+    color:
+        #817991;
+
+    font-size:
+        10px;
+
+}
+
+
+.au-visit {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        10px 13px;
+
+    border-radius:
+        13px;
+
+    text-decoration:
+        none;
+
+    color:
+        white;
+
+    font-size:
+        11px;
+
+    font-weight:
+        900;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #ef4f82,
+            #ff7da7
+        );
+
+    box-shadow:
+        0 9px 20px rgba(239,79,130,.25);
+
+    transition:
+        .3s ease;
+
+}
+
+
+.au-visit:hover {
+
+    transform:
+        translateY(-3px);
+
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.au-nav {
+
+    position:
+        sticky;
+
+    top:
+        0;
+
+    z-index:
+        99;
+
+    background:
+        rgba(255,255,255,.92);
+
+    backdrop-filter:
+        blur(20px);
+
+    border-bottom:
+        1px solid rgba(120,90,180,.08);
+
+}
+
+
+.au-nav-inner {
+
+    width:
+        min(
+            1180px,
+            calc(100% - 20px)
+        );
+
+    margin:
+        auto;
+
+    display:
+        flex;
+
+    gap:
+        6px;
+
+    padding:
+        8px 0;
+
+    overflow-x:
+        auto;
+
+    scrollbar-width:
+        none;
+
+}
+
+
+.au-nav-inner::-webkit-scrollbar {
+
+    display:
+        none;
+
+}
+
+
+.au-nav-link {
+
+    flex:
+        0 0 auto;
+
+    min-width:
+        62px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        3px;
+
+    padding:
+        8px 9px;
+
+    border-radius:
+        14px;
+
+    text-decoration:
+        none;
+
+    color:
+        #6f687d;
+
+    font-size:
+        9px;
+
+    font-weight:
+        900;
+
+    transition:
+        .3s ease;
+
+}
+
+
+.au-nav-link:hover {
+
+    background:
+        #f5f2fb;
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+.au-nav-icon {
+
+    font-size:
+        19px;
+
+}
+
+
+.au-nav-link.active {
+
+    color:
+        white;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #7b6cff,
+            #a47fff
+        );
+
+    box-shadow:
+        0 7px 18px rgba(125,108,255,.25);
+
+}
+
+
+.au-more-wrap {
+
+    flex:
+        0 0 auto;
+
+}
+
+
+.au-more-button {
+
+    height:
+        100%;
+
+    min-width:
+        72px;
+
+    border:
+        none;
+
+    cursor:
+        pointer;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        3px;
+
+    padding:
+        8px 10px;
+
+    border-radius:
+        14px;
+
+    background:
+        #f5f2fb;
+
+    color:
+        #6b617b;
+
+    font-size:
+        9px;
+
+    font-weight:
+        900;
+
+}
+
+
+.au-more-button span {
+
+    font-size:
+        18px;
+
+}
+
+
+/* =====================================================
+   DROPDOWN
+===================================================== */
+
+.au-more-menu {
+
+    position:
+        fixed;
+
+    top:
+        138px;
+
+    left:
+        16px;
+
+    right:
+        16px;
+
+    z-index:
+        300;
+
+    display:
+        none;
+
+    overflow:
+        hidden;
+
+    border-radius:
+        22px;
+
+    background:
+        rgba(255,255,255,.97);
+
+    box-shadow:
+        0 20px 55px rgba(57,40,90,.18);
+
+    opacity:
+        0;
+
+    transform:
+        translateY(-10px);
+
+    transition:
+        .25s ease;
+
+}
+
+
+.au-more-menu.open {
+
+    display:
+        block;
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+.au-more-title {
+
+    padding:
+        16px 18px;
+
+    font-size:
+        14px;
+
+    font-weight:
+        900;
+
+    border-bottom:
+        1px solid #f0edf5;
+
+}
+
+
+.au-more-menu a {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        13px;
+
+    padding:
+        15px 18px;
+
+    text-decoration:
+        none;
+
+    color:
+        #665e72;
+
+    font-size:
+        14px;
+
+    font-weight:
+        800;
+
+    border-bottom:
+        1px solid #f5f2f7;
+
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.ct-hero {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    padding:
+        70px 0 80px;
+
+    text-align:
+        center;
+
+}
+
+
+.ct-hero::before {
+
+    content:
+        "💌";
+
+    position:
+        absolute;
+
+    top:
+        30px;
+
+    left:
+        8%;
+
+    font-size:
+        48px;
+
+    opacity:
+        .28;
+
+    animation:
+        emojiFloat 5s ease-in-out infinite;
+
+}
+
+
+.ct-hero::after {
+
+    content:
+        "🌈";
+
+    position:
+        absolute;
+
+    right:
+        7%;
+
+    bottom:
+        20px;
+
+    font-size:
+        55px;
+
+    opacity:
+        .30;
+
+    animation:
+        emojiFloat 6s ease-in-out infinite reverse;
+
+}
+
+
+@keyframes emojiFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-14px)
+            rotate(8deg);
+
+    }
+
+}
+
+
+.ct-hero-content {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+}
+
+
+.ct-badge {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+
+    padding:
+        9px 16px;
+
+    border-radius:
+        50px;
+
+    background:
+        rgba(255,255,255,.82);
+
+    color:
+        #8466bd;
+
+    font-size:
+        12px;
+
+    font-weight:
+        900;
+
+    box-shadow:
+        0 10px 30px rgba(80,60,120,.08);
+
+    animation:
+        badgeFloat 4s ease-in-out infinite;
+
+}
+
+
+@keyframes badgeFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-6px);
+
+    }
+
+}
+
+
+.ct-hero h2 {
+
+    margin:
+        18px 0 0;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size:
+        clamp(48px,15vw,76px);
+
+    line-height:
+        .95;
+
+}
+
+
+.ct-hero h2 span {
+
+    color:
+        #ef4f82;
+
+}
+
+
+.ct-hero p {
+
+    max-width:
+        600px;
+
+    margin:
+        20px auto 0;
+
+    color:
+        #766d84;
+
+    font-size:
+        14px;
+
+    line-height:
+        1.8;
+
+}
+
+
+/* =====================================================
+   SECTION
+===================================================== */
+
+.ct-section {
+
+    padding:
+        45px 0;
+
+}
+
+
+.ct-heading {
+
+    text-align:
+        center;
+
+    margin-bottom:
+        30px;
+
+}
+
+
+.ct-heading-badge {
+
+    display:
+        inline-block;
+
+    padding:
+        7px 13px;
+
+    border-radius:
+        30px;
+
+    background:
+        #f0eaff;
+
+    color:
+        #8864c9;
+
+    font-size:
+        10px;
+
+    font-weight:
+        900;
+
+}
+
+
+.ct-heading h2 {
+
+    margin:
+        11px 0;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size:
+        35px;
+
+    line-height:
+        1.1;
+
+}
+
+
+.ct-heading h2 span {
+
+    color:
+        #ef4f82;
+
+}
+
+
+.ct-heading p {
+
+    max-width:
+        620px;
+
+    margin:
+        auto;
+
+    color:
+        #7c7489;
+
+    font-size:
+        13px;
+
+    line-height:
+        1.75;
+
+}
+
+
+/* =====================================================
+   CONTACT CARDS
+===================================================== */
+
+.contact-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr;
+
+    gap:
+        16px;
+
+}
+
+
+.contact-card {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    padding:
+        24px 20px;
+
+    border-radius:
+        26px;
+
+    background:
+        rgba(255,255,255,.80);
+
+    border:
+        1px solid rgba(255,255,255,.95);
+
+    box-shadow:
+        0 16px 42px rgba(70,50,110,.09);
+
+    transition:
+        .35s ease;
+
+}
+
+
+.contact-card:hover {
+
+    transform:
+        translateY(-8px);
+
+    box-shadow:
+        0 25px 55px rgba(70,50,110,.15);
+
+}
+
+
+.contact-card::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        130px;
+
+    height:
+        130px;
+
+    border-radius:
+        50%;
+
+    right:
+        -60px;
+
+    bottom:
+        -60px;
+
+    background:
+        rgba(255,180,215,.20);
+
+}
+
+
+.contact-card:nth-child(2)::after {
+
+    background:
+        rgba(155,130,255,.15);
+
+}
+
+
+.contact-card:nth-child(3)::after {
+
+    background:
+        rgba(126,210,255,.16);
+
+}
+
+
+.contact-card:nth-child(4)::after {
+
+    background:
+        rgba(255,220,130,.18);
+
+}
+
+
+.contact-icon {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    width:
+        68px;
+
+    height:
+        68px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    margin-bottom:
+        16px;
+
+    border-radius:
+        21px;
+
+    font-size:
+        32px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #fff5fa,
+            #f0edff
+        );
+
+    animation:
+        iconPulse 4s ease-in-out infinite;
+
+}
+
+
+@keyframes iconPulse {
+
+    0%,
+    100% {
+
+        transform:
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            scale(1.08);
+
+    }
+
+}
+
+
+.contact-card h3 {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    margin:
+        0 0 8px;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size:
+        23px;
+
+}
+
+
+.contact-card p {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    margin:
+        0;
+
+    color:
+        #766e83;
+
+    font-size:
+        13px;
+
+    line-height:
+        1.75;
+
+}
+
+
+.contact-card a {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    display:
+        inline-flex;
+
+    margin-top:
+        15px;
+
+    text-decoration:
+        none;
+
+    color:
+        #8664c8;
+
+    font-size:
+        12px;
+
+    font-weight:
+        900;
+
+}
+
+
+/* =====================================================
+   CONTACT MAIN
+===================================================== */
+
+.contact-main {
+
+    display:
+        grid;
+
+    gap:
+        20px;
+
+}
+
+
+/* =====================================================
+   INFO BOX
+===================================================== */
+
+.contact-info-box {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    padding:
+        28px 22px;
+
+    border-radius:
+        30px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(255,240,246,.90),
+            rgba(240,236,255,.90),
+            rgba(229,247,255,.90)
+        );
+
+    box-shadow:
+        0 22px 55px rgba(75,55,120,.11);
+
+}
+
+
+.contact-info-box::before {
+
+    content:
+        "🌈";
+
+    position:
+        absolute;
+
+    right:
+        -5px;
+
+    top:
+        -12px;
+
+    font-size:
+        90px;
+
+    opacity:
+        .13;
+
+    transform:
+        rotate(-12deg);
+
+}
+
+
+.contact-info-box h2 {
+
+    position:
+        relative;
+
+    margin:
+        0 0 12px;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size:
+        30px;
+
+}
+
+
+.contact-info-box h2 span {
+
+    color:
+        #ef4f82;
+
+}
+
+
+.contact-info-box > p {
+
+    position:
+        relative;
+
+    margin:
+        0 0 22px;
+
+    color:
+        #756c82;
+
+    font-size:
+        13px;
+
+    line-height:
+        1.75;
+
+}
+
+
+.contact-list {
+
+    position:
+        relative;
+
+    display:
+        grid;
+
+    gap:
+        13px;
+
+}
+
+
+.contact-list-item {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        13px;
+
+    padding:
+        13px;
+
+    border-radius:
+        18px;
+
+    background:
+        rgba(255,255,255,.65);
+
+}
+
+
+.contact-list-icon {
+
+    width:
+        42px;
+
+    height:
+        42px;
+
+    flex:
+        0 0 auto;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    border-radius:
+        14px;
+
+    background:
+        white;
+
+    font-size:
+        20px;
+
+}
+
+
+.contact-list-text {
+
+    min-width:
+        0;
+
+}
+
+
+.contact-list-text small {
+
+    display:
+        block;
+
+    margin-bottom:
+        2px;
+
+    color:
+        #968ca4;
+
+    font-size:
+        10px;
+
+    font-weight:
+        800;
+
+}
+
+
+.contact-list-text strong {
+
+    display:
+        block;
+
+    color:
+        #51465f;
+
+    font-size:
+        12px;
+
+}
+
+
+/* =====================================================
+   CONTACT FORM
+===================================================== */
+
+.contact-form-box {
+
+    padding:
+        28px 22px;
+
+    border-radius:
+        30px;
+
+    background:
+        rgba(255,255,255,.82);
+
+    border:
+        1px solid rgba(255,255,255,.95);
+
+    box-shadow:
+        0 20px 55px rgba(70,50,110,.10);
+
+}
+
+
+.contact-form-box h2 {
+
+    margin:
+        0 0 8px;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size:
+        30px;
+
+}
+
+
+.contact-form-box h2 span {
+
+    color:
+        #ef4f82;
+
+}
+
+
+.contact-form-box > p {
+
+    margin:
+        0 0 22px;
+
+    color:
+        #7b7387;
+
+    font-size:
+        13px;
+
+    line-height:
+        1.7;
+
+}
+
+
+.form-group {
+
+    margin-bottom:
+        16px;
+
+}
+
+
+.form-group label {
+
+    display:
+        block;
+
+    margin-bottom:
+        7px;
+
+    color:
+        #5c5268;
+
+    font-size:
+        12px;
+
+    font-weight:
+        900;
+
+}
+
+
+.form-control {
+
+    width:
+        100%;
+
+    border:
+        1px solid #ece6f3;
+
+    outline:
+        none;
+
+    padding:
+        14px 15px;
+
+    border-radius:
+        16px;
+
+    background:
+        #faf8fc;
+
+    color:
+        #40364d;
+
+    font-family:
+        inherit;
+
+    font-size:
+        13px;
+
+    transition:
+        .3s ease;
+
+}
+
+
+.form-control:focus {
+
+    border-color:
+        #a47fff;
+
+    background:
+        white;
+
+    box-shadow:
+        0 0 0 4px rgba(164,127,255,.10);
+
+}
+
+
+textarea.form-control {
+
+    min-height:
+        125px;
+
+    resize:
+        vertical;
+
+}
+
+
+.form-submit {
+
+    width:
+        100%;
+
+    border:
+        none;
+
+    cursor:
+        pointer;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        8px;
+
+    padding:
+        15px 20px;
+
+    border-radius:
+        17px;
+
+    color:
+        white;
+
+    font-family:
+        inherit;
+
+    font-size:
+        13px;
+
+    font-weight:
+        900;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #ef4f82,
+            #ff7ea7
+        );
+
+    box-shadow:
+        0 12px 28px rgba(239,79,130,.25);
+
+    transition:
+        .3s ease;
+
+}
+
+
+.form-submit:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 18px 32px rgba(239,79,130,.32);
+
+}
+
+
+/* =====================================================
+   QUICK ACTION
+===================================================== */
+
+.quick-actions {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:
+        13px;
+
+}
+
+
+.quick-action {
+
+    padding:
+        20px 12px;
+
+    text-align:
+        center;
+
+    border-radius:
+        22px;
+
+    text-decoration:
+        none;
+
+    background:
+        rgba(255,255,255,.78);
+
+    color:
+        #51465f;
+
+    box-shadow:
+        0 12px 30px rgba(70,50,100,.08);
+
+    transition:
+        .3s ease;
+
+}
+
+
+.quick-action:hover {
+
+    transform:
+        translateY(-6px);
+
+}
+
+
+.quick-action span {
+
+    display:
+        block;
+
+    margin-bottom:
+        8px;
+
+    font-size:
+        35px;
+
+}
+
+
+.quick-action b {
+
+    font-size:
+        12px;
+
+}
+
+
+/* =====================================================
+   MAP PLACEHOLDER
+===================================================== */
+
+.location-box {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    min-height:
+        260px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    padding:
+        25px;
+
+    border-radius:
+        30px;
+
+    text-align:
+        center;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #e9f8ff,
+            #f5efff,
+            #fff2f7
+        );
+
+    box-shadow:
+        0 18px 45px rgba(70,50,110,.10);
+
+}
+
+
+.location-box::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        190px;
+
+    height:
+        190px;
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(255,255,255,.45);
+
+    animation:
+        mapBlob 7s ease-in-out infinite;
+
+}
+
+
+@keyframes mapBlob {
+
+    0%,
+    100% {
+
+        transform:
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            scale(1.25)
+            translate(20px,-10px);
+
+    }
+
+}
+
+
+.location-content {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+}
+
+
+.location-content .pin {
+
+    font-size:
+        55px;
+
+    animation:
+        pinBounce 2.5s ease-in-out infinite;
+
+}
+
+
+@keyframes pinBounce {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-10px);
+
+    }
+
+}
+
+
+.location-content h3 {
+
+    margin:
+        10px 0 7px;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size:
+        27px;
+
+}
+
+
+.location-content p {
+
+    max-width:
+        400px;
+
+    margin:
+        auto;
+
+    color:
+        #756c82;
+
+    font-size:
+        13px;
+
+    line-height:
+        1.7;
+
+}
+
+
+/* =====================================================
+   CTA
+===================================================== */
+
+.ct-cta {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    margin:
+        10px 0 45px;
+
+    padding:
+        48px 20px;
+
+    border-radius:
+        30px;
+
+    text-align:
+        center;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #fff0f6,
+            #f0ecff,
+            #e5f7ff
+        );
+
+    box-shadow:
+        0 22px 55px rgba(75,55,120,.12);
+
+}
+
+
+.ct-cta::before {
+
+    content:
+        "✨";
+
+    position:
+        absolute;
+
+    top:
+        20px;
+
+    left:
+        8%;
+
+    font-size:
+        42px;
+
+    opacity:
+        .35;
+
+    animation:
+        emojiFloat 5s ease-in-out infinite;
+
+}
+
+
+.ct-cta::after {
+
+    content:
+        "💛";
+
+    position:
+        absolute;
+
+    bottom:
+        18px;
+
+    right:
+        8%;
+
+    font-size:
+        42px;
+
+    opacity:
+        .35;
+
+    animation:
+        emojiFloat 6s ease-in-out infinite reverse;
+
+}
+
+
+.ct-cta-content {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+}
+
+
+.ct-cta-icon {
+
+    font-size:
+        58px;
+
+    animation:
+        iconPulse 3s ease-in-out infinite;
+
+}
+
+
+.ct-cta h2 {
+
+    margin:
+        8px 0 12px;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size:
+        35px;
+
+}
+
+
+.ct-cta h2 span {
+
+    color:
+        #ef4f82;
+
+}
+
+
+.ct-cta p {
+
+    max-width:
+        520px;
+
+    margin:
+        0 auto 22px;
+
+    color:
+        #756c82;
+
+    font-size:
+        13px;
+
+    line-height:
+        1.75;
+
+}
+
+
+.ct-button {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        14px 23px;
+
+    border-radius:
+        15px;
+
+    text-decoration:
+        none;
+
+    color:
+        white;
+
+    font-size:
+        13px;
+
+    font-weight:
+        900;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #ef4f82,
+            #ff7ea7
+        );
+
+    box-shadow:
+        0 12px 25px rgba(239,79,130,.25);
+
+    transition:
+        .3s ease;
+
+}
+
+
+.ct-button:hover {
+
+    transform:
+        translateY(-3px);
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.au-footer {
+
+    padding:
+        42px 0 0;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #302843,
+            #403556
+        );
+
+    color:
+        white;
+
+}
+
+
+.au-footer-grid {
+
+    display:
+        grid;
+
+    gap:
+        25px;
+
+    text-align:
+        center;
+
+}
+
+
+.au-footer h3 {
+
+    margin:
+        0 0 10px;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size:
+        22px;
+
+}
+
+
+.au-footer h3 span {
+
+    color:
+        #ff8db3;
+
+}
+
+
+.au-footer p {
+
+    margin:
+        0 0 8px;
+
+    color:
+        #c9c1d7;
+
+    font-size:
+        13px;
+
+    line-height:
+        1.7;
+
+}
+
+
+.au-copyright {
+
+    margin-top:
+        35px;
+
+    padding:
+        18px;
+
+    text-align:
+        center;
+
+    border-top:
+        1px solid rgba(255,255,255,.08);
+
+    color:
+        #aaa0bc;
+
+    font-size:
+        11px;
+
+}
+
+
+/* =====================================================
+   REVEAL
+===================================================== */
+
+.au-reveal {
+
+    opacity:
+        0;
+
+    transform:
+        translateY(28px);
+
+    transition:
+
+        opacity .8s ease,
+        transform .8s cubic-bezier(.2,.8,.2,1);
+
+}
+
+
+.au-reveal.au-show {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* =====================================================
+   DESKTOP
+===================================================== */
+
+@media (min-width: 769px) {
+
+
+    .au-header-inner {
+
+        min-height:
+            90px;
+
+    }
+
+
+    .au-logo {
+
+        width:
+            55px;
+
+        height:
+            55px;
+
+        font-size:
+            29px;
+
+    }
+
+
+    .au-brand h1 {
+
+        font-size:
+            25px;
+
+    }
+
+
+    .au-brand p {
+
+        font-size:
+            13px;
+
+    }
+
+
+    .au-visit {
+
+        padding:
+            13px 22px;
+
+        font-size:
+            13px;
+
+    }
+
+
+    .au-nav-inner {
+
+        justify-content:
+            center;
+
+        overflow:
+            visible;
+
+    }
+
+
+    .au-nav-link {
+
+        flex-direction:
+            row;
+
+        min-width:
+            auto;
+
+        font-size:
+            12px;
+
+        padding:
+            10px 15px;
+
+    }
+
+
+    .au-more-wrap {
+
+        display:
+            none;
+
+    }
+
+
+    .ct-hero {
+
+        padding:
+            105px 0;
+
+    }
+
+
+    .ct-hero p {
+
+        font-size:
+            16px;
+
+    }
+
+
+    .ct-section {
+
+        padding:
+            65px 0;
+
+    }
+
+
+    .contact-grid {
+
+        grid-template-columns:
+            repeat(4,1fr);
+
+        gap:
+            20px;
+
+    }
+
+
+    .contact-main {
+
+        grid-template-columns:
+            1fr 1.15fr;
+
+        align-items:
+            start;
+
+    }
+
+
+    .quick-actions {
+
+        grid-template-columns:
+            repeat(4,1fr);
+
+    }
+
+
+    .au-footer-grid {
+
+        grid-template-columns:
+            repeat(3,1fr);
+
+        text-align:
+            left;
+
+    }
+
+
+}
+
+
+/* =====================================================
+   REDUCE MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    * {
+
+        animation:
+            none !important;
+
+        transition:
+            none !important;
+
+        scroll-behavior:
+            auto !important;
+
+    }
+
+}
+
+</style>
 
 </head>
 
@@ -23,705 +2706,1034 @@
 <body data-page="contact">
 
 
-    <!-- =====================================================
-         HEADER
-    ====================================================== -->
+<!-- =====================================================
+     BACKGROUND
+===================================================== -->
 
-    <div class="top">
-
-        <header class="head wrap">
+<div class="ct-bg"></div>
 
 
-            <!-- LOGO -->
+<div class="ct-decoration">
 
-            <a
-                class="brand"
-                href="index.html"
-            >
+    <div class="ct-star one">
+        ✨
+    </div>
 
-                <div class="sun">
-                    ☀️
-                </div>
+    <div class="ct-star two">
+        🌟
+    </div>
 
-                <div>
+    <div class="ct-star three">
+        💜
+    </div>
 
-                    <h1>
-                        Ra Miftahul
-                        <span>Hikmah</span>
-                    </h1>
-
-                    <p>
-                        Tangerang 💗
-                    </p>
-
-                </div>
-
-            </a>
+</div>
 
 
-            <!-- CALL US -->
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
-            <div class="call">
+<header class="au-header">
 
-                ⌕
+    <div class="au-container au-header-inner">
 
-                <div>
 
-                    <small>
-                        Call Us
-                    </small>
+        <a
+            href="index.html"
+            class="au-brand"
+        >
 
-                    <b>
-                        +62 813-9875-4451
-                    </b>
-
-                </div>
-
+            <div class="au-logo">
+                🌈
             </div>
 
 
-            <!-- BOOK A VISIT -->
+            <div>
 
-            <a
-                class="btn"
-                href="#daftar"
-            >
-                Book a Visit
-            </a>
+                <h1>
 
+                    RA Miftahul
 
-        </header>
+                    <span>
+                        Hikmah
+                    </span>
 
-
-        <!-- =================================================
-             RAINBOW NAVBAR
-        ================================================== -->
-
-        <nav class="rainbow-nav">
+                </h1>
 
 
-            <!-- HOME -->
+                <p>
+                    Belajar • Bermain • Berprestasi
+                </p>
 
-            <a
-                href="index.html"
-                class="rainbow-item pink"
-            >
+            </div>
 
-                <span class="rainbow-icon">
-                    🏠
-                </span>
-
-                <span class="rainbow-text">
-                    HOME
-                </span>
-
-                <span class="sparkle">
-                    ✦
-                </span>
-
-            </a>
+        </a>
 
 
-            <!-- ABOUT -->
+        <a
+            href="#contactForm"
+            class="au-visit"
+        >
 
-            <a
-                href="about.html"
-                class="rainbow-item blue"
-            >
+            💌 Hubungi Kami
 
-                <span class="rainbow-icon">
-                    👥
-                </span>
-
-                <span class="rainbow-text">
-                    ABOUT
-                </span>
-
-                <span class="sparkle">
-                    ✦
-                </span>
-
-            </a>
+        </a>
 
 
-            <!-- PROGRAMS -->
+    </div>
 
-            <a
-                href="programs.html"
-                class="rainbow-item green"
-            >
-
-                <span class="rainbow-icon">
-                    📚
-                </span>
-
-                <span class="rainbow-text">
-                    PROGRAMS
-                </span>
-
-                <span class="sparkle">
-                    ✦
-                </span>
-
-            </a>
+</header>
 
 
-            <!-- CLASSES -->
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
 
-            <a
-                href="classes.html"
-                class="rainbow-item yellow"
-            >
+<nav class="au-nav">
 
-                <span class="rainbow-icon">
-                    🎓
-                </span>
-
-                <span class="rainbow-text">
-                    CLASSES
-                </span>
-
-                <span class="sparkle">
-                    ✦
-                </span>
-
-            </a>
+    <div class="au-nav-inner">
 
 
-            <!-- BLOG -->
+        <a
+            href="index.html"
+            class="au-nav-link"
+        >
 
-            <a
-                href="blog.html"
-                class="rainbow-item orange"
+            <span class="au-nav-icon">
+                🏠
+            </span>
+
+            HOME
+
+        </a>
+
+
+        <a
+            href="about.html"
+            class="au-nav-link"
+        >
+
+            <span class="au-nav-icon">
+                👥
+            </span>
+
+            ABOUT
+
+        </a>
+
+
+        <a
+            href="programs.html"
+            class="au-nav-link"
+        >
+
+            <span class="au-nav-icon">
+                📚
+            </span>
+
+            PROGRAMS
+
+        </a>
+
+
+        <a
+            href="gallery.html"
+            class="au-nav-link"
+        >
+
+            <span class="au-nav-icon">
+                🖼️
+            </span>
+
+            GALLERY
+
+        </a>
+
+
+        <div class="au-more-wrap">
+
+            <button
+                type="button"
+                class="au-more-button"
+                id="auMoreButton"
             >
 
-                <span class="rainbow-icon">
-                    🖍️
+                <span>
+                    ✨
                 </span>
 
-                <span class="rainbow-text">
-                    BLOG
-                </span>
+                MORE
 
-                <span class="sparkle">
-                    ✦
-                </span>
+            </button>
 
-            </a>
+        </div>
 
 
-            <!-- GALLERY -->
+    </div>
 
-            <a
-                href="gallery.html"
-                class="rainbow-item purple"
-            >
-
-                <span class="rainbow-icon">
-                    🖼️
-                </span>
-
-                <span class="rainbow-text">
-                    GALLERY
-                </span>
-
-                <span class="sparkle">
-                    ✦
-                </span>
-
-            </a>
+</nav>
 
 
-            <!-- PARENTS -->
+<!-- =====================================================
+     DROPDOWN MENU
+===================================================== -->
 
-            <a
-                href="parents.html"
-                class="rainbow-item pink2"
-            >
-
-                <span class="rainbow-icon">
-                    💛
-                </span>
-
-                <span class="rainbow-text">
-                    PARENTS
-                </span>
-
-                <span class="sparkle">
-                    ✦
-                </span>
-
-            </a>
+<div
+    class="au-more-menu"
+    id="auMoreMenu"
+>
 
 
-            <!-- CONTACT -->
+    <div class="au-more-title">
 
-            <a
-                href="contact.html"
-                class="rainbow-item blue2 active"
-            >
-
-                <span class="rainbow-icon">
-                    ✉️
-                </span>
-
-                <span class="rainbow-text">
-                    CONTACT
-                </span>
-
-                <span class="sparkle">
-                    ✦
-                </span>
-
-            </a>
-
-
-        </nav>
+        ✨ Menu Lainnya
 
     </div>
 
 
-    <!-- =====================================================
-         HERO
-    ====================================================== -->
+    <a href="classes.html">
+        🎓 Classes
+    </a>
 
-    <section class="pagehero">
 
-        <div class="wrap">
+    <a href="blog.html">
+        🖍️ Blog
+    </a>
+
+
+    <a href="parents.html">
+        💛 Parents
+    </a>
+
+
+    <a href="contact.html">
+        💌 Contact
+    </a>
+
+
+</div>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="ct-hero">
+
+    <div
+        class="au-container
+               ct-hero-content
+               au-reveal"
+    >
+
+
+        <div class="ct-badge">
+
+            💌 HUBUNGI KAMI
+
+        </div>
+
+
+        <h2>
+
+            Mari Mulai
+
+            <span>
+                Cerita Baru!
+            </span>
+
+        </h2>
+
+
+        <p>
+
+            Kami dengan senang hati membantu
+            Ayah dan Bunda mendapatkan informasi
+            tentang RA Miftahul Hikmah.
+
+            Jangan ragu untuk menghubungi kami! 💛
+
+        </p>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACT CARDS
+===================================================== -->
+
+<section class="ct-section">
+
+    <div class="au-container">
+
+
+        <div class="ct-heading au-reveal">
+
+            <div class="ct-heading-badge">
+
+                ✨ CARA MENGHUBUNGI KAMI
+
+            </div>
+
 
             <h2>
 
-                Contact
+                Kami Siap
 
                 <span>
-                    Us
+                    Membantu!
                 </span>
-
-                ✉️
 
             </h2>
 
 
             <p>
 
-                Kami siap membantu menjawab pertanyaan
-                dan menjadwalkan kunjungan.
+                Pilih cara yang paling nyaman
+                untuk menghubungi kami.
 
             </p>
 
         </div>
 
-    </section>
+
+        <div class="contact-grid">
 
 
-    <!-- =====================================================
-         INFORMASI KONTAK + KIRIM PESAN
-    ====================================================== -->
+            <!-- WHATSAPP -->
 
-    <section class="section wrap">
+            <article
+                class="contact-card au-reveal"
+            >
 
-        <div class="contact">
-
-
-            <!-- INFORMASI SEKOLAH -->
-
-            <div class="box reveal">
-
-                <div class="big">
-                    🏫
+                <div class="contact-icon">
+                    📱
                 </div>
 
 
                 <h3>
-                    Ra Miftahul Hikmah
+                    WhatsApp
                 </h3>
 
 
                 <p>
-                    📍 Tangerang, Indonesia
-                </p>
 
-
-                <p>
-                    ☎ +62 813-9875-4451
-                </p>
-
-
-                <p>
-
-                    ✉
-
-                    <a href="mailto:info@kindergarten.com">
-                        info@kindergarten.com
-                    </a>
+                    Hubungi kami dengan cepat
+                    melalui WhatsApp.
 
                 </p>
 
 
-                <br>
+                <a
+                    href="https://wa.me/628xxxxxxxxxx"
+                    target="_blank"
+                >
+
+                    Chat Sekarang →
+
+                </a>
+
+            </article>
+
+
+            <!-- EMAIL -->
+
+            <article
+                class="contact-card au-reveal"
+            >
+
+                <div class="contact-icon">
+                    ✉️
+                </div>
 
 
                 <h3>
-                    Opening Hours
+                    Email
                 </h3>
 
 
                 <p>
-                    Senin – Jumat:
-                    07.00 – 15.00
+
+                    Kirimkan pertanyaan atau
+                    informasi melalui email.
+
                 </p>
+
+
+                <a
+                    href="mailto:info@ramiftahulhikmah.sch.id"
+                >
+
+                    Kirim Email →
+
+                </a>
+
+            </article>
+
+
+            <!-- LOCATION -->
+
+            <article
+                class="contact-card au-reveal"
+            >
+
+                <div class="contact-icon">
+                    📍
+                </div>
+
+
+                <h3>
+                    Lokasi
+                </h3>
+
+
+                <p>
+
+                    Kunjungi sekolah kami dan
+                    lihat lingkungan belajar anak.
+
+                </p>
+
+
+                <a href="#location">
+
+                    Lihat Lokasi →
+
+                </a>
+
+            </article>
+
+
+            <!-- HOURS -->
+
+            <article
+                class="contact-card au-reveal"
+            >
+
+                <div class="contact-icon">
+                    🕒
+                </div>
+
+
+                <h3>
+                    Jam Buka
+                </h3>
+
+
+                <p>
+
+                    Senin - Jumat<br>
+
+                    07.00 - 12.00 WIB
+
+                </p>
+
+
+                <a href="#contactForm">
+
+                    Hubungi Kami →
+
+                </a>
+
+            </article>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACT FORM
+===================================================== -->
+
+<section class="ct-section">
+
+    <div class="au-container">
+
+
+        <div class="contact-main">
+
+
+            <!-- INFO -->
+
+            <div
+                class="contact-info-box
+                       au-reveal"
+            >
+
+
+                <h2>
+
+                    Senang Bertemu
+
+                    <span>
+                        Ayah & Bunda!
+                    </span>
+
+                </h2>
+
+
+                <p>
+
+                    Kami percaya komunikasi yang baik
+                    adalah awal dari perjalanan belajar
+                    yang menyenangkan.
+
+                </p>
+
+
+                <div class="contact-list">
+
+
+                    <div class="contact-list-item">
+
+                        <div class="contact-list-icon">
+                            📱
+                        </div>
+
+
+                        <div class="contact-list-text">
+
+                            <small>
+                                WhatsApp
+                            </small>
+
+                            <strong>
+                                Hubungi Admin Sekolah
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-list-item">
+
+                        <div class="contact-list-icon">
+                            ✉️
+                        </div>
+
+
+                        <div class="contact-list-text">
+
+                            <small>
+                                Email
+                            </small>
+
+                            <strong>
+                                info@ramiftahulhikmah.sch.id
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-list-item">
+
+                        <div class="contact-list-icon">
+                            🕒
+                        </div>
+
+
+                        <div class="contact-list-text">
+
+                            <small>
+                                Jam Operasional
+                            </small>
+
+                            <strong>
+                                Senin - Jumat
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-list-item">
+
+                        <div class="contact-list-icon">
+                            💛
+                        </div>
+
+
+                        <div class="contact-list-text">
+
+                            <small>
+                                Kami Siap Membantu
+                            </small>
+
+                            <strong>
+                                Dengan Senang Hati!
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
 
 
             </div>
 
 
-            <!-- =================================================
-                 FORM KIRIM PESAN KE WHATSAPP
-            ================================================== -->
+            <!-- FORM -->
 
-            <form
-                class="form reveal"
-                id="contactMessageForm"
+            <div
+                class="contact-form-box
+                       au-reveal"
+                id="contactForm"
             >
 
-                <h2 class="title">
+
+                <h2>
 
                     Kirim
 
                     <span>
-                        Pesan
+                        Pesan 💌
                     </span>
-
-                    💗
 
                 </h2>
 
 
                 <p>
 
-                    Isi formulir di bawah.
-                    Pesan akan langsung dikirim
-                    ke WhatsApp sekolah.
+                    Isi formulir berikut dan
+                    kami akan segera menghubungi Anda.
 
                 </p>
 
 
-                <input
-                    type="text"
-                    id="namaPesan"
-                    placeholder="Nama orang tua"
-                    autocomplete="name"
-                    required
-                >
+                <form id="contactMessageForm">
 
 
-                <input
-                    type="email"
-                    id="emailPesan"
-                    placeholder="Email"
-                    autocomplete="email"
-                    required
-                >
+                    <div class="form-group">
+
+                        <label>
+                            👤 Nama Lengkap
+                        </label>
 
 
-                <input
-                    type="tel"
-                    id="waPesan"
-                    placeholder="Nomor WhatsApp"
-                    autocomplete="tel"
-                    required
-                >
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="contactName"
+                            placeholder="Masukkan nama Anda"
+                            required
+                        >
+
+                    </div>
 
 
-                <textarea
-                    id="isiPesan"
-                    placeholder="Tulis pesan atau pertanyaan..."
-                    required
-                ></textarea>
+                    <div class="form-group">
+
+                        <label>
+                            📱 Nomor WhatsApp
+                        </label>
 
 
-                <button
-                    class="btn"
-                    type="submit"
-                >
-                    📱 Kirim ke WhatsApp
-                </button>
+                        <input
+                            type="tel"
+                            class="form-control"
+                            id="contactPhone"
+                            placeholder="Contoh: 08123456789"
+                            required
+                        >
 
-            </form>
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            ✨ Keperluan
+                        </label>
+
+
+                        <select
+                            class="form-control"
+                            id="contactSubject"
+                        >
+
+                            <option value="Informasi Pendaftaran">
+                                Informasi Pendaftaran
+                            </option>
+
+                            <option value="Informasi Program">
+                                Informasi Program
+                            </option>
+
+                            <option value="Jadwal Kunjungan">
+                                Jadwal Kunjungan
+                            </option>
+
+                            <option value="Pertanyaan Lainnya">
+                                Pertanyaan Lainnya
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            💌 Pesan
+                        </label>
+
+
+                        <textarea
+                            class="form-control"
+                            id="contactMessage"
+                            placeholder="Tuliskan pesan Anda..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="form-submit"
+                    >
+
+                        💌 Kirim Pesan via WhatsApp
+
+                    </button>
+
+
+                </form>
+
+
+            </div>
+
 
         </div>
 
-    </section>
+
+    </div>
+
+</section>
 
 
-    <!-- =====================================================
-         DAFTAR KUNJUNGAN
-    ====================================================== -->
+<!-- =====================================================
+     QUICK ACTIONS
+===================================================== -->
 
-    <section
-        class="section wrap"
-        id="daftar"
-    >
+<section class="ct-section">
 
-        <div class="contact">
+    <div class="au-container">
 
 
-            <!-- INFORMASI KUNJUNGAN -->
+        <div class="ct-heading au-reveal">
 
-            <div class="box reveal">
+            <div class="ct-heading-badge">
 
-                <div class="big">
-                    🏫
+                🚀 AKSES CEPAT
+
+            </div>
+
+
+            <h2>
+
+                Mau Tahu
+
+                <span>
+                    Lebih Banyak?
+                </span>
+
+            </h2>
+
+
+        </div>
+
+
+        <div class="quick-actions">
+
+
+            <a
+                href="programs.html"
+                class="quick-action au-reveal"
+            >
+
+                <span>
+                    📚
+                </span>
+
+                <b>
+                    Program
+                </b>
+
+            </a>
+
+
+            <a
+                href="classes.html"
+                class="quick-action au-reveal"
+            >
+
+                <span>
+                    🎓
+                </span>
+
+                <b>
+                    Classes
+                </b>
+
+            </a>
+
+
+            <a
+                href="gallery.html"
+                class="quick-action au-reveal"
+            >
+
+                <span>
+                    📸
+                </span>
+
+                <b>
+                    Gallery
+                </b>
+
+            </a>
+
+
+            <a
+                href="parents.html"
+                class="quick-action au-reveal"
+            >
+
+                <span>
+                    💛
+                </span>
+
+                <b>
+                    Parents
+                </b>
+
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     LOCATION
+===================================================== -->
+
+<section
+    class="ct-section"
+    id="location"
+>
+
+    <div class="au-container">
+
+
+        <div
+            class="location-box
+                   au-reveal"
+        >
+
+
+            <div class="location-content">
+
+
+                <div class="pin">
+                    📍
                 </div>
 
 
                 <h3>
-                    Kunjungi Ra Miftahul Hikmah
+                    Kunjungi Sekolah Kami
                 </h3>
 
 
                 <p>
-                    📍 Tangerang, Indonesia
-                </p>
 
+                    RA Miftahul Hikmah
 
-                <p>
-                    ☎ +62 813-9875-4451
-                </p>
+                    <br>
 
-
-                <br>
-
-
-                <h3>
-                    Opening Hours
-                </h3>
-
-
-                <p>
-                    Senin – Jumat:
-                    07.00 – 15.00
-                </p>
-
-
-                <br>
-
-
-                <p>
-
-                    💗 Silakan isi form di samping
-                    untuk mengajukan kunjungan.
+                    Silakan hubungi kami terlebih dahulu
+                    untuk mengatur jadwal kunjungan.
 
                 </p>
+
 
             </div>
 
 
-            <!-- =================================================
-                 FORM DAFTAR KUNJUNGAN
-            ================================================== -->
+        </div>
 
-            <form
-                class="form reveal"
-                id="visitForm"
-            >
 
-                <h2 class="title">
+    </div>
 
-                    Daftar
+</section>
+
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section class="ct-section">
+
+    <div class="au-container">
+
+
+        <div class="ct-cta au-reveal">
+
+
+            <div class="ct-cta-content">
+
+
+                <div class="ct-cta-icon">
+                    🌟
+                </div>
+
+
+                <h2>
+
+                    Yuk Mulai Perjalanan
 
                     <span>
-                        Kunjungan
+                        Bersama Kami!
                     </span>
-
-                    💗
 
                 </h2>
 
 
                 <p>
 
-                    Masukkan nama, nomor WhatsApp,
-                    tanggal dan jam kunjungan.
-                    Data akan langsung dikirim
-                    ke WhatsApp sekolah.
+                    Berikan pengalaman belajar,
+                    bermain dan bertumbuh yang
+                    menyenangkan untuk buah hati Anda.
 
                 </p>
 
 
-                <input
-                    type="text"
-                    id="namaKunjungan"
-                    placeholder="Nama lengkap"
-                    autocomplete="name"
-                    required
+                <a
+                    href="https://wa.me/6281398754451"
+                    target="_blank"
+                    class="ct-button"
                 >
 
+                    📱 Chat WhatsApp Sekarang
 
-                <input
-                    type="tel"
-                    id="waKunjungan"
-                    placeholder="Nomor WhatsApp"
-                    autocomplete="tel"
-                    required
-                >
+                </a>
 
 
-                <input
-                    type="date"
-                    id="tanggalKunjungan"
-                    required
-                >
+            </div>
 
-
-                <input
-                    type="time"
-                    id="jamKunjungan"
-                    required
-                >
-
-
-                <button
-                    class="btn"
-                    type="submit"
-                >
-
-                    📱 Daftar Kunjungan via WhatsApp
-
-                </button>
-
-            </form>
 
         </div>
 
-    </section>
+
+    </div>
+
+</section>
 
 
-    <!-- =====================================================
-         FOOTER
-    ====================================================== -->
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
-    <footer class="footer">
+<footer class="au-footer">
 
-        <div class="footgrid wrap">
+    <div class="au-container">
 
 
-            <!-- BRAND -->
+        <div class="au-footer-grid">
+
 
             <div>
 
                 <h3>
 
-                    ☀️ KINDER
+                    RA Miftahul
 
-                    <span style="color:#ef4f82">
-                        GARTEN
+                    <span>
+                        Hikmah
                     </span>
 
                 </h3>
 
 
                 <p>
-                    Where Little Minds Bloom 💗
+
+                    Tempat belajar, bermain
+                    dan bertumbuh dengan bahagia.
+
                 </p>
 
             </div>
 
 
-            <!-- QUICK LINKS -->
-
             <div>
 
                 <h3>
-                    Quick Links
+                    Menu
                 </h3>
 
 
-                <a href="index.html">
+                <p>
                     Home
-                </a>
+                </p>
 
 
-                <a href="about.html">
-                    About Us
-                </a>
-
-
-                <a href="programs.html">
+                <p>
                     Programs
-                </a>
+                </p>
 
 
-                <a href="classes.html">
-                    Classes
-                </a>
-
-
-                <a href="blog.html">
-                    Blog
-                </a>
-
-
-                <a href="gallery.html">
+                <p>
                     Gallery
-                </a>
+                </p>
 
 
-                <a href="parents.html">
+                <p>
                     Parents
-                </a>
-
-
-                <a href="contact.html">
-                    Contact Us
-                </a>
-
-            </div>
-
-
-            <!-- CONTACT -->
-
-            <div>
-
-                <h3>
-                    Contact Us
-                </h3>
-
-
-                <p>
-                    ☎ +62 813-9875-4451
-                </p>
-
-
-                <p>
-
-                    ✉
-
-                    <a href="mailto:info@kindergarten.com">
-                        info@kindergarten.com
-                    </a>
-
-                </p>
-
-
-                <p>
-                    📍 Tangerang, Indonesia
                 </p>
 
             </div>
 
 
-            <!-- FOLLOW -->
-
             <div>
 
                 <h3>
-                    Follow Us
+                    Hubungi Kami
                 </h3>
 
 
-                <p style="font-size:28px">
-                    ●　◎　▶
+                <p>
+                    📱 WhatsApp Sekolah
+                </p>
+
+
+                <p>
+                    ✉️ Email Sekolah
+                </p>
+
+
+                <p>
+                    📍 Kunjungi Kami
                 </p>
 
             </div>
@@ -730,327 +3742,374 @@
         </div>
 
 
-        <div class="copy wrap">
+        <div class="au-copyright">
 
-            © 2026 Ra Miftahul Hikmah.
-            All rights reserved.
+            © 2026 RA Miftahul Hikmah
+            • All Rights Reserved
 
         </div>
 
-    </footer>
 
-
-    <!-- =====================================================
-         TOAST
-    ====================================================== -->
-
-    <div
-        class="toast"
-        id="contactToast"
-    >
-        Pesan berhasil dikirim ke WhatsApp! 💗
     </div>
 
-
-    <!-- =====================================================
-         WEBSITE JAVASCRIPT
-    ====================================================== -->
-
-    <script src="js/script.js"></script>
+</footer>
 
 
-    <!-- =====================================================
-         WHATSAPP SYSTEM
-    ====================================================== -->
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
 
-    <script>
+<script>
 
-        const NOMOR_WHATSAPP_SEKOLAH =
-            "6281398754451";
+
+/* =====================================================
+   DOM READY
+===================================================== */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
 
 
         /* =================================================
-           FUNGSI BUKA WHATSAPP
+           MENU LAINNYA
         ================================================= */
 
-        function kirimKeWhatsApp(pesan) {
-
-            const url =
-                "https://wa.me/" +
-                NOMOR_WHATSAPP_SEKOLAH +
-                "?text=" +
-                encodeURIComponent(pesan);
-
-
-            window.open(
-                url,
-                "_blank"
+        const moreButton =
+            document.getElementById(
+                "auMoreButton"
             );
+
+
+        const moreMenu =
+            document.getElementById(
+                "auMoreMenu"
+            );
+
+
+        if (
+            moreButton &&
+            moreMenu
+        ) {
+
+
+            moreButton.addEventListener(
+                "click",
+                function (
+                    event
+                ) {
+
+
+                    event.stopPropagation();
+
+
+                    moreMenu.classList.toggle(
+                        "open"
+                    );
+
+
+                }
+            );
+
+
+            document.addEventListener(
+                "click",
+                function (
+                    event
+                ) {
+
+
+                    if (
+
+                        !moreMenu.contains(
+                            event.target
+                        )
+
+                        &&
+
+                        !moreButton.contains(
+                            event.target
+                        )
+
+                    ) {
+
+
+                        moreMenu.classList.remove(
+                            "open"
+                        );
+
+
+                    }
+
+
+                }
+            );
+
 
         }
 
 
         /* =================================================
-           FORM KIRIM PESAN
+           REVEAL ANIMATION
         ================================================= */
 
-        const messageForm =
+        const revealItems =
+            document.querySelectorAll(
+                ".au-reveal"
+            );
+
+
+        if (
+            "IntersectionObserver"
+            in
+            window
+        ) {
+
+
+            const observer =
+                new IntersectionObserver(
+
+                    function (
+                        entries
+                    ) {
+
+
+                        entries.forEach(
+
+                            function (
+                                entry
+                            ) {
+
+
+                                if (
+                                    entry.isIntersecting
+                                ) {
+
+
+                                    entry.target.classList.add(
+                                        "au-show"
+                                    );
+
+
+                                    observer.unobserve(
+                                        entry.target
+                                    );
+
+
+                                }
+
+
+                            }
+
+                        );
+
+
+                    },
+
+                    {
+
+                        threshold:
+                            0.12,
+
+                        rootMargin:
+                            "0px 0px -35px 0px"
+
+                    }
+
+                );
+
+
+            revealItems.forEach(
+
+                function (
+                    item,
+                    index
+                ) {
+
+
+                    item.style.transitionDelay =
+                        (
+                            index % 4
+                        )
+                        *
+                        70
+                        +
+                        "ms";
+
+
+                    observer.observe(
+                        item
+                    );
+
+
+                }
+
+            );
+
+
+        }
+
+        else {
+
+
+            revealItems.forEach(
+
+                function (
+                    item
+                ) {
+
+
+                    item.classList.add(
+                        "au-show"
+                    );
+
+
+                }
+
+            );
+
+
+        }
+
+
+        /* =================================================
+           CONTACT FORM TO WHATSAPP
+        ================================================= */
+
+        const contactForm =
             document.getElementById(
                 "contactMessageForm"
             );
 
 
-        if (messageForm) {
+        if (
+            contactForm
+        ) {
 
-            messageForm.addEventListener(
+
+            contactForm.addEventListener(
                 "submit",
-                function(event) {
+                function (
+                    event
+                ) {
+
 
                     event.preventDefault();
 
 
-                    const nama =
+                    const name =
                         document
-                        .getElementById("namaPesan")
-                        .value
-                        .trim();
+                            .getElementById(
+                                "contactName"
+                            )
+                            .value
+                            .trim();
 
 
-                    const email =
+                    const phone =
                         document
-                        .getElementById("emailPesan")
-                        .value
-                        .trim();
+                            .getElementById(
+                                "contactPhone"
+                            )
+                            .value
+                            .trim();
 
 
-                    const wa =
+                    const subject =
                         document
-                        .getElementById("waPesan")
-                        .value
-                        .trim();
+                            .getElementById(
+                                "contactSubject"
+                            )
+                            .value;
 
 
-                    const pesan =
+                    const message =
                         document
-                        .getElementById("isiPesan")
-                        .value
-                        .trim();
+                            .getElementById(
+                                "contactMessage"
+                            )
+                            .value
+                            .trim();
 
 
-                    if (
-                        !nama ||
-                        !email ||
-                        !wa ||
-                        !pesan
-                    ) {
+                    /*
+                     * GANTI NOMOR WHATSAPP
+                     * DI BAWAH INI
+                     *
+                     * Contoh:
+                     * 6281234567890
+                     */
 
-                        alert(
-                            "⚠️ Mohon lengkapi semua data terlebih dahulu."
+                    const adminNumber =
+                        "6281398754451";
+
+
+                    const whatsappMessage =
+
+                        "Halo Admin RA Miftahul Hikmah 👋\n\n"
+
+                        +
+
+                        "👤 Nama: "
+                        +
+                        name
+                        +
+                        "\n"
+
+                        +
+
+                        "📱 WhatsApp: "
+                        +
+                        phone
+                        +
+                        "\n"
+
+                        +
+
+                        "✨ Keperluan: "
+                        +
+                        subject
+                        +
+                        "\n\n"
+
+                        +
+
+                        "💌 Pesan:\n"
+                        +
+                        message;
+
+
+                    const whatsappURL =
+
+                        "https://wa.me/"
+                        +
+                        adminNumber
+                        +
+                        "?text="
+                        +
+                        encodeURIComponent(
+                            whatsappMessage
                         );
 
-                        return;
 
-                    }
-
-
-                    const pesanWhatsApp =
-
-                        "🌈 *PESAN DARI WEBSITE*" +
-                        "\n\n" +
-
-                        "👤 *Nama:* " +
-                        nama +
-                        "\n" +
-
-                        "📧 *Email:* " +
-                        email +
-                        "\n" +
-
-                        "📱 *WhatsApp:* " +
-                        wa +
-                        "\n\n" +
-
-                        "💬 *Pesan:*" +
-                        "\n" +
-                        pesan +
-                        "\n\n" +
-
-                        "━━━━━━━━━━━━━━━" +
-                        "\n" +
-
-                        "🏫 Ra Miftahul Hikmah";
-
-
-                    kirimKeWhatsApp(
-                        pesanWhatsApp
+                    window.open(
+                        whatsappURL,
+                        "_blank"
                     );
 
-
-                    messageForm.reset();
-
-
-                    alert(
-                        "📱 WhatsApp akan dibuka.\n\n" +
-                        "Silakan tekan tombol KIRIM di WhatsApp."
-                    );
 
                 }
             );
 
-        }
-
-
-        /* =================================================
-           FORM DAFTAR KUNJUNGAN
-        ================================================= */
-
-        const visitForm =
-            document.getElementById(
-                "visitForm"
-            );
-
-
-        if (visitForm) {
-
-            visitForm.addEventListener(
-                "submit",
-                function(event) {
-
-                    event.preventDefault();
-
-
-                    const nama =
-                        document
-                        .getElementById(
-                            "namaKunjungan"
-                        )
-                        .value
-                        .trim();
-
-
-                    const wa =
-                        document
-                        .getElementById(
-                            "waKunjungan"
-                        )
-                        .value
-                        .trim();
-
-
-                    const tanggal =
-                        document
-                        .getElementById(
-                            "tanggalKunjungan"
-                        )
-                        .value;
-
-
-                    const jam =
-                        document
-                        .getElementById(
-                            "jamKunjungan"
-                        )
-                        .value;
-
-
-                    if (
-                        !nama ||
-                        !wa ||
-                        !tanggal ||
-                        !jam
-                    ) {
-
-                        alert(
-                            "⚠️ Mohon lengkapi semua data kunjungan."
-                        );
-
-                        return;
-
-                    }
-
-
-                    /* =============================================
-                       FORMAT TANGGAL
-                    ============================================= */
-
-                    let tanggalIndonesia =
-                        tanggal;
-
-
-                    try {
-
-                        tanggalIndonesia =
-                            new Date(
-                                tanggal + "T00:00:00"
-                            ).toLocaleDateString(
-                                "id-ID",
-                                {
-                                    day: "numeric",
-                                    month: "long",
-                                    year: "numeric"
-                                }
-                            );
-
-                    } catch (error) {
-
-                        console.log(
-                            "Format tanggal menggunakan format asli."
-                        );
-
-                    }
-
-
-                    /* =============================================
-                       PESAN WHATSAPP
-                    ============================================= */
-
-                    const pesanWhatsApp =
-
-                        "🏫 *PENDAFTARAN KUNJUNGAN SEKOLAH*" +
-                        "\n\n" +
-
-                        "👤 *Nama:* " +
-                        nama +
-                        "\n" +
-
-                        "📱 *WhatsApp:* " +
-                        wa +
-                        "\n" +
-
-                        "📅 *Tanggal Kunjungan:* " +
-                        tanggalIndonesia +
-                        "\n" +
-
-                        "⏰ *Jam Kunjungan:* " +
-                        jam +
-                        "\n\n" +
-
-                        "💗 Saya ingin melakukan kunjungan " +
-                        "ke Ra Miftahul Hikmah." +
-                        "\n\n" +
-
-                        "━━━━━━━━━━━━━━━";
-
-
-                    kirimKeWhatsApp(
-                        pesanWhatsApp
-                    );
-
-
-                    visitForm.reset();
-
-
-                    alert(
-                        "📱 WhatsApp akan dibuka.\n\n" +
-                        "Silakan tekan tombol KIRIM di WhatsApp."
-                    );
-
-                }
-            );
 
         }
 
-    </script>
+
+    }
+);
+
+
+</script>
 
 
 </body>
