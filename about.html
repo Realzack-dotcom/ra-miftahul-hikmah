@@ -5031,6 +5031,854 @@ body[data-page="about"] .about-reveal {
 }
 
 
+/* =====================================================
+   PREMIUM MOBILE BOTTOM NAVIGATION
+===================================================== */
+
+
+/* SEMBUNYIKAN DI DESKTOP */
+
+.mobile-bottom-nav,
+.mobile-more-menu,
+.mobile-menu-overlay {
+
+    display: none;
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+
+    /* ===============================
+       AGAR ISI TIDAK TERTUTUP NAVBAR
+    =============================== */
+
+    body[data-page="about"] {
+
+        padding-bottom: 100px;
+
+    }
+
+
+    /* ===============================
+       SEMBUNYIKAN NAVBAR ATAS LAMA DI HP
+    =============================== */
+
+    body[data-page="about"] .about-nav {
+
+        display: none;
+
+    }
+
+
+    /* ===============================
+       BOTTOM NAVIGATION
+    =============================== */
+
+    .mobile-bottom-nav {
+
+        position: fixed;
+
+        left: 50%;
+
+        bottom: 12px;
+
+        transform: translateX(-50%);
+
+        width: calc(100% - 24px);
+
+        max-width: 500px;
+
+        min-height: 70px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-around;
+
+        padding:
+
+            7px
+            6px;
+
+        box-sizing: border-box;
+
+        border-radius: 24px;
+
+        background:
+
+            rgba(
+                255,
+                255,
+                255,
+                .88
+            );
+
+        backdrop-filter:
+
+            blur(25px);
+
+        -webkit-backdrop-filter:
+
+            blur(25px);
+
+        border:
+
+            1px
+            solid
+            rgba(
+                255,
+                255,
+                255,
+                .9
+            );
+
+        box-shadow:
+
+            0 15px 45px
+            rgba(
+                54,
+                35,
+                90,
+                .18
+            );
+
+        z-index: 999;
+
+    }
+
+
+    /* ===============================
+       NAV ITEM
+    =============================== */
+
+    .mobile-nav-item {
+
+        position: relative;
+
+        width: 20%;
+
+        min-height: 56px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 3px;
+
+        border: none;
+
+        outline: none;
+
+        background: transparent;
+
+        text-decoration: none;
+
+        color: #817a92;
+
+        font-family:
+
+            "Nunito",
+            sans-serif;
+
+        font-size: 10px;
+
+        font-weight: 800;
+
+        cursor: pointer;
+
+        border-radius: 17px;
+
+        transition:
+
+            .25s
+            ease;
+
+        -webkit-tap-highlight-color:
+
+            transparent;
+
+    }
+
+
+    /* ICON */
+
+    .mobile-nav-icon {
+
+        font-size: 20px;
+
+        line-height: 1;
+
+        transition:
+
+            .25s
+            ease;
+
+    }
+
+
+    /* ACTIVE */
+
+    .mobile-nav-item.active {
+
+        color: #7d6cff;
+
+        background:
+
+            linear-gradient(
+                135deg,
+                #eeeaff,
+                #f8edff
+            );
+
+        box-shadow:
+
+            0 6px 20px
+            rgba(
+                125,
+                108,
+                255,
+                .12
+            );
+
+    }
+
+
+    .mobile-nav-item.active .mobile-nav-icon {
+
+        transform:
+
+            translateY(-2px)
+            scale(1.08);
+
+    }
+
+
+    /* TAP EFFECT */
+
+    .mobile-nav-item:active {
+
+        transform:
+
+            scale(.92);
+
+    }
+
+
+    /* ===============================
+       OVERLAY
+    =============================== */
+
+    .mobile-menu-overlay {
+
+        position: fixed;
+
+        inset: 0;
+
+        display: block;
+
+        background:
+
+            rgba(
+                35,
+                25,
+                55,
+                0
+            );
+
+        backdrop-filter:
+
+            blur(0);
+
+        -webkit-backdrop-filter:
+
+            blur(0);
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        pointer-events: none;
+
+        transition:
+
+            .35s
+            ease;
+
+        z-index: 1100;
+
+    }
+
+
+    .mobile-menu-overlay.show {
+
+        background:
+
+            rgba(
+                35,
+                25,
+                55,
+                .35
+            );
+
+        backdrop-filter:
+
+            blur(5px);
+
+        -webkit-backdrop-filter:
+
+            blur(5px);
+
+        opacity: 1;
+
+        visibility: visible;
+
+        pointer-events: auto;
+
+    }
+
+
+    /* ===============================
+       MORE MENU
+    =============================== */
+
+    .mobile-more-menu {
+
+        position: fixed;
+
+        left: 0;
+
+        bottom: 0;
+
+        width: 100%;
+
+        display: block;
+
+        box-sizing: border-box;
+
+        padding:
+
+            12px
+            18px
+            115px;
+
+        border-radius:
+
+            32px
+            32px
+            0
+            0;
+
+        background:
+
+            linear-gradient(
+                145deg,
+                #ffffff,
+                #fcf9ff
+            );
+
+        box-shadow:
+
+            0 -20px 60px
+            rgba(
+                30,
+                20,
+                60,
+                .2
+            );
+
+        transform:
+
+            translateY(110%);
+
+        transition:
+
+            transform
+            .5s
+            cubic-bezier(
+                .22,
+                1,
+                .36,
+                1
+            );
+
+        z-index: 1200;
+
+    }
+
+
+    .mobile-more-menu.show {
+
+        transform:
+
+            translateY(0);
+
+    }
+
+
+    /* ===============================
+       HANDLE
+    =============================== */
+
+    .mobile-menu-handle {
+
+        width: 48px;
+
+        height: 5px;
+
+        border-radius: 20px;
+
+        margin:
+
+            0
+            auto
+            18px;
+
+        background:
+
+            linear-gradient(
+                90deg,
+                #ffd3e1,
+                #a998ff
+            );
+
+    }
+
+
+    /* ===============================
+       HEADER
+    =============================== */
+
+    .mobile-menu-header {
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        gap: 15px;
+
+        margin-bottom: 20px;
+
+    }
+
+
+    .mobile-menu-header h2 {
+
+        margin: 0;
+
+        font-family:
+
+            "Baloo 2",
+            cursive;
+
+        font-size: 28px;
+
+        line-height: 1.1;
+
+        color: #352d4f;
+
+    }
+
+
+    .mobile-menu-header p {
+
+        margin:
+
+            5px
+            0
+            0;
+
+        font-size: 12px;
+
+        color: #8c849b;
+
+    }
+
+
+    /* CLOSE */
+
+    .mobile-menu-close {
+
+        width: 42px;
+
+        height: 42px;
+
+        border: none;
+
+        border-radius: 14px;
+
+        background:
+
+            #f5f0fa;
+
+        color: #6d647b;
+
+        font-size: 20px;
+
+        cursor: pointer;
+
+        transition:
+
+            .25s;
+
+    }
+
+
+    .mobile-menu-close:active {
+
+        transform:
+
+            scale(.9)
+            rotate(90deg);
+
+    }
+
+
+    /* ===============================
+       MENU LIST
+    =============================== */
+
+    .mobile-menu-list {
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 10px;
+
+    }
+
+
+    /* ===============================
+       MENU ITEM
+    =============================== */
+
+    .premium-menu-item {
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        gap: 10px;
+
+        min-height: 72px;
+
+        padding:
+
+            10px
+            14px;
+
+        box-sizing: border-box;
+
+        border-radius: 20px;
+
+        text-decoration: none;
+
+        background:
+
+            rgba(
+                248,
+                245,
+                252,
+                .9
+            );
+
+        border:
+
+            1px
+            solid
+            rgba(
+                130,
+                100,
+                180,
+                .06
+            );
+
+        transition:
+
+            .25s
+            ease;
+
+        -webkit-tap-highlight-color:
+
+            transparent;
+
+    }
+
+
+    .premium-menu-item:active {
+
+        transform:
+
+            scale(.97);
+
+        background:
+
+            #f0ebff;
+
+    }
+
+
+    /* LEFT */
+
+    .premium-menu-left {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 13px;
+
+        min-width: 0;
+
+    }
+
+
+    /* ICON BOX */
+
+    .premium-menu-icon {
+
+        width: 50px;
+
+        height: 50px;
+
+        min-width: 50px;
+
+        border-radius: 17px;
+
+        display: grid;
+
+        place-items: center;
+
+        font-size: 24px;
+
+    }
+
+
+    /* ICON COLORS */
+
+    .classes-icon {
+
+        background:
+
+            linear-gradient(
+                135deg,
+                #e5ddff,
+                #f3edff
+            );
+
+    }
+
+
+    .blog-icon {
+
+        background:
+
+            linear-gradient(
+                135deg,
+                #ffe3ed,
+                #fff0f5
+            );
+
+    }
+
+
+    .parents-icon {
+
+        background:
+
+            linear-gradient(
+                135deg,
+                #fff0ba,
+                #fff8dc
+            );
+
+    }
+
+
+    .contact-icon {
+
+        background:
+
+            linear-gradient(
+                135deg,
+                #d8f1ff,
+                #eefaff
+            );
+
+    }
+
+
+    /* TEXT */
+
+    .premium-menu-item h3 {
+
+        margin: 0;
+
+        font-family:
+
+            "Baloo 2",
+            cursive;
+
+        font-size: 18px;
+
+        line-height: 1.1;
+
+        color: #3c3453;
+
+    }
+
+
+    .premium-menu-item p {
+
+        margin:
+
+            4px
+            0
+            0;
+
+        font-size: 11px;
+
+        color: #938b9f;
+
+    }
+
+
+    /* ARROW */
+
+    .premium-menu-arrow {
+
+        font-size: 30px;
+
+        line-height: 1;
+
+        color: #b1a7c0;
+
+        transition:
+
+            .25s;
+
+    }
+
+
+    .premium-menu-item:active
+    .premium-menu-arrow {
+
+        transform:
+
+            translateX(4px);
+
+        color: #7d6cff;
+
+    }
+
+
+    /* ===============================
+       BOOK VISIT
+    =============================== */
+
+    .mobile-book-visit {
+
+        width: 100%;
+
+        min-height: 55px;
+
+        margin-top: 16px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 12px;
+
+        box-sizing: border-box;
+
+        border-radius: 18px;
+
+        text-decoration: none;
+
+        color: white;
+
+        font-family:
+
+            "Nunito",
+            sans-serif;
+
+        font-size: 14px;
+
+        font-weight: 900;
+
+        background:
+
+            linear-gradient(
+                135deg,
+                #ef4f82,
+                #ff7ba5,
+                #a67dff
+            );
+
+        box-shadow:
+
+            0 12px 25px
+            rgba(
+                239,
+                79,
+                130,
+                .25
+            );
+
+        transition:
+
+            .25s;
+
+    }
+
+
+    .mobile-book-visit:active {
+
+        transform:
+
+            scale(.97);
+
+    }
+
+}
+
+
+
+/* =====================================================
+   DESKTOP
+===================================================== */
+
+@media (min-width: 769px) {
+
+
+    .mobile-bottom-nav,
+    .mobile-more-menu,
+    .mobile-menu-overlay {
+
+        display: none !important;
+
+    }
+
+}
+
 </style>
 
 </head>
@@ -6025,6 +6873,535 @@ document.addEventListener(
 </script>
 
 
+<!-- =====================================================
+     PREMIUM MOBILE BOTTOM NAVIGATION
+===================================================== -->
+
+<div class="mobile-bottom-nav">
+
+
+    <!-- HOME -->
+
+    <a href="index.html" class="mobile-nav-item">
+
+        <span class="mobile-nav-icon">
+            🏠
+        </span>
+
+        <span>
+            Home
+        </span>
+
+    </a>
+
+
+    <!-- ABOUT -->
+
+    <a
+        href="about.html"
+        class="mobile-nav-item active"
+    >
+
+        <span class="mobile-nav-icon">
+            👥
+        </span>
+
+        <span>
+            About
+        </span>
+
+    </a>
+
+
+    <!-- PROGRAMS -->
+
+    <a
+        href="programs.html"
+        class="mobile-nav-item"
+    >
+
+        <span class="mobile-nav-icon">
+            📚
+        </span>
+
+        <span>
+            Program
+        </span>
+
+    </a>
+
+
+    <!-- GALLERY -->
+
+    <a
+        href="gallery.html"
+        class="mobile-nav-item"
+    >
+
+        <span class="mobile-nav-icon">
+            🖼️
+        </span>
+
+        <span>
+            Gallery
+        </span>
+
+    </a>
+
+
+    <!-- MORE -->
+
+    <button
+        type="button"
+        class="mobile-nav-item mobile-more-btn"
+        id="mobileMoreBtn"
+    >
+
+        <span class="mobile-nav-icon">
+            ☰
+        </span>
+
+        <span>
+            More
+        </span>
+
+    </button>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     MORE MENU OVERLAY
+===================================================== -->
+
+<div
+    class="mobile-menu-overlay"
+    id="mobileMenuOverlay"
+></div>
+
+
+
+<!-- =====================================================
+     PREMIUM MORE MENU
+===================================================== -->
+
+<div
+    class="mobile-more-menu"
+    id="mobileMoreMenu"
+>
+
+
+    <!-- HANDLE -->
+
+    <div class="mobile-menu-handle"></div>
+
+
+    <!-- HEADER -->
+
+    <div class="mobile-menu-header">
+
+
+        <div>
+
+            <h2>
+
+                ✨ Menu Lainnya
+
+            </h2>
+
+
+            <p>
+
+                Jelajahi fitur RA Miftahul Hikmah
+
+            </p>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="mobile-menu-close"
+            id="mobileMenuClose"
+        >
+
+            ✕
+
+        </button>
+
+
+    </div>
+
+
+
+    <!-- MENU ITEMS -->
+
+    <div class="mobile-menu-list">
+
+
+        <!-- CLASSES -->
+
+        <a
+            href="classes.html"
+            class="premium-menu-item"
+        >
+
+            <div class="premium-menu-left">
+
+                <div class="premium-menu-icon classes-icon">
+
+                    🎓
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Classes
+                    </h3>
+
+
+                    <p>
+                        Kelas & pembelajaran
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <span class="premium-menu-arrow">
+
+                ›
+
+            </span>
+
+        </a>
+
+
+
+        <!-- BLOG -->
+
+        <a
+            href="blog.html"
+            class="premium-menu-item"
+        >
+
+            <div class="premium-menu-left">
+
+                <div class="premium-menu-icon blog-icon">
+
+                    🖍️
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Blog
+                    </h3>
+
+
+                    <p>
+                        Cerita & informasi
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <span class="premium-menu-arrow">
+
+                ›
+
+            </span>
+
+        </a>
+
+
+
+        <!-- PARENTS -->
+
+        <a
+            href="parents.html"
+            class="premium-menu-item"
+        >
+
+            <div class="premium-menu-left">
+
+                <div class="premium-menu-icon parents-icon">
+
+                    💛
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Parents
+                    </h3>
+
+
+                    <p>
+                        Area khusus wali
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <span class="premium-menu-arrow">
+
+                ›
+
+            </span>
+
+        </a>
+
+
+
+        <!-- CONTACT -->
+
+        <a
+            href="contact.html"
+            class="premium-menu-item"
+        >
+
+            <div class="premium-menu-left">
+
+                <div class="premium-menu-icon contact-icon">
+
+                    ✉️
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Contact
+                    </h3>
+
+
+                    <p>
+                        Hubungi kami
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <span class="premium-menu-arrow">
+
+                ›
+
+            </span>
+
+        </a>
+
+
+    </div>
+
+
+
+    <!-- BOOK VISIT -->
+
+    <a
+        href="contact.html"
+        class="mobile-book-visit"
+    >
+
+        <span>
+
+            📅
+
+        </span>
+
+        Book a Visit
+
+        <span>
+
+            →
+
+        </span>
+
+    </a>
+
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   PREMIUM MOBILE MORE MENU
+===================================================== */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+
+        const moreButton =
+
+            document.getElementById(
+                "mobileMoreBtn"
+            );
+
+
+        const moreMenu =
+
+            document.getElementById(
+                "mobileMoreMenu"
+            );
+
+
+        const overlay =
+
+            document.getElementById(
+                "mobileMenuOverlay"
+            );
+
+
+        const closeButton =
+
+            document.getElementById(
+                "mobileMenuClose"
+            );
+
+
+        /* ===============================
+           OPEN
+        =============================== */
+
+        function openMenu() {
+
+
+            moreMenu.classList.add(
+                "show"
+            );
+
+
+            overlay.classList.add(
+                "show"
+            );
+
+
+            document.body.style.overflow =
+                "hidden";
+
+
+        }
+
+
+        /* ===============================
+           CLOSE
+        =============================== */
+
+        function closeMenu() {
+
+
+            moreMenu.classList.remove(
+                "show"
+            );
+
+
+            overlay.classList.remove(
+                "show"
+            );
+
+
+            document.body.style.overflow =
+                "";
+
+
+        }
+
+
+        /* ===============================
+           BUTTON MORE
+        =============================== */
+
+        if (moreButton) {
+
+
+            moreButton.addEventListener(
+                "click",
+                openMenu
+            );
+
+
+        }
+
+
+        /* ===============================
+           CLOSE BUTTON
+        =============================== */
+
+        if (closeButton) {
+
+
+            closeButton.addEventListener(
+                "click",
+                closeMenu
+            );
+
+
+        }
+
+
+        /* ===============================
+           OVERLAY CLICK
+        =============================== */
+
+        if (overlay) {
+
+
+            overlay.addEventListener(
+                "click",
+                closeMenu
+            );
+
+
+        }
+
+
+        /* ===============================
+           ESC KEY
+        =============================== */
+
+        document.addEventListener(
+            "keydown",
+            function (event) {
+
+
+                if (
+                    event.key === "Escape"
+                ) {
+
+
+                    closeMenu();
+
+
+                }
+
+
+            }
+        );
+
+
+    }
+);
+
+</script>
 </body>
 
 </html>
