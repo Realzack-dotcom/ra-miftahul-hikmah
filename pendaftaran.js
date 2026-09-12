@@ -87,42 +87,10 @@ body {
         linear-gradient(
             180deg,
             #fff9fc 0%,
-            #f9f5ff 28%,
-            #f4fbff 58%,
+            #f9f5ff 30%,
+            #f4fbff 65%,
             #fffaf2 100%
         );
-
-    background-size:
-        300% 300%;
-
-    animation:
-        backgroundMove 18s ease infinite;
-
-}
-
-
-@keyframes backgroundMove {
-
-    0% {
-
-        background-position:
-            0% 50%;
-
-    }
-
-    50% {
-
-        background-position:
-            100% 50%;
-
-    }
-
-    100% {
-
-        background-position:
-            0% 50%;
-
-    }
 
 }
 
@@ -178,28 +146,28 @@ body {
         absolute;
 
     width:
-        330px;
+        400px;
 
     height:
-        330px;
+        400px;
+
+    top:
+        5%;
+
+    left:
+        -220px;
 
     border-radius:
         50%;
 
-    top:
-        8%;
-
-    left:
-        -160px;
-
     background:
-        rgba(255,139,184,.22);
+        rgba(255,139,184,.20);
 
     filter:
-        blur(70px);
+        blur(80px);
 
     animation:
-        blobOne 13s ease-in-out infinite;
+        blobOne 14s ease-in-out infinite;
 
 }
 
@@ -213,28 +181,28 @@ body {
         absolute;
 
     width:
-        360px;
+        420px;
 
     height:
-        360px;
+        420px;
+
+    bottom:
+        0;
+
+    right:
+        -220px;
 
     border-radius:
         50%;
 
-    bottom:
-        5%;
-
-    right:
-        -180px;
-
     background:
-        rgba(126,189,255,.22);
+        rgba(126,189,255,.20);
 
     filter:
-        blur(70px);
+        blur(80px);
 
     animation:
-        blobTwo 15s ease-in-out infinite;
+        blobTwo 16s ease-in-out infinite;
 
 }
 
@@ -253,8 +221,8 @@ body {
     50% {
 
         transform:
-            translate(110px,80px)
-            scale(1.2);
+            translate(100px,70px)
+            scale(1.15);
 
     }
 
@@ -275,8 +243,8 @@ body {
     50% {
 
         transform:
-            translate(-100px,-90px)
-            scale(1.18);
+            translate(-100px,-80px)
+            scale(1.12);
 
     }
 
@@ -299,7 +267,7 @@ body {
         none;
 
     opacity:
-        .35;
+        .30;
 
     animation:
         shapeFloat 7s ease-in-out infinite;
@@ -310,13 +278,13 @@ body {
 .float-shape.one {
 
     top:
-        28%;
+        30%;
 
     left:
         4%;
 
     font-size:
-        35px;
+        34px;
 
 }
 
@@ -341,7 +309,7 @@ body {
 .float-shape.three {
 
     bottom:
-        10%;
+        8%;
 
     left:
         7%;
@@ -390,7 +358,7 @@ body {
         100;
 
     background:
-        rgba(255,255,255,.78);
+        rgba(255,255,255,.82);
 
     backdrop-filter:
         blur(20px);
@@ -404,7 +372,7 @@ body {
 .au-header-inner {
 
     min-height:
-        72px;
+        74px;
 
     display:
         flex;
@@ -448,6 +416,9 @@ body {
 
     height:
         46px;
+
+    flex:
+        0 0 auto;
 
     display:
         grid;
@@ -562,6 +533,9 @@ body {
 
     color:
         white;
+
+    white-space:
+        nowrap;
 
     font-size:
         11px;
@@ -753,11 +727,8 @@ body {
 
 .au-more-button {
 
-    height:
-        100%;
-
     min-width:
-        72px;
+        68px;
 
     border:
         none;
@@ -825,10 +796,10 @@ body {
         138px;
 
     left:
-        16px;
+        12px;
 
     right:
-        16px;
+        12px;
 
     z-index:
         300;
@@ -843,7 +814,7 @@ body {
         22px;
 
     background:
-        rgba(255,255,255,.97);
+        rgba(255,255,255,.98);
 
     box-shadow:
         0 20px 55px rgba(57,40,90,.18);
@@ -923,6 +894,14 @@ body {
 }
 
 
+.au-more-menu a:last-child {
+
+    border-bottom:
+        none;
+
+}
+
+
 /* =====================================================
    HERO
 ===================================================== */
@@ -936,7 +915,7 @@ body {
         hidden;
 
     padding:
-        65px 0 70px;
+        70px 0 50px;
 
     text-align:
         center;
@@ -953,16 +932,16 @@ body {
         absolute;
 
     top:
-        25px;
+        18px;
 
     left:
-        7%;
+        5%;
 
     font-size:
-        48px;
+        42px;
 
     opacity:
-        .28;
+        .22;
 
     animation:
         emojiFloat 5s ease-in-out infinite;
@@ -979,16 +958,16 @@ body {
         absolute;
 
     right:
-        7%;
+        5%;
 
     bottom:
-        20px;
+        5px;
 
     font-size:
-        58px;
+        48px;
 
     opacity:
-        .30;
+        .24;
 
     animation:
         emojiFloat 6s ease-in-out infinite reverse;
@@ -1037,11 +1016,14 @@ body {
     align-items:
         center;
 
+    justify-content:
+        center;
+
     gap:
         7px;
 
     padding:
-        9px 16px;
+        9px 15px;
 
     border-radius:
         50px;
@@ -1049,14 +1031,14 @@ body {
     background:
         rgba(255,255,255,.82);
 
+    color:
+        #8466bd;
+
     font-size:
-        11px;
+        10px;
 
     font-weight:
         900;
-
-    color:
-        #8466bd;
 
     box-shadow:
         0 10px 30px rgba(80,60,120,.08);
@@ -1090,14 +1072,17 @@ body {
 .reg-hero h2 {
 
     margin:
-        17px 0 0;
+        17px auto 0;
+
+    max-width:
+        800px;
 
     font-family:
         "Baloo 2",
         cursive;
 
     font-size:
-        clamp(46px,14vw,72px);
+        clamp(42px,12vw,72px);
 
     line-height:
         .95;
@@ -1106,6 +1091,9 @@ body {
 
 
 .reg-hero h2 span {
+
+    display:
+        block;
 
     color:
         #ef4f82;
@@ -1125,7 +1113,7 @@ body {
         #766d84;
 
     font-size:
-        14px;
+        13px;
 
     line-height:
         1.8;
@@ -1134,13 +1122,13 @@ body {
 
 
 /* =====================================================
-   QUICK INFO
+   INFO
 ===================================================== */
 
 .info-section {
 
     padding:
-        20px 0 45px;
+        10px 0 40px;
 
 }
 
@@ -1154,7 +1142,7 @@ body {
         repeat(2,1fr);
 
     gap:
-        13px;
+        12px;
 
 }
 
@@ -1167,8 +1155,23 @@ body {
     overflow:
         hidden;
 
+    min-height:
+        145px;
+
     padding:
-        20px 13px;
+        18px 10px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
 
     text-align:
         center;
@@ -1177,7 +1180,7 @@ body {
         22px;
 
     background:
-        rgba(255,255,255,.76);
+        rgba(255,255,255,.78);
 
     border:
         1px solid rgba(255,255,255,.9);
@@ -1230,6 +1233,12 @@ body {
 
 .info-card span {
 
+    position:
+        relative;
+
+    z-index:
+        2;
+
     display:
         block;
 
@@ -1237,7 +1246,7 @@ body {
         8px;
 
     font-size:
-        32px;
+        30px;
 
 }
 
@@ -1254,7 +1263,7 @@ body {
         block;
 
     font-size:
-        12px;
+        11px;
 
 }
 
@@ -1277,7 +1286,7 @@ body {
         #8b8296;
 
     font-size:
-        10px;
+        9px;
 
     line-height:
         1.5;
@@ -1292,7 +1301,7 @@ body {
 .reg-section {
 
     padding:
-        35px 0 60px;
+        30px 0 50px;
 
 }
 
@@ -1303,7 +1312,7 @@ body {
         center;
 
     margin-bottom:
-        28px;
+        25px;
 
 }
 
@@ -1344,7 +1353,7 @@ body {
         cursive;
 
     font-size:
-        34px;
+        31px;
 
     line-height:
         1.1;
@@ -1353,6 +1362,9 @@ body {
 
 
 .section-heading h2 span {
+
+    display:
+        block;
 
     color:
         #ef4f82;
@@ -1372,7 +1384,7 @@ body {
         #7c7489;
 
     font-size:
-        13px;
+        12px;
 
     line-height:
         1.7;
@@ -1381,7 +1393,7 @@ body {
 
 
 /* =====================================================
-   FORM WRAPPER
+   LAYOUT
 ===================================================== */
 
 .registration-layout {
@@ -1390,10 +1402,14 @@ body {
         grid;
 
     gap:
-        22px;
+        18px;
 
 }
 
+
+/* =====================================================
+   FORM WRAPPER
+===================================================== */
 
 .registration-form {
 
@@ -1404,19 +1420,19 @@ body {
         hidden;
 
     padding:
-        22px;
+        15px;
 
     border-radius:
-        28px;
+        25px;
 
     background:
-        rgba(255,255,255,.82);
+        rgba(255,255,255,.86);
 
     border:
         1px solid rgba(255,255,255,.95);
 
     box-shadow:
-        0 20px 55px rgba(70,50,110,.10);
+        0 18px 45px rgba(70,50,110,.10);
 
 }
 
@@ -1430,25 +1446,29 @@ body {
         absolute;
 
     width:
-        180px;
+        150px;
 
     height:
-        180px;
+        150px;
 
     border-radius:
         50%;
 
     top:
-        -90px;
+        -80px;
 
     right:
-        -80px;
+        -70px;
 
     background:
         rgba(184,155,255,.12);
 
 }
 
+
+/* =====================================================
+   FORM TITLE
+===================================================== */
 
 .form-title {
 
@@ -1465,10 +1485,10 @@ body {
         center;
 
     gap:
-        12px;
+        10px;
 
     margin-bottom:
-        22px;
+        17px;
 
 }
 
@@ -1476,10 +1496,13 @@ body {
 .form-title-icon {
 
     width:
-        52px;
+        48px;
 
     height:
-        52px;
+        48px;
+
+    flex:
+        0 0 auto;
 
     display:
         grid;
@@ -1487,14 +1510,11 @@ body {
     place-items:
         center;
 
-    flex:
-        0 0 auto;
-
     border-radius:
-        17px;
+        15px;
 
     font-size:
-        25px;
+        23px;
 
     background:
 
@@ -1503,29 +1523,6 @@ body {
             #fff1f6,
             #eee9ff
         );
-
-    animation:
-        iconPulse 4s ease-in-out infinite;
-
-}
-
-
-@keyframes iconPulse {
-
-    0%,
-    100% {
-
-        transform:
-            scale(1);
-
-    }
-
-    50% {
-
-        transform:
-            scale(1.07);
-
-    }
 
 }
 
@@ -1540,7 +1537,10 @@ body {
         cursive;
 
     font-size:
-        23px;
+        20px;
+
+    line-height:
+        1;
 
 }
 
@@ -1548,13 +1548,13 @@ body {
 .form-title p {
 
     margin:
-        2px 0 0;
+        4px 0 0;
 
     color:
         #877d92;
 
     font-size:
-        11px;
+        10px;
 
 }
 
@@ -1572,13 +1572,13 @@ body {
         2;
 
     padding:
-        18px;
+        14px;
 
     margin-bottom:
-        17px;
+        14px;
 
     border-radius:
-        20px;
+        19px;
 
     background:
         #fbfaff;
@@ -1598,10 +1598,10 @@ body {
         center;
 
     gap:
-        10px;
+        9px;
 
     margin-bottom:
-        17px;
+        15px;
 
 }
 
@@ -1609,10 +1609,13 @@ body {
 .step-number {
 
     width:
-        34px;
+        32px;
 
     height:
-        34px;
+        32px;
+
+    flex:
+        0 0 auto;
 
     display:
         grid;
@@ -1621,13 +1624,13 @@ body {
         center;
 
     border-radius:
-        11px;
+        10px;
 
     color:
         white;
 
     font-size:
-        12px;
+        10px;
 
     font-weight:
         900;
@@ -1649,13 +1652,16 @@ body {
         0;
 
     font-size:
-        15px;
+        13px;
+
+    line-height:
+        1.3;
 
 }
 
 
 /* =====================================================
-   FORM
+   FORM GRID
 ===================================================== */
 
 .form-grid {
@@ -1664,7 +1670,7 @@ body {
         grid;
 
     gap:
-        14px;
+        13px;
 
 }
 
@@ -1702,6 +1708,10 @@ body {
 }
 
 
+/* =====================================================
+   INPUT
+===================================================== */
+
 .form-group input,
 
 .form-group select,
@@ -1711,6 +1721,9 @@ body {
     width:
         100%;
 
+    min-height:
+        48px;
+
     border:
         1px solid #e8e3ef;
 
@@ -1718,7 +1731,7 @@ body {
         none;
 
     padding:
-        13px 14px;
+        13px 13px;
 
     border-radius:
         14px;
@@ -1744,7 +1757,7 @@ body {
 .form-group textarea {
 
     min-height:
-        100px;
+        105px;
 
     resize:
         vertical;
@@ -1763,9 +1776,6 @@ body {
 
     box-shadow:
         0 0 0 4px rgba(164,127,255,.10);
-
-    transform:
-        translateY(-1px);
 
 }
 
@@ -1793,7 +1803,7 @@ body {
         repeat(2,1fr);
 
     gap:
-        10px;
+        9px;
 
 }
 
@@ -1816,6 +1826,9 @@ body {
 
 .gender-box {
 
+    min-height:
+        48px;
+
     display:
         flex;
 
@@ -1826,10 +1839,10 @@ body {
         center;
 
     gap:
-        7px;
+        5px;
 
     padding:
-        13px;
+        10px;
 
     border-radius:
         14px;
@@ -1844,7 +1857,7 @@ body {
         #756d7d;
 
     font-size:
-        12px;
+        11px;
 
     font-weight:
         800;
@@ -1875,7 +1888,7 @@ body {
 
 
 /* =====================================================
-   CHECKBOX
+   AGREEMENT
 ===================================================== */
 
 .agreement {
@@ -1887,10 +1900,10 @@ body {
         flex-start;
 
     gap:
-        10px;
+        9px;
 
     padding:
-        14px;
+        13px;
 
     border-radius:
         15px;
@@ -1902,7 +1915,7 @@ body {
         #776e65;
 
     font-size:
-        11px;
+        10px;
 
     line-height:
         1.65;
@@ -1921,6 +1934,9 @@ body {
     flex:
         0 0 auto;
 
+    margin-top:
+        1px;
+
     accent-color:
         #ef4f82;
 
@@ -1928,13 +1944,16 @@ body {
 
 
 /* =====================================================
-   BUTTON
+   SUBMIT BUTTON
 ===================================================== */
 
 .submit-button {
 
     width:
         100%;
+
+    min-height:
+        54px;
 
     border:
         none;
@@ -1955,10 +1974,10 @@ body {
         8px;
 
     margin-top:
-        18px;
+        16px;
 
     padding:
-        16px 20px;
+        15px 18px;
 
     border-radius:
         16px;
@@ -1995,492 +2014,24 @@ body {
 .submit-button:hover {
 
     transform:
-        translateY(-4px);
-
-    box-shadow:
-        0 18px 35px rgba(239,79,130,.32);
-
-}
-
-
-.submit-button:active {
-
-    transform:
-        scale(.98);
-
-}
-
-
-/* =====================================================
-   SIDEBAR
-===================================================== */
-
-.registration-side {
-
-    display:
-        grid;
-
-    gap:
-        17px;
-
-}
-
-
-.side-card {
-
-    position:
-        relative;
-
-    overflow:
-        hidden;
-
-    padding:
-        23px;
-
-    border-radius:
-        25px;
-
-    background:
-        rgba(255,255,255,.78);
-
-    border:
-        1px solid rgba(255,255,255,.95);
-
-    box-shadow:
-        0 16px 42px rgba(70,50,110,.09);
-
-}
-
-
-.side-card h3 {
-
-    margin:
-        0 0 14px;
-
-    font-family:
-        "Baloo 2",
-        cursive;
-
-    font-size:
-        22px;
-
-}
-
-
-.side-card h3 span {
-
-    color:
-        #ef4f82;
-
-}
-
-
-.side-card p {
-
-    margin:
-        0;
-
-    color:
-        #786f84;
-
-    font-size:
-        12px;
-
-    line-height:
-        1.75;
-
-}
-
-
-/* =====================================================
-   STEPS SIDEBAR
-===================================================== */
-
-.side-steps {
-
-    display:
-        grid;
-
-    gap:
-        13px;
-
-    margin-top:
-        18px;
-
-}
-
-
-.side-step {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        43px 1fr;
-
-    gap:
-        12px;
-
-    align-items:
-        center;
-
-    padding:
-        12px;
-
-    border-radius:
-        16px;
-
-    background:
-        #faf8ff;
-
-}
-
-
-.side-step-icon {
-
-    width:
-        43px;
-
-    height:
-        43px;
-
-    display:
-        grid;
-
-    place-items:
-        center;
-
-    border-radius:
-        14px;
-
-    font-size:
-        20px;
-
-    background:
-        white;
-
-    box-shadow:
-        0 7px 17px rgba(70,50,110,.07);
-
-}
-
-
-.side-step b {
-
-    display:
-        block;
-
-    font-size:
-        12px;
-
-}
-
-
-.side-step small {
-
-    display:
-        block;
-
-    margin-top:
-        3px;
-
-    color:
-        #938b9d;
-
-    font-size:
-        10px;
-
-}
-
-
-/* =====================================================
-   REQUIREMENTS
-===================================================== */
-
-.requirement-list {
-
-    display:
-        grid;
-
-    gap:
-        10px;
-
-    margin:
-        16px 0 0;
-
-}
-
-
-.requirement-item {
-
-    display:
-        flex;
-
-    align-items:
-        flex-start;
-
-    gap:
-        10px;
-
-    padding:
-        12px;
-
-    border-radius:
-        15px;
-
-    background:
-        #f9fcff;
-
-}
-
-
-.requirement-item span {
-
-    font-size:
-        18px;
-
-}
-
-
-.requirement-item div {
-
-    font-size:
-        11px;
-
-    line-height:
-        1.6;
-
-    color:
-        #766e82;
-
-}
-
-
-.requirement-item b {
-
-    display:
-        block;
-
-    color:
-        #534b5e;
-
-}
-
-
-/* =====================================================
-   CONTACT BOX
-===================================================== */
-
-.help-card {
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #fff1f6,
-            #f1edff,
-            #e8f7ff
-        );
-
-}
-
-
-.help-card::after {
-
-    content:
-        "💬";
-
-    position:
-        absolute;
-
-    right:
-        -5px;
-
-    bottom:
-        -15px;
-
-    font-size:
-        90px;
-
-    opacity:
-        .12;
-
-}
-
-
-.help-button {
-
-    position:
-        relative;
-
-    z-index:
-        2;
-
-    display:
-        inline-flex;
-
-    align-items:
-        center;
-
-    gap:
-        8px;
-
-    margin-top:
-        17px;
-
-    padding:
-        12px 17px;
-
-    border-radius:
-        14px;
-
-    text-decoration:
-        none;
-
-    color:
-        white;
-
-    font-size:
-        12px;
-
-    font-weight:
-        900;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #25d366,
-            #56e48c
-        );
-
-    box-shadow:
-        0 10px 22px rgba(37,211,102,.20);
-
-    transition:
-        .3s ease;
-
-}
-
-
-.help-button:hover {
-
-    transform:
         translateY(-3px);
 
 }
 
 
-/* =====================================================
-   BENEFITS
-===================================================== */
+.submit-button:disabled {
 
-.benefit-section {
+    cursor:
+        not-allowed;
 
-    padding:
-        30px 0 65px;
-
-}
-
-
-.benefit-grid {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        repeat(2,1fr);
-
-    gap:
-        13px;
-
-}
-
-
-.benefit-card {
-
-    position:
-        relative;
-
-    overflow:
-        hidden;
-
-    padding:
-        22px 14px;
-
-    text-align:
-        center;
-
-    border-radius:
-        22px;
-
-    background:
-        rgba(255,255,255,.78);
-
-    box-shadow:
-        0 13px 32px rgba(70,50,100,.08);
-
-    transition:
-        .3s ease;
-
-}
-
-
-.benefit-card:hover {
-
-    transform:
-        translateY(-7px);
-
-}
-
-
-.benefit-card span {
-
-    display:
-        block;
-
-    margin-bottom:
-        8px;
-
-    font-size:
-        35px;
-
-}
-
-
-.benefit-card b {
-
-    display:
-        block;
-
-    font-size:
-        12px;
-
-}
-
-
-.benefit-card small {
-
-    display:
-        block;
-
-    margin-top:
-        5px;
-
-    color:
-        #8b8296;
-
-    font-size:
-        10px;
-
-    line-height:
-        1.5;
+    opacity:
+        .75;
 
 }
 
 
 /* =====================================================
-   SUCCESS MESSAGE
+   SUCCESS
 ===================================================== */
 
 .form-success {
@@ -2568,7 +2119,7 @@ body {
         block;
 
     font-size:
-        14px;
+        13px;
 
 }
 
@@ -2579,10 +2130,488 @@ body {
         6px 0 0;
 
     font-size:
-        11px;
+        10px;
 
     line-height:
         1.6;
+
+}
+
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+.registration-side {
+
+    display:
+        grid;
+
+    gap:
+        15px;
+
+}
+
+
+.side-card {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    padding:
+        19px;
+
+    border-radius:
+        23px;
+
+    background:
+        rgba(255,255,255,.80);
+
+    border:
+        1px solid rgba(255,255,255,.95);
+
+    box-shadow:
+        0 14px 38px rgba(70,50,110,.08);
+
+}
+
+
+.side-card h3 {
+
+    margin:
+        0 0 12px;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size:
+        21px;
+
+    line-height:
+        1;
+
+}
+
+
+.side-card h3 span {
+
+    color:
+        #ef4f82;
+
+}
+
+
+.side-card p {
+
+    margin:
+        0;
+
+    color:
+        #786f84;
+
+    font-size:
+        11px;
+
+    line-height:
+        1.7;
+
+}
+
+
+/* =====================================================
+   STEPS
+===================================================== */
+
+.side-steps {
+
+    display:
+        grid;
+
+    gap:
+        10px;
+
+    margin-top:
+        16px;
+
+}
+
+
+.side-step {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        40px 1fr;
+
+    gap:
+        10px;
+
+    align-items:
+        center;
+
+    padding:
+        10px;
+
+    border-radius:
+        15px;
+
+    background:
+        #faf8ff;
+
+}
+
+
+.side-step-icon {
+
+    width:
+        40px;
+
+    height:
+        40px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    border-radius:
+        13px;
+
+    font-size:
+        18px;
+
+    background:
+        white;
+
+    box-shadow:
+        0 7px 17px rgba(70,50,110,.07);
+
+}
+
+
+.side-step b {
+
+    display:
+        block;
+
+    font-size:
+        11px;
+
+}
+
+
+.side-step small {
+
+    display:
+        block;
+
+    margin-top:
+        3px;
+
+    color:
+        #938b9d;
+
+    font-size:
+        9px;
+
+}
+
+
+/* =====================================================
+   REQUIREMENTS
+===================================================== */
+
+.requirement-list {
+
+    display:
+        grid;
+
+    gap:
+        9px;
+
+    margin:
+        15px 0 0;
+
+}
+
+
+.requirement-item {
+
+    display:
+        flex;
+
+    align-items:
+        flex-start;
+
+    gap:
+        9px;
+
+    padding:
+        11px;
+
+    border-radius:
+        14px;
+
+    background:
+        #f9fcff;
+
+}
+
+
+.requirement-item span {
+
+    font-size:
+        17px;
+
+}
+
+
+.requirement-item div {
+
+    font-size:
+        10px;
+
+    line-height:
+        1.6;
+
+    color:
+        #766e82;
+
+}
+
+
+.requirement-item b {
+
+    display:
+        block;
+
+    color:
+        #534b5e;
+
+}
+
+
+/* =====================================================
+   HELP CARD
+===================================================== */
+
+.help-card {
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #fff1f6,
+            #f1edff,
+            #e8f7ff
+        );
+
+}
+
+
+.help-card::after {
+
+    content:
+        "💬";
+
+    position:
+        absolute;
+
+    right:
+        -5px;
+
+    bottom:
+        -15px;
+
+    font-size:
+        90px;
+
+    opacity:
+        .10;
+
+}
+
+
+.help-button {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        8px;
+
+    margin-top:
+        15px;
+
+    padding:
+        12px 16px;
+
+    border-radius:
+        14px;
+
+    text-decoration:
+        none;
+
+    color:
+        white;
+
+    font-size:
+        11px;
+
+    font-weight:
+        900;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #25d366,
+            #56e48c
+        );
+
+    box-shadow:
+        0 10px 22px rgba(37,211,102,.20);
+
+}
+
+
+/* =====================================================
+   BENEFIT
+===================================================== */
+
+.benefit-section {
+
+    padding:
+        20px 0 55px;
+
+}
+
+
+.benefit-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:
+        12px;
+
+}
+
+
+.benefit-card {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    min-height:
+        165px;
+
+    padding:
+        18px 10px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    text-align:
+        center;
+
+    border-radius:
+        21px;
+
+    background:
+        rgba(255,255,255,.80);
+
+    box-shadow:
+        0 13px 32px rgba(70,50,100,.08);
+
+    transition:
+        .3s ease;
+
+}
+
+
+.benefit-card:hover {
+
+    transform:
+        translateY(-6px);
+
+}
+
+
+.benefit-card span {
+
+    display:
+        block;
+
+    margin-bottom:
+        8px;
+
+    font-size:
+        31px;
+
+}
+
+
+.benefit-card b {
+
+    display:
+        block;
+
+    font-size:
+        11px;
+
+}
+
+
+.benefit-card small {
+
+    display:
+        block;
+
+    margin-top:
+        5px;
+
+    color:
+        #8b8296;
+
+    font-size:
+        9px;
+
+    line-height:
+        1.5;
 
 }
 
@@ -2594,7 +2623,7 @@ body {
 .au-footer {
 
     padding:
-        42px 0 0;
+        40px 0 0;
 
     background:
 
@@ -2616,7 +2645,7 @@ body {
         grid;
 
     gap:
-        25px;
+        24px;
 
     text-align:
         center;
@@ -2634,7 +2663,7 @@ body {
         cursive;
 
     font-size:
-        22px;
+        21px;
 
 }
 
@@ -2656,7 +2685,7 @@ body {
         #c9c1d7;
 
     font-size:
-        13px;
+        12px;
 
     line-height:
         1.7;
@@ -2678,10 +2707,10 @@ body {
 .au-copyright {
 
     margin-top:
-        35px;
+        30px;
 
     padding:
-        18px;
+        17px 10px;
 
     text-align:
         center;
@@ -2693,7 +2722,7 @@ body {
         #aaa0bc;
 
     font-size:
-        11px;
+        10px;
 
 }
 
@@ -2708,7 +2737,7 @@ body {
         0;
 
     transform:
-        translateY(28px);
+        translateY(25px);
 
     transition:
 
@@ -2730,11 +2759,33 @@ body {
 
 
 /* =====================================================
+   TABLET
+===================================================== */
+
+@media (min-width: 600px) {
+
+    .info-grid {
+
+        grid-template-columns:
+            repeat(4,1fr);
+
+    }
+
+    .benefit-grid {
+
+        grid-template-columns:
+            repeat(4,1fr);
+
+    }
+
+}
+
+
+/* =====================================================
    DESKTOP
 ===================================================== */
 
 @media (min-width: 769px) {
-
 
     .au-header-inner {
 
@@ -2742,7 +2793,6 @@ body {
             90px;
 
     }
-
 
     .au-logo {
 
@@ -2757,7 +2807,6 @@ body {
 
     }
 
-
     .au-brand h1 {
 
         font-size:
@@ -2765,14 +2814,12 @@ body {
 
     }
 
-
     .au-brand p {
 
         font-size:
             13px;
 
     }
-
 
     .au-visit {
 
@@ -2784,7 +2831,6 @@ body {
 
     }
 
-
     .au-nav-inner {
 
         justify-content:
@@ -2794,7 +2840,6 @@ body {
             visible;
 
     }
-
 
     .au-nav-link {
 
@@ -2812,14 +2857,12 @@ body {
 
     }
 
-
     .au-more-wrap {
 
         display:
             none;
 
     }
-
 
     .reg-hero {
 
@@ -2828,6 +2871,12 @@ body {
 
     }
 
+    .reg-hero h2 {
+
+        font-size:
+            72px;
+
+    }
 
     .reg-hero p {
 
@@ -2836,14 +2885,47 @@ body {
 
     }
 
+    .info-card {
 
-    .info-grid {
-
-        grid-template-columns:
-            repeat(4,1fr);
+        min-height:
+            175px;
 
     }
 
+    .info-card span {
+
+        font-size:
+            38px;
+
+    }
+
+    .info-card b {
+
+        font-size:
+            14px;
+
+    }
+
+    .info-card small {
+
+        font-size:
+            11px;
+
+    }
+
+    .section-heading h2 {
+
+        font-size:
+            42px;
+
+    }
+
+    .section-heading p {
+
+        font-size:
+            14px;
+
+    }
 
     .registration-layout {
 
@@ -2856,6 +2938,22 @@ body {
 
     }
 
+    .registration-form {
+
+        padding:
+            25px;
+
+        border-radius:
+            30px;
+
+    }
+
+    .form-step {
+
+        padding:
+            20px;
+
+    }
 
     .form-grid.two {
 
@@ -2864,14 +2962,40 @@ body {
 
     }
 
+    .form-title h3 {
 
-    .benefit-grid {
-
-        grid-template-columns:
-            repeat(4,1fr);
+        font-size:
+            25px;
 
     }
 
+    .benefit-card {
+
+        min-height:
+            200px;
+
+    }
+
+    .benefit-card span {
+
+        font-size:
+            40px;
+
+    }
+
+    .benefit-card b {
+
+        font-size:
+            13px;
+
+    }
+
+    .benefit-card small {
+
+        font-size:
+            11px;
+
+    }
 
     .au-footer-grid {
 
@@ -2883,6 +3007,650 @@ body {
 
     }
 
+}
+
+
+/* =====================================================
+   MOBILE KHUSUS
+===================================================== */
+
+@media (max-width: 480px) {
+
+    .au-container {
+
+        width:
+            calc(100% - 24px);
+
+    }
+
+    .au-header-inner {
+
+        min-height:
+            68px;
+
+    }
+
+    .au-logo {
+
+        width:
+            40px;
+
+        height:
+            40px;
+
+        border-radius:
+            13px;
+
+        font-size:
+            21px;
+
+    }
+
+    .au-brand {
+
+        gap:
+            8px;
+
+        min-width:
+            0;
+
+    }
+
+    .au-brand h1 {
+
+        font-size:
+            15px;
+
+    }
+
+    .au-brand p {
+
+        font-size:
+            8px;
+
+        white-space:
+            nowrap;
+
+    }
+
+    .au-visit {
+
+        padding:
+            9px 10px;
+
+        border-radius:
+            11px;
+
+        font-size:
+            9px;
+
+    }
+
+    .au-nav-inner {
+
+        width:
+            calc(100% - 12px);
+
+        gap:
+            4px;
+
+        padding:
+            7px 0;
+
+    }
+
+    .au-nav-link {
+
+        min-width:
+            58px;
+
+        padding:
+            7px 7px;
+
+        font-size:
+            8px;
+
+    }
+
+    .au-nav-icon {
+
+        font-size:
+            17px;
+
+    }
+
+    .au-more-button {
+
+        min-width:
+            58px;
+
+        padding:
+            7px 8px;
+
+        font-size:
+            8px;
+
+    }
+
+    .au-more-button span {
+
+        font-size:
+            17px;
+
+    }
+
+    .au-more-menu {
+
+        top:
+            126px;
+
+        left:
+            8px;
+
+        right:
+            8px;
+
+    }
+
+    .reg-hero {
+
+        padding:
+            48px 0 35px;
+
+    }
+
+    .reg-hero::before {
+
+        font-size:
+            34px;
+
+        left:
+            -2%;
+
+    }
+
+    .reg-hero::after {
+
+        font-size:
+            38px;
+
+        right:
+            -2%;
+
+    }
+
+    .reg-badge {
+
+        max-width:
+            100%;
+
+        padding:
+            8px 12px;
+
+        font-size:
+            8px;
+
+    }
+
+    .reg-hero h2 {
+
+        margin-top:
+            14px;
+
+        font-size:
+            39px;
+
+        line-height:
+            .95;
+
+    }
+
+    .reg-hero p {
+
+        margin-top:
+            14px;
+
+        font-size:
+            11px;
+
+        line-height:
+            1.7;
+
+    }
+
+    .info-section {
+
+        padding:
+            5px 0 30px;
+
+    }
+
+    .info-grid {
+
+        gap:
+            9px;
+
+    }
+
+    .info-card {
+
+        min-height:
+            130px;
+
+        padding:
+            14px 8px;
+
+        border-radius:
+            18px;
+
+    }
+
+    .info-card span {
+
+        font-size:
+            27px;
+
+    }
+
+    .info-card b {
+
+        font-size:
+            10px;
+
+    }
+
+    .info-card small {
+
+        font-size:
+            8px;
+
+    }
+
+    .reg-section {
+
+        padding:
+            20px 0 40px;
+
+    }
+
+    .section-heading {
+
+        margin-bottom:
+            20px;
+
+    }
+
+    .section-heading h2 {
+
+        font-size:
+            28px;
+
+    }
+
+    .section-heading p {
+
+        font-size:
+            11px;
+
+    }
+
+    .registration-layout {
+
+        gap:
+            14px;
+
+    }
+
+    .registration-form {
+
+        padding:
+            11px;
+
+        border-radius:
+            20px;
+
+    }
+
+    .form-title {
+
+        gap:
+            8px;
+
+        margin-bottom:
+            14px;
+
+    }
+
+    .form-title-icon {
+
+        width:
+            42px;
+
+        height:
+            42px;
+
+        font-size:
+            20px;
+
+        border-radius:
+            13px;
+
+    }
+
+    .form-title h3 {
+
+        font-size:
+            18px;
+
+    }
+
+    .form-title p {
+
+        font-size:
+            9px;
+
+    }
+
+    .form-step {
+
+        padding:
+            11px;
+
+        margin-bottom:
+            11px;
+
+        border-radius:
+            16px;
+
+    }
+
+    .step-heading {
+
+        gap:
+            7px;
+
+        margin-bottom:
+            13px;
+
+    }
+
+    .step-number {
+
+        width:
+            29px;
+
+        height:
+            29px;
+
+        font-size:
+            9px;
+
+        border-radius:
+            9px;
+
+    }
+
+    .step-heading h4 {
+
+        font-size:
+            11px;
+
+    }
+
+    .form-grid {
+
+        gap:
+            11px;
+
+    }
+
+    .form-group {
+
+        gap:
+            6px;
+
+    }
+
+    .form-group label {
+
+        font-size:
+            10px;
+
+    }
+
+    .form-group input,
+
+    .form-group select,
+
+    .form-group textarea {
+
+        min-height:
+            46px;
+
+        padding:
+            11px;
+
+        font-size:
+            11px;
+
+        border-radius:
+            12px;
+
+    }
+
+    .form-group textarea {
+
+        min-height:
+            90px;
+
+    }
+
+    .gender-options {
+
+        gap:
+            7px;
+
+    }
+
+    .gender-box {
+
+        min-height:
+            45px;
+
+        padding:
+            8px 5px;
+
+        font-size:
+            9px;
+
+        border-radius:
+            12px;
+
+    }
+
+    .agreement {
+
+        gap:
+            7px;
+
+        padding:
+            11px;
+
+        font-size:
+            9px;
+
+        border-radius:
+            13px;
+
+    }
+
+    .agreement input {
+
+        width:
+            16px;
+
+        height:
+            16px;
+
+    }
+
+    .submit-button {
+
+        min-height:
+            50px;
+
+        margin-top:
+            13px;
+
+        font-size:
+            11px;
+
+        border-radius:
+            14px;
+
+    }
+
+    .side-card {
+
+        padding:
+            16px;
+
+        border-radius:
+            19px;
+
+    }
+
+    .side-card h3 {
+
+        font-size:
+            19px;
+
+    }
+
+    .side-card p {
+
+        font-size:
+            10px;
+
+    }
+
+    .side-step {
+
+        grid-template-columns:
+            36px 1fr;
+
+        gap:
+            9px;
+
+        padding:
+            9px;
+
+    }
+
+    .side-step-icon {
+
+        width:
+            36px;
+
+        height:
+            36px;
+
+        font-size:
+            16px;
+
+        border-radius:
+            11px;
+
+    }
+
+    .side-step b {
+
+        font-size:
+            10px;
+
+    }
+
+    .side-step small {
+
+        font-size:
+            8px;
+
+    }
+
+    .requirement-item {
+
+        padding:
+            9px;
+
+    }
+
+    .requirement-item div {
+
+        font-size:
+            9px;
+
+    }
+
+    .help-button {
+
+        width:
+            100%;
+
+        padding:
+            12px;
+
+        font-size:
+            10px;
+
+    }
+
+    .benefit-section {
+
+        padding:
+            15px 0 45px;
+
+    }
+
+    .benefit-grid {
+
+        gap:
+            9px;
+
+    }
+
+    .benefit-card {
+
+        min-height:
+            145px;
+
+        padding:
+            14px 8px;
+
+        border-radius:
+            18px;
+
+    }
+
+    .benefit-card span {
+
+        font-size:
+            27px;
+
+    }
+
+    .benefit-card b {
+
+        font-size:
+            10px;
+
+    }
+
+    .benefit-card small {
+
+        font-size:
+            8px;
+
+    }
 
 }
 
@@ -3282,6 +4050,7 @@ body {
 
         <div class="section-heading au-reveal">
 
+
             <div class="section-badge">
 
                 ✨ FORM PENDAFTARAN
@@ -3292,6 +4061,7 @@ body {
             <h2>
 
                 Daftarkan
+
                 <span>
                     Buah Hati Anda
                 </span>
@@ -3315,9 +4085,7 @@ body {
         <div class="registration-layout">
 
 
-            <!-- =================================================
-                 FORM
-            ================================================== -->
+            <!-- FORM -->
 
             <div
                 class="registration-form
@@ -3326,6 +4094,7 @@ body {
 
 
                 <div class="form-title">
+
 
                     <div class="form-title-icon">
 
@@ -3355,9 +4124,7 @@ body {
                 </div>
 
 
-                <form
-                    id="registrationForm"
-                >
+                <form id="registrationForm">
 
 
                     <!-- DATA ANAK -->
@@ -3366,6 +4133,7 @@ body {
 
 
                         <div class="step-heading">
+
 
                             <div class="step-number">
 
@@ -3504,7 +4272,6 @@ body {
                                         required
                                     >
 
-
                                     <div class="gender-box">
 
                                         👦 Laki-laki
@@ -3522,7 +4289,6 @@ body {
                                         value="Perempuan"
                                         required
                                     >
-
 
                                     <div class="gender-box">
 
@@ -3548,6 +4314,7 @@ body {
 
 
                         <div class="step-heading">
+
 
                             <div class="step-number">
 
@@ -3695,6 +4462,7 @@ body {
 
 
                         <div class="step-heading">
+
 
                             <div class="step-number">
 
@@ -3922,13 +4690,9 @@ body {
             </div>
 
 
-            <!-- =================================================
-                 SIDEBAR
-            ================================================== -->
+            <!-- SIDEBAR -->
 
-            <aside
-                class="registration-side"
-            >
+            <aside class="registration-side">
 
 
                 <!-- CARA DAFTAR -->
@@ -3942,6 +4706,7 @@ body {
                     <h3>
 
                         Cara
+
                         <span>
                             Mendaftar
                         </span>
@@ -4094,6 +4859,7 @@ body {
                     <h3>
 
                         Syarat
+
                         <span>
                             Pendaftaran
                         </span>
@@ -4210,6 +4976,7 @@ body {
                     <h3>
 
                         Butuh
+
                         <span>
                             Bantuan?
                         </span>
@@ -4255,7 +5022,7 @@ body {
 
 
 <!-- =====================================================
-     BENEFITS
+     BENEFIT
 ===================================================== -->
 
 <section class="benefit-section">
@@ -4327,7 +5094,7 @@ body {
                 <small>
 
                     Belajar melalui bermain
-                    dan berbagai kegiatan kreatif.
+                    dan kegiatan kreatif.
 
                 </small>
 
@@ -4348,8 +5115,7 @@ body {
 
                 <small>
 
-                    Program disesuaikan dengan
-                    perkembangan anak.
+                    Program sesuai perkembangan anak.
 
                 </small>
 
@@ -4622,6 +5388,33 @@ document.addEventListener(
 
 
         /* =================================================
+           CLOSE MENU ON RESIZE
+        ================================================= */
+
+        window.addEventListener(
+            "resize",
+            function () {
+
+
+                if (
+                    window.innerWidth >= 769 &&
+                    moreMenu
+                ) {
+
+
+                    moreMenu.classList.remove(
+                        "open"
+                    );
+
+
+                }
+
+
+            }
+        );
+
+
+        /* =================================================
            REVEAL ANIMATION
         ================================================= */
 
@@ -4682,10 +5475,10 @@ document.addEventListener(
                     {
 
                         threshold:
-                            0.12,
+                            0.10,
 
                         rootMargin:
-                            "0px 0px -35px 0px"
+                            "0px 0px -25px 0px"
 
                     }
 
