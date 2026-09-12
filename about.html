@@ -16,7 +16,312 @@
         rel="stylesheet"
         href="css/style.css"
     >
+<style>
+/* =====================================================
+   ABOUT US - RESPONSIVE KHUSUS HP
+   Tidak mengubah halaman lain
+===================================================== */
 
+@media (max-width: 768px) {
+
+    /* Mencegah halaman melebar ke samping */
+    body[data-page="about"] {
+        overflow-x: hidden;
+    }
+
+    /* ================= HEADER ================= */
+
+    body[data-page="about"] .head {
+        padding: 15px 16px;
+        gap: 12px;
+    }
+
+    body[data-page="about"] .brand h1 {
+        font-size: 21px;
+        line-height: 1.1;
+    }
+
+    body[data-page="about"] .brand p {
+        font-size: 12px;
+    }
+
+    body[data-page="about"] .sun {
+        font-size: 30px;
+    }
+
+    body[data-page="about"] .call {
+        display: none;
+    }
+
+    body[data-page="about"] .head > .btn {
+        font-size: 12px;
+        padding: 9px 13px;
+        white-space: nowrap;
+    }
+
+
+    /* ================= NAVBAR ================= */
+
+    body[data-page="about"] .rainbow-nav {
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        justify-content: flex-start;
+    }
+
+    body[data-page="about"] .rainbow-nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    body[data-page="about"] .rainbow-item {
+        flex: 0 0 auto;
+        min-width: 82px;
+        padding: 10px 8px;
+    }
+
+    body[data-page="about"] .rainbow-icon {
+        font-size: 19px;
+    }
+
+    body[data-page="about"] .rainbow-text {
+        font-size: 10px;
+    }
+
+
+    /* ================= PAGE HERO ================= */
+
+    body[data-page="about"] .pagehero {
+        padding: 55px 18px;
+        text-align: center;
+    }
+
+    body[data-page="about"] .pagehero h2 {
+        font-size: clamp(30px, 9vw, 42px);
+        line-height: 1.1;
+        margin-bottom: 12px;
+    }
+
+    body[data-page="about"] .pagehero p {
+        font-size: 14px;
+        line-height: 1.6;
+        margin: 0 auto;
+    }
+
+
+    /* ================= SECTION ================= */
+
+    body[data-page="about"] .section {
+        padding-top: 45px;
+        padding-bottom: 15px;
+    }
+
+
+    /* ================= WELCOME ================= */
+
+    body[data-page="about"] .welcome {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+    }
+
+    body[data-page="about"] .welcome > div {
+        width: 100%;
+        min-width: 0;
+    }
+
+    body[data-page="about"] .title {
+        font-size: 26px;
+        line-height: 1.2;
+    }
+
+    body[data-page="about"] .welcome-img {
+        width: 100%;
+        max-width: 100%;
+        margin: 18px auto 0;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    body[data-page="about"] .welcome-img img {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+    }
+
+    body[data-page="about"] .welcome p {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    body[data-page="about"] .welcome .btn {
+        display: inline-block;
+        margin-top: 5px;
+    }
+
+
+    /* ================= VALUES ================= */
+
+    body[data-page="about"] .section-title {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    body[data-page="about"] .section-title h2 {
+        font-size: 28px;
+        line-height: 1.2;
+    }
+
+    body[data-page="about"] .section-title p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    body[data-page="about"] .features {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    body[data-page="about"] .feature {
+        width: 100%;
+        min-width: 0;
+        padding: 25px 20px;
+        border-radius: 20px;
+        box-sizing: border-box;
+    }
+
+    body[data-page="about"] .feature .big {
+        font-size: 38px;
+    }
+
+    body[data-page="about"] .feature h3 {
+        font-size: 20px;
+    }
+
+    body[data-page="about"] .feature p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+
+    /* ================= POSTINGAN ================= */
+
+    body[data-page="about"] .post-counter {
+        width: fit-content;
+        max-width: calc(100% - 20px);
+        margin: 0 auto 20px;
+        box-sizing: border-box;
+        font-size: 13px;
+    }
+
+    body[data-page="about"] .posts-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+
+    /* ================= CTA ================= */
+
+    body[data-page="about"] .box {
+        padding: 32px 20px;
+        border-radius: 24px;
+        text-align: center;
+    }
+
+    body[data-page="about"] .box .big {
+        font-size: 40px;
+    }
+
+    body[data-page="about"] .box .title {
+        font-size: 27px;
+    }
+
+    body[data-page="about"] .box p {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    body[data-page="about"] .box .btn {
+        display: inline-block;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+
+    /* ================= FOOTER ================= */
+
+    body[data-page="about"] .footgrid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        text-align: center;
+    }
+
+    body[data-page="about"] .footer {
+        padding-top: 40px;
+    }
+
+    body[data-page="about"] .copy {
+        text-align: center;
+        font-size: 12px;
+        padding: 18px 15px;
+    }
+}
+
+
+/* ================= HP KECIL ================= */
+
+@media (max-width: 480px) {
+
+    body[data-page="about"] .head {
+        padding: 12px;
+    }
+
+    body[data-page="about"] .brand h1 {
+        font-size: 18px;
+    }
+
+    body[data-page="about"] .sun {
+        font-size: 25px;
+    }
+
+    body[data-page="about"] .head > .btn {
+        font-size: 11px;
+        padding: 8px 10px;
+    }
+
+    body[data-page="about"] .rainbow-item {
+        min-width: 76px;
+        padding: 9px 6px;
+    }
+
+    body[data-page="about"] .pagehero {
+        padding: 45px 15px;
+    }
+
+    body[data-page="about"] .pagehero h2 {
+        font-size: 32px;
+    }
+
+    body[data-page="about"] .section {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    body[data-page="about"] .title {
+        font-size: 24px;
+    }
+
+    body[data-page="about"] .welcome-img {
+        border-radius: 17px;
+    }
+
+    body[data-page="about"] .feature {
+        padding: 22px 17px;
+    }
+}
+</style>
 </head>
 
 
