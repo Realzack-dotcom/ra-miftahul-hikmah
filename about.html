@@ -17,310 +17,1185 @@
         href="css/style.css"
     >
 <style>
+
 /* =====================================================
-   ABOUT US - RESPONSIVE KHUSUS HP
+   ABOUT US PREMIUM MOBILE DESIGN
+   KHUSUS HALAMAN ABOUT
    Tidak mengubah halaman lain
+===================================================== */
+
+
+/* ================= ANIMATION ================= */
+
+@keyframes aboutFadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes aboutFadeLeft {
+
+    from {
+        opacity: 0;
+        transform: translateX(-35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
+@keyframes aboutFadeRight {
+
+    from {
+        opacity: 0;
+        transform: translateX(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
+@keyframes aboutFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+}
+
+
+@keyframes aboutGlow {
+
+    0% {
+        box-shadow:
+            0 0 0 rgba(239,79,130,0);
+    }
+
+    50% {
+        box-shadow:
+            0 15px 35px rgba(239,79,130,.18);
+    }
+
+    100% {
+        box-shadow:
+            0 0 0 rgba(239,79,130,0);
+    }
+
+}
+
+
+@keyframes aboutGradient {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+
+}
+
+
+@keyframes aboutPulse {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.06);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+
+@keyframes aboutSparkle {
+
+    0% {
+        opacity: .3;
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: .3;
+        transform: translateY(-12px) rotate(20deg);
+    }
+
+}
+
+
+
+/* =====================================================
+   MOBILE
 ===================================================== */
 
 @media (max-width: 768px) {
 
-    /* Mencegah halaman melebar ke samping */
+
+    /* ================= BODY ================= */
+
     body[data-page="about"] {
+
         overflow-x: hidden;
+
+        background:
+
+            radial-gradient(
+                circle at top left,
+                rgba(255,221,238,.6),
+                transparent 35%
+            ),
+
+            radial-gradient(
+                circle at bottom right,
+                rgba(220,240,255,.7),
+                transparent 40%
+            );
+
     }
+
 
     /* ================= HEADER ================= */
 
     body[data-page="about"] .head {
-        padding: 15px 16px;
-        gap: 12px;
+
+        padding: 14px 16px;
+
+        gap: 10px;
+
     }
+
 
     body[data-page="about"] .brand h1 {
-        font-size: 21px;
-        line-height: 1.1;
+
+        font-size: 20px;
+
+        line-height: 1.05;
+
     }
+
 
     body[data-page="about"] .brand p {
-        font-size: 12px;
+
+        font-size: 11px;
+
     }
+
 
     body[data-page="about"] .sun {
-        font-size: 30px;
+
+        font-size: 29px;
+
+        animation:
+            aboutFloat
+            3s
+            ease-in-out
+            infinite;
+
     }
+
 
     body[data-page="about"] .call {
+
         display: none;
+
     }
 
+
     body[data-page="about"] .head > .btn {
-        font-size: 12px;
-        padding: 9px 13px;
+
+        font-size: 11px;
+
+        padding:
+            9px
+            12px;
+
+        border-radius: 12px;
+
         white-space: nowrap;
+
     }
+
 
 
     /* ================= NAVBAR ================= */
 
     body[data-page="about"] .rainbow-nav {
+
         overflow-x: auto;
+
         overflow-y: hidden;
+
         -webkit-overflow-scrolling: touch;
+
         scrollbar-width: none;
+
         justify-content: flex-start;
+
+        padding-bottom: 2px;
+
     }
+
 
     body[data-page="about"] .rainbow-nav::-webkit-scrollbar {
+
         display: none;
+
     }
+
 
     body[data-page="about"] .rainbow-item {
+
         flex: 0 0 auto;
-        min-width: 82px;
-        padding: 10px 8px;
+
+        min-width: 80px;
+
+        padding:
+            10px
+            7px;
+
     }
+
 
     body[data-page="about"] .rainbow-icon {
+
         font-size: 19px;
+
+        transition:
+            transform
+            .3s
+            ease;
+
     }
+
+
+    body[data-page="about"] .rainbow-item:active
+    .rainbow-icon {
+
+        transform:
+            scale(1.25)
+            rotate(-8deg);
+
+    }
+
 
     body[data-page="about"] .rainbow-text {
-        font-size: 10px;
+
+        font-size: 9px;
+
     }
 
 
-    /* ================= PAGE HERO ================= */
+
+    /* ================= HERO ================= */
 
     body[data-page="about"] .pagehero {
-        padding: 55px 18px;
+
+        position: relative;
+
+        overflow: hidden;
+
+        padding:
+            65px
+            18px
+            70px;
+
         text-align: center;
+
+        background:
+
+            linear-gradient(
+                120deg,
+                #fff0f6,
+                #f1f8ff,
+                #fff9df,
+                #f3eeff
+            );
+
+        background-size:
+            300%
+            300%;
+
+        animation:
+            aboutGradient
+            10s
+            ease
+            infinite;
+
     }
+
+
+    body[data-page="about"] .pagehero::before {
+
+        content:
+            "✦";
+
+        position: absolute;
+
+        top: 18px;
+
+        left: 10%;
+
+        font-size: 24px;
+
+        opacity: .5;
+
+        animation:
+            aboutSparkle
+            2.5s
+            ease-in-out
+            infinite
+            alternate;
+
+    }
+
+
+    body[data-page="about"] .pagehero::after {
+
+        content:
+            "🌈";
+
+        position: absolute;
+
+        right: 8%;
+
+        bottom: 12px;
+
+        font-size: 38px;
+
+        opacity: .45;
+
+        animation:
+            aboutFloat
+            4s
+            ease-in-out
+            infinite;
+
+    }
+
 
     body[data-page="about"] .pagehero h2 {
-        font-size: clamp(30px, 9vw, 42px);
+
+        position: relative;
+
+        z-index: 2;
+
+        font-size:
+            clamp(
+                34px,
+                10vw,
+                48px
+            );
+
         line-height: 1.1;
-        margin-bottom: 12px;
+
+        margin-bottom: 14px;
+
+        animation:
+
+            aboutFadeUp
+
+            .8s
+
+            ease
+
+            both;
+
     }
 
+
     body[data-page="about"] .pagehero p {
+
+        position: relative;
+
+        z-index: 2;
+
+        max-width: 320px;
+
+        margin: auto;
+
         font-size: 14px;
-        line-height: 1.6;
-        margin: 0 auto;
+
+        line-height: 1.7;
+
+        animation:
+
+            aboutFadeUp
+
+            .9s
+
+            ease
+
+            .15s
+
+            both;
+
     }
+
 
 
     /* ================= SECTION ================= */
 
     body[data-page="about"] .section {
-        padding-top: 45px;
-        padding-bottom: 15px;
+
+        position: relative;
+
+        padding-top: 55px;
+
+        padding-bottom: 20px;
+
     }
+
 
 
     /* ================= WELCOME ================= */
 
     body[data-page="about"] .welcome {
+
         display: flex;
+
         flex-direction: column;
-        gap: 28px;
+
+        gap: 30px;
+
     }
+
 
     body[data-page="about"] .welcome > div {
+
         width: 100%;
+
         min-width: 0;
+
     }
+
 
     body[data-page="about"] .title {
-        font-size: 26px;
-        line-height: 1.2;
+
+        font-size: 27px;
+
+        line-height: 1.25;
+
     }
+
 
     body[data-page="about"] .welcome-img {
+
+        position: relative;
+
         width: 100%;
-        max-width: 100%;
-        margin: 18px auto 0;
-        border-radius: 20px;
+
+        margin:
+            20px
+            auto
+            0;
+
         overflow: hidden;
+
+        border-radius: 24px;
+
+        box-shadow:
+
+            0 15px 35px
+
+            rgba(0,0,0,.12);
+
     }
+
+
+    body[data-page="about"] .welcome-img::after {
+
+        content:
+            "";
+
+        position: absolute;
+
+        inset: 0;
+
+        background:
+
+            linear-gradient(
+                135deg,
+                rgba(255,255,255,.25),
+                transparent
+            );
+
+        pointer-events: none;
+
+    }
+
 
     body[data-page="about"] .welcome-img img {
+
         display: block;
+
         width: 100%;
+
         height: auto;
+
         max-width: 100%;
+
+        transition:
+
+            transform
+
+            .7s
+
+            ease;
+
     }
+
+
+    body[data-page="about"] .welcome-img:active img {
+
+        transform:
+            scale(1.05);
+
+    }
+
 
     body[data-page="about"] .welcome p {
+
         font-size: 15px;
-        line-height: 1.7;
+
+        line-height: 1.8;
+
     }
 
+
     body[data-page="about"] .welcome .btn {
-        display: inline-block;
-        margin-top: 5px;
+
+        display: inline-flex;
+
+        align-items: center;
+
+        gap: 8px;
+
+        margin-top: 8px;
+
+        border-radius: 14px;
+
+        transition:
+
+            transform .3s ease,
+
+            box-shadow .3s ease;
+
     }
+
+
+    body[data-page="about"] .welcome .btn:active {
+
+        transform:
+            scale(.96);
+
+    }
+
+
+
+    /* ================= SECTION TITLE ================= */
+
+    body[data-page="about"] .section-title {
+
+        padding:
+            0
+            10px;
+
+        margin-bottom: 25px;
+
+    }
+
+
+    body[data-page="about"] .section-title h2 {
+
+        font-size: 29px;
+
+        line-height: 1.2;
+
+    }
+
+
+    body[data-page="about"] .section-title p {
+
+        font-size: 14px;
+
+        line-height: 1.7;
+
+    }
+
 
 
     /* ================= VALUES ================= */
 
-    body[data-page="about"] .section-title {
-        padding-left: 8px;
-        padding-right: 8px;
-    }
-
-    body[data-page="about"] .section-title h2 {
-        font-size: 28px;
-        line-height: 1.2;
-    }
-
-    body[data-page="about"] .section-title p {
-        font-size: 14px;
-        line-height: 1.6;
-    }
-
     body[data-page="about"] .features {
+
         display: grid;
-        grid-template-columns: 1fr;
+
+        grid-template-columns:
+            1fr;
+
         gap: 16px;
+
     }
+
 
     body[data-page="about"] .feature {
+
+        position: relative;
+
         width: 100%;
+
         min-width: 0;
-        padding: 25px 20px;
-        border-radius: 20px;
+
         box-sizing: border-box;
+
+        padding:
+
+            25px
+
+            20px;
+
+        overflow: hidden;
+
+        border-radius: 22px;
+
+        transition:
+
+            transform .35s ease,
+
+            box-shadow .35s ease;
+
     }
+
+
+    body[data-page="about"] .feature::before {
+
+        content:
+            "";
+
+        position: absolute;
+
+        top: 0;
+
+        left: 0;
+
+        width: 5px;
+
+        height: 100%;
+
+        border-radius:
+            5px
+            0
+            0
+            5px;
+
+        background:
+
+            linear-gradient(
+
+                #ff8fb3,
+
+                #ffd45c,
+
+                #80d6ff
+
+            );
+
+    }
+
+
+    body[data-page="about"] .feature:active {
+
+        transform:
+
+            translateY(-5px)
+
+            scale(.99);
+
+        box-shadow:
+
+            0
+
+            15px
+
+            30px
+
+            rgba(0,0,0,.1);
+
+    }
+
 
     body[data-page="about"] .feature .big {
-        font-size: 38px;
+
+        display: inline-flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        width: 64px;
+
+        height: 64px;
+
+        margin-bottom: 12px;
+
+        font-size: 35px;
+
+        border-radius: 18px;
+
+        background:
+
+            rgba(255,255,255,.65);
+
+        animation:
+
+            aboutFloat
+
+            4s
+
+            ease-in-out
+
+            infinite;
+
     }
+
 
     body[data-page="about"] .feature h3 {
-        font-size: 20px;
+
+        font-size: 21px;
+
+        margin-bottom: 8px;
+
     }
+
 
     body[data-page="about"] .feature p {
+
         font-size: 14px;
-        line-height: 1.6;
+
+        line-height: 1.7;
+
     }
 
 
-    /* ================= POSTINGAN ================= */
+
+    /* ================= POST COUNTER ================= */
 
     body[data-page="about"] .post-counter {
+
+        display: block;
+
         width: fit-content;
-        max-width: calc(100% - 20px);
-        margin: 0 auto 20px;
+
+        max-width:
+            calc(100% - 20px);
+
+        margin:
+
+            0
+
+            auto
+
+            22px;
+
+        padding:
+
+            10px
+
+            18px;
+
+        border-radius: 30px;
+
         box-sizing: border-box;
+
         font-size: 13px;
+
+        animation:
+
+            aboutGlow
+
+            3s
+
+            ease-in-out
+
+            infinite;
+
     }
 
+
+
+    /* ================= POSTS ================= */
+
     body[data-page="about"] .posts-grid {
-        grid-template-columns: 1fr;
+
+        grid-template-columns:
+            1fr;
+
         gap: 18px;
+
     }
+
 
 
     /* ================= CTA ================= */
 
     body[data-page="about"] .box {
-        padding: 32px 20px;
-        border-radius: 24px;
+
+        position: relative;
+
+        overflow: hidden;
+
+        padding:
+
+            38px
+
+            20px;
+
+        border-radius: 26px;
+
         text-align: center;
+
     }
+
+
+    body[data-page="about"] .box::before {
+
+        content:
+            "✦ ✧ ✦";
+
+        position: absolute;
+
+        top: 15px;
+
+        right: 18px;
+
+        opacity: .25;
+
+        font-size: 18px;
+
+        letter-spacing: 8px;
+
+        animation:
+
+            aboutSparkle
+
+            3s
+
+            ease-in-out
+
+            infinite;
+
+    }
+
 
     body[data-page="about"] .box .big {
-        font-size: 40px;
+
+        font-size: 48px;
+
+        animation:
+
+            aboutPulse
+
+            2.5s
+
+            ease-in-out
+
+            infinite;
+
     }
+
 
     body[data-page="about"] .box .title {
-        font-size: 27px;
+
+        font-size: 29px;
+
     }
+
 
     body[data-page="about"] .box p {
+
         font-size: 14px;
-        line-height: 1.7;
+
+        line-height: 1.8;
+
     }
 
+
     body[data-page="about"] .box .btn {
+
         display: inline-block;
+
         max-width: 100%;
+
+        padding:
+
+            13px
+
+            22px;
+
         box-sizing: border-box;
+
+        border-radius: 15px;
+
+        transition:
+
+            transform .3s ease;
+
     }
+
+
+    body[data-page="about"] .box .btn:active {
+
+        transform:
+
+            scale(.95);
+
+    }
+
 
 
     /* ================= FOOTER ================= */
 
     body[data-page="about"] .footgrid {
-        grid-template-columns: 1fr;
+
+        grid-template-columns:
+            1fr;
+
         gap: 28px;
+
         text-align: center;
+
     }
+
 
     body[data-page="about"] .footer {
-        padding-top: 40px;
+
+        margin-top: 40px;
+
+        padding-top: 42px;
+
     }
 
+
     body[data-page="about"] .copy {
+
         text-align: center;
+
         font-size: 12px;
-        padding: 18px 15px;
+
+        padding:
+
+            18px
+
+            15px;
+
     }
+
+
+
+    /* =====================================================
+       SCROLL ANIMATION
+    ===================================================== */
+
+    body[data-page="about"] .reveal {
+
+        opacity: 0;
+
+        transform:
+
+            translateY(35px);
+
+        transition:
+
+            opacity .8s ease,
+
+            transform .8s ease;
+
+    }
+
+
+    body[data-page="about"] .reveal.show {
+
+        opacity: 1;
+
+        transform:
+
+            translateY(0);
+
+    }
+
+
 }
 
 
-/* ================= HP KECIL ================= */
+
+/* =====================================================
+   HP KECIL
+===================================================== */
 
 @media (max-width: 480px) {
 
+
     body[data-page="about"] .head {
+
         padding: 12px;
+
     }
+
 
     body[data-page="about"] .brand h1 {
+
         font-size: 18px;
+
     }
+
 
     body[data-page="about"] .sun {
+
         font-size: 25px;
+
     }
+
 
     body[data-page="about"] .head > .btn {
-        font-size: 11px;
-        padding: 8px 10px;
+
+        font-size: 10px;
+
+        padding:
+
+            8px
+
+            10px;
+
     }
+
 
     body[data-page="about"] .rainbow-item {
-        min-width: 76px;
-        padding: 9px 6px;
+
+        min-width: 75px;
+
+        padding:
+
+            9px
+
+            6px;
+
     }
+
 
     body[data-page="about"] .pagehero {
-        padding: 45px 15px;
+
+        padding:
+
+            55px
+
+            15px
+
+            60px;
+
     }
+
 
     body[data-page="about"] .pagehero h2 {
-        font-size: 32px;
+
+        font-size: 34px;
+
     }
+
 
     body[data-page="about"] .section {
+
         padding-left: 15px;
+
         padding-right: 15px;
+
     }
+
 
     body[data-page="about"] .title {
-        font-size: 24px;
+
+        font-size: 25px;
+
     }
+
 
     body[data-page="about"] .welcome-img {
-        border-radius: 17px;
+
+        border-radius: 20px;
+
     }
 
+
     body[data-page="about"] .feature {
-        padding: 22px 17px;
+
+        padding:
+
+            22px
+
+            17px;
+
     }
+
+
+    body[data-page="about"] .feature .big {
+
+        width: 58px;
+
+        height: 58px;
+
+        font-size: 31px;
+
+    }
+
+
+    body[data-page="about"] .box {
+
+        padding:
+
+            32px
+
+            17px;
+
+    }
+
+
 }
+
 </style>
 </head>
 
@@ -1052,6 +1927,68 @@
         src="js/posts.js"
     ></script>
 
+    <script>
+
+/* =====================================================
+   ABOUT US SCROLL ANIMATION
+===================================================== */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        const reveals =
+            document.querySelectorAll(".reveal");
+
+
+        const observer =
+            new IntersectionObserver(
+
+                function (entries) {
+
+                    entries.forEach(
+                        function (entry) {
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+                                entry.target.classList.add(
+                                    "show"
+                                );
+
+                                observer.unobserve(
+                                    entry.target
+                                );
+
+                            }
+
+                        }
+                    );
+
+                },
+
+                {
+                    threshold: 0.12
+                }
+
+            );
+
+
+        reveals.forEach(
+            function (element) {
+
+                observer.observe(
+                    element
+                );
+
+            }
+        );
+
+    }
+);
+
+</script>
 
 </body>
 
