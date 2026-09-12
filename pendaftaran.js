@@ -15,14 +15,17 @@
         content="Pendaftaran Online RA Miftahul Hikmah"
     >
 
+    <meta
+        name="theme-color"
+        content="#ff6f9f"
+    >
+
     <title>
         Pendaftaran Online | RA Miftahul Hikmah
     </title>
 
 
-    <!-- =====================================================
-         GOOGLE FONT
-    ====================================================== -->
+    <!-- GOOGLE FONT -->
 
     <link
         rel="preconnect"
@@ -41,3643 +44,3237 @@
     >
 
 
-    <style>
+<style>
 
 
-        /* =====================================================
-           RESET
-        ====================================================== */
+/* =========================================================
+   RESET
+========================================================= */
 
-        * {
+* {
 
-            box-sizing:
-                border-box;
+    margin:
+        0;
 
-        }
+    padding:
+        0;
 
+    box-sizing:
+        border-box;
 
-        html {
+}
 
-            scroll-behavior:
-                smooth;
 
-        }
+html {
 
+    scroll-behavior:
+        smooth;
 
-        body {
+}
 
-            margin:
-                0;
 
-            overflow-x:
-                hidden;
+body {
 
-            font-family:
-                "Nunito",
-                sans-serif;
+    min-width:
+        320px;
 
-            color:
-                #302b3c;
+    overflow-x:
+        hidden;
 
-            background:
-                #f7f7fb;
+    font-family:
+        "Nunito",
+        sans-serif;
 
-        }
+    color:
+        #3e3650;
 
+    background:
+        #f7f7fb;
 
-        body::before {
+}
 
-            content:
-                "";
 
-            position:
-                fixed;
+button,
+input,
+select,
+textarea {
 
-            width:
-                500px;
+    font:
+        inherit;
 
-            height:
-                500px;
+}
 
-            top:
-                -250px;
 
-            left:
-                -200px;
+button {
 
-            border-radius:
-                50%;
+    -webkit-tap-highlight-color:
+        transparent;
 
-            background:
-                #ffd5e4;
+}
 
-            filter:
-                blur(100px);
 
-            opacity:
-                .55;
+a {
 
-            pointer-events:
-                none;
+    -webkit-tap-highlight-color:
+        transparent;
 
-            z-index:
-                -2;
+}
 
-        }
 
+/* =========================================================
+   BACKGROUND
+========================================================= */
 
-        body::after {
+.background-shape {
 
-            content:
-                "";
+    position:
+        fixed;
 
-            position:
-                fixed;
+    inset:
+        0;
 
-            width:
-                500px;
+    z-index:
+        -10;
 
-            height:
-                500px;
+    overflow:
+        hidden;
 
-            bottom:
-                -250px;
+    pointer-events:
+        none;
 
-            right:
-                -200px;
+}
 
-            border-radius:
-                50%;
 
-            background:
-                #d9d3ff;
+.shape {
 
-            filter:
-                blur(110px);
+    position:
+        absolute;
 
-            opacity:
-                .6;
+    border-radius:
+        50%;
 
-            pointer-events:
-                none;
+    filter:
+        blur(90px);
 
-            z-index:
-                -2;
+}
 
-        }
 
+.shape-one {
 
-        button,
-        input,
-        select,
-        textarea {
+    width:
+        400px;
 
-            font-family:
-                inherit;
+    height:
+        400px;
 
-        }
+    top:
+        -180px;
 
+    left:
+        -150px;
 
-        a {
+    background:
+        rgba(255, 125, 174, .20);
 
-            -webkit-tap-highlight-color:
-                transparent;
+}
 
-        }
 
+.shape-two {
 
-        img {
+    width:
+        450px;
 
-            max-width:
-                100%;
+    height:
+        450px;
 
-        }
+    right:
+        -220px;
 
+    bottom:
+        -200px;
 
-        /* =====================================================
-           CONTAINER
-        ====================================================== */
+    background:
+        rgba(129, 174, 255, .20);
 
-        .container {
+}
 
-            width:
-                min(
-                    1180px,
-                    calc(100% - 32px)
-                );
 
-            margin:
-                auto;
+/* =========================================================
+   CONTAINER
+========================================================= */
 
-        }
+.container {
 
+    width:
+        min(1180px, calc(100% - 32px));
 
-        /* =====================================================
-           HEADER
-        ====================================================== */
+    margin:
+        auto;
 
-        .header {
+}
 
-            position:
-                sticky;
 
-            top:
-                0;
+/* =========================================================
+   HEADER
+========================================================= */
 
-            z-index:
-                1000;
+.site-header {
 
-            background:
-                rgba(
-                    255,
-                    255,
-                    255,
-                    .86
-                );
+    position:
+        sticky;
 
-            backdrop-filter:
-                blur(20px);
+    top:
+        0;
 
-            border-bottom:
-                1px solid
-                rgba(
-                    70,
-                    50,
-                    100,
-                    .06
-                );
+    z-index:
+        999;
 
-        }
+    background:
+        rgba(255, 255, 255, .92);
 
+    backdrop-filter:
+        blur(20px);
 
-        .header-inner {
+    border-bottom:
+        1px solid rgba(100, 80, 140, .08);
 
-            min-height:
-                76px;
+}
 
-            display:
-                flex;
 
-            align-items:
-                center;
+.header-content {
 
-            justify-content:
-                space-between;
+    min-height:
+        72px;
 
-            gap:
-                15px;
+    display:
+        flex;
 
-        }
+    align-items:
+        center;
 
+    justify-content:
+        space-between;
 
-        .brand {
+    gap:
+        15px;
 
-            display:
-                flex;
+}
 
-            align-items:
-                center;
 
-            gap:
-                12px;
+/* =========================================================
+   BRAND
+========================================================= */
 
-            text-decoration:
-                none;
+.brand {
 
-            color:
-                #302b3c;
+    display:
+        flex;
 
-        }
+    align-items:
+        center;
 
+    gap:
+        11px;
 
-        .brand-logo {
+    text-decoration:
+        none;
 
-            width:
-                52px;
+    color:
+        #3e3650;
 
-            height:
-                52px;
+    min-width:
+        0;
 
-            flex:
-                0 0 auto;
+}
 
-            display:
-                grid;
 
-            place-items:
-                center;
+.brand-icon {
 
-            border-radius:
-                18px;
+    width:
+        48px;
 
-            font-size:
-                26px;
+    height:
+        48px;
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #ffe49a,
-                    #ffc8dc,
-                    #d2efff
-                );
+    flex:
+        0 0 auto;
 
-            box-shadow:
-                0 12px 28px
-                rgba(
-                    239,
-                    79,
-                    130,
-                    .18
-                );
+    display:
+        flex;
 
-        }
+    align-items:
+        center;
 
+    justify-content:
+        center;
 
-        .brand-text h1 {
+    border-radius:
+        16px;
 
-            margin:
-                0;
+    font-size:
+        24px;
 
-            font-family:
-                "Baloo 2",
-                cursive;
+    background:
+        linear-gradient(
+            135deg,
+            #ffe49c,
+            #ffc6da,
+            #c8ecff
+        );
 
-            font-size:
-                20px;
+    box-shadow:
+        0 10px 25px
+        rgba(239, 79, 130, .15);
 
-            line-height:
-                1;
+}
 
-        }
 
+.brand-text {
 
-        .brand-text h1 span {
+    min-width:
+        0;
 
-            color:
-                #ef4f82;
+}
 
-        }
 
+.brand-title {
 
-        .brand-text p {
+    font-family:
+        "Baloo 2",
+        cursive;
 
-            margin:
-                5px 0 0;
+    font-size:
+        19px;
 
-            color:
-                #918998;
+    font-weight:
+        800;
 
-            font-size:
-                10px;
+    line-height:
+        1.1;
 
-            font-weight:
-                700;
+}
 
-        }
 
+.brand-title span {
 
-        .header-status {
+    color:
+        #ef4f82;
 
-            display:
-                inline-flex;
+}
 
-            align-items:
-                center;
 
-            justify-content:
-                center;
+.brand-subtitle {
 
-            gap:
-                8px;
+    margin-top:
+        3px;
 
-            min-height:
-                46px;
+    color:
+        #918797;
 
-            padding:
-                0 18px;
+    font-size:
+        9px;
 
-            border-radius:
-                16px;
+    font-weight:
+        700;
 
-            text-decoration:
-                none;
+}
 
-            color:
-                white;
 
-            font-size:
-                11px;
+/* =========================================================
+   STATUS BUTTON
+========================================================= */
 
-            font-weight:
-                900;
+.header-status {
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #7b6cff,
-                    #a57fff
-                );
+    flex:
+        0 0 auto;
 
-            box-shadow:
-                0 12px 25px
-                rgba(
-                    123,
-                    108,
-                    255,
-                    .22
-                );
+    display:
+        inline-flex;
 
-            transition:
-                .3s ease;
+    align-items:
+        center;
 
-        }
+    justify-content:
+        center;
 
+    gap:
+        7px;
 
-        .header-status:hover {
+    min-height:
+        44px;
 
-            transform:
-                translateY(-2px);
+    padding:
+        0 16px;
 
-        }
+    border-radius:
+        14px;
 
+    text-decoration:
+        none;
 
-        /* =====================================================
-           NAVIGATION
-        ====================================================== */
+    color:
+        #ffffff;
 
-        .nav {
+    font-size:
+        11px;
 
-            position:
-                sticky;
+    font-weight:
+        900;
 
-            top:
-                76px;
+    background:
+        linear-gradient(
+            135deg,
+            #7b6cff,
+            #a47fff
+        );
 
-            z-index:
-                900;
+    box-shadow:
+        0 10px 22px
+        rgba(123, 108, 255, .22);
 
-            background:
-                rgba(
-                    255,
-                    255,
-                    255,
-                    .93
-                );
+    transition:
+        .25s ease;
 
-            backdrop-filter:
-                blur(20px);
+}
 
-            border-bottom:
-                1px solid #efedf4;
 
-        }
+.header-status:hover {
 
+    transform:
+        translateY(-2px);
 
-        .nav-inner {
+}
 
-            width:
-                min(
-                    1180px,
-                    calc(100% - 24px)
-                );
 
-            margin:
-                auto;
+/* =========================================================
+   NAVIGATION
+========================================================= */
 
-            display:
-                flex;
+.site-nav {
 
-            align-items:
-                center;
+    position:
+        sticky;
 
-            gap:
-                7px;
+    top:
+        72px;
 
-            padding:
-                9px 0;
+    z-index:
+        998;
 
-            overflow-x:
-                auto;
+    background:
+        rgba(255, 255, 255, .96);
 
-            scrollbar-width:
-                none;
+    backdrop-filter:
+        blur(20px);
 
-        }
+    border-bottom:
+        1px solid #eeeaf3;
 
+}
 
-        .nav-inner::-webkit-scrollbar {
 
-            display:
-                none;
+.nav-scroll {
 
-        }
+    width:
+        min(1180px, calc(100% - 20px));
 
+    margin:
+        auto;
 
-        .nav a {
+    display:
+        flex;
 
-            flex:
-                0 0 auto;
+    align-items:
+        center;
 
-            display:
-                inline-flex;
+    gap:
+        7px;
 
-            align-items:
-                center;
+    overflow-x:
+        auto;
 
-            justify-content:
-                center;
+    padding:
+        8px 0;
 
-            gap:
-                6px;
+    scrollbar-width:
+        none;
 
-            padding:
-                10px 15px;
+}
 
-            border-radius:
-                13px;
 
-            text-decoration:
-                none;
+.nav-scroll::-webkit-scrollbar {
 
-            color:
-                #746c7c;
+    display:
+        none;
 
-            font-size:
-                11px;
+}
 
-            font-weight:
-                900;
 
-            transition:
-                .25s ease;
+.nav-link {
 
-        }
+    flex:
+        0 0 auto;
 
+    display:
+        inline-flex;
 
-        .nav a:hover {
+    align-items:
+        center;
 
-            background:
-                #f7f5ff;
+    justify-content:
+        center;
 
-        }
+    min-height:
+        40px;
 
+    padding:
+        0 15px;
 
-        .nav a.active {
+    border-radius:
+        13px;
 
-            color:
-                white;
+    text-decoration:
+        none;
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #ef4f82,
-                    #ff7da8
-                );
+    color:
+        #756c7d;
 
-            box-shadow:
-                0 9px 20px
-                rgba(
-                    239,
-                    79,
-                    130,
-                    .20
-                );
+    font-size:
+        11px;
 
-        }
+    font-weight:
+        900;
 
+    transition:
+        .25s ease;
 
-        /* =====================================================
-           MAIN
-        ====================================================== */
+}
 
-        .main {
 
-            padding:
-                32px 0 65px;
+.nav-link:hover {
 
-        }
+    background:
+        #f5f2fb;
 
+}
 
-        /* =====================================================
-           BLOG HERO
-        ====================================================== */
 
-        .blog-hero {
+.nav-link.active {
 
-            position:
-                relative;
+    color:
+        #ffffff;
 
-            overflow:
-                hidden;
+    background:
+        linear-gradient(
+            135deg,
+            #ef4f82,
+            #ff7da7
+        );
 
-            min-height:
-                480px;
+    box-shadow:
+        0 8px 20px
+        rgba(239, 79, 130, .20);
 
-            display:
-                flex;
+}
 
-            align-items:
-                flex-end;
 
-            padding:
-                48px;
+/* =========================================================
+   MAIN
+========================================================= */
 
-            border-radius:
-                35px;
+.main-content {
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #7566ef,
-                    #c264dc 48%,
-                    #ef618d
-                );
+    padding:
+        28px 0 65px;
 
-            box-shadow:
-                0 30px 70px
-                rgba(
-                    104,
-                    70,
-                    150,
-                    .25
-                );
+}
 
-        }
 
+/* =========================================================
+   HERO
+========================================================= */
 
-        .blog-hero::before {
+.hero {
 
-            content:
-                "🌈";
+    position:
+        relative;
 
-            position:
-                absolute;
+    overflow:
+        hidden;
 
-            top:
-                -60px;
+    min-height:
+        420px;
 
-            right:
-                4%;
+    display:
+        flex;
 
-            font-size:
-                230px;
+    align-items:
+        flex-end;
 
-            opacity:
-                .14;
+    padding:
+        42px;
 
-            transform:
-                rotate(
-                    -12deg
-                );
+    border-radius:
+        32px;
 
-        }
+    background:
+        linear-gradient(
+            135deg,
+            #7768ef,
+            #ef4f82,
+            #ff9667
+        );
 
+    box-shadow:
+        0 25px 60px
+        rgba(100, 60, 120, .22);
 
-        .blog-hero::after {
+}
 
-            content:
-                "🎒";
 
-            position:
-                absolute;
+.hero::before {
 
-            top:
-                55px;
+    content:
+        "🌈";
 
-            left:
-                8%;
+    position:
+        absolute;
 
-            font-size:
-                85px;
+    top:
+        -40px;
 
-            opacity:
-                .16;
+    right:
+        4%;
 
-            transform:
-                rotate(
-                    -10deg
-                );
+    font-size:
+        190px;
 
-        }
+    opacity:
+        .16;
 
+    transform:
+        rotate(-15deg);
 
-        .hero-dots {
+}
 
-            position:
-                absolute;
 
-            width:
-                260px;
+.hero::after {
 
-            height:
-                260px;
+    content:
+        "🎒";
 
-            right:
-                12%;
+    position:
+        absolute;
 
-            bottom:
-                -120px;
+    top:
+        40px;
 
-            border:
-                2px dashed
-                rgba(
-                    255,
-                    255,
-                    255,
-                    .25
-                );
+    left:
+        6%;
 
-            border-radius:
-                50%;
+    font-size:
+        75px;
 
-        }
+    opacity:
+        .18;
 
+}
 
-        .hero-content {
 
-            position:
-                relative;
+.hero-content {
 
-            z-index:
-                2;
+    position:
+        relative;
 
-            max-width:
-                720px;
+    z-index:
+        2;
 
-            color:
-                white;
+    max-width:
+        700px;
 
-        }
+    color:
+        #ffffff;
 
+}
 
-        .hero-category {
 
-            display:
-                inline-flex;
+.hero-badge {
 
-            align-items:
-                center;
+    display:
+        inline-flex;
 
-            gap:
-                8px;
+    align-items:
+        center;
 
-            padding:
-                10px 16px;
+    gap:
+        7px;
 
-            border-radius:
-                50px;
+    padding:
+        9px 15px;
 
-            background:
-                rgba(
-                    255,
-                    255,
-                    255,
-                    .17
-                );
+    border-radius:
+        50px;
 
-            border:
-                1px solid
-                rgba(
-                    255,
-                    255,
-                    255,
-                    .15
-                );
+    background:
+        rgba(255, 255, 255, .17);
 
-            backdrop-filter:
-                blur(10px);
+    backdrop-filter:
+        blur(10px);
 
-            font-size:
-                10px;
+    font-size:
+        10px;
 
-            font-weight:
-                900;
+    font-weight:
+        900;
 
-            letter-spacing:
-                .5px;
+}
 
-        }
 
+.hero h1 {
 
-        .hero-content h2 {
+    margin:
+        17px 0 13px;
 
-            margin:
-                20px 0 14px;
+    font-family:
+        "Baloo 2",
+        cursive;
 
-            font-family:
-                "Baloo 2",
-                cursive;
+    font-size:
+        clamp(42px, 6vw, 70px);
 
-            font-size:
-                clamp(
-                    42px,
-                    7vw,
-                    72px
-                );
+    line-height:
+        1;
 
-            line-height:
-                .98;
+}
 
-        }
 
+.hero p {
 
-        .hero-content p {
+    max-width:
+        600px;
 
-            max-width:
-                620px;
+    color:
+        rgba(255, 255, 255, .90);
 
-            margin:
-                0;
+    font-size:
+        14px;
 
-            color:
-                rgba(
-                    255,
-                    255,
-                    255,
-                    .90
-                );
+    line-height:
+        1.8;
 
-            font-size:
-                15px;
+}
 
-            line-height:
-                1.85;
 
-        }
+.hero-tags {
 
+    display:
+        flex;
 
-        .hero-info {
+    flex-wrap:
+        wrap;
 
-            display:
-                flex;
+    gap:
+        9px;
 
-            flex-wrap:
-                wrap;
+    margin-top:
+        22px;
 
-            gap:
-                10px;
+}
 
-            margin-top:
-                25px;
 
-        }
+.hero-tag {
 
+    padding:
+        8px 13px;
 
-        .hero-info span {
+    border-radius:
+        50px;
 
-            display:
-                inline-flex;
+    background:
+        rgba(255, 255, 255, .16);
 
-            align-items:
-                center;
+    font-size:
+        10px;
 
-            gap:
-                6px;
+    font-weight:
+        800;
 
-            padding:
-                9px 13px;
+}
 
-            border-radius:
-                50px;
 
-            background:
-                rgba(
-                    255,
-                    255,
-                    255,
-                    .15
-                );
+/* =========================================================
+   MOBILE QUICK MENU
+========================================================= */
 
-            font-size:
-                10px;
+.quick-menu {
 
-            font-weight:
-                800;
+    display:
+        none;
 
-        }
+}
 
 
-        /* =====================================================
-           MOBILE QUICK MENU
-        ====================================================== */
+/* =========================================================
+   BLOG LAYOUT
+========================================================= */
 
-        .quick-menu {
+.blog-layout {
 
-            display:
-                none;
+    display:
+        grid;
 
-        }
+    grid-template-columns:
+        minmax(0, 1.55fr)
+        minmax(290px, .75fr);
 
+    gap:
+        25px;
 
-        /* =====================================================
-           BLOG LAYOUT
-        ====================================================== */
+    margin-top:
+        25px;
 
-        .blog-layout {
+}
 
-            display:
-                grid;
 
-            grid-template-columns:
-                minmax(
-                    0,
-                    1.55fr
-                )
-                minmax(
-                    280px,
-                    .75fr
-                );
+.blog-main {
 
-            gap:
-                25px;
+    min-width:
+        0;
 
-            margin-top:
-                28px;
+}
 
-            align-items:
-                start;
 
-        }
+.blog-sidebar {
 
+    min-width:
+        0;
 
-        /* =====================================================
-           ARTICLE CARD
-        ====================================================== */
+}
 
-        .article-card {
 
-            overflow:
-                hidden;
+/* =========================================================
+   CARD
+========================================================= */
 
-            border-radius:
-                28px;
+.card {
 
-            background:
-                rgba(
-                    255,
-                    255,
-                    255,
-                    .93
-                );
+    background:
+        rgba(255, 255, 255, .94);
 
-            border:
-                1px solid
-                rgba(
-                    255,
-                    255,
-                    255,
-                    .9
-                );
+    border:
+        1px solid
+        rgba(255, 255, 255, .95);
 
-            box-shadow:
-                0 20px 50px
-                rgba(
-                    50,
-                    35,
-                    80,
-                    .08
-                );
+    border-radius:
+        26px;
 
-        }
+    box-shadow:
+        0 18px 45px
+        rgba(60, 40, 90, .08);
 
+}
 
-        .article-cover {
 
-            min-height:
-                170px;
+/* =========================================================
+   ARTICLE INTRO
+========================================================= */
 
-            position:
-                relative;
+.article-card {
 
-            display:
-                flex;
+    overflow:
+        hidden;
 
-            align-items:
-                center;
+}
 
-            padding:
-                30px;
 
-            overflow:
-                hidden;
+.article-header {
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #fff0f5,
-                    #eeeaff,
-                    #e7f8ff
-                );
+    padding:
+        26px 26px 0;
 
-        }
+}
 
 
-        .article-cover::after {
+.article-label {
 
-            content:
-                "🖍️";
+    display:
+        inline-flex;
 
-            position:
-                absolute;
+    align-items:
+        center;
 
-            right:
-                30px;
+    padding:
+        7px 12px;
 
-            font-size:
-                90px;
+    border-radius:
+        50px;
 
-            opacity:
-                .75;
+    color:
+        #725bb9;
 
-            transform:
-                rotate(
-                    12deg
-                );
+    background:
+        #f0ecff;
 
-        }
+    font-size:
+        10px;
 
+    font-weight:
+        900;
 
-        .article-cover-content {
+}
 
-            position:
-                relative;
 
-            z-index:
-                2;
+.article-header h2 {
 
-        }
+    margin:
+        13px 0 8px;
 
+    font-family:
+        "Baloo 2",
+        cursive;
 
-        .article-cover small {
+    font-size:
+        32px;
 
-            display:
-                inline-block;
+    line-height:
+        1.1;
 
-            padding:
-                7px 11px;
+}
 
-            border-radius:
-                30px;
 
-            color:
-                #8068b8;
+.article-header p {
 
-            background:
-                white;
+    color:
+        #867d8f;
 
-            font-size:
-                9px;
+    font-size:
+        12px;
 
-            font-weight:
-                900;
+    line-height:
+        1.8;
 
-        }
+}
 
 
-        .article-cover h2 {
+.article-body {
 
-            max-width:
-                480px;
+    padding:
+        26px;
 
-            margin:
-                13px 0 0;
+}
 
-            font-family:
-                "Baloo 2",
-                cursive;
 
-            font-size:
-                32px;
+/* =========================================================
+   STEPS
+========================================================= */
 
-            line-height:
-                1.1;
+.steps-grid {
 
-        }
+    display:
+        grid;
 
+    grid-template-columns:
+        repeat(4, 1fr);
 
-        .article-body {
+    gap:
+        10px;
 
-            padding:
-                25px;
+}
 
-        }
 
+.step-box {
 
-        .article-body > p {
+    min-height:
+        140px;
 
-            margin:
-                0 0 20px;
+    padding:
+        15px 10px;
 
-            color:
-                #82798b;
+    display:
+        flex;
 
-            font-size:
-                12px;
+    flex-direction:
+        column;
 
-            line-height:
-                1.85;
+    align-items:
+        center;
 
-        }
+    justify-content:
+        center;
 
+    text-align:
+        center;
 
-        /* =====================================================
-           STEPS
-        ====================================================== */
+    border-radius:
+        19px;
 
-        .steps-grid {
+    background:
+        #faf9ff;
 
-            display:
-                grid;
+}
 
-            grid-template-columns:
-                repeat(
-                    4,
-                    1fr
-                );
 
-            gap:
-                11px;
+.step-icon {
 
-        }
+    width:
+        47px;
 
+    height:
+        47px;
 
-        .step-card {
+    display:
+        flex;
 
-            position:
-                relative;
+    align-items:
+        center;
 
-            min-height:
-                155px;
+    justify-content:
+        center;
 
-            padding:
-                15px 10px;
+    margin-bottom:
+        9px;
 
-            display:
-                flex;
+    border-radius:
+        16px;
 
-            flex-direction:
-                column;
+    background:
+        #ffffff;
 
-            align-items:
-                center;
+    font-size:
+        22px;
 
-            justify-content:
-                center;
+    box-shadow:
+        0 7px 18px
+        rgba(60, 40, 90, .07);
 
-            text-align:
-                center;
+}
 
-            border-radius:
-                20px;
 
-            background:
-                #faf9ff;
+.step-box strong {
 
-            border:
-                1px solid
-                #f1edf7;
+    font-size:
+        10px;
 
-            transition:
-                .3s ease;
+}
 
-        }
 
+.step-box small {
 
-        .step-card:hover {
+    margin-top:
+        5px;
 
-            transform:
-                translateY(-5px);
+    color:
+        #988fa0;
 
-            background:
-                white;
+    font-size:
+        8px;
 
-            box-shadow:
-                0 15px 30px
-                rgba(
-                    70,
-                    50,
-                    110,
-                    .08
-                );
+}
 
-        }
 
+/* =========================================================
+   FORM CARD
+========================================================= */
 
-        .step-number {
+.registration-card {
 
-            position:
-                absolute;
+    margin-top:
+        25px;
 
-            top:
-                10px;
+    padding:
+        26px;
 
-            left:
-                10px;
+}
 
-            width:
-                23px;
 
-            height:
-                23px;
+.form-top {
 
-            display:
-                grid;
+    display:
+        flex;
 
-            place-items:
-                center;
+    align-items:
+        center;
 
-            border-radius:
-                8px;
+    gap:
+        14px;
 
-            color:
-                #9c91a9;
+    margin-bottom:
+        23px;
 
-            background:
-                white;
+}
 
-            font-size:
-                8px;
 
-            font-weight:
-                900;
+.form-top-icon {
 
-        }
+    width:
+        58px;
 
+    height:
+        58px;
 
-        .step-icon {
+    flex:
+        0 0 auto;
 
-            width:
-                48px;
+    display:
+        flex;
 
-            height:
-                48px;
+    align-items:
+        center;
 
-            display:
-                grid;
+    justify-content:
+        center;
 
-            place-items:
-                center;
+    border-radius:
+        19px;
 
-            margin-bottom:
-                10px;
+    background:
+        linear-gradient(
+            135deg,
+            #fff0f6,
+            #eeeaff
+        );
 
-            border-radius:
-                16px;
+    font-size:
+        27px;
 
-            background:
-                white;
+}
 
-            font-size:
-                22px;
 
-            box-shadow:
-                0 8px 18px
-                rgba(
-                    60,
-                    40,
-                    90,
-                    .07
-                );
+.form-top h2 {
 
-        }
+    font-family:
+        "Baloo 2",
+        cursive;
 
+    font-size:
+        27px;
 
-        .step-card b {
+    line-height:
+        1.1;
 
-            font-size:
-                10px;
+}
 
-        }
 
+.form-top p {
 
-        .step-card small {
+    margin-top:
+        4px;
 
-            margin-top:
-                5px;
+    color:
+        #918898;
 
-            color:
-                #99909f;
+    font-size:
+        10px;
 
-            font-size:
-                8px;
+}
 
-            line-height:
-                1.5;
 
-        }
+/* =========================================================
+   FORM SECTION
+========================================================= */
 
+.form-section {
 
-        /* =====================================================
-           FORM
-        ====================================================== */
+    margin-bottom:
+        17px;
 
-        .form-card {
+    padding:
+        20px;
 
-            margin-top:
-                25px;
+    border:
+        1px solid
+        #f0edf5;
 
-            padding:
-                28px;
+    border-radius:
+        21px;
 
-            border-radius:
-                28px;
+    background:
+        #fbfaff;
 
-            background:
-                rgba(
-                    255,
-                    255,
-                    255,
-                    .94
-                );
+}
 
-            box-shadow:
-                0 20px 50px
-                rgba(
-                    50,
-                    35,
-                    80,
-                    .08
-                );
 
-        }
+.section-heading {
 
+    display:
+        flex;
 
-        .form-header {
+    align-items:
+        center;
 
-            display:
-                flex;
+    gap:
+        10px;
 
-            align-items:
-                center;
+    margin-bottom:
+        18px;
 
-            gap:
-                15px;
+}
 
-            margin-bottom:
-                24px;
 
-        }
+.section-number {
 
+    width:
+        35px;
 
-        .form-header-icon {
+    height:
+        35px;
 
-            width:
-                62px;
+    flex:
+        0 0 auto;
 
-            height:
-                62px;
+    display:
+        flex;
 
-            display:
-                grid;
+    align-items:
+        center;
 
-            place-items:
-                center;
+    justify-content:
+        center;
 
-            flex:
-                0 0 auto;
+    border-radius:
+        11px;
 
-            border-radius:
-                20px;
+    color:
+        #ffffff;
 
-            font-size:
-                28px;
+    background:
+        linear-gradient(
+            135deg,
+            #7b6cff,
+            #a47fff
+        );
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #fff0f5,
-                    #ede9ff
-                );
+    font-size:
+        10px;
 
-        }
+    font-weight:
+        900;
 
+}
 
-        .form-header h2 {
 
-            margin:
-                0;
+.section-heading h3 {
 
-            font-family:
-                "Baloo 2",
-                cursive;
+    font-size:
+        13px;
 
-            font-size:
-                28px;
+    font-weight:
+        900;
 
-            line-height:
-                1.1;
+}
 
-        }
 
+/* =========================================================
+   FORM GRID
+========================================================= */
 
-        .form-header p {
+.form-grid {
 
-            margin:
-                5px 0 0;
+    display:
+        grid;
 
-            color:
-                #928997;
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
 
-            font-size:
-                10px;
+    gap:
+        14px;
 
-        }
+}
 
 
-        /* =====================================================
-           FORM SECTION
-        ====================================================== */
+.form-group {
 
-        .form-section {
+    display:
+        flex;
 
-            margin-bottom:
-                17px;
+    flex-direction:
+        column;
 
-            padding:
-                20px;
+    gap:
+        7px;
 
-            border-radius:
-                22px;
+    min-width:
+        0;
 
-            background:
-                #fbfaff;
+}
 
-            border:
-                1px solid
-                #efedf5;
 
-        }
+.form-group.full {
 
+    grid-column:
+        1 / -1;
 
-        .form-section-head {
+}
 
-            display:
-                flex;
 
-            align-items:
-                center;
+.form-group label {
 
-            gap:
-                10px;
+    color:
+        #62586f;
 
-            margin-bottom:
-                18px;
+    font-size:
+        10px;
 
-        }
+    font-weight:
+        900;
 
+}
 
-        .section-number {
 
-            width:
-                36px;
+.required {
 
-            height:
-                36px;
+    color:
+        #ef4f82;
 
-            display:
-                grid;
+}
 
-            place-items:
-                center;
 
-            flex:
-                0 0 auto;
+/* =========================================================
+   INPUT
+========================================================= */
 
-            border-radius:
-                12px;
+.form-group input,
+.form-group select,
+.form-group textarea {
 
-            color:
-                white;
+    width:
+        100%;
 
-            font-size:
-                10px;
+    min-height:
+        49px;
 
-            font-weight:
-                900;
+    padding:
+        12px 14px;
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #7b6cff,
-                    #a47fff
-                );
+    border:
+        1px solid
+        #e8e3ee;
 
-        }
+    outline:
+        none;
 
+    border-radius:
+        14px;
 
-        .form-section-head h3 {
+    background:
+        #ffffff;
 
-            margin:
-                0;
+    color:
+        #423a4d;
 
-            font-size:
-                13px;
+    font-size:
+        11px;
 
-        }
+    transition:
+        .25s ease;
 
+}
 
-        .form-section-head p {
 
-            margin:
-                3px 0 0;
+.form-group textarea {
 
-            color:
-                #a198a8;
+    min-height:
+        110px;
 
-            font-size:
-                9px;
+    resize:
+        vertical;
 
-        }
+}
 
 
-        /* =====================================================
-           FORM GRID
-        ====================================================== */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
 
-        .form-grid {
+    border-color:
+        #a47fff;
 
-            display:
-                grid;
+    box-shadow:
+        0 0 0 4px
+        rgba(164, 127, 255, .10);
 
-            grid-template-columns:
-                repeat(
-                    2,
-                    1fr
-                );
+}
 
-            gap:
-                15px;
 
-        }
+/* =========================================================
+   GENDER
+========================================================= */
 
+.gender-grid {
 
-        .form-group {
+    display:
+        grid;
 
-            display:
-                grid;
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
 
-            gap:
-                7px;
+    gap:
+        10px;
 
-        }
+}
 
 
-        .form-group.full {
+.gender-option {
 
-            grid-column:
-                1 / -1;
+    cursor:
+        pointer;
 
-        }
+}
 
 
-        .form-group label {
+.gender-option input {
 
-            font-size:
-                10px;
+    position:
+        absolute;
 
-            font-weight:
-                900;
+    opacity:
+        0;
 
-            color:
-                #5d5567;
+    pointer-events:
+        none;
 
-        }
+}
 
 
-        .required {
+.gender-box {
 
-            color:
-                #ef4f82;
+    min-height:
+        49px;
 
-        }
+    display:
+        flex;
 
+    align-items:
+        center;
 
-        /* =====================================================
-           INPUT
-        ====================================================== */
+    justify-content:
+        center;
 
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
+    gap:
+        7px;
 
-            width:
-                100%;
+    border:
+        1px solid
+        #e8e3ee;
 
-            min-height:
-                50px;
+    border-radius:
+        14px;
 
-            padding:
-                13px 14px;
+    background:
+        #ffffff;
 
-            border:
-                1px solid
-                #e8e3ee;
+    color:
+        #776d7e;
 
-            outline:
-                none;
+    font-size:
+        10px;
 
-            border-radius:
-                15px;
+    font-weight:
+        900;
 
-            background:
-                white;
+    transition:
+        .25s ease;
 
-            color:
-                #443b4d;
+}
 
-            font-size:
-                11px;
 
-            transition:
-                .25s ease;
+.gender-option input:checked
++
+.gender-box {
 
-        }
+    color:
+        #7158bb;
 
+    border-color:
+        #a47fff;
 
-        .form-group textarea {
+    background:
+        #f5f2ff;
 
-            min-height:
-                115px;
+}
 
-            resize:
-                vertical;
 
-        }
+/* =========================================================
+   AGREEMENT
+========================================================= */
 
+.agreement {
 
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
+    display:
+        flex;
 
-            border-color:
-                #9a80ed;
+    align-items:
+        flex-start;
 
-            box-shadow:
-                0 0 0 4px
-                rgba(
-                    154,
-                    128,
-                    237,
-                    .10
-                );
+    gap:
+        10px;
 
-        }
+    padding:
+        15px;
 
+    border-radius:
+        17px;
 
-        /* =====================================================
-           GENDER
-        ====================================================== */
+    background:
+        #fff9ed;
 
-        .gender-grid {
+    color:
+        #776e64;
 
-            display:
-                grid;
+    font-size:
+        10px;
 
-            grid-template-columns:
-                repeat(
-                    2,
-                    1fr
-                );
+    font-weight:
+        600;
 
-            gap:
-                10px;
+    line-height:
+        1.7;
 
-        }
+}
 
 
-        .gender-option {
+.agreement input {
 
-            cursor:
-                pointer;
+    width:
+        18px;
 
-        }
+    height:
+        18px;
 
+    flex:
+        0 0 auto;
 
-        .gender-option input {
+    margin-top:
+        1px;
 
-            display:
-                none;
+    accent-color:
+        #ef4f82;
 
-        }
+}
 
 
-        .gender-box {
+/* =========================================================
+   SUBMIT BUTTON
+========================================================= */
 
-            min-height:
-                50px;
+.submit-button {
 
-            display:
-                flex;
+    width:
+        100%;
 
-            align-items:
-                center;
+    min-height:
+        56px;
 
-            justify-content:
-                center;
+    margin-top:
+        16px;
 
-            gap:
-                8px;
+    border:
+        none;
 
-            border:
-                1px solid
-                #e8e3ee;
+    outline:
+        none;
 
-            border-radius:
-                15px;
+    cursor:
+        pointer;
 
-            background:
-                white;
+    display:
+        flex;
 
-            color:
-                #766d7d;
+    align-items:
+        center;
 
-            font-size:
-                10px;
+    justify-content:
+        center;
 
-            font-weight:
-                900;
+    gap:
+        8px;
 
-            transition:
-                .25s ease;
+    border-radius:
+        17px;
 
-        }
+    color:
+        #ffffff;
 
+    background:
+        linear-gradient(
+            135deg,
+            #ef4f82,
+            #ff7ca7
+        );
 
-        .gender-option input:checked
-        +
-        .gender-box {
+    box-shadow:
+        0 14px 28px
+        rgba(239, 79, 130, .23);
 
-            border-color:
-                #9a80ed;
+    font-size:
+        13px;
 
-            background:
-                #f4f1ff;
+    font-weight:
+        900;
 
-            color:
-                #715ab7;
+    transition:
+        .25s ease;
 
-        }
+}
 
 
-        /* =====================================================
-           AGREEMENT
-        ====================================================== */
+.submit-button:hover {
 
-        .agreement {
+    transform:
+        translateY(-3px);
 
-            display:
-                flex;
+}
 
-            align-items:
-                flex-start;
 
-            gap:
-                10px;
+.submit-button:active {
 
-            padding:
-                15px;
+    transform:
+        scale(.98);
 
-            border-radius:
-                17px;
+}
 
-            background:
-                #fff9ec;
 
-            color:
-                #776e63;
+.submit-button:disabled {
 
-            font-size:
-                10px;
+    cursor:
+        not-allowed;
 
-            line-height:
-                1.75;
+    opacity:
+        .75;
 
-        }
+    transform:
+        none;
 
+}
 
-        .agreement input {
 
-            width:
-                18px;
+/* =========================================================
+   SUCCESS
+========================================================= */
 
-            height:
-                18px;
+.success-box {
 
-            flex:
-                0 0 auto;
+    display:
+        none;
 
-            accent-color:
-                #ef4f82;
+    padding:
+        28px 20px;
 
-        }
+    text-align:
+        center;
 
+    border:
+        1px solid
+        #d9f2e2;
 
-        /* =====================================================
-           SUBMIT
-        ====================================================== */
+    border-radius:
+        23px;
 
-        .submit-button {
+    background:
+        linear-gradient(
+            135deg,
+            #effff5,
+            #f4f0ff
+        );
 
-            width:
-                100%;
+}
 
-            min-height:
-                57px;
 
-            margin-top:
-                16px;
+.success-box.show {
 
-            border:
-                none;
+    display:
+        block;
 
-            cursor:
-                pointer;
+    animation:
+        successAnimation .5s ease;
 
-            display:
-                flex;
+}
 
-            align-items:
-                center;
 
-            justify-content:
-                center;
+@keyframes successAnimation {
 
-            gap:
-                8px;
+    from {
 
-            border-radius:
-                17px;
+        opacity:
+            0;
 
-            color:
-                white;
+        transform:
+            translateY(15px)
+            scale(.97);
 
-            font-size:
-                13px;
+    }
 
-            font-weight:
-                900;
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #ef4f82,
-                    #ff7da8
-                );
+    to {
 
-            box-shadow:
-                0 15px 30px
-                rgba(
-                    239,
-                    79,
-                    130,
-                    .24
-                );
+        opacity:
+            1;
 
-            transition:
-                .3s ease;
+        transform:
+            translateY(0)
+            scale(1);
 
-        }
+    }
 
+}
 
-        .submit-button:hover {
 
-            transform:
-                translateY(-3px);
+.success-emoji {
 
-            box-shadow:
-                0 20px 35px
-                rgba(
-                    239,
-                    79,
-                    130,
-                    .30
-                );
+    font-size:
+        52px;
 
-        }
+}
 
 
-        .submit-button:disabled {
+.success-box h3 {
 
-            opacity:
-                .7;
+    margin-top:
+        10px;
 
-            cursor:
-                not-allowed;
+    font-family:
+        "Baloo 2",
+        cursive;
 
-        }
+    font-size:
+        27px;
 
+}
 
-        /* =====================================================
-           SUCCESS
-        ====================================================== */
 
-        .success-box {
+.success-box p {
 
-            display:
-                none;
+    max-width:
+        500px;
 
-            padding:
-                35px 20px;
+    margin:
+        5px auto 0;
 
-            text-align:
-                center;
+    color:
+        #697367;
 
-            border-radius:
-                24px;
+    font-size:
+        11px;
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #f0fff6,
-                    #f5f1ff
-                );
+    line-height:
+        1.8;
 
-            border:
-                1px solid
-                #dcf4e5;
+}
 
-        }
 
+.code-box {
 
-        .success-box.show {
+    max-width:
+        380px;
 
-            display:
-                block;
+    margin:
+        20px auto;
 
-            animation:
-                successPop
-                .6s
-                ease;
+    padding:
+        19px;
 
-        }
+    border-radius:
+        19px;
 
+    background:
+        #ffffff;
 
-        @keyframes successPop {
+    box-shadow:
+        0 10px 25px
+        rgba(60, 40, 90, .08);
 
-            from {
+}
 
-                opacity:
-                    0;
 
-                transform:
-                    scale(.92)
-                    translateY(15px);
+.code-box small {
 
-            }
+    display:
+        block;
 
+    margin-bottom:
+        7px;
 
-            to {
+    color:
+        #948b9c;
 
-                opacity:
-                    1;
+    font-size:
+        9px;
 
-                transform:
-                    scale(1)
-                    translateY(0);
+    font-weight:
+        800;
 
-            }
+}
 
-        }
 
+.code-box strong {
 
-        .success-icon {
+    display:
+        block;
 
-            font-size:
-                58px;
+    color:
+        #735cc1;
 
-        }
+    font-size:
+        25px;
 
+    letter-spacing:
+        2px;
 
-        .success-box h3 {
+}
 
-            margin:
-                12px 0 7px;
 
-            font-family:
-                "Baloo 2",
-                cursive;
+.success-buttons {
 
-            font-size:
-                29px;
+    display:
+        grid;
 
-        }
+    gap:
+        10px;
 
+    max-width:
+        420px;
 
-        .success-box p {
+    margin:
+        auto;
 
-            max-width:
-                450px;
+}
 
-            margin:
-                auto;
 
-            color:
-                #6c776f;
+.success-buttons a {
 
-            font-size:
-                11px;
+    min-height:
+        53px;
 
-            line-height:
-                1.8;
+    display:
+        flex;
 
-        }
+    align-items:
+        center;
 
+    justify-content:
+        center;
 
-        .registration-code {
+    gap:
+        8px;
 
-            max-width:
-                380px;
+    border-radius:
+        16px;
 
-            margin:
-                20px auto;
+    text-decoration:
+        none;
 
-            padding:
-                20px;
+    font-size:
+        11px;
 
-            border-radius:
-                20px;
+    font-weight:
+        900;
 
-            background:
-                white;
+}
 
-            box-shadow:
-                0 12px 30px
-                rgba(
-                    60,
-                    40,
-                    90,
-                    .08
-                );
 
-        }
+.whatsapp-button {
 
+    color:
+        #ffffff;
 
-        .registration-code small {
+    background:
+        linear-gradient(
+            135deg,
+            #25d366,
+            #55e58c
+        );
 
-            display:
-                block;
+}
 
-            margin-bottom:
-                8px;
 
-            color:
-                #968c9d;
+.status-button-success {
 
-            font-size:
-                9px;
+    color:
+        #6d607c;
 
-            font-weight:
-                800;
+    background:
+        #ffffff;
 
-        }
+    border:
+        1px solid
+        #e9e4f0;
 
+}
 
-        .registration-code b {
 
-            display:
-                block;
+/* =========================================================
+   SIDEBAR
+========================================================= */
 
-            color:
-                #765fc1;
+.blog-sidebar {
 
-            font-size:
-                26px;
+    display:
+        flex;
 
-            letter-spacing:
-                2px;
+    flex-direction:
+        column;
 
-        }
+    gap:
+        18px;
 
+}
 
-        .success-actions {
 
-            display:
-                grid;
+.sidebar-card {
 
-            gap:
-                10px;
+    padding:
+        22px;
 
-            max-width:
-                420px;
+}
 
-            margin:
-                auto;
 
-        }
+.sidebar-card h3 {
 
+    margin-bottom:
+        9px;
 
-        .whatsapp-button {
+    font-family:
+        "Baloo 2",
+        cursive;
 
-            min-height:
-                54px;
+    font-size:
+        23px;
 
-            display:
-                flex;
+    line-height:
+        1.1;
 
-            align-items:
-                center;
+}
 
-            justify-content:
-                center;
 
-            gap:
-                8px;
+.sidebar-card h3 span {
 
-            border-radius:
-                16px;
+    color:
+        #ef4f82;
 
-            text-decoration:
-                none;
+}
 
-            color:
-                white;
 
-            font-size:
-                11px;
+.sidebar-card p {
 
-            font-weight:
-                900;
+    color:
+        #847b8d;
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #25d366,
-                    #52df88
-                );
+    font-size:
+        11px;
 
-        }
+    line-height:
+        1.8;
 
+}
 
-        .check-button {
 
-            min-height:
-                54px;
+/* =========================================================
+   SIDEBAR STEPS
+========================================================= */
 
-            display:
-                flex;
+.sidebar-steps {
 
-            align-items:
-                center;
+    display:
+        grid;
 
-            justify-content:
-                center;
+    gap:
+        10px;
 
-            gap:
-                8px;
+    margin-top:
+        16px;
 
-            border-radius:
-                16px;
+}
 
-            text-decoration:
-                none;
 
-            color:
-                #6d6279;
+.sidebar-step {
 
-            background:
-                white;
+    display:
+        flex;
 
-            border:
-                1px solid
-                #e8e3ed;
+    align-items:
+        center;
 
-            font-size:
-                11px;
+    gap:
+        11px;
 
-            font-weight:
-                900;
+    padding:
+        11px;
 
-        }
+    border-radius:
+        16px;
 
+    background:
+        #faf9ff;
 
-        /* =====================================================
-           SIDEBAR
-        ====================================================== */
+}
 
-        .sidebar {
 
-            display:
-                grid;
+.sidebar-step-icon {
 
-            gap:
-                18px;
+    width:
+        43px;
 
-            position:
-                sticky;
+    height:
+        43px;
 
-            top:
-                150px;
+    flex:
+        0 0 auto;
 
-        }
+    display:
+        flex;
 
+    align-items:
+        center;
 
-        .side-card {
+    justify-content:
+        center;
 
-            padding:
-                23px;
+    border-radius:
+        14px;
 
-            border-radius:
-                25px;
+    background:
+        #ffffff;
 
-            background:
-                rgba(
-                    255,
-                    255,
-                    255,
-                    .92
-                );
+    font-size:
+        19px;
 
-            box-shadow:
-                0 18px 42px
-                rgba(
-                    60,
-                    40,
-                    90,
-                    .08
-                );
+    box-shadow:
+        0 7px 17px
+        rgba(60, 40, 90, .06);
 
-        }
+}
 
 
-        .side-card h3 {
+.sidebar-step strong {
 
-            margin:
-                0 0 8px;
+    display:
+        block;
 
-            font-family:
-                "Baloo 2",
-                cursive;
+    font-size:
+        10px;
 
-            font-size:
-                23px;
+}
 
-            line-height:
-                1.1;
 
-        }
+.sidebar-step small {
 
+    display:
+        block;
 
-        .side-card h3 span {
+    margin-top:
+        3px;
 
-            color:
-                #ef4f82;
+    color:
+        #9b92a1;
 
-        }
+    font-size:
+        8px;
 
+}
 
-        .side-card > p {
 
-            margin:
-                0;
+/* =========================================================
+   STATUS SIDEBAR
+========================================================= */
 
-            color:
-                #857c8c;
+.status-card {
 
-            font-size:
-                11px;
+    background:
+        linear-gradient(
+            135deg,
+            #f0edff,
+            #fff0f6,
+            #ecf8ff
+        );
 
-            line-height:
-                1.8;
+}
 
-        }
 
+.status-icon {
 
-        /* =====================================================
-           SIDE STEPS
-        ====================================================== */
+    margin-bottom:
+        8px;
 
-        .side-steps {
+    font-size:
+        48px;
 
-            display:
-                grid;
+}
 
-            gap:
-                10px;
 
-            margin-top:
-                17px;
+.status-card-button {
 
-        }
+    width:
+        100%;
 
+    min-height:
+        49px;
 
-        .side-step {
+    margin-top:
+        16px;
 
-            display:
-                flex;
+    display:
+        flex;
 
-            align-items:
-                center;
+    align-items:
+        center;
 
-            gap:
-                11px;
+    justify-content:
+        center;
 
-            padding:
-                11px;
+    border-radius:
+        15px;
 
-            border-radius:
-                17px;
+    color:
+        #ffffff;
 
-            background:
-                #faf9ff;
+    background:
+        linear-gradient(
+            135deg,
+            #7b6cff,
+            #a47fff
+        );
 
-        }
+    text-decoration:
+        none;
 
+    font-size:
+        10px;
 
-        .side-step-icon {
+    font-weight:
+        900;
 
-            width:
-                43px;
+}
 
-            height:
-                43px;
 
-            display:
-                grid;
+/* =========================================================
+   INFO
+========================================================= */
 
-            place-items:
-                center;
+.info-list {
 
-            flex:
-                0 0 auto;
+    display:
+        grid;
 
-            border-radius:
-                14px;
+    gap:
+        10px;
 
-            background:
-                white;
+    margin-top:
+        16px;
 
-            font-size:
-                19px;
+}
 
-            box-shadow:
-                0 7px 17px
-                rgba(
-                    60,
-                    40,
-                    90,
-                    .06
-                );
 
-        }
+.info-item {
 
+    display:
+        flex;
 
-        .side-step b {
+    align-items:
+        flex-start;
 
-            display:
-                block;
+    gap:
+        10px;
 
-            font-size:
-                10px;
+    padding:
+        12px;
 
-        }
+    border-radius:
+        16px;
 
+    background:
+        #f9fcff;
 
-        .side-step small {
+}
 
-            display:
-                block;
 
-            margin-top:
-                3px;
+.info-icon {
 
-            color:
-                #9b92a1;
+    flex:
+        0 0 auto;
 
-            font-size:
-                8px;
+    font-size:
+        19px;
 
-        }
+}
 
 
-        /* =====================================================
-           STATUS CARD
-        ====================================================== */
+.info-item strong {
 
-        .status-card {
+    display:
+        block;
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #f2efff,
-                    #fff0f7,
-                    #ebf9ff
-                );
+    font-size:
+        10px;
 
-        }
+}
 
 
-        .status-icon {
+.info-item small {
 
-            font-size:
-                45px;
+    display:
+        block;
 
-            margin-bottom:
-                8px;
+    margin-top:
+        3px;
 
-        }
+    color:
+        #918898;
 
+    font-size:
+        8px;
 
-        .status-button {
+    line-height:
+        1.6;
 
-            width:
-                100%;
+}
 
-            min-height:
-                50px;
 
-            display:
-                flex;
+/* =========================================================
+   FOOTER
+========================================================= */
 
-            align-items:
-                center;
+.footer {
 
-            justify-content:
-                center;
+    padding:
+        42px 0 20px;
 
-            margin-top:
-                17px;
+    color:
+        #ffffff;
 
-            border-radius:
-                15px;
+    background:
+        linear-gradient(
+            135deg,
+            #302843,
+            #46365a
+        );
 
-            text-decoration:
-                none;
+}
 
-            color:
-                white;
 
-            font-size:
-                10px;
+.footer-grid {
 
-            font-weight:
-                900;
+    display:
+        grid;
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #7b6cff,
-                    #a57fff
-                );
+    grid-template-columns:
+        1.2fr 1fr 1fr;
 
-            box-shadow:
-                0 10px 23px
-                rgba(
-                    123,
-                    108,
-                    255,
-                    .18
-                );
+    gap:
+        30px;
 
-        }
+}
 
 
-        /* =====================================================
-           INFO
-        ====================================================== */
+.footer h3 {
 
-        .info-list {
+    margin-bottom:
+        10px;
 
-            display:
-                grid;
+    font-family:
+        "Baloo 2",
+        cursive;
 
-            gap:
-                10px;
+    font-size:
+        21px;
 
-            margin-top:
-                15px;
+}
 
-        }
 
+.footer h3 span {
 
-        .info-item {
+    color:
+        #ff91b7;
 
-            display:
-                flex;
+}
 
-            align-items:
-                flex-start;
 
-            gap:
-                10px;
+.footer p {
 
-            padding:
-                12px;
+    margin-bottom:
+        8px;
 
-            border-radius:
-                16px;
+    color:
+        #c9c1d4;
 
-            background:
-                #f9fbff;
+    font-size:
+        11px;
 
-        }
+    line-height:
+        1.7;
 
+}
 
-        .info-item-icon {
 
-            font-size:
-                20px;
+.footer a {
 
-        }
+    color:
+        #c9c1d4;
 
+    text-decoration:
+        none;
 
-        .info-item b {
+}
 
-            display:
-                block;
 
-            font-size:
-                10px;
+.footer a:hover {
 
-        }
+    color:
+        #ffffff;
 
+}
 
-        .info-item small {
 
-            display:
-                block;
+.copyright {
 
-            margin-top:
-                3px;
+    margin-top:
+        30px;
 
-            color:
-                #948b9b;
+    padding-top:
+        20px;
 
-            font-size:
-                8px;
+    text-align:
+        center;
 
-            line-height:
-                1.6;
+    border-top:
+        1px solid
+        rgba(255, 255, 255, .08);
 
-        }
+    color:
+        #aaa0bb;
 
+    font-size:
+        10px;
 
-        /* =====================================================
-           MOBILE BOTTOM NAV
-        ====================================================== */
+}
 
-        .mobile-bottom-nav {
 
-            display:
-                none;
+/* =========================================================
+   REVEAL
+========================================================= */
 
-        }
+.reveal {
 
+    opacity:
+        0;
 
-        /* =====================================================
-           FOOTER
-        ====================================================== */
+    transform:
+        translateY(25px);
 
-        .footer {
+    transition:
+        opacity .7s ease,
+        transform .7s ease;
 
-            padding:
-                50px 0 22px;
+}
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #302842,
-                    #46375b
-                );
 
-            color:
-                white;
+.reveal.show {
 
-        }
+    opacity:
+        1;
 
+    transform:
+        translateY(0);
 
-        .footer-grid {
+}
 
-            display:
-                grid;
 
-            grid-template-columns:
-                1.2fr
-                .8fr
-                1fr;
+/* =========================================================
+   MOBILE
+========================================================= */
 
-            gap:
-                35px;
+@media
+(
+    max-width: 768px
+) {
 
-        }
 
+    /* CONTAINER */
 
-        .footer h3 {
+    .container {
 
-            margin:
-                0 0 11px;
+        width:
+            calc(100% - 24px);
 
-            font-family:
-                "Baloo 2",
-                cursive;
+    }
 
-            font-size:
-                21px;
 
-        }
+    /* HEADER */
 
+    .header-content {
 
-        .footer h3 span {
+        min-height:
+            66px;
 
-            color:
-                #ff91b8;
+        gap:
+            10px;
 
-        }
+    }
 
 
-        .footer p {
+    .brand-icon {
 
-            margin:
-                0 0 8px;
+        width:
+            42px;
 
-            color:
-                #c7bfd2;
+        height:
+            42px;
 
-            font-size:
-                11px;
+        border-radius:
+            14px;
 
-            line-height:
-                1.75;
+        font-size:
+            21px;
 
-        }
+    }
 
 
-        .footer a {
+    .brand-title {
 
-            color:
-                #c7bfd2;
+        font-size:
+            15px;
 
-            text-decoration:
-                none;
+    }
 
-        }
 
+    .brand-subtitle {
 
-        .copyright {
+        font-size:
+            8px;
 
-            margin-top:
-                35px;
+        white-space:
+            nowrap;
 
-            padding-top:
-                20px;
+    }
 
-            text-align:
-                center;
 
-            border-top:
-                1px solid
-                rgba(
-                    255,
-                    255,
-                    255,
-                    .08
-                );
+    .header-status {
 
-            color:
-                #aaa0ba;
+        min-height:
+            39px;
 
-            font-size:
-                10px;
+        padding:
+            0 11px;
 
-        }
+        border-radius:
+            12px;
 
+        font-size:
+            9px;
 
-        /* =====================================================
-           REVEAL
-        ====================================================== */
+    }
 
-        .reveal {
 
-            opacity:
-                0;
+    /* NAV */
 
-            transform:
-                translateY(30px);
+    .site-nav {
 
-            transition:
-                opacity .7s ease,
-                transform .7s ease;
+        top:
+            66px;
 
-        }
+    }
 
 
-        .reveal.show {
+    .nav-scroll {
 
-            opacity:
-                1;
+        gap:
+            5px;
 
-            transform:
-                translateY(0);
+        padding:
+            7px 0;
 
-        }
+    }
 
 
-        /* =====================================================
-           MOBILE
-        ====================================================== */
+    .nav-link {
 
-        @media (max-width: 768px) {
+        min-height:
+            37px;
 
+        padding:
+            0 12px;
 
-            /* BODY */
+        font-size:
+            9px;
 
-            body {
+        border-radius:
+            11px;
 
-                padding-bottom:
-                    78px;
+    }
 
-            }
 
+    /* MAIN */
 
-            /* CONTAINER */
+    .main-content {
 
-            .container {
+        padding:
+            15px 0 42px;
 
-                width:
-                    calc(
-                        100% - 24px
-                    );
+    }
 
-            }
 
+    /* HERO */
 
-            /* HEADER */
+    .hero {
 
-            .header-inner {
+        min-height:
+            420px;
 
-                min-height:
-                    65px;
+        padding:
+            25px 20px;
 
-            }
+        border-radius:
+            25px;
 
+        align-items:
+            flex-end;
 
-            .brand {
+    }
 
-                gap:
-                    9px;
 
-            }
+    .hero::before {
 
+        top:
+            0;
 
-            .brand-logo {
+        right:
+            -15px;
 
-                width:
-                    42px;
+        font-size:
+            130px;
 
-                height:
-                    42px;
+    }
 
-                border-radius:
-                    14px;
 
-                font-size:
-                    21px;
+    .hero::after {
 
-            }
+        top:
+            24px;
 
+        left:
+            18px;
 
-            .brand-text h1 {
+        font-size:
+            48px;
 
-                font-size:
-                    15px;
+    }
 
-            }
 
+    .hero-badge {
 
-            .brand-text p {
+        padding:
+            7px 11px;
 
-                font-size:
-                    7px;
+        font-size:
+            8px;
 
-                white-space:
-                    nowrap;
+    }
 
-            }
 
+    .hero h1 {
 
-            .header-status {
+        margin:
+            14px 0 10px;
 
-                min-height:
-                    39px;
+        font-size:
+            43px;
 
-                padding:
-                    0 11px;
+        line-height:
+            .95;
 
-                border-radius:
-                    12px;
+    }
 
-                font-size:
-                    9px;
 
-            }
+    .hero p {
 
+        font-size:
+            11px;
 
-            /* NAV DESKTOP */
+        line-height:
+            1.75;
 
-            .nav {
+    }
 
-                display:
-                    none;
 
-            }
+    .hero-tags {
 
+        gap:
+            6px;
 
-            /* MAIN */
+        margin-top:
+            16px;
 
-            .main {
+    }
 
-                padding:
-                    13px 0 35px;
 
-            }
+    .hero-tag {
 
+        padding:
+            7px 9px;
 
-            /* HERO */
+        font-size:
+            8px;
 
-            .blog-hero {
+    }
 
-                min-height:
-                    460px;
 
-                padding:
-                    28px 21px;
+    /* QUICK MENU */
 
-                border-radius:
-                    25px;
+    .quick-menu {
 
-            }
+        display:
+            flex;
 
+        gap:
+            8px;
 
-            .blog-hero::before {
+        margin-top:
+            12px;
 
-                top:
-                    -10px;
+        overflow-x:
+            auto;
 
-                right:
-                    -40px;
+        padding-bottom:
+            3px;
 
-                font-size:
-                    155px;
+        scrollbar-width:
+            none;
 
-            }
+    }
 
 
-            .blog-hero::after {
+    .quick-menu::-webkit-scrollbar {
 
-                top:
-                    35px;
+        display:
+            none;
 
-                left:
-                    22px;
+    }
 
-                font-size:
-                    48px;
 
-            }
+    .quick-menu a {
 
+        flex:
+            0 0 auto;
 
-            .hero-dots {
+        display:
+            flex;
 
-                width:
-                    170px;
+        align-items:
+            center;
 
-                height:
-                    170px;
+        justify-content:
+            center;
 
-                right:
-                    -50px;
+        min-height:
+            43px;
 
-                bottom:
-                    -70px;
+        padding:
+            0 14px;
 
-            }
+        border-radius:
+            14px;
 
+        color:
+            #6e6479;
 
-            .hero-category {
+        background:
+            #ffffff;
 
-                padding:
-                    7px 11px;
+        text-decoration:
+            none;
 
-                font-size:
-                    8px;
+        font-size:
+            9px;
 
-            }
+        font-weight:
+            900;
 
+        box-shadow:
+            0 8px 20px
+            rgba(60, 40, 90, .07);
 
-            .hero-content h2 {
+    }
 
-                margin:
-                    14px 0 12px;
 
-                font-size:
-                    46px;
+    /* BLOG LAYOUT */
 
-                line-height:
-                    .95;
+    .blog-layout {
 
-            }
+        display:
+            flex;
 
+        flex-direction:
+            column;
 
-            .hero-content p {
+        gap:
+            15px;
 
-                font-size:
-                    11px;
+        margin-top:
+            15px;
 
-                line-height:
-                    1.8;
+    }
 
-            }
 
+    .blog-main {
 
-            .hero-info {
+        width:
+            100%;
 
-                gap:
-                    7px;
+    }
 
-                margin-top:
-                    17px;
 
-            }
+    .blog-sidebar {
 
+        width:
+            100%;
 
-            .hero-info span {
+    }
 
-                padding:
-                    7px 10px;
 
-                font-size:
-                    8px;
+    /* ARTICLE */
 
-            }
+    .card {
 
+        border-radius:
+            21px;
 
-            /* QUICK MENU */
+    }
 
-            .quick-menu {
 
-                display:
-                    flex;
+    .article-header {
 
-                gap:
-                    8px;
+        padding:
+            20px 17px 0;
 
-                margin:
-                    13px 0;
+    }
 
-                overflow-x:
-                    auto;
 
-                scrollbar-width:
-                    none;
+    .article-label {
 
-            }
+        padding:
+            6px 10px;
 
+        font-size:
+            8px;
 
-            .quick-menu::-webkit-scrollbar {
+    }
 
-                display:
-                    none;
 
-            }
+    .article-header h2 {
 
+        margin:
+            11px 0 7px;
 
-            .quick-menu a {
+        font-size:
+            26px;
 
-                flex:
-                    0 0 auto;
+    }
 
-                padding:
-                    11px 14px;
 
-                border-radius:
-                    15px;
+    .article-header p {
 
-                background:
-                    white;
+        font-size:
+            10px;
 
-                box-shadow:
-                    0 8px 20px
-                    rgba(
-                        60,
-                        40,
-                        90,
-                        .07
-                    );
+        line-height:
+            1.75;
 
-                text-decoration:
-                    none;
+    }
 
-                color:
-                    #716778;
 
-                font-size:
-                    9px;
+    .article-body {
 
-                font-weight:
-                    900;
+        padding:
+            17px;
 
-            }
+    }
 
 
-            /* BLOG LAYOUT */
+    /* STEPS */
 
-            .blog-layout {
+    .steps-grid {
 
-                display:
-                    flex;
+        display:
+            flex;
 
-                flex-direction:
-                    column;
+        overflow-x:
+            auto;
 
-                gap:
-                    15px;
+        gap:
+            10px;
 
-                margin-top:
-                    0;
+        padding-bottom:
+            4px;
 
-            }
+        scrollbar-width:
+            none;
 
+    }
 
-            .content-column {
 
-                width:
-                    100%;
+    .steps-grid::-webkit-scrollbar {
 
-            }
+        display:
+            none;
 
+    }
 
-            /* ARTICLE */
 
-            .article-card {
+    .step-box {
 
-                width:
-                    100%;
+        flex:
+            0 0 145px;
 
-                border-radius:
-                    23px;
+        min-height:
+            145px;
 
-            }
+        border-radius:
+            18px;
 
+    }
 
-            .article-cover {
 
-                min-height:
-                    180px;
+    .step-icon {
 
-                padding:
-                    20px;
+        width:
+            44px;
 
-            }
+        height:
+            44px;
 
+        font-size:
+            20px;
 
-            .article-cover::after {
+    }
 
-                right:
-                    18px;
 
-                font-size:
-                    70px;
+    .step-box strong {
 
-            }
+        font-size:
+            9px;
 
+    }
 
-            .article-cover h2 {
 
-                max-width:
-                    220px;
+    /* FORM */
 
-                font-size:
-                    25px;
+    .registration-card {
 
-            }
+        margin-top:
+            15px;
 
+        padding:
+            13px;
 
-            .article-cover small {
+    }
 
-                font-size:
-                    8px;
 
-            }
+    .form-top {
 
+        gap:
+            10px;
 
-            .article-body {
+        padding:
+            4px;
 
-                padding:
-                    17px;
+        margin-bottom:
+            16px;
 
-            }
+    }
 
 
-            .article-body > p {
+    .form-top-icon {
 
-                font-size:
-                    10px;
+        width:
+            47px;
 
-                line-height:
-                    1.8;
+        height:
+            47px;
 
-            }
+        border-radius:
+            15px;
 
+        font-size:
+            22px;
 
-            /* STEPS */
+    }
 
-            .steps-grid {
 
-                display:
-                    flex;
+    .form-top h2 {
 
-                gap:
-                    10px;
+        font-size:
+            20px;
 
-                overflow-x:
-                    auto;
+    }
 
-                padding-bottom:
-                    5px;
 
-                scrollbar-width:
-                    none;
+    .form-top p {
 
-            }
+        font-size:
+            8px;
 
+    }
 
-            .steps-grid::-webkit-scrollbar {
 
-                display:
-                    none;
+    /* FORM SECTION */
 
-            }
+    .form-section {
 
+        padding:
+            13px;
 
-            .step-card {
+        margin-bottom:
+            11px;
 
-                flex:
-                    0 0 145px;
+        border-radius:
+            17px;
 
-                min-height:
-                    145px;
+    }
 
-            }
 
+    .section-heading {
 
-            /* FORM */
+        gap:
+            8px;
 
-            .form-card {
+        margin-bottom:
+            14px;
 
-                width:
-                    100%;
+    }
 
-                margin-top:
-                    15px;
 
-                padding:
-                    13px;
+    .section-number {
 
-                border-radius:
-                    23px;
+        width:
+            30px;
 
-            }
+        height:
+            30px;
 
+        border-radius:
+            9px;
 
-            .form-header {
+        font-size:
+            8px;
 
-                gap:
-                    10px;
+    }
 
-                margin-bottom:
-                    16px;
 
-                padding:
-                    5px;
+    .section-heading h3 {
 
-            }
+        font-size:
+            10px;
 
+    }
 
-            .form-header-icon {
 
-                width:
-                    48px;
+    /* FORM GRID */
 
-                height:
-                    48px;
+    .form-grid {
 
-                border-radius:
-                    15px;
+        grid-template-columns:
+            1fr;
 
-                font-size:
-                    22px;
+        gap:
+            11px;
 
-            }
+    }
 
 
-            .form-header h2 {
+    .form-group.full {
 
-                font-size:
-                    20px;
+        grid-column:
+            auto;
 
-            }
+    }
 
 
-            .form-header p {
+    .form-group {
 
-                font-size:
-                    8px;
+        gap:
+            5px;
 
-            }
+    }
 
 
-            /* FORM SECTION */
+    .form-group label {
 
-            .form-section {
+        font-size:
+            9px;
 
-                padding:
-                    13px;
+    }
 
-                margin-bottom:
-                    12px;
 
-                border-radius:
-                    18px;
+    /* INPUT */
 
-            }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
 
+        min-height:
+            47px;
 
-            .form-section-head {
+        padding:
+            11px;
 
-                gap:
-                    8px;
+        border-radius:
+            12px;
 
-                margin-bottom:
-                    14px;
+        font-size:
+            10px;
 
-            }
+    }
 
 
-            .section-number {
+    .form-group textarea {
 
-                width:
-                    30px;
+        min-height:
+            95px;
 
-                height:
-                    30px;
+    }
 
-                border-radius:
-                    10px;
 
-                font-size:
-                    8px;
+    /* GENDER */
 
-            }
+    .gender-grid {
 
+        gap:
+            7px;
 
-            .form-section-head h3 {
+    }
 
-                font-size:
-                    10px;
 
-            }
+    .gender-box {
 
+        min-height:
+            46px;
 
-            .form-section-head p {
+        border-radius:
+            12px;
 
-                font-size:
-                    7px;
+        font-size:
+            9px;
 
-            }
+    }
 
 
-            /* FORM GRID */
+    /* AGREEMENT */
 
-            .form-grid {
+    .agreement {
 
-                grid-template-columns:
-                    1fr;
+        gap:
+            8px;
 
-                gap:
-                    11px;
+        padding:
+            12px;
 
-            }
+        border-radius:
+            14px;
 
+        font-size:
+            8px;
 
-            .form-group {
+    }
 
-                gap:
-                    5px;
 
-            }
+    .agreement input {
 
+        width:
+            16px;
 
-            .form-group label {
+        height:
+            16px;
 
-                font-size:
-                    9px;
+    }
 
-            }
 
+    /* SUBMIT */
 
-            .form-group input,
-            .form-group select,
-            .form-group textarea {
+    .submit-button {
 
-                min-height:
-                    47px;
+        min-height:
+            52px;
 
-                padding:
-                    11px;
+        margin-top:
+            13px;
 
-                border-radius:
-                    13px;
+        border-radius:
+            14px;
 
-                font-size:
-                    10px;
+        font-size:
+            11px;
 
-            }
+    }
 
 
-            .form-group textarea {
+    /* SUCCESS */
 
-                min-height:
-                    95px;
+    .success-box {
 
-            }
+        padding:
+            21px 13px;
 
+        border-radius:
+            18px;
 
-            /* GENDER */
+    }
 
-            .gender-grid {
 
-                gap:
-                    8px;
+    .success-emoji {
 
-            }
+        font-size:
+            43px;
 
+    }
 
-            .gender-box {
 
-                min-height:
-                    47px;
+    .success-box h3 {
 
-                border-radius:
-                    13px;
+        font-size:
+            22px;
 
-                font-size:
-                    9px;
+    }
 
-            }
 
+    .success-box p {
 
-            /* AGREEMENT */
+        font-size:
+            9px;
 
-            .agreement {
+    }
 
-                gap:
-                    8px;
 
-                padding:
-                    12px;
+    .code-box {
 
-                border-radius:
-                    15px;
+        padding:
+            16px;
 
-                font-size:
-                    8px;
+    }
 
-            }
 
+    .code-box strong {
 
-            .agreement input {
+        font-size:
+            20px;
 
-                width:
-                    16px;
+    }
 
-                height:
-                    16px;
 
-            }
+    /* SIDEBAR */
 
+    .blog-sidebar {
 
-            /* BUTTON */
+        gap:
+            14px;
 
-            .submit-button {
+    }
 
-                min-height:
-                    53px;
 
-                margin-top:
-                    13px;
+    .sidebar-card {
 
-                border-radius:
-                    15px;
+        padding:
+            17px;
 
-                font-size:
-                    11px;
+    }
 
-            }
 
+    .sidebar-card h3 {
 
-            /* SUCCESS */
+        font-size:
+            21px;
 
-            .success-box {
+    }
 
-                padding:
-                    25px 13px;
 
-                border-radius:
-                    20px;
+    .sidebar-card p {
 
-            }
+        font-size:
+            10px;
 
+    }
 
-            .success-icon {
 
-                font-size:
-                    48px;
+    /* FOOTER */
 
-            }
+    .footer {
 
+        padding:
+            32px 0 18px;
 
-            .success-box h3 {
+    }
 
-                font-size:
-                    23px;
 
-            }
+    .footer-grid {
 
+        grid-template-columns:
+            1fr;
 
-            .success-box p {
+        gap:
+            22px;
 
-                font-size:
-                    9px;
+        text-align:
+            center;
 
-            }
+    }
 
 
-            .registration-code {
+}
 
-                padding:
-                    16px;
 
-            }
+/* =========================================================
+   EXTRA SMALL MOBILE
+========================================================= */
 
+@media
+(
+    max-width: 390px
+) {
 
-            .registration-code b {
 
-                font-size:
-                    20px;
+    .brand-subtitle {
 
-            }
+        display:
+            none;
 
+    }
 
-            /* SIDEBAR */
 
-            .sidebar {
+    .brand-title {
 
-                width:
-                    100%;
+        font-size:
+            14px;
 
-                position:
-                    static;
+    }
 
-                display:
-                    grid;
 
-                gap:
-                    15px;
+    .header-status {
 
-            }
+        padding:
+            0 9px;
 
+    }
 
-            .side-card {
 
-                padding:
-                    18px;
+    .hero h1 {
 
-                border-radius:
-                    22px;
+        font-size:
+            38px;
 
-            }
+    }
 
 
-            .side-card h3 {
+    .gender-grid {
 
-                font-size:
-                    21px;
+        grid-template-columns:
+            1fr;
 
-            }
+    }
 
 
-            .side-card > p {
+}
 
-                font-size:
-                    10px;
 
-            }
-
-
-            /* SIDE STEPS */
-
-            .side-step {
-
-                padding:
-                    10px;
-
-            }
-
-
-            .side-step-icon {
-
-                width:
-                    39px;
-
-                height:
-                    39px;
-
-                border-radius:
-                    12px;
-
-                font-size:
-                    17px;
-
-            }
-
-
-            /* FOOTER */
-
-            .footer {
-
-                padding:
-                    35px 0 22px;
-
-            }
-
-
-            .footer-grid {
-
-                grid-template-columns:
-                    1fr;
-
-                gap:
-                    23px;
-
-                text-align:
-                    center;
-
-            }
-
-
-            /* MOBILE BOTTOM NAV */
-
-            .mobile-bottom-nav {
-
-                position:
-                    fixed;
-
-                left:
-                    0;
-
-                right:
-                    0;
-
-                bottom:
-                    0;
-
-                z-index:
-                    2000;
-
-                min-height:
-                    68px;
-
-                display:
-                    grid;
-
-                grid-template-columns:
-                    repeat(
-                        4,
-                        1fr
-                    );
-
-                background:
-                    rgba(
-                        255,
-                        255,
-                        255,
-                        .96
-                    );
-
-                backdrop-filter:
-                    blur(20px);
-
-                border-top:
-                    1px solid
-                    #ece8f1;
-
-                box-shadow:
-                    0 -10px 30px
-                    rgba(
-                        40,
-                        30,
-                        60,
-                        .06
-                    );
-
-            }
-
-
-            .mobile-bottom-nav a {
-
-                display:
-                    flex;
-
-                flex-direction:
-                    column;
-
-                align-items:
-                    center;
-
-                justify-content:
-                    center;
-
-                gap:
-                    3px;
-
-                text-decoration:
-                    none;
-
-                color:
-                    #8b8292;
-
-                font-size:
-                    8px;
-
-                font-weight:
-                    800;
-
-            }
-
-
-            .mobile-bottom-nav a.active {
-
-                color:
-                    #ef4f82;
-
-            }
-
-
-            .mobile-bottom-nav strong {
-
-                font-size:
-                    18px;
-
-                line-height:
-                    1;
-
-            }
-
-
-        }
-
-
-    </style>
-
+</style>
 
 </head>
 
@@ -3685,14 +3282,26 @@
 <body>
 
 
-<!-- =====================================================
+<!-- =========================================================
+     BACKGROUND
+========================================================= -->
+
+<div class="background-shape">
+
+    <div class="shape shape-one"></div>
+
+    <div class="shape shape-two"></div>
+
+</div>
+
+
+<!-- =========================================================
      HEADER
-===================================================== -->
+========================================================= -->
 
-<header class="header">
+<header class="site-header">
 
-
-    <div class="container header-inner">
+    <div class="container header-content">
 
 
         <a
@@ -3701,7 +3310,7 @@
         >
 
 
-            <div class="brand-logo">
+            <div class="brand-icon">
 
                 🌈
 
@@ -3711,7 +3320,7 @@
             <div class="brand-text">
 
 
-                <h1>
+                <div class="brand-title">
 
                     RA Miftahul
 
@@ -3719,14 +3328,14 @@
                         Hikmah
                     </span>
 
-                </h1>
+                </div>
 
 
-                <p>
+                <div class="brand-subtitle">
 
                     Belajar • Bermain • Berprestasi
 
-                </p>
+                </div>
 
 
             </div>
@@ -3747,42 +3356,52 @@
 
     </div>
 
-
 </header>
 
 
-<!-- =====================================================
-     NAVIGATION DESKTOP
-===================================================== -->
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
 
-<nav class="nav">
+<nav class="site-nav">
+
+    <div class="nav-scroll">
 
 
-    <div class="nav-inner">
-
-
-        <a href="index.html">
+        <a
+            href="index.html"
+            class="nav-link"
+        >
 
             🏠 Home
 
         </a>
 
 
-        <a href="about.html">
+        <a
+            href="about.html"
+            class="nav-link"
+        >
 
             👥 About
 
         </a>
 
 
-        <a href="programs.html">
+        <a
+            href="programs.html"
+            class="nav-link"
+        >
 
             📚 Programs
 
         </a>
 
 
-        <a href="blog.html">
+        <a
+            href="blog.html"
+            class="nav-link"
+        >
 
             🖍️ Blog
 
@@ -3791,7 +3410,7 @@
 
         <a
             href="pendaftaran.html"
-            class="active"
+            class="nav-link active"
         >
 
             📝 Pendaftaran
@@ -3801,84 +3420,76 @@
 
     </div>
 
-
 </nav>
 
 
-<!-- =====================================================
+<!-- =========================================================
      MAIN
-===================================================== -->
+========================================================= -->
 
-<main class="main">
-
+<main class="main-content">
 
     <div class="container">
 
 
-        <!-- HERO -->
+        <!-- =================================================
+             HERO
+        ================================================== -->
 
-        <section
-            class="blog-hero reveal"
-        >
-
-
-            <div class="hero-dots"></div>
+        <section class="hero reveal">
 
 
             <div class="hero-content">
 
 
-                <div class="hero-category">
+                <div class="hero-badge">
 
                     ✨ PENDAFTARAN ONLINE
 
                 </div>
 
 
-                <h2>
+                <h1>
 
-                    Mulai
-                    Petualangan Baru
-                    Bersama Kami 🌈
+                    Mulai Petualangan
+                    Baru Bersama Kami 🌈
 
-                </h2>
+                </h1>
 
 
                 <p>
 
-                    Daftarkan buah hati Anda
-                    di RA Miftahul Hikmah dengan
-                    mudah melalui formulir online.
-                    Setelah formulir dikirim,
-                    Anda akan mendapatkan kode
-                    pendaftaran untuk mengecek
-                    status selanjutnya.
+                    Selamat datang di halaman pendaftaran
+                    online RA Miftahul Hikmah. Lengkapi
+                    formulir dengan data yang benar,
+                    kirim pendaftaran dan dapatkan
+                    kode pendaftaran Anda.
 
                 </p>
 
 
-                <div class="hero-info">
+                <div class="hero-tags">
 
 
-                    <span>
+                    <div class="hero-tag">
 
                         📝 Isi Data
 
-                    </span>
+                    </div>
 
 
-                    <span>
+                    <div class="hero-tag">
 
                         🔑 Dapat Kode
 
-                    </span>
+                    </div>
 
 
-                    <span>
+                    <div class="hero-tag">
 
-                        💬 WhatsApp Admin
+                        💬 WhatsApp
 
-                    </span>
+                    </div>
 
 
                 </div>
@@ -3890,12 +3501,14 @@
         </section>
 
 
-        <!-- MOBILE QUICK MENU -->
+        <!-- =================================================
+             MOBILE QUICK MENU
+        ================================================== -->
 
         <div class="quick-menu">
 
 
-            <a href="#cara">
+            <a href="#cara-daftar">
 
                 📖 Cara Daftar
 
@@ -3909,7 +3522,7 @@
             </a>
 
 
-            <a href="#status">
+            <a href="#cek-status">
 
                 📊 Status
 
@@ -3919,46 +3532,57 @@
         </div>
 
 
-        <!-- BLOG LAYOUT -->
+        <!-- =================================================
+             BLOG LAYOUT
+        ================================================== -->
 
         <div class="blog-layout">
 
 
-            <!-- CONTENT -->
+            <!-- =============================================
+                 MAIN CONTENT
+            ============================================== -->
 
-            <div class="content-column">
+            <div class="blog-main">
 
 
-                <!-- CARA DAFTAR -->
+                <!-- =========================================
+                     CARA DAFTAR
+                ========================================== -->
 
                 <article
-                    class="article-card reveal"
-                    id="cara"
+                    class="card article-card reveal"
+                    id="cara-daftar"
                 >
 
 
-                    <div class="article-cover">
+                    <div class="article-header">
 
 
-                        <div class="article-cover-content">
+                        <div class="article-label">
 
-
-                            <small>
-
-                                📖 PANDUAN PENDAFTARAN
-
-                            </small>
-
-
-                            <h2>
-
-                                Cara Daftar
-                                Sangat Mudah ✨
-
-                            </h2>
-
+                            📖 PANDUAN PENDAFTARAN
 
                         </div>
+
+
+                        <h2>
+
+                            Cara Mendaftar
+                            Sangat Mudah ✨
+
+                        </h2>
+
+
+                        <p>
+
+                            Kami membuat proses pendaftaran
+                            menjadi lebih sederhana agar
+                            orang tua atau wali dapat
+                            mendaftarkan buah hati dengan
+                            mudah melalui website.
+
+                        </p>
 
 
                     </div>
@@ -3967,28 +3591,12 @@
                     <div class="article-body">
 
 
-                        <p>
-
-                            Tidak perlu datang langsung
-                            hanya untuk mengisi formulir.
-                            Orang tua atau wali dapat
-                            melakukan pendaftaran secara
-                            online melalui halaman ini.
-
-                        </p>
-
-
                         <div class="steps-grid">
 
 
-                            <div class="step-card">
+                            <!-- STEP 1 -->
 
-
-                                <div class="step-number">
-
-                                    01
-
-                                </div>
+                            <div class="step-box">
 
 
                                 <div class="step-icon">
@@ -3998,17 +3606,16 @@
                                 </div>
 
 
-                                <b>
+                                <strong>
 
                                     Isi Data
 
-                                </b>
+                                </strong>
 
 
                                 <small>
 
-                                    Lengkapi data
-                                    calon peserta didik
+                                    Data calon siswa
 
                                 </small>
 
@@ -4016,14 +3623,9 @@
                             </div>
 
 
-                            <div class="step-card">
+                            <!-- STEP 2 -->
 
-
-                                <div class="step-number">
-
-                                    02
-
-                                </div>
+                            <div class="step-box">
 
 
                                 <div class="step-icon">
@@ -4033,17 +3635,16 @@
                                 </div>
 
 
-                                <b>
+                                <strong>
 
-                                    Kirim Data
+                                    Kirim
 
-                                </b>
+                                </strong>
 
 
                                 <small>
 
                                     Kirim formulir
-                                    pendaftaran
 
                                 </small>
 
@@ -4051,14 +3652,9 @@
                             </div>
 
 
-                            <div class="step-card">
+                            <!-- STEP 3 -->
 
-
-                                <div class="step-number">
-
-                                    03
-
-                                </div>
+                            <div class="step-box">
 
 
                                 <div class="step-icon">
@@ -4068,17 +3664,16 @@
                                 </div>
 
 
-                                <b>
+                                <strong>
 
                                     Dapat Kode
 
-                                </b>
+                                </strong>
 
 
                                 <small>
 
                                     Simpan kode
-                                    pendaftaran
 
                                 </small>
 
@@ -4086,14 +3681,9 @@
                             </div>
 
 
-                            <div class="step-card">
+                            <!-- STEP 4 -->
 
-
-                                <div class="step-number">
-
-                                    04
-
-                                </div>
+                            <div class="step-box">
 
 
                                 <div class="step-icon">
@@ -4103,17 +3693,16 @@
                                 </div>
 
 
-                                <b>
+                                <strong>
 
                                     WhatsApp
 
-                                </b>
+                                </strong>
 
 
                                 <small>
 
-                                    Hubungi admin
-                                    untuk konfirmasi
+                                    Konfirmasi admin
 
                                 </small>
 
@@ -4130,18 +3719,22 @@
                 </article>
 
 
-                <!-- FORM -->
+                <!-- =========================================
+                     FORM PENDAFTARAN
+                ========================================== -->
 
                 <section
-                    class="form-card reveal"
+                    class="card registration-card reveal"
                     id="formulir"
                 >
 
 
-                    <div class="form-header">
+                    <!-- FORM TOP -->
+
+                    <div class="form-top">
 
 
-                        <div class="form-header-icon">
+                        <div class="form-top-icon">
 
                             🎒
 
@@ -4161,7 +3754,6 @@
                             <p>
 
                                 Lengkapi data dengan benar
-                                dan pastikan nomor WhatsApp aktif.
 
                             </p>
 
@@ -4172,17 +3764,19 @@
                     </div>
 
 
-                    <form
-                        id="registrationForm"
-                    >
+                    <!-- FORM -->
+
+                    <form id="registrationForm">
 
 
-                        <!-- DATA ANAK -->
+                        <!-- =================================
+                             DATA ANAK
+                        ================================== -->
 
                         <div class="form-section">
 
 
-                            <div class="form-section-head">
+                            <div class="section-heading">
 
 
                                 <div class="section-number">
@@ -4192,24 +3786,11 @@
                                 </div>
 
 
-                                <div>
+                                <h3>
 
+                                    👶 Data Calon Peserta Didik
 
-                                    <h3>
-
-                                        👶 Data Calon Peserta Didik
-
-                                    </h3>
-
-
-                                    <p>
-
-                                        Informasi dasar anak
-
-                                    </p>
-
-
-                                </div>
+                                </h3>
 
 
                             </div>
@@ -4221,12 +3802,16 @@
                                 <div class="form-group">
 
 
-                                    <label>
+                                    <label
+                                        for="namaAnak"
+                                    >
 
                                         Nama Lengkap
 
                                         <span class="required">
+
                                             *
+
                                         </span>
 
                                     </label>
@@ -4235,6 +3820,7 @@
                                     <input
                                         type="text"
                                         id="namaAnak"
+                                        name="namaAnak"
                                         placeholder="Nama lengkap anak"
                                         required
                                     >
@@ -4246,7 +3832,9 @@
                                 <div class="form-group">
 
 
-                                    <label>
+                                    <label
+                                        for="namaPanggilan"
+                                    >
 
                                         Nama Panggilan
 
@@ -4255,6 +3843,8 @@
 
                                     <input
                                         type="text"
+                                        id="namaPanggilan"
+                                        name="namaPanggilan"
                                         placeholder="Contoh: Aisyah"
                                     >
 
@@ -4265,12 +3855,16 @@
                                 <div class="form-group">
 
 
-                                    <label>
+                                    <label
+                                        for="tempatLahir"
+                                    >
 
                                         Tempat Lahir
 
                                         <span class="required">
+
                                             *
+
                                         </span>
 
                                     </label>
@@ -4278,6 +3872,8 @@
 
                                     <input
                                         type="text"
+                                        id="tempatLahir"
+                                        name="tempatLahir"
                                         placeholder="Contoh: Jakarta"
                                         required
                                     >
@@ -4289,12 +3885,16 @@
                                 <div class="form-group">
 
 
-                                    <label>
+                                    <label
+                                        for="tanggalLahir"
+                                    >
 
                                         Tanggal Lahir
 
                                         <span class="required">
+
                                             *
+
                                         </span>
 
                                     </label>
@@ -4302,6 +3902,8 @@
 
                                     <input
                                         type="date"
+                                        id="tanggalLahir"
+                                        name="tanggalLahir"
                                         required
                                     >
 
@@ -4309,7 +3911,9 @@
                                 </div>
 
 
-                                <div class="form-group full">
+                                <div
+                                    class="form-group full"
+                                >
 
 
                                     <label>
@@ -4317,7 +3921,9 @@
                                         Jenis Kelamin
 
                                         <span class="required">
+
                                             *
+
                                         </span>
 
                                     </label>
@@ -4326,42 +3932,46 @@
                                     <div class="gender-grid">
 
 
-                                        <label class="gender-option">
+                                        <label
+                                            class="gender-option"
+                                        >
 
 
                                             <input
                                                 type="radio"
-                                                name="gender"
+                                                name="jenisKelamin"
                                                 value="Laki-laki"
                                                 required
                                             >
 
 
-                                            <div class="gender-box">
+                                            <span class="gender-box">
 
                                                 👦 Laki-laki
 
-                                            </div>
+                                            </span>
 
 
                                         </label>
 
 
-                                        <label class="gender-option">
+                                        <label
+                                            class="gender-option"
+                                        >
 
 
                                             <input
                                                 type="radio"
-                                                name="gender"
+                                                name="jenisKelamin"
                                                 value="Perempuan"
                                             >
 
 
-                                            <div class="gender-box">
+                                            <span class="gender-box">
 
                                                 👧 Perempuan
 
-                                            </div>
+                                            </span>
 
 
                                         </label>
@@ -4379,12 +3989,14 @@
                         </div>
 
 
-                        <!-- DATA WALI -->
+                        <!-- =================================
+                             DATA WALI
+                        ================================== -->
 
                         <div class="form-section">
 
 
-                            <div class="form-section-head">
+                            <div class="section-heading">
 
 
                                 <div class="section-number">
@@ -4394,24 +4006,11 @@
                                 </div>
 
 
-                                <div>
+                                <h3>
 
+                                    👨‍👩‍👧 Data Orang Tua / Wali
 
-                                    <h3>
-
-                                        👨‍👩‍👧 Data Orang Tua / Wali
-
-                                    </h3>
-
-
-                                    <p>
-
-                                        Informasi yang dapat dihubungi
-
-                                    </p>
-
-
-                                </div>
+                                </h3>
 
 
                             </div>
@@ -4423,12 +4022,16 @@
                                 <div class="form-group">
 
 
-                                    <label>
+                                    <label
+                                        for="namaWali"
+                                    >
 
                                         Nama Orang Tua / Wali
 
                                         <span class="required">
+
                                             *
+
                                         </span>
 
                                     </label>
@@ -4437,7 +4040,8 @@
                                     <input
                                         type="text"
                                         id="namaWali"
-                                        placeholder="Nama wali"
+                                        name="namaWali"
+                                        placeholder="Nama orang tua atau wali"
                                         required
                                     >
 
@@ -4448,15 +4052,19 @@
                                 <div class="form-group">
 
 
-                                    <label>
+                                    <label
+                                        for="hubungan"
+                                    >
 
                                         Hubungan dengan Anak
 
                                     </label>
 
 
-                                    <select>
-
+                                    <select
+                                        id="hubungan"
+                                        name="hubungan"
+                                    >
 
                                         <option value="">
 
@@ -4464,27 +4072,23 @@
 
                                         </option>
 
-
-                                        <option>
+                                        <option value="Ayah">
 
                                             Ayah
 
                                         </option>
 
-
-                                        <option>
+                                        <option value="Ibu">
 
                                             Ibu
 
                                         </option>
 
-
-                                        <option>
+                                        <option value="Wali">
 
                                             Wali
 
                                         </option>
-
 
                                     </select>
 
@@ -4495,12 +4099,16 @@
                                 <div class="form-group">
 
 
-                                    <label>
+                                    <label
+                                        for="whatsapp"
+                                    >
 
                                         Nomor WhatsApp
 
                                         <span class="required">
+
                                             *
+
                                         </span>
 
                                     </label>
@@ -4509,6 +4117,8 @@
                                     <input
                                         type="tel"
                                         id="whatsapp"
+                                        name="whatsapp"
+                                        inputmode="numeric"
                                         placeholder="081234567890"
                                         required
                                     >
@@ -4520,7 +4130,9 @@
                                 <div class="form-group">
 
 
-                                    <label>
+                                    <label
+                                        for="email"
+                                    >
 
                                         Email
 
@@ -4529,6 +4141,8 @@
 
                                     <input
                                         type="email"
+                                        id="email"
+                                        name="email"
                                         placeholder="email@gmail.com"
                                     >
 
@@ -4542,12 +4156,14 @@
                         </div>
 
 
-                        <!-- ALAMAT -->
+                        <!-- =================================
+                             ALAMAT
+                        ================================== -->
 
                         <div class="form-section">
 
 
-                            <div class="form-section-head">
+                            <div class="section-heading">
 
 
                                 <div class="section-number">
@@ -4557,24 +4173,11 @@
                                 </div>
 
 
-                                <div>
+                                <h3>
 
+                                    🏠 Alamat & Informasi
 
-                                    <h3>
-
-                                        🏠 Alamat & Informasi
-
-                                    </h3>
-
-
-                                    <p>
-
-                                        Informasi tempat tinggal dan kelas
-
-                                    </p>
-
-
-                                </div>
+                                </h3>
 
 
                             </div>
@@ -4583,21 +4186,29 @@
                             <div class="form-grid">
 
 
-                                <div class="form-group full">
+                                <div
+                                    class="form-group full"
+                                >
 
 
-                                    <label>
+                                    <label
+                                        for="alamat"
+                                    >
 
                                         Alamat Lengkap
 
                                         <span class="required">
+
                                             *
+
                                         </span>
 
                                     </label>
 
 
                                     <textarea
+                                        id="alamat"
+                                        name="alamat"
                                         placeholder="Masukkan alamat lengkap"
                                         required
                                     ></textarea>
@@ -4609,15 +4220,19 @@
                                 <div class="form-group">
 
 
-                                    <label>
+                                    <label
+                                        for="program"
+                                    >
 
                                         Program / Kelas
 
                                     </label>
 
 
-                                    <select>
-
+                                    <select
+                                        id="program"
+                                        name="program"
+                                    >
 
                                         <option value="">
 
@@ -4625,27 +4240,23 @@
 
                                         </option>
 
-
-                                        <option>
+                                        <option value="Kelas A">
 
                                             Kelas A
 
                                         </option>
 
-
-                                        <option>
+                                        <option value="Kelas B">
 
                                             Kelas B
 
                                         </option>
 
-
-                                        <option>
+                                        <option value="Konsultasi Admin">
 
                                             Konsultasi Admin
 
                                         </option>
-
 
                                     </select>
 
@@ -4656,29 +4267,31 @@
                                 <div class="form-group">
 
 
-                                    <label>
+                                    <label
+                                        for="tahunAjaran"
+                                    >
 
                                         Tahun Ajaran
 
                                     </label>
 
 
-                                    <select>
+                                    <select
+                                        id="tahunAjaran"
+                                        name="tahunAjaran"
+                                    >
 
-
-                                        <option>
+                                        <option value="2026 / 2027">
 
                                             2026 / 2027
 
                                         </option>
 
-
-                                        <option>
+                                        <option value="2027 / 2028">
 
                                             2027 / 2028
 
                                         </option>
-
 
                                     </select>
 
@@ -4692,24 +4305,28 @@
                         </div>
 
 
-                        <!-- AGREEMENT -->
+                        <!-- =================================
+                             PERSETUJUAN
+                        ================================== -->
 
                         <label class="agreement">
 
 
                             <input
                                 type="checkbox"
+                                id="agreement"
                                 required
                             >
 
 
                             <span>
 
-                                Saya menyatakan bahwa seluruh
-                                data yang saya isi adalah benar
+                                Saya menyatakan bahwa data
+                                yang saya isi adalah benar
                                 dan bersedia dihubungi oleh
-                                pihak RA Miftahul Hikmah untuk
-                                proses pendaftaran selanjutnya.
+                                pihak RA Miftahul Hikmah
+                                untuk proses pendaftaran
+                                selanjutnya.
 
                             </span>
 
@@ -4717,14 +4334,16 @@
                         </label>
 
 
-                        <!-- BUTTON -->
+                        <!-- =================================
+                             BUTTON
+                        ================================== -->
 
                         <button
                             type="submit"
                             class="submit-button"
                         >
 
-                            🚀 Kirim Pendaftaran Sekarang
+                            🚀 Kirim Pendaftaran
 
                         </button>
 
@@ -4732,7 +4351,9 @@
                     </form>
 
 
-                    <!-- SUCCESS -->
+                    <!-- =====================================
+                         SUCCESS
+                    ====================================== -->
 
                     <div
                         class="success-box"
@@ -4740,7 +4361,7 @@
                     >
 
 
-                        <div class="success-icon">
+                        <div class="success-emoji">
 
                             🎉
 
@@ -4756,54 +4377,55 @@
 
                         <p>
 
-                            Data pendaftaran Anda telah
-                            berhasil dibuat. Silakan simpan
-                            kode berikut untuk melakukan
-                            pengecekan status pendaftaran.
+                            Simpan kode pendaftaran berikut.
+                            Kode tersebut dapat digunakan
+                            untuk melakukan pengecekan
+                            status pendaftaran.
 
                         </p>
 
 
-                        <div class="registration-code">
+                        <div class="code-box">
 
 
                             <small>
 
-                                🔑 KODE PENDAFTARAN ANDA
+                                KODE PENDAFTARAN
 
                             </small>
 
 
-                            <b
+                            <strong
                                 id="registrationCode"
                             >
 
                                 RA-000000
 
-                            </b>
+                            </strong>
 
 
                         </div>
 
 
-                        <div class="success-actions">
+                        <div class="success-buttons">
 
 
                             <a
                                 href="#"
-                                target="_blank"
-                                class="whatsapp-button"
                                 id="whatsappButton"
+                                class="whatsapp-button"
+                                target="_blank"
+                                rel="noopener"
                             >
 
-                                💬 Lanjut ke WhatsApp Admin
+                                💬 Lanjut ke WhatsApp
 
                             </a>
 
 
                             <a
                                 href="status-pendaftaran.html"
-                                class="check-button"
+                                class="status-button-success"
                             >
 
                                 📊 Cek Status Pendaftaran
@@ -4823,17 +4445,19 @@
             </div>
 
 
-            <!-- SIDEBAR -->
+            <!-- =============================================
+                 SIDEBAR
+            ============================================== -->
 
             <aside
-                class="sidebar"
+                class="blog-sidebar"
             >
 
 
                 <!-- ALUR -->
 
                 <div
-                    class="side-card reveal"
+                    class="card sidebar-card reveal"
                 >
 
 
@@ -4850,19 +4474,21 @@
 
                     <p>
 
-                        Empat langkah sederhana
-                        untuk mendaftarkan buah hati Anda.
+                        Ikuti proses pendaftaran
+                        berikut dengan mudah.
 
                     </p>
 
 
-                    <div class="side-steps">
+                    <div class="sidebar-steps">
 
 
-                        <div class="side-step">
+                        <div class="sidebar-step">
 
 
-                            <div class="side-step-icon">
+                            <div
+                                class="sidebar-step-icon"
+                            >
 
                                 📝
 
@@ -4872,16 +4498,16 @@
                             <div>
 
 
-                                <b>
+                                <strong>
 
                                     Isi Formulir
 
-                                </b>
+                                </strong>
 
 
                                 <small>
 
-                                    Lengkapi semua data
+                                    Lengkapi data anak
 
                                 </small>
 
@@ -4892,10 +4518,12 @@
                         </div>
 
 
-                        <div class="side-step">
+                        <div class="sidebar-step">
 
 
-                            <div class="side-step-icon">
+                            <div
+                                class="sidebar-step-icon"
+                            >
 
                                 📤
 
@@ -4905,11 +4533,11 @@
                             <div>
 
 
-                                <b>
+                                <strong>
 
                                     Kirim Data
 
-                                </b>
+                                </strong>
 
 
                                 <small>
@@ -4925,10 +4553,12 @@
                         </div>
 
 
-                        <div class="side-step">
+                        <div class="sidebar-step">
 
 
-                            <div class="side-step-icon">
+                            <div
+                                class="sidebar-step-icon"
+                            >
 
                                 🔑
 
@@ -4938,11 +4568,11 @@
                             <div>
 
 
-                                <b>
+                                <strong>
 
                                     Dapat Kode
 
-                                </b>
+                                </strong>
 
 
                                 <small>
@@ -4958,10 +4588,12 @@
                         </div>
 
 
-                        <div class="side-step">
+                        <div class="sidebar-step">
 
 
-                            <div class="side-step-icon">
+                            <div
+                                class="sidebar-step-icon"
+                            >
 
                                 💬
 
@@ -4971,16 +4603,16 @@
                             <div>
 
 
-                                <b>
+                                <strong>
 
-                                    Hubungi Admin
+                                    WhatsApp
 
-                                </b>
+                                </strong>
 
 
                                 <small>
 
-                                    Konfirmasi melalui WA
+                                    Konfirmasi admin
 
                                 </small>
 
@@ -5000,10 +4632,8 @@
                 <!-- STATUS -->
 
                 <div
-                    class="side-card
-                           status-card
-                           reveal"
-                    id="status"
+                    class="card sidebar-card status-card reveal"
+                    id="cek-status"
                 >
 
 
@@ -5027,17 +4657,16 @@
 
                     <p>
 
-                        Sudah pernah mendaftar?
-                        Gunakan kode pendaftaran Anda
-                        untuk melihat status proses
-                        pendaftaran.
+                        Sudah melakukan pendaftaran?
+                        Gunakan kode pendaftaran
+                        Anda untuk melihat status.
 
                     </p>
 
 
                     <a
                         href="status-pendaftaran.html"
-                        class="status-button"
+                        class="status-card-button"
                     >
 
                         Cek Status Sekarang
@@ -5048,10 +4677,10 @@
                 </div>
 
 
-                <!-- INFO -->
+                <!-- INFORMASI -->
 
                 <div
-                    class="side-card reveal"
+                    class="card sidebar-card reveal"
                 >
 
 
@@ -5072,7 +4701,7 @@
                         <div class="info-item">
 
 
-                            <div class="info-item-icon">
+                            <div class="info-icon">
 
                                 🔑
 
@@ -5082,17 +4711,18 @@
                             <div>
 
 
-                                <b>
+                                <strong>
 
                                     Simpan Kode
 
-                                </b>
+                                </strong>
 
 
                                 <small>
 
-                                    Kode digunakan
-                                    untuk cek status.
+                                    Kode digunakan untuk
+                                    melakukan pengecekan
+                                    status pendaftaran.
 
                                 </small>
 
@@ -5106,7 +4736,7 @@
                         <div class="info-item">
 
 
-                            <div class="info-item-icon">
+                            <div class="info-icon">
 
                                 💬
 
@@ -5116,17 +4746,18 @@
                             <div>
 
 
-                                <b>
+                                <strong>
 
                                     WhatsApp Aktif
 
-                                </b>
+                                </strong>
 
 
                                 <small>
 
-                                    Gunakan nomor aktif
-                                    untuk konfirmasi.
+                                    Gunakan nomor WhatsApp
+                                    aktif agar mudah
+                                    dihubungi admin.
 
                                 </small>
 
@@ -5140,7 +4771,7 @@
                         <div class="info-item">
 
 
-                            <div class="info-item-icon">
+                            <div class="info-icon">
 
                                 📋
 
@@ -5150,17 +4781,17 @@
                             <div>
 
 
-                                <b>
+                                <strong>
 
                                     Data Benar
 
-                                </b>
+                                </strong>
 
 
                                 <small>
 
                                     Pastikan seluruh data
-                                    sudah sesuai.
+                                    yang diisi sudah benar.
 
                                 </small>
 
@@ -5185,13 +4816,12 @@
 
     </div>
 
-
 </main>
 
 
-<!-- =====================================================
+<!-- =========================================================
      FOOTER
-===================================================== -->
+========================================================= -->
 
 <footer class="footer">
 
@@ -5201,6 +4831,8 @@
 
         <div class="footer-grid">
 
+
+            <!-- SEKOLAH -->
 
             <div>
 
@@ -5218,15 +4850,17 @@
 
                 <p>
 
-                    Tempat belajar, bermain,
-                    dan bertumbuh bersama
-                    dengan bahagia.
+                    Tempat belajar, bermain
+                    dan bertumbuh dengan
+                    bahagia.
 
                 </p>
 
 
             </div>
 
+
+            <!-- MENU -->
 
             <div>
 
@@ -5285,6 +4919,8 @@
             </div>
 
 
+            <!-- KONTAK -->
+
             <div>
 
 
@@ -5336,523 +4972,490 @@
 </footer>
 
 
-<!-- =====================================================
-     MOBILE BOTTOM NAV
-===================================================== -->
-
-<div class="mobile-bottom-nav">
-
-
-    <a href="index.html">
-
-
-        <strong>
-
-            🏠
-
-        </strong>
-
-
-        Home
-
-
-    </a>
-
-
-    <a href="blog.html">
-
-
-        <strong>
-
-            🖍️
-
-        </strong>
-
-
-        Blog
-
-
-    </a>
-
-
-    <a
-        href="pendaftaran.html"
-        class="active"
-    >
-
-
-        <strong>
-
-            📝
-
-        </strong>
-
-
-        Daftar
-
-
-    </a>
-
-
-    <a href="status-pendaftaran.html">
-
-
-        <strong>
-
-            📊
-
-        </strong>
-
-
-        Status
-
-
-    </a>
-
-
-</div>
-
-
-<!-- =====================================================
+<!-- =========================================================
      JAVASCRIPT
-===================================================== -->
+========================================================= -->
 
 <script>
 
 
-    document.addEventListener(
+document.addEventListener(
 
-        "DOMContentLoaded",
+    "DOMContentLoaded",
 
-        function () {
-
-
-            /* =============================================
-               REVEAL ANIMATION
-            ============================================= */
-
-            const revealItems =
-
-                document.querySelectorAll(
-                    ".reveal"
-                );
+    function () {
 
 
-            if (
+        /* =================================================
+           REVEAL ANIMATION
+        ================================================= */
 
-                "IntersectionObserver"
-                in
-                window
+        const revealItems =
 
-            ) {
-
-
-                const observer =
-
-                    new IntersectionObserver(
-
-                        function (
-                            entries
-                        ) {
+            document.querySelectorAll(
+                ".reveal"
+            );
 
 
-                            entries.forEach(
+        if (
 
-                                function (
-                                    entry
+            "IntersectionObserver"
+            in
+            window
+
+        ) {
+
+
+            const observer =
+
+                new IntersectionObserver(
+
+                    function (
+                        entries
+                    ) {
+
+
+                        entries.forEach(
+
+                            function (
+                                entry
+                            ) {
+
+
+                                if (
+                                    entry.isIntersecting
                                 ) {
 
 
-                                    if (
-
-                                        entry.isIntersecting
-
-                                    ) {
+                                    entry.target.classList.add(
+                                        "show"
+                                    );
 
 
-                                        entry.target.classList.add(
-                                            "show"
-                                        );
-
-
-                                        observer.unobserve(
-                                            entry.target
-                                        );
-
-
-                                    }
+                                    observer.unobserve(
+                                        entry.target
+                                    );
 
 
                                 }
+
+
+                            }
+
+                        );
+
+
+                    },
+
+                    {
+
+                        threshold:
+                            0.08
+
+                    }
+
+                );
+
+
+            revealItems.forEach(
+
+                function (
+                    item
+                ) {
+
+
+                    observer.observe(
+                        item
+                    );
+
+
+                }
+
+            );
+
+
+        }
+
+
+        else {
+
+
+            revealItems.forEach(
+
+                function (
+                    item
+                ) {
+
+
+                    item.classList.add(
+                        "show"
+                    );
+
+
+                }
+
+            );
+
+
+        }
+
+
+        /* =================================================
+           FORM
+        ================================================= */
+
+        const form =
+
+            document.getElementById(
+                "registrationForm"
+            );
+
+
+        const successBox =
+
+            document.getElementById(
+                "successBox"
+            );
+
+
+        const registrationCode =
+
+            document.getElementById(
+                "registrationCode"
+            );
+
+
+        const whatsappButton =
+
+            document.getElementById(
+                "whatsappButton"
+            );
+
+
+        if (
+            form
+        ) {
+
+
+            form.addEventListener(
+
+                "submit",
+
+                function (
+                    event
+                ) {
+
+
+                    event.preventDefault();
+
+
+                    /* =========================================
+                       VALIDASI
+                    ========================================= */
+
+                    if (
+                        !form.checkValidity()
+                    ) {
+
+
+                        form.reportValidity();
+
+
+                        return;
+
+
+                    }
+
+
+                    /* =========================================
+                       BUTTON
+                    ========================================= */
+
+                    const submitButton =
+
+                        form.querySelector(
+                            ".submit-button"
+                        );
+
+
+                    submitButton.disabled =
+                        true;
+
+
+                    submitButton.innerHTML =
+                        "⏳ Memproses Pendaftaran...";
+
+
+                    /* =========================================
+                       PROCESS
+                    ========================================= */
+
+                    setTimeout(
+
+                        function () {
+
+
+                            /* =================================
+                               CREATE CODE
+                            ================================= */
+
+                            const randomNumber =
+
+                                Math.floor(
+                                    100000
+                                    +
+                                    Math.random()
+                                    *
+                                    900000
+                                );
+
+
+                            const code =
+
+                                "RA-"
+                                +
+                                randomNumber;
+
+
+                            registrationCode.textContent =
+                                code;
+
+
+                            /* =================================
+                               GET DATA
+                            ================================= */
+
+                            const namaAnak =
+
+                                document.getElementById(
+                                    "namaAnak"
+                                ).value.trim();
+
+
+                            const namaWali =
+
+                                document.getElementById(
+                                    "namaWali"
+                                ).value.trim();
+
+
+                            const whatsapp =
+
+                                document.getElementById(
+                                    "whatsapp"
+                                ).value.trim();
+
+
+                            /* =================================
+                               FORMAT NUMBER
+                            ================================= */
+
+                            let phoneNumber =
+
+                                whatsapp.replace(
+                                    /\D/g,
+                                    ""
+                                );
+
+
+                            if (
+                                phoneNumber.startsWith(
+                                    "0"
+                                )
+                            ) {
+
+
+                                phoneNumber =
+
+                                    "62"
+                                    +
+                                    phoneNumber.substring(
+                                        1
+                                    );
+
+
+                            }
+
+
+                            else if (
+                                phoneNumber.startsWith(
+                                    "62"
+                                )
+                            ) {
+
+
+                                phoneNumber =
+                                    phoneNumber;
+
+
+                            }
+
+
+                            /* =================================
+                               ADMIN NUMBER
+
+                               GANTI NOMOR INI
+                            ================================= */
+
+                            const adminNumber =
+
+                                "6281234567890";
+
+
+                            /* =================================
+                               WHATSAPP MESSAGE
+                            ================================= */
+
+                            const message =
+
+                                `Halo Admin RA Miftahul Hikmah 👋
+
+Saya sudah melakukan pendaftaran.
+
+👶 Nama Anak: ${namaAnak}
+
+👨‍👩‍👧 Nama Wali: ${namaWali}
+
+📱 WhatsApp: ${phoneNumber}
+
+🔑 Kode Pendaftaran: ${code}
+
+Mohon informasi proses selanjutnya.
+
+Terima kasih 🙏`;
+
+
+                            /* =================================
+                               CREATE WHATSAPP URL
+                            ================================= */
+
+                            const whatsappURL =
+
+                                "https://wa.me/"
+                                +
+                                adminNumber
+                                +
+                                "?text="
+                                +
+                                encodeURIComponent(
+                                    message
+                                );
+
+
+                            whatsappButton.href =
+                                whatsappURL;
+
+
+                            /* =================================
+                               SAVE DATA LOCAL
+
+                               UNTUK DEMO WEBSITE
+                            ================================= */
+
+                            const registrationData = {
+
+                                code:
+                                    code,
+
+                                namaAnak:
+                                    namaAnak,
+
+                                namaWali:
+                                    namaWali,
+
+                                whatsapp:
+                                    phoneNumber,
+
+                                status:
+                                    "Menunggu Verifikasi",
+
+                                date:
+                                    new Date().toLocaleDateString(
+                                        "id-ID"
+                                    )
+
+                            };
+
+
+                            localStorage.setItem(
+
+                                "raRegistration_"
+                                +
+                                code,
+
+                                JSON.stringify(
+                                    registrationData
+                                )
+
+                            );
+
+
+                            /* =================================
+                               HIDE FORM
+                            ================================= */
+
+                            form.style.display =
+                                "none";
+
+
+                            /* =================================
+                               SHOW SUCCESS
+                            ================================= */
+
+                            successBox.classList.add(
+                                "show"
+                            );
+
+
+                            /* =================================
+                               SCROLL
+                            ================================= */
+
+                            setTimeout(
+
+                                function () {
+
+
+                                    successBox.scrollIntoView(
+
+                                        {
+
+                                            behavior:
+                                                "smooth",
+
+                                            block:
+                                                "center"
+
+                                        }
+
+                                    );
+
+
+                                },
+
+                                150
 
                             );
 
 
                         },
 
-
-                        {
-
-                            threshold:
-                                0.08
-
-                        }
+                        800
 
                     );
 
 
-                revealItems.forEach(
+                }
 
-                    function (
-                        item
-                    ) {
-
-
-                        observer.observe(
-                            item
-                        );
-
-
-                    }
-
-                );
-
-
-            }
-
-
-            else {
-
-
-                revealItems.forEach(
-
-                    function (
-                        item
-                    ) {
-
-
-                        item.classList.add(
-                            "show"
-                        );
-
-
-                    }
-
-                );
-
-
-            }
-
-
-            /* =============================================
-               FORM
-            ============================================= */
-
-            const form =
-
-                document.getElementById(
-                    "registrationForm"
-                );
-
-
-            const successBox =
-
-                document.getElementById(
-                    "successBox"
-                );
-
-
-            const registrationCode =
-
-                document.getElementById(
-                    "registrationCode"
-                );
-
-
-            const whatsappButton =
-
-                document.getElementById(
-                    "whatsappButton"
-                );
-
-
-            if (
-
-                form
-
-            ) {
-
-
-                form.addEventListener(
-
-                    "submit",
-
-                    function (
-                        event
-                    ) {
-
-
-                        event.preventDefault();
-
-
-                        if (
-
-                            !form.checkValidity()
-
-                        ) {
-
-
-                            form.reportValidity();
-
-
-                            return;
-
-
-                        }
-
-
-                        const submitButton =
-
-                            form.querySelector(
-                                ".submit-button"
-                            );
-
-
-                        submitButton.disabled =
-                            true;
-
-
-                        submitButton.innerHTML =
-                            "⏳ Memproses Pendaftaran...";
-
-
-                        setTimeout(
-
-                            function () {
-
-
-                                /* =====================
-                                   CREATE CODE
-                                ===================== */
-
-                                const randomNumber =
-
-                                    Math.floor(
-
-                                        100000
-
-                                        +
-
-                                        Math.random()
-
-                                        *
-
-                                        900000
-
-                                    );
-
-
-                                const code =
-
-                                    "RA-"
-
-                                    +
-
-                                    randomNumber;
-
-
-                                registrationCode.textContent =
-                                    code;
-
-
-                                /* =====================
-                                   GET DATA
-                                ===================== */
-
-                                const namaAnak =
-
-                                    document.getElementById(
-                                        "namaAnak"
-                                    ).value.trim();
-
-
-                                const namaWali =
-
-                                    document.getElementById(
-                                        "namaWali"
-                                    ).value.trim();
-
-
-                                const whatsapp =
-
-                                    document.getElementById(
-                                        "whatsapp"
-                                    ).value.trim();
-
-
-                                /* =====================
-                                   FORMAT WHATSAPP
-                                ===================== */
-
-                                let phoneNumber =
-
-                                    whatsapp.replace(
-                                        /\D/g,
-                                        ""
-                                    );
-
-
-                                if (
-
-                                    phoneNumber.startsWith(
-                                        "0"
-                                    )
-
-                                ) {
-
-
-                                    phoneNumber =
-
-                                        "62"
-
-                                        +
-
-                                        phoneNumber.substring(
-                                            1
-                                        );
-
-
-                                }
-
-
-                                /* =====================
-                                   WHATSAPP MESSAGE
-                                ===================== */
-
-                                const message =
-
-                                    "Halo Admin RA Miftahul Hikmah 👋\n\n"
-
-                                    +
-
-                                    "Saya sudah melakukan pendaftaran online.\n\n"
-
-                                    +
-
-                                    "👶 Nama Anak: "
-
-                                    +
-
-                                    namaAnak
-
-                                    +
-
-                                    "\n"
-
-                                    +
-
-                                    "👨‍👩‍👧 Nama Wali: "
-
-                                    +
-
-                                    namaWali
-
-                                    +
-
-                                    "\n"
-
-                                    +
-
-                                    "🔑 Kode Pendaftaran: "
-
-                                    +
-
-                                    code
-
-                                    +
-
-                                    "\n\n"
-
-                                    +
-
-                                    "Mohon informasi proses selanjutnya. Terima kasih 🙏";
-
-
-                                /* =====================
-                                   ADMIN NUMBER
-                                ===================== */
-
-                                const adminNumber =
-
-                                    "6281234567890";
-
-
-                                whatsappButton.href =
-
-                                    "https://wa.me/"
-
-                                    +
-
-                                    adminNumber
-
-                                    +
-
-                                    "?text="
-
-                                    +
-
-                                    encodeURIComponent(
-                                        message
-                                    );
-
-
-                                /* =====================
-                                   SHOW SUCCESS
-                                ===================== */
-
-                                form.style.display =
-                                    "none";
-
-
-                                successBox.classList.add(
-                                    "show"
-                                );
-
-
-                                successBox.scrollIntoView(
-
-                                    {
-
-                                        behavior:
-                                            "smooth",
-
-                                        block:
-                                            "center"
-
-                                    }
-
-                                );
-
-
-                            },
-
-
-                            900
-
-                        );
-
-
-                    }
-
-                );
-
-
-            }
+            );
 
 
         }
 
-    );
+
+    }
+
+);
 
 
 </script>
