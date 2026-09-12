@@ -1,1765 +1,2900 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 
 <head>
 
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
 
     <meta
         name="viewport"
-        content="width=device-width, initial-scale=1"
+        content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Gallery | RA Miftahul Hikmah</title>
+    <meta
+        name="description"
+        content="Gallery RA Miftahul Hikmah"
+    >
+
+    <title>
+        Gallery | RA Miftahul Hikmah
+    </title>
+
+
+    <!-- =====================================================
+         GOOGLE FONT
+    ===================================================== -->
 
     <link
-        rel="stylesheet"
-        href="css/style.css"
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
     >
 
-    <style>
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
 
-        /* =========================================================
-           CLOUD MEMORY GALLERY
-        ========================================================== */
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
 
-        body {
-            overflow-x: hidden;
-        }
 
-        /* =========================================================
-           MAIN SKY
-        ========================================================== */
+    <!-- =====================================================
+         SUPABASE
+    ===================================================== -->
 
-        .cloud-gallery-page {
-            position: relative;
-            min-height: 100vh;
-            overflow: hidden;
+    <script
+        src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+    ></script>
 
-            background:
-                linear-gradient(
-                    180deg,
-                    #8edfff 0%,
-                    #b9edff 35%,
-                    #dff8ff 70%,
-                    #ffffff 100%
-                );
-        }
 
+<style>
 
-        /* =========================================================
-           ANIMATED CLOUDS
-        ========================================================== */
+/* =====================================================
+   RA MIFTAHUL HIKMAH
+   GALLERY PAGE
+===================================================== */
 
-        .sky-cloud {
-            position: absolute;
-            z-index: 1;
 
-            width: 180px;
-            height: 55px;
+/* =====================================================
+   RESET
+===================================================== */
 
-            background: rgba(255,255,255,.9);
+* {
 
-            border-radius: 100px;
+    box-sizing:
+        border-box;
 
-            filter: blur(.2px);
+}
 
-            pointer-events: none;
 
-            animation: cloudMove linear infinite;
-        }
+html {
 
+    scroll-behavior:
+        smooth;
 
-        .sky-cloud::before,
-        .sky-cloud::after {
-            content: "";
+}
 
-            position: absolute;
 
-            background: inherit;
+body {
 
-            border-radius: 50%;
-        }
+    margin:
+        0;
 
+    overflow-x:
+        hidden;
 
-        .sky-cloud::before {
-            width: 82px;
-            height: 82px;
+    font-family:
+        "Nunito",
+        sans-serif;
 
-            left: 25px;
-            bottom: 12px;
-        }
+    color:
+        #342d4c;
 
+    background:
 
-        .sky-cloud::after {
-            width: 105px;
-            height: 105px;
+        linear-gradient(
+            180deg,
+            #fff9fc 0%,
+            #f9f5ff 30%,
+            #f4fbff 60%,
+            #fffaf2 100%
+        );
 
-            right: 20px;
-            bottom: 10px;
-        }
+    background-size:
+        300% 300%;
 
+    animation:
+        backgroundMove 18s ease infinite;
 
-        .sky-cloud-1 {
-            top: 120px;
-            left: -250px;
+}
 
-            transform: scale(.8);
 
-            animation-duration: 55s;
-        }
+/* =====================================================
+   BACKGROUND ANIMATION
+===================================================== */
 
+@keyframes backgroundMove {
 
-        .sky-cloud-2 {
-            top: 280px;
-            left: -300px;
+    0% {
 
-            transform: scale(1.2);
+        background-position:
+            0% 50%;
 
-            animation-duration: 72s;
+    }
 
-            animation-delay: -25s;
-        }
+    50% {
 
+        background-position:
+            100% 50%;
 
-        .sky-cloud-3 {
-            top: 480px;
-            left: -300px;
+    }
 
-            transform: scale(.7);
+    100% {
 
-            animation-duration: 65s;
+        background-position:
+            0% 50%;
 
-            animation-delay: -40s;
-        }
+    }
 
+}
 
-        .sky-cloud-4 {
-            top: 680px;
-            left: -300px;
 
-            transform: scale(1);
+/* =====================================================
+   CONTAINER
+===================================================== */
 
-            animation-duration: 85s;
+.au-container {
 
-            animation-delay: -55s;
-        }
+    width:
+        min(
+            1180px,
+            calc(100% - 32px)
+        );
 
+    margin:
+        auto;
 
-        @keyframes cloudMove {
+}
 
-            from {
-                margin-left: -250px;
-            }
 
-            to {
-                margin-left: calc(100vw + 500px);
-            }
+/* =====================================================
+   FLOATING BACKGROUND
+===================================================== */
 
-        }
+.pg-bg {
 
+    position:
+        fixed;
 
-        /* =========================================================
-           SUN
-        ========================================================== */
+    inset:
+        0;
 
-        .sky-sun {
+    z-index:
+        -1;
 
-            position: absolute;
+    pointer-events:
+        none;
 
-            z-index: 1;
+    overflow:
+        hidden;
 
-            top: 95px;
-            right: 8%;
+}
 
-            width: 120px;
-            height: 120px;
 
-            border-radius: 50%;
+.pg-bg::before {
 
-            background:
-                radial-gradient(
-                    circle,
-                    #fff4a6 0%,
-                    #ffe26b 55%,
-                    #ffc94f 100%
-                );
+    content:
+        "";
 
-            box-shadow:
-                0 0 35px rgba(255,218,80,.65),
-                0 0 90px rgba(255,218,80,.28);
+    position:
+        absolute;
 
-            animation: sunFloat 4s ease-in-out infinite;
+    width:
+        300px;
 
-            pointer-events: none;
-        }
+    height:
+        300px;
 
+    border-radius:
+        50%;
 
-        .sky-sun::before {
+    top:
+        10%;
 
-            content: "☀";
+    left:
+        -150px;
 
-            position: absolute;
+    background:
+        rgba(255,139,184,.20);
 
-            inset: 0;
+    filter:
+        blur(60px);
 
-            display: flex;
+    animation:
+        blobOne 12s ease-in-out infinite;
 
-            align-items: center;
+}
 
-            justify-content: center;
 
-            font-size: 67px;
+.pg-bg::after {
 
-            color: #fff9c8;
-        }
+    content:
+        "";
 
+    position:
+        absolute;
 
-        @keyframes sunFloat {
+    width:
+        330px;
 
-            0%,
-            100% {
-                transform: translateY(0);
-            }
+    height:
+        330px;
 
-            50% {
-                transform: translateY(-12px);
-            }
+    border-radius:
+        50%;
 
-        }
+    bottom:
+        5%;
 
+    right:
+        -170px;
 
-        /* =========================================================
-           RAINBOW
-        ========================================================== */
+    background:
+        rgba(126,189,255,.20);
 
-        .sky-rainbow {
+    filter:
+        blur(60px);
 
-            position: absolute;
+    animation:
+        blobTwo 14s ease-in-out infinite;
 
-            z-index: 1;
+}
 
-            top: 100px;
-            left: 5%;
 
-            width: 330px;
-            height: 180px;
+@keyframes blobOne {
 
-            overflow: hidden;
+    0%,
+    100% {
 
-            opacity: .78;
+        transform:
+            translate(0,0)
+            scale(1);
 
-            pointer-events: none;
+    }
 
-            animation: rainbowAppear 2s ease both;
-        }
+    50% {
 
+        transform:
+            translate(100px,80px)
+            scale(1.2);
 
-        .rainbow-line {
+    }
 
-            position: absolute;
+}
 
-            left: 50%;
-            bottom: -110px;
 
-            transform: translateX(-50%);
+@keyframes blobTwo {
 
-            border-radius:
-                50% 50% 0 0;
+    0%,
+    100% {
 
-            border-style: solid;
+        transform:
+            translate(0,0)
+            scale(1);
 
-            border-bottom: 0;
-        }
+    }
 
+    50% {
 
-        .rainbow-line-1 {
+        transform:
+            translate(-80px,-90px)
+            scale(1.2);
 
-            width: 330px;
-            height: 330px;
+    }
 
-            border-width: 20px;
+}
 
-            border-color: #ff7896;
-        }
 
+/* =====================================================
+   HEADER
+===================================================== */
 
-        .rainbow-line-2 {
+.au-header {
 
-            width: 290px;
-            height: 290px;
+    position:
+        relative;
 
-            border-width: 20px;
+    z-index:
+        100;
 
-            border-color: #ffbd69;
-        }
+    background:
+        rgba(255,255,255,.78);
 
+    backdrop-filter:
+        blur(20px);
 
-        .rainbow-line-3 {
+    border-bottom:
+        1px solid rgba(255,255,255,.9);
 
-            width: 250px;
-            height: 250px;
+}
 
-            border-width: 20px;
 
-            border-color: #ffe36b;
-        }
+.au-header-inner {
 
+    min-height:
+        72px;
 
-        .rainbow-line-4 {
+    display:
+        flex;
 
-            width: 210px;
-            height: 210px;
+    align-items:
+        center;
 
-            border-width: 20px;
+    justify-content:
+        space-between;
 
-            border-color: #7bd99a;
-        }
+    gap:
+        12px;
 
+}
 
-        .rainbow-line-5 {
 
-            width: 170px;
-            height: 170px;
+.au-brand {
 
-            border-width: 20px;
+    display:
+        flex;
 
-            border-color: #70b9ff;
-        }
+    align-items:
+        center;
 
+    gap:
+        10px;
 
-        @keyframes rainbowAppear {
+    text-decoration:
+        none;
 
-            from {
-                opacity: 0;
-                transform: translateY(30px) scale(.9);
-            }
+    color:
+        #342d4c;
 
-            to {
-                opacity: .78;
-                transform: translateY(0) scale(1);
-            }
+}
 
-        }
 
+.au-logo {
 
-        /* =========================================================
-           SPARKLES
-        ========================================================== */
+    width:
+        46px;
 
-        .sparkle-cloud {
+    height:
+        46px;
 
-            position: absolute;
+    display:
+        grid;
 
-            z-index: 2;
+    place-items:
+        center;
 
-            color: white;
+    border-radius:
+        15px;
 
-            font-size: 23px;
+    font-size:
+        24px;
 
-            text-shadow:
-                0 0 12px rgba(255,255,255,.9);
+    background:
 
-            animation:
-                sparkleFloat 3s ease-in-out infinite,
-                sparkleBlink 2s ease-in-out infinite;
+        linear-gradient(
+            135deg,
+            #fff1a8,
+            #ffd5e5,
+            #d6efff
+        );
 
-            pointer-events: none;
-        }
+    box-shadow:
+        0 8px 25px rgba(239,79,130,.18);
 
+    animation:
+        logoFloat 4s ease-in-out infinite;
 
-        .sparkle-1 {
-            top: 190px;
-            left: 42%;
+}
 
-            animation-delay: -.4s;
-        }
 
+@keyframes logoFloat {
 
-        .sparkle-2 {
-            top: 350px;
-            right: 16%;
+    0%,
+    100% {
 
-            font-size: 17px;
+        transform:
+            translateY(0);
 
-            animation-delay: -1s;
-        }
+    }
 
+    50% {
 
-        .sparkle-3 {
-            top: 520px;
-            left: 14%;
+        transform:
+            translateY(-5px)
+            rotate(5deg);
 
-            font-size: 18px;
+    }
 
-            animation-delay: -1.8s;
-        }
+}
 
 
-        .sparkle-4 {
-            top: 610px;
-            right: 35%;
+.au-brand h1 {
 
-            font-size: 14px;
+    margin:
+        0;
 
-            animation-delay: -.8s;
-        }
+    font-family:
+        "Baloo 2",
+        cursive;
 
+    font-size:
+        18px;
 
-        @keyframes sparkleFloat {
+    line-height:
+        1;
 
-            0%,
-            100% {
-                transform:
-                    translateY(0)
-                    rotate(0deg);
-            }
+}
 
-            50% {
-                transform:
-                    translateY(-14px)
-                    rotate(12deg);
-            }
 
-        }
+.au-brand h1 span {
 
+    color:
+        #ef4f82;
 
-        @keyframes sparkleBlink {
+}
 
-            0%,
-            100% {
-                opacity: .35;
-            }
 
-            50% {
-                opacity: 1;
-            }
+.au-brand p {
 
-        }
+    margin:
+        4px 0 0;
 
+    color:
+        #817991;
 
-        /* =========================================================
-           HERO
-        ========================================================== */
+    font-size:
+        10px;
 
-        .cloud-gallery-hero {
+}
 
-            position: relative;
 
-            z-index: 5;
+.au-visit {
 
-            padding:
-                95px
-                20px
-                35px;
+    display:
+        inline-flex;
 
-            text-align: center;
-        }
+    align-items:
+        center;
 
+    justify-content:
+        center;
 
-        .cloud-gallery-badge {
+    padding:
+        10px 13px;
 
-            display: inline-flex;
+    border-radius:
+        13px;
 
-            align-items: center;
+    text-decoration:
+        none;
 
-            gap: 8px;
+    color:
+        white;
 
-            padding:
-                10px
-                20px;
+    font-size:
+        11px;
 
-            border-radius: 999px;
+    font-weight:
+        900;
 
-            background:
-                rgba(255,255,255,.8);
+    background:
 
-            border:
-                1px solid
-                rgba(255,255,255,.9);
+        linear-gradient(
+            135deg,
+            #ef4f82,
+            #ff7da7
+        );
 
-            box-shadow:
-                0 10px 30px
-                rgba(49,126,160,.13);
+    box-shadow:
+        0 9px 20px rgba(239,79,130,.25);
 
-            color: #3285ad;
+    transition:
+        .3s ease;
 
-            font-size: 13px;
+}
 
-            font-weight: 800;
 
-            letter-spacing: .8px;
+.au-visit:hover {
 
-            animation:
-                heroDown .8s ease both;
-        }
+    transform:
+        translateY(-3px);
 
+    box-shadow:
+        0 14px 28px rgba(239,79,130,.35);
 
-        .cloud-gallery-hero h1 {
+}
 
-            margin:
-                18px
-                0
-                8px;
 
-            color: #215a80;
+/* =====================================================
+   NAVBAR
+===================================================== */
 
-            font-size:
-                clamp(
-                    44px,
-                    7vw,
-                    78px
-                );
+.au-nav {
 
-            line-height: .95;
+    position:
+        sticky;
 
-            font-weight: 900;
+    top:
+        0;
 
-            text-shadow:
-                0 5px 0
-                rgba(255,255,255,.75),
-                0 15px 35px
-                rgba(39,101,136,.12);
+    z-index:
+        99;
 
-            animation:
-                heroDown .9s ease both;
+    background:
+        rgba(255,255,255,.92);
 
-            animation-delay: .15s;
-        }
+    backdrop-filter:
+        blur(20px);
 
+    border-bottom:
+        1px solid rgba(120,90,180,.08);
 
-        .cloud-gallery-hero h1 span {
+}
 
-            display: block;
 
-            color: #ff7193;
+.au-nav-inner {
 
-            animation:
-                titleFloat
-                4s
-                ease-in-out
-                infinite;
-        }
+    width:
+        min(
+            1180px,
+            calc(100% - 20px)
+        );
 
+    margin:
+        auto;
 
-        .cloud-gallery-hero p {
+    display:
+        flex;
 
-            max-width: 650px;
+    gap:
+        6px;
 
-            margin:
-                20px
-                auto
-                0;
+    padding:
+        8px 0;
 
-            color: #4d7790;
+    overflow-x:
+        auto;
 
-            font-size: 17px;
+    scrollbar-width:
+        none;
 
-            line-height: 1.7;
+}
 
-            animation:
-                heroDown 1s ease both;
 
-            animation-delay: .3s;
-        }
+.au-nav-inner::-webkit-scrollbar {
 
+    display:
+        none;
 
-        @keyframes heroDown {
+}
 
-            from {
-                opacity: 0;
-                transform: translateY(-25px);
-            }
 
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+.au-nav-link {
 
-        }
+    flex:
+        0 0 auto;
 
+    min-width:
+        62px;
 
-        @keyframes titleFloat {
+    display:
+        flex;
 
-            0%,
-            100% {
-                transform: translateY(0);
-            }
+    flex-direction:
+        column;
 
-            50% {
-                transform: translateY(-5px);
-            }
+    align-items:
+        center;
 
-        }
+    justify-content:
+        center;
 
+    gap:
+        3px;
 
-        /* =========================================================
-           GALLERY BOARD
-        ========================================================== */
+    padding:
+        8px 9px;
 
-        .cloud-gallery-wrapper {
+    border-radius:
+        14px;
 
-            position: relative;
+    text-decoration:
+        none;
 
-            z-index: 5;
+    color:
+        #6f687d;
 
-            width:
-                min(
-                    1180px,
-                    calc(100% - 30px)
-                );
+    font-size:
+        9px;
 
-            margin:
-                0 auto;
+    font-weight:
+        900;
 
-            padding:
-                25px
-                0
-                110px;
-        }
+    transition:
+        .3s ease;
 
+}
 
-        .cloud-gallery-board {
 
-            position: relative;
+.au-nav-link:hover {
 
-            min-height: 600px;
+    transform:
+        translateY(-2px);
 
-            padding:
-                60px 50px
-                80px;
+    background:
+        #f7f3ff;
 
-            border-radius: 48px;
+}
 
-            background:
-                rgba(
-                    255,
-                    255,
-                    255,
-                    .62
-                );
 
-            border:
-                2px solid
-                rgba(
-                    255,
-                    255,
-                    255,
-                    .8
-                );
+.au-nav-icon {
 
-            box-shadow:
-                0 30px 90px
-                rgba(35,111,149,.15);
+    font-size:
+        19px;
 
-            backdrop-filter:
-                blur(15px);
+}
 
-            animation:
-                boardAppear
-                1s
-                ease both;
 
-            animation-delay: .3s;
-        }
+.au-nav-link.active {
 
+    color:
+        white;
 
-        @keyframes boardAppear {
+    background:
 
-            from {
-                opacity: 0;
-                transform:
-                    translateY(35px)
-                    scale(.97);
-            }
+        linear-gradient(
+            135deg,
+            #7b6cff,
+            #a47fff
+        );
 
-            to {
-                opacity: 1;
-                transform:
-                    translateY(0)
-                    scale(1);
-            }
+    box-shadow:
+        0 7px 18px rgba(125,108,255,.25);
 
-        }
+}
 
 
-        /* =========================================================
-           MINI CLOUD DECORATIONS
-        ========================================================== */
+.au-more-wrap {
 
-        .mini-cloud {
+    flex:
+        0 0 auto;
 
-            position: absolute;
+}
 
-            width: 125px;
-            height: 38px;
 
-            background: white;
+.au-more-button {
 
-            border-radius: 50px;
+    height:
+        100%;
 
-            opacity: .85;
+    min-width:
+        72px;
 
-            pointer-events: none;
-        }
+    border:
+        none;
 
+    cursor:
+        pointer;
 
-        .mini-cloud::before,
-        .mini-cloud::after {
+    display:
+        flex;
 
-            content: "";
+    flex-direction:
+        column;
 
-            position: absolute;
+    align-items:
+        center;
 
-            background: white;
+    justify-content:
+        center;
 
-            border-radius: 50%;
-        }
+    gap:
+        3px;
 
+    padding:
+        8px 10px;
 
-        .mini-cloud::before {
+    border-radius:
+        14px;
 
-            width: 55px;
-            height: 55px;
+    background:
+        #f5f2fb;
 
-            left: 18px;
-            bottom: 5px;
-        }
+    color:
+        #6b617b;
 
+    font-size:
+        9px;
 
-        .mini-cloud::after {
+    font-weight:
+        900;
 
-            width: 65px;
-            height: 65px;
+    transition:
+        .3s ease;
 
-            right: 15px;
-            bottom: 3px;
-        }
+}
 
 
-        .mini-cloud-1 {
+.au-more-button:hover {
 
-            top: 25px;
-            right: 55px;
+    transform:
+        translateY(-2px);
 
-            animation:
-                miniCloudFloat
-                5s
-                ease-in-out
-                infinite;
-        }
+    background:
+        #eee9f8;
 
+}
 
-        .mini-cloud-2 {
 
-            bottom: 30px;
-            left: 40px;
+.au-more-button span {
 
-            transform: scale(.75);
+    font-size:
+        18px;
 
-            animation:
-                miniCloudFloat
-                6s
-                ease-in-out
-                infinite;
+}
 
-            animation-delay: -2s;
-        }
 
+/* =====================================================
+   DROPDOWN MENU
+===================================================== */
 
-        @keyframes miniCloudFloat {
+.au-more-menu {
 
-            0%,
-            100% {
-                transform:
-                    translateY(0)
-                    scale(1);
-            }
+    position:
+        fixed;
 
-            50% {
-                transform:
-                    translateY(-9px)
-                    scale(1.03);
-            }
+    top:
+        138px;
 
-        }
+    left:
+        16px;
 
+    right:
+        16px;
 
-        /* =========================================================
-           PHOTO GRID
-        ========================================================== */
+    z-index:
+        300;
 
-        .cloud-photo-grid {
+    display:
+        none;
 
-            position: relative;
+    overflow:
+        hidden;
 
-            z-index: 5;
+    border-radius:
+        22px;
 
-            display: grid;
+    background:
+        rgba(255,255,255,.97);
 
-            grid-template-columns:
-                repeat(3, 1fr);
+    backdrop-filter:
+        blur(20px);
 
-            gap:
-                65px
-                38px;
+    box-shadow:
+        0 20px 55px rgba(57,40,90,.18);
 
-            align-items: start;
-        }
+    opacity:
+        0;
 
+    transform:
+        translateY(-10px);
 
-        /* =========================================================
-           POLAROID
-        ========================================================== */
+    transition:
+        .25s ease;
 
-        .cloud-photo-card {
+}
 
-            position: relative;
 
-            width: 100%;
+.au-more-menu.open {
 
-            padding:
-                13px
-                13px
-                20px;
+    display:
+        block;
 
-            background: #fff;
+    opacity:
+        1;
 
-            border-radius: 5px;
+    transform:
+        translateY(0);
 
-            box-shadow:
-                0 18px 35px
-                rgba(30,90,120,.14),
-                0 4px 10px
-                rgba(30,90,120,.08);
+}
 
-            cursor: pointer;
 
-            transform:
-                rotate(var(--rotate))
-                translateY(35px);
+.au-more-title {
 
-            opacity: 0;
+    padding:
+        16px 18px;
 
-            animation:
-                photoEnter
-                .8s
-                cubic-bezier(
-                    .2,
-                    .8,
-                    .2,
-                    1
-                )
-                forwards;
+    font-size:
+        14px;
 
-            transition:
-                transform
-                .45s
-                cubic-bezier(
-                    .2,
-                    .8,
-                    .2,
-                    1
-                ),
-                box-shadow
-                .45s ease;
-        }
+    font-weight:
+        900;
 
+    border-bottom:
+        1px solid #f0edf5;
 
-        .cloud-photo-card:nth-child(1) {
-            --rotate: -3deg;
-            animation-delay: .15s;
-        }
+}
 
 
-        .cloud-photo-card:nth-child(2) {
-            --rotate: 2.5deg;
-            animation-delay: .3s;
-        }
+.au-more-menu a {
 
+    display:
+        flex;
 
-        .cloud-photo-card:nth-child(3) {
-            --rotate: -2deg;
-            animation-delay: .45s;
-        }
+    align-items:
+        center;
 
+    gap:
+        13px;
 
-        .cloud-photo-card:nth-child(4) {
-            --rotate: 3deg;
-            animation-delay: .6s;
-        }
+    padding:
+        15px 18px;
 
+    text-decoration:
+        none;
 
-        .cloud-photo-card:nth-child(5) {
-            --rotate: -2.5deg;
-            animation-delay: .75s;
-        }
+    color:
+        #665e72;
 
+    font-size:
+        14px;
 
-        .cloud-photo-card:nth-child(6) {
-            --rotate: 1.5deg;
-            animation-delay: .9s;
-        }
+    font-weight:
+        800;
 
+    border-bottom:
+        1px solid #f5f2f7;
 
-        .cloud-photo-card:nth-child(7) {
-            --rotate: -1.5deg;
-            animation-delay: 1.05s;
-        }
+    transition:
+        .25s ease;
 
+}
 
-        .cloud-photo-card:nth-child(8) {
-            --rotate: 2deg;
-            animation-delay: 1.2s;
-        }
 
+.au-more-menu a:hover {
 
-        .cloud-photo-card:nth-child(9) {
-            --rotate: -3deg;
-            animation-delay: 1.35s;
-        }
+    background:
+        #faf7ff;
 
+    padding-left:
+        24px;
 
-        @keyframes photoEnter {
+}
 
-            from {
 
-                opacity: 0;
+/* =====================================================
+   HERO
+===================================================== */
 
-                transform:
-                    rotate(var(--rotate))
-                    translateY(60px)
-                    scale(.92);
-            }
+.gl-hero {
 
-            to {
+    position:
+        relative;
 
-                opacity: 1;
+    overflow:
+        hidden;
 
-                transform:
-                    rotate(var(--rotate))
-                    translateY(0)
-                    scale(1);
-            }
+    padding:
+        70px 0 75px;
 
-        }
+    text-align:
+        center;
 
+}
 
-        .cloud-photo-card:hover {
 
-            z-index: 50;
+.gl-hero::before {
 
-            transform:
-                translateY(-20px)
-                rotate(0deg)
-                scale(1.045);
+    content:
+        "📸";
 
-            box-shadow:
-                0 38px 65px
-                rgba(30,90,120,.24),
-                0 8px 20px
-                rgba(30,90,120,.1);
-        }
+    position:
+        absolute;
 
+    top:
+        25px;
 
-        /* =========================================================
-           PIN
-        ========================================================== */
+    left:
+        8%;
 
-        .cloud-photo-pin {
+    font-size:
+        50px;
 
-            position: absolute;
+    opacity:
+        .28;
 
-            z-index: 8;
+    animation:
+        emojiFloat 5s ease-in-out infinite;
 
-            top: -18px;
+}
 
-            left: 50%;
 
-            width: 30px;
-            height: 30px;
+.gl-hero::after {
 
-            transform:
-                translateX(-50%);
+    content:
+        "🌈";
 
-            border-radius: 50%;
+    position:
+        absolute;
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #ff8ca5,
-                    #ff658b
-                );
+    right:
+        7%;
 
-            border:
-                4px solid white;
+    bottom:
+        20px;
 
-            box-shadow:
-                0 5px 15px
-                rgba(50,90,120,.2);
+    font-size:
+        58px;
 
-            animation:
-                pinBounce
-                3s
-                ease-in-out
-                infinite;
-        }
+    opacity:
+        .28;
 
+    animation:
+        emojiFloat 6s ease-in-out infinite reverse;
 
-        .cloud-photo-pin::after {
+}
 
-            content: "";
 
-            position: absolute;
+@keyframes emojiFloat {
 
-            top: 100%;
-            left: 50%;
+    0%,
+    100% {
 
-            width: 2px;
-            height: 28px;
+        transform:
+            translateY(0)
+            rotate(0);
 
-            transform:
-                translateX(-50%);
+    }
 
-            background:
-                #d6bca5;
-        }
+    50% {
 
+        transform:
+            translateY(-12px)
+            rotate(8deg);
 
-        @keyframes pinBounce {
+    }
 
-            0%,
-            100% {
-                margin-top: 0;
-            }
+}
 
-            50% {
-                margin-top: -3px;
-            }
 
-        }
+.gl-hero-content {
 
+    position:
+        relative;
 
-        /* =========================================================
-           PHOTO
-        ========================================================== */
+    z-index:
+        2;
 
-        .cloud-photo-image {
+}
 
-            position: relative;
 
-            overflow: hidden;
+.gl-badge {
 
-            aspect-ratio: 4 / 3;
+    display:
+        inline-flex;
 
-            background:
-                #e9f8ff;
-        }
+    align-items:
+        center;
 
+    gap:
+        7px;
 
-        .cloud-photo-image img {
+    padding:
+        9px 15px;
 
-            display: block;
+    border-radius:
+        50px;
 
-            width: 100%;
-            height: 100%;
+    background:
+        rgba(255,255,255,.8);
 
-            object-fit: cover;
+    font-size:
+        12px;
 
-            transition:
-                transform
-                .7s
-                cubic-bezier(
-                    .2,
-                    .8,
-                    .2,
-                    1
-                );
-        }
+    font-weight:
+        900;
 
+    color:
+        #8466bd;
 
-        .cloud-photo-card:hover
-        .cloud-photo-image img {
+    box-shadow:
+        0 10px 30px rgba(80,60,120,.08);
 
-            transform:
-                scale(1.09);
-        }
+    animation:
+        badgeFloat 4s ease-in-out infinite;
 
+}
 
-        /* =========================================================
-           LIGHT SWEEP
-        ========================================================== */
 
-        .cloud-photo-shine {
+@keyframes badgeFloat {
 
-            position: absolute;
+    0%,
+    100% {
 
-            inset: 0;
+        transform:
+            translateY(0);
 
-            background:
-                linear-gradient(
-                    115deg,
-                    transparent 25%,
-                    rgba(255,255,255,.55) 48%,
-                    transparent 68%
-                );
+    }
 
-            transform:
-                translateX(-130%);
+    50% {
 
-            transition:
-                transform
-                .8s
-                ease;
+        transform:
+            translateY(-6px);
 
-            pointer-events: none;
-        }
+    }
 
+}
 
-        .cloud-photo-card:hover
-        .cloud-photo-shine {
 
-            transform:
-                translateX(130%);
-        }
+.gl-hero h2 {
 
+    margin:
+        17px 0 0;
 
-        /* =========================================================
-           PHOTO INFO
-        ========================================================== */
+    font-family:
+        "Baloo 2",
+        cursive;
 
-        .cloud-photo-info {
+    font-size:
+        clamp(48px,15vw,72px);
 
-            padding:
-                15px
-                7px
-                2px;
+    line-height:
+        .95;
 
-            text-align: center;
-        }
+}
 
 
-        .cloud-photo-info h3 {
+.gl-hero h2 span {
 
-            margin:
-                0 0 6px;
+    color:
+        #ef4f82;
 
-            color: #31536a;
+}
 
-            font-size: 17px;
 
-            line-height: 1.35;
+.gl-hero p {
 
-            font-weight: 800;
-        }
+    max-width:
+        580px;
 
+    margin:
+        18px auto 0;
 
-        .cloud-photo-info span {
+    color:
+        #766d84;
 
-            color: #94aab8;
+    font-size:
+        14px;
 
-            font-size: 12px;
-        }
+    line-height:
+        1.8;
 
+}
 
-        /* =========================================================
-           LOADING
-        ========================================================== */
 
-        .cloud-loading {
+/* =====================================================
+   FLOATING DECORATIONS
+===================================================== */
 
-            min-height: 400px;
+.gl-decoration {
 
-            display: flex;
+    position:
+        absolute;
 
-            flex-direction: column;
+    pointer-events:
+        none;
 
-            align-items: center;
+    opacity:
+        .28;
 
-            justify-content: center;
+}
 
-            gap: 15px;
 
-            color: #64869b;
-        }
+.gl-decoration.one {
 
+    top:
+        35%;
 
-        .cloud-loading-icon {
+    left:
+        4%;
 
-            font-size: 55px;
+    font-size:
+        30px;
 
-            animation:
-                loadingCloud
-                1.5s
-                ease-in-out
-                infinite;
-        }
+    animation:
+        decorationFloat 7s ease-in-out infinite;
 
+}
 
-        @keyframes loadingCloud {
 
-            0%,
-            100% {
-                transform:
-                    translateY(0)
-                    scale(1);
-            }
+.gl-decoration.two {
 
-            50% {
-                transform:
-                    translateY(-15px)
-                    scale(1.08);
-            }
+    top:
+        15%;
 
-        }
+    right:
+        14%;
 
+    font-size:
+        25px;
 
-        /* =========================================================
-           EMPTY
-        ========================================================== */
+    animation:
+        decorationFloat 5s ease-in-out infinite reverse;
 
-        .cloud-empty {
+}
 
-            min-height: 400px;
 
-            display: flex;
+.gl-decoration.three {
 
-            flex-direction: column;
+    bottom:
+        10%;
 
-            align-items: center;
+    left:
+        18%;
 
-            justify-content: center;
+    font-size:
+        28px;
 
-            text-align: center;
+    animation:
+        decorationFloat 6s ease-in-out infinite;
 
-            color: #6d8999;
-        }
+}
 
 
-        .cloud-empty-icon {
+@keyframes decorationFloat {
 
-            font-size: 65px;
+    0%,
+    100% {
 
-            margin-bottom: 15px;
+        transform:
+            translateY(0)
+            rotate(0deg);
 
-            animation:
-                emptyFloat
-                3s
-                ease-in-out
-                infinite;
-        }
+    }
 
+    50% {
 
-        .cloud-empty h3 {
+        transform:
+            translateY(-18px)
+            rotate(12deg);
 
-            margin:
-                0 0 8px;
+    }
 
-            color: #31536a;
+}
 
-            font-size: 24px;
-        }
 
+/* =====================================================
+   SECTION
+===================================================== */
 
-        .cloud-empty p {
-            margin: 0;
-        }
+.gl-section {
 
+    padding:
+        40px 0 70px;
 
-        @keyframes emptyFloat {
+}
 
-            0%,
-            100% {
-                transform: translateY(0);
-            }
 
-            50% {
-                transform: translateY(-12px);
-            }
+.gl-heading {
 
-        }
+    text-align:
+        center;
 
+    margin-bottom:
+        30px;
 
-        /* =========================================================
-           LIGHTBOX
-        ========================================================== */
+}
 
-        .cloud-lightbox {
 
-            position: fixed;
+.gl-heading-badge {
 
-            inset: 0;
+    display:
+        inline-block;
 
-            z-index: 99999;
+    padding:
+        7px 13px;
 
-            display: flex;
+    border-radius:
+        30px;
 
-            align-items: center;
+    background:
+        #f0eaff;
 
-            justify-content: center;
+    color:
+        #8864c9;
 
-            padding: 30px;
+    font-size:
+        10px;
 
-            background:
-                rgba(
-                    18,
-                    55,
-                    78,
-                    .95
-                );
+    font-weight:
+        900;
 
-            backdrop-filter:
-                blur(13px);
+}
 
-            opacity: 0;
 
-            visibility: hidden;
+.gl-heading h2 {
 
-            pointer-events: none;
+    margin:
+        10px 0;
 
-            transition:
-                opacity .3s ease,
-                visibility .3s ease;
-        }
+    font-family:
+        "Baloo 2",
+        cursive;
 
+    font-size:
+        34px;
 
-        .cloud-lightbox.active {
+    line-height:
+        1.1;
 
-            opacity: 1;
+}
 
-            visibility: visible;
 
-            pointer-events: auto;
-        }
+.gl-heading h2 span {
 
+    color:
+        #ef4f82;
 
-        .cloud-lightbox-content {
+}
 
-            position: relative;
 
-            max-width: 92vw;
-            max-height: 90vh;
+.gl-heading p {
 
-            text-align: center;
+    max-width:
+        600px;
 
-            animation:
-                lightboxOpen
-                .4s
-                ease;
-        }
+    margin:
+        auto;
 
+    color:
+        #7c7489;
 
-        @keyframes lightboxOpen {
+    font-size:
+        13px;
 
-            from {
+    line-height:
+        1.7;
 
-                opacity: 0;
+}
 
-                transform:
-                    scale(.82)
-                    translateY(25px);
-            }
 
-            to {
+/* =====================================================
+   GALLERY CONTAINER
+===================================================== */
 
-                opacity: 1;
+#postsContainer {
 
-                transform:
-                    scale(1)
-                    translateY(0);
-            }
+    min-height:
+        220px;
 
-        }
+}
 
 
-        .cloud-lightbox-content img {
+/* =====================================================
+   PHOTO GRID
+===================================================== */
 
-            display: block;
+.cloud-photo-grid {
 
-            max-width: 88vw;
+    display:
+        grid;
 
-            max-height: 75vh;
+    grid-template-columns:
+        repeat(2, 1fr);
 
-            object-fit: contain;
+    gap:
+        16px;
 
-            padding: 8px;
+}
 
-            background: white;
 
-            border-radius: 5px;
+/* =====================================================
+   PHOTO CARD
+===================================================== */
 
-            box-shadow:
-                0 35px 100px
-                rgba(0,0,0,.45);
-        }
+.cloud-photo-card {
 
+    position:
+        relative;
 
-        .cloud-lightbox-caption {
+    overflow:
+        hidden;
 
-            margin-top: 15px;
+    cursor:
+        pointer;
 
-            color: white;
-        }
+    border-radius:
+        24px;
 
+    background:
+        rgba(255,255,255,.78);
 
-        .cloud-lightbox-caption strong {
+    border:
+        1px solid rgba(255,255,255,.95);
 
-            display: block;
+    box-shadow:
+        0 15px 40px rgba(70,50,110,.10);
 
-            font-size: 21px;
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
 
-            margin-bottom: 5px;
-        }
+    animation:
+        galleryCardIn .7s ease both;
 
+}
 
-        .cloud-lightbox-caption span {
 
-            font-size: 13px;
+@keyframes galleryCardIn {
 
-            opacity: .7;
-        }
+    from {
 
+        opacity:
+            0;
 
-        .cloud-lightbox-close,
-        .cloud-lightbox-prev,
-        .cloud-lightbox-next {
+        transform:
+            translateY(25px)
+            scale(.96);
 
-            position: fixed;
+    }
 
-            z-index: 100001;
+    to {
 
-            display: flex;
+        opacity:
+            1;
 
-            align-items: center;
+        transform:
+            translateY(0)
+            scale(1);
 
-            justify-content: center;
+    }
 
-            border: 0;
+}
 
-            cursor: pointer;
 
-            color: white;
+.cloud-photo-card:hover {
 
-            background:
-                rgba(
-                    255,
-                    255,
-                    255,
-                    .15
-                );
+    transform:
+        translateY(-9px)
+        rotate(-1deg);
 
-            backdrop-filter:
-                blur(8px);
+    box-shadow:
+        0 25px 55px rgba(70,50,110,.18);
 
-            transition:
-                .25s ease;
-        }
+}
 
 
-        .cloud-lightbox-close:hover,
-        .cloud-lightbox-prev:hover,
-        .cloud-lightbox-next:hover {
+.cloud-photo-card:nth-child(even):hover {
 
-            background:
-                rgba(
-                    255,
-                    255,
-                    255,
-                    .3
-                );
+    transform:
+        translateY(-9px)
+        rotate(1deg);
 
-            transform:
-                scale(1.08);
-        }
+}
 
 
-        .cloud-lightbox-close {
+/* =====================================================
+   PHOTO PIN
+===================================================== */
 
-            top: 25px;
-            right: 25px;
+.cloud-photo-pin {
 
-            width: 50px;
-            height: 50px;
+    position:
+        absolute;
 
-            border-radius: 50%;
+    z-index:
+        10;
 
-            font-size: 23px;
-        }
+    top:
+        10px;
 
+    left:
+        50%;
 
-        .cloud-lightbox-prev,
-        .cloud-lightbox-next {
+    width:
+        16px;
 
-            top: 50%;
+    height:
+        16px;
 
-            width: 55px;
-            height: 55px;
+    border-radius:
+        50%;
 
-            border-radius: 50%;
+    transform:
+        translateX(-50%);
 
-            font-size: 22px;
-        }
+    background:
 
+        linear-gradient(
+            135deg,
+            #ffd4e4,
+            #ef4f82
+        );
 
-        .cloud-lightbox-prev {
-            left: 25px;
-        }
+    box-shadow:
+        0 4px 10px rgba(239,79,130,.3);
 
+}
 
-        .cloud-lightbox-next {
-            right: 25px;
-        }
 
+.cloud-photo-pin::after {
 
-        body.cloud-lightbox-open {
-            overflow: hidden;
-        }
+    content:
+        "";
 
+    position:
+        absolute;
 
-        /* =========================================================
-           MOBILE
-        ========================================================== */
+    width:
+        5px;
 
-        @media (max-width: 900px) {
+    height:
+        5px;
 
-            .cloud-photo-grid {
+    border-radius:
+        50%;
 
-                grid-template-columns:
-                    repeat(2, 1fr);
+    top:
+        3px;
 
-                gap:
-                    55px
-                    25px;
-            }
+    left:
+        3px;
 
+    background:
+        rgba(255,255,255,.75);
 
-            .cloud-gallery-board {
+}
 
-                padding:
-                    45px
-                    25px
-                    70px;
-            }
 
-        }
+/* =====================================================
+   PHOTO IMAGE
+===================================================== */
 
+.cloud-photo-image {
 
-        @media (max-width: 600px) {
+    position:
+        relative;
 
-            .cloud-gallery-hero {
+    overflow:
+        hidden;
 
-                padding-top: 65px;
-            }
+    aspect-ratio:
+        1 / 1;
 
+    background:
 
-            .cloud-gallery-hero h1 {
+        linear-gradient(
+            135deg,
+            #f7f2ff,
+            #e9f7ff
+        );
 
-                font-size: 48px;
-            }
+}
 
 
-            .cloud-gallery-hero p {
+.cloud-photo-image img {
 
-                font-size: 14px;
+    width:
+        100%;
 
-                padding:
-                    0 12px;
-            }
+    height:
+        100%;
 
+    display:
+        block;
 
-            .cloud-gallery-wrapper {
+    object-fit:
+        cover;
 
-                width:
-                    calc(100% - 16px);
-            }
+    transition:
+        transform .6s ease;
 
+}
 
-            .cloud-gallery-board {
 
-                padding:
-                    40px
-                    10px
-                    60px;
+.cloud-photo-card:hover
+.cloud-photo-image img {
 
-                border-radius: 30px;
-            }
+    transform:
+        scale(1.12);
 
+}
 
-            .cloud-photo-grid {
 
-                grid-template-columns: 1fr;
+/* =====================================================
+   PHOTO SHINE
+===================================================== */
 
-                gap: 50px;
+.cloud-photo-shine {
 
-                padding:
-                    0 12px;
-            }
+    position:
+        absolute;
 
+    inset:
+        0;
 
-            .cloud-photo-card {
+    overflow:
+        hidden;
 
-                width: 100%;
+}
 
-                max-width: 390px;
 
-                margin:
-                    0 auto;
-            }
+.cloud-photo-shine::before {
 
+    content:
+        "";
 
-            .sky-rainbow {
+    position:
+        absolute;
 
-                left: -100px;
+    top:
+        -50%;
 
-                transform:
-                    scale(.55);
+    left:
+        -80%;
 
-                transform-origin:
-                    top left;
-            }
+    width:
+        45%;
 
+    height:
+        200%;
 
-            .sky-sun {
+    transform:
+        rotate(25deg);
 
-                top: 85px;
-                right: -20px;
+    background:
+        rgba(255,255,255,.32);
 
-                transform:
-                    scale(.55);
-            }
+    transition:
+        left .7s ease;
 
+}
 
-            .cloud-lightbox {
 
-                padding: 15px;
-            }
+.cloud-photo-card:hover
+.cloud-photo-shine::before {
 
+    left:
+        140%;
 
-            .cloud-lightbox-content img {
+}
 
-                max-width: 92vw;
 
-                max-height: 70vh;
+/* =====================================================
+   PHOTO INFO
+===================================================== */
 
-                padding: 5px;
-            }
+.cloud-photo-info {
 
+    position:
+        relative;
 
-            .cloud-lightbox-prev,
-            .cloud-lightbox-next {
+    padding:
+        15px 13px 16px;
 
-                width: 44px;
-                height: 44px;
-            }
+}
 
 
-            .cloud-lightbox-prev {
-                left: 8px;
-            }
+.cloud-photo-info::after {
 
+    content:
+        "📸";
 
-            .cloud-lightbox-next {
-                right: 8px;
-            }
+    position:
+        absolute;
 
+    right:
+        12px;
 
-            .cloud-lightbox-close {
+    bottom:
+        13px;
 
-                top: 12px;
-                right: 12px;
+    font-size:
+        17px;
 
-                width: 44px;
-                height: 44px;
-            }
+    opacity:
+        .4;
 
-        }
+}
 
-    
 
-        /* =========================================================
-           FIX NAVBAR GALLERY - MENU TETAP HORIZONTAL
-           Hanya memperbaiki navbar, bagian lain tidak diubah
-        ========================================================== */
+.cloud-photo-info h3 {
 
-        .navbar {
-            width: 100%;
-            position: relative;
-            z-index: 9999;
-        }
+    margin:
+        0;
 
-        .navbar .nav-container {
-            width: 100%;
-            display: flex !important;
-            flex-direction: column !important;
-            align-items: center !important;
-            box-sizing: border-box !important;
-        }
+    padding-right:
+        25px;
 
-        .navbar .rainbow-menu {
-            width: 100% !important;
-            max-width: 100% !important;
-            display: flex !important;
-            flex-direction: row !important;
-            flex-wrap: nowrap !important;
-            align-items: center !important;
-            justify-content: flex-start !important;
-            gap: 8px !important;
-            margin: 12px 0 !important;
-            padding: 12px 16px !important;
-            box-sizing: border-box !important;
-            overflow-x: auto !important;
-            overflow-y: hidden !important;
-            white-space: nowrap !important;
-            scrollbar-width: none !important;
-            -webkit-overflow-scrolling: touch;
-        }
+    overflow:
+        hidden;
 
-        .navbar .rainbow-menu::-webkit-scrollbar {
-            display: none !important;
-        }
+    text-overflow:
+        ellipsis;
 
-        .navbar .rainbow-menu .rainbow-item {
-            display: flex !important;
-            flex: 0 0 auto !important;
-            flex-direction: column !important;
-            align-items: center !important;
-            justify-content: center !important;
-            width: auto !important;
-            min-width: 105px !important;
-            max-width: none !important;
-            height: 70px !important;
-            margin: 0 !important;
-            box-sizing: border-box !important;
-            white-space: nowrap !important;
-        }
+    white-space:
+        nowrap;
 
-        @media (max-width: 900px) {
-            .navbar .rainbow-menu {
-                flex-direction: row !important;
-                flex-wrap: nowrap !important;
-                overflow-x: auto !important;
-            }
+    font-family:
+        "Baloo 2",
+        cursive;
 
-            .navbar .rainbow-menu .rainbow-item {
-                min-width: 90px !important;
-                height: 65px !important;
-            }
-        }
+    font-size:
+        17px;
 
-        @media (max-width: 600px) {
-            .navbar .rainbow-menu {
-                flex-direction: row !important;
-                flex-wrap: nowrap !important;
-                padding: 10px !important;
-            }
+    color:
+        #443957;
 
-            .navbar .rainbow-menu .rainbow-item {
-                flex: 0 0 82px !important;
-                min-width: 82px !important;
-                width: 82px !important;
-                height: 62px !important;
-            }
-        }
+}
+
+
+.cloud-photo-info span {
+
+    display:
+        block;
+
+    margin-top:
+        3px;
+
+    color:
+        #93899f;
+
+    font-size:
+        10px;
+
+    font-weight:
+        700;
+
+}
+
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+.cloud-loading {
+
+    min-height:
+        250px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        12px;
+
+    padding:
+        30px;
+
+    border-radius:
+        28px;
+
+    background:
+        rgba(255,255,255,.65);
+
+    box-shadow:
+        0 15px 40px rgba(70,50,110,.08);
+
+    color:
+        #7b7086;
+
+    text-align:
+        center;
+
+}
+
+
+.cloud-loading-icon {
+
+    font-size:
+        48px;
+
+    animation:
+        loadingFloat 2s ease-in-out infinite;
+
+}
+
+
+@keyframes loadingFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-12px);
+
+    }
+
+}
+
+
+/* =====================================================
+   EMPTY
+===================================================== */
+
+.cloud-empty {
+
+    min-height:
+        260px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        35px 20px;
+
+    text-align:
+        center;
+
+    border-radius:
+        30px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(255,240,246,.85),
+            rgba(240,236,255,.85),
+            rgba(229,247,255,.85)
+        );
+
+    box-shadow:
+        0 18px 45px rgba(70,50,110,.10);
+
+}
+
+
+.cloud-empty-icon {
+
+    font-size:
+        55px;
+
+    animation:
+        emptyFloat 4s ease-in-out infinite;
+
+}
+
+
+@keyframes emptyFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-10px)
+            rotate(6deg);
+
+    }
+
+}
+
+
+.cloud-empty h3 {
+
+    margin:
+        15px 0 6px;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size:
+        24px;
+
+}
+
+
+.cloud-empty p {
+
+    margin:
+        0;
+
+    color:
+        #81778d;
+
+    font-size:
+        13px;
+
+}
+
+
+/* =====================================================
+   LIGHTBOX
+===================================================== */
+
+.gallery-lightbox {
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    z-index:
+        1000;
+
+    display:
+        none;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        20px;
+
+    background:
+        rgba(31,23,45,.82);
+
+    backdrop-filter:
+        blur(12px);
+
+}
+
+
+.gallery-lightbox.active {
+
+    display:
+        flex;
+
+    animation:
+        lightboxFade .3s ease;
+
+}
+
+
+@keyframes lightboxFade {
+
+    from {
+
+        opacity:
+            0;
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+    }
+
+}
+
+
+.cloud-lightbox-box {
+
+    position:
+        relative;
+
+    width:
+        min(900px, 100%);
+
+    max-height:
+        90vh;
+
+    overflow:
+        hidden;
+
+    border-radius:
+        28px;
+
+    background:
+        white;
+
+    box-shadow:
+        0 30px 90px rgba(0,0,0,.35);
+
+    animation:
+        lightboxBox .35s ease;
+
+}
+
+
+@keyframes lightboxBox {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            scale(.9)
+            translateY(20px);
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            scale(1)
+            translateY(0);
+
+    }
+
+}
+
+
+/* =====================================================
+   LIGHTBOX CLOSE
+===================================================== */
+
+.gallery-close {
+
+    position:
+        absolute;
+
+    z-index:
+        20;
+
+    top:
+        13px;
+
+    right:
+        13px;
+
+    width:
+        42px;
+
+    height:
+        42px;
+
+    border:
+        none;
+
+    border-radius:
+        50%;
+
+    cursor:
+        pointer;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    color:
+        white;
+
+    font-size:
+        24px;
+
+    background:
+        rgba(52,45,76,.72);
+
+    backdrop-filter:
+        blur(10px);
+
+    transition:
+        .25s ease;
+
+}
+
+
+.gallery-close:hover {
+
+    transform:
+        rotate(90deg)
+        scale(1.08);
+
+    background:
+        #ef4f82;
+
+}
+
+
+/* =====================================================
+   LIGHTBOX IMAGE
+===================================================== */
+
+.gallery-lightbox-image-wrap {
+
+    width:
+        100%;
+
+    max-height:
+        65vh;
+
+    background:
+        #221b31;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+}
+
+
+.gallery-lightbox-image-wrap img {
+
+    width:
+        100%;
+
+    height:
+        auto;
+
+    max-height:
+        65vh;
+
+    display:
+        block;
+
+    object-fit:
+        contain;
+
+}
+
+
+/* =====================================================
+   LIGHTBOX INFO
+===================================================== */
+
+.gallery-lightbox-info {
+
+    padding:
+        20px;
+
+    text-align:
+        center;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #fff9fc,
+            #f7f3ff
+        );
+
+}
+
+
+.gallery-lightbox-info h3 {
+
+    margin:
+        0;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size:
+        25px;
+
+}
+
+
+.gallery-lightbox-info p {
+
+    margin:
+        5px 0 0;
+
+    color:
+        #887d94;
+
+    font-size:
+        12px;
+
+}
+
+
+/* =====================================================
+   LIGHTBOX NAVIGATION
+===================================================== */
+
+.gallery-nav-button {
+
+    position:
+        absolute;
+
+    z-index:
+        20;
+
+    top:
+        45%;
+
+    width:
+        48px;
+
+    height:
+        48px;
+
+    border:
+        none;
+
+    border-radius:
+        50%;
+
+    cursor:
+        pointer;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    color:
+        white;
+
+    font-size:
+        28px;
+
+    background:
+        rgba(52,45,76,.68);
+
+    backdrop-filter:
+        blur(10px);
+
+    transition:
+        .25s ease;
+
+}
+
+
+.gallery-nav-button:hover {
+
+    transform:
+        scale(1.1);
+
+    background:
+        #7b6cff;
+
+}
+
+
+.gallery-prev {
+
+    left:
+        12px;
+
+}
+
+
+.gallery-next {
+
+    right:
+        12px;
+
+}
+
+
+/* =====================================================
+   CTA
+===================================================== */
+
+.gl-cta-section {
+
+    padding:
+        10px 0 55px;
+
+}
+
+
+.gl-cta {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    padding:
+        48px 20px;
+
+    border-radius:
+        30px;
+
+    text-align:
+        center;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #fff0f6,
+            #f0ecff,
+            #e5f7ff
+        );
+
+    box-shadow:
+        0 22px 55px rgba(75,55,120,.12);
+
+}
+
+
+.gl-cta::before {
+
+    content:
+        "✨";
+
+    position:
+        absolute;
+
+    top:
+        15px;
+
+    left:
+        8%;
+
+    font-size:
+        32px;
+
+    opacity:
+        .35;
+
+    animation:
+        emojiFloat 5s ease-in-out infinite;
+
+}
+
+
+.gl-cta::after {
+
+    content:
+        "🌈";
+
+    position:
+        absolute;
+
+    bottom:
+        12px;
+
+    right:
+        8%;
+
+    font-size:
+        38px;
+
+    opacity:
+        .28;
+
+    animation:
+        emojiFloat 6s ease-in-out infinite reverse;
+
+}
+
+
+.gl-cta-content {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+}
+
+
+.gl-cta-icon {
+
+    font-size:
+        55px;
+
+    animation:
+        iconPulse 4s ease-in-out infinite;
+
+}
+
+
+@keyframes iconPulse {
+
+    0%,
+    100% {
+
+        transform:
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            scale(1.1);
+
+    }
+
+}
+
+
+.gl-cta h2 {
+
+    margin:
+        8px 0 12px;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size:
+        35px;
+
+}
+
+
+.gl-cta h2 span {
+
+    color:
+        #ef4f82;
+
+}
+
+
+.gl-cta p {
+
+    max-width:
+        500px;
+
+    margin:
+        0 auto 22px;
+
+    color:
+        #756c82;
+
+    font-size:
+        13px;
+
+    line-height:
+        1.75;
+
+}
+
+
+.gl-button {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        14px 22px;
+
+    border-radius:
+        15px;
+
+    text-decoration:
+        none;
+
+    color:
+        white;
+
+    font-size:
+        13px;
+
+    font-weight:
+        900;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #ef4f82,
+            #ff7ea7
+        );
+
+    box-shadow:
+        0 12px 25px rgba(239,79,130,.25);
+
+    transition:
+        .3s ease;
+
+}
+
+
+.gl-button:hover {
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 18px 32px rgba(239,79,130,.35);
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.au-footer {
+
+    padding:
+        42px 0 0;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #302843,
+            #403556
+        );
+
+    color:
+        white;
+
+}
+
+
+.au-footer-grid {
+
+    display:
+        grid;
+
+    gap:
+        25px;
+
+    text-align:
+        center;
+
+}
+
+
+.au-footer h3 {
+
+    margin:
+        0 0 10px;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size:
+        22px;
+
+}
+
+
+.au-footer h3 span {
+
+    color:
+        #ff8db3;
+
+}
+
+
+.au-footer p {
+
+    margin:
+        0 0 7px;
+
+    color:
+        #c9c1d7;
+
+    font-size:
+        13px;
+
+    line-height:
+        1.7;
+
+}
+
+
+.au-copyright {
+
+    margin-top:
+        35px;
+
+    padding:
+        18px;
+
+    text-align:
+        center;
+
+    border-top:
+        1px solid rgba(255,255,255,.08);
+
+    color:
+        #aaa0bc;
+
+    font-size:
+        11px;
+
+}
+
+
+/* =====================================================
+   REVEAL
+===================================================== */
+
+.au-reveal {
+
+    opacity:
+        0;
+
+    transform:
+        translateY(28px);
+
+    transition:
+
+        opacity .8s ease,
+        transform .8s cubic-bezier(.2,.8,.2,1);
+
+}
+
+
+.au-reveal.au-show {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* =====================================================
+   DESKTOP
+===================================================== */
+
+@media (min-width: 769px) {
+
+
+    .au-header-inner {
+
+        min-height:
+            90px;
+
+    }
+
+
+    .au-logo {
+
+        width:
+            55px;
+
+        height:
+            55px;
+
+        font-size:
+            29px;
+
+    }
+
+
+    .au-brand h1 {
+
+        font-size:
+            25px;
+
+    }
+
+
+    .au-brand p {
+
+        font-size:
+            13px;
+
+    }
+
+
+    .au-visit {
+
+        padding:
+            13px 22px;
+
+        font-size:
+            13px;
+
+    }
+
+
+    .au-nav-inner {
+
+        justify-content:
+            center;
+
+        overflow:
+            visible;
+
+    }
+
+
+    .au-nav-link {
+
+        flex-direction:
+            row;
+
+        min-width:
+            auto;
+
+        font-size:
+            12px;
+
+        padding:
+            10px 15px;
+
+    }
+
+
+    .au-more-wrap {
+
+        display:
+            none;
+
+    }
+
+
+    .gl-hero {
+
+        padding:
+            105px 0;
+
+    }
+
+
+    .gl-hero p {
+
+        font-size:
+            16px;
+
+    }
+
+
+    .gl-section {
+
+        padding:
+            65px 0 80px;
+
+    }
+
+
+    .cloud-photo-grid {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+        gap:
+            22px;
+
+    }
+
+
+    .cloud-photo-info {
+
+        padding:
+            18px 17px;
+
+    }
+
+
+    .cloud-photo-info h3 {
+
+        font-size:
+            21px;
+
+    }
+
+
+    .cloud-photo-info span {
+
+        font-size:
+            11px;
+
+    }
+
+
+    .au-footer-grid {
+
+        grid-template-columns:
+            repeat(3,1fr);
+
+        text-align:
+            left;
+
+    }
+
+
+    .gallery-nav-button {
+
+        width:
+            55px;
+
+        height:
+            55px;
+
+    }
+
+}
+
+
+/* =====================================================
+   LARGE DESKTOP
+===================================================== */
+
+@media (min-width: 1100px) {
+
+
+    .cloud-photo-grid {
+
+        grid-template-columns:
+            repeat(4, 1fr);
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 420px) {
+
+
+    .au-brand h1 {
+
+        font-size:
+            16px;
+
+    }
+
+
+    .au-brand p {
+
+        font-size:
+            9px;
+
+    }
+
+
+    .au-visit {
+
+        padding:
+            9px 10px;
+
+        font-size:
+            10px;
+
+    }
+
+
+    .cloud-photo-grid {
+
+        gap:
+            11px;
+
+    }
+
+
+    .cloud-photo-card {
+
+        border-radius:
+            19px;
+
+    }
+
+
+    .cloud-photo-info {
+
+        padding:
+            12px 10px;
+
+    }
+
+
+    .cloud-photo-info h3 {
+
+        font-size:
+            15px;
+
+    }
+
+
+    .cloud-photo-info span {
+
+        font-size:
+            9px;
+
+    }
+
+
+    .gallery-nav-button {
+
+        width:
+            40px;
+
+        height:
+            40px;
+
+        font-size:
+            23px;
+
+    }
+
+
+    .gallery-lightbox-info h3 {
+
+        font-size:
+            21px;
+
+    }
+
+}
+
+
+/* =====================================================
+   REDUCE MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    * {
+
+        animation:
+            none !important;
+
+        transition:
+            none !important;
+
+        scroll-behavior:
+            auto !important;
+
+    }
+
+}
+
 </style>
 
 </head>
@@ -1768,424 +2903,1828 @@
 <body data-page="gallery">
 
 
-    <!-- =========================================================
-         NAVBAR
-    ========================================================== -->
+<!-- =====================================================
+     BACKGROUND
+===================================================== -->
 
-    <nav class="navbar">
+<div class="pg-bg"></div>
 
-        <div class="nav-container">
 
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
-            <a href="index.html" class="logo">
+<header class="au-header">
 
-                <span class="logo-icon">
-                    ☀️
-                </span>
+    <div class="au-container au-header-inner">
 
-                <span>
 
-                    <strong>
-                        Ra Miftahul Hikmah
-                    </strong>
-
-                    <small>
-                        Tangerang 💗
-                    </small>
-
-                </span>
-
-            </a>
-
-
-            <div class="rainbow-menu">
-
-
-                <a
-                    href="index.html"
-                    class="rainbow-item pink"
-                >
-                    <span class="rainbow-icon">
-                        🏠
-                    </span>
-
-                    <span class="rainbow-text">
-                        HOME
-                    </span>
-
-                    <span class="sparkle">
-                        ✦
-                    </span>
-                </a>
-
-
-                <a
-                    href="about.html"
-                    class="rainbow-item blue"
-                >
-                    <span class="rainbow-icon">
-                        🌱
-                    </span>
-
-                    <span class="rainbow-text">
-                        ABOUT
-                    </span>
-
-                    <span class="sparkle">
-                        ✦
-                    </span>
-                </a>
-
-
-                <a
-                    href="programs.html"
-                    class="rainbow-item green"
-                >
-                    <span class="rainbow-icon">
-                        🎨
-                    </span>
-
-                    <span class="rainbow-text">
-                        PROGRAMS
-                    </span>
-
-                    <span class="sparkle">
-                        ✦
-                    </span>
-                </a>
-
-
-                <a
-                    href="classes.html"
-                    class="rainbow-item yellow"
-                >
-                    <span class="rainbow-icon">
-                        🧸
-                    </span>
-
-                    <span class="rainbow-text">
-                        CLASSES
-                    </span>
-
-                    <span class="sparkle">
-                        ✦
-                    </span>
-                </a>
-
-
-                <a
-                    href="blog.html"
-                    class="rainbow-item orange"
-                >
-                    <span class="rainbow-icon">
-                        📝
-                    </span>
-
-                    <span class="rainbow-text">
-                        BLOG
-                    </span>
-
-                    <span class="sparkle">
-                        ✦
-                    </span>
-                </a>
-
-
-                <a
-                    href="gallery.html"
-                    class="rainbow-item purple active"
-                >
-                    <span class="rainbow-icon">
-                        📸
-                    </span>
-
-                    <span class="rainbow-text">
-                        GALLERY
-                    </span>
-
-                    <span class="sparkle">
-                        ✦
-                    </span>
-                </a>
-
-
-                <a
-                    href="parents.html"
-                    class="rainbow-item pink2"
-                >
-                    <span class="rainbow-icon">
-                        👨‍👩‍👧
-                    </span>
-
-                    <span class="rainbow-text">
-                        PARENTS
-                    </span>
-
-                    <span class="sparkle">
-                        ✦
-                    </span>
-                </a>
-
-
-                <a
-                    href="contact.html"
-                    class="rainbow-item blue2"
-                >
-                    <span class="rainbow-icon">
-                        📞
-                    </span>
-
-                    <span class="rainbow-text">
-                        CONTACT
-                    </span>
-
-                    <span class="sparkle">
-                        ✦
-                    </span>
-                </a>
-
-
-                <a
-                    href="login.html"
-                    class="rainbow-item login-menu"
-                >
-                    <span class="rainbow-icon">
-                        🔐
-                    </span>
-
-                    <span class="rainbow-text">
-                        LOGIN
-                    </span>
-
-                    <span class="sparkle">
-                        ✦
-                    </span>
-                </a>
-
-
-            </div>
-
-        </div>
-
-    </nav>
-
-
-    <!-- =========================================================
-         CLOUD GALLERY
-    ========================================================== -->
-
-    <main class="cloud-gallery-page">
-
-
-        <!-- SKY -->
-
-        <div class="sky-cloud sky-cloud-1"></div>
-
-        <div class="sky-cloud sky-cloud-2"></div>
-
-        <div class="sky-cloud sky-cloud-3"></div>
-
-        <div class="sky-cloud sky-cloud-4"></div>
-
-
-        <!-- SUN -->
-
-        <div class="sky-sun"></div>
-
-
-        <!-- RAINBOW -->
-
-        <div class="sky-rainbow">
-
-            <div class="rainbow-line rainbow-line-1"></div>
-
-            <div class="rainbow-line rainbow-line-2"></div>
-
-            <div class="rainbow-line rainbow-line-3"></div>
-
-            <div class="rainbow-line rainbow-line-4"></div>
-
-            <div class="rainbow-line rainbow-line-5"></div>
-
-        </div>
-
-
-        <!-- SPARKLES -->
-
-        <div class="sparkle-cloud sparkle-1">
-            ✦
-        </div>
-
-        <div class="sparkle-cloud sparkle-2">
-            ✨
-        </div>
-
-        <div class="sparkle-cloud sparkle-3">
-            ✦
-        </div>
-
-        <div class="sparkle-cloud sparkle-4">
-            ✧
-        </div>
-
-
-        <!-- HERO -->
-
-        <section class="cloud-gallery-hero">
-
-            <div class="cloud-gallery-badge">
-
-                ☁️
-                OUR SCHOOL MEMORIES
-                ✨
-
-            </div>
-
-
-            <h1>
-
-                Happy
-
-                <span>
-                    Moments
-                </span>
-
-            </h1>
-
-
-            <p>
-
-                Setiap senyum memiliki cerita.
-                Setiap kegiatan menjadi kenangan.
-                Mari lihat momen indah
-                RA Miftahul Hikmah 💕
-
-            </p>
-
-        </section>
-
-
-        <!-- GALLERY -->
-
-        <section class="cloud-gallery-wrapper">
-
-
-            <div class="cloud-gallery-board">
-
-
-                <div
-                    class="mini-cloud mini-cloud-1"
-                ></div>
-
-
-                <div
-                    class="mini-cloud mini-cloud-2"
-                ></div>
-
-
-                <div id="postsContainer">
-
-                    <div class="cloud-loading">
-
-                        <div class="cloud-loading-icon">
-                            ☁️
-                        </div>
-
-                        <strong>
-                            Sedang mengambil kenangan...
-                        </strong>
-
-                    </div>
-
-                </div>
-
-
-            </div>
-
-        </section>
-
-
-    </main>
-
-
-    <!-- =========================================================
-         LIGHTBOX
-    ========================================================== -->
-
-    <div
-        id="galleryLightbox"
-        class="cloud-lightbox"
-    >
-
-
-        <button
-            type="button"
-            id="galleryClose"
-            class="cloud-lightbox-close"
+        <a
+            href="index.html"
+            class="au-brand"
         >
-            ✕
-        </button>
 
+            <div class="au-logo">
 
-        <button
-            type="button"
-            id="galleryPrev"
-            class="cloud-lightbox-prev"
-        >
-            ←
-        </button>
-
-
-        <div class="cloud-lightbox-content">
-
-
-            <img
-                id="galleryLightboxImage"
-                src=""
-                alt="Foto gallery"
-            >
-
-
-            <div class="cloud-lightbox-caption">
-
-                <strong
-                    id="galleryLightboxTitle"
-                >
-                    Kenangan
-                </strong>
-
-
-                <span
-                    id="galleryLightboxDate"
-                ></span>
+                🌈
 
             </div>
 
 
-        </div>
+            <div>
+
+                <h1>
+
+                    RA Miftahul
+
+                    <span>
+                        Hikmah
+                    </span>
+
+                </h1>
 
 
-        <button
-            type="button"
-            id="galleryNext"
-            class="cloud-lightbox-next"
+                <p>
+
+                    Belajar • Bermain • Berprestasi
+
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <a
+            href="contact.html"
+            class="au-visit"
         >
-            →
-        </button>
+
+            📅 Book Visit
+
+        </a>
 
 
     </div>
 
+</header>
 
-    <!-- =========================================================
-         SCRIPT
-    ========================================================== -->
 
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
 
-    <script src="js/script.js"></script>
+<nav class="au-nav">
 
-    <script src="js/posts.js"></script>
+    <div class="au-nav-inner">
+
+
+        <a
+            href="index.html"
+            class="au-nav-link"
+        >
+
+            <span class="au-nav-icon">
+                🏠
+            </span>
+
+            HOME
+
+        </a>
+
+
+        <a
+            href="about.html"
+            class="au-nav-link"
+        >
+
+            <span class="au-nav-icon">
+                👥
+            </span>
+
+            ABOUT
+
+        </a>
+
+
+        <a
+            href="programs.html"
+            class="au-nav-link"
+        >
+
+            <span class="au-nav-icon">
+                📚
+            </span>
+
+            PROGRAMS
+
+        </a>
+
+
+        <a
+            href="gallery.html"
+            class="au-nav-link active"
+        >
+
+            <span class="au-nav-icon">
+                🖼️
+            </span>
+
+            GALLERY
+
+        </a>
+
+
+        <div class="au-more-wrap">
+
+            <button
+                type="button"
+                class="au-more-button"
+                id="auMoreButton"
+            >
+
+                <span>
+                    ✨
+                </span>
+
+                MORE
+
+            </button>
+
+        </div>
+
+
+    </div>
+
+</nav>
+
+
+<!-- =====================================================
+     DROPDOWN MENU
+===================================================== -->
+
+<div
+    class="au-more-menu"
+    id="auMoreMenu"
+>
+
+
+    <div class="au-more-title">
+
+        ✨ Menu Lainnya
+
+    </div>
+
+
+    <a href="classes.html">
+
+        🎓 Classes
+
+    </a>
+
+
+    <a href="blog.html">
+
+        🖍️ Blog
+
+    </a>
+
+
+    <a href="parents.html">
+
+        💛 Parents
+
+    </a>
+
+
+    <a href="contact.html">
+
+        ✉️ Contact
+
+    </a>
+
+
+    <a href="contact.html">
+
+        📅 Book Visit
+
+    </a>
+
+
+</div>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="gl-hero">
+
+
+    <div
+        class="gl-decoration one"
+    >
+
+        ✨
+
+    </div>
+
+
+    <div
+        class="gl-decoration two"
+    >
+
+        💕
+
+    </div>
+
+
+    <div
+        class="gl-decoration three"
+    >
+
+        ⭐
+
+    </div>
+
+
+    <div
+        class="au-container
+               gl-hero-content
+               au-reveal"
+    >
+
+
+        <div class="gl-badge">
+
+            📸 KENANGAN KAMI
+
+        </div>
+
+
+        <h2>
+
+            Setiap Momen
+
+            <span>
+                Penuh Cerita!
+            </span>
+
+        </h2>
+
+
+        <p>
+
+            Dokumentasi kegiatan,
+            kebersamaan dan momen bahagia
+            anak-anak RA Miftahul Hikmah.
+            Karena setiap langkah kecil
+            adalah kenangan yang berharga.
+
+        </p>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     GALLERY
+===================================================== -->
+
+<section class="gl-section">
+
+    <div class="au-container">
+
+
+        <div
+            class="gl-heading
+                   au-reveal"
+        >
+
+
+            <div class="gl-heading-badge">
+
+                🌈 MOMEN BAHAGIA
+
+            </div>
+
+
+            <h2>
+
+                Kenangan yang
+
+                <span>
+                    Tak Terlupakan
+                </span>
+
+            </h2>
+
+
+            <p>
+
+                Yuk lihat berbagai kegiatan
+                dan keseruan anak-anak
+                RA Miftahul Hikmah.
+
+            </p>
+
+
+        </div>
+
+
+        <!-- =============================================
+             POSTS CONTAINER
+             DIISI OTOMATIS DARI SUPABASE
+        ============================================== -->
+
+        <div
+            id="postsContainer"
+            class="au-reveal"
+        >
+
+            <div class="cloud-loading">
+
+                <div class="cloud-loading-icon">
+
+                    ☁️
+
+                </div>
+
+
+                <strong>
+
+                    Sedang mengambil kenangan...
+
+                </strong>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section class="gl-cta-section">
+
+    <div class="au-container">
+
+
+        <div
+            class="gl-cta
+                   au-reveal"
+        >
+
+
+            <div class="gl-cta-content">
+
+
+                <div class="gl-cta-icon">
+
+                    🌟
+
+                </div>
+
+
+                <h2>
+
+                    Mari Buat Kenangan
+
+                    <span>
+                        Bersama!
+                    </span>
+
+                </h2>
+
+
+                <p>
+
+                    Bersama RA Miftahul Hikmah,
+                    setiap hari adalah kesempatan
+                    untuk belajar, bermain,
+                    bertumbuh dan menciptakan
+                    kenangan indah.
+
+                </p>
+
+
+                <a
+                    href="contact.html"
+                    class="gl-button"
+                >
+
+                    📅 Book Visit Sekarang
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="au-footer">
+
+    <div class="au-container">
+
+
+        <div class="au-footer-grid">
+
+
+            <div>
+
+                <h3>
+
+                    RA Miftahul
+
+                    <span>
+                        Hikmah
+                    </span>
+
+                </h3>
+
+
+                <p>
+
+                    Tempat belajar,
+                    bermain dan bertumbuh
+                    dengan bahagia.
+
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+
+                    Menu
+
+                </h3>
+
+
+                <p>
+
+                    Home
+
+                </p>
+
+
+                <p>
+
+                    About
+
+                </p>
+
+
+                <p>
+
+                    Programs
+
+                </p>
+
+
+                <p>
+
+                    Gallery
+
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+
+                    Hubungi Kami
+
+                </h3>
+
+
+                <p>
+
+                    📞 WhatsApp
+
+                </p>
+
+
+                <p>
+
+                    ✉️ Email Sekolah
+
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+
+        <div class="au-copyright">
+
+            © 2026 RA Miftahul Hikmah
+            • All Rights Reserved
+
+        </div>
+
+
+    </div>
+
+</footer>
+
+
+<!-- =====================================================
+     LIGHTBOX
+===================================================== -->
+
+<div
+    class="gallery-lightbox"
+    id="galleryLightbox"
+>
+
+
+    <div class="cloud-lightbox-box">
+
+
+        <!-- CLOSE -->
+
+        <button
+            type="button"
+            class="gallery-close"
+            id="galleryClose"
+            aria-label="Tutup"
+        >
+
+            ×
+
+        </button>
+
+
+        <!-- PREVIOUS -->
+
+        <button
+            type="button"
+            class="gallery-nav-button gallery-prev"
+            id="galleryPrev"
+            aria-label="Foto sebelumnya"
+        >
+
+            ‹
+
+        </button>
+
+
+        <!-- NEXT -->
+
+        <button
+            type="button"
+            class="gallery-nav-button gallery-next"
+            id="galleryNext"
+            aria-label="Foto berikutnya"
+        >
+
+            ›
+
+        </button>
+
+
+        <!-- IMAGE -->
+
+        <div
+            class="gallery-lightbox-image-wrap"
+        >
+
+            <img
+                id="galleryLightboxImage"
+                src=""
+                alt="Foto Gallery"
+            >
+
+        </div>
+
+
+        <!-- INFO -->
+
+        <div
+            class="gallery-lightbox-info"
+        >
+
+            <h3
+                id="galleryLightboxTitle"
+            >
+
+                Momen Bahagia
+
+            </h3>
+
+
+            <p
+                id="galleryLightboxDate"
+            >
+
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+
+
+        /* =====================================================
+           MENU MORE
+        ===================================================== */
+
+        const moreButton =
+            document.getElementById(
+                "auMoreButton"
+            );
+
+
+        const moreMenu =
+            document.getElementById(
+                "auMoreMenu"
+            );
+
+
+        if (
+            moreButton &&
+            moreMenu
+        ) {
+
+
+            moreButton.addEventListener(
+                "click",
+                (event) => {
+
+
+                    event.stopPropagation();
+
+
+                    moreMenu.classList.toggle(
+                        "open"
+                    );
+
+
+                }
+            );
+
+
+            document.addEventListener(
+                "click",
+                (event) => {
+
+
+                    if (
+
+                        !moreMenu.contains(
+                            event.target
+                        )
+
+                        &&
+
+                        !moreButton.contains(
+                            event.target
+                        )
+
+                    ) {
+
+
+                        moreMenu.classList.remove(
+                            "open"
+                        );
+
+
+                    }
+
+
+                }
+            );
+
+
+        }
+
+
+        /* =====================================================
+           REVEAL ANIMATION
+        ===================================================== */
+
+        const revealItems =
+            document.querySelectorAll(
+                ".au-reveal"
+            );
+
+
+        if (
+            "IntersectionObserver"
+            in
+            window
+        ) {
+
+
+            const observer =
+                new IntersectionObserver(
+
+                    (entries) => {
+
+
+                        entries.forEach(
+
+                            (entry) => {
+
+
+                                if (
+                                    entry.isIntersecting
+                                ) {
+
+
+                                    entry.target.classList.add(
+                                        "au-show"
+                                    );
+
+
+                                    observer.unobserve(
+                                        entry.target
+                                    );
+
+
+                                }
+
+
+                            }
+
+                        );
+
+
+                    },
+
+
+                    {
+
+                        threshold:
+                            0.12,
+
+                        rootMargin:
+                            "0px 0px -35px 0px"
+
+                    }
+
+                );
+
+
+            revealItems.forEach(
+
+                (item, index) => {
+
+
+                    item.style.transitionDelay =
+                        (
+                            index % 4
+                        ) * 70
+                        + "ms";
+
+
+                    observer.observe(
+                        item
+                    );
+
+
+                }
+
+            );
+
+
+        }
+
+        else {
+
+
+            revealItems.forEach(
+
+                (item) => {
+
+
+                    item.classList.add(
+                        "au-show"
+                    );
+
+
+                }
+
+            );
+
+
+        }
+
+
+        /* =====================================================
+           SUPABASE
+        ===================================================== */
+
+        const SUPABASE_URL =
+            "https://ervhwjrlqcsobawwhkpf.supabase.co";
+
+
+        const SUPABASE_KEY =
+            "sb_publishable_u48E-Q-RjdFRFLC_Cv3rmg_gD0Z3y2K";
+
+
+        const supabaseClient =
+            window.supabase.createClient(
+                SUPABASE_URL,
+                SUPABASE_KEY
+            );
+
+
+        /* =====================================================
+           PAGE
+        ===================================================== */
+
+        const pageName =
+            "gallery";
+
+
+        /* =====================================================
+           ELEMENTS
+        ===================================================== */
+
+        const postsContainer =
+            document.getElementById(
+                "postsContainer"
+            );
+
+
+        const lightbox =
+            document.getElementById(
+                "galleryLightbox"
+            );
+
+
+        const lightboxImage =
+            document.getElementById(
+                "galleryLightboxImage"
+            );
+
+
+        const lightboxTitle =
+            document.getElementById(
+                "galleryLightboxTitle"
+            );
+
+
+        const lightboxDate =
+            document.getElementById(
+                "galleryLightboxDate"
+            );
+
+
+        const closeButton =
+            document.getElementById(
+                "galleryClose"
+            );
+
+
+        const prevButton =
+            document.getElementById(
+                "galleryPrev"
+            );
+
+
+        const nextButton =
+            document.getElementById(
+                "galleryNext"
+            );
+
+
+        let galleryPhotos = [];
+
+
+        let currentIndex = 0;
+
+
+        /* =====================================================
+           FORMAT DATE
+        ===================================================== */
+
+        function formatDate(
+            dateString
+        ) {
+
+
+            if (
+                !dateString
+            ) {
+
+                return "";
+
+            }
+
+
+            const date =
+                new Date(
+                    dateString
+                );
+
+
+            if (
+                Number.isNaN(
+                    date.getTime()
+                )
+            ) {
+
+                return "";
+
+            }
+
+
+            return date.toLocaleDateString(
+
+                "id-ID",
+
+                {
+
+                    day:
+                        "numeric",
+
+                    month:
+                        "long",
+
+                    year:
+                        "numeric"
+
+                }
+
+            );
+
+
+        }
+
+
+        /* =====================================================
+           ESCAPE HTML
+        ===================================================== */
+
+        function escapeHTML(
+            value
+        ) {
+
+
+            return String(
+                value || ""
+            )
+
+            .replace(
+                /&/g,
+                "&amp;"
+            )
+
+            .replace(
+                /</g,
+                "&lt;"
+            )
+
+            .replace(
+                />/g,
+                "&gt;"
+            )
+
+            .replace(
+                /"/g,
+                "&quot;"
+            )
+
+            .replace(
+                /'/g,
+                "&#039;"
+            );
+
+
+        }
+
+
+        /* =====================================================
+           LOAD GALLERY
+        ===================================================== */
+
+        async function loadPosts() {
+
+
+            if (
+                !postsContainer
+            ) {
+
+                return;
+
+            }
+
+
+            postsContainer.innerHTML = `
+
+                <div class="cloud-loading">
+
+                    <div class="cloud-loading-icon">
+
+                        ☁️
+
+                    </div>
+
+                    <strong>
+
+                        Sedang mengambil kenangan...
+
+                    </strong>
+
+                </div>
+
+            `;
+
+
+            let query =
+                supabaseClient
+
+                .from(
+                    "posts"
+                )
+
+                .select(
+                    `
+                    id,
+                    title,
+                    content,
+                    image_url,
+                    page_name,
+                    created_at
+                    `
+                )
+
+                .eq(
+                    "page_name",
+                    pageName
+                )
+
+                .not(
+                    "image_url",
+                    "is",
+                    null
+                )
+
+                .order(
+                    "created_at",
+                    {
+
+                        ascending:
+                            false
+
+                    }
+                );
+
+
+            const {
+                data,
+                error
+            } = await query;
+
+
+            /* =============================================
+               ERROR
+            ============================================== */
+
+            if (
+                error
+            ) {
+
+
+                console.error(
+                    "Gagal mengambil postingan:",
+                    error
+                );
+
+
+                postsContainer.innerHTML = `
+
+                    <div class="cloud-empty">
+
+                        <div class="cloud-empty-icon">
+
+                            ☁️
+
+                        </div>
+
+                        <h3>
+
+                            Gallery belum dapat dimuat
+
+                        </h3>
+
+                        <p>
+
+                            Silakan refresh halaman.
+
+                        </p>
+
+                    </div>
+
+                `;
+
+
+                return;
+
+            }
+
+
+            /* =============================================
+               DATA
+            ============================================== */
+
+            galleryPhotos =
+                data || [];
+
+
+            /* =============================================
+               EMPTY
+            ============================================== */
+
+            if (
+                !galleryPhotos.length
+            ) {
+
+
+                postsContainer.innerHTML = `
+
+                    <div class="cloud-empty">
+
+                        <div class="cloud-empty-icon">
+
+                            📸
+
+                        </div>
+
+                        <h3>
+
+                            Belum ada kenangan
+
+                        </h3>
+
+                        <p>
+
+                            Foto kegiatan sekolah
+                            akan muncul di sini.
+
+                        </p>
+
+                    </div>
+
+                `;
+
+
+                return;
+
+            }
+
+
+            /* =============================================
+               RENDER
+            ============================================== */
+
+            renderGallery();
+
+
+        }
+
+
+        /* =====================================================
+           RENDER GALLERY
+        ===================================================== */
+
+        function renderGallery() {
+
+
+            postsContainer.innerHTML =
+                "";
+
+
+            const grid =
+                document.createElement(
+                    "div"
+                );
+
+
+            grid.className =
+                "cloud-photo-grid";
+
+
+            galleryPhotos.forEach(
+
+                (
+                    photo,
+                    index
+                ) => {
+
+
+                    const card =
+                        document.createElement(
+                            "article"
+                        );
+
+
+                    card.className =
+                        "cloud-photo-card";
+
+
+                    card.style.animationDelay =
+                        (
+                            index % 8
+                        ) * 80
+                        + "ms";
+
+
+                    card.innerHTML = `
+
+                        <div
+                            class="cloud-photo-pin"
+                        ></div>
+
+
+                        <div
+                            class="cloud-photo-image"
+                        >
+
+                            <img
+
+                                src="${escapeHTML(
+                                    photo.image_url
+                                )}"
+
+                                alt="${escapeHTML(
+                                    photo.title ||
+                                    "Foto kegiatan RA Miftahul Hikmah"
+                                )}"
+
+                                loading="lazy"
+
+                            >
+
+
+                            <div
+                                class="cloud-photo-shine"
+                            ></div>
+
+
+                        </div>
+
+
+                        <div
+                            class="cloud-photo-info"
+                        >
+
+                            <h3>
+
+                                ${escapeHTML(
+
+                                    photo.title ||
+
+                                    "Momen Bahagia"
+
+                                )}
+
+                            </h3>
+
+
+                            <span>
+
+                                ${formatDate(
+                                    photo.created_at
+                                )}
+
+                            </span>
+
+
+                        </div>
+
+                    `;
+
+
+                    card.addEventListener(
+
+                        "click",
+
+                        () => {
+
+
+                            openLightbox(
+                                index
+                            );
+
+
+                        }
+
+                    );
+
+
+                    grid.appendChild(
+                        card
+                    );
+
+
+                }
+
+            );
+
+
+            postsContainer.appendChild(
+                grid
+            );
+
+
+        }
+
+
+        /* =====================================================
+           OPEN LIGHTBOX
+        ===================================================== */
+
+        function openLightbox(
+            index
+        ) {
+
+
+            if (
+                !galleryPhotos.length
+            ) {
+
+                return;
+
+            }
+
+
+            if (
+                !lightbox
+            ) {
+
+                return;
+
+            }
+
+
+            currentIndex =
+                index;
+
+
+            updateLightbox();
+
+
+            lightbox.classList.add(
+                "active"
+            );
+
+
+            document.body.classList.add(
+                "cloud-lightbox-open"
+            );
+
+
+        }
+
+
+        /* =====================================================
+           UPDATE LIGHTBOX
+        ===================================================== */
+
+        function updateLightbox() {
+
+
+            const photo =
+                galleryPhotos[
+                    currentIndex
+                ];
+
+
+            if (
+                !photo
+            ) {
+
+                return;
+
+            }
+
+
+            if (
+                lightboxImage
+            ) {
+
+
+                lightboxImage.src =
+                    photo.image_url ||
+                    "";
+
+
+                lightboxImage.alt =
+                    photo.title ||
+                    "Foto Gallery";
+
+
+            }
+
+
+            if (
+                lightboxTitle
+            ) {
+
+
+                lightboxTitle.textContent =
+                    photo.title ||
+                    "Momen Bahagia";
+
+
+            }
+
+
+            if (
+                lightboxDate
+            ) {
+
+
+                lightboxDate.textContent =
+                    formatDate(
+                        photo.created_at
+                    );
+
+
+            }
+
+
+        }
+
+
+        /* =====================================================
+           CLOSE LIGHTBOX
+        ===================================================== */
+
+        function closeLightbox() {
+
+
+            if (
+                !lightbox
+            ) {
+
+                return;
+
+            }
+
+
+            lightbox.classList.remove(
+                "active"
+            );
+
+
+            document.body.classList.remove(
+                "cloud-lightbox-open"
+            );
+
+
+        }
+
+
+        /* =====================================================
+           PREVIOUS
+        ===================================================== */
+
+        function showPrevious() {
+
+
+            if (
+                !galleryPhotos.length
+            ) {
+
+                return;
+
+            }
+
+
+            currentIndex--;
+
+
+            if (
+                currentIndex < 0
+            ) {
+
+
+                currentIndex =
+                    galleryPhotos.length - 1;
+
+
+            }
+
+
+            updateLightbox();
+
+
+        }
+
+
+        /* =====================================================
+           NEXT
+        ===================================================== */
+
+        function showNext() {
+
+
+            if (
+                !galleryPhotos.length
+            ) {
+
+                return;
+
+            }
+
+
+            currentIndex++;
+
+
+            if (
+                currentIndex >=
+                galleryPhotos.length
+            ) {
+
+
+                currentIndex =
+                    0;
+
+
+            }
+
+
+            updateLightbox();
+
+
+        }
+
+
+        /* =====================================================
+           EVENTS
+        ===================================================== */
+
+        if (
+            closeButton
+        ) {
+
+
+            closeButton.addEventListener(
+                "click",
+                closeLightbox
+            );
+
+
+        }
+
+
+        if (
+            prevButton
+        ) {
+
+
+            prevButton.addEventListener(
+                "click",
+                showPrevious
+            );
+
+
+        }
+
+
+        if (
+            nextButton
+        ) {
+
+
+            nextButton.addEventListener(
+                "click",
+                showNext
+            );
+
+
+        }
+
+
+        if (
+            lightbox
+        ) {
+
+
+            lightbox.addEventListener(
+
+                "click",
+
+                (
+                    event
+                ) => {
+
+
+                    if (
+                        event.target ===
+                        lightbox
+                    ) {
+
+
+                        closeLightbox();
+
+
+                    }
+
+
+                }
+
+            );
+
+
+        }
+
+
+        /* =====================================================
+           KEYBOARD
+        ===================================================== */
+
+        document.addEventListener(
+
+            "keydown",
+
+            (
+                event
+            ) => {
+
+
+                if (
+                    !lightbox
+                ) {
+
+                    return;
+
+                }
+
+
+                if (
+
+                    !lightbox.classList.contains(
+                        "active"
+                    )
+
+                ) {
+
+                    return;
+
+                }
+
+
+                if (
+                    event.key ===
+                    "Escape"
+                ) {
+
+
+                    closeLightbox();
+
+
+                }
+
+
+                if (
+                    event.key ===
+                    "ArrowLeft"
+                ) {
+
+
+                    showPrevious();
+
+
+                }
+
+
+                if (
+                    event.key ===
+                    "ArrowRight"
+                ) {
+
+
+                    showNext();
+
+
+                }
+
+
+            }
+
+        );
+
+
+        /* =====================================================
+           REALTIME
+        ===================================================== */
+
+        supabaseClient
+
+        .channel(
+            "posts-gallery"
+        )
+
+        .on(
+
+            "postgres_changes",
+
+            {
+
+                event:
+                    "*",
+
+                schema:
+                    "public",
+
+                table:
+                    "posts"
+
+            },
+
+            (
+                payload
+            ) => {
+
+
+                const changedPage =
+
+                    payload.new?.page_name ||
+
+                    payload.old?.page_name;
+
+
+                if (
+
+                    !changedPage ||
+
+                    changedPage ===
+                    "gallery"
+
+                ) {
+
+
+                    loadPosts();
+
+
+                }
+
+
+            }
+
+        )
+
+        .subscribe();
+
+
+        /* =====================================================
+           START
+        ===================================================== */
+
+        loadPosts();
+
+
+    }
+
+);
+
+</script>
 
 
 </body>
