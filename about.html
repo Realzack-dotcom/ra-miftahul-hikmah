@@ -1195,7 +1195,418 @@
 
 
 }
+/* =====================================================
+   ABOUT US - ANIMATED BACKGROUND KHUSUS HP
+   AMAN - TIDAK MENGUBAH SUSUNAN LAYOUT
+===================================================== */
 
+@media (max-width: 768px) {
+
+    /* BACKGROUND UTAMA */
+
+    body[data-page="about"] {
+        position: relative;
+        overflow-x: hidden;
+
+        background:
+            linear-gradient(
+                120deg,
+                #fff5fa,
+                #f4f8ff,
+                #fff9e8,
+                #f7f0ff
+            );
+
+        background-size: 400% 400%;
+
+        animation: aboutGradient 12s ease infinite;
+    }
+
+
+    /* ANIMASI WARNA BACKGROUND */
+
+    @keyframes aboutGradient {
+
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+
+    }
+
+
+    /* EFEK BULAT MELAYANG */
+
+    body[data-page="about"]::before {
+
+        content: "";
+
+        position: fixed;
+
+        width: 220px;
+        height: 220px;
+
+        border-radius: 50%;
+
+        background:
+            radial-gradient(
+                circle,
+                rgba(255, 137, 185, 0.28),
+                rgba(255, 137, 185, 0)
+            );
+
+        top: 15%;
+        left: -100px;
+
+        pointer-events: none;
+
+        z-index: 0;
+
+        animation: aboutFloatOne 8s ease-in-out infinite;
+
+    }
+
+
+    body[data-page="about"]::after {
+
+        content: "";
+
+        position: fixed;
+
+        width: 280px;
+        height: 280px;
+
+        border-radius: 50%;
+
+        background:
+            radial-gradient(
+                circle,
+                rgba(108, 190, 255, 0.25),
+                rgba(108, 190, 255, 0)
+            );
+
+        bottom: 5%;
+        right: -130px;
+
+        pointer-events: none;
+
+        z-index: 0;
+
+        animation: aboutFloatTwo 10s ease-in-out infinite;
+
+    }
+
+
+    /* ANIMASI BULAT 1 */
+
+    @keyframes aboutFloatOne {
+
+        0% {
+            transform: translate(0, 0) scale(1);
+        }
+
+        50% {
+            transform: translate(60px, 80px) scale(1.2);
+        }
+
+        100% {
+            transform: translate(0, 0) scale(1);
+        }
+
+    }
+
+
+    /* ANIMASI BULAT 2 */
+
+    @keyframes aboutFloatTwo {
+
+        0% {
+            transform: translate(0, 0) scale(1);
+        }
+
+        50% {
+            transform: translate(-60px, -100px) scale(1.15);
+        }
+
+        100% {
+            transform: translate(0, 0) scale(1);
+        }
+
+    }
+
+
+    /* PASTIKAN SEMUA ISI TETAP DI ATAS BACKGROUND */
+
+    body[data-page="about"] .top,
+    body[data-page="about"] .pagehero,
+    body[data-page="about"] .section,
+    body[data-page="about"] .footer {
+
+        position: relative;
+
+        z-index: 1;
+
+    }
+
+
+    /* HERO LEBIH MENARIK */
+
+    body[data-page="about"] .pagehero {
+
+        position: relative;
+
+        overflow: hidden;
+
+    }
+
+
+    /* EFEK CAHAYA DI HERO */
+
+    body[data-page="about"] .pagehero::after {
+
+        content: "✨";
+
+        position: absolute;
+
+        font-size: 45px;
+
+        right: 10%;
+
+        top: 15%;
+
+        opacity: 0.7;
+
+        animation: sparkleAbout 3s ease-in-out infinite;
+
+        pointer-events: none;
+
+    }
+
+
+    @keyframes sparkleAbout {
+
+        0% {
+            transform: scale(0.8) rotate(0deg);
+            opacity: 0.4;
+        }
+
+        50% {
+            transform: scale(1.3) rotate(20deg);
+            opacity: 1;
+        }
+
+        100% {
+            transform: scale(0.8) rotate(0deg);
+            opacity: 0.4;
+        }
+
+    }
+
+
+    /* ANIMASI JUDUL HERO */
+
+    body[data-page="about"] .pagehero h2 {
+
+        animation: aboutTitle 1s ease both;
+
+    }
+
+
+    @keyframes aboutTitle {
+
+        from {
+
+            opacity: 0;
+
+            transform:
+                translateY(30px)
+                scale(0.9);
+
+        }
+
+        to {
+
+            opacity: 1;
+
+            transform:
+                translateY(0)
+                scale(1);
+
+        }
+
+    }
+
+
+    /* ANIMASI GAMBAR WELCOME */
+
+    body[data-page="about"] .welcome-img {
+
+        animation:
+            aboutImageFloat
+            5s
+            ease-in-out
+            infinite;
+
+        box-shadow:
+            0 15px 35px
+            rgba(90, 60, 120, 0.12);
+
+    }
+
+
+    @keyframes aboutImageFloat {
+
+        0% {
+
+            transform:
+                translateY(0);
+
+        }
+
+        50% {
+
+            transform:
+                translateY(-8px);
+
+        }
+
+        100% {
+
+            transform:
+                translateY(0);
+
+        }
+
+    }
+
+
+    /* CARD VALUES LEBIH HIDUP */
+
+    body[data-page="about"] .feature {
+
+        transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+
+        box-shadow:
+            0 8px 25px
+            rgba(100, 70, 130, 0.08);
+
+    }
+
+
+    body[data-page="about"] .feature:active {
+
+        transform:
+            scale(0.97);
+
+    }
+
+
+    /* EMOJI VALUE BERGERAK */
+
+    body[data-page="about"] .feature .big {
+
+        display: inline-block;
+
+        animation:
+            aboutEmoji
+            3s
+            ease-in-out
+            infinite;
+
+    }
+
+
+    @keyframes aboutEmoji {
+
+        0% {
+
+            transform:
+                translateY(0)
+                rotate(0deg);
+
+        }
+
+        50% {
+
+            transform:
+                translateY(-7px)
+                rotate(5deg);
+
+        }
+
+        100% {
+
+            transform:
+                translateY(0)
+                rotate(0deg);
+
+        }
+
+    }
+
+
+    /* CTA BOX EFEK NAIK TURUN */
+
+    body[data-page="about"] .box {
+
+        box-shadow:
+            0 15px 40px
+            rgba(100, 70, 130, 0.12);
+
+    }
+
+
+    body[data-page="about"] .box .big {
+
+        display: inline-block;
+
+        animation:
+            rainbowBounce
+            3s
+            ease-in-out
+            infinite;
+
+    }
+
+
+    @keyframes rainbowBounce {
+
+        0% {
+
+            transform:
+                translateY(0)
+                rotate(-3deg);
+
+        }
+
+        50% {
+
+            transform:
+                translateY(-10px)
+                rotate(5deg);
+
+        }
+
+        100% {
+
+            transform:
+                translateY(0)
+                rotate(-3deg);
+
+        }
+
+    }
+
+}
 </style>
 </head>
 
