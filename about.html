@@ -19,54 +19,29 @@
 <style>
 
 /* =====================================================
-   ABOUT US PREMIUM MOBILE DESIGN
-   KHUSUS HALAMAN ABOUT
-   Tidak mengubah halaman lain
+   ABOUT US KHUSUS MOBILE
+   HANYA BERLAKU DI about.html
 ===================================================== */
 
+body[data-page="about"] {
+    overflow-x: hidden;
+}
 
-/* ================= ANIMATION ================= */
+
+/* =====================================================
+   ANIMASI
+===================================================== */
 
 @keyframes aboutFadeUp {
 
     from {
         opacity: 0;
-        transform: translateY(35px);
+        transform: translateY(40px);
     }
 
     to {
         opacity: 1;
         transform: translateY(0);
-    }
-
-}
-
-
-@keyframes aboutFadeLeft {
-
-    from {
-        opacity: 0;
-        transform: translateX(-35px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-
-}
-
-
-@keyframes aboutFadeRight {
-
-    from {
-        opacity: 0;
-        transform: translateX(35px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
     }
 
 }
@@ -80,44 +55,7 @@
     }
 
     50% {
-        transform: translateY(-10px);
-    }
-
-}
-
-
-@keyframes aboutGlow {
-
-    0% {
-        box-shadow:
-            0 0 0 rgba(239,79,130,0);
-    }
-
-    50% {
-        box-shadow:
-            0 15px 35px rgba(239,79,130,.18);
-    }
-
-    100% {
-        box-shadow:
-            0 0 0 rgba(239,79,130,0);
-    }
-
-}
-
-
-@keyframes aboutGradient {
-
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
+        transform: translateY(-12px);
     }
 
 }
@@ -130,7 +68,7 @@
     }
 
     50% {
-        transform: scale(1.06);
+        transform: scale(1.04);
     }
 
     100% {
@@ -140,222 +78,200 @@
 }
 
 
-@keyframes aboutSparkle {
+@keyframes aboutGlow {
 
     0% {
-        opacity: .3;
-        transform: translateY(0) rotate(0deg);
+        box-shadow:
+            0 10px 30px rgba(239,79,130,.12);
     }
 
     50% {
-        opacity: 1;
+        box-shadow:
+            0 18px 45px rgba(239,79,130,.28);
     }
 
     100% {
-        opacity: .3;
-        transform: translateY(-12px) rotate(20deg);
+        box-shadow:
+            0 10px 30px rgba(239,79,130,.12);
     }
 
 }
 
 
-
 /* =====================================================
-   MOBILE
+   TABLET & HP
 ===================================================== */
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
 
 
-    /* ================= BODY ================= */
+    /* =================================================
+       HEADER
+    ================================================= */
 
-    body[data-page="about"] {
+    body[data-page="about"] .head {
 
-        overflow-x: hidden;
+        padding: 14px 15px !important;
 
-        background:
+        gap: 10px !important;
 
-            radial-gradient(
-                circle at top left,
-                rgba(255,221,238,.6),
-                transparent 35%
-            ),
+        width: 100% !important;
 
-            radial-gradient(
-                circle at bottom right,
-                rgba(220,240,255,.7),
-                transparent 40%
-            );
+        box-sizing: border-box !important;
 
     }
 
 
-    /* ================= HEADER ================= */
+    body[data-page="about"] .brand {
 
-    body[data-page="about"] .head {
+        min-width: 0 !important;
 
-        padding: 14px 16px;
-
-        gap: 10px;
+        gap: 8px !important;
 
     }
 
 
     body[data-page="about"] .brand h1 {
 
-        font-size: 20px;
+        font-size: 18px !important;
 
-        line-height: 1.05;
+        line-height: 1.05 !important;
 
     }
 
 
     body[data-page="about"] .brand p {
 
-        font-size: 11px;
+        font-size: 11px !important;
 
     }
 
 
     body[data-page="about"] .sun {
 
-        font-size: 29px;
+        font-size: 27px !important;
 
         animation:
-            aboutFloat
-            3s
-            ease-in-out
-            infinite;
+            aboutFloat 3s ease-in-out infinite !important;
 
     }
 
 
     body[data-page="about"] .call {
 
-        display: none;
+        display: none !important;
 
     }
 
 
     body[data-page="about"] .head > .btn {
 
-        font-size: 11px;
-
         padding:
-            9px
-            12px;
+            9px 12px !important;
 
-        border-radius: 12px;
+        font-size:
+            11px !important;
 
-        white-space: nowrap;
+        white-space:
+            nowrap !important;
+
+        border-radius:
+            12px !important;
 
     }
 
 
-
-    /* ================= NAVBAR ================= */
+    /* =================================================
+       NAVBAR MOBILE
+    ================================================= */
 
     body[data-page="about"] .rainbow-nav {
 
-        overflow-x: auto;
+        display:
+            flex !important;
 
-        overflow-y: hidden;
+        justify-content:
+            flex-start !important;
 
-        -webkit-overflow-scrolling: touch;
+        overflow-x:
+            auto !important;
 
-        scrollbar-width: none;
+        overflow-y:
+            hidden !important;
 
-        justify-content: flex-start;
+        width:
+            100% !important;
 
-        padding-bottom: 2px;
+        -webkit-overflow-scrolling:
+            touch !important;
+
+        scrollbar-width:
+            none !important;
+
+        padding:
+            5px 0 !important;
 
     }
 
 
     body[data-page="about"] .rainbow-nav::-webkit-scrollbar {
 
-        display: none;
+        display:
+            none !important;
 
     }
 
 
     body[data-page="about"] .rainbow-item {
 
-        flex: 0 0 auto;
+        flex:
+            0 0 82px !important;
 
-        min-width: 80px;
+        min-width:
+            82px !important;
 
         padding:
-            10px
-            7px;
+            10px 6px !important;
 
     }
 
 
     body[data-page="about"] .rainbow-icon {
 
-        font-size: 19px;
-
-        transition:
-            transform
-            .3s
-            ease;
-
-    }
-
-
-    body[data-page="about"] .rainbow-item:active
-    .rainbow-icon {
-
-        transform:
-            scale(1.25)
-            rotate(-8deg);
+        font-size:
+            19px !important;
 
     }
 
 
     body[data-page="about"] .rainbow-text {
 
-        font-size: 9px;
+        font-size:
+            9px !important;
 
     }
 
 
-
-    /* ================= HERO ================= */
+    /* =================================================
+       HERO ABOUT US
+    ================================================= */
 
     body[data-page="about"] .pagehero {
 
-        position: relative;
-
-        overflow: hidden;
-
         padding:
-            65px
-            18px
-            70px;
+            55px 18px !important;
 
-        text-align: center;
+        min-height:
+            auto !important;
 
-        background:
+        text-align:
+            center !important;
 
-            linear-gradient(
-                120deg,
-                #fff0f6,
-                #f1f8ff,
-                #fff9df,
-                #f3eeff
-            );
+        position:
+            relative !important;
 
-        background-size:
-            300%
-            300%;
-
-        animation:
-            aboutGradient
-            10s
-            ease
-            infinite;
+        overflow:
+            hidden !important;
 
     }
 
@@ -363,220 +279,184 @@
     body[data-page="about"] .pagehero::before {
 
         content:
-            "✦";
-
-        position: absolute;
-
-        top: 18px;
-
-        left: 10%;
-
-        font-size: 24px;
-
-        opacity: .5;
-
-        animation:
-            aboutSparkle
-            2.5s
-            ease-in-out
-            infinite
-            alternate;
-
-    }
-
-
-    body[data-page="about"] .pagehero::after {
-
-        content:
             "🌈";
 
-        position: absolute;
+        position:
+            absolute;
 
-        right: 8%;
+        font-size:
+            100px;
 
-        bottom: 12px;
+        opacity:
+            .08;
 
-        font-size: 38px;
+        top:
+            -20px;
 
-        opacity: .45;
+        right:
+            -20px;
 
         animation:
-            aboutFloat
-            4s
-            ease-in-out
-            infinite;
+            aboutFloat 5s ease-in-out infinite;
 
     }
 
 
     body[data-page="about"] .pagehero h2 {
 
-        position: relative;
-
-        z-index: 2;
-
         font-size:
-            clamp(
-                34px,
-                10vw,
-                48px
-            );
+            clamp(34px, 10vw, 48px) !important;
 
-        line-height: 1.1;
+        line-height:
+            1.1 !important;
 
-        margin-bottom: 14px;
+        margin-bottom:
+            14px !important;
 
         animation:
-
-            aboutFadeUp
-
-            .8s
-
-            ease
-
-            both;
+            aboutFadeUp .7s ease both !important;
 
     }
 
 
     body[data-page="about"] .pagehero p {
 
-        position: relative;
+        font-size:
+            15px !important;
 
-        z-index: 2;
-
-        max-width: 320px;
-
-        margin: auto;
-
-        font-size: 14px;
-
-        line-height: 1.7;
+        line-height:
+            1.7 !important;
 
         animation:
-
-            aboutFadeUp
-
-            .9s
-
-            ease
-
-            .15s
-
-            both;
+            aboutFadeUp .9s ease both !important;
 
     }
 
 
-
-    /* ================= SECTION ================= */
+    /* =================================================
+       SECTION
+    ================================================= */
 
     body[data-page="about"] .section {
 
-        position: relative;
+        padding:
+            50px 18px 20px !important;
 
-        padding-top: 55px;
+        width:
+            100% !important;
 
-        padding-bottom: 20px;
+        box-sizing:
+            border-box !important;
 
     }
 
 
-
-    /* ================= WELCOME ================= */
+    /* =================================================
+       WELCOME
+    ================================================= */
 
     body[data-page="about"] .welcome {
 
-        display: flex;
+        display:
+            flex !important;
 
-        flex-direction: column;
+        flex-direction:
+            column !important;
 
-        gap: 30px;
+        gap:
+            35px !important;
+
+        width:
+            100% !important;
 
     }
 
 
     body[data-page="about"] .welcome > div {
 
-        width: 100%;
+        width:
+            100% !important;
 
-        min-width: 0;
+        min-width:
+            0 !important;
+
+        animation:
+            aboutFadeUp .8s ease both !important;
+
+    }
+
+
+    body[data-page="about"] .welcome > div:nth-child(2) {
+
+        animation-delay:
+            .15s !important;
 
     }
 
 
     body[data-page="about"] .title {
 
-        font-size: 27px;
+        font-size:
+            28px !important;
 
-        line-height: 1.25;
+        line-height:
+            1.25 !important;
+
+        margin-bottom:
+            15px !important;
 
     }
 
+
+    /* =================================================
+       FOTO
+    ================================================= */
 
     body[data-page="about"] .welcome-img {
 
-        position: relative;
+        width:
+            100% !important;
 
-        width: 100%;
+        max-width:
+            100% !important;
 
         margin:
-            20px
-            auto
-            0;
+            20px auto 0 !important;
 
-        overflow: hidden;
+        border-radius:
+            24px !important;
 
-        border-radius: 24px;
+        overflow:
+            hidden !important;
 
-        box-shadow:
+        position:
+            relative !important;
 
-            0 15px 35px
-
-            rgba(0,0,0,.12);
-
-    }
-
-
-    body[data-page="about"] .welcome-img::after {
-
-        content:
-            "";
-
-        position: absolute;
-
-        inset: 0;
-
-        background:
-
-            linear-gradient(
-                135deg,
-                rgba(255,255,255,.25),
-                transparent
-            );
-
-        pointer-events: none;
+        animation:
+            aboutGlow 3s ease-in-out infinite !important;
 
     }
 
 
     body[data-page="about"] .welcome-img img {
 
-        display: block;
+        display:
+            block !important;
 
-        width: 100%;
+        width:
+            100% !important;
 
-        height: auto;
+        height:
+            auto !important;
 
-        max-width: 100%;
+        max-width:
+            100% !important;
+
+        object-fit:
+            cover !important;
 
         transition:
-
-            transform
-
-            .7s
-
-            ease;
+            transform .5s ease !important;
 
     }
 
@@ -584,157 +464,163 @@
     body[data-page="about"] .welcome-img:active img {
 
         transform:
-            scale(1.05);
+            scale(1.05) !important;
 
     }
 
 
+    /* =================================================
+       CERITA
+    ================================================= */
+
     body[data-page="about"] .welcome p {
 
-        font-size: 15px;
+        font-size:
+            15px !important;
 
-        line-height: 1.8;
+        line-height:
+            1.8 !important;
+
+        margin-bottom:
+            16px !important;
 
     }
 
 
     body[data-page="about"] .welcome .btn {
 
-        display: inline-flex;
+        display:
+            inline-flex !important;
 
-        align-items: center;
+        align-items:
+            center !important;
 
-        gap: 8px;
+        justify-content:
+            center !important;
 
-        margin-top: 8px;
+        margin-top:
+            8px !important;
 
-        border-radius: 14px;
-
-        transition:
-
-            transform .3s ease,
-
-            box-shadow .3s ease;
-
-    }
-
-
-    body[data-page="about"] .welcome .btn:active {
-
-        transform:
-            scale(.96);
+        animation:
+            aboutPulse 2.5s ease-in-out infinite !important;
 
     }
 
 
-
-    /* ================= SECTION TITLE ================= */
+    /* =================================================
+       SECTION TITLE
+    ================================================= */
 
     body[data-page="about"] .section-title {
 
-        padding:
-            0
-            10px;
+        width:
+            100% !important;
 
-        margin-bottom: 25px;
+        text-align:
+            center !important;
+
+        padding:
+            0 !important;
+
+        margin-bottom:
+            28px !important;
+
+        animation:
+            aboutFadeUp .7s ease both !important;
 
     }
 
 
     body[data-page="about"] .section-title h2 {
 
-        font-size: 29px;
+        font-size:
+            29px !important;
 
-        line-height: 1.2;
+        line-height:
+            1.2 !important;
 
     }
 
 
     body[data-page="about"] .section-title p {
 
-        font-size: 14px;
+        font-size:
+            14px !important;
 
-        line-height: 1.7;
+        line-height:
+            1.7 !important;
 
     }
 
 
-
-    /* ================= VALUES ================= */
+    /* =================================================
+       VALUES
+    ================================================= */
 
     body[data-page="about"] .features {
 
-        display: grid;
+        display:
+            grid !important;
 
         grid-template-columns:
-            1fr;
+            1fr !important;
 
-        gap: 16px;
+        gap:
+            18px !important;
+
+        width:
+            100% !important;
 
     }
 
 
     body[data-page="about"] .feature {
 
-        position: relative;
+        width:
+            100% !important;
 
-        width: 100%;
-
-        min-width: 0;
-
-        box-sizing: border-box;
+        min-width:
+            0 !important;
 
         padding:
+            26px 20px !important;
 
-            25px
+        box-sizing:
+            border-box !important;
 
-            20px;
+        border-radius:
+            22px !important;
 
-        overflow: hidden;
-
-        border-radius: 22px;
+        animation:
+            aboutFadeUp .8s ease both !important;
 
         transition:
-
-            transform .35s ease,
-
-            box-shadow .35s ease;
+            transform .3s ease,
+            box-shadow .3s ease !important;
 
     }
 
 
-    body[data-page="about"] .feature::before {
+    body[data-page="about"] .feature:nth-child(2) {
 
-        content:
-            "";
+        animation-delay:
+            .1s !important;
 
-        position: absolute;
+    }
 
-        top: 0;
 
-        left: 0;
+    body[data-page="about"] .feature:nth-child(3) {
 
-        width: 5px;
+        animation-delay:
+            .2s !important;
 
-        height: 100%;
+    }
 
-        border-radius:
-            5px
-            0
-            0
-            5px;
 
-        background:
+    body[data-page="about"] .feature:nth-child(4) {
 
-            linear-gradient(
-
-                #ff8fb3,
-
-                #ffd45c,
-
-                #80d6ff
-
-            );
+        animation-delay:
+            .3s !important;
 
     }
 
@@ -742,378 +628,307 @@
     body[data-page="about"] .feature:active {
 
         transform:
-
-            translateY(-5px)
-
-            scale(.99);
-
-        box-shadow:
-
-            0
-
-            15px
-
-            30px
-
-            rgba(0,0,0,.1);
+            scale(.97) !important;
 
     }
 
 
     body[data-page="about"] .feature .big {
 
-        display: inline-flex;
+        font-size:
+            45px !important;
 
-        align-items: center;
-
-        justify-content: center;
-
-        width: 64px;
-
-        height: 64px;
-
-        margin-bottom: 12px;
-
-        font-size: 35px;
-
-        border-radius: 18px;
-
-        background:
-
-            rgba(255,255,255,.65);
+        margin-bottom:
+            10px !important;
 
         animation:
-
-            aboutFloat
-
-            4s
-
-            ease-in-out
-
-            infinite;
+            aboutFloat 3s ease-in-out infinite !important;
 
     }
 
 
     body[data-page="about"] .feature h3 {
 
-        font-size: 21px;
+        font-size:
+            21px !important;
 
-        margin-bottom: 8px;
+        margin-bottom:
+            8px !important;
 
     }
 
 
     body[data-page="about"] .feature p {
 
-        font-size: 14px;
+        font-size:
+            14px !important;
 
-        line-height: 1.7;
+        line-height:
+            1.7 !important;
 
     }
 
 
-
-    /* ================= POST COUNTER ================= */
+    /* =================================================
+       POSTINGAN
+    ================================================= */
 
     body[data-page="about"] .post-counter {
 
-        display: block;
-
-        width: fit-content;
+        width:
+            fit-content !important;
 
         max-width:
-            calc(100% - 20px);
+            100% !important;
 
         margin:
-
-            0
-
-            auto
-
-            22px;
+            0 auto 22px !important;
 
         padding:
+            10px 16px !important;
 
-            10px
+        font-size:
+            13px !important;
 
-            18px;
+        box-sizing:
+            border-box !important;
 
-        border-radius: 30px;
-
-        box-sizing: border-box;
-
-        font-size: 13px;
-
-        animation:
-
-            aboutGlow
-
-            3s
-
-            ease-in-out
-
-            infinite;
+        border-radius:
+            15px !important;
 
     }
 
-
-
-    /* ================= POSTS ================= */
 
     body[data-page="about"] .posts-grid {
 
-        grid-template-columns:
-            1fr;
+        display:
+            grid !important;
 
-        gap: 18px;
+        grid-template-columns:
+            1fr !important;
+
+        gap:
+            18px !important;
+
+        width:
+            100% !important;
 
     }
 
 
-
-    /* ================= CTA ================= */
+    /* =================================================
+       CTA
+    ================================================= */
 
     body[data-page="about"] .box {
 
-        position: relative;
-
-        overflow: hidden;
+        width:
+            100% !important;
 
         padding:
+            35px 20px !important;
 
-            38px
+        box-sizing:
+            border-box !important;
 
-            20px;
+        border-radius:
+            25px !important;
 
-        border-radius: 26px;
-
-        text-align: center;
-
-    }
-
-
-    body[data-page="about"] .box::before {
-
-        content:
-            "✦ ✧ ✦";
-
-        position: absolute;
-
-        top: 15px;
-
-        right: 18px;
-
-        opacity: .25;
-
-        font-size: 18px;
-
-        letter-spacing: 8px;
+        text-align:
+            center !important;
 
         animation:
-
-            aboutSparkle
-
-            3s
-
-            ease-in-out
-
-            infinite;
+            aboutFadeUp .8s ease both,
+            aboutGlow 3s ease-in-out infinite !important;
 
     }
 
 
     body[data-page="about"] .box .big {
 
-        font-size: 48px;
+        font-size:
+            48px !important;
 
         animation:
-
-            aboutPulse
-
-            2.5s
-
-            ease-in-out
-
-            infinite;
+            aboutFloat 3s ease-in-out infinite !important;
 
     }
 
 
     body[data-page="about"] .box .title {
 
-        font-size: 29px;
+        font-size:
+            29px !important;
 
     }
 
 
     body[data-page="about"] .box p {
 
-        font-size: 14px;
+        font-size:
+            14px !important;
 
-        line-height: 1.8;
+        line-height:
+            1.8 !important;
 
     }
 
 
     body[data-page="about"] .box .btn {
 
-        display: inline-block;
+        display:
+            inline-flex !important;
 
-        max-width: 100%;
+        justify-content:
+            center !important;
 
-        padding:
+        max-width:
+            100% !important;
 
-            13px
+        box-sizing:
+            border-box !important;
 
-            22px;
-
-        box-sizing: border-box;
-
-        border-radius: 15px;
-
-        transition:
-
-            transform .3s ease;
+        animation:
+            aboutPulse 2.5s ease-in-out infinite !important;
 
     }
 
 
-    body[data-page="about"] .box .btn:active {
-
-        transform:
-
-            scale(.95);
-
-    }
-
-
-
-    /* ================= FOOTER ================= */
-
-    body[data-page="about"] .footgrid {
-
-        grid-template-columns:
-            1fr;
-
-        gap: 28px;
-
-        text-align: center;
-
-    }
-
+    /* =================================================
+       FOOTER
+    ================================================= */
 
     body[data-page="about"] .footer {
 
-        margin-top: 40px;
+        padding-top:
+            45px !important;
 
-        padding-top: 42px;
+        margin-top:
+            30px !important;
+
+    }
+
+
+    body[data-page="about"] .footgrid {
+
+        display:
+            grid !important;
+
+        grid-template-columns:
+            1fr !important;
+
+        gap:
+            30px !important;
+
+        text-align:
+            center !important;
+
+    }
+
+
+    body[data-page="about"] .footgrid h3 {
+
+        font-size:
+            20px !important;
+
+    }
+
+
+    body[data-page="about"] .footgrid p {
+
+        font-size:
+            14px !important;
+
+    }
+
+
+    body[data-page="about"] .footgrid a {
+
+        display:
+            block !important;
+
+        margin:
+            8px 0 !important;
+
+        font-size:
+            14px !important;
 
     }
 
 
     body[data-page="about"] .copy {
 
-        text-align: center;
+        text-align:
+            center !important;
 
-        font-size: 12px;
+        font-size:
+            12px !important;
 
         padding:
-
-            18px
-
-            15px;
+            20px 15px !important;
 
     }
-
-
-
-    /* =====================================================
-       SCROLL ANIMATION
-    ===================================================== */
-
-    body[data-page="about"] .reveal {
-
-        opacity: 0;
-
-        transform:
-
-            translateY(35px);
-
-        transition:
-
-            opacity .8s ease,
-
-            transform .8s ease;
-
-    }
-
-
-    body[data-page="about"] .reveal.show {
-
-        opacity: 1;
-
-        transform:
-
-            translateY(0);
-
-    }
-
 
 }
-
 
 
 /* =====================================================
    HP KECIL
 ===================================================== */
 
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
 
 
     body[data-page="about"] .head {
 
-        padding: 12px;
+        padding:
+            11px !important;
 
     }
 
 
     body[data-page="about"] .brand h1 {
 
-        font-size: 18px;
+        font-size:
+            16px !important;
+
+    }
+
+
+    body[data-page="about"] .brand p {
+
+        font-size:
+            10px !important;
 
     }
 
 
     body[data-page="about"] .sun {
 
-        font-size: 25px;
+        font-size:
+            24px !important;
 
     }
 
 
     body[data-page="about"] .head > .btn {
 
-        font-size: 10px;
-
         padding:
+            8px 9px !important;
 
-            8px
-
-            10px;
+        font-size:
+            10px !important;
 
     }
 
 
     body[data-page="about"] .rainbow-item {
 
-        min-width: 75px;
+        flex:
+            0 0 74px !important;
 
-        padding:
-
-            9px
-
-            6px;
+        min-width:
+            74px !important;
 
     }
 
@@ -1121,42 +936,47 @@
     body[data-page="about"] .pagehero {
 
         padding:
-
-            55px
-
-            15px
-
-            60px;
+            45px 15px !important;
 
     }
 
 
     body[data-page="about"] .pagehero h2 {
 
-        font-size: 34px;
+        font-size:
+            34px !important;
 
     }
 
 
     body[data-page="about"] .section {
 
-        padding-left: 15px;
-
-        padding-right: 15px;
+        padding:
+            40px 15px 15px !important;
 
     }
 
 
     body[data-page="about"] .title {
 
-        font-size: 25px;
+        font-size:
+            25px !important;
+
+    }
+
+
+    body[data-page="about"] .welcome {
+
+        gap:
+            28px !important;
 
     }
 
 
     body[data-page="about"] .welcome-img {
 
-        border-radius: 20px;
+        border-radius:
+            20px !important;
 
     }
 
@@ -1164,21 +984,15 @@
     body[data-page="about"] .feature {
 
         padding:
-
-            22px
-
-            17px;
+            23px 17px !important;
 
     }
 
 
-    body[data-page="about"] .feature .big {
+    body[data-page="about"] .section-title h2 {
 
-        width: 58px;
-
-        height: 58px;
-
-        font-size: 31px;
+        font-size:
+            26px !important;
 
     }
 
@@ -1186,13 +1000,9 @@
     body[data-page="about"] .box {
 
         padding:
-
-            32px
-
-            17px;
+            30px 17px !important;
 
     }
-
 
 }
 
