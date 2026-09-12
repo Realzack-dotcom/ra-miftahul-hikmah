@@ -3675,7 +3675,1053 @@ body {
     }
 
 }
+/* =====================================================
+   MOBILE FIX TOTAL
+   KHUSUS HP
+===================================================== */
 
+@media screen and (max-width: 768px) {
+
+    /* BODY */
+
+    body {
+        width: 100%;
+        min-width: 0;
+    }
+
+
+    .au-container {
+        width: calc(100% - 24px);
+    }
+
+
+    /* =================================================
+       HEADER
+    ================================================= */
+
+    .au-header-inner {
+
+        min-height: 64px;
+
+        gap: 8px;
+
+    }
+
+
+    .au-logo {
+
+        width: 40px;
+
+        height: 40px;
+
+        border-radius: 13px;
+
+        font-size: 20px;
+
+    }
+
+
+    .au-brand {
+
+        gap: 8px;
+
+        min-width: 0;
+
+    }
+
+
+    .au-brand h1 {
+
+        font-size: 14px;
+
+        line-height: 1;
+
+        white-space: nowrap;
+
+    }
+
+
+    .au-brand p {
+
+        display: none;
+
+    }
+
+
+    .au-visit {
+
+        padding: 9px 10px;
+
+        border-radius: 11px;
+
+        font-size: 9px;
+
+        white-space: nowrap;
+
+    }
+
+
+    /* =================================================
+       NAVBAR MOBILE
+    ================================================= */
+
+    .au-nav {
+
+        position: sticky;
+
+        top: 0;
+
+        z-index: 999;
+
+    }
+
+
+    .au-nav-inner {
+
+        width: 100%;
+
+        padding: 7px 10px;
+
+        gap: 5px;
+
+        justify-content: flex-start;
+
+        overflow-x: auto;
+
+        scroll-snap-type: x proximity;
+
+    }
+
+
+    .au-nav-link {
+
+        min-width: 58px;
+
+        padding: 7px 8px;
+
+        border-radius: 12px;
+
+        font-size: 8px;
+
+        scroll-snap-align: start;
+
+    }
+
+
+    .au-nav-icon {
+
+        font-size: 17px;
+
+    }
+
+
+    .au-more-button {
+
+        min-width: 60px;
+
+        padding: 7px 8px;
+
+        border-radius: 12px;
+
+        font-size: 8px;
+
+    }
+
+
+    .au-more-button span {
+
+        font-size: 16px;
+
+    }
+
+
+    /* =================================================
+       DROPDOWN
+    ================================================= */
+
+    .au-more-menu {
+
+        position: fixed;
+
+        top: 122px;
+
+        left: 10px;
+
+        right: 10px;
+
+        border-radius: 18px;
+
+        max-height: calc(100vh - 140px);
+
+        overflow-y: auto;
+
+        z-index: 9999;
+
+    }
+
+
+    .au-more-title {
+
+        padding: 14px 15px;
+
+        font-size: 13px;
+
+    }
+
+
+    .au-more-menu a {
+
+        padding: 13px 15px;
+
+        font-size: 13px;
+
+    }
+
+
+    /* =================================================
+       HERO MOBILE
+    ================================================= */
+
+    .reg-hero {
+
+        padding: 45px 0 40px;
+
+    }
+
+
+    .reg-hero::before {
+
+        font-size: 34px;
+
+        top: 10px;
+
+        left: 3%;
+
+    }
+
+
+    .reg-hero::after {
+
+        font-size: 38px;
+
+        right: 3%;
+
+        bottom: 5px;
+
+    }
+
+
+    .reg-badge {
+
+        padding: 7px 12px;
+
+        font-size: 8px;
+
+        gap: 5px;
+
+    }
+
+
+    .reg-hero h2 {
+
+        margin-top: 13px;
+
+        font-size: 38px !important;
+
+        line-height: 1;
+
+    }
+
+
+    .reg-hero p {
+
+        margin-top: 14px;
+
+        padding: 0 5px;
+
+        font-size: 12px;
+
+        line-height: 1.7;
+
+    }
+
+
+    /* =================================================
+       INFO CARD
+    ================================================= */
+
+    .info-section {
+
+        padding: 5px 0 35px;
+
+    }
+
+
+    .info-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 10px;
+
+    }
+
+
+    .info-card {
+
+        padding: 16px 9px;
+
+        border-radius: 18px;
+
+    }
+
+
+    .info-card span {
+
+        margin-bottom: 6px;
+
+        font-size: 26px;
+
+    }
+
+
+    .info-card b {
+
+        font-size: 10px;
+
+    }
+
+
+    .info-card small {
+
+        margin-top: 4px;
+
+        font-size: 8px;
+
+        line-height: 1.4;
+
+    }
+
+
+    /* =================================================
+       SECTION
+    ================================================= */
+
+    .reg-section {
+
+        padding: 25px 0 40px;
+
+    }
+
+
+    .section-heading {
+
+        margin-bottom: 20px;
+
+    }
+
+
+    .section-badge {
+
+        padding: 6px 11px;
+
+        font-size: 8px;
+
+    }
+
+
+    .section-heading h2 {
+
+        margin: 8px 0;
+
+        font-size: 28px;
+
+        line-height: 1.05;
+
+    }
+
+
+    .section-heading p {
+
+        padding: 0 4px;
+
+        font-size: 11px;
+
+        line-height: 1.65;
+
+    }
+
+
+    /* =================================================
+       LAYOUT
+    ================================================= */
+
+    .registration-layout {
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 16px;
+
+    }
+
+
+    .registration-form {
+
+        width: 100%;
+
+        padding: 13px;
+
+        border-radius: 20px;
+
+    }
+
+
+    /* =================================================
+       FORM TITLE
+    ================================================= */
+
+    .form-title {
+
+        gap: 9px;
+
+        margin-bottom: 16px;
+
+    }
+
+
+    .form-title-icon {
+
+        width: 43px;
+
+        height: 43px;
+
+        border-radius: 14px;
+
+        font-size: 21px;
+
+    }
+
+
+    .form-title h3 {
+
+        font-size: 18px;
+
+        line-height: 1;
+
+    }
+
+
+    .form-title p {
+
+        margin-top: 3px;
+
+        font-size: 9px;
+
+    }
+
+
+    /* =================================================
+       FORM STEP
+    ================================================= */
+
+    .form-step {
+
+        padding: 12px;
+
+        margin-bottom: 12px;
+
+        border-radius: 16px;
+
+    }
+
+
+    .step-heading {
+
+        gap: 8px;
+
+        margin-bottom: 13px;
+
+    }
+
+
+    .step-number {
+
+        width: 29px;
+
+        height: 29px;
+
+        border-radius: 9px;
+
+        font-size: 9px;
+
+    }
+
+
+    .step-heading h4 {
+
+        font-size: 11px;
+
+        line-height: 1.3;
+
+    }
+
+
+    /* =================================================
+       FORM GRID
+    ================================================= */
+
+    .form-grid {
+
+        gap: 10px;
+
+    }
+
+
+    .form-grid.two {
+
+        grid-template-columns: 1fr !important;
+
+    }
+
+
+    .form-group {
+
+        gap: 5px;
+
+    }
+
+
+    .form-group label {
+
+        font-size: 10px;
+
+    }
+
+
+    .form-group input,
+
+    .form-group select,
+
+    .form-group textarea {
+
+        padding: 11px 11px;
+
+        border-radius: 11px;
+
+        font-size: 11px;
+
+    }
+
+
+    .form-group textarea {
+
+        min-height: 85px;
+
+    }
+
+
+    /* =================================================
+       GENDER
+    ================================================= */
+
+    .gender-options {
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 7px;
+
+    }
+
+
+    .gender-box {
+
+        padding: 11px 5px;
+
+        border-radius: 11px;
+
+        font-size: 10px;
+
+        white-space: nowrap;
+
+    }
+
+
+    /* =================================================
+       AGREEMENT
+    ================================================= */
+
+    .agreement {
+
+        gap: 8px;
+
+        padding: 11px;
+
+        border-radius: 13px;
+
+        font-size: 9px;
+
+        line-height: 1.55;
+
+    }
+
+
+    .agreement input {
+
+        width: 16px;
+
+        height: 16px;
+
+    }
+
+
+    /* =================================================
+       BUTTON
+    ================================================= */
+
+    .submit-button {
+
+        margin-top: 13px;
+
+        padding: 14px 15px;
+
+        border-radius: 14px;
+
+        font-size: 11px;
+
+    }
+
+
+    /* =================================================
+       SUCCESS
+    ================================================= */
+
+    .form-success {
+
+        margin-top: 13px;
+
+        padding: 14px;
+
+        border-radius: 14px;
+
+    }
+
+
+    .form-success span {
+
+        font-size: 28px;
+
+    }
+
+
+    .form-success b {
+
+        font-size: 12px;
+
+    }
+
+
+    .form-success p {
+
+        font-size: 9px;
+
+    }
+
+
+    /* =================================================
+       SIDEBAR
+    ================================================= */
+
+    .registration-side {
+
+        gap: 12px;
+
+    }
+
+
+    .side-card {
+
+        padding: 16px;
+
+        border-radius: 19px;
+
+    }
+
+
+    .side-card h3 {
+
+        margin-bottom: 9px;
+
+        font-size: 18px;
+
+    }
+
+
+    .side-card p {
+
+        font-size: 10px;
+
+        line-height: 1.6;
+
+    }
+
+
+    /* =================================================
+       SIDE STEPS
+    ================================================= */
+
+    .side-steps {
+
+        gap: 8px;
+
+        margin-top: 12px;
+
+    }
+
+
+    .side-step {
+
+        grid-template-columns: 37px 1fr;
+
+        gap: 9px;
+
+        padding: 9px;
+
+        border-radius: 13px;
+
+    }
+
+
+    .side-step-icon {
+
+        width: 37px;
+
+        height: 37px;
+
+        border-radius: 11px;
+
+        font-size: 16px;
+
+    }
+
+
+    .side-step b {
+
+        font-size: 10px;
+
+    }
+
+
+    .side-step small {
+
+        margin-top: 2px;
+
+        font-size: 8px;
+
+    }
+
+
+    /* =================================================
+       REQUIREMENTS
+    ================================================= */
+
+    .requirement-list {
+
+        gap: 7px;
+
+        margin-top: 11px;
+
+    }
+
+
+    .requirement-item {
+
+        gap: 8px;
+
+        padding: 9px;
+
+        border-radius: 12px;
+
+    }
+
+
+    .requirement-item span {
+
+        font-size: 15px;
+
+    }
+
+
+    .requirement-item div {
+
+        font-size: 9px;
+
+        line-height: 1.45;
+
+    }
+
+
+    /* =================================================
+       HELP BUTTON
+    ================================================= */
+
+    .help-button {
+
+        margin-top: 12px;
+
+        padding: 10px 13px;
+
+        border-radius: 12px;
+
+        font-size: 10px;
+
+    }
+
+
+    /* =================================================
+       BENEFITS
+    ================================================= */
+
+    .benefit-section {
+
+        padding: 15px 0 40px;
+
+    }
+
+
+    .benefit-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 10px;
+
+    }
+
+
+    .benefit-card {
+
+        padding: 16px 9px;
+
+        border-radius: 18px;
+
+    }
+
+
+    .benefit-card span {
+
+        margin-bottom: 6px;
+
+        font-size: 27px;
+
+    }
+
+
+    .benefit-card b {
+
+        font-size: 10px;
+
+    }
+
+
+    .benefit-card small {
+
+        margin-top: 4px;
+
+        font-size: 8px;
+
+        line-height: 1.4;
+
+    }
+
+
+    /* =================================================
+       FOOTER
+    ================================================= */
+
+    .au-footer {
+
+        padding-top: 30px;
+
+    }
+
+
+    .au-footer-grid {
+
+        gap: 18px;
+
+        text-align: center;
+
+    }
+
+
+    .au-footer h3 {
+
+        margin-bottom: 7px;
+
+        font-size: 18px;
+
+    }
+
+
+    .au-footer p {
+
+        font-size: 10px;
+
+        line-height: 1.55;
+
+    }
+
+
+    .au-copyright {
+
+        margin-top: 22px;
+
+        padding: 14px 5px;
+
+        font-size: 9px;
+
+    }
+
+
+    /* =================================================
+       FLOATING DECORATION
+    ================================================= */
+
+    .float-shape.one {
+
+        top: 25%;
+
+        left: 1%;
+
+        font-size: 23px;
+
+    }
+
+
+    .float-shape.two {
+
+        top: 70%;
+
+        right: 1%;
+
+        font-size: 25px;
+
+    }
+
+
+    .float-shape.three {
+
+        bottom: 8%;
+
+        left: 2%;
+
+        font-size: 24px;
+
+    }
+
+
+}
+
+
+/* =====================================================
+   EXTRA SMALL MOBILE
+   HP KECIL
+===================================================== */
+
+@media screen and (max-width: 380px) {
+
+
+    .au-brand h1 {
+
+        font-size: 12px;
+
+    }
+
+
+    .au-logo {
+
+        width: 36px;
+
+        height: 36px;
+
+        font-size: 18px;
+
+    }
+
+
+    .au-visit {
+
+        padding: 8px;
+
+        font-size: 8px;
+
+    }
+
+
+    .reg-hero h2 {
+
+        font-size: 33px !important;
+
+    }
+
+
+    .reg-hero p {
+
+        font-size: 11px;
+
+    }
+
+
+    .info-card {
+
+        padding: 13px 6px;
+
+    }
+
+
+    .info-card b {
+
+        font-size: 9px;
+
+    }
+
+
+    .info-card small {
+
+        font-size: 7px;
+
+    }
+
+
+    .section-heading h2 {
+
+        font-size: 25px;
+
+    }
+
+
+    .registration-form {
+
+        padding: 10px;
+
+    }
+
+
+    .form-step {
+
+        padding: 10px;
+
+    }
+
+
+    .gender-box {
+
+        font-size: 9px;
+
+    }
+
+
+}
 </style>
 
 </head>
