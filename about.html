@@ -19,1222 +19,65 @@
 <style>
 
 /* =====================================================
-   ABOUT US PREMIUM MOBILE DESIGN
+   ABOUT US PREMIUM MOBILE
    KHUSUS HALAMAN ABOUT
-   Tidak mengubah halaman lain
+   TIDAK MENGUBAH HALAMAN LAIN
 ===================================================== */
-
-
-/* ================= ANIMATION ================= */
-
-@keyframes aboutFadeUp {
-
-    from {
-        opacity: 0;
-        transform: translateY(35px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-}
-
-
-@keyframes aboutFadeLeft {
-
-    from {
-        opacity: 0;
-        transform: translateX(-35px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-
-}
-
-
-@keyframes aboutFadeRight {
-
-    from {
-        opacity: 0;
-        transform: translateX(35px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-
-}
-
-
-@keyframes aboutFloat {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-10px);
-    }
-
-}
-
-
-@keyframes aboutGlow {
-
-    0% {
-        box-shadow:
-            0 0 0 rgba(239,79,130,0);
-    }
-
-    50% {
-        box-shadow:
-            0 15px 35px rgba(239,79,130,.18);
-    }
-
-    100% {
-        box-shadow:
-            0 0 0 rgba(239,79,130,0);
-    }
-
-}
-
-
-@keyframes aboutGradient {
-
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
-
-}
-
-
-@keyframes aboutPulse {
-
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.06);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-
-}
-
-
-@keyframes aboutSparkle {
-
-    0% {
-        opacity: .3;
-        transform: translateY(0) rotate(0deg);
-    }
-
-    50% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: .3;
-        transform: translateY(-12px) rotate(20deg);
-    }
-
-}
-
 
 
 /* =====================================================
-   MOBILE
+   MOBILE & TABLET
 ===================================================== */
 
 @media (max-width: 768px) {
-
-
-    /* ================= BODY ================= */
-
-    body[data-page="about"] {
-
-        overflow-x: hidden;
-
-        background:
-
-            radial-gradient(
-                circle at top left,
-                rgba(255,221,238,.6),
-                transparent 35%
-            ),
-
-            radial-gradient(
-                circle at bottom right,
-                rgba(220,240,255,.7),
-                transparent 40%
-            );
-
-    }
-
-
-    /* ================= HEADER ================= */
-
-    body[data-page="about"] .head {
-
-        padding: 14px 16px;
-
-        gap: 10px;
-
-    }
-
-
-    body[data-page="about"] .brand h1 {
-
-        font-size: 20px;
-
-        line-height: 1.05;
-
-    }
-
-
-    body[data-page="about"] .brand p {
-
-        font-size: 11px;
-
-    }
-
-
-    body[data-page="about"] .sun {
-
-        font-size: 29px;
-
-        animation:
-            aboutFloat
-            3s
-            ease-in-out
-            infinite;
-
-    }
-
-
-    body[data-page="about"] .call {
-
-        display: none;
-
-    }
-
-
-    body[data-page="about"] .head > .btn {
-
-        font-size: 11px;
-
-        padding:
-            9px
-            12px;
-
-        border-radius: 12px;
-
-        white-space: nowrap;
-
-    }
-
-
-
-    /* ================= NAVBAR ================= */
-
-    body[data-page="about"] .rainbow-nav {
-
-        overflow-x: auto;
-
-        overflow-y: hidden;
-
-        -webkit-overflow-scrolling: touch;
-
-        scrollbar-width: none;
-
-        justify-content: flex-start;
-
-        padding-bottom: 2px;
-
-    }
-
-
-    body[data-page="about"] .rainbow-nav::-webkit-scrollbar {
-
-        display: none;
-
-    }
-
-
-    body[data-page="about"] .rainbow-item {
-
-        flex: 0 0 auto;
-
-        min-width: 80px;
-
-        padding:
-            10px
-            7px;
-
-    }
-
-
-    body[data-page="about"] .rainbow-icon {
-
-        font-size: 19px;
-
-        transition:
-            transform
-            .3s
-            ease;
-
-    }
-
-
-    body[data-page="about"] .rainbow-item:active
-    .rainbow-icon {
-
-        transform:
-            scale(1.25)
-            rotate(-8deg);
-
-    }
-
-
-    body[data-page="about"] .rainbow-text {
-
-        font-size: 9px;
-
-    }
-
-
-
-    /* ================= HERO ================= */
-
-    body[data-page="about"] .pagehero {
-
-        position: relative;
-
-        overflow: hidden;
-
-        padding:
-            65px
-            18px
-            70px;
-
-        text-align: center;
-
-        background:
-
-            linear-gradient(
-                120deg,
-                #fff0f6,
-                #f1f8ff,
-                #fff9df,
-                #f3eeff
-            );
-
-        background-size:
-            300%
-            300%;
-
-        animation:
-            aboutGradient
-            10s
-            ease
-            infinite;
-
-    }
-
-
-    body[data-page="about"] .pagehero::before {
-
-        content:
-            "✦";
-
-        position: absolute;
-
-        top: 18px;
-
-        left: 10%;
-
-        font-size: 24px;
-
-        opacity: .5;
-
-        animation:
-            aboutSparkle
-            2.5s
-            ease-in-out
-            infinite
-            alternate;
-
-    }
-
-
-    body[data-page="about"] .pagehero::after {
-
-        content:
-            "🌈";
-
-        position: absolute;
-
-        right: 8%;
-
-        bottom: 12px;
-
-        font-size: 38px;
-
-        opacity: .45;
-
-        animation:
-            aboutFloat
-            4s
-            ease-in-out
-            infinite;
-
-    }
-
-
-    body[data-page="about"] .pagehero h2 {
-
-        position: relative;
-
-        z-index: 2;
-
-        font-size:
-            clamp(
-                34px,
-                10vw,
-                48px
-            );
-
-        line-height: 1.1;
-
-        margin-bottom: 14px;
-
-        animation:
-
-            aboutFadeUp
-
-            .8s
-
-            ease
-
-            both;
-
-    }
-
-
-    body[data-page="about"] .pagehero p {
-
-        position: relative;
-
-        z-index: 2;
-
-        max-width: 320px;
-
-        margin: auto;
-
-        font-size: 14px;
-
-        line-height: 1.7;
-
-        animation:
-
-            aboutFadeUp
-
-            .9s
-
-            ease
-
-            .15s
-
-            both;
-
-    }
-
-
-
-    /* ================= SECTION ================= */
-
-    body[data-page="about"] .section {
-
-        position: relative;
-
-        padding-top: 55px;
-
-        padding-bottom: 20px;
-
-    }
-
-
-
-    /* ================= WELCOME ================= */
-
-    body[data-page="about"] .welcome {
-
-        display: flex;
-
-        flex-direction: column;
-
-        gap: 30px;
-
-    }
-
-
-    body[data-page="about"] .welcome > div {
-
-        width: 100%;
-
-        min-width: 0;
-
-    }
-
-
-    body[data-page="about"] .title {
-
-        font-size: 27px;
-
-        line-height: 1.25;
-
-    }
-
-
-    body[data-page="about"] .welcome-img {
-
-        position: relative;
-
-        width: 100%;
-
-        margin:
-            20px
-            auto
-            0;
-
-        overflow: hidden;
-
-        border-radius: 24px;
-
-        box-shadow:
-
-            0 15px 35px
-
-            rgba(0,0,0,.12);
-
-    }
-
-
-    body[data-page="about"] .welcome-img::after {
-
-        content:
-            "";
-
-        position: absolute;
-
-        inset: 0;
-
-        background:
-
-            linear-gradient(
-                135deg,
-                rgba(255,255,255,.25),
-                transparent
-            );
-
-        pointer-events: none;
-
-    }
-
-
-    body[data-page="about"] .welcome-img img {
-
-        display: block;
-
-        width: 100%;
-
-        height: auto;
-
-        max-width: 100%;
-
-        transition:
-
-            transform
-
-            .7s
-
-            ease;
-
-    }
-
-
-    body[data-page="about"] .welcome-img:active img {
-
-        transform:
-            scale(1.05);
-
-    }
-
-
-    body[data-page="about"] .welcome p {
-
-        font-size: 15px;
-
-        line-height: 1.8;
-
-    }
-
-
-    body[data-page="about"] .welcome .btn {
-
-        display: inline-flex;
-
-        align-items: center;
-
-        gap: 8px;
-
-        margin-top: 8px;
-
-        border-radius: 14px;
-
-        transition:
-
-            transform .3s ease,
-
-            box-shadow .3s ease;
-
-    }
-
-
-    body[data-page="about"] .welcome .btn:active {
-
-        transform:
-            scale(.96);
-
-    }
-
-
-
-    /* ================= SECTION TITLE ================= */
-
-    body[data-page="about"] .section-title {
-
-        padding:
-            0
-            10px;
-
-        margin-bottom: 25px;
-
-    }
-
-
-    body[data-page="about"] .section-title h2 {
-
-        font-size: 29px;
-
-        line-height: 1.2;
-
-    }
-
-
-    body[data-page="about"] .section-title p {
-
-        font-size: 14px;
-
-        line-height: 1.7;
-
-    }
-
-
-
-    /* ================= VALUES ================= */
-
-    body[data-page="about"] .features {
-
-        display: grid;
-
-        grid-template-columns:
-            1fr;
-
-        gap: 16px;
-
-    }
-
-
-    body[data-page="about"] .feature {
-
-        position: relative;
-
-        width: 100%;
-
-        min-width: 0;
-
-        box-sizing: border-box;
-
-        padding:
-
-            25px
-
-            20px;
-
-        overflow: hidden;
-
-        border-radius: 22px;
-
-        transition:
-
-            transform .35s ease,
-
-            box-shadow .35s ease;
-
-    }
-
-
-    body[data-page="about"] .feature::before {
-
-        content:
-            "";
-
-        position: absolute;
-
-        top: 0;
-
-        left: 0;
-
-        width: 5px;
-
-        height: 100%;
-
-        border-radius:
-            5px
-            0
-            0
-            5px;
-
-        background:
-
-            linear-gradient(
-
-                #ff8fb3,
-
-                #ffd45c,
-
-                #80d6ff
-
-            );
-
-    }
-
-
-    body[data-page="about"] .feature:active {
-
-        transform:
-
-            translateY(-5px)
-
-            scale(.99);
-
-        box-shadow:
-
-            0
-
-            15px
-
-            30px
-
-            rgba(0,0,0,.1);
-
-    }
-
-
-    body[data-page="about"] .feature .big {
-
-        display: inline-flex;
-
-        align-items: center;
-
-        justify-content: center;
-
-        width: 64px;
-
-        height: 64px;
-
-        margin-bottom: 12px;
-
-        font-size: 35px;
-
-        border-radius: 18px;
-
-        background:
-
-            rgba(255,255,255,.65);
-
-        animation:
-
-            aboutFloat
-
-            4s
-
-            ease-in-out
-
-            infinite;
-
-    }
-
-
-    body[data-page="about"] .feature h3 {
-
-        font-size: 21px;
-
-        margin-bottom: 8px;
-
-    }
-
-
-    body[data-page="about"] .feature p {
-
-        font-size: 14px;
-
-        line-height: 1.7;
-
-    }
-
-
-
-    /* ================= POST COUNTER ================= */
-
-    body[data-page="about"] .post-counter {
-
-        display: block;
-
-        width: fit-content;
-
-        max-width:
-            calc(100% - 20px);
-
-        margin:
-
-            0
-
-            auto
-
-            22px;
-
-        padding:
-
-            10px
-
-            18px;
-
-        border-radius: 30px;
-
-        box-sizing: border-box;
-
-        font-size: 13px;
-
-        animation:
-
-            aboutGlow
-
-            3s
-
-            ease-in-out
-
-            infinite;
-
-    }
-
-
-
-    /* ================= POSTS ================= */
-
-    body[data-page="about"] .posts-grid {
-
-        grid-template-columns:
-            1fr;
-
-        gap: 18px;
-
-    }
-
-
-
-    /* ================= CTA ================= */
-
-    body[data-page="about"] .box {
-
-        position: relative;
-
-        overflow: hidden;
-
-        padding:
-
-            38px
-
-            20px;
-
-        border-radius: 26px;
-
-        text-align: center;
-
-    }
-
-
-    body[data-page="about"] .box::before {
-
-        content:
-            "✦ ✧ ✦";
-
-        position: absolute;
-
-        top: 15px;
-
-        right: 18px;
-
-        opacity: .25;
-
-        font-size: 18px;
-
-        letter-spacing: 8px;
-
-        animation:
-
-            aboutSparkle
-
-            3s
-
-            ease-in-out
-
-            infinite;
-
-    }
-
-
-    body[data-page="about"] .box .big {
-
-        font-size: 48px;
-
-        animation:
-
-            aboutPulse
-
-            2.5s
-
-            ease-in-out
-
-            infinite;
-
-    }
-
-
-    body[data-page="about"] .box .title {
-
-        font-size: 29px;
-
-    }
-
-
-    body[data-page="about"] .box p {
-
-        font-size: 14px;
-
-        line-height: 1.8;
-
-    }
-
-
-    body[data-page="about"] .box .btn {
-
-        display: inline-block;
-
-        max-width: 100%;
-
-        padding:
-
-            13px
-
-            22px;
-
-        box-sizing: border-box;
-
-        border-radius: 15px;
-
-        transition:
-
-            transform .3s ease;
-
-    }
-
-
-    body[data-page="about"] .box .btn:active {
-
-        transform:
-
-            scale(.95);
-
-    }
-
-
-
-    /* ================= FOOTER ================= */
-
-    body[data-page="about"] .footgrid {
-
-        grid-template-columns:
-            1fr;
-
-        gap: 28px;
-
-        text-align: center;
-
-    }
-
-
-    body[data-page="about"] .footer {
-
-        margin-top: 40px;
-
-        padding-top: 42px;
-
-    }
-
-
-    body[data-page="about"] .copy {
-
-        text-align: center;
-
-        font-size: 12px;
-
-        padding:
-
-            18px
-
-            15px;
-
-    }
-
 
 
     /* =====================================================
-       SCROLL ANIMATION
+       BODY PREMIUM BACKGROUND
     ===================================================== */
 
-    body[data-page="about"] .reveal {
-
-        opacity: 0;
-
-        transform:
-
-            translateY(35px);
-
-        transition:
-
-            opacity .8s ease,
-
-            transform .8s ease;
-
-    }
-
-
-    body[data-page="about"] .reveal.show {
-
-        opacity: 1;
-
-        transform:
-
-            translateY(0);
-
-    }
-
-
-}
-
-
-
-/* =====================================================
-   HP KECIL
-===================================================== */
-
-@media (max-width: 480px) {
-
-
-    body[data-page="about"] .head {
-
-        padding: 12px;
-
-    }
-
-
-    body[data-page="about"] .brand h1 {
-
-        font-size: 18px;
-
-    }
-
-
-    body[data-page="about"] .sun {
-
-        font-size: 25px;
-
-    }
-
-
-    body[data-page="about"] .head > .btn {
-
-        font-size: 10px;
-
-        padding:
-
-            8px
-
-            10px;
-
-    }
-
-
-    body[data-page="about"] .rainbow-item {
-
-        min-width: 75px;
-
-        padding:
-
-            9px
-
-            6px;
-
-    }
-
-
-    body[data-page="about"] .pagehero {
-
-        padding:
-
-            55px
-
-            15px
-
-            60px;
-
-    }
-
-
-    body[data-page="about"] .pagehero h2 {
-
-        font-size: 34px;
-
-    }
-
-
-    body[data-page="about"] .section {
-
-        padding-left: 15px;
-
-        padding-right: 15px;
-
-    }
-
-
-    body[data-page="about"] .title {
-
-        font-size: 25px;
-
-    }
-
-
-    body[data-page="about"] .welcome-img {
-
-        border-radius: 20px;
-
-    }
-
-
-    body[data-page="about"] .feature {
-
-        padding:
-
-            22px
-
-            17px;
-
-    }
-
-
-    body[data-page="about"] .feature .big {
-
-        width: 58px;
-
-        height: 58px;
-
-        font-size: 31px;
-
-    }
-
-
-    body[data-page="about"] .box {
-
-        padding:
-
-            32px
-
-            17px;
-
-    }
-
-
-}
-/* =====================================================
-   ABOUT US - ANIMATED BACKGROUND KHUSUS HP
-   AMAN - TIDAK MENGUBAH SUSUNAN LAYOUT
-===================================================== */
-
-@media (max-width: 768px) {
-
-    /* BACKGROUND UTAMA */
-
     body[data-page="about"] {
-        position: relative;
+
         overflow-x: hidden;
 
         background:
             linear-gradient(
-                120deg,
-                #fff5fa,
-                #f4f8ff,
-                #fff9e8,
-                #f7f0ff
+                135deg,
+                #fff7fb,
+                #f7f4ff,
+                #f1f8ff,
+                #fffaf0
             );
 
         background-size: 400% 400%;
 
-        animation: aboutGradient 12s ease infinite;
+        animation:
+            aboutBackground
+            15s
+            ease
+            infinite;
+
     }
 
 
-    /* ANIMASI WARNA BACKGROUND */
-
-    @keyframes aboutGradient {
+    @keyframes aboutBackground {
 
         0% {
             background-position: 0% 50%;
+        }
+
+        25% {
+            background-position: 50% 100%;
         }
 
         50% {
             background-position: 100% 50%;
         }
 
+        75% {
+            background-position: 50% 0%;
+        }
+
         100% {
             background-position: 0% 50%;
         }
@@ -1242,107 +85,9 @@
     }
 
 
-    /* EFEK BULAT MELAYANG */
-
-    body[data-page="about"]::before {
-
-        content: "";
-
-        position: fixed;
-
-        width: 220px;
-        height: 220px;
-
-        border-radius: 50%;
-
-        background:
-            radial-gradient(
-                circle,
-                rgba(255, 137, 185, 0.28),
-                rgba(255, 137, 185, 0)
-            );
-
-        top: 15%;
-        left: -100px;
-
-        pointer-events: none;
-
-        z-index: 0;
-
-        animation: aboutFloatOne 8s ease-in-out infinite;
-
-    }
-
-
-    body[data-page="about"]::after {
-
-        content: "";
-
-        position: fixed;
-
-        width: 280px;
-        height: 280px;
-
-        border-radius: 50%;
-
-        background:
-            radial-gradient(
-                circle,
-                rgba(108, 190, 255, 0.25),
-                rgba(108, 190, 255, 0)
-            );
-
-        bottom: 5%;
-        right: -130px;
-
-        pointer-events: none;
-
-        z-index: 0;
-
-        animation: aboutFloatTwo 10s ease-in-out infinite;
-
-    }
-
-
-    /* ANIMASI BULAT 1 */
-
-    @keyframes aboutFloatOne {
-
-        0% {
-            transform: translate(0, 0) scale(1);
-        }
-
-        50% {
-            transform: translate(60px, 80px) scale(1.2);
-        }
-
-        100% {
-            transform: translate(0, 0) scale(1);
-        }
-
-    }
-
-
-    /* ANIMASI BULAT 2 */
-
-    @keyframes aboutFloatTwo {
-
-        0% {
-            transform: translate(0, 0) scale(1);
-        }
-
-        50% {
-            transform: translate(-60px, -100px) scale(1.15);
-        }
-
-        100% {
-            transform: translate(0, 0) scale(1);
-        }
-
-    }
-
-
-    /* PASTIKAN SEMUA ISI TETAP DI ATAS BACKGROUND */
+    /* =====================================================
+       SEMUA BAGIAN DI ATAS BACKGROUND
+    ===================================================== */
 
     body[data-page="about"] .top,
     body[data-page="about"] .pagehero,
@@ -1351,81 +96,718 @@
 
         position: relative;
 
-        z-index: 1;
+        z-index: 2;
 
     }
 
 
-    /* HERO LEBIH MENARIK */
+    /* =====================================================
+       HEADER PREMIUM
+    ===================================================== */
 
-    body[data-page="about"] .pagehero {
+    body[data-page="about"] .top {
 
-        position: relative;
+        background:
 
-        overflow: hidden;
+            linear-gradient(
+                135deg,
+                rgba(255,255,255,0.92),
+                rgba(255,245,251,0.88)
+            );
+
+        backdrop-filter:
+            blur(20px);
+
+        -webkit-backdrop-filter:
+            blur(20px);
+
+        border-bottom:
+
+            1px solid
+            rgba(255,255,255,0.8);
+
+        box-shadow:
+
+            0 8px 30px
+            rgba(70,40,100,0.08);
 
     }
 
 
-    /* EFEK CAHAYA DI HERO */
+    body[data-page="about"] .head {
 
-    body[data-page="about"] .pagehero::after {
+        padding:
+            16px 18px;
 
-        content: "✨";
+        display:
 
-        position: absolute;
+            flex;
 
-        font-size: 45px;
+        align-items:
 
-        right: 10%;
+            center;
 
-        top: 15%;
+        justify-content:
 
-        opacity: 0.7;
+            space-between;
 
-        animation: sparkleAbout 3s ease-in-out infinite;
+        gap:
 
-        pointer-events: none;
+            10px;
 
     }
 
 
-    @keyframes sparkleAbout {
+    /* =====================================================
+       BRAND
+    ===================================================== */
+
+    body[data-page="about"] .brand {
+
+        display:
+
+            flex;
+
+        align-items:
+
+            center;
+
+        gap:
+
+            10px;
+
+        min-width:
+
+            0;
+
+        text-decoration:
+
+            none;
+
+    }
+
+
+    body[data-page="about"] .sun {
+
+        width:
+
+            46px;
+
+        height:
+
+            46px;
+
+        display:
+
+            flex;
+
+        align-items:
+
+            center;
+
+        justify-content:
+
+            center;
+
+        font-size:
+
+            28px;
+
+        border-radius:
+
+            15px;
+
+        background:
+
+            linear-gradient(
+                135deg,
+                #fff1a8,
+                #ffd76b
+            );
+
+        box-shadow:
+
+            0 8px 20px
+            rgba(255,190,60,0.28);
+
+        animation:
+
+            sunFloat
+            4s
+            ease-in-out
+            infinite;
+
+        flex-shrink:
+
+            0;
+
+    }
+
+
+    @keyframes sunFloat {
 
         0% {
-            transform: scale(0.8) rotate(0deg);
-            opacity: 0.4;
+
+            transform:
+                translateY(0)
+                rotate(0deg);
+
         }
 
         50% {
-            transform: scale(1.3) rotate(20deg);
-            opacity: 1;
+
+            transform:
+                translateY(-4px)
+                rotate(5deg);
+
         }
 
         100% {
-            transform: scale(0.8) rotate(0deg);
-            opacity: 0.4;
+
+            transform:
+                translateY(0)
+                rotate(0deg);
+
         }
 
     }
 
 
-    /* ANIMASI JUDUL HERO */
+    body[data-page="about"] .brand h1 {
 
-    body[data-page="about"] .pagehero h2 {
+        font-size:
 
-        animation: aboutTitle 1s ease both;
+            19px;
+
+        line-height:
+
+            1.1;
+
+        margin:
+
+            0;
+
+        white-space:
+
+            nowrap;
 
     }
 
 
-    @keyframes aboutTitle {
+    body[data-page="about"] .brand p {
+
+        margin:
+
+            4px 0 0;
+
+        font-size:
+
+            11px;
+
+        opacity:
+
+            0.75;
+
+    }
+
+
+    body[data-page="about"] .call {
+
+        display:
+
+            none;
+
+    }
+
+
+    body[data-page="about"] .head > .btn {
+
+        font-size:
+
+            11px;
+
+        padding:
+
+            10px 13px;
+
+        border-radius:
+
+            13px;
+
+        white-space:
+
+            nowrap;
+
+        box-shadow:
+
+            0 8px 20px
+            rgba(239,79,130,0.22);
+
+    }
+
+
+    /* =====================================================
+       PREMIUM NAVBAR
+    ===================================================== */
+
+    body[data-page="about"] .rainbow-nav {
+
+        display:
+
+            flex;
+
+        overflow-x:
+
+            auto;
+
+        overflow-y:
+
+            hidden;
+
+        justify-content:
+
+            flex-start;
+
+        gap:
+
+            8px;
+
+        padding:
+
+            12px 14px
+            16px;
+
+        scroll-snap-type:
+
+            x mandatory;
+
+        -webkit-overflow-scrolling:
+
+            touch;
+
+        scrollbar-width:
+
+            none;
+
+    }
+
+
+    body[data-page="about"] .rainbow-nav::-webkit-scrollbar {
+
+        display:
+
+            none;
+
+    }
+
+
+    body[data-page="about"] .rainbow-item {
+
+        flex:
+
+            0 0 auto;
+
+        width:
+
+            78px;
+
+        min-height:
+
+            72px;
+
+        padding:
+
+            10px 6px;
+
+        display:
+
+            flex;
+
+        flex-direction:
+
+            column;
+
+        align-items:
+
+            center;
+
+        justify-content:
+
+            center;
+
+        gap:
+
+            5px;
+
+        border-radius:
+
+            18px;
+
+        scroll-snap-align:
+
+            start;
+
+        transition:
+
+            0.3s
+            ease;
+
+        background:
+
+            rgba(255,255,255,0.72);
+
+        box-shadow:
+
+            0 6px 18px
+            rgba(60,40,100,0.08);
+
+        border:
+
+            1px solid
+            rgba(255,255,255,0.8);
+
+    }
+
+
+    body[data-page="about"] .rainbow-item:active {
+
+        transform:
+
+            scale(0.93);
+
+    }
+
+
+    body[data-page="about"] .rainbow-item.active {
+
+        transform:
+
+            translateY(-3px);
+
+        box-shadow:
+
+            0 12px 25px
+            rgba(60,60,140,0.18);
+
+    }
+
+
+    body[data-page="about"] .rainbow-icon {
+
+        font-size:
+
+            23px;
+
+        line-height:
+
+            1;
+
+    }
+
+
+    body[data-page="about"] .rainbow-text {
+
+        font-size:
+
+            9px;
+
+        font-weight:
+
+            700;
+
+        letter-spacing:
+
+            0.3px;
+
+    }
+
+
+    body[data-page="about"] .sparkle {
+
+        display:
+
+            none;
+
+    }
+
+
+    /* =====================================================
+       HERO PREMIUM
+    ===================================================== */
+
+    body[data-page="about"] .pagehero {
+
+        margin:
+
+            16px 14px
+            0;
+
+        padding:
+
+            65px 20px
+            70px;
+
+        border-radius:
+
+            28px;
+
+        overflow:
+
+            hidden;
+
+        text-align:
+
+            center;
+
+        background:
+
+            linear-gradient(
+                135deg,
+                rgba(255,224,241,0.95),
+                rgba(229,236,255,0.95),
+                rgba(255,245,205,0.92)
+            );
+
+        background-size:
+
+            250% 250%;
+
+        animation:
+
+            heroGradient
+            8s
+            ease
+            infinite;
+
+        box-shadow:
+
+            0 15px 40px
+            rgba(80,50,120,0.10);
+
+    }
+
+
+    @keyframes heroGradient {
+
+        0% {
+
+            background-position:
+                0% 50%;
+
+        }
+
+        50% {
+
+            background-position:
+                100% 50%;
+
+        }
+
+        100% {
+
+            background-position:
+                0% 50%;
+
+        }
+
+    }
+
+
+    /* CAHAYA HERO */
+
+    body[data-page="about"] .pagehero::before {
+
+        content:
+
+            "";
+
+        position:
+
+            absolute;
+
+        width:
+
+            180px;
+
+        height:
+
+            180px;
+
+        border-radius:
+
+            50%;
+
+        background:
+
+            rgba(255,255,255,0.40);
+
+        filter:
+
+            blur(20px);
+
+        top:
+
+            -80px;
+
+        left:
+
+            -60px;
+
+        animation:
+
+            blobOne
+            7s
+            ease-in-out
+            infinite;
+
+    }
+
+
+    body[data-page="about"] .pagehero::after {
+
+        content:
+
+            "🌈";
+
+        position:
+
+            absolute;
+
+        font-size:
+
+            52px;
+
+        right:
+
+            18px;
+
+        bottom:
+
+            15px;
+
+        opacity:
+
+            0.75;
+
+        animation:
+
+            rainbowFloat
+            4s
+            ease-in-out
+            infinite;
+
+    }
+
+
+    @keyframes blobOne {
+
+        0% {
+
+            transform:
+                translate(0,0)
+                scale(1);
+
+        }
+
+        50% {
+
+            transform:
+                translate(50px,40px)
+                scale(1.25);
+
+        }
+
+        100% {
+
+            transform:
+                translate(0,0)
+                scale(1);
+
+        }
+
+    }
+
+
+    @keyframes rainbowFloat {
+
+        0% {
+
+            transform:
+                translateY(0)
+                rotate(-5deg);
+
+        }
+
+        50% {
+
+            transform:
+                translateY(-10px)
+                rotate(5deg);
+
+        }
+
+        100% {
+
+            transform:
+                translateY(0)
+                rotate(-5deg);
+
+        }
+
+    }
+
+
+    body[data-page="about"] .pagehero .wrap {
+
+        position:
+
+            relative;
+
+        z-index:
+
+            2;
+
+    }
+
+
+    body[data-page="about"] .pagehero h2 {
+
+        font-size:
+
+            clamp(
+                38px,
+                11vw,
+                52px
+            );
+
+        line-height:
+
+            1.1;
+
+        margin:
+
+            0 0 15px;
+
+        animation:
+
+            heroTitle
+            1s
+            ease
+            both;
+
+    }
+
+
+    @keyframes heroTitle {
 
         from {
 
-            opacity: 0;
+            opacity:
+
+                0;
 
             transform:
+
                 translateY(30px)
                 scale(0.9);
 
@@ -1433,9 +815,12 @@
 
         to {
 
-            opacity: 1;
+            opacity:
+
+                1;
 
             transform:
+
                 translateY(0)
                 scale(1);
 
@@ -1444,24 +829,189 @@
     }
 
 
-    /* ANIMASI GAMBAR WELCOME */
+    body[data-page="about"] .pagehero p {
 
-    body[data-page="about"] .welcome-img {
+        font-size:
+
+            15px;
+
+        line-height:
+
+            1.7;
+
+        margin:
+
+            auto;
 
         animation:
-            aboutImageFloat
-            5s
-            ease-in-out
-            infinite;
 
-        box-shadow:
-            0 15px 35px
-            rgba(90, 60, 120, 0.12);
+            heroText
+            1s
+            0.2s
+            ease
+            both;
 
     }
 
 
-    @keyframes aboutImageFloat {
+    @keyframes heroText {
+
+        from {
+
+            opacity:
+
+                0;
+
+            transform:
+
+                translateY(20px);
+
+        }
+
+        to {
+
+            opacity:
+
+                1;
+
+            transform:
+
+                translateY(0);
+
+        }
+
+    }
+
+
+    /* =====================================================
+       SECTION
+    ===================================================== */
+
+    body[data-page="about"] .section {
+
+        padding:
+
+            55px 20px
+            10px;
+
+    }
+
+
+    /* =====================================================
+       WELCOME
+    ===================================================== */
+
+    body[data-page="about"] .welcome {
+
+        display:
+
+            flex;
+
+        flex-direction:
+
+            column;
+
+        gap:
+
+            35px;
+
+    }
+
+
+    body[data-page="about"] .welcome > div {
+
+        width:
+
+            100%;
+
+        min-width:
+
+            0;
+
+    }
+
+
+    body[data-page="about"] .title {
+
+        font-size:
+
+            29px;
+
+        line-height:
+
+            1.25;
+
+        margin:
+
+            0 0 18px;
+
+    }
+
+
+    body[data-page="about"] .welcome p {
+
+        font-size:
+
+            15px;
+
+        line-height:
+
+            1.8;
+
+        margin-bottom:
+
+            16px;
+
+    }
+
+
+    /* =====================================================
+       IMAGE PREMIUM
+    ===================================================== */
+
+    body[data-page="about"] .welcome-img {
+
+        position:
+
+            relative;
+
+        width:
+
+            100%;
+
+        margin:
+
+            20px auto
+            0;
+
+        border-radius:
+
+            25px;
+
+        overflow:
+
+            hidden;
+
+        background:
+
+            #f2f2f2;
+
+        box-shadow:
+
+            0 20px 45px
+            rgba(70,40,100,0.16);
+
+        animation:
+
+            imageFloat
+            5s
+            ease-in-out
+            infinite;
+
+    }
+
+
+    @keyframes imageFloat {
 
         0% {
 
@@ -1487,17 +1037,278 @@
     }
 
 
-    /* CARD VALUES LEBIH HIDUP */
+    body[data-page="about"] .welcome-img::after {
+
+        content:
+
+            "";
+
+        position:
+
+            absolute;
+
+        inset:
+
+            0;
+
+        border:
+
+            2px solid
+            rgba(255,255,255,0.6);
+
+        border-radius:
+
+            25px;
+
+        pointer-events:
+
+            none;
+
+    }
+
+
+    body[data-page="about"] .welcome-img img {
+
+        display:
+
+            block;
+
+        width:
+
+            100%;
+
+        height:
+
+            auto;
+
+        min-height:
+
+            240px;
+
+        object-fit:
+
+            cover;
+
+    }
+
+
+    /* =====================================================
+       BUTTON PREMIUM
+    ===================================================== */
+
+    body[data-page="about"] .section .btn {
+
+        display:
+
+            inline-flex;
+
+        align-items:
+
+            center;
+
+        justify-content:
+
+            center;
+
+        margin-top:
+
+            10px;
+
+        padding:
+
+            13px 20px;
+
+        border-radius:
+
+            15px;
+
+        font-size:
+
+            14px;
+
+        box-shadow:
+
+            0 10px 25px
+            rgba(239,79,130,0.25);
+
+        transition:
+
+            0.3s
+            ease;
+
+    }
+
+
+    body[data-page="about"] .section .btn:active {
+
+        transform:
+
+            scale(0.95);
+
+    }
+
+
+    /* =====================================================
+       SECTION TITLE
+    ===================================================== */
+
+    body[data-page="about"] .section-title {
+
+        text-align:
+
+            center;
+
+        margin-bottom:
+
+            28px;
+
+    }
+
+
+    body[data-page="about"] .section-title h2 {
+
+        font-size:
+
+            31px;
+
+        line-height:
+
+            1.25;
+
+        margin-bottom:
+
+            12px;
+
+    }
+
+
+    body[data-page="about"] .section-title p {
+
+        font-size:
+
+            14px;
+
+        line-height:
+
+            1.7;
+
+        padding:
+
+            0 8px;
+
+    }
+
+
+    /* =====================================================
+       VALUES CARDS
+    ===================================================== */
+
+    body[data-page="about"] .features {
+
+        display:
+
+            grid;
+
+        grid-template-columns:
+
+            1fr;
+
+        gap:
+
+            17px;
+
+    }
+
 
     body[data-page="about"] .feature {
 
-        transition:
-            transform 0.3s ease,
-            box-shadow 0.3s ease;
+        position:
+
+            relative;
+
+        width:
+
+            100%;
+
+        padding:
+
+            25px 22px;
+
+        box-sizing:
+
+            border-box;
+
+        border-radius:
+
+            24px;
+
+        overflow:
+
+            hidden;
+
+        background:
+
+            rgba(255,255,255,0.78);
+
+        backdrop-filter:
+
+            blur(12px);
+
+        -webkit-backdrop-filter:
+
+            blur(12px);
+
+        border:
+
+            1px solid
+            rgba(255,255,255,0.85);
 
         box-shadow:
-            0 8px 25px
-            rgba(100, 70, 130, 0.08);
+
+            0 12px 30px
+            rgba(60,40,100,0.08);
+
+        transition:
+
+            0.35s
+            ease;
+
+    }
+
+
+    body[data-page="about"] .feature::before {
+
+        content:
+
+            "";
+
+        position:
+
+            absolute;
+
+        width:
+
+            90px;
+
+        height:
+
+            90px;
+
+        border-radius:
+
+            50%;
+
+        background:
+
+            rgba(255,200,225,0.22);
+
+        right:
+
+            -30px;
+
+        top:
+
+            -30px;
 
     }
 
@@ -1505,27 +1316,74 @@
     body[data-page="about"] .feature:active {
 
         transform:
+
             scale(0.97);
+
+        box-shadow:
+
+            0 8px 20px
+            rgba(60,40,100,0.10);
 
     }
 
 
-    /* EMOJI VALUE BERGERAK */
-
     body[data-page="about"] .feature .big {
 
-        display: inline-block;
+        position:
+
+            relative;
+
+        z-index:
+
+            2;
+
+        display:
+
+            inline-flex;
+
+        width:
+
+            58px;
+
+        height:
+
+            58px;
+
+        align-items:
+
+            center;
+
+        justify-content:
+
+            center;
+
+        font-size:
+
+            32px;
+
+        border-radius:
+
+            18px;
+
+        background:
+
+            linear-gradient(
+                135deg,
+                #fff5fa,
+                #f5f0ff
+            );
 
         animation:
-            aboutEmoji
-            3s
+
+            emojiFloat
+            3.5s
             ease-in-out
             infinite;
 
     }
 
 
-    @keyframes aboutEmoji {
+    @keyframes emojiFloat {
 
         0% {
 
@@ -1538,7 +1396,7 @@
         50% {
 
             transform:
-                translateY(-7px)
+                translateY(-6px)
                 rotate(5deg);
 
         }
@@ -1554,37 +1412,273 @@
     }
 
 
-    /* CTA BOX EFEK NAIK TURUN */
+    body[data-page="about"] .feature h3 {
 
-    body[data-page="about"] .box {
+        position:
 
-        box-shadow:
-            0 15px 40px
-            rgba(100, 70, 130, 0.12);
+            relative;
+
+        z-index:
+
+            2;
+
+        font-size:
+
+            21px;
+
+        margin:
+
+            16px 0 8px;
 
     }
 
 
-    body[data-page="about"] .box .big {
+    body[data-page="about"] .feature p {
 
-        display: inline-block;
+        position:
+
+            relative;
+
+        z-index:
+
+            2;
+
+        font-size:
+
+            14px;
+
+        line-height:
+
+            1.7;
+
+        margin:
+
+            0;
+
+    }
+
+
+    /* =====================================================
+       POST COUNTER
+    ===================================================== */
+
+    body[data-page="about"] .post-counter {
+
+        width:
+
+            fit-content;
+
+        margin:
+
+            0 auto
+            22px;
+
+        padding:
+
+            11px 18px;
+
+        border-radius:
+
+            50px;
+
+        font-size:
+
+            13px;
+
+        background:
+
+            rgba(255,255,255,0.75);
+
+        border:
+
+            1px solid
+            rgba(255,255,255,0.9);
+
+        box-shadow:
+
+            0 8px 20px
+            rgba(70,40,100,0.08);
+
+    }
+
+
+    /* =====================================================
+       POSTS
+    ===================================================== */
+
+    body[data-page="about"] .posts-grid {
+
+        display:
+
+            grid;
+
+        grid-template-columns:
+
+            1fr;
+
+        gap:
+
+            18px;
+
+    }
+
+
+    /* =====================================================
+       CTA PREMIUM
+    ===================================================== */
+
+    body[data-page="about"] .box {
+
+        position:
+
+            relative;
+
+        padding:
+
+            42px 22px;
+
+        border-radius:
+
+            30px;
+
+        text-align:
+
+            center;
+
+        overflow:
+
+            hidden;
+
+        background:
+
+            linear-gradient(
+                135deg,
+                #ffe8f3,
+                #eee9ff,
+                #e6f5ff
+            );
+
+        box-shadow:
+
+            0 20px 45px
+            rgba(80,50,120,0.12);
+
+    }
+
+
+    body[data-page="about"] .box::before {
+
+        content:
+
+            "";
+
+        position:
+
+            absolute;
+
+        width:
+
+            180px;
+
+        height:
+
+            180px;
+
+        border-radius:
+
+            50%;
+
+        background:
+
+            rgba(255,255,255,0.4);
+
+        top:
+
+            -80px;
+
+        right:
+
+            -60px;
 
         animation:
-            rainbowBounce
-            3s
+
+            ctaBlob
+            7s
             ease-in-out
             infinite;
 
     }
 
 
-    @keyframes rainbowBounce {
+    @keyframes ctaBlob {
+
+        0% {
+
+            transform:
+                translate(0,0)
+                scale(1);
+
+        }
+
+        50% {
+
+            transform:
+                translate(-40px,50px)
+                scale(1.2);
+
+        }
+
+        100% {
+
+            transform:
+                translate(0,0)
+                scale(1);
+
+        }
+
+    }
+
+
+    body[data-page="about"] .box > * {
+
+        position:
+
+            relative;
+
+        z-index:
+
+            2;
+
+    }
+
+
+    body[data-page="about"] .box .big {
+
+        display:
+
+            inline-block;
+
+        font-size:
+
+            52px;
+
+        animation:
+
+            ctaEmoji
+            4s
+            ease-in-out
+            infinite;
+
+    }
+
+
+    @keyframes ctaEmoji {
 
         0% {
 
             transform:
                 translateY(0)
-                rotate(-3deg);
+                rotate(-5deg);
 
         }
 
@@ -1600,13 +1694,505 @@
 
             transform:
                 translateY(0)
-                rotate(-3deg);
+                rotate(-5deg);
 
         }
 
     }
 
+
+    body[data-page="about"] .box .title {
+
+        font-size:
+
+            31px;
+
+        margin-top:
+
+            15px;
+
+    }
+
+
+    body[data-page="about"] .box p {
+
+        font-size:
+
+            14px;
+
+        line-height:
+
+            1.8;
+
+    }
+
+
+    /* =====================================================
+       FOOTER PREMIUM
+    ===================================================== */
+
+    body[data-page="about"] .footer {
+
+        margin-top:
+
+            60px;
+
+        padding-top:
+
+            45px;
+
+        background:
+
+            linear-gradient(
+                135deg,
+                #2e2440,
+                #3b2d52
+            );
+
+        color:
+
+            white;
+
+    }
+
+
+    body[data-page="about"] .footgrid {
+
+        display:
+
+            grid;
+
+        grid-template-columns:
+
+            1fr;
+
+        gap:
+
+            30px;
+
+        text-align:
+
+            center;
+
+        padding:
+
+            0 20px
+            35px;
+
+    }
+
+
+    body[data-page="about"] .footgrid h3 {
+
+        font-size:
+
+            19px;
+
+        margin-bottom:
+
+            12px;
+
+    }
+
+
+    body[data-page="about"] .footgrid p {
+
+        font-size:
+
+            14px;
+
+        line-height:
+
+            1.7;
+
+    }
+
+
+    body[data-page="about"] .footgrid a {
+
+        display:
+
+            block;
+
+        margin:
+
+            9px 0;
+
+        font-size:
+
+            14px;
+
+    }
+
+
+    body[data-page="about"] .copy {
+
+        text-align:
+
+            center;
+
+        padding:
+
+            20px 15px;
+
+        font-size:
+
+            11px;
+
+        opacity:
+
+            0.7;
+
+        border-top:
+
+            1px solid
+            rgba(255,255,255,0.12);
+
+    }
+
+
+    /* =====================================================
+       ANIMASI REVEAL PREMIUM
+    ===================================================== */
+
+    body[data-page="about"] .reveal {
+
+        animation:
+
+            mobileReveal
+            0.8s
+            ease
+            both;
+
+    }
+
+
+    @keyframes mobileReveal {
+
+        from {
+
+            opacity:
+
+                0;
+
+            transform:
+
+                translateY(30px);
+
+        }
+
+        to {
+
+            opacity:
+
+                1;
+
+            transform:
+
+                translateY(0);
+
+        }
+
+    }
+
+
+    /* ANIMASI CARD BERTAHAP */
+
+    body[data-page="about"] .feature:nth-child(1) {
+
+        animation:
+
+            featureShow
+            0.6s
+            0.1s
+            ease
+            both;
+
+    }
+
+
+    body[data-page="about"] .feature:nth-child(2) {
+
+        animation:
+
+            featureShow
+            0.6s
+            0.2s
+            ease
+            both;
+
+    }
+
+
+    body[data-page="about"] .feature:nth-child(3) {
+
+        animation:
+
+            featureShow
+            0.6s
+            0.3s
+            ease
+            both;
+
+    }
+
+
+    body[data-page="about"] .feature:nth-child(4) {
+
+        animation:
+
+            featureShow
+            0.6s
+            0.4s
+            ease
+            both;
+
+    }
+
+
+    @keyframes featureShow {
+
+        from {
+
+            opacity:
+
+                0;
+
+            transform:
+
+                translateY(25px)
+                scale(0.96);
+
+        }
+
+        to {
+
+            opacity:
+
+                1;
+
+            transform:
+
+                translateY(0)
+                scale(1);
+
+        }
+
+    }
+
+
 }
+
+
+/* =====================================================
+   HP KECIL
+===================================================== */
+
+@media (max-width: 480px) {
+
+
+    body[data-page="about"] .head {
+
+        padding:
+
+            14px 13px;
+
+    }
+
+
+    body[data-page="about"] .sun {
+
+        width:
+
+            40px;
+
+        height:
+
+            40px;
+
+        font-size:
+
+            24px;
+
+        border-radius:
+
+            13px;
+
+    }
+
+
+    body[data-page="about"] .brand h1 {
+
+        font-size:
+
+            17px;
+
+    }
+
+
+    body[data-page="about"] .brand p {
+
+        font-size:
+
+            10px;
+
+    }
+
+
+    body[data-page="about"] .head > .btn {
+
+        padding:
+
+            9px 10px;
+
+        font-size:
+
+            10px;
+
+    }
+
+
+    body[data-page="about"] .rainbow-item {
+
+        width:
+
+            72px;
+
+        min-height:
+
+            68px;
+
+    }
+
+
+    body[data-page="about"] .rainbow-icon {
+
+        font-size:
+
+            21px;
+
+    }
+
+
+    body[data-page="about"] .rainbow-text {
+
+        font-size:
+
+            8px;
+
+    }
+
+
+    body[data-page="about"] .pagehero {
+
+        margin:
+
+            13px 10px
+            0;
+
+        padding:
+
+            55px 15px
+            65px;
+
+        border-radius:
+
+            24px;
+
+    }
+
+
+    body[data-page="about"] .pagehero h2 {
+
+        font-size:
+
+            39px;
+
+    }
+
+
+    body[data-page="about"] .section {
+
+        padding:
+
+            48px 16px
+            8px;
+
+    }
+
+
+    body[data-page="about"] .title {
+
+        font-size:
+
+            26px;
+
+    }
+
+
+    body[data-page="about"] .section-title h2 {
+
+        font-size:
+
+            28px;
+
+    }
+
+
+    body[data-page="about"] .welcome-img {
+
+        border-radius:
+
+            21px;
+
+    }
+
+
+    body[data-page="about"] .welcome-img img {
+
+        min-height:
+
+            220px;
+
+    }
+
+
+    body[data-page="about"] .feature {
+
+        padding:
+
+            22px 18px;
+
+        border-radius:
+
+            21px;
+
+    }
+
+
+    body[data-page="about"] .box {
+
+        padding:
+
+            35px 18px;
+
+        border-radius:
+
+            25px;
+
+    }
+
+
+    body[data-page="about"] .box .title {
+
+        font-size:
+
+            27px;
+
+    }
+
+}
+
 </style>
 </head>
 
