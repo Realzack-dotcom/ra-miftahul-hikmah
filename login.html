@@ -1,972 +1,4937 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html lang="id">
 
 <head>
 
-```
-<meta charset="utf-8">
+    <meta charset="UTF-8">
 
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1"
->
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<title>Login | RA Miftahul Hikmah</title>
+    <meta
+        name="description"
+        content="Login RA Miftahul Hikmah"
+    >
 
-<link
-    rel="stylesheet"
-    href="css/style.css"
->
-```
+    <meta
+        name="theme-color"
+        content="#7b6cff"
+    >
+
+    <title>
+        Login | RA Miftahul Hikmah
+    </title>
+
+
+    <!-- GOOGLE FONT -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <style>
+
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+
+            box-sizing:
+                border-box;
+
+        }
+
+
+        html {
+
+            scroll-behavior:
+                smooth;
+
+        }
+
+
+        body {
+
+            margin:
+                0;
+
+            min-height:
+                100vh;
+
+            overflow-x:
+                hidden;
+
+            font-family:
+                "Nunito",
+                sans-serif;
+
+            color:
+                #342d4c;
+
+            background:
+                #f7f7fb;
+
+        }
+
+
+        button,
+        input {
+
+            font-family:
+                inherit;
+
+        }
+
+
+        button {
+
+            -webkit-tap-highlight-color:
+                transparent;
+
+        }
+
+
+        a {
+
+            -webkit-tap-highlight-color:
+                transparent;
+
+        }
+
+
+        /* =====================================================
+           BACKGROUND
+        ===================================================== */
+
+        .page-bg {
+
+            position:
+                fixed;
+
+            inset:
+                0;
+
+            z-index:
+                -3;
+
+            overflow:
+                hidden;
+
+            pointer-events:
+                none;
+
+        }
+
+
+        .page-bg::before {
+
+            content:
+                "";
+
+            position:
+                absolute;
+
+            width:
+                500px;
+
+            height:
+                500px;
+
+            top:
+                -220px;
+
+            left:
+                -180px;
+
+            border-radius:
+                50%;
+
+            background:
+                rgba(255,174,210,.35);
+
+            filter:
+                blur(90px);
+
+        }
+
+
+        .page-bg::after {
+
+            content:
+                "";
+
+            position:
+                absolute;
+
+            width:
+                550px;
+
+            height:
+                550px;
+
+            right:
+                -250px;
+
+            bottom:
+                -250px;
+
+            border-radius:
+                50%;
+
+            background:
+                rgba(140,190,255,.30);
+
+            filter:
+                blur(100px);
+
+        }
+
+
+        .floating-shape {
+
+            position:
+                fixed;
+
+            z-index:
+                -2;
+
+            border-radius:
+                50%;
+
+            pointer-events:
+                none;
+
+            animation:
+                floating 7s ease-in-out infinite;
+
+        }
+
+
+        .shape-one {
+
+            width:
+                70px;
+
+            height:
+                70px;
+
+            top:
+                25%;
+
+            left:
+                7%;
+
+            background:
+                rgba(255,220,120,.25);
+
+        }
+
+
+        .shape-two {
+
+            width:
+                100px;
+
+            height:
+                100px;
+
+            right:
+                6%;
+
+            top:
+                18%;
+
+            background:
+                rgba(164,127,255,.15);
+
+            animation-delay:
+                1s;
+
+        }
+
+
+        .shape-three {
+
+            width:
+                55px;
+
+            height:
+                55px;
+
+            left:
+                10%;
+
+            bottom:
+                10%;
+
+            background:
+                rgba(239,79,130,.16);
+
+            animation-delay:
+                2s;
+
+        }
+
+
+        @keyframes floating {
+
+            0%,
+            100% {
+
+                transform:
+                    translateY(0)
+                    rotate(0deg);
+
+            }
+
+
+            50% {
+
+                transform:
+                    translateY(-20px)
+                    rotate(10deg);
+
+            }
+
+        }
+
+
+        /* =====================================================
+           CONTAINER
+        ===================================================== */
+
+        .container {
+
+            width:
+                min(
+                    1180px,
+                    calc(100% - 32px)
+                );
+
+            margin:
+                auto;
+
+        }
+
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        .header {
+
+            position:
+                sticky;
+
+            top:
+                0;
+
+            z-index:
+                100;
+
+            background:
+                rgba(255,255,255,.85);
+
+            backdrop-filter:
+                blur(20px);
+
+            -webkit-backdrop-filter:
+                blur(20px);
+
+            border-bottom:
+                1px solid rgba(100,80,140,.07);
+
+        }
+
+
+        .header-inner {
+
+            min-height:
+                74px;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                space-between;
+
+            gap:
+                15px;
+
+        }
+
+
+        /* =====================================================
+           BRAND
+        ===================================================== */
+
+        .brand {
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            gap:
+                11px;
+
+            text-decoration:
+                none;
+
+            color:
+                #342d4c;
+
+            min-width:
+                0;
+
+        }
+
+
+        .brand-logo {
+
+            width:
+                50px;
+
+            height:
+                50px;
+
+            flex:
+                0 0 auto;
+
+            display:
+                grid;
+
+            place-items:
+                center;
+
+            border-radius:
+                17px;
+
+            font-size:
+                25px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffe29a,
+                    #ffc9dc,
+                    #cfefff
+                );
+
+            box-shadow:
+                0 10px 25px rgba(239,79,130,.15);
+
+        }
+
+
+        .brand-text {
+
+            min-width:
+                0;
+
+        }
+
+
+        .brand h1 {
+
+            margin:
+                0;
+
+            font-family:
+                "Baloo 2",
+                cursive;
+
+            font-size:
+                20px;
+
+            line-height:
+                1;
+
+            white-space:
+                nowrap;
+
+        }
+
+
+        .brand h1 span {
+
+            color:
+                #ef4f82;
+
+        }
+
+
+        .brand p {
+
+            margin:
+                5px 0 0;
+
+            color:
+                #8a8294;
+
+            font-size:
+                9px;
+
+            font-weight:
+                700;
+
+            white-space:
+                nowrap;
+
+        }
+
+
+        /* =====================================================
+           BACK BUTTON
+        ===================================================== */
+
+        .back-button {
+
+            display:
+                inline-flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            gap:
+                7px;
+
+            min-height:
+                43px;
+
+            padding:
+                0 16px;
+
+            border-radius:
+                14px;
+
+            text-decoration:
+                none;
+
+            color:
+                #6f6578;
+
+            font-size:
+                11px;
+
+            font-weight:
+                900;
+
+            background:
+                white;
+
+            border:
+                1px solid #eeeaf3;
+
+            box-shadow:
+                0 8px 20px rgba(60,40,90,.05);
+
+            transition:
+                .25s ease;
+
+        }
+
+
+        .back-button:hover {
+
+            transform:
+                translateY(-2px);
+
+            color:
+                #7b63bd;
+
+        }
+
+
+        /* =====================================================
+           NAVIGATION
+        ===================================================== */
+
+        .nav {
+
+            position:
+                sticky;
+
+            top:
+                74px;
+
+            z-index:
+                90;
+
+            background:
+                rgba(255,255,255,.92);
+
+            backdrop-filter:
+                blur(20px);
+
+            -webkit-backdrop-filter:
+                blur(20px);
+
+            border-bottom:
+                1px solid #f0edf5;
+
+        }
+
+
+        .nav-inner {
+
+            width:
+                min(
+                    1180px,
+                    calc(100% - 20px)
+                );
+
+            margin:
+                auto;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            gap:
+                8px;
+
+            padding:
+                8px 0;
+
+            overflow-x:
+                auto;
+
+            scrollbar-width:
+                none;
+
+        }
+
+
+        .nav-inner::-webkit-scrollbar {
+
+            display:
+                none;
+
+        }
+
+
+        .nav a {
+
+            flex:
+                0 0 auto;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            gap:
+                6px;
+
+            padding:
+                10px 14px;
+
+            border-radius:
+                13px;
+
+            text-decoration:
+                none;
+
+            color:
+                #766e80;
+
+            font-size:
+                11px;
+
+            font-weight:
+                900;
+
+            transition:
+                .25s ease;
+
+        }
+
+
+        .nav a:hover {
+
+            background:
+                #faf8fd;
+
+        }
+
+
+        .nav a.active {
+
+            color:
+                white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ef4f82,
+                    #ff7ca6
+                );
+
+            box-shadow:
+                0 8px 18px rgba(239,79,130,.20);
+
+        }
+
+
+        /* =====================================================
+           MAIN
+        ===================================================== */
+
+        .main {
+
+            padding:
+                32px 0 70px;
+
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .login-hero {
+
+            position:
+                relative;
+
+            overflow:
+                hidden;
+
+            min-height:
+                280px;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            padding:
+                40px;
+
+            border-radius:
+                32px;
+
+            color:
+                white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #7b6cff,
+                    #9b70f2,
+                    #ef4f82,
+                    #ff9b72
+                );
+
+            background-size:
+                250% 250%;
+
+            box-shadow:
+                0 25px 60px rgba(100,60,120,.20);
+
+            animation:
+                gradientMove 10s ease infinite;
+
+        }
+
+
+        @keyframes gradientMove {
+
+            0% {
+
+                background-position:
+                    0% 50%;
+
+            }
+
+
+            50% {
+
+                background-position:
+                    100% 50%;
+
+            }
+
+
+            100% {
+
+                background-position:
+                    0% 50%;
+
+            }
+
+        }
+
+
+        .login-hero::before {
+
+            content:
+                "🌈";
+
+            position:
+                absolute;
+
+            top:
+                -60px;
+
+            right:
+                5%;
+
+            font-size:
+                210px;
+
+            opacity:
+                .13;
+
+            transform:
+                rotate(-15deg);
+
+        }
+
+
+        .login-hero::after {
+
+            content:
+                "🔐";
+
+            position:
+                absolute;
+
+            right:
+                25%;
+
+            bottom:
+                -25px;
+
+            font-size:
+                100px;
+
+            opacity:
+                .13;
+
+            transform:
+                rotate(15deg);
+
+        }
+
+
+        .hero-content {
+
+            position:
+                relative;
+
+            z-index:
+                2;
+
+            max-width:
+                720px;
+
+        }
+
+
+        .hero-badge {
+
+            display:
+                inline-flex;
+
+            align-items:
+                center;
+
+            gap:
+                7px;
+
+            padding:
+                9px 14px;
+
+            border-radius:
+                50px;
+
+            background:
+                rgba(255,255,255,.17);
+
+            backdrop-filter:
+                blur(10px);
+
+            -webkit-backdrop-filter:
+                blur(10px);
+
+            font-size:
+                10px;
+
+            font-weight:
+                900;
+
+        }
+
+
+        .hero-content h2 {
+
+            margin:
+                16px 0 10px;
+
+            font-family:
+                "Baloo 2",
+                cursive;
+
+            font-size:
+                clamp(38px,6vw,64px);
+
+            line-height:
+                1;
+
+        }
+
+
+        .hero-content p {
+
+            margin:
+                0;
+
+            max-width:
+                600px;
+
+            color:
+                rgba(255,255,255,.90);
+
+            font-size:
+                14px;
+
+            line-height:
+                1.8;
+
+        }
+
+
+        .hero-info {
+
+            display:
+                flex;
+
+            flex-wrap:
+                wrap;
+
+            gap:
+                9px;
+
+            margin-top:
+                20px;
+
+        }
+
+
+        .hero-info span {
+
+            padding:
+                8px 12px;
+
+            border-radius:
+                50px;
+
+            background:
+                rgba(255,255,255,.14);
+
+            font-size:
+                10px;
+
+            font-weight:
+                800;
+
+        }
+
+
+        /* =====================================================
+           MOBILE BLOG MENU
+        ===================================================== */
+
+        .mobile-blog-menu {
+
+            display:
+                none;
+
+        }
+
+
+        /* =====================================================
+           LOGIN LAYOUT
+        ===================================================== */
+
+        .login-layout {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                minmax(0,1.25fr)
+                minmax(300px,.75fr);
+
+            gap:
+                25px;
+
+            margin-top:
+                25px;
+
+            align-items:
+                start;
+
+        }
+
+
+        /* =====================================================
+           LOGIN CARD
+        ===================================================== */
+
+        .login-card {
+
+            overflow:
+                hidden;
+
+            border-radius:
+                28px;
+
+            background:
+                rgba(255,255,255,.92);
+
+            border:
+                1px solid rgba(255,255,255,.90);
+
+            box-shadow:
+                0 20px 50px rgba(60,40,90,.08);
+
+        }
+
+
+        .login-card-header {
+
+            padding:
+                28px 28px 0;
+
+        }
+
+
+        .article-tag {
+
+            display:
+                inline-flex;
+
+            align-items:
+                center;
+
+            gap:
+                6px;
+
+            padding:
+                7px 12px;
+
+            border-radius:
+                30px;
+
+            background:
+                #f1edff;
+
+            color:
+                #7b63bd;
+
+            font-size:
+                10px;
+
+            font-weight:
+                900;
+
+        }
+
+
+        .login-card-header h2 {
+
+            margin:
+                14px 0 8px;
+
+            font-family:
+                "Baloo 2",
+                cursive;
+
+            font-size:
+                32px;
+
+            line-height:
+                1.1;
+
+        }
+
+
+        .login-card-header p {
+
+            margin:
+                0;
+
+            color:
+                #857c8e;
+
+            font-size:
+                12px;
+
+            line-height:
+                1.8;
+
+        }
+
+
+        /* =====================================================
+           ROLE SELECTOR
+        ===================================================== */
+
+        .role-selector {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(3,1fr);
+
+            gap:
+                10px;
+
+            padding:
+                25px 28px 0;
+
+        }
+
+
+        .role-option {
+
+            position:
+                relative;
+
+            cursor:
+                pointer;
+
+        }
+
+
+        .role-option input {
+
+            position:
+                absolute;
+
+            opacity:
+                0;
+
+            pointer-events:
+                none;
+
+        }
+
+
+        .role-box {
+
+            min-height:
+                130px;
+
+            padding:
+                15px 10px;
+
+            display:
+                flex;
+
+            flex-direction:
+                column;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            gap:
+                8px;
+
+            text-align:
+                center;
+
+            border:
+                1px solid #ece7f1;
+
+            border-radius:
+                20px;
+
+            background:
+                #faf9ff;
+
+            transition:
+                .3s ease;
+
+        }
+
+
+        .role-box:hover {
+
+            transform:
+                translateY(-4px);
+
+            box-shadow:
+                0 12px 25px rgba(60,40,90,.08);
+
+        }
+
+
+        .role-icon {
+
+            width:
+                48px;
+
+            height:
+                48px;
+
+            display:
+                grid;
+
+            place-items:
+                center;
+
+            border-radius:
+                16px;
+
+            font-size:
+                24px;
+
+            background:
+                white;
+
+            box-shadow:
+                0 7px 18px rgba(60,40,90,.07);
+
+        }
+
+
+        .role-box b {
+
+            font-size:
+                11px;
+
+        }
+
+
+        .role-box small {
+
+            color:
+                #958c9d;
+
+            font-size:
+                8px;
+
+            line-height:
+                1.4;
+
+        }
+
+
+        .role-option input:checked
+        +
+        .role-box {
+
+            border-color:
+                #a47fff;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f3efff,
+                    #fff3f8
+                );
+
+            box-shadow:
+                0 12px 28px rgba(123,108,255,.12);
+
+            transform:
+                translateY(-3px);
+
+        }
+
+
+        /* =====================================================
+           FORM
+        ===================================================== */
+
+        .login-form {
+
+            padding:
+                25px 28px 28px;
+
+        }
+
+
+        .form-group {
+
+            display:
+                grid;
+
+            gap:
+                8px;
+
+            margin-bottom:
+                15px;
+
+        }
+
+
+        .form-group label {
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                space-between;
+
+            gap:
+                10px;
+
+            color:
+                #5e566a;
+
+            font-size:
+                11px;
+
+            font-weight:
+                900;
+
+        }
+
+
+        .input-wrap {
+
+            position:
+                relative;
+
+        }
+
+
+        .input-icon {
+
+            position:
+                absolute;
+
+            left:
+                15px;
+
+            top:
+                50%;
+
+            transform:
+                translateY(-50%);
+
+            pointer-events:
+                none;
+
+            font-size:
+                16px;
+
+        }
+
+
+        .input-wrap input {
+
+            width:
+                100%;
+
+            min-height:
+                54px;
+
+            padding:
+                12px 50px;
+
+            border:
+                1px solid #e8e3ee;
+
+            outline:
+                none;
+
+            border-radius:
+                16px;
+
+            background:
+                #fff;
+
+            color:
+                #433b4d;
+
+            font-size:
+                12px;
+
+            transition:
+                .25s ease;
+
+        }
+
+
+        .input-wrap input:focus {
+
+            border-color:
+                #a47fff;
+
+            box-shadow:
+                0 0 0 4px rgba(164,127,255,.10);
+
+        }
+
+
+        .password-toggle {
+
+            position:
+                absolute;
+
+            right:
+                9px;
+
+            top:
+                50%;
+
+            transform:
+                translateY(-50%);
+
+            width:
+                38px;
+
+            height:
+                38px;
+
+            border:
+                none;
+
+            cursor:
+                pointer;
+
+            display:
+                grid;
+
+            place-items:
+                center;
+
+            border-radius:
+                12px;
+
+            background:
+                #f7f5fa;
+
+            font-size:
+                15px;
+
+        }
+
+
+        /* =====================================================
+           FORM OPTIONS
+        ===================================================== */
+
+        .form-options {
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                space-between;
+
+            gap:
+                10px;
+
+            margin:
+                5px 0 20px;
+
+        }
+
+
+        .remember {
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            gap:
+                7px;
+
+            cursor:
+                pointer;
+
+            color:
+                #807788;
+
+            font-size:
+                10px;
+
+            font-weight:
+                700;
+
+        }
+
+
+        .remember input {
+
+            width:
+                17px;
+
+            height:
+                17px;
+
+            margin:
+                0;
+
+            accent-color:
+                #7b6cff;
+
+        }
+
+
+        .forgot-password {
+
+            color:
+                #7b63bd;
+
+            text-decoration:
+                none;
+
+            font-size:
+                10px;
+
+            font-weight:
+                900;
+
+        }
+
+
+        /* =====================================================
+           LOGIN BUTTON
+        ===================================================== */
+
+        .login-button {
+
+            width:
+                100%;
+
+            min-height:
+                55px;
+
+            border:
+                none;
+
+            cursor:
+                pointer;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            gap:
+                8px;
+
+            border-radius:
+                17px;
+
+            color:
+                white;
+
+            font-size:
+                13px;
+
+            font-weight:
+                900;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #7b6cff,
+                    #a47fff
+                );
+
+            box-shadow:
+                0 14px 28px rgba(123,108,255,.25);
+
+            transition:
+                .3s ease;
+
+        }
+
+
+        .login-button:hover {
+
+            transform:
+                translateY(-3px);
+
+            box-shadow:
+                0 18px 35px rgba(123,108,255,.30);
+
+        }
+
+
+        .login-button:disabled {
+
+            opacity:
+                .75;
+
+            cursor:
+                not-allowed;
+
+            transform:
+                none;
+
+        }
+
+
+        /* =====================================================
+           LOGIN MESSAGE
+        ===================================================== */
+
+        .login-message {
+
+            display:
+                none;
+
+            align-items:
+                center;
+
+            gap:
+                10px;
+
+            margin-top:
+                15px;
+
+            padding:
+                13px 15px;
+
+            border-radius:
+                15px;
+
+            font-size:
+                10px;
+
+            font-weight:
+                800;
+
+            line-height:
+                1.6;
+
+        }
+
+
+        .login-message.show {
+
+            display:
+                flex;
+
+            animation:
+                messageShow .35s ease;
+
+        }
+
+
+        .login-message.error {
+
+            color:
+                #a54a61;
+
+            background:
+                #fff0f3;
+
+            border:
+                1px solid #ffd9e1;
+
+        }
+
+
+        .login-message.success {
+
+            color:
+                #487a60;
+
+            background:
+                #effff5;
+
+            border:
+                1px solid #d8f3e1;
+
+        }
+
+
+        @keyframes messageShow {
+
+            from {
+
+                opacity:
+                    0;
+
+                transform:
+                    translateY(-8px);
+
+            }
+
+
+            to {
+
+                opacity:
+                    1;
+
+                transform:
+                    translateY(0);
+
+            }
+
+        }
+
+
+        /* =====================================================
+           DEMO INFO
+        ===================================================== */
+
+        .demo-info {
+
+            margin-top:
+                20px;
+
+            padding:
+                15px;
+
+            border-radius:
+                18px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff9ed,
+                    #fff5f8
+                );
+
+            border:
+                1px solid #f5e8cc;
+
+        }
+
+
+        .demo-info h4 {
+
+            margin:
+                0 0 8px;
+
+            font-size:
+                11px;
+
+        }
+
+
+        .demo-info p {
+
+            margin:
+                0;
+
+            color:
+                #81756b;
+
+            font-size:
+                9px;
+
+            line-height:
+                1.7;
+
+        }
+
+
+        /* =====================================================
+           SIDEBAR
+        ===================================================== */
+
+        .sidebar {
+
+            display:
+                grid;
+
+            gap:
+                18px;
+
+        }
+
+
+        .side-card {
+
+            padding:
+                23px;
+
+            border-radius:
+                25px;
+
+            background:
+                rgba(255,255,255,.90);
+
+            box-shadow:
+                0 16px 38px rgba(60,40,90,.08);
+
+        }
+
+
+        .side-card h3 {
+
+            margin:
+                0 0 10px;
+
+            font-family:
+                "Baloo 2",
+                cursive;
+
+            font-size:
+                23px;
+
+        }
+
+
+        .side-card h3 span {
+
+            color:
+                #ef4f82;
+
+        }
+
+
+        .side-card p {
+
+            margin:
+                0;
+
+            color:
+                #817889;
+
+            font-size:
+                11px;
+
+            line-height:
+                1.8;
+
+        }
+
+
+        /* =====================================================
+           ROLE INFO
+        ===================================================== */
+
+        .role-list {
+
+            display:
+                grid;
+
+            gap:
+                10px;
+
+            margin-top:
+                16px;
+
+        }
+
+
+        .role-info {
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            gap:
+                11px;
+
+            padding:
+                12px;
+
+            border-radius:
+                17px;
+
+            background:
+                #faf9ff;
+
+            transition:
+                .25s ease;
+
+        }
+
+
+        .role-info:hover {
+
+            transform:
+                translateX(4px);
+
+        }
+
+
+        .role-info-icon {
+
+            width:
+                45px;
+
+            height:
+                45px;
+
+            flex:
+                0 0 auto;
+
+            display:
+                grid;
+
+            place-items:
+                center;
+
+            border-radius:
+                15px;
+
+            background:
+                white;
+
+            font-size:
+                22px;
+
+            box-shadow:
+                0 7px 17px rgba(60,40,90,.06);
+
+        }
+
+
+        .role-info b {
+
+            display:
+                block;
+
+            font-size:
+                10px;
+
+        }
+
+
+        .role-info small {
+
+            display:
+                block;
+
+            margin-top:
+                3px;
+
+            color:
+                #9a91a1;
+
+            font-size:
+                8px;
+
+            line-height:
+                1.5;
+
+        }
+
+
+        /* =====================================================
+           STATUS CARD
+        ===================================================== */
+
+        .status-card {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f1edff,
+                    #fff0f6,
+                    #ecf8ff
+                );
+
+        }
+
+
+        .status-icon {
+
+            font-size:
+                48px;
+
+            margin-bottom:
+                7px;
+
+        }
+
+
+        .status-button {
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            min-height:
+                50px;
+
+            margin-top:
+                16px;
+
+            border-radius:
+                15px;
+
+            text-decoration:
+                none;
+
+            color:
+                white;
+
+            font-size:
+                11px;
+
+            font-weight:
+                900;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ef4f82,
+                    #ff7ca7
+                );
+
+            box-shadow:
+                0 12px 25px rgba(239,79,130,.20);
+
+            transition:
+                .25s ease;
+
+        }
+
+
+        .status-button:hover {
+
+            transform:
+                translateY(-2px);
+
+        }
+
+
+        /* =====================================================
+           BLOG TIPS
+        ===================================================== */
+
+        .tips-list {
+
+            display:
+                grid;
+
+            gap:
+                9px;
+
+            margin-top:
+                15px;
+
+        }
+
+
+        .tip-item {
+
+            display:
+                flex;
+
+            align-items:
+                flex-start;
+
+            gap:
+                9px;
+
+            padding:
+                11px;
+
+            border-radius:
+                15px;
+
+            background:
+                #f9fcff;
+
+        }
+
+
+        .tip-item span {
+
+            font-size:
+                17px;
+
+        }
+
+
+        .tip-item b {
+
+            display:
+                block;
+
+            font-size:
+                10px;
+
+        }
+
+
+        .tip-item small {
+
+            display:
+                block;
+
+            margin-top:
+                3px;
+
+            color:
+                #908797;
+
+            font-size:
+                8px;
+
+            line-height:
+                1.5;
+
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        .footer {
+
+            padding:
+                40px 0 20px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #302843,
+                    #433657
+                );
+
+            color:
+                white;
+
+        }
+
+
+        .footer-grid {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(3,1fr);
+
+            gap:
+                30px;
+
+        }
+
+
+        .footer h3 {
+
+            margin:
+                0 0 10px;
+
+            font-family:
+                "Baloo 2",
+                cursive;
+
+            font-size:
+                20px;
+
+        }
+
+
+        .footer h3 span {
+
+            color:
+                #ff91b7;
+
+        }
+
+
+        .footer p {
+
+            margin:
+                0 0 7px;
+
+            color:
+                #c8c0d4;
+
+            font-size:
+                11px;
+
+            line-height:
+                1.7;
+
+        }
+
+
+        .footer a {
+
+            color:
+                #c8c0d4;
+
+            text-decoration:
+                none;
+
+        }
+
+
+        .copyright {
+
+            margin-top:
+                30px;
+
+            padding-top:
+                18px;
+
+            text-align:
+                center;
+
+            border-top:
+                1px solid rgba(255,255,255,.08);
+
+            color:
+                #aaa0bb;
+
+            font-size:
+                10px;
+
+        }
+
+
+        /* =====================================================
+           REVEAL
+        ===================================================== */
+
+        .reveal {
+
+            opacity:
+                0;
+
+            transform:
+                translateY(25px);
+
+            transition:
+                opacity .7s ease,
+                transform .7s ease;
+
+        }
+
+
+        .reveal.show {
+
+            opacity:
+                1;
+
+            transform:
+                translateY(0);
+
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (
+            max-width:
+            768px
+        ) {
+
+
+            /* CONTAINER */
+
+            .container {
+
+                width:
+                    calc(100% - 24px);
+
+            }
+
+
+            /* HEADER */
+
+            .header-inner {
+
+                min-height:
+                    66px;
+
+            }
+
+
+            .brand {
+
+                gap:
+                    8px;
+
+            }
+
+
+            .brand-logo {
+
+                width:
+                    40px;
+
+                height:
+                    40px;
+
+                border-radius:
+                    13px;
+
+                font-size:
+                    20px;
+
+            }
+
+
+            .brand h1 {
+
+                font-size:
+                    15px;
+
+            }
+
+
+            .brand p {
+
+                font-size:
+                    7px;
+
+            }
+
+
+            .back-button {
+
+                min-height:
+                    38px;
+
+                padding:
+                    0 11px;
+
+                font-size:
+                    9px;
+
+                border-radius:
+                    12px;
+
+            }
+
+
+            /* NAV */
+
+            .nav {
+
+                top:
+                    66px;
+
+            }
+
+
+            .nav-inner {
+
+                gap:
+                    5px;
+
+                padding:
+                    7px 0;
+
+            }
+
+
+            .nav a {
+
+                padding:
+                    9px 12px;
+
+                font-size:
+                    9px;
+
+            }
+
+
+            /* MAIN */
+
+            .main {
+
+                padding:
+                    15px 0 40px;
+
+            }
+
+
+            /* HERO */
+
+            .login-hero {
+
+                min-height:
+                    340px;
+
+                padding:
+                    24px 20px;
+
+                border-radius:
+                    25px;
+
+                align-items:
+                    flex-end;
+
+            }
+
+
+            .login-hero::before {
+
+                top:
+                    -5px;
+
+                right:
+                    -25px;
+
+                font-size:
+                    130px;
+
+            }
+
+
+            .login-hero::after {
+
+                right:
+                    10px;
+
+                bottom:
+                    120px;
+
+                font-size:
+                    65px;
+
+            }
+
+
+            .hero-badge {
+
+                padding:
+                    7px 11px;
+
+                font-size:
+                    8px;
+
+            }
+
+
+            .hero-content h2 {
+
+                margin:
+                    13px 0 10px;
+
+                font-size:
+                    42px;
+
+                line-height:
+                    .95;
+
+            }
+
+
+            .hero-content p {
+
+                font-size:
+                    11px;
+
+                line-height:
+                    1.7;
+
+            }
+
+
+            .hero-info {
+
+                gap:
+                    6px;
+
+                margin-top:
+                    16px;
+
+            }
+
+
+            .hero-info span {
+
+                padding:
+                    7px 9px;
+
+                font-size:
+                    8px;
+
+            }
+
+
+            /* MOBILE BLOG MENU */
+
+            .mobile-blog-menu {
+
+                display:
+                    flex;
+
+                gap:
+                    8px;
+
+                margin-top:
+                    12px;
+
+                overflow-x:
+                    auto;
+
+                scrollbar-width:
+                    none;
+
+            }
+
+
+            .mobile-blog-menu::-webkit-scrollbar {
+
+                display:
+                    none;
+
+            }
+
+
+            .mobile-blog-menu a {
+
+                flex:
+                    0 0 auto;
+
+                padding:
+                    10px 13px;
+
+                border-radius:
+                    14px;
+
+                background:
+                    white;
+
+                box-shadow:
+                    0 8px 20px rgba(60,40,90,.07);
+
+                text-decoration:
+                    none;
+
+                color:
+                    #6d6478;
+
+                font-size:
+                    9px;
+
+                font-weight:
+                    900;
+
+            }
+
+
+            /* LAYOUT */
+
+            .login-layout {
+
+                display:
+                    flex;
+
+                flex-direction:
+                    column;
+
+                gap:
+                    15px;
+
+                margin-top:
+                    15px;
+
+            }
+
+
+            /* LOGIN CARD */
+
+            .login-card {
+
+                width:
+                    100%;
+
+                border-radius:
+                    22px;
+
+            }
+
+
+            .login-card-header {
+
+                padding:
+                    20px 17px 0;
+
+            }
+
+
+            .article-tag {
+
+                font-size:
+                    8px;
+
+            }
+
+
+            .login-card-header h2 {
+
+                margin:
+                    10px 0 6px;
+
+                font-size:
+                    25px;
+
+            }
+
+
+            .login-card-header p {
+
+                font-size:
+                    10px;
+
+                line-height:
+                    1.7;
+
+            }
+
+
+            /* ROLE SELECTOR */
+
+            .role-selector {
+
+                gap:
+                    7px;
+
+                padding:
+                    17px 17px 0;
+
+            }
+
+
+            .role-box {
+
+                min-height:
+                    115px;
+
+                padding:
+                    10px 5px;
+
+                border-radius:
+                    16px;
+
+            }
+
+
+            .role-icon {
+
+                width:
+                    40px;
+
+                height:
+                    40px;
+
+                border-radius:
+                    13px;
+
+                font-size:
+                    19px;
+
+            }
+
+
+            .role-box b {
+
+                font-size:
+                    9px;
+
+            }
+
+
+            .role-box small {
+
+                font-size:
+                    7px;
+
+            }
+
+
+            /* FORM */
+
+            .login-form {
+
+                padding:
+                    18px 17px 20px;
+
+            }
+
+
+            .form-group {
+
+                gap:
+                    6px;
+
+                margin-bottom:
+                    12px;
+
+            }
+
+
+            .form-group label {
+
+                font-size:
+                    9px;
+
+            }
+
+
+            .input-wrap input {
+
+                min-height:
+                    49px;
+
+                padding:
+                    10px 45px;
+
+                border-radius:
+                    14px;
+
+                font-size:
+                    10px;
+
+            }
+
+
+            .input-icon {
+
+                left:
+                    13px;
+
+                font-size:
+                    14px;
+
+            }
+
+
+            .password-toggle {
+
+                width:
+                    34px;
+
+                height:
+                    34px;
+
+                border-radius:
+                    10px;
+
+                font-size:
+                    13px;
+
+            }
+
+
+            /* OPTIONS */
+
+            .form-options {
+
+                margin:
+                    3px 0 16px;
+
+            }
+
+
+            .remember {
+
+                font-size:
+                    8px;
+
+            }
+
+
+            .remember input {
+
+                width:
+                    15px;
+
+                height:
+                    15px;
+
+            }
+
+
+            .forgot-password {
+
+                font-size:
+                    8px;
+
+            }
+
+
+            /* BUTTON */
+
+            .login-button {
+
+                min-height:
+                    51px;
+
+                border-radius:
+                    15px;
+
+                font-size:
+                    11px;
+
+            }
+
+
+            .login-message {
+
+                padding:
+                    11px;
+
+                font-size:
+                    8px;
+
+            }
+
+
+            /* SIDEBAR */
+
+            .sidebar {
+
+                width:
+                    100%;
+
+                display:
+                    grid;
+
+                gap:
+                    13px;
+
+            }
+
+
+            .side-card {
+
+                padding:
+                    17px;
+
+                border-radius:
+                    21px;
+
+            }
+
+
+            .side-card h3 {
+
+                font-size:
+                    20px;
+
+            }
+
+
+            .side-card p {
+
+                font-size:
+                    10px;
+
+            }
+
+
+            .role-info {
+
+                padding:
+                    10px;
+
+            }
+
+
+            .role-info-icon {
+
+                width:
+                    40px;
+
+                height:
+                    40px;
+
+                font-size:
+                    19px;
+
+            }
+
+
+            /* FOOTER */
+
+            .footer {
+
+                padding:
+                    30px 0 18px;
+
+            }
+
+
+            .footer-grid {
+
+                grid-template-columns:
+                    1fr;
+
+                gap:
+                    20px;
+
+                text-align:
+                    center;
+
+            }
+
+
+        }
+
+
+        /* =====================================================
+           EXTRA SMALL MOBILE
+        ===================================================== */
+
+        @media (
+            max-width:
+            420px
+        ) {
+
+
+            .brand h1 {
+
+                font-size:
+                    13px;
+
+            }
+
+
+            .brand p {
+
+                font-size:
+                    6px;
+
+            }
+
+
+            .back-button {
+
+                padding:
+                    0 9px;
+
+                font-size:
+                    8px;
+
+            }
+
+
+            .role-selector {
+
+                gap:
+                    5px;
+
+            }
+
+
+            .role-box {
+
+                min-height:
+                    105px;
+
+            }
+
+
+            .role-box small {
+
+                display:
+                    none;
+
+            }
+
+
+        }
+
+
+    </style>
 
 </head>
 
-<body data-page="login">
 
-```
+<body>
+
+
+<!-- =====================================================
+     BACKGROUND
+===================================================== -->
+
+<div class="page-bg"></div>
+
+<div class="floating-shape shape-one"></div>
+
+<div class="floating-shape shape-two"></div>
+
+<div class="floating-shape shape-three"></div>
+
+
 <!-- =====================================================
      HEADER
-====================================================== -->
+===================================================== -->
 
-<div class="top">
-
-    <header class="head wrap">
+<header class="header">
 
 
-        <!-- LOGO -->
+    <div class="container header-inner">
+
 
         <a
-            class="brand"
             href="index.html"
+            class="brand"
         >
 
-            <div class="sun">
-                ☀️
+
+            <div class="brand-logo">
+
+                🌈
+
             </div>
 
-            <div>
+
+            <div class="brand-text">
+
 
                 <h1>
+
                     RA Miftahul
-                    <span>Hikmah</span>
+
+                    <span>
+                        Hikmah
+                    </span>
+
                 </h1>
 
+
                 <p>
-                    Tangerang 💗
+
+                    Belajar • Bermain • Berprestasi
+
                 </p>
 
+
             </div>
+
 
         </a>
 
 
-        <!-- CALL US -->
+        <a
+            href="index.html"
+            class="back-button"
+        >
 
-        <div class="call">
+            🏠 Beranda
 
-            ⌕
+        </a>
 
-            <div>
 
-                <small>
-                    Call Us
-                </small>
+    </div>
 
-                <b>
-                    +62 813-9875-4451
-                </b>
+
+</header>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav class="nav">
+
+
+    <div class="nav-inner">
+
+
+        <a href="index.html">
+
+            🏠 Home
+
+        </a>
+
+
+        <a href="about.html">
+
+            👥 About
+
+        </a>
+
+
+        <a href="programs.html">
+
+            📚 Programs
+
+        </a>
+
+
+        <a href="blog.html">
+
+            🖍️ Blog
+
+        </a>
+
+
+        <a href="pendaftaran.html">
+
+            📝 Pendaftaran
+
+        </a>
+
+
+        <a
+            href="login.html"
+            class="active"
+        >
+
+            🔐 Login
+
+        </a>
+
+
+    </div>
+
+
+</nav>
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="main">
+
+
+    <div class="container">
+
+
+        <!-- HERO -->
+
+        <section
+            class="login-hero reveal"
+        >
+
+
+            <div class="hero-content">
+
+
+                <div class="hero-badge">
+
+                    🔐 AREA MASUK SEKOLAH
+
+                </div>
+
+
+                <h2>
+
+                    Selamat Datang
+                    Kembali 👋
+
+                </h2>
+
+
+                <p>
+
+                    Masuk ke akun Anda untuk mengakses
+                    informasi dan layanan RA Miftahul Hikmah.
+                    Pilih jenis akun Admin, Guru atau
+                    Wali Murid sebelum melanjutkan.
+
+                </p>
+
+
+                <div class="hero-info">
+
+
+                    <span>
+
+                        👑 Admin
+
+                    </span>
+
+
+                    <span>
+
+                        👩‍🏫 Guru
+
+                    </span>
+
+
+                    <span>
+
+                        👨‍👩‍👧 Wali Murid
+
+                    </span>
+
+
+                </div>
+
 
             </div>
+
+
+        </section>
+
+
+        <!-- MOBILE BLOG MENU -->
+
+        <div class="mobile-blog-menu">
+
+
+            <a href="#login">
+
+                🔐 Login
+
+            </a>
+
+
+            <a href="#akun">
+
+                👥 Jenis Akun
+
+            </a>
+
+
+            <a href="#status">
+
+                📊 Status
+
+            </a>
+
 
         </div>
 
 
-        <!-- DAFTAR -->
+        <!-- LOGIN LAYOUT -->
 
-        <a
-            class="btn"
-            href="daftar.html"
-        >
-            ✨ Daftar Akun
-        </a>
-
-    </header>
+        <div class="login-layout">
 
 
-    <!-- =================================================
-         NAVBAR
-    ================================================== -->
+            <!-- =================================================
+                 LOGIN CONTENT
+            ================================================== -->
 
-    <nav class="rainbow-nav">
-
-
-        <a
-            href="index.html"
-            class="rainbow-item pink"
-        >
-            <span class="rainbow-icon">🏠</span>
-            <span class="rainbow-text">HOME</span>
-            <span class="sparkle">✦</span>
-        </a>
-
-
-        <a
-            href="about.html"
-            class="rainbow-item blue"
-        >
-            <span class="rainbow-icon">👥</span>
-            <span class="rainbow-text">ABOUT</span>
-            <span class="sparkle">✦</span>
-        </a>
-
-
-        <a
-            href="programs.html"
-            class="rainbow-item green"
-        >
-            <span class="rainbow-icon">📚</span>
-            <span class="rainbow-text">PROGRAMS</span>
-            <span class="sparkle">✦</span>
-        </a>
-
-
-        <a
-            href="classes.html"
-            class="rainbow-item yellow"
-        >
-            <span class="rainbow-icon">🎓</span>
-            <span class="rainbow-text">CLASSES</span>
-            <span class="sparkle">✦</span>
-        </a>
-
-
-        <a
-            href="blog.html"
-            class="rainbow-item orange"
-        >
-            <span class="rainbow-icon">🖍️</span>
-            <span class="rainbow-text">BLOG</span>
-            <span class="sparkle">✦</span>
-        </a>
-
-
-        <a
-            href="gallery.html"
-            class="rainbow-item purple"
-        >
-            <span class="rainbow-icon">🖼️</span>
-            <span class="rainbow-text">GALLERY</span>
-            <span class="sparkle">✦</span>
-        </a>
-
-
-        <a
-            href="parents.html"
-            class="rainbow-item pink2"
-        >
-            <span class="rainbow-icon">💛</span>
-            <span class="rainbow-text">PARENTS</span>
-            <span class="sparkle">✦</span>
-        </a>
-
-
-        <a
-            href="contact.html"
-            class="rainbow-item blue2"
-        >
-            <span class="rainbow-icon">✉️</span>
-            <span class="rainbow-text">CONTACT</span>
-            <span class="sparkle">✦</span>
-        </a>
-
-
-    </nav>
-
-</div>
-
-
-<!-- =====================================================
-     HERO
-====================================================== -->
-
-<section class="pagehero">
-
-    <div class="wrap">
-
-        <h2>
-
-            Selamat
-
-            <span style="color:#ed4f82">
-                Datang
-            </span>
-
-            Kembali! 👋
-
-        </h2>
-
-
-        <p>
-
-            Login untuk masuk ke akun
-            Guru atau Wali Murid.
-
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     LOGIN
-====================================================== -->
-
-<section class="section wrap">
-
-    <div
-        style="
-            max-width:600px;
-            margin:0 auto;
-        "
-    >
-
-        <form
-            class="form reveal"
-            id="loginForm"
-        >
-
-
-            <h2 class="title">
-
-                Login
-
-                <span>
-                    Akun
-                </span>
-
-                🔐
-
-            </h2>
-
-
-            <p>
-
-                Masukkan email dan password
-                yang sudah kamu daftarkan.
-
-            </p>
-
-
-            <!-- EMAIL -->
-
-            <label for="loginEmail">
-                Email
-            </label>
-
-            <input
-                type="email"
-                id="loginEmail"
-                placeholder="contoh@email.com"
-                autocomplete="email"
-                required
+            <section
+                class="login-card reveal"
+                id="login"
             >
 
 
-            <!-- PASSWORD -->
+                <!-- HEADER -->
 
-            <label for="loginPassword">
-                Password
-            </label>
-
-            <input
-                type="password"
-                id="loginPassword"
-                placeholder="Masukkan password"
-                autocomplete="current-password"
-                required
-            >
+                <div class="login-card-header">
 
 
-            <!-- BUTTON -->
+                    <div class="article-tag">
 
-            <button
-                class="btn"
-                type="submit"
-                id="loginButton"
-            >
-                🔐 Login
-            </button>
+                        ✨ MASUK KE AKUN
+
+                    </div>
 
 
-            <!-- PESAN -->
+                    <h2>
 
-            <div
-                id="loginMessage"
-                style="
-                    margin-top:15px;
-                    text-align:center;
-                    font-weight:700;
-                "
-            ></div>
+                        Login Akun Anda 🔐
+
+                    </h2>
 
 
-            <!-- DAFTAR -->
+                    <p>
 
-            <p
-                style="
-                    margin-top:20px;
-                    text-align:center;
-                "
-            >
+                        Pilih jenis akun terlebih dahulu,
+                        kemudian masukkan username dan
+                        password Anda dengan benar.
 
-                Belum punya akun?
+                    </p>
 
-                <a
-                    href="daftar.html"
-                    style="
-                        color:#ed4f82;
-                        font-weight:800;
-                    "
+
+                </div>
+
+
+                <!-- ROLE SELECTOR -->
+
+                <div
+                    class="role-selector"
+                    id="akun"
                 >
-                    Daftar di sini ✨
-                </a>
-
-            </p>
 
 
-        </form>
+                    <!-- ADMIN -->
+
+                    <label class="role-option">
+
+
+                        <input
+                            type="radio"
+                            name="role"
+                            value="admin"
+                            checked
+                        >
+
+
+                        <div class="role-box">
+
+
+                            <div class="role-icon">
+
+                                👑
+
+                            </div>
+
+
+                            <b>
+
+                                Admin
+
+                            </b>
+
+
+                            <small>
+
+                                Kelola sekolah
+
+                            </small>
+
+
+                        </div>
+
+
+                    </label>
+
+
+                    <!-- GURU -->
+
+                    <label class="role-option">
+
+
+                        <input
+                            type="radio"
+                            name="role"
+                            value="guru"
+                        >
+
+
+                        <div class="role-box">
+
+
+                            <div class="role-icon">
+
+                                👩‍🏫
+
+                            </div>
+
+
+                            <b>
+
+                                Guru
+
+                            </b>
+
+
+                            <small>
+
+                                Area guru
+
+                            </small>
+
+
+                        </div>
+
+
+                    </label>
+
+
+                    <!-- WALI -->
+
+                    <label class="role-option">
+
+
+                        <input
+                            type="radio"
+                            name="role"
+                            value="wali"
+                        >
+
+
+                        <div class="role-box">
+
+
+                            <div class="role-icon">
+
+                                👨‍👩‍👧
+
+                            </div>
+
+
+                            <b>
+
+                                Wali
+
+                            </b>
+
+
+                            <small>
+
+                                Area wali
+
+                            </small>
+
+
+                        </div>
+
+
+                    </label>
+
+
+                </div>
+
+
+                <!-- LOGIN FORM -->
+
+                <form
+                    class="login-form"
+                    id="loginForm"
+                >
+
+
+                    <!-- USERNAME -->
+
+                    <div class="form-group">
+
+
+                        <label
+                            for="username"
+                        >
+
+                            Username / Email
+
+                        </label>
+
+
+                        <div class="input-wrap">
+
+
+                            <span class="input-icon">
+
+                                👤
+
+                            </span>
+
+
+                            <input
+                                type="text"
+                                id="username"
+                                placeholder="Masukkan username atau email"
+                                autocomplete="username"
+                                required
+                            >
+
+
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- PASSWORD -->
+
+                    <div class="form-group">
+
+
+                        <label
+                            for="password"
+                        >
+
+                            Password
+
+                        </label>
+
+
+                        <div class="input-wrap">
+
+
+                            <span class="input-icon">
+
+                                🔑
+
+                            </span>
+
+
+                            <input
+                                type="password"
+                                id="password"
+                                placeholder="Masukkan password"
+                                autocomplete="current-password"
+                                required
+                            >
+
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                id="passwordToggle"
+                                aria-label="Tampilkan password"
+                            >
+
+                                👁️
+
+                            </button>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- OPTIONS -->
+
+                    <div class="form-options">
+
+
+                        <label class="remember">
+
+
+                            <input
+                                type="checkbox"
+                                id="rememberMe"
+                            >
+
+
+                            <span>
+
+                                Ingat saya
+
+                            </span>
+
+
+                        </label>
+
+
+                        <a
+                            href="javascript:void(0)"
+                            class="forgot-password"
+                            id="forgotPassword"
+                        >
+
+                            Lupa password?
+
+                        </a>
+
+
+                    </div>
+
+
+                    <!-- LOGIN BUTTON -->
+
+                    <button
+                        type="submit"
+                        class="login-button"
+                        id="loginButton"
+                    >
+
+                        🔐 Masuk Sekarang
+
+                    </button>
+
+
+                    <!-- MESSAGE -->
+
+                    <div
+                        class="login-message"
+                        id="loginMessage"
+                    >
+
+                        <span id="messageIcon">
+
+                            ⚠️
+
+                        </span>
+
+
+                        <span id="messageText">
+
+                            Pesan login
+
+                        </span>
+
+
+                    </div>
+
+
+                    <!-- INFO -->
+
+                    <div class="demo-info">
+
+
+                        <h4>
+
+                            💡 Informasi Login
+
+                        </h4>
+
+
+                        <p>
+
+                            Halaman ini sudah memiliki
+                            sistem pemilihan jenis akun,
+                            validasi form dan pengalihan
+                            ke dashboard sesuai jenis akun.
+                            Database online akan disambungkan
+                            menggunakan Firebase.
+
+                        </p>
+
+
+                    </div>
+
+
+                </form>
+
+
+            </section>
+
+
+            <!-- =================================================
+                 SIDEBAR
+            ================================================== -->
+
+            <aside
+                class="sidebar"
+            >
+
+
+                <!-- JENIS AKUN -->
+
+                <div
+                    class="side-card reveal"
+                >
+
+
+                    <h3>
+
+                        Jenis
+
+                        <span>
+                            Akun
+                        </span>
+
+                    </h3>
+
+
+                    <p>
+
+                        Setiap pengguna memiliki akses
+                        sesuai dengan jenis akun.
+
+                    </p>
+
+
+                    <div class="role-list">
+
+
+                        <!-- ADMIN -->
+
+                        <div class="role-info">
+
+
+                            <div class="role-info-icon">
+
+                                👑
+
+                            </div>
+
+
+                            <div>
+
+
+                                <b>
+
+                                    Admin
+
+                                </b>
+
+
+                                <small>
+
+                                    Mengelola data,
+                                    pengguna dan sistem.
+
+                                </small>
+
+
+                            </div>
+
+
+                        </div>
+
+
+                        <!-- GURU -->
+
+                        <div class="role-info">
+
+
+                            <div class="role-info-icon">
+
+                                👩‍🏫
+
+                            </div>
+
+
+                            <div>
+
+
+                                <b>
+
+                                    Guru
+
+                                </b>
+
+
+                                <small>
+
+                                    Mengakses informasi
+                                    dan data peserta didik.
+
+                                </small>
+
+
+                            </div>
+
+
+                        </div>
+
+
+                        <!-- WALI -->
+
+                        <div class="role-info">
+
+
+                            <div class="role-info-icon">
+
+                                👨‍👩‍👧
+
+                            </div>
+
+
+                            <div>
+
+
+                                <b>
+
+                                    Wali Murid
+
+                                </b>
+
+
+                                <small>
+
+                                    Melihat informasi
+                                    dan perkembangan anak.
+
+                                </small>
+
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- STATUS -->
+
+                <div
+                    class="side-card
+                           status-card
+                           reveal"
+                    id="status"
+                >
+
+
+                    <div class="status-icon">
+
+                        📊
+
+                    </div>
+
+
+                    <h3>
+
+                        Belum Punya
+
+                        <span>
+                            Akun?
+                        </span>
+
+                    </h3>
+
+
+                    <p>
+
+                        Jika Anda sudah melakukan
+                        pendaftaran peserta didik,
+                        gunakan kode pendaftaran
+                        untuk melihat status.
+
+                    </p>
+
+
+                    <a
+                        href="status-pendaftaran.html"
+                        class="status-button"
+                    >
+
+                        📊 Cek Status Pendaftaran
+
+                    </a>
+
+
+                </div>
+
+
+                <!-- TIPS -->
+
+                <div
+                    class="side-card reveal"
+                >
+
+
+                    <h3>
+
+                        Tips
+
+                        <span>
+                            Keamanan
+                        </span>
+
+                    </h3>
+
+
+                    <div class="tips-list">
+
+
+                        <div class="tip-item">
+
+
+                            <span>
+
+                                🔒
+
+                            </span>
+
+
+                            <div>
+
+
+                                <b>
+
+                                    Rahasiakan Password
+
+                                </b>
+
+
+                                <small>
+
+                                    Jangan membagikan
+                                    password kepada orang lain.
+
+                                </small>
+
+
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="tip-item">
+
+
+                            <span>
+
+                                📱
+
+                            </span>
+
+
+                            <div>
+
+
+                                <b>
+
+                                    Gunakan Perangkat Aman
+
+                                </b>
+
+
+                                <small>
+
+                                    Hindari login pada
+                                    perangkat umum.
+
+                                </small>
+
+
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="tip-item">
+
+
+                            <span>
+
+                                🚪
+
+                            </span>
+
+
+                            <div>
+
+
+                                <b>
+
+                                    Selalu Logout
+
+                                </b>
+
+
+                                <small>
+
+                                    Logout setelah selesai
+                                    menggunakan akun.
+
+                                </small>
+
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </aside>
+
+
+        </div>
+
 
     </div>
 
-</section>
+
+</main>
 
 
 <!-- =====================================================
      FOOTER
-====================================================== -->
+===================================================== -->
 
 <footer class="footer">
 
-    <div class="footgrid wrap">
+
+    <div class="container">
 
 
-        <div>
+        <div class="footer-grid">
 
-            <h3>
 
-                ☀️ KINDER
+            <!-- SEKOLAH -->
 
-                <span style="color:#ef4f82">
-                    GARTEN
-                </span>
+            <div>
 
-            </h3>
 
-            <p>
-                Where Little Minds Bloom 💗
-            </p>
+                <h3>
+
+                    RA Miftahul
+
+                    <span>
+                        Hikmah
+                    </span>
+
+                </h3>
+
+
+                <p>
+
+                    Tempat belajar,
+                    bermain dan bertumbuh
+                    dengan bahagia.
+
+                </p>
+
+
+            </div>
+
+
+            <!-- MENU -->
+
+            <div>
+
+
+                <h3>
+
+                    Menu
+
+                </h3>
+
+
+                <p>
+
+                    <a href="index.html">
+
+                        Home
+
+                    </a>
+
+                </p>
+
+
+                <p>
+
+                    <a href="blog.html">
+
+                        Blog
+
+                    </a>
+
+                </p>
+
+
+                <p>
+
+                    <a href="pendaftaran.html">
+
+                        Pendaftaran
+
+                    </a>
+
+                </p>
+
+
+                <p>
+
+                    <a href="status-pendaftaran.html">
+
+                        Status Pendaftaran
+
+                    </a>
+
+                </p>
+
+
+            </div>
+
+
+            <!-- CONTACT -->
+
+            <div>
+
+
+                <h3>
+
+                    Hubungi Kami
+
+                </h3>
+
+
+                <p>
+
+                    💬 WhatsApp Admin
+
+                </p>
+
+
+                <p>
+
+                    ✉️ Email Sekolah
+
+                </p>
+
+
+                <p>
+
+                    📍 Indonesia
+
+                </p>
+
+
+            </div>
+
 
         </div>
 
 
-        <div>
+        <div class="copyright">
 
-            <h3>
-                Quick Links
-            </h3>
-
-            <a href="index.html">
-                Home
-            </a>
-
-            <a href="about.html">
-                About Us
-            </a>
-
-            <a href="programs.html">
-                Programs
-            </a>
-
-            <a href="classes.html">
-                Classes
-            </a>
-
-            <a href="blog.html">
-                Blog
-            </a>
-
-            <a href="gallery.html">
-                Gallery
-            </a>
-
-            <a href="parents.html">
-                Parents
-            </a>
-
-            <a href="contact.html">
-                Contact Us
-            </a>
-
-        </div>
-
-
-        <div>
-
-            <h3>
-                Contact Us
-            </h3>
-
-            <p>
-                ☎ +62 813-9875-4451
-            </p>
-
-            <p>
-                ✉ info@kindergarten.com
-            </p>
-
-            <p>
-                📍 Tangerang, Indonesia
-            </p>
+            © 2026 RA Miftahul Hikmah
+            • All Rights Reserved
 
         </div>
 
 
     </div>
 
-
-    <div class="copy wrap">
-
-        © 2026 RA Miftahul Hikmah.
-        All rights reserved.
-
-    </div>
 
 </footer>
 
 
 <!-- =====================================================
-     SUPABASE
-====================================================== -->
-
-<script
-    src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
-></script>
-
-
-<!-- WEBSITE JAVASCRIPT -->
-
-<script src="js/script.js"></script>
-
-
-<!-- =====================================================
-     LOGIN SYSTEM
-====================================================== -->
+     JAVASCRIPT
+===================================================== -->
 
 <script>
 
 
-    /* =========================================
-       SUPABASE CONFIG
-    ========================================= */
+    /* =====================================================
+       WAIT DOM
+    ===================================================== */
 
-    const SUPABASE_URL =
-        "https://ervhwjrlqcsobawwhkpf.supabase.co";
+    document.addEventListener(
 
+        "DOMContentLoaded",
 
-    const SUPABASE_PUBLISHABLE_KEY =
-        "sb_publishable_u48E-Q-RjdFRFLC_Cv3rmg_gD0Z3y2K";
-
-
-    const supabaseClient =
-        window.supabase.createClient(
-            SUPABASE_URL,
-            SUPABASE_PUBLISHABLE_KEY
-        );
+        function () {
 
 
-    /* =========================================
-       ELEMENT
-    ========================================= */
+            /* =================================================
+               REVEAL ANIMATION
+            ================================================= */
 
-    const loginForm =
-        document.getElementById(
-            "loginForm"
-        );
+            const revealItems =
 
-
-    const loginButton =
-        document.getElementById(
-            "loginButton"
-        );
-
-
-    const loginMessage =
-        document.getElementById(
-            "loginMessage"
-        );
-
-
-    /* =========================================
-       TAMPILKAN PESAN
-    ========================================= */
-
-    function tampilkanPesan(
-        pesan,
-        tipe
-    ) {
-
-        loginMessage.textContent =
-            pesan;
-
-
-        if (
-            tipe === "success"
-        ) {
-
-            loginMessage.style.color =
-                "#3b9b52";
-
-        }
-
-        else {
-
-            loginMessage.style.color =
-                "#d9365c";
-
-        }
-
-    }
-
-
-    /* =========================================
-       LOGIN
-    ========================================= */
-
-    loginForm.addEventListener(
-        "submit",
-
-        async function(event) {
-
-            event.preventDefault();
-
-
-            const email =
-                document
-                .getElementById(
-                    "loginEmail"
-                )
-                .value
-                .trim();
-
-
-            const password =
-                document
-                .getElementById(
-                    "loginPassword"
-                )
-                .value;
-
-
-            if (
-                !email ||
-                !password
-            ) {
-
-                tampilkanPesan(
-                    "⚠️ Email dan password wajib diisi.",
-                    "error"
+                document.querySelectorAll(
+                    ".reveal"
                 );
 
 
-                return;
+            if (
+
+                "IntersectionObserver"
+                in
+                window
+
+            ) {
+
+
+                const observer =
+
+                    new IntersectionObserver(
+
+                        function (
+                            entries
+                        ) {
+
+
+                            entries.forEach(
+
+                                function (
+                                    entry
+                                ) {
+
+
+                                    if (
+
+                                        entry.isIntersecting
+
+                                    ) {
+
+
+                                        entry.target.classList.add(
+                                            "show"
+                                        );
+
+
+                                        observer.unobserve(
+                                            entry.target
+                                        );
+
+
+                                    }
+
+
+                                }
+
+                            );
+
+
+                        },
+
+
+                        {
+
+                            threshold:
+                                0.08
+
+                        }
+
+                    );
+
+
+                revealItems.forEach(
+
+                    function (
+                        item
+                    ) {
+
+
+                        observer.observe(
+                            item
+                        );
+
+
+                    }
+
+                );
+
 
             }
 
 
-            /* =====================================
-               LOADING
-            ===================================== */
-
-            loginButton.disabled =
-                true;
+            else {
 
 
-            loginButton.textContent =
-                "⏳ Sedang login...";
+                revealItems.forEach(
+
+                    function (
+                        item
+                    ) {
 
 
-            loginMessage.textContent =
-                "";
+                        item.classList.add(
+                            "show"
+                        );
 
 
-            try {
+                    }
 
-
-                /* =====================================
-                   LOGIN SUPABASE
-                ===================================== */
-
-                const {
-                    data,
-                    error
-                } =
-                    await supabaseClient
-                    .auth
-                    .signInWithPassword({
-
-                        email:
-                            email,
-
-                        password:
-                            password
-
-                    });
-
-
-                if (error) {
-
-                    throw error;
-
-                }
-
-
-                if (!data.user) {
-
-                    throw new Error(
-                        "User tidak ditemukan."
-                    );
-
-                }
-
-
-                /* =====================================
-                   AMBIL PROFILE
-                ===================================== */
-
-                loginButton.textContent =
-                    "⏳ Memeriksa akun...";
-
-
-                const {
-                    data: profile,
-                    error: profileError
-                } =
-                    await supabaseClient
-                    .from("profiles")
-                    .select(
-                        "id, full_name, role"
-                    )
-                    .eq(
-                        "id",
-                        data.user.id
-                    )
-                    .single();
-
-
-                if (profileError) {
-
-                    console.error(
-                        "PROFILE ERROR:",
-                        profileError
-                    );
-
-
-                    throw new Error(
-                        "Profil akun belum tersedia."
-                    );
-
-                }
-
-
-                if (!profile) {
-
-                    throw new Error(
-                        "Profil akun tidak ditemukan."
-                    );
-
-                }
-
-
-                /* =====================================
-                   SIMPAN DATA LOGIN
-                ===================================== */
-
-                localStorage.setItem(
-                    "userRole",
-                    profile.role
                 );
 
 
-                localStorage.setItem(
-                    "userName",
-                    profile.full_name || ""
+            }
+
+
+            /* =================================================
+               GET ELEMENTS
+            ================================================= */
+
+            const loginForm =
+
+                document.getElementById(
+                    "loginForm"
                 );
 
 
-                localStorage.setItem(
-                    "userId",
-                    data.user.id
+            const username =
+
+                document.getElementById(
+                    "username"
                 );
 
 
-                /* =====================================
-                   PESAN BERHASIL
-                ===================================== */
+            const password =
 
-                tampilkanPesan(
-                    "✅ Login berhasil! Mengarahkan...",
-                    "success"
+                document.getElementById(
+                    "password"
                 );
 
 
-                /* =====================================
-                   ADMIN
-                ===================================== */
+            const passwordToggle =
 
-                if (
-                    profile.role ===
-                    "admin"
-                ) {
-
-                    setTimeout(
-                        function() {
-
-                            window.location.href =
-                                "admin.html";
-
-                        },
-                        700
-                    );
+                document.getElementById(
+                    "passwordToggle"
+                );
 
 
-                    return;
+            const loginButton =
 
-                }
-
-
-                /* =====================================
-                   GURU
-                ===================================== */
-
-                if (
-                    profile.role ===
-                    "guru"
-                ) {
-
-                    setTimeout(
-                        function() {
-
-                            window.location.href =
-                                "guru.html";
-
-                        },
-                        700
-                    );
+                document.getElementById(
+                    "loginButton"
+                );
 
 
-                    return;
+            const loginMessage =
 
-                }
-
-
-                /* =====================================
-                   WALI MURID
-                ===================================== */
-
-                if (
-                    profile.role ===
-                    "wali_murid"
-                ) {
-
-                    loginButton.textContent =
-                        "⏳ Memeriksa data anak...";
+                document.getElementById(
+                    "loginMessage"
+                );
 
 
-                    /* =============================
-                       CEK APAKAH WALI SUDAH
-                       TERHUBUNG DENGAN ANAK
-                    ============================= */
+            const messageIcon =
 
-                    const {
-                        data: hubunganAnak,
-                        error: hubunganError
-                    } =
-                        await supabaseClient
-                        .from("wali_murid")
-                        .select(
-                            "id, murid_id"
-                        )
-                        .eq(
-                            "wali_id",
-                            data.user.id
-                        )
-                        .limit(1);
+                document.getElementById(
+                    "messageIcon"
+                );
+
+
+            const messageText =
+
+                document.getElementById(
+                    "messageText"
+                );
+
+
+            const rememberMe =
+
+                document.getElementById(
+                    "rememberMe"
+                );
+
+
+            const forgotPassword =
+
+                document.getElementById(
+                    "forgotPassword"
+                );
+
+
+            /* =================================================
+               PASSWORD TOGGLE
+            ================================================= */
+
+            passwordToggle.addEventListener(
+
+                "click",
+
+                function () {
 
 
                     if (
-                        hubunganError
+
+                        password.type ===
+                        "password"
+
                     ) {
 
-                        console.error(
-                            "CEK HUBUNGAN ERROR:",
-                            hubunganError
+
+                        password.type =
+                            "text";
+
+
+                        passwordToggle.textContent =
+                            "🙈";
+
+
+                        passwordToggle.setAttribute(
+
+                            "aria-label",
+
+                            "Sembunyikan password"
+
                         );
 
-
-                        /*
-                         * Jika tabel atau nama kolom
-                         * berbeda, tampilkan error asli
-                         */
-
-                        throw new Error(
-                            hubunganError.message
-                        );
 
                     }
 
 
-                    /* =============================
-                       BELUM ADA ANAK
-                    ============================= */
+                    else {
+
+
+                        password.type =
+                            "password";
+
+
+                        passwordToggle.textContent =
+                            "👁️";
+
+
+                        passwordToggle.setAttribute(
+
+                            "aria-label",
+
+                            "Tampilkan password"
+
+                        );
+
+
+                    }
+
+
+                }
+
+            );
+
+
+            /* =================================================
+               SHOW MESSAGE
+            ================================================= */
+
+            function showMessage(
+
+                type,
+
+                icon,
+
+                text
+
+            ) {
+
+
+                loginMessage.className =
+                    "login-message";
+
+
+                loginMessage.classList.add(
+                    "show"
+                );
+
+
+                loginMessage.classList.add(
+                    type
+                );
+
+
+                messageIcon.textContent =
+                    icon;
+
+
+                messageText.textContent =
+                    text;
+
+
+            }
+
+
+            /* =================================================
+               HIDE MESSAGE
+            ================================================= */
+
+            function hideMessage() {
+
+
+                loginMessage.classList.remove(
+                    "show"
+                );
+
+
+            }
+
+
+            /* =================================================
+               REMEMBER USER
+            ================================================= */
+
+            const savedUsername =
+
+                localStorage.getItem(
+                    "raRememberUsername"
+                );
+
+
+            if (
+
+                savedUsername
+
+            ) {
+
+
+                username.value =
+                    savedUsername;
+
+
+                rememberMe.checked =
+                    true;
+
+
+            }
+
+
+            /* =================================================
+               GET ROLE
+            ================================================= */
+
+            function getSelectedRole() {
+
+
+                const selectedRole =
+
+                    document.querySelector(
+
+                        'input[name="role"]:checked'
+
+                    );
+
+
+                if (
+
+                    selectedRole
+
+                ) {
+
+
+                    return selectedRole.value;
+
+
+                }
+
+
+                return
+                    "admin";
+
+
+            }
+
+
+            /* =================================================
+               LOGIN FORM
+            ================================================= */
+
+            loginForm.addEventListener(
+
+                "submit",
+
+                function (
+                    event
+                ) {
+
+
+                    event.preventDefault();
+
+
+                    hideMessage();
+
+
+                    /* =========================================
+                       VALIDATION
+                    ========================================= */
 
                     if (
-                        !hubunganAnak ||
-                        hubunganAnak.length === 0
+
+                        username.value.trim() === ""
+
                     ) {
 
-                        tampilkanPesan(
-                            "🔗 Hubungkan akun dengan anak terlebih dahulu...",
-                            "success"
+
+                        showMessage(
+
+                            "error",
+
+                            "⚠️",
+
+                            "Silakan masukkan username atau email Anda."
+
                         );
 
 
-                        setTimeout(
-                            function() {
-
-                                window.location.href =
-                                    "hubungkan-anak.html";
-
-                            },
-                            900
-                        );
+                        username.focus();
 
 
                         return;
 
+
                     }
-
-
-                    /* =============================
-                       SUDAH TERHUBUNG
-                    ============================= */
-
-                    tampilkanPesan(
-                        "✅ Anak ditemukan! Mengarahkan...",
-                        "success"
-                    );
-
-
-                    setTimeout(
-                        function() {
-
-                            window.location.href =
-                                "wali-murid.html";
-
-                        },
-                        700
-                    );
-
-
-                    return;
-
-                }
-
-
-                /* =====================================
-                   ROLE TIDAK DIKENALI
-                ===================================== */
-
-                throw new Error(
-                    "Role akun tidak dikenali: " +
-                    profile.role
-                );
-
-
-            }
-
-            catch (error) {
-
-                console.error(
-                    "LOGIN ERROR:",
-                    error
-                );
-
-
-                let pesan =
-                    "❌ Login gagal.";
-
-
-                if (
-                    error.message
-                ) {
-
-                    const errorText =
-                        error.message
-                        .toLowerCase();
 
 
                     if (
-                        errorText.includes(
-                            "invalid login credentials"
-                        )
+
+                        password.value.trim() === ""
+
                     ) {
 
-                        pesan =
-                            "❌ Email atau password salah.";
+
+                        showMessage(
+
+                            "error",
+
+                            "⚠️",
+
+                            "Silakan masukkan password Anda."
+
+                        );
+
+
+                        password.focus();
+
+
+                        return;
+
 
                     }
 
-                    else if (
-                        errorText.includes(
-                            "email not confirmed"
-                        )
+
+                    /* =========================================
+                       GET ROLE
+                    ========================================= */
+
+                    const role =
+
+                        getSelectedRole();
+
+
+                    /* =========================================
+                       REMEMBER
+                    ========================================= */
+
+                    if (
+
+                        rememberMe.checked
+
                     ) {
 
-                        pesan =
-                            "⚠️ Email belum dikonfirmasi.";
+
+                        localStorage.setItem(
+
+                            "raRememberUsername",
+
+                            username.value.trim()
+
+                        );
+
 
                     }
+
 
                     else {
 
-                        pesan =
-                            "❌ " +
-                            error.message;
+
+                        localStorage.removeItem(
+
+                            "raRememberUsername"
+
+                        );
+
 
                     }
 
+
+                    /* =========================================
+                       BUTTON LOADING
+                    ========================================= */
+
+                    loginButton.disabled =
+                        true;
+
+
+                    loginButton.innerHTML =
+                        "⏳ Memeriksa Akun...";
+
+
+                    /* =========================================
+                       DEMO LOGIN
+                       
+                       NANTI BAGIAN INI DIGANTI FIREBASE
+                    ========================================= */
+
+                    setTimeout(
+
+                        function () {
+
+
+                            /* =============================
+                               ADMIN
+                            ============================= */
+
+                            if (
+
+                                role ===
+                                "admin"
+
+                            ) {
+
+
+                                localStorage.setItem(
+
+                                    "raUserRole",
+
+                                    "admin"
+
+                                );
+
+
+                                localStorage.setItem(
+
+                                    "raUserName",
+
+                                    username.value.trim()
+
+                                );
+
+
+                                showMessage(
+
+                                    "success",
+
+                                    "✅",
+
+                                    "Login Admin berhasil! Mengalihkan ke dashboard..."
+
+                                );
+
+
+                                setTimeout(
+
+                                    function () {
+
+
+                                        window.location.href =
+                                            "dashboard-admin.html";
+
+
+                                    },
+
+                                    900
+
+                                );
+
+
+                                return;
+
+
+                            }
+
+
+                            /* =============================
+                               GURU
+                            ============================= */
+
+                            if (
+
+                                role ===
+                                "guru"
+
+                            ) {
+
+
+                                localStorage.setItem(
+
+                                    "raUserRole",
+
+                                    "guru"
+
+                                );
+
+
+                                localStorage.setItem(
+
+                                    "raUserName",
+
+                                    username.value.trim()
+
+                                );
+
+
+                                showMessage(
+
+                                    "success",
+
+                                    "✅",
+
+                                    "Login Guru berhasil! Mengalihkan ke dashboard..."
+
+                                );
+
+
+                                setTimeout(
+
+                                    function () {
+
+
+                                        window.location.href =
+                                            "dashboard-guru.html";
+
+
+                                    },
+
+                                    900
+
+                                );
+
+
+                                return;
+
+
+                            }
+
+
+                            /* =============================
+                               WALI
+                            ============================= */
+
+                            if (
+
+                                role ===
+                                "wali"
+
+                            ) {
+
+
+                                localStorage.setItem(
+
+                                    "raUserRole",
+
+                                    "wali"
+
+                                );
+
+
+                                localStorage.setItem(
+
+                                    "raUserName",
+
+                                    username.value.trim()
+
+                                );
+
+
+                                showMessage(
+
+                                    "success",
+
+                                    "✅",
+
+                                    "Login Wali berhasil! Mengalihkan ke dashboard..."
+
+                                );
+
+
+                                setTimeout(
+
+                                    function () {
+
+
+                                        window.location.href =
+                                            "dashboard-wali.html";
+
+
+                                    },
+
+                                    900
+
+                                );
+
+
+                                return;
+
+
+                            }
+
+
+                        },
+
+                        900
+
+                    );
+
+
                 }
 
-
-                tampilkanPesan(
-                    pesan,
-                    "error"
-                );
-
-            }
-
-            finally {
-
-                loginButton.disabled =
-                    false;
+            );
 
 
-                loginButton.textContent =
-                    "🔐 Login";
+            /* =================================================
+               FORGOT PASSWORD
+            ================================================= */
 
-            }
+            forgotPassword.addEventListener(
+
+                "click",
+
+                function () {
+
+
+                    showMessage(
+
+                        "error",
+
+                        "💡",
+
+                        "Silakan hubungi Admin RA Miftahul Hikmah untuk bantuan reset password."
+
+                    );
+
+
+                }
+
+            );
+
+
+            /* =================================================
+               AUTO CLEAR MESSAGE
+            ================================================= */
+
+            username.addEventListener(
+
+                "input",
+
+                function () {
+
+
+                    hideMessage();
+
+
+                }
+
+            );
+
+
+            password.addEventListener(
+
+                "input",
+
+                function () {
+
+
+                    hideMessage();
+
+
+                }
+
+            );
+
 
         }
 
@@ -974,7 +4939,7 @@
 
 
 </script>
-```
+
 
 </body>
 
